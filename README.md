@@ -1,4 +1,6 @@
-# EPSILON
+# EPSILON With ROS2
+
+Refactor and suport to run with ROS2.
 
 ## About
 
