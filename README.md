@@ -1,6 +1,6 @@
-# EPSILON With ROS2
+# EPSILON ROS2
 
-Refactor and suport to run with ROS2.
+Refactor and suport to run with ROS2 comming soon...
 
 ## About
 
