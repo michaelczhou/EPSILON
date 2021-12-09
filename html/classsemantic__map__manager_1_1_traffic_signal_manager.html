@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: semantic_map_manager::TrafficSignalManager类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacesemantic__map__manager.html">semantic_map_manager</a></li><li class="navelem"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html">TrafficSignalManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classsemantic__map__manager_1_1_traffic_signal_manager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">semantic_map_manager::TrafficSignalManager类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a4204a00773d2c550b714a7f29a8f7372"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a4204a00773d2c550b714a7f29a8f7372">IntersectionType</a> { <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a4204a00773d2c550b714a7f29a8f7372ae3f7c77dd9c2046a614d8e255af12b92">kNotIntersect</a> = 0, 
+<a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a4204a00773d2c550b714a7f29a8f7372af3c7d2aec70d14bc0630b4c1b8f1c320">kSignalAhead</a>, 
+<a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a4204a00773d2c550b714a7f29a8f7372a13aefa5f04fe2b30f245d504da342136">kSignalControlled</a>
+ }</td></tr>
+<tr class="separator:a4204a00773d2c550b714a7f29a8f7372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd3c776622ad40b983895a99aadcb09"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> = <a class="el" href="structcommon_1_1_state.html">common::State</a></td></tr>
+<tr class="separator:a5bd3c776622ad40b983895a99aadcb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61282523d712f5a0fce523da0bd98c50"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">Lane</a> = <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td></tr>
+<tr class="separator:a61282523d712f5a0fce523da0bd98c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af449204861fa82e95f9dcfef9d8f84eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af449204861fa82e95f9dcfef9d8f84eb">SpeedLimit</a> = <a class="el" href="classcommon_1_1_speed_limit.html">common::SpeedLimit</a></td></tr>
+<tr class="separator:af449204861fa82e95f9dcfef9d8f84eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf64c7397ba79778b59ccbb06d46dad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a0cf64c7397ba79778b59ccbb06d46dad">TrafficLight</a> = <a class="el" href="classcommon_1_1_traffic_light.html">common::TrafficLight</a></td></tr>
+<tr class="separator:a0cf64c7397ba79778b59ccbb06d46dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a7124282483ee004a4bde2954d93acbb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a7124282483ee004a4bde2954d93acbb5">TrafficSignalManager</a> ()</td></tr>
+<tr class="separator:a7124282483ee004a4bde2954d93acbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568f84d9511bf5ac9b22d32b200b0d6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a568f84d9511bf5ac9b22d32b200b0d6a">Init</a> ()</td></tr>
+<tr class="separator:a568f84d9511bf5ac9b22d32b200b0d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93801f86defe5681b3c75c6e8677d96b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a93801f86defe5681b3c75c6e8677d96b">LoadSignals</a> ()</td></tr>
+<tr class="separator:a93801f86defe5681b3c75c6e8677d96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bf819ba1e1a285b1751ad8b6094a06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af3bf819ba1e1a285b1751ad8b6094a06">UpdateSignals</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> time_elapsed)</td></tr>
+<tr class="separator:af3bf819ba1e1a285b1751ad8b6094a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f7ea72a1f67535d7d93cdcbaf3e3f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af9f7ea72a1f67535d7d93cdcbaf3e3f9">GetSpeedLimit</a> (const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> &amp;state, const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">Lane</a> &amp;lane, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *speed_limit) const</td></tr>
+<tr class="memdesc:af9f7ea72a1f67535d7d93cdcbaf3e3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the speed limit w.r.t a certain state and ref lane  <a href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af9f7ea72a1f67535d7d93cdcbaf3e3f9">更多...</a><br /></td></tr>
+<tr class="separator:af9f7ea72a1f67535d7d93cdcbaf3e3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925fa6372db93083a3c82f855a077429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a925fa6372db93083a3c82f855a077429">GetTrafficStoppingState</a> (const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> &amp;state, const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">Lane</a> &amp;lane, <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> *stopping_state) const</td></tr>
+<tr class="memdesc:a925fa6372db93083a3c82f855a077429"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the stopping state w.r.t a certain state and ref lane  <a href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a925fa6372db93083a3c82f855a077429">更多...</a><br /></td></tr>
+<tr class="separator:a925fa6372db93083a3c82f855a077429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1209d3ecdcb1ac21230a727ee40a5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af449204861fa82e95f9dcfef9d8f84eb">SpeedLimit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#aef1209d3ecdcb1ac21230a727ee40a5e">speed_limit_list</a> () const</td></tr>
+<tr class="separator:aef1209d3ecdcb1ac21230a727ee40a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852adf1f2cc4f6d2cb5ffd671314e527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a0cf64c7397ba79778b59ccbb06d46dad">TrafficLight</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a852adf1f2cc4f6d2cb5ffd671314e527">traffic_light_list</a> () const</td></tr>
+<tr class="separator:a852adf1f2cc4f6d2cb5ffd671314e527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00013">13</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a61282523d712f5a0fce523da0bd98c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61282523d712f5a0fce523da0bd98c50">&#9670;&nbsp;</a></span>Lane</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">semantic_map_manager::TrafficSignalManager::Lane</a> =  <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af449204861fa82e95f9dcfef9d8f84eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af449204861fa82e95f9dcfef9d8f84eb">&#9670;&nbsp;</a></span>SpeedLimit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af449204861fa82e95f9dcfef9d8f84eb">semantic_map_manager::TrafficSignalManager::SpeedLimit</a> =  <a class="el" href="classcommon_1_1_speed_limit.html">common::SpeedLimit</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5bd3c776622ad40b983895a99aadcb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd3c776622ad40b983895a99aadcb09">&#9670;&nbsp;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">semantic_map_manager::TrafficSignalManager::State</a> =  <a class="el" href="structcommon_1_1_state.html">common::State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0cf64c7397ba79778b59ccbb06d46dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf64c7397ba79778b59ccbb06d46dad">&#9670;&nbsp;</a></span>TrafficLight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a0cf64c7397ba79778b59ccbb06d46dad">semantic_map_manager::TrafficSignalManager::TrafficLight</a> =  <a class="el" href="classcommon_1_1_traffic_light.html">common::TrafficLight</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a4204a00773d2c550b714a7f29a8f7372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4204a00773d2c550b714a7f29a8f7372">&#9670;&nbsp;</a></span>IntersectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a4204a00773d2c550b714a7f29a8f7372">semantic_map_manager::TrafficSignalManager::IntersectionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a4204a00773d2c550b714a7f29a8f7372ae3f7c77dd9c2046a614d8e255af12b92"></a>kNotIntersect&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4204a00773d2c550b714a7f29a8f7372af3c7d2aec70d14bc0630b4c1b8f1c320"></a>kSignalAhead&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4204a00773d2c550b714a7f29a8f7372a13aefa5f04fe2b30f245d504da342136"></a>kSignalControlled&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a7124282483ee004a4bde2954d93acbb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7124282483ee004a4bde2954d93acbb5">&#9670;&nbsp;</a></span>TrafficSignalManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">semantic_map_manager::TrafficSignalManager::TrafficSignalManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00005">5</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_a7124282483ee004a4bde2954d93acbb5_cgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_a7124282483ee004a4bde2954d93acbb5_cgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_a7124282483ee004a4bde2954d93acbb5_cgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_a7124282483ee004a4bde2954d93acbb5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,188,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a93801f86defe5681b3c75c6e8677d96b" title=" " alt="" coords="236,5,419,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="af9f7ea72a1f67535d7d93cdcbaf3e3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f7ea72a1f67535d7d93cdcbaf3e3f9">&#9670;&nbsp;</a></span>GetSpeedLimit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> semantic_map_manager::TrafficSignalManager::GetSpeedLimit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">Lane</a> &amp;&#160;</td>
+          <td class="paramname"><em>lane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>speed_limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the speed limit w.r.t a certain state and ref lane </p>
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00104">104</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_cgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_cgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_cgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_cgraph">
+<area shape="rect" title="get the speed limit w.r.t a certain state and ref lane" alt="" coords="5,488,188,544"/>
+<area shape="rect" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e" title=" " alt="" coords="236,495,436,537"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a22494461a963340822938a5fed024de5" title=" " alt="" coords="484,159,699,201"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="1028,247,1199,273"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a3fe8a1f03a453aca34588a808166f29d" title="Get curvature by arc length" alt="" coords="485,386,698,427"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af4afb26222cd153da4b1e977c4c28a44" title=" " alt="" coords="757,503,959,545"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a0dabc7c50c1e9c9eff83b7c15800e884" title=" " alt="" coords="491,321,691,362"/>
+<area shape="rect" href="structcommon_1_1_frenet_state.html#a01cc69c2098545a919d1e195c980c462" title=" " alt="" coords="510,554,673,595"/>
+<area shape="rect" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0" title="Normalize angle to [&#45;pi, pi)" alt="" coords="526,620,657,647"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="553,671,630,697"/>
+<area shape="rect" href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d" title="Return normalized angle by vec2d" alt="" coords="529,721,653,748"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46" title="Get the begin of the parameterization" alt="" coords="1028,112,1199,139"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4" title="Get the end of the parameterization" alt="" coords="1034,167,1193,193"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d" title="Return evaluation of spline at given parameterization" alt="" coords="1017,364,1209,391"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af74607072e3623e96e04482a31872217" title=" " alt="" coords="747,101,969,142"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1090,5,1137,32"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="1088,61,1139,88"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af8faae7d797f87f85dbeac2182d82626" title=" " alt="" coords="759,269,957,310"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ab6afde2fdc44a1895d54279ce04194fe" title="Get derivative by arc length (d = 0 means position evaluation)" alt="" coords="749,386,967,427"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_icgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_icgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_icgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_af9f7ea72a1f67535d7d93cdcbaf3e3f9_icgraph">
+<area shape="rect" title="get the speed limit w.r.t a certain state and ref lane" alt="" coords="503,5,685,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#aa18fcfe0159eb8f9e7f7313f5f2f424b" title=" " alt="" coords="272,5,455,61"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a4aea2cfb625574d4ee70a45b93103e39" title=" " alt="" coords="108,20,224,47"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,60,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a925fa6372db93083a3c82f855a077429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a925fa6372db93083a3c82f855a077429">&#9670;&nbsp;</a></span>GetTrafficStoppingState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> semantic_map_manager::TrafficSignalManager::GetTrafficStoppingState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a61282523d712f5a0fce523da0bd98c50">Lane</a> &amp;&#160;</td>
+          <td class="paramname"><em>lane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a5bd3c776622ad40b983895a99aadcb09">State</a> *&#160;</td>
+          <td class="paramname"><em>stopping_state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the stopping state w.r.t a certain state and ref lane </p>
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00199">199</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_a925fa6372db93083a3c82f855a077429_icgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_a925fa6372db93083a3c82f855a077429_icgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_a925fa6372db93083a3c82f855a077429_icgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_a925fa6372db93083a3c82f855a077429_icgraph">
+<area shape="rect" title="get the stopping state w.r.t a certain state and ref lane" alt="" coords="239,5,424,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#a9d951002e9ac8aca276ca5950ae4ffd5" title=" " alt="" coords="5,5,191,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a568f84d9511bf5ac9b22d32b200b0d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568f84d9511bf5ac9b22d32b200b0d6a">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> semantic_map_manager::TrafficSignalManager::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00007">7</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a93801f86defe5681b3c75c6e8677d96b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93801f86defe5681b3c75c6e8677d96b">&#9670;&nbsp;</a></span>LoadSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> semantic_map_manager::TrafficSignalManager::LoadSignals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00009">9</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_a93801f86defe5681b3c75c6e8677d96b_icgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_a93801f86defe5681b3c75c6e8677d96b_icgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_a93801f86defe5681b3c75c6e8677d96b_icgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_a93801f86defe5681b3c75c6e8677d96b_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,419,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a7124282483ee004a4bde2954d93acbb5" title=" " alt="" coords="5,5,188,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aef1209d3ecdcb1ac21230a727ee40a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef1209d3ecdcb1ac21230a727ee40a5e">&#9670;&nbsp;</a></span>speed_limit_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#af449204861fa82e95f9dcfef9d8f84eb">SpeedLimit</a>&gt; semantic_map_manager::TrafficSignalManager::speed_limit_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00037">37</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_aef1209d3ecdcb1ac21230a727ee40a5e_icgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_aef1209d3ecdcb1ac21230a727ee40a5e_icgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_aef1209d3ecdcb1ac21230a727ee40a5e_icgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_aef1209d3ecdcb1ac21230a727ee40a5e_icgraph">
+<area shape="rect" title=" " alt="" coords="827,60,1009,116"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ab316da1731486c544950e83383aedeb3" title=" " alt="" coords="588,60,779,116"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_visualizer.html#a17b61abfa8c2cb3e0171c0f0f36302ca" title=" " alt="" coords="348,20,540,76"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_visualizer.html#ab7a36d3101133ce4a0255f5132146436" title=" " alt="" coords="348,100,540,156"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a4aea2cfb625574d4ee70a45b93103e39" title=" " alt="" coords="146,5,262,32"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_visualizer.html#aee92b1dee89a6b8a6548e7a6eef8d6be" title=" " alt="" coords="108,57,300,98"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a852adf1f2cc4f6d2cb5ffd671314e527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852adf1f2cc4f6d2cb5ffd671314e527">&#9670;&nbsp;</a></span>traffic_light_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="classsemantic__map__manager_1_1_traffic_signal_manager.html#a0cf64c7397ba79778b59ccbb06d46dad">TrafficLight</a>&gt; semantic_map_manager::TrafficSignalManager::traffic_light_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a> 第 <a class="el" href="traffic__signal__manager_8h_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsemantic__map__manager_1_1_traffic_signal_manager_a852adf1f2cc4f6d2cb5ffd671314e527_icgraph.png" border="0" usemap="#classsemantic__map__manager_1_1_traffic_signal_manager_a852adf1f2cc4f6d2cb5ffd671314e527_icgraph" alt=""/></div>
+<map name="classsemantic__map__manager_1_1_traffic_signal_manager_a852adf1f2cc4f6d2cb5ffd671314e527_icgraph" id="classsemantic__map__manager_1_1_traffic_signal_manager_a852adf1f2cc4f6d2cb5ffd671314e527_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,427,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#a2beff35ee19ed6a4f58957537a3a1856" title=" " alt="" coords="5,5,196,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af3bf819ba1e1a285b1751ad8b6094a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bf819ba1e1a285b1751ad8b6094a06">&#9670;&nbsp;</a></span>UpdateSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> semantic_map_manager::TrafficSignalManager::UpdateSignals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>time_elapsed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a> 第 <a class="el" href="traffic__signal__manager_8cc_source.html#l00090">90</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/semantic_map_manager/inc/semantic_map_manager/<a class="el" href="traffic__signal__manager_8h_source.html">traffic_signal_manager.h</a></li>
+<li>core/semantic_map_manager/src/<a class="el" href="traffic__signal__manager_8cc_source.html">traffic_signal_manager.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::bulirsch_stoer_dense_out&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">bulirsch_stoer_dense_out</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::bulirsch_stoer_dense_out&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The Bulirsch-Stoer algorithm.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ae85e7dc8d30918b16e02d0b44a98d578"><td class="memItemLeft" align="right" valign="top">typedef State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a></td></tr>
+<tr class="separator:ae85e7dc8d30918b16e02d0b44a98d578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc4fbf8768df23cf52c94461afbc553"><td class="memItemLeft" align="right" valign="top">typedef Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a></td></tr>
+<tr class="separator:a6dc4fbf8768df23cf52c94461afbc553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c226ada5680251b25e6344626c69cf"><td class="memItemLeft" align="right" valign="top">typedef Deriv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a92c226ada5680251b25e6344626c69cf">deriv_type</a></td></tr>
+<tr class="separator:a92c226ada5680251b25e6344626c69cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5574201ec2d2afb559d98ccb6f37b538"><td class="memItemLeft" align="right" valign="top">typedef Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a></td></tr>
+<tr class="separator:a5574201ec2d2afb559d98ccb6f37b538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20ca505be2b2cecf6bf3f731b387cdb"><td class="memItemLeft" align="right" valign="top">typedef Algebra&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa20ca505be2b2cecf6bf3f731b387cdb">algebra_type</a></td></tr>
+<tr class="separator:aa20ca505be2b2cecf6bf3f731b387cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d255f81b0690ab5dfd28b741abcd790"><td class="memItemLeft" align="right" valign="top">typedef Operations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5d255f81b0690ab5dfd28b741abcd790">operations_type</a></td></tr>
+<tr class="separator:a5d255f81b0690ab5dfd28b741abcd790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0a6e15458bb78f73cd1757a8fd827c"><td class="memItemLeft" align="right" valign="top">typedef Resizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#afc0a6e15458bb78f73cd1757a8fd827c">resizer_type</a></td></tr>
+<tr class="separator:afc0a6e15458bb78f73cd1757a8fd827c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e77062f91749ba3dbc3220dd7aed2c7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a7e77062f91749ba3dbc3220dd7aed2c7">stepper_category</a></td></tr>
+<tr class="separator:a7e77062f91749ba3dbc3220dd7aed2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd086a618ebffa57a045d1f3b0d5081"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a2dd086a618ebffa57a045d1f3b0d5081">wrapped_state_type</a></td></tr>
+<tr class="separator:a2dd086a618ebffa57a045d1f3b0d5081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23f3bd3cf070d573d23221f03604fe1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a92c226ada5680251b25e6344626c69cf">deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af23f3bd3cf070d573d23221f03604fe1">wrapped_deriv_type</a></td></tr>
+<tr class="separator:af23f3bd3cf070d573d23221f03604fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637529308b9684a690b8bf23aeb185e5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a637529308b9684a690b8bf23aeb185e5">controlled_error_bs_type</a></td></tr>
+<tr class="separator:a637529308b9684a690b8bf23aeb185e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0528d5a201e0771d15ce11fe2654591"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1inverse__time.html">inverse_time</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa0528d5a201e0771d15ce11fe2654591">inv_time_type</a></td></tr>
+<tr class="separator:aa0528d5a201e0771d15ce11fe2654591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f66bab0ceb17672f053beafabd3a95"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af8f66bab0ceb17672f053beafabd3a95">value_vector</a></td></tr>
+<tr class="separator:af8f66bab0ceb17672f053beafabd3a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7f2051cefd2421209d949f003a6bc4"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aed7f2051cefd2421209d949f003a6bc4">time_vector</a></td></tr>
+<tr class="separator:aed7f2051cefd2421209d949f003a6bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d2bc267f376f63300e6be8e8ade6d9"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa0528d5a201e0771d15ce11fe2654591">inv_time_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ab1d2bc267f376f63300e6be8e8ade6d9">inv_time_vector</a></td></tr>
+<tr class="separator:ab1d2bc267f376f63300e6be8e8ade6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb826def7ed9744545c4c9baf76101ed"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af8f66bab0ceb17672f053beafabd3a95">value_vector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#acb826def7ed9744545c4c9baf76101ed">value_matrix</a></td></tr>
+<tr class="separator:acb826def7ed9744545c4c9baf76101ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560fa90883c1c5f08d2465b2bbbbfca1"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a560fa90883c1c5f08d2465b2bbbbfca1">int_vector</a></td></tr>
+<tr class="separator:a560fa90883c1c5f08d2465b2bbbbfca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a9c0304d10bfd52b0c87753ae7c52b"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a2dd086a618ebffa57a045d1f3b0d5081">wrapped_state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa9a9c0304d10bfd52b0c87753ae7c52b">state_vector_type</a></td></tr>
+<tr class="separator:aa9a9c0304d10bfd52b0c87753ae7c52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f0f1075edbaf453a55cd21595d04f9"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af23f3bd3cf070d573d23221f03604fe1">wrapped_deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a82f0f1075edbaf453a55cd21595d04f9">deriv_vector_type</a></td></tr>
+<tr class="separator:a82f0f1075edbaf453a55cd21595d04f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d914ed3e02002fd70618ea4aebf25d"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a82f0f1075edbaf453a55cd21595d04f9">deriv_vector_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a38d914ed3e02002fd70618ea4aebf25d">deriv_table_type</a></td></tr>
+<tr class="separator:a38d914ed3e02002fd70618ea4aebf25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5a1d02d79fd6ac2f1990d8ebd2ff3f9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5a1d02d79fd6ac2f1990d8ebd2ff3f9e">bulirsch_stoer_dense_out</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> eps_abs=1E-6, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> eps_rel=1E-6, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> factor_x=1.0, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> factor_dxdt=1.0, bool control_interpolation=false)</td></tr>
+<tr class="memdesc:a5a1d02d79fd6ac2f1990d8ebd2ff3f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer.html" title="The Bulirsch-Stoer algorithm.">bulirsch_stoer</a> class, including initialization of the error bounds.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5a1d02d79fd6ac2f1990d8ebd2ff3f9e">更多...</a><br /></td></tr>
+<tr class="separator:a5a1d02d79fd6ac2f1990d8ebd2ff3f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe4b9844cc5a57f82638eb12c6ad2d7"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut &gt; </td></tr>
+<tr class="memitem:a9fe4b9844cc5a57f82638eb12c6ad2d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a9fe4b9844cc5a57f82638eb12c6ad2d7">try_step</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, DerivOut &amp;dxdt_new, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a9fe4b9844cc5a57f82638eb12c6ad2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a9fe4b9844cc5a57f82638eb12c6ad2d7">更多...</a><br /></td></tr>
+<tr class="separator:a9fe4b9844cc5a57f82638eb12c6ad2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b9b0da52ec68aa6e92f8827e571224"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:ad6b9b0da52ec68aa6e92f8827e571224"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad6b9b0da52ec68aa6e92f8827e571224">initialize</a> (const StateType &amp;x0, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;t0, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;dt0)</td></tr>
+<tr class="memdesc:ad6b9b0da52ec68aa6e92f8827e571224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the dense output stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad6b9b0da52ec68aa6e92f8827e571224">更多...</a><br /></td></tr>
+<tr class="separator:ad6b9b0da52ec68aa6e92f8827e571224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d892c5fcacf062364eb4b84526e66f"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a27d892c5fcacf062364eb4b84526e66f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a27d892c5fcacf062364eb4b84526e66f">do_step</a> (System system)</td></tr>
+<tr class="memdesc:a27d892c5fcacf062364eb4b84526e66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does one time step. This is the main method that should be used to integrate an ODE with this stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a27d892c5fcacf062364eb4b84526e66f">更多...</a><br /></td></tr>
+<tr class="separator:a27d892c5fcacf062364eb4b84526e66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f5d17e693603fe0520a3c319d38e801"><td class="memTemplParams" colspan="2">template&lt;class StateOut &gt; </td></tr>
+<tr class="memitem:a8f5d17e693603fe0520a3c319d38e801"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a8f5d17e693603fe0520a3c319d38e801">calc_state</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> t, StateOut &amp;x) const</td></tr>
+<tr class="memdesc:a8f5d17e693603fe0520a3c319d38e801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at an intermediate point within the last step  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a8f5d17e693603fe0520a3c319d38e801">更多...</a><br /></td></tr>
+<tr class="separator:a8f5d17e693603fe0520a3c319d38e801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1965076c988659a0880e7a15d28b24"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#abc1965076c988659a0880e7a15d28b24">current_state</a> (void) const</td></tr>
+<tr class="memdesc:abc1965076c988659a0880e7a15d28b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current state of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#abc1965076c988659a0880e7a15d28b24">更多...</a><br /></td></tr>
+<tr class="separator:abc1965076c988659a0880e7a15d28b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f480ea8952851cf6e27104d4e87286f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5f480ea8952851cf6e27104d4e87286f">current_time</a> (void) const</td></tr>
+<tr class="memdesc:a5f480ea8952851cf6e27104d4e87286f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5f480ea8952851cf6e27104d4e87286f">更多...</a><br /></td></tr>
+<tr class="separator:a5f480ea8952851cf6e27104d4e87286f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fc03e4fbbaa033e02a65df08e76ee4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a49fc03e4fbbaa033e02a65df08e76ee4">previous_state</a> (void) const</td></tr>
+<tr class="memdesc:a49fc03e4fbbaa033e02a65df08e76ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last state of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a49fc03e4fbbaa033e02a65df08e76ee4">更多...</a><br /></td></tr>
+<tr class="separator:a49fc03e4fbbaa033e02a65df08e76ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67a744497c69a4aad9ff5ad260c35fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad67a744497c69a4aad9ff5ad260c35fa">previous_time</a> (void) const</td></tr>
+<tr class="memdesc:ad67a744497c69a4aad9ff5ad260c35fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last time of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad67a744497c69a4aad9ff5ad260c35fa">更多...</a><br /></td></tr>
+<tr class="separator:ad67a744497c69a4aad9ff5ad260c35fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9689f4182172e87e4f21fd4ad748d86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad9689f4182172e87e4f21fd4ad748d86">current_time_step</a> (void) const</td></tr>
+<tr class="memdesc:ad9689f4182172e87e4f21fd4ad748d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current step size.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad9689f4182172e87e4f21fd4ad748d86">更多...</a><br /></td></tr>
+<tr class="separator:ad9689f4182172e87e4f21fd4ad748d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed6f03dc7036922f745f91df2f98460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#abed6f03dc7036922f745f91df2f98460">reset</a> ()</td></tr>
+<tr class="memdesc:abed6f03dc7036922f745f91df2f98460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the internal state of the stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#abed6f03dc7036922f745f91df2f98460">更多...</a><br /></td></tr>
+<tr class="separator:abed6f03dc7036922f745f91df2f98460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ded7dc4d606014791c0d17b83a0290"><td class="memTemplParams" colspan="2">template&lt;class StateIn &gt; </td></tr>
+<tr class="memitem:a37ded7dc4d606014791c0d17b83a0290"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a37ded7dc4d606014791c0d17b83a0290">adjust_size</a> (const StateIn &amp;x)</td></tr>
+<tr class="memdesc:a37ded7dc4d606014791c0d17b83a0290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a37ded7dc4d606014791c0d17b83a0290">更多...</a><br /></td></tr>
+<tr class="separator:a37ded7dc4d606014791c0d17b83a0290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:a8c334056f18df40529a640c52e4b645c"><td class="memItemLeft" align="right" valign="top">const static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a8c334056f18df40529a640c52e4b645c">m_k_max</a> = 8</td></tr>
+<tr class="separator:a8c334056f18df40529a640c52e4b645c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class State, class Value = double, class Deriv = State, class Time = Value, class Algebra = range_algebra, class Operations = default_operations, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::bulirsch_stoer_dense_out&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</h3>
+
+<p>The Bulirsch-Stoer algorithm. </p>
+<p>The Bulirsch-Stoer is a controlled stepper that adjusts both step size and order of the method. The algorithm uses the modified midpoint and a polynomial extrapolation compute the solution. This class also provides dense output facility.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">State</td><td>The state type. </td></tr>
+    <tr><td class="paramname">Value</td><td>The value type. </td></tr>
+    <tr><td class="paramname">Deriv</td><td>The type representing the time derivative of the state. </td></tr>
+    <tr><td class="paramname">Time</td><td>The time representing the independent variable - the time. </td></tr>
+    <tr><td class="paramname">Algebra</td><td>The algebra type. </td></tr>
+    <tr><td class="paramname">Operations</td><td>The operations type. </td></tr>
+    <tr><td class="paramname">Resizer</td><td>The resizer policy type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00059">59</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="aa20ca505be2b2cecf6bf3f731b387cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20ca505be2b2cecf6bf3f731b387cdb">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Algebra <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa20ca505be2b2cecf6bf3f731b387cdb">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a637529308b9684a690b8bf23aeb185e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637529308b9684a690b8bf23aeb185e5">&#9670;&nbsp;</a></span>controlled_error_bs_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">bulirsch_stoer_dense_out</a>&lt; State , Value , Deriv , Time , Algebra , Operations , Resizer &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a637529308b9684a690b8bf23aeb185e5">controlled_error_bs_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a38d914ed3e02002fd70618ea4aebf25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d914ed3e02002fd70618ea4aebf25d">&#9670;&nbsp;</a></span>deriv_table_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a82f0f1075edbaf453a55cd21595d04f9">deriv_vector_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a38d914ed3e02002fd70618ea4aebf25d">deriv_table_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a92c226ada5680251b25e6344626c69cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c226ada5680251b25e6344626c69cf">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Deriv <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a92c226ada5680251b25e6344626c69cf">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00066">66</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a82f0f1075edbaf453a55cd21595d04f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f0f1075edbaf453a55cd21595d04f9">&#9670;&nbsp;</a></span>deriv_vector_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af23f3bd3cf070d573d23221f03604fe1">wrapped_deriv_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a82f0f1075edbaf453a55cd21595d04f9">deriv_vector_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a560fa90883c1c5f08d2465b2bbbbfca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560fa90883c1c5f08d2465b2bbbbfca1">&#9670;&nbsp;</a></span>int_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; size_t &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a560fa90883c1c5f08d2465b2bbbbfca1">int_vector</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa0528d5a201e0771d15ce11fe2654591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0528d5a201e0771d15ce11fe2654591">&#9670;&nbsp;</a></span>inv_time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1inverse__time.html">inverse_time</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &gt;::type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa0528d5a201e0771d15ce11fe2654591">inv_time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab1d2bc267f376f63300e6be8e8ade6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d2bc267f376f63300e6be8e8ade6d9">&#9670;&nbsp;</a></span>inv_time_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa0528d5a201e0771d15ce11fe2654591">inv_time_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ab1d2bc267f376f63300e6be8e8ade6d9">inv_time_vector</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5d255f81b0690ab5dfd28b741abcd790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d255f81b0690ab5dfd28b741abcd790">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Operations <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5d255f81b0690ab5dfd28b741abcd790">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afc0a6e15458bb78f73cd1757a8fd827c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0a6e15458bb78f73cd1757a8fd827c">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Resizer <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#afc0a6e15458bb78f73cd1757a8fd827c">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae85e7dc8d30918b16e02d0b44a98d578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae85e7dc8d30918b16e02d0b44a98d578">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef State <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa9a9c0304d10bfd52b0c87753ae7c52b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a9c0304d10bfd52b0c87753ae7c52b">&#9670;&nbsp;</a></span>state_vector_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a2dd086a618ebffa57a045d1f3b0d5081">wrapped_state_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aa9a9c0304d10bfd52b0c87753ae7c52b">state_vector_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7e77062f91749ba3dbc3220dd7aed2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e77062f91749ba3dbc3220dd7aed2c7">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a7e77062f91749ba3dbc3220dd7aed2c7">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5574201ec2d2afb559d98ccb6f37b538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5574201ec2d2afb559d98ccb6f37b538">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Time <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aed7f2051cefd2421209d949f003a6bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7f2051cefd2421209d949f003a6bc4">&#9670;&nbsp;</a></span>time_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#aed7f2051cefd2421209d949f003a6bc4">time_vector</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00081">81</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acb826def7ed9744545c4c9baf76101ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb826def7ed9744545c4c9baf76101ed">&#9670;&nbsp;</a></span>value_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af8f66bab0ceb17672f053beafabd3a95">value_vector</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#acb826def7ed9744545c4c9baf76101ed">value_matrix</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00083">83</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6dc4fbf8768df23cf52c94461afbc553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc4fbf8768df23cf52c94461afbc553">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Value <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af8f66bab0ceb17672f053beafabd3a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f66bab0ceb17672f053beafabd3a95">&#9670;&nbsp;</a></span>value_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af8f66bab0ceb17672f053beafabd3a95">value_vector</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af23f3bd3cf070d573d23221f03604fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23f3bd3cf070d573d23221f03604fe1">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a92c226ada5680251b25e6344626c69cf">deriv_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#af23f3bd3cf070d573d23221f03604fe1">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2dd086a618ebffa57a045d1f3b0d5081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd086a618ebffa57a045d1f3b0d5081">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ae85e7dc8d30918b16e02d0b44a98d578">state_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a2dd086a618ebffa57a045d1f3b0d5081">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5a1d02d79fd6ac2f1990d8ebd2ff3f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a1d02d79fd6ac2f1990d8ebd2ff3f9e">&#9670;&nbsp;</a></span>bulirsch_stoer_dense_out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">bulirsch_stoer_dense_out</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a>&#160;</td>
+          <td class="paramname"><em>eps_abs</em> = <code>1E-6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a>&#160;</td>
+          <td class="paramname"><em>eps_rel</em> = <code>1E-6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a>&#160;</td>
+          <td class="paramname"><em>factor_x</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a6dc4fbf8768df23cf52c94461afbc553">value_type</a>&#160;</td>
+          <td class="paramname"><em>factor_dxdt</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>control_interpolation</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer.html" title="The Bulirsch-Stoer algorithm.">bulirsch_stoer</a> class, including initialization of the error bounds. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eps_abs</td><td>Absolute tolerance level. </td></tr>
+    <tr><td class="paramname">eps_rel</td><td>Relative tolerance level. </td></tr>
+    <tr><td class="paramname">factor_x</td><td>Factor for the weight of the state. </td></tr>
+    <tr><td class="paramname">factor_dxdt</td><td>Factor for the weight of the derivative. </td></tr>
+    <tr><td class="paramname">control_interpolation</td><td>Set true to additionally control the error of the interpolation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00094">94</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a37ded7dc4d606014791c0d17b83a0290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ded7dc4d606014791c0d17b83a0290">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateIn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjust the size of all temporaries in the stepper manually. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A state from which the size of the temporaries to be resized is deduced. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00364">364</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a37ded7dc4d606014791c0d17b83a0290_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a37ded7dc4d606014791c0d17b83a0290_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a37ded7dc4d606014791c0d17b83a0290_cgraph" id="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a37ded7dc4d606014791c0d17b83a0290_cgraph">
+<area shape="rect" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="5,5,173,61"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1modified__midpoint__dense__out.html#aadb68f250bd0e4e801a1369e75ec89cc" title=" " alt="" coords="221,5,420,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8f5d17e693603fe0520a3c319d38e801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f5d17e693603fe0520a3c319d38e801">&#9670;&nbsp;</a></span>calc_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::calc_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the solution at an intermediate point within the last step </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The time at which the solution should be calculated, has to be in the current time interval. </td></tr>
+    <tr><td class="paramname">x</td><td>The output variable where the result is written into. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00326">326</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abc1965076c988659a0880e7a15d28b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1965076c988659a0880e7a15d28b24">&#9670;&nbsp;</a></span>current_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::current_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current state of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The current state of the solution x(t). </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00331">331</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5f480ea8952851cf6e27104d4e87286f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f480ea8952851cf6e27104d4e87286f">&#9670;&nbsp;</a></span>current_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::current_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current time of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The current time of the solution t. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00336">336</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad9689f4182172e87e4f21fd4ad748d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9689f4182172e87e4f21fd4ad748d86">&#9670;&nbsp;</a></span>current_time_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::current_time_step </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current step size. </p>
+<dl class="section return"><dt>返回</dt><dd>The current step size. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00351">351</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a27d892c5fcacf062364eb4b84526e66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d892c5fcacf062364eb4b84526e66f">&#9670;&nbsp;</a></span>do_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does one time step. This is the main method that should be used to integrate an ODE with this stepper. </p>
+<dl class="section note"><dt>注解</dt><dd>initialize has to be called before using this method to set the initial conditions x,t and the stepsize. </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ordinary differential equation. It must fulfill the Simple System concept. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Pair with start and end time of the integration step. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00300">300</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a27d892c5fcacf062364eb4b84526e66f_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a27d892c5fcacf062364eb4b84526e66f_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a27d892c5fcacf062364eb4b84526e66f_cgraph" id="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a27d892c5fcacf062364eb4b84526e66f_cgraph">
+<area shape="rect" title="Does one time step. This is the main method that should be used to integrate an ODE with this stepper..." alt="" coords="5,24,173,80"/>
+<area shape="rect" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be" title=" " alt="" coords="283,5,327,32"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a9fe4b9844cc5a57f82638eb12c6ad2d7" title="Tries to perform one step." alt="" coords="221,56,389,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad6b9b0da52ec68aa6e92f8827e571224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b9b0da52ec68aa6e92f8827e571224">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the dense output stepper. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>The initial state. </td></tr>
+    <tr><td class="paramname">t0</td><td>The initial time. </td></tr>
+    <tr><td class="paramname">dt0</td><td>The initial time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00286">286</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_ad6b9b0da52ec68aa6e92f8827e571224_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_ad6b9b0da52ec68aa6e92f8827e571224_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_ad6b9b0da52ec68aa6e92f8827e571224_cgraph" id="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_ad6b9b0da52ec68aa6e92f8827e571224_cgraph">
+<area shape="rect" title="Initializes the dense output stepper." alt="" coords="5,65,173,121"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11" title=" " alt="" coords="221,35,389,76"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#abed6f03dc7036922f745f91df2f98460" title="Resets the internal state of the stepper." alt="" coords="221,101,389,157"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html#a1c130657a62a80adcfbc15120c953f71" title=" " alt="" coords="437,5,605,47"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a06af14032a833158d3360580a28d55de" title=" " alt="" coords="653,35,821,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a49fc03e4fbbaa033e02a65df08e76ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fc03e4fbbaa033e02a65df08e76ee4">&#9670;&nbsp;</a></span>previous_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::previous_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last state of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The last state of the solution x(t-dt). </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00341">341</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad67a744497c69a4aad9ff5ad260c35fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67a744497c69a4aad9ff5ad260c35fa">&#9670;&nbsp;</a></span>previous_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::previous_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last time of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The last time of the solution t-dt. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00346">346</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abed6f03dc7036922f745f91df2f98460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed6f03dc7036922f745f91df2f98460">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the internal state of the stepper. </p>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00357">357</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_abed6f03dc7036922f745f91df2f98460_icgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_abed6f03dc7036922f745f91df2f98460_icgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_abed6f03dc7036922f745f91df2f98460_icgraph" id="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_abed6f03dc7036922f745f91df2f98460_icgraph">
+<area shape="rect" title="Resets the internal state of the stepper." alt="" coords="221,5,389,61"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#ad6b9b0da52ec68aa6e92f8827e571224" title="Initializes the dense output stepper." alt="" coords="5,5,173,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9fe4b9844cc5a57f82638eb12c6ad2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe4b9844cc5a57f82638eb12c6ad2d7">&#9670;&nbsp;</a></span>try_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DerivOut &amp;&#160;</td>
+          <td class="paramname"><em>dxdt_new</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a5574201ec2d2afb559d98ccb6f37b538">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. </p>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed. Also, the internal order of the stepper is adjusted if required.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. </td></tr>
+    <tr><td class="paramname">dxdt</td><td>The derivative of state. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">out</td><td>Used to store the result of the step. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00147">147</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a9fe4b9844cc5a57f82638eb12c6ad2d7_icgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a9fe4b9844cc5a57f82638eb12c6ad2d7_icgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a9fe4b9844cc5a57f82638eb12c6ad2d7_icgraph" id="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out_a9fe4b9844cc5a57f82638eb12c6ad2d7_icgraph">
+<area shape="rect" title="Tries to perform one step." alt="" coords="221,5,389,61"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html#a27d892c5fcacf062364eb4b84526e66f" title="Does one time step. This is the main method that should be used to integrate an ODE with this stepper..." alt="" coords="5,5,173,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a8c334056f18df40529a640c52e4b645c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c334056f18df40529a640c52e4b645c">&#9670;&nbsp;</a></span>m_k_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const static size_t <a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer__dense__out.html">boost::numeric::odeint::bulirsch_stoer_dense_out</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::m_k_max = 8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a> 第 <a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html#l00090">90</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">bulirsch_stoer_dense_out.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

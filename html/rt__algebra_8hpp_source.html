@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/rt_algebra.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rt_algebra.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rt__algebra_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structrt__algebra.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structrt__algebra.html">rt_algebra</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> T , <span class="keywordtype">size_t</span> dim &gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">   18</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <span class="keywordflow">foreach</span>( boost::array&lt; T , dim &gt; &amp; x_tmp , </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                <span class="keyword">const</span> boost::array&lt; T , dim &gt; &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> ,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                <span class="comment">//const vector&lt; double &gt; &amp;a ,</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">double</span>* <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> ,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                <span class="keyword">const</span> boost::array&lt; T , dim &gt; *k_vector , </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">double</span> dt , <span class="keyword">const</span> <span class="keywordtype">size_t</span> s )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="gsl__rk4__lorenz_8cpp.html#a6f5a03848c90a54a3c4ef7378e3a7b27">dim</a> ; ++i )</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            x_tmp[i] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[i];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> j = 0 ; j&lt;s ; ++j )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                x_tmp[i] += <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>[j]*<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>*k_vector[j][i];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="agsl__rk4__lorenz_8cpp_html_a6f5a03848c90a54a3c4ef7378e3a7b27"><div class="ttname"><a href="gsl__rk4__lorenz_8cpp.html#a6f5a03848c90a54a3c4ef7378e3a7b27">dim</a></div><div class="ttdeci">const size_t dim</div><div class="ttdef"><b>Definition:</b> <a href="gsl__rk4__lorenz_8cpp_source.html#l00019">gsl_rk4_lorenz.cpp:19</a></div></div>
+<div class="ttc" id="astructrt__algebra_html"><div class="ttname"><a href="structrt__algebra.html">rt_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="rt__algebra_8hpp_source.html#l00015">rt_algebra.hpp:15</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/tools/proc_geojson.py 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_899bdbf0fcb107174dc1699dfcafc4b2.html">tools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">proc_geojson.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="proc__geojson_8py.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html">    1</a></span>&#160;<span class="keyword">import</span> json</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> matplotlib</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> matplotlib.patches <span class="keyword">import</span> Polygon</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">from</span> matplotlib.collections <span class="keyword">import</span> PatchCollection</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> math</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># data_folder = &#39;/home/denny/Dropbox/Dropbox/00-Research/IROS2019_wc_zl/qgis_playground/benchmark_track/geojson/&#39;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># data_folder = &#39;/home/zl/catkin_ws/src/vehicle_planning/qgis_projects/urban_google_prj/geojson/&#39;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"># data_folder = &#39;/home/zl/catkin_ws/src/vehicle_planning/qgis_projects/highway/geojson/&#39;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">   14</a></span>&#160;data_folder = <span class="stringliteral">&#39;../../../toolchain/qgis_projects/highway/geojson/&#39;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;print(data_folder)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a6877013c48189f86a4a2c63043ba87b4">   18</a></span>&#160;pt_feat_name = data_folder + <span class="stringliteral">&quot;pt_feat&quot;</span> + <span class="stringliteral">&quot;.geojson&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#afdc45f2bedb6d107561a722f4fcfd35d">   19</a></span>&#160;pt_feat_json_fs = open(pt_feat_name).read()</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a130ef68c7a837cc78770b0167573e442">   20</a></span>&#160;pt_feat_json = json.loads(pt_feat_json_fs)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#aaf579e6fb02d24f417a0b764a2afeb46">   22</a></span>&#160;lane_net_name = data_folder + <span class="stringliteral">&quot;lane_net&quot;</span> + <span class="stringliteral">&quot;.geojson&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a0b7cff2be9b86a61b4d768d41c5732d8">   23</a></span>&#160;lane_net_json_fs = open(lane_net_name).read()</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a75dac7e2925695916f182e0a538e94e9">   24</a></span>&#160;lane_net_json = json.loads(lane_net_json_fs)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a6d1f3e88a1268561e2be40d80449e11c">   26</a></span>&#160;obstacles_name = data_folder + <span class="stringliteral">&quot;obstacles&quot;</span> + <span class="stringliteral">&quot;.geojson&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a7d4728f60046c7b0074ea98471af00aa">   27</a></span>&#160;obstacles_json_fs = open(obstacles_name).read()</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a81eb8d0551d10ac175cbf87e318b989d">   28</a></span>&#160;obstacles_json = json.loads(obstacles_json_fs)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordflow">for</span> f <span class="keywordflow">in</span> pt_feat_json[<span class="stringliteral">&quot;features&quot;</span>]:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span> f[<span class="stringliteral">&quot;properties&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>] == <span class="stringliteral">&quot;origin&quot;</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#ab54a5e19f7f6263a7594fd12ecd4629b">   32</a></span>&#160;    origin = np.array(f[<span class="stringliteral">&quot;geometry&quot;</span>][<span class="stringliteral">&quot;coordinates&quot;</span>])</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordflow">for</span> f <span class="keywordflow">in</span> lane_net_json[<span class="stringliteral">&quot;features&quot;</span>]:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">for</span> pt <span class="keywordflow">in</span> f[<span class="stringliteral">&quot;geometry&quot;</span>][<span class="stringliteral">&quot;coordinates&quot;</span>][0]:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    pt[0] = pt[0] - origin[0]</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    pt[1] = pt[1] - origin[1]</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordflow">for</span> f <span class="keywordflow">in</span> obstacles_json[<span class="stringliteral">&quot;features&quot;</span>]:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">for</span> pt <span class="keywordflow">in</span> f[<span class="stringliteral">&quot;geometry&quot;</span>][<span class="stringliteral">&quot;coordinates&quot;</span>][0][0]:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    pt[0] = pt[0] - origin[0]</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    pt[1] = pt[1] - origin[1]</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"># save normed data</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a529173bffb41d4bfec691eb9b553b610">   45</a></span>&#160;lane_net_norm_name = data_folder + <span class="stringliteral">&quot;lane_net_norm&quot;</span> + <span class="stringliteral">&quot;.json&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#aa69dc33b49ac3827c766d21c25aa0632">   46</a></span>&#160;lane_net_norm_json_fs = open(lane_net_norm_name,<span class="stringliteral">&#39;w&#39;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;json.dump(lane_net_json, lane_net_norm_json_fs)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#ae99d4ec7f5a62649ba9c7753331e883b">   49</a></span>&#160;obstacles_norm_name = data_folder + <span class="stringliteral">&quot;obstacles_norm&quot;</span> + <span class="stringliteral">&quot;.json&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a14def7324baa645c78d78f135648b5b0">   50</a></span>&#160;obstacles_norm_json_fs = open(obstacles_norm_name,<span class="stringliteral">&#39;w&#39;</span>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;json.dump(obstacles_json, obstacles_norm_json_fs)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"># plot map data</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#ab6d5292c008ee3d78d78edf02ca396c4">   54</a></span>&#160;x_set = []</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a3867c8fdbb0b9ed1e0086b810fe81a9c">   55</a></span>&#160;y_set = []</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordflow">for</span> f <span class="keywordflow">in</span> lane_net_json[<span class="stringliteral">&quot;features&quot;</span>]:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">   58</a></span>&#160;  coord = np.array(f[<span class="stringliteral">&quot;geometry&quot;</span>][<span class="stringliteral">&quot;coordinates&quot;</span>][0])</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">   59</a></span>&#160;  x = coord[:,0]</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">   60</a></span>&#160;  y = coord[:,1]</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  x_set.append(x)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  y_set.append(y)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a2a6657888dc21246df5d6444281b7930">   65</a></span>&#160;fig, ax = plt.subplots()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(x_set)):</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a80320965872e479115f6a7135e5580d1">   68</a></span>&#160;  ax.plot(x_set[i],y_set[i],marker=<span class="stringliteral">&#39;o&#39;</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">   70</a></span>&#160;patches = []</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordflow">for</span> f <span class="keywordflow">in</span> obstacles_json[<span class="stringliteral">&quot;features&quot;</span>]:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  coord = np.array(f[<span class="stringliteral">&quot;geometry&quot;</span>][<span class="stringliteral">&quot;coordinates&quot;</span>][0][0])</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a50cadc802c3cac52f3c8366f65481e95">   73</a></span>&#160;  polygon = Polygon(np.array(coord), <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  patches.append(polygon)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">   76</a></span>&#160;p = PatchCollection(patches, cmap=matplotlib.cm.jet, alpha=0.4)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="namespaceproc__geojson.html#ac3f84f36991a14de6cc5c8ddbbb8bd63">   78</a></span>&#160;colors = 100*np.random.rand(len(patches))</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;p.set_array(np.array(colors))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;ax.add_collection(p)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;plt.axis(<span class="stringliteral">&#39;equal&#39;</span>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;plt.show()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

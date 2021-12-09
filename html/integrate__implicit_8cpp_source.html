@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/integrate_implicit.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">integrate_implicit.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="integrate__implicit_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/integrate_implicit.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the integrate function and its variants with the implicit steppers.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   17</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_integrate_functions_implicit</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/numeric/odeint/config.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;boost/iterator/counting_iterator.hpp&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/matrix.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="integrate__const_8hpp.html">boost/numeric/odeint/integrate/integrate_const.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="integrate__adaptive_8hpp.html">boost/numeric/odeint/integrate/integrate_adaptive.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="integrate__times_8hpp.html">boost/numeric/odeint/integrate/integrate_times.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="integrate__n__steps_8hpp.html">boost/numeric/odeint/integrate/integrate_n_steps.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4__controller_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4_controller.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4__dense__output_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4_dense_output.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>mpl = boost::mpl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1ublas.html">ublas</a> = <a class="code" href="namespaceboost_1_1numeric_1_1ublas.html">boost::numeric::ublas</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="integrate__implicit_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#af8274a374be52857212962140f9b7036">   50</a></span>&#160;<span class="keyword">typedef</span> ublas::vector&lt; value_type &gt; <a class="code" href="integrate__implicit_8cpp.html#af8274a374be52857212962140f9b7036">state_type</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">   51</a></span>&#160;<span class="keyword">typedef</span> boost::numeric::ublas::matrix&lt; value_type &gt; <a class="code" href="integrate__implicit_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">struct </span><a class="code" href="structsys.html">sys</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &amp;t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        dxdt( 0 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 0 ) + 2 * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        dxdt( 1 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">struct </span><a class="code" href="structjacobi.html">jacobi</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a> &amp;<a class="code" href="structjacobi.html">jacobi</a> , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &amp;t , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dfdt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 0 ) = 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 1 ) = 2;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 0 ) = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 1 ) = 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        dfdt( 0 ) = 0.0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        dfdt( 1 ) = 0.0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">struct </span><a class="code" href="structpush__back__time.html">push_back_time</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt; double &gt;&amp; m_times;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structpush__back__time.html#a994874eef51010b8ae4798994ea5c5b7">   79</a></span>&#160;    <a class="code" href="structpush__back__time.html#a994874eef51010b8ae4798994ea5c5b7">push_back_time</a>( std::vector&lt; double &gt; &amp;times )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    :  m_times( times ) { }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structpush__back__time.html#a2ce70bbd80ea7eb465a9020b11c29cb1">   82</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structpush__back__time.html#a2ce70bbd80ea7eb465a9020b11c29cb1">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_times.push_back( t );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__integrate__const__test.html">perform_integrate_const_test</a></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structperform__integrate__const__test.html#a0fb58f3511a498ccc57b93da234412b3">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__integrate__const__test.html#a0fb58f3511a498ccc57b93da234412b3">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 , 1.0 );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.03;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t_end = 10.0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::vector&lt; value_type &gt; times;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">integrate_const</a>( Stepper() , std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , t_end ,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                        <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structpush__back__time.html">push_back_time</a>( times ) );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        BOOST_CHECK_EQUAL( <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(times.size()) , <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor(t_end/<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>))+1 );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;times.size() ; ++i )</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">//std::cout &lt;&lt; i &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="comment">// check if observer was called at times 0,1,2,...</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            BOOST_CHECK_SMALL( times[i] - <span class="keyword">static_cast&lt;</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <span class="keyword">&gt;</span>(i)*<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , (i+1) * 2.0e-16 );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__integrate__adaptive__test.html">perform_integrate_adaptive_test</a></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structperform__integrate__adaptive__test.html#ae5efa9f6b245b1266522041634967d73">  116</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__integrate__adaptive__test.html#ae5efa9f6b245b1266522041634967d73">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 , 1.0 );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.03;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t_end = 10.0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::vector&lt; value_type &gt; times;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">size_t</span> steps = <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">integrate_adaptive</a>( Stepper() , std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , t_end ,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                        <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structpush__back__time.html">push_back_time</a>( times ) );</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        BOOST_CHECK_EQUAL( times.size() , steps+1 );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        BOOST_CHECK_SMALL( times[0] - 0.0 , 2.0e-16 );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        BOOST_CHECK_SMALL( times[times.size()-1] - t_end , times.size() * 3.0e-16 );</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__integrate__times__test.html">perform_integrate_times_test</a></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="structperform__integrate__times__test.html#a4f4a485dfcaeb086a0977f0a89c6a43b">  138</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__integrate__times__test.html#a4f4a485dfcaeb086a0977f0a89c6a43b">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 , 1.0 );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.03;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        std::vector&lt; double &gt; times;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment">// simple stepper</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a496337ccd7cfe1a4502c27643230e46f">integrate_times</a>( Stepper() , std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    boost::counting_iterator&lt;int&gt;(0) , boost::counting_iterator&lt;int&gt;(10) ,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structpush__back__time.html">push_back_time</a>( times ) );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        BOOST_CHECK_EQUAL( <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(times.size()) , 10 );</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;times.size() ; ++i )</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">// check if observer was called at times 0,1,2,...</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            BOOST_CHECK_EQUAL( times[i] , <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(i) );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__integrate__n__steps__test.html">perform_integrate_n_steps_test</a></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="structperform__integrate__n__steps__test.html#a2c0f6db6d5a06e0d5a6c7fa62b981b28">  162</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__integrate__n__steps__test.html#a2c0f6db6d5a06e0d5a6c7fa62b981b28">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 , 1.0 );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.03;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> = 200;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        std::vector&lt; double &gt; times;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// simple stepper</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> end_time = <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>( Stepper() , std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> , <a class="code" href="structpush__back__time.html">push_back_time</a>( times ) );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        BOOST_CHECK_SMALL( end_time - <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>*<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 3.0e-16 );</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        BOOST_CHECK_EQUAL( <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(times.size()) , <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>+1 );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;times.size() ; ++i )</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">// check if observer was called at times 0,1,2,...</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            BOOST_CHECK_SMALL( times[i] - <span class="keyword">static_cast&lt;</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <span class="keyword">&gt;</span>(i)*<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , (i+1) * 2.0e-16 );</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">class </span><a class="code" href="classstepper__methods.html">stepper_methods</a> : <span class="keyword">public</span> mpl::vector&lt;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    rosenbrock4&lt; value_type &gt; ,</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt; &gt; ,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    rosenbrock4_dense_output&lt; rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt; &gt; &gt;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;&gt; { };</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;BOOST_AUTO_TEST_SUITE( integrate_test )</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">  195</a></span>&#160;<a class="code" href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( integrate_const_test_case , Stepper, <a class="code" href="classstepper__methods.html">stepper_methods</a> )</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="structperform__integrate__const__test.html">perform_integrate_const_test&lt; Stepper &gt;</a> tester;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    tester();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a2f010fc7ba9cd63b38ecc39599cd83cb">  202</a></span>&#160;<a class="code" href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( integrate_adaptive_test_case , Stepper, <a class="code" href="classstepper__methods.html">stepper_methods</a> )</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="structperform__integrate__adaptive__test.html">perform_integrate_adaptive_test&lt; Stepper &gt;</a> tester;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    tester();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a73ca11a5ccd3cb69352d7f90cf22c0c0">  209</a></span>&#160;<a class="code" href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( integrate_times_test_case , Stepper, <a class="code" href="classstepper__methods.html">stepper_methods</a> )</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="structperform__integrate__times__test.html">perform_integrate_times_test&lt; Stepper &gt;</a> tester;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    tester();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classsimple__stepper__methods.html">  216</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsimple__stepper__methods.html">simple_stepper_methods</a> : <span class="keyword">public</span> mpl::vector&lt;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    rosenbrock4&lt; value_type &gt;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;&gt; { };</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="integrate__implicit_8cpp.html#a7fdd1f5bc2048af3aecafbba6ab40fcf">  220</a></span>&#160;<a class="code" href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( integrate_n_steps_test_case , Stepper, <a class="code" href="classsimple__stepper__methods.html">simple_stepper_methods</a> )</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="structperform__integrate__n__steps__test.html">perform_integrate_n_steps_test&lt; Stepper &gt;</a> tester;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    tester();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aintegrate__implicit_8cpp_html_a48767bb03341a0d56624614e294a55ac"><div class="ttname"><a href="integrate__implicit_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE_TEMPLATE(integrate_const_test_case, Stepper, stepper_methods)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00195">integrate_implicit.cpp:195</a></div></div>
+<div class="ttc" id="astructsys_html_a588ead988f58dbf2acfff1fa9ee21649"><div class="ttname"><a href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">sys::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, const value_type &amp;t) const</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00055">integrate_implicit.cpp:55</a></div></div>
+<div class="ttc" id="astructperform__integrate__n__steps__test_html_a2c0f6db6d5a06e0d5a6c7fa62b981b28"><div class="ttname"><a href="structperform__integrate__n__steps__test.html#a2c0f6db6d5a06e0d5a6c7fa62b981b28">perform_integrate_n_steps_test::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00162">integrate_implicit.cpp:162</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="aintegrate__implicit_8cpp_html_a9018fe527287332f6438b7cf4bc832b2"><div class="ttname"><a href="integrate__implicit_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; value_type &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00051">integrate_implicit.cpp:51</a></div></div>
+<div class="ttc" id="arosenbrock4_8hpp_html"><div class="ttname"><a href="rosenbrock4_8hpp.html">rosenbrock4.hpp</a></div></div>
+<div class="ttc" id="astructperform__integrate__const__test_html"><div class="ttname"><a href="structperform__integrate__const__test.html">perform_integrate_const_test</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00089">integrate.cpp:89</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a12b08855d25ca7201ad3d12dc6212bbb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__const_8hpp_source.html#l00042">integrate_const.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_a34c08a7a7d7e6c10905fc8d5629495be"><div class="ttname"><a href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a></div><div class="ttdeci">void sys(const state_type &amp;, state_type &amp;, const double)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00028">stepper_details.cpp:28</a></div></div>
+<div class="ttc" id="astructperform__integrate__const__test_html_a0fb58f3511a498ccc57b93da234412b3"><div class="ttname"><a href="structperform__integrate__const__test.html#a0fb58f3511a498ccc57b93da234412b3">perform_integrate_const_test::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00091">integrate_implicit.cpp:91</a></div></div>
+<div class="ttc" id="aintegrate__implicit_8cpp_html_af8274a374be52857212962140f9b7036"><div class="ttname"><a href="integrate__implicit_8cpp.html#af8274a374be52857212962140f9b7036">state_type</a></div><div class="ttdeci">ublas::vector&lt; value_type &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00050">integrate_implicit.cpp:50</a></div></div>
+<div class="ttc" id="astructpush__back__time_html"><div class="ttname"><a href="structpush__back__time.html">push_back_time</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00072">integrate.cpp:72</a></div></div>
+<div class="ttc" id="arosenbrock4__dense__output_8hpp_html"><div class="ttname"><a href="rosenbrock4__dense__output_8hpp.html">rosenbrock4_dense_output.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a496337ccd7cfe1a4502c27643230e46f"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a496337ccd7cfe1a4502c27643230e46f">boost::numeric::odeint::detail::integrate_times</a></div><div class="ttdeci">size_t integrate_times(Stepper stepper, System system, State &amp;start_state, TimeIterator start_time, TimeIterator end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__times_8hpp_source.html#l00040">integrate_times.hpp:40</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_abff395699fa8a3126412297d53caef62"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">boost::numeric::odeint::detail::integrate_n_steps</a></div><div class="ttdeci">Time integrate_n_steps(Stepper stepper, System system, State &amp;start_state, Time start_time, Time dt, size_t num_of_steps, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__n__steps_8hpp_source.html#l00043">integrate_n_steps.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aintegrate__implicit_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="integrate__implicit_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00049">integrate_implicit.cpp:49</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="aclasssimple__stepper__methods_html"><div class="ttname"><a href="classsimple__stepper__methods.html">simple_stepper_methods</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00216">integrate_implicit.cpp:216</a></div></div>
+<div class="ttc" id="astructperform__integrate__n__steps__test_html"><div class="ttname"><a href="structperform__integrate__n__steps__test.html">perform_integrate_n_steps_test</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00188">integrate.cpp:188</a></div></div>
+<div class="ttc" id="astructperform__integrate__times__test_html"><div class="ttname"><a href="structperform__integrate__times__test.html">perform_integrate_times_test</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00152">integrate.cpp:152</a></div></div>
+<div class="ttc" id="astructperform__integrate__adaptive__test_html_ae5efa9f6b245b1266522041634967d73"><div class="ttname"><a href="structperform__integrate__adaptive__test.html#ae5efa9f6b245b1266522041634967d73">perform_integrate_adaptive_test::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00116">integrate_implicit.cpp:116</a></div></div>
+<div class="ttc" id="astructjacobi_html_a7722c1e503af4a1a47cf2fceaa160bc3"><div class="ttname"><a href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">jacobi::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, matrix_type &amp;jacobi, const value_type &amp;t, state_type &amp;dfdt) const</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00064">integrate_implicit.cpp:64</a></div></div>
+<div class="ttc" id="astiff__system_8cpp_html_abd6c5fdc1f08c03c2027eafe32658e38"><div class="ttname"><a href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; double &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="stiff__system_8cpp_source.html#l00031">stiff_system.cpp:31</a></div></div>
+<div class="ttc" id="arosenbrock4__controller_8hpp_html"><div class="ttname"><a href="rosenbrock4__controller_8hpp.html">rosenbrock4_controller.hpp</a></div></div>
+<div class="ttc" id="aintegrate__times_8hpp_html"><div class="ttname"><a href="integrate__times_8hpp.html">integrate_times.hpp</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aintegrate__const_8hpp_html"><div class="ttname"><a href="integrate__const_8hpp.html">integrate_const.hpp</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="aintegrate__n__steps_8hpp_html"><div class="ttname"><a href="integrate__n__steps_8hpp.html">integrate_n_steps.hpp</a></div></div>
+<div class="ttc" id="aclassstepper__methods_html"><div class="ttname"><a href="classstepper__methods.html">stepper_methods</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00219">integrate.cpp:219</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="astructperform__integrate__times__test_html_a4f4a485dfcaeb086a0977f0a89c6a43b"><div class="ttname"><a href="structperform__integrate__times__test.html#a4f4a485dfcaeb086a0977f0a89c6a43b">perform_integrate_times_test::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00138">integrate_implicit.cpp:138</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a52ebbdc4d88092abf455348c6d3ac708"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">boost::numeric::odeint::detail::integrate_adaptive</a></div><div class="ttdeci">size_t integrate_adaptive(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__adaptive_8hpp_source.html#l00051">integrate_adaptive.hpp:51</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructpush__back__time_html_a2ce70bbd80ea7eb465a9020b11c29cb1"><div class="ttname"><a href="structpush__back__time.html#a2ce70bbd80ea7eb465a9020b11c29cb1">push_back_time::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, double t)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00082">integrate_implicit.cpp:82</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1ublas_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1ublas.html">boost::numeric::ublas</a></div><div class="ttdef"><b>Definition:</b> <a href="ublas__wrapper_8hpp_source.html#l00227">ublas_wrapper.hpp:227</a></div></div>
+<div class="ttc" id="astructjacobi_html"><div class="ttname"><a href="structjacobi.html">jacobi</a></div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00054">implicit_euler.cpp:54</a></div></div>
+<div class="ttc" id="astructperform__integrate__adaptive__test_html"><div class="ttname"><a href="structperform__integrate__adaptive__test.html">perform_integrate_adaptive_test</a></div><div class="ttdef"><b>Definition:</b> <a href="integrate_8cpp_source.html#l00123">integrate.cpp:123</a></div></div>
+<div class="ttc" id="aintegrate__adaptive_8hpp_html"><div class="ttname"><a href="integrate__adaptive_8hpp.html">integrate_adaptive.hpp</a></div></div>
+<div class="ttc" id="astructpush__back__time_html_a994874eef51010b8ae4798994ea5c5b7"><div class="ttname"><a href="structpush__back__time.html#a994874eef51010b8ae4798994ea5c5b7">push_back_time::push_back_time</a></div><div class="ttdeci">push_back_time(std::vector&lt; double &gt; &amp;times)</div><div class="ttdef"><b>Definition:</b> <a href="integrate__implicit_8cpp_source.html#l00079">integrate_implicit.cpp:79</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

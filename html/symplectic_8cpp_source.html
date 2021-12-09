@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/numeric/symplectic.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li><li class="navelem"><a class="el" href="dir_612ab4a7ab733e09f6eaa04e13b8c200.html">numeric</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">symplectic.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="symplectic_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Boost numeric test of the symplectic steppers test file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> Copyright 2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> Copyright 2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="symplectic_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   17</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE numeric_symplectic</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>mpl = boost::mpl;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="symplectic_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   34</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="symplectic_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="symplectic_8cpp.html#aa8687ee23869733ebc5f161c4b5c5fed">   36</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double ,1 &gt; <a class="code" href="symplectic_8cpp.html#aa8687ee23869733ebc5f161c4b5c5fed">state_type</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// harmonic oscillator, analytic solution x[0] = sin( t )</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">struct </span><a class="code" href="structosc.html">osc</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structosc.html#a5df88a68af4a9dd947e3f36c1343af2b">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structosc.html#a5df88a68af4a9dd947e3f36c1343af2b">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;q , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dpdt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dpdt[0] = -q[0];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;BOOST_AUTO_TEST_SUITE( numeric_symplectic_test )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* generic test for all symplectic steppers */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structperform__symplectic__test.html">   52</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__symplectic__test.html">perform_symplectic_test</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structperform__symplectic__test.html#a3a25cb74d974c97ca58133bb5291dfb9">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__symplectic__test.html#a3a25cb74d974c97ca58133bb5291dfb9">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Stepper stepper;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> o = stepper.order()+1; <span class="comment">//order of the error is order of approximation + 1</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> q0 = {{ 0.0 }};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> p0 = {{ 1.0 }};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> q1,p1;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::pair&lt; state_type , state_type &gt;x1( q1 , p1 );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> t = 0.0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">/* do a first step with dt=0.1 to get an estimate on the prefactor of the error dx = f * dt^(order+1) */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.5;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        stepper.do_step( <a class="code" href="structosc.html">osc</a>() , std::make_pair( q0 , p0 ) , t , x1 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> f = 2.0 * <a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>( sin(<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>) - x1.first[0] ) / <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a>( <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , o );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::cout &lt;&lt; o &lt;&lt; <span class="stringliteral">&quot; , &quot;</span> &lt;&lt; f &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">/* as long as we have errors above machine precision */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">while</span>( f*<a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a>( <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , o ) &gt; 1E-16 )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            stepper.do_step( <a class="code" href="structosc.html">osc</a>() , std::make_pair( q0 , p0 ) , t , x1 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Testing dt=&quot;</span> &lt;&lt; <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            BOOST_CHECK_SMALL( <a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>( sin(<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>) - x1.first[0] ) , f*<a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a>( <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , o ) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> *= 0.5;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">typedef</span> mpl::vector&lt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">symplectic_euler&lt; state_type &gt;</a> ,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">symplectic_rkn_sb3a_mclachlan&lt; state_type &gt;</a></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="symplectic_8cpp.html#a695f095d3d07d45df6df72beac638161">   87</a></span>&#160;    &gt; <a class="code" href="symplectic_8cpp.html#a695f095d3d07d45df6df72beac638161">symplectic_steppers</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="symplectic_8cpp.html#a7037ade80e9a23ae9a03b450e7710d19">   89</a></span>&#160;<a class="code" href="symplectic_8cpp.html#a7037ade80e9a23ae9a03b450e7710d19">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( symplectic_test , Stepper, <a class="code" href="symplectic_8cpp.html#a695f095d3d07d45df6df72beac638161">symplectic_steppers</a> )</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="structperform__symplectic__test.html">perform_symplectic_test&lt; Stepper &gt;</a> tester;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    tester();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a></div><div class="ttdoc">Implement of the symmetric B3A method of Runge-Kutta-Nystroem method of sixth order.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00093">symplectic_rkn_sb3a_mclachlan.hpp:93</a></div></div>
+<div class="ttc" id="astructosc_html_a5df88a68af4a9dd947e3f36c1343af2b"><div class="ttname"><a href="structosc.html#a5df88a68af4a9dd947e3f36c1343af2b">osc::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;q, state_type &amp;dpdt) const</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00041">symplectic.cpp:41</a></div></div>
+<div class="ttc" id="asymplectic_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="symplectic_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00034">symplectic.cpp:34</a></div></div>
+<div class="ttc" id="astructperform__symplectic__test_html_a3a25cb74d974c97ca58133bb5291dfb9"><div class="ttname"><a href="structperform__symplectic__test.html#a3a25cb74d974c97ca58133bb5291dfb9">perform_symplectic_test::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00054">symplectic.cpp:54</a></div></div>
+<div class="ttc" id="anamespacestd_html_ac08a71c2d905847e8fb4640dd396f60b"><div class="ttname"><a href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a></div><div class="ttdeci">__float128 pow(__float128 x, __float128 y)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00046">black_hole.cpp:46</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astructperform__symplectic__test_html"><div class="ttname"><a href="structperform__symplectic__test.html">perform_symplectic_test</a></div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00052">symplectic.cpp:52</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">boost::numeric::odeint::symplectic_euler</a></div><div class="ttdoc">Implementation of the symplectic Euler method.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00074">symplectic_euler.hpp:74</a></div></div>
+<div class="ttc" id="asymplectic_8cpp_html_a695f095d3d07d45df6df72beac638161"><div class="ttname"><a href="symplectic_8cpp.html#a695f095d3d07d45df6df72beac638161">symplectic_steppers</a></div><div class="ttdeci">mpl::vector&lt; symplectic_euler&lt; state_type &gt;, symplectic_rkn_sb3a_mclachlan&lt; state_type &gt; &gt; symplectic_steppers</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00087">symplectic.cpp:87</a></div></div>
+<div class="ttc" id="asymplectic_8cpp_html_a7037ade80e9a23ae9a03b450e7710d19"><div class="ttname"><a href="symplectic_8cpp.html#a7037ade80e9a23ae9a03b450e7710d19">BOOST_AUTO_TEST_CASE_TEMPLATE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE_TEMPLATE(symplectic_test, Stepper, symplectic_steppers)</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00089">symplectic.cpp:89</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5a5fd36a4f3066cb68f5e4081bd19ef4"><div class="ttname"><a href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a></div><div class="ttdeci">__float128 abs(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00036">black_hole.cpp:36</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="astructosc_html"><div class="ttname"><a href="structosc.html">osc</a></div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta_8cpp_source.html#l00039">runge_kutta.cpp:39</a></div></div>
+<div class="ttc" id="asymplectic_8cpp_html_aa8687ee23869733ebc5f161c4b5c5fed"><div class="ttname"><a href="symplectic_8cpp.html#aa8687ee23869733ebc5f161c4b5c5fed">state_type</a></div><div class="ttdeci">boost::array&lt; double,1 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic_8cpp_source.html#l00036">symplectic.cpp:36</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

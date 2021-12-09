@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/runge_kutta_error_concepts.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">runge_kutta_error_concepts.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/numeric/odeint/config.hpp</a>&gt;</code><br />
+<code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/ref.hpp&gt;</code><br />
+<code>#include &lt;boost/bind.hpp&gt;</code><br />
+<code>#include &lt;boost/utility.hpp&gt;</code><br />
+<code>#include &lt;boost/type_traits/add_reference.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/vector.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/for_each.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/insert_range.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/end.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/copy.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/placeholders.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/inserter.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__cash__karp54__classic_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54_classic.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__cash__karp54_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__dopri5_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_dopri5.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__fehlberg78_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_fehlberg78.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="prepare__stepper__testing_8hpp_source.html">prepare_stepper_testing.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dummy__odes_8hpp_source.html">dummy_odes.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+runge_kutta_error_concepts.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="runge__kutta__error__concepts_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2runge__kutta__error__concepts_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2runge__kutta__error__concepts_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2runge__kutta__error__concepts_8cpp">
+<area shape="rect" title=" " alt="" coords="1939,5,2174,76"/>
+<area shape="rect" title=" " alt="" coords="3150,637,3280,663"/>
+<area shape="rect" title=" " alt="" coords="3837,637,3900,663"/>
+<area shape="rect" title=" " alt="" coords="94,139,157,165"/>
+<area shape="rect" title=" " alt="" coords="182,139,262,165"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="2703,540,2863,581"/>
+<area shape="rect" title=" " alt="" coords="448,451,571,477"/>
+<area shape="rect" title=" " alt="" coords="918,139,1094,165"/>
+<area shape="rect" title=" " alt="" coords="2426,547,2532,574"/>
+<area shape="rect" title=" " alt="" coords="2914,547,3033,574"/>
+<area shape="rect" title=" " alt="" coords="1645,139,1772,165"/>
+<area shape="rect" title=" " alt="" coords="1796,131,1956,173"/>
+<area shape="rect" title=" " alt="" coords="3026,347,3186,373"/>
+<area shape="rect" title=" " alt="" coords="2032,139,2206,165"/>
+<area shape="rect" title=" " alt="" coords="2231,139,2431,165"/>
+<area shape="rect" title=" " alt="" coords="432,637,574,663"/>
+<area shape="rect" title=" " alt="" coords="2506,139,2654,165"/>
+<area shape="rect" title=" " alt="" coords="847,637,1050,663"/>
+<area shape="rect" title=" " alt="" coords="2730,139,2900,165"/>
+<area shape="rect" href="runge__kutta__cash__karp54__classic_8hpp.html" title=" " alt="" coords="1710,228,1901,284"/>
+<area shape="rect" href="runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="1118,124,1278,180"/>
+<area shape="rect" href="runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1926,228,2086,284"/>
+<area shape="rect" href="runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="564,124,724,180"/>
+<area shape="rect" href="prepare__stepper__testing_8hpp.html" title=" " alt="" coords="3115,243,3323,269"/>
+<area shape="rect" href="dummy__odes_8hpp.html" title=" " alt="" coords="3682,243,3820,269"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="2690,443,2850,485"/>
+<area shape="rect" href="explicit__error__stepper__base_8hpp.html" title=" " alt="" coords="1958,332,2141,388"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1302,443,1474,485"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="1210,540,1374,581"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="1118,443,1278,485"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="2434,443,2665,485"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="702,339,902,381"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="1078,339,1307,381"/>
+<area shape="rect" title=" " alt="" coords="1940,443,2088,485"/>
+<area shape="rect" title=" " alt="" coords="1642,629,1788,671"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="2214,443,2410,485"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="1752,436,1915,492"/>
+<area shape="rect" title=" " alt="" coords="869,451,996,477"/>
+<area shape="rect" title=" " alt="" coords="687,451,844,477"/>
+<area shape="rect" title=" " alt="" coords="942,235,1109,277"/>
+<area shape="rect" title=" " alt="" coords="706,235,918,277"/>
+<area shape="rect" href="explicit__error__generic__rk_8hpp.html" title=" " alt="" coords="1235,228,1400,284"/>
+<area shape="rect" href="explicit__error__stepper__fsal__base_8hpp.html" title=" " alt="" coords="2367,332,2580,388"/>
+<area shape="rect" href="same__instance_8hpp.html" title=" " alt="" coords="2165,339,2342,381"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="398,228,581,284"/>
+<area shape="rect" title=" " alt="" coords="3210,347,3406,373"/>
+<area shape="rect" href="vector__space__algebra_8hpp.html" title=" " alt="" coords="3431,332,3596,388"/>
+<area shape="rect" href="array__algebra_8hpp.html" title=" " alt="" coords="1331,339,1528,381"/>
+<area shape="rect" href="vector__space__1d_8hpp.html" title=" " alt="" coords="3672,347,3830,373"/>
+<area shape="rect" title=" " alt="" coords="3906,339,4060,381"/>
+</map>
+</div>
+</div>
+<p><a href="runge__kutta__error__concepts_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__error__stepper__test.html">perform_error_stepper_test&lt; Stepper, State &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__error__stepper__test_3_01_stepper_00_01vector__type_01_4.html">perform_error_stepper_test&lt; Stepper, vector_type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__error__stepper__test_3_01_stepper_00_01vector__space__type_01_4.html">perform_error_stepper_test&lt; Stepper, vector_space_type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__error__stepper__test_3_01_stepper_00_01array__type_01_4.html">perform_error_stepper_test&lt; Stepper, array_type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classerror__stepper__methods.html">error_stepper_methods&lt; State &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_runge_kutta_error_concepts</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ae2648390575262e312653aba3992f621"><td class="memItemLeft" align="right" valign="top">typedef mpl::copy&lt; <a class="el" href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a>, mpl::inserter&lt; mpl::vector0&lt;&gt;, mpl::insert_range&lt; mpl::_1, mpl::end&lt; mpl::_1 &gt;, <a class="el" href="classerror__stepper__methods.html">error_stepper_methods</a>&lt; mpl::_2 &gt; &gt; &gt; &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#ae2648390575262e312653aba3992f621">all_error_stepper_methods</a></td></tr>
+<tr class="separator:ae2648390575262e312653aba3992f621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a6d9bef5fef0ebfc531999a9066b6d4e4"><td class="memTemplParams" colspan="2">template&lt;class Stepper , class System &gt; </td></tr>
+<tr class="memitem:a6d9bef5fef0ebfc531999a9066b6d4e4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#a6d9bef5fef0ebfc531999a9066b6d4e4">check_error_stepper_concept</a> (Stepper &amp;stepper, System system, typename <a class="el" href="lorenz_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">Stepper::state_type</a> &amp;x, typename <a class="el" href="lorenz_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">Stepper::state_type</a> &amp;xerr)</td></tr>
+<tr class="separator:a6d9bef5fef0ebfc531999a9066b6d4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119ac2da5c476f92b91974416795792f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#a119ac2da5c476f92b91974416795792f">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (error_stepper_test, Stepper, <a class="el" href="runge__kutta__error__concepts_8cpp.html#ae2648390575262e312653aba3992f621">all_error_stepper_methods</a>)</td></tr>
+<tr class="separator:a119ac2da5c476f92b91974416795792f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a994f4223bf54775b30127f1a5930dede"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> = 2.4</td></tr>
+<tr class="separator:a994f4223bf54775b30127f1a5930dede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8c24629d725b9ef8c238cf27c9b158"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="runge__kutta__error__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> = 1.0e-14</td></tr>
+<tr class="separator:a3d8c24629d725b9ef8c238cf27c9b158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_runge_kutta_error_concepts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ae2648390575262e312653aba3992f621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2648390575262e312653aba3992f621">&#9670;&nbsp;</a></span>all_error_stepper_methods</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef mpl::copy&lt; <a class="el" href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a> , mpl::inserter &lt; mpl::vector0&lt;&gt; , mpl::insert_range &lt; mpl::_1 , mpl::end&lt; mpl::_1 &gt; , <a class="el" href="classerror__stepper__methods.html">error_stepper_methods</a>&lt; mpl::_2 &gt; &gt; &gt; &gt;::type <a class="el" href="runge__kutta__error__concepts_8cpp.html#ae2648390575262e312653aba3992f621">all_error_stepper_methods</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a119ac2da5c476f92b91974416795792f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119ac2da5c476f92b91974416795792f">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">error_stepper_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Stepper&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="runge__kutta__error__concepts_8cpp.html#ae2648390575262e312653aba3992f621">all_error_stepper_methods</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00154">154</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6d9bef5fef0ebfc531999a9066b6d4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9bef5fef0ebfc531999a9066b6d4e4">&#9670;&nbsp;</a></span>check_error_stepper_concept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper , class System &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_error_stepper_concept </td>
+          <td>(</td>
+          <td class="paramtype">Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="lorenz_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">Stepper::state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="lorenz_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">Stepper::state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>xerr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00068">68</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="runge__kutta__error__concepts_8cpp_a6d9bef5fef0ebfc531999a9066b6d4e4_icgraph.png" border="0" usemap="#runge__kutta__error__concepts_8cpp_a6d9bef5fef0ebfc531999a9066b6d4e4_icgraph" alt=""/></div>
+<map name="runge__kutta__error__concepts_8cpp_a6d9bef5fef0ebfc531999a9066b6d4e4_icgraph" id="runge__kutta__error__concepts_8cpp_a6d9bef5fef0ebfc531999a9066b6d4e4_icgraph">
+<area shape="rect" title=" " alt="" coords="244,93,399,134"/>
+<area shape="rect" href="structperform__error__stepper__test_3_01_stepper_00_01vector__type_01_4.html#a4d74ee377775ec9276e78dedfa838457" title=" " alt="" coords="17,5,185,61"/>
+<area shape="rect" href="structperform__error__stepper__test_3_01_stepper_00_01vector__space__type_01_4.html#aa2d1881777eb165677e77bb6a5cb7caa" title=" " alt="" coords="5,85,196,141"/>
+<area shape="rect" href="structperform__error__stepper__test_3_01_stepper_00_01array__type_01_4.html#a9e4f2da8a4749f6893c033726c1b0bc5" title=" " alt="" coords="17,165,185,221"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a3d8c24629d725b9ef8c238cf27c9b158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8c24629d725b9ef8c238cf27c9b158">&#9670;&nbsp;</a></span>eps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double eps = 1.0e-14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a994f4223bf54775b30127f1a5930dede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a994f4223bf54775b30127f1a5930dede">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double result = 2.4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html">runge_kutta_error_concepts.cpp</a> 第 <a class="el" href="runge__kutta__error__concepts_8cpp_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

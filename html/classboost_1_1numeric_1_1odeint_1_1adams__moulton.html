@@ -1,0 +1,969 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::adams_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1adams__moulton-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::adams_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a>&gt;</code></p>
+<div class="dynheader">
+boost::numeric::odeint::adams_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1adams__moulton__coll__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1adams__moulton_3_01_steps_00_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1adams__moulton_3_01_steps_00_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" id="boost_1_1numeric_1_1odeint_1_1adams__moulton_3_01_steps_00_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,109,232,180"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html" title=" " alt="" coords="35,5,203,47"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:adc007207215502c0346f39f144aa6a47"><td class="memItemLeft" align="right" valign="top">typedef State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#adc007207215502c0346f39f144aa6a47">state_type</a></td></tr>
+<tr class="separator:adc007207215502c0346f39f144aa6a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b776c7d159b7ca9014acf11fb0e7fc"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#adc007207215502c0346f39f144aa6a47">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a49b776c7d159b7ca9014acf11fb0e7fc">wrapped_state_type</a></td></tr>
+<tr class="separator:a49b776c7d159b7ca9014acf11fb0e7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31257679ab07dd57c1dabfc2954d9c3e"><td class="memItemLeft" align="right" valign="top">typedef Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a31257679ab07dd57c1dabfc2954d9c3e">value_type</a></td></tr>
+<tr class="separator:a31257679ab07dd57c1dabfc2954d9c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dedc3a4f49db930a284cd38a5248a23"><td class="memItemLeft" align="right" valign="top">typedef Deriv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a8dedc3a4f49db930a284cd38a5248a23">deriv_type</a></td></tr>
+<tr class="separator:a8dedc3a4f49db930a284cd38a5248a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c952e840f94f5f23672758568a7045"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a8dedc3a4f49db930a284cd38a5248a23">deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a23c952e840f94f5f23672758568a7045">wrapped_deriv_type</a></td></tr>
+<tr class="separator:a23c952e840f94f5f23672758568a7045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff977ba31cc3feea5f3339f9b86ee7b"><td class="memItemLeft" align="right" valign="top">typedef Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a></td></tr>
+<tr class="separator:acff977ba31cc3feea5f3339f9b86ee7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5991e2ef43086b275a5a8ac19496188"><td class="memItemLeft" align="right" valign="top">typedef Algebra&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a></td></tr>
+<tr class="separator:aa5991e2ef43086b275a5a8ac19496188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51e2d56aa7c9ebfb5e627c69962f4f8"><td class="memItemLeft" align="right" valign="top">typedef Operations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae51e2d56aa7c9ebfb5e627c69962f4f8">operations_type</a></td></tr>
+<tr class="separator:ae51e2d56aa7c9ebfb5e627c69962f4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cd817196a216aa193569bd63630a7f"><td class="memItemLeft" align="right" valign="top">typedef Resizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#af3cd817196a216aa193569bd63630a7f">resizer_type</a></td></tr>
+<tr class="separator:af3cd817196a216aa193569bd63630a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2c762d617fa3ad5eca631cd0fbf357"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a5b2c762d617fa3ad5eca631cd0fbf357">stepper_category</a></td></tr>
+<tr class="separator:a5b2c762d617fa3ad5eca631cd0fbf357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af838e53998a43318ce536d2a9da169ca"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#af838e53998a43318ce536d2a9da169ca">stepper_type</a></td></tr>
+<tr class="separator:af838e53998a43318ce536d2a9da169ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae253647addf1f005111dfd21bf938f3b"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a></td></tr>
+<tr class="separator:ae253647addf1f005111dfd21bf938f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca1b671534033a8535d853dddfd346d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html">detail::rotating_buffer</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a23c952e840f94f5f23672758568a7045">wrapped_deriv_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a992469a1d8a988c577bac5404808cbb7">steps</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a2ca1b671534033a8535d853dddfd346d">step_storage_type</a></td></tr>
+<tr class="separator:a2ca1b671534033a8535d853dddfd346d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8fa5bb23ea94e68cd6f9851a251b7ebb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a8fa5bb23ea94e68cd6f9851a251b7ebb">adams_moulton</a> ()</td></tr>
+<tr class="separator:a8fa5bb23ea94e68cd6f9851a251b7ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3770d04610fd6928b921065221846f41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a3770d04610fd6928b921065221846f41">adams_moulton</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a9fb92ebcca8285766ee74f15b57196aa">algebra</a>)</td></tr>
+<tr class="separator:a3770d04610fd6928b921065221846f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581656e65b41ccfe9a8ddfb4be3d4b89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a581656e65b41ccfe9a8ddfb4be3d4b89">operator=</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a> &amp;stepper)</td></tr>
+<tr class="separator:a581656e65b41ccfe9a8ddfb4be3d4b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41c47c6518fc5a01aef4bfb0e26cb59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ac41c47c6518fc5a01aef4bfb0e26cb59">order</a> (void) const</td></tr>
+<tr class="separator:ac41c47c6518fc5a01aef4bfb0e26cb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370b1bfc1316b7b3e14ed5f56b6cd784"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut , class ABBuf &gt; </td></tr>
+<tr class="memitem:a370b1bfc1316b7b3e14ed5f56b6cd784"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a370b1bfc1316b7b3e14ed5f56b6cd784">do_step</a> (System system, StateInOut &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, const ABBuf &amp;buf)</td></tr>
+<tr class="separator:a370b1bfc1316b7b3e14ed5f56b6cd784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c8f96805f1d92452f190ca1c93c5e81"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut , class ABBuf &gt; </td></tr>
+<tr class="memitem:a3c8f96805f1d92452f190ca1c93c5e81"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a3c8f96805f1d92452f190ca1c93c5e81">do_step</a> (System system, const StateInOut &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, const ABBuf &amp;buf)</td></tr>
+<tr class="separator:a3c8f96805f1d92452f190ca1c93c5e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aeb536b5c95816107a36080ad7f8c5f"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class StateOut , class ABBuf &gt; </td></tr>
+<tr class="memitem:a7aeb536b5c95816107a36080ad7f8c5f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a7aeb536b5c95816107a36080ad7f8c5f">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, const ABBuf &amp;buf)</td></tr>
+<tr class="separator:a7aeb536b5c95816107a36080ad7f8c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6a8cf4b409d72e590174e5b6a21129"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class StateOut , class ABBuf &gt; </td></tr>
+<tr class="memitem:a3c6a8cf4b409d72e590174e5b6a21129"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a3c6a8cf4b409d72e590174e5b6a21129">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> t, const StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, const ABBuf &amp;buf)</td></tr>
+<tr class="separator:a3c6a8cf4b409d72e590174e5b6a21129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28aab1ae62684d2c4c213b0086bc3353"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:a28aab1ae62684d2c4c213b0086bc3353"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a28aab1ae62684d2c4c213b0086bc3353">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="separator:a28aab1ae62684d2c4c213b0086bc3353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb92ebcca8285766ee74f15b57196aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a9fb92ebcca8285766ee74f15b57196aa">algebra</a> ()</td></tr>
+<tr class="separator:a9fb92ebcca8285766ee74f15b57196aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c2f413387aab44828b571425b4781a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ac7c2f413387aab44828b571425b4781a">algebra</a> () const</td></tr>
+<tr class="separator:ac7c2f413387aab44828b571425b4781a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:a992469a1d8a988c577bac5404808cbb7"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a992469a1d8a988c577bac5404808cbb7">steps</a> = Steps</td></tr>
+<tr class="separator:a992469a1d8a988c577bac5404808cbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a917b50d89667a6c7e2f6b86475a6d4cf"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a917b50d89667a6c7e2f6b86475a6d4cf">order_value</a> = <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a992469a1d8a988c577bac5404808cbb7">steps</a> + 1</td></tr>
+<tr class="separator:a917b50d89667a6c7e2f6b86475a6d4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ac313846ec60dca90c3ac8699726d0df9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ac313846ec60dca90c3ac8699726d0df9">m_algebra_instance</a></td></tr>
+<tr class="separator:ac313846ec60dca90c3ac8699726d0df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55215d44eaf7d2248cb35d7fe58ceb70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a55215d44eaf7d2248cb35d7fe58ceb70">m_algebra</a></td></tr>
+<tr class="separator:a55215d44eaf7d2248cb35d7fe58ceb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;size_t Steps, class State, class Value = double, class Deriv = State, class Time = Value, class Algebra = range_algebra, class Operations = default_operations, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::adams_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00062">62</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="aa5991e2ef43086b275a5a8ac19496188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5991e2ef43086b275a5a8ac19496188">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Algebra <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8dedc3a4f49db930a284cd38a5248a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dedc3a4f49db930a284cd38a5248a23">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Deriv <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a8dedc3a4f49db930a284cd38a5248a23">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae51e2d56aa7c9ebfb5e627c69962f4f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51e2d56aa7c9ebfb5e627c69962f4f8">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Operations <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae51e2d56aa7c9ebfb5e627c69962f4f8">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae253647addf1f005111dfd21bf938f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae253647addf1f005111dfd21bf938f3b">&#9670;&nbsp;</a></span>order_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af3cd817196a216aa193569bd63630a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3cd817196a216aa193569bd63630a7f">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Resizer <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#af3cd817196a216aa193569bd63630a7f">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adc007207215502c0346f39f144aa6a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc007207215502c0346f39f144aa6a47">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef State <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#adc007207215502c0346f39f144aa6a47">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2ca1b671534033a8535d853dddfd346d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca1b671534033a8535d853dddfd346d">&#9670;&nbsp;</a></span>step_storage_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html">detail::rotating_buffer</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a23c952e840f94f5f23672758568a7045">wrapped_deriv_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a992469a1d8a988c577bac5404808cbb7">steps</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a2ca1b671534033a8535d853dddfd346d">step_storage_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5b2c762d617fa3ad5eca631cd0fbf357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2c762d617fa3ad5eca631cd0fbf357">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a5b2c762d617fa3ad5eca631cd0fbf357">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af838e53998a43318ce536d2a9da169ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af838e53998a43318ce536d2a9da169ca">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&lt; Steps , State , Value , Deriv , Time , Algebra , Operations , Resizer &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#af838e53998a43318ce536d2a9da169ca">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acff977ba31cc3feea5f3339f9b86ee7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff977ba31cc3feea5f3339f9b86ee7b">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Time <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a31257679ab07dd57c1dabfc2954d9c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31257679ab07dd57c1dabfc2954d9c3e">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Value <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a31257679ab07dd57c1dabfc2954d9c3e">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a23c952e840f94f5f23672758568a7045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c952e840f94f5f23672758568a7045">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a8dedc3a4f49db930a284cd38a5248a23">deriv_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a23c952e840f94f5f23672758568a7045">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a49b776c7d159b7ca9014acf11fb0e7fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b776c7d159b7ca9014acf11fb0e7fc">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#adc007207215502c0346f39f144aa6a47">state_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a49b776c7d159b7ca9014acf11fb0e7fc">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8fa5bb23ea94e68cd6f9851a251b7ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fa5bb23ea94e68cd6f9851a251b7ebb">&#9670;&nbsp;</a></span>adams_moulton() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3770d04610fd6928b921065221846f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3770d04610fd6928b921065221846f41">&#9670;&nbsp;</a></span>adams_moulton() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>algebra</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00094">94</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a28aab1ae62684d2c4c213b0086bc3353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28aab1ae62684d2c4c213b0086bc3353">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00155">155</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1adams__moulton_a28aab1ae62684d2c4c213b0086bc3353_icgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1adams__moulton_a28aab1ae62684d2c4c213b0086bc3353_icgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1adams__moulton_a28aab1ae62684d2c4c213b0086bc3353_icgraph" id="classboost_1_1numeric_1_1odeint_1_1adams__moulton_a28aab1ae62684d2c4c213b0086bc3353_icgraph">
+<area shape="rect" title=" " alt="" coords="257,13,473,54"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a21fda6e5b64514475d8da3f2f6179979" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="5,5,209,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9fb92ebcca8285766ee74f15b57196aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb92ebcca8285766ee74f15b57196aa">&#9670;&nbsp;</a></span>algebra() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::algebra </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac7c2f413387aab44828b571425b4781a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c2f413387aab44828b571425b4781a">&#9670;&nbsp;</a></span>algebra() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::algebra </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3c6a8cf4b409d72e590174e5b6a21129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6a8cf4b409d72e590174e5b6a21129">&#9670;&nbsp;</a></span>do_step() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateOut , class ABBuf &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ABBuf &amp;&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00144">144</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7aeb536b5c95816107a36080ad7f8c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aeb536b5c95816107a36080ad7f8c5f">&#9670;&nbsp;</a></span>do_step() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateOut , class ABBuf &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ABBuf &amp;&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00135">135</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3c8f96805f1d92452f190ca1c93c5e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c8f96805f1d92452f190ca1c93c5e81">&#9670;&nbsp;</a></span>do_step() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut , class ABBuf &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ABBuf &amp;&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a370b1bfc1316b7b3e14ed5f56b6cd784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370b1bfc1316b7b3e14ed5f56b6cd784">&#9670;&nbsp;</a></span>do_step() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut , class ABBuf &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#acff977ba31cc3feea5f3339f9b86ee7b">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ABBuf &amp;&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00116">116</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a581656e65b41ccfe9a8ddfb4be3d4b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a581656e65b41ccfe9a8ddfb4be3d4b89">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00099">99</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac41c47c6518fc5a01aef4bfb0e26cb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac41c47c6518fc5a01aef4bfb0e26cb59">&#9670;&nbsp;</a></span>order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::order </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00107">107</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a55215d44eaf7d2248cb35d7fe58ceb70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55215d44eaf7d2248cb35d7fe58ceb70">&#9670;&nbsp;</a></span>m_algebra</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::m_algebra</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00183">183</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac313846ec60dca90c3ac8699726d0df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac313846ec60dca90c3ac8699726d0df9">&#9670;&nbsp;</a></span>m_algebra_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#aa5991e2ef43086b275a5a8ac19496188">algebra_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::m_algebra_instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00182">182</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a917b50d89667a6c7e2f6b86475a6d4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917b50d89667a6c7e2f6b86475a6d4cf">&#9670;&nbsp;</a></span>order_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#ae253647addf1f005111dfd21bf938f3b">order_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::order_value = <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a992469a1d8a988c577bac5404808cbb7">steps</a> + 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a992469a1d8a988c577bac5404808cbb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992469a1d8a988c577bac5404808cbb7">&#9670;&nbsp;</a></span>steps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">boost::numeric::odeint::adams_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::steps = Steps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a> 第 <a class="el" href="adams__moulton_8hpp_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="adams__moulton_8hpp_source.html">adams_moulton.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

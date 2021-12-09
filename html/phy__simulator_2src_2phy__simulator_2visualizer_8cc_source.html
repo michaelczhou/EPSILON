@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/src/phy_simulator/visualizer.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b0a9e9b8858f16122c992a3415e59f93.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cee39ace1e523efb0e63d981259869.html">phy_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">visualizer.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="phy__simulator_2src_2phy__simulator_2visualizer_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h.html">phy_simulator/visualizer.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;tf/tf.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;tf/transform_broadcaster.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_visualizer.html#a883b1b5eb01304e9d7fba5a85707ecd7">    7</a></span>&#160;<a class="code" href="classphy__simulator_1_1_visualizer.html#ab476696001f0b65e2fcdf6053422aed5">Visualizer::Visualizer</a>(ros::NodeHandle nh) : nh_(nh) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  vehicle_set_pub_ =</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;      nh_.advertise&lt;visualization_msgs::MarkerArray&gt;(<span class="stringliteral">&quot;vis/vehicle_set_vis&quot;</span>, 10);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  lane_net_pub_ =</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      nh_.advertise&lt;visualization_msgs::MarkerArray&gt;(<span class="stringliteral">&quot;vis/lane_net_vis&quot;</span>, 10);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  obstacle_set_pub_ = nh_.advertise&lt;visualization_msgs::MarkerArray&gt;(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="stringliteral">&quot;vis/obstacle_set_vis&quot;</span>, 10);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_visualizer.html#ab8c7672a12d1604a5b3f2d22af612a54">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_visualizer.html#ab8c7672a12d1604a5b3f2d22af612a54">Visualizer::VisualizeData</a>() {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">auto</span> time_stamp = ros::Time::now();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">VisualizeDataWithStamp</a>(time_stamp);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// SendTfWithStamp(time_stamp);</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">Visualizer::VisualizeDataWithStamp</a>(<span class="keyword">const</span> ros::Time &amp;stamp) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  VisualizeVehicleSet(stamp, p_phy_sim_-&gt;<a class="code" href="classphy__simulator_1_1_phy_simulation.html#ad4d73c5fadbb44a18d8f4c296ad18fe3">vehicle_set</a>());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  VisualizeLaneNet(stamp, p_phy_sim_-&gt;<a class="code" href="classphy__simulator_1_1_phy_simulation.html#ad33b8f354e0281ff5fa98493e1280246">lane_net</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  VisualizeObstacleSet(stamp, p_phy_sim_-&gt;<a class="code" href="classphy__simulator_1_1_phy_simulation.html#a98980b84a0e2e0dba838bc33a5a9d09a">obstacle_set</a>());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// void Visualizer::SendTfWithStamp(const ros::Time &amp;stamp) {</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   auto vehicle_set = p_phy_sim_-&gt;vehicle_set();</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   for (auto iter = vehicle_set.vehicles.begin();</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//        iter != vehicle_set.vehicles.end(); ++iter) {</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     static tf::TransformBroadcaster tf_broadcaster;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     Vec3f state = iter-&gt;second.Ret3DofState();</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//     geometry_msgs::Pose pose;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     common::VisualizationUtil::GetRosPoseFrom3DofState(state, &amp;pose);</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     std::string tf_name = std::string(&quot;body_&quot;) + std::to_string(iter-&gt;first);</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     tf_broadcaster.sendTransform(tf::StampedTransform(</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//         tf::Transform(</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//             tf::Quaternion(pose.orientation.x, pose.orientation.y,</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//                            pose.orientation.z, pose.orientation.w),</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//             tf::Vector3(pose.position.x, pose.position.y, pose.position.z)),</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//         stamp, &quot;map&quot;, tf_name));</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   }</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> Visualizer::VisualizeVehicleSet(<span class="keyword">const</span> ros::Time &amp;stamp,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                     <span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;vehicle_set) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  visualization_msgs::MarkerArray vehicle_marker;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a> color_obb(1.0, 0.8, 0.8, 0.8);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a> color_vel_vec(1.0, 1.0, 0.0, 0.0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a> color_steer(1.0, 1.0, 1.0, 1.0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = vehicle_set.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.begin();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;       iter != vehicle_set.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.end(); ++iter) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcommon_1_1_visualization_util.html#a2d60f73eea1b1239ab3527a792a42a08">common::VisualizationUtil::GetRosMarkerArrayUsingVehicle</a>(</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        iter-&gt;second, <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a>(1, 1, 0, 0), color_vel_vec, color_steer,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        7 * iter-&gt;first, &amp;vehicle_marker);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">//   SendTfWithStamp(stamp);</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classcommon_1_1_visualization_util.html#ad7f9d6b08d0f9f27f0479d4ac1a6d5c9">common::VisualizationUtil::FillStampInMarkerArray</a>(stamp, &amp;vehicle_marker);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  vehicle_set_pub_.publish(vehicle_marker);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> Visualizer::VisualizeLaneNet(<span class="keyword">const</span> ros::Time &amp;stamp,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                  <span class="keyword">const</span> <a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a> &amp;lane_net) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  visualization_msgs::MarkerArray lane_net_marker;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">int</span> id_cnt = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = lane_net.<a class="code" href="structcommon_1_1_lane_net.html#a014000de2ae1a3076cbbde361b013aba">lane_set</a>.begin(); iter != lane_net.<a class="code" href="structcommon_1_1_lane_net.html#a014000de2ae1a3076cbbde361b013aba">lane_set</a>.end();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;       ++iter) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    visualization_msgs::Marker lane_marker;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// common::ColorARGB(1.0, 0.0, 1.0, 1.0)</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classcommon_1_1_visualization_util.html#a3b05f020bed154317d0b2200621849f8">common::VisualizationUtil::GetRosMarkerLineStripUsing2DofVec</a>(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        iter-&gt;second.lane_points, <a class="code" href="namespacecommon.html#a62bc68d7c53680254c33593e665a4b3b">common::cmap</a>.at(<span class="stringliteral">&quot;sky blue&quot;</span>),</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.1, 0.1, 0.1), iter-&gt;second.id, &amp;lane_marker);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    lane_marker.header.stamp = stamp;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    lane_marker.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    lane_marker.id = id_cnt++;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    lane_net_marker.markers.push_back(lane_marker);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Visualize the start and end point</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    visualization_msgs::Marker start_point_marker, end_point_marker,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        lane_id_text_marker;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      start_point_marker.header.stamp = stamp;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      start_point_marker.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a> pt = *(iter-&gt;second.lane_points.begin());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="classcommon_1_1_visualization_util.html#a11789351a94a13bc9f88fccbda4e5b4b">common::VisualizationUtil::GetRosMarkerSphereUsingPoint</a>(</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(pt(0), pt(1), 0.0), <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a>(1.0, 0.2, 0.6, 1.0),</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.5, 0.5, 0.5), id_cnt++, &amp;start_point_marker);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      lane_id_text_marker.header.stamp = stamp;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      lane_id_text_marker.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="classcommon_1_1_visualization_util.html#aa3dbba8544c180b46be93d5e62b9ac10">common::VisualizationUtil::GetRosMarkerTextUsingPositionAndString</a>(</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(pt(0), pt(1), 0.5), <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(iter-&gt;second.id),</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;          <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a>(1.0, 0.0, 0.0, 1.0), <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.6, 0.6, 0.6), id_cnt++,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          &amp;lane_id_text_marker);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      end_point_marker.header.stamp = stamp;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      end_point_marker.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a> pt = *(iter-&gt;second.lane_points.rbegin());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="classcommon_1_1_visualization_util.html#a11789351a94a13bc9f88fccbda4e5b4b">common::VisualizationUtil::GetRosMarkerSphereUsingPoint</a>(</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(pt(0), pt(1), 0.0), <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a>(1.0, 0.2, 0.6, 1.0),</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.5, 0.5, 0.5), id_cnt++, &amp;end_point_marker);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    lane_net_marker.markers.push_back(start_point_marker);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    lane_net_marker.markers.push_back(end_point_marker);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    lane_net_marker.markers.push_back(lane_id_text_marker);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  lane_net_pub_.publish(lane_net_marker);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> Visualizer::VisualizeObstacleSet(<span class="keyword">const</span> ros::Time &amp;stamp,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a> &amp;Obstacle_set) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  visualization_msgs::MarkerArray Obstacles_marker;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="classcommon_1_1_visualization_util.html#a0427904fc69f1d154962e514eb6fe4ed">common::VisualizationUtil::GetRosMarkerUsingObstacleSet</a>(Obstacle_set,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                          &amp;Obstacles_marker);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="classcommon_1_1_visualization_util.html#ad7f9d6b08d0f9f27f0479d4ac1a6d5c9">common::VisualizationUtil::FillStampInMarkerArray</a>(stamp, &amp;Obstacles_marker);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  obstacle_set_pub_.publish(Obstacles_marker);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}  <span class="comment">// namespace phy_simulator</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l22620">json.hpp:22620</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html_ab8c7672a12d1604a5b3f2d22af612a54"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html#ab8c7672a12d1604a5b3f2d22af612a54">phy_simulator::Visualizer::VisualizeData</a></div><div class="ttdeci">void VisualizeData()</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2visualizer_8cc_source.html#l00016">visualizer.cc:16</a></div></div>
+<div class="ttc" id="astructcommon_1_1_lane_net_html"><div class="ttname"><a href="structcommon_1_1_lane_net.html">common::LaneNet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00631">semantics.h:631</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html_a9480c48a2cb9bc220f219820ad5b984e"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">phy_simulator::Visualizer::VisualizeDataWithStamp</a></div><div class="ttdeci">void VisualizeDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2visualizer_8cc_source.html#l00022">visualizer.cc:22</a></div></div>
+<div class="ttc" id="astructcommon_1_1_lane_net_html_a014000de2ae1a3076cbbde361b013aba"><div class="ttname"><a href="structcommon_1_1_lane_net.html#a014000de2ae1a3076cbbde361b013aba">common::LaneNet::lane_set</a></div><div class="ttdeci">std::unordered_map&lt; int, LaneRaw &gt; lane_set</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00632">semantics.h:632</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_aa3dbba8544c180b46be93d5e62b9ac10"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#aa3dbba8544c180b46be93d5e62b9ac10">common::VisualizationUtil::GetRosMarkerTextUsingPositionAndString</a></div><div class="ttdeci">static ErrorType GetRosMarkerTextUsingPositionAndString(const Vec3f &amp;pos, const std::string &amp;str, const ColorARGB &amp;color, const Vec3f &amp;scale, const int &amp;id, visualization_msgs::Marker *p_marker)</div><div class="ttdoc">Get the Ros Marker Text Using Position And String object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00954">common_visualization_util.h:954</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00263">semantics.h:263</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_ad7f9d6b08d0f9f27f0479d4ac1a6d5c9"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#ad7f9d6b08d0f9f27f0479d4ac1a6d5c9">common::VisualizationUtil::FillStampInMarkerArray</a></div><div class="ttdeci">static ErrorType FillStampInMarkerArray(const ros::Time time_stamp, visualization_msgs::MarkerArray *marker_arr)</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00366">common_visualization_util.h:366</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_a2d60f73eea1b1239ab3527a792a42a08"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#a2d60f73eea1b1239ab3527a792a42a08">common::VisualizationUtil::GetRosMarkerArrayUsingVehicle</a></div><div class="ttdeci">static ErrorType GetRosMarkerArrayUsingVehicle(const Vehicle &amp;vehicle, const ColorARGB &amp;color_obb, const ColorARGB &amp;color_vel_vec, const ColorARGB &amp;color_steer, const int &amp;id, visualization_msgs::MarkerArray *p_marker_array)</div><div class="ttdoc">Get the Ros Marker Array Using Vehicle object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l01038">common_visualization_util.h:1038</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_ad4d73c5fadbb44a18d8f4c296ad18fe3"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#ad4d73c5fadbb44a18d8f4c296ad18fe3">phy_simulator::PhySimulation::vehicle_set</a></div><div class="ttdeci">common::VehicleSet vehicle_set() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00041">phy_simulator.h:41</a></div></div>
+<div class="ttc" id="astructcommon_1_1_color_a_r_g_b_html"><div class="ttname"><a href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00018">colormap.h:18</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_a0427904fc69f1d154962e514eb6fe4ed"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#a0427904fc69f1d154962e514eb6fe4ed">common::VisualizationUtil::GetRosMarkerUsingObstacleSet</a></div><div class="ttdeci">static ErrorType GetRosMarkerUsingObstacleSet(const ObstacleSet &amp;obstacles, visualization_msgs::MarkerArray *p_marker_array)</div><div class="ttdoc">Get the Ros Marker Using Obstacle Set object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l01201">common_visualization_util.h:1201</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_a11789351a94a13bc9f88fccbda4e5b4b"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#a11789351a94a13bc9f88fccbda4e5b4b">common::VisualizationUtil::GetRosMarkerSphereUsingPoint</a></div><div class="ttdeci">static ErrorType GetRosMarkerSphereUsingPoint(const Vec3f &amp;pt, const ColorARGB &amp;color, const Vec3f &amp;scale, const int &amp;id, visualization_msgs::Marker *p_marker)</div><div class="ttdoc">Get the Ros Marker Sphere Using Point object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00538">common_visualization_util.h:538</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html_ab476696001f0b65e2fcdf6053422aed5"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html#ab476696001f0b65e2fcdf6053422aed5">phy_simulator::Visualizer::Visualizer</a></div><div class="ttdeci">Visualizer()</div><div class="ttdef"><b>Definition:</b> <a href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h_source.html#l00032">visualizer.h:32</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a63c2c123d3c1a5cbfe855a3082d30409"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a></div><div class="ttdeci">Vecf&lt; 2 &gt; Vec2f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00061">basics.h:61</a></div></div>
+<div class="ttc" id="astructcommon_1_1_obstacle_set_html"><div class="ttname"><a href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00706">semantics.h:706</a></div></div>
+<div class="ttc" id="anamespacecommon_html_a62bc68d7c53680254c33593e665a4b3b"><div class="ttname"><a href="namespacecommon.html#a62bc68d7c53680254c33593e665a4b3b">common::cmap</a></div><div class="ttdeci">std::map&lt; std::string, ColorARGB &gt; cmap</div><div class="ttdef"><b>Definition:</b> <a href="colormap_8cc_source.html#l00013">colormap.cc:13</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_a3b05f020bed154317d0b2200621849f8"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#a3b05f020bed154317d0b2200621849f8">common::VisualizationUtil::GetRosMarkerLineStripUsing2DofVec</a></div><div class="ttdeci">static ErrorType GetRosMarkerLineStripUsing2DofVec(const vec_E&lt; Vec2f &gt; &amp;path, const ColorARGB &amp;color, const Vec3f &amp;scale, const int &amp;id, visualization_msgs::Marker *p_marker)</div><div class="ttdoc">Get the Ros Marker Line Strip Using 2 Dof Vec object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00866">common_visualization_util.h:866</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html_a9cacd828dc18d14f4c2d5a1cfe9ef001"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">common::VehicleSet::vehicles</a></div><div class="ttdeci">std::unordered_map&lt; int, Vehicle &gt; vehicles</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00264">semantics.h:264</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a131a743ea2c866aeadfcdf143b8c7f56"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a></div><div class="ttdeci">Vecf&lt; 3 &gt; Vec3f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00062">basics.h:62</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a98980b84a0e2e0dba838bc33a5a9d09a"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a98980b84a0e2e0dba838bc33a5a9d09a">phy_simulator::PhySimulation::obstacle_set</a></div><div class="ttdeci">common::ObstacleSet obstacle_set() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00040">phy_simulator.h:40</a></div></div>
+<div class="ttc" id="acore_2phy__simulator_2inc_2phy__simulator_2visualizer_8h_html"><div class="ttname"><a href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h.html">visualizer.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_ad33b8f354e0281ff5fa98493e1280246"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#ad33b8f354e0281ff5fa98493e1280246">phy_simulator::PhySimulation::lane_net</a></div><div class="ttdeci">common::LaneNet lane_net() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00039">phy_simulator.h:39</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

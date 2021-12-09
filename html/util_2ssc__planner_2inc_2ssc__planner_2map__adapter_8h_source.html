@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/ssc_planner/inc/ssc_planner/map_adapter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_6782f329ef35c22aa61a1af7641268d8.html">ssc_planner</a></li><li class="navelem"><a class="el" href="dir_1acbbf9d98344ab84cd1ca89f0328134.html">inc</a></li><li class="navelem"><a class="el" href="dir_8cbbac23f70f298c6d6ff7af7fcab6fb.html">ssc_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">map_adapter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _UTIL_SSC_PLANNER_INC_SSC_PLANNER_MAP_ADAPTER_H__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _UTIL_SSC_PLANNER_INC_SSC_PLANNER_MAP_ADAPTER_H__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantic__map__manager_8h.html">semantic_map_manager/semantic_map_manager.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_2ssc__planner_2inc_2ssc__planner_2map__interface_8h.html">ssc_planner/map_interface.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner_adapter.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_ssc_planner_adapter.html">SscPlannerAdapter</a> : <span class="keyword">public</span> <a class="code" href="classplanning_1_1_ssc_planner_map_itf.html">SscPlannerMapItf</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner_adapter.html#a23b3898ff96d2d353f4b93934d665a54">   20</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">IntegratedMap</a> = <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#ace70ae50974b8dee3472d6cbece0e1c1">IsValid</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a5ecb38c9aa56923568ab6289d1d6b6ab">GetTimeStamp</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a2a0aada7d471fff4b39acb160105f225">GetEgoVehicle</a>(<a class="code" href="classcommon_1_1_vehicle.html">Vehicle</a>* vehicle) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a723e1f26c0491e77630de0ba0947c24d">GetEgoState</a>(<a class="code" href="structcommon_1_1_state.html">State</a>* state) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a8d7b6ee238476163b6d8fcb6982713a9">GetEgoReferenceLane</a>(<a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#ae1b493df3a56fb458540837e09a5663c">GetLocalReferenceLane</a>(<a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a7a621845eddf3381e30d7967b9c78a96">GetLaneByLaneId</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> lane_id, <a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#acf98f66871d0875cc9b4941f4b9d9623">GetObstacleMap</a>(<a class="code" href="classcommon_1_1_grid_map_n_d.html">GridMap2D</a>* grid_map) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#ab58e2d25a2138c72eab51b9f0f6e9b6d">CheckIfCollision</a>(<span class="keyword">const</span> <a class="code" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a>&amp; vehicle_param,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                             <span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">State</a>&amp; state, <span class="keywordtype">bool</span>* <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#aee084d9a6a52af2a79a6d43fb3221a54">GetForwardTrajectories</a>(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      std::vector&lt;LateralBehavior&gt;* behaviors,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::Vehicle&gt;</a>&gt;* trajs) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a3389b9fa6faa037ad09b5663863d367e">GetEgoDiscretBehavior</a>(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a>* lat_behavior) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#aee084d9a6a52af2a79a6d43fb3221a54">GetForwardTrajectories</a>(</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      std::vector&lt;LateralBehavior&gt;* behaviors,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::Vehicle&gt;</a>&gt;* trajs,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;std::unordered_map&lt;<span class="keywordtype">int</span>, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::Vehicle&gt;</a>&gt;&gt;* sur_trajs)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a9c95b8b5c2f44d8c1519bb6ad68120f2">GetObstacleGrids</a>(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      std::set&lt;std::array&lt;decimal_t, 2&gt;&gt;* obs_grids) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner_adapter.html#a63eb1e01f1344544470847d8bb815d3f">set_map</a>(std::shared_ptr&lt;IntegratedMap&gt; map);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  std::shared_ptr&lt;IntegratedMap&gt; map_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> is_valid_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_ab58e2d25a2138c72eab51b9f0f6e9b6d"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#ab58e2d25a2138c72eab51b9f0f6e9b6d">planning::SscPlannerAdapter::CheckIfCollision</a></div><div class="ttdeci">ErrorType CheckIfCollision(const common::VehicleParam &amp;vehicle_param, const State &amp;state, bool *res) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00106">map_adapter.cc:106</a></div></div>
+<div class="ttc" id="anamespaceperformance_html_af2e6eea9da5cf3f396df76424a11061b"><div class="ttname"><a href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">performance.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="performance_8py_source.html#l00039">performance.py:39</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="autil_2ssc__planner_2inc_2ssc__planner_2map__interface_8h_html"><div class="ttname"><a href="util_2ssc__planner_2inc_2ssc__planner_2map__interface_8h.html">map_interface.h</a></div><div class="ttdoc">map interface for ssc planner</div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4a"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></div><div class="ttdeci">LateralBehavior</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00159">semantics.h:159</a></div></div>
+<div class="ttc" id="aclasssemantic__map__manager_1_1_semantic_map_manager_html"><div class="ttname"><a href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a></div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_8h_source.html#l00029">semantic_map_manager.h:29</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a8d7b6ee238476163b6d8fcb6982713a9"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a8d7b6ee238476163b6d8fcb6982713a9">planning::SscPlannerAdapter::GetEgoReferenceLane</a></div><div class="ttdeci">ErrorType GetEgoReferenceLane(Lane *lane) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00089">map_adapter.cc:89</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html">planning::SscPlannerAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h_source.html#l00018">map_adapter.h:18</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a3389b9fa6faa037ad09b5663863d367e"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a3389b9fa6faa037ad09b5663863d367e">planning::SscPlannerAdapter::GetEgoDiscretBehavior</a></div><div class="ttdeci">ErrorType GetEgoDiscretBehavior(LateralBehavior *lat_behavior) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00068">map_adapter.cc:68</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_ace70ae50974b8dee3472d6cbece0e1c1"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#ace70ae50974b8dee3472d6cbece0e1c1">planning::SscPlannerAdapter::IsValid</a></div><div class="ttdeci">bool IsValid() override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00019">map_adapter.cc:19</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_param_html"><div class="ttname"><a href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00032">semantics.h:32</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html"><div class="ttname"><a href="classcommon_1_1_vehicle.html">common::Vehicle</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00079">semantics.h:79</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a723e1f26c0491e77630de0ba0947c24d"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a723e1f26c0491e77630de0ba0947c24d">planning::SscPlannerAdapter::GetEgoState</a></div><div class="ttdeci">ErrorType GetEgoState(State *state) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00029">map_adapter.cc:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a9c95b8b5c2f44d8c1519bb6ad68120f2"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a9c95b8b5c2f44d8c1519bb6ad68120f2">planning::SscPlannerAdapter::GetObstacleGrids</a></div><div class="ttdeci">ErrorType GetObstacleGrids(std::set&lt; std::array&lt; decimal_t, 2 &gt;&gt; *obs_grids) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00113">map_adapter.cc:113</a></div></div>
+<div class="ttc" id="asemantic__map__manager_8h_html"><div class="ttname"><a href="semantic__map__manager_8h.html">semantic_map_manager.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a63eb1e01f1344544470847d8bb815d3f"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a63eb1e01f1344544470847d8bb815d3f">planning::SscPlannerAdapter::set_map</a></div><div class="ttdeci">ErrorType set_map(std::shared_ptr&lt; IntegratedMap &gt; map)</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00013">map_adapter.cc:13</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_aee084d9a6a52af2a79a6d43fb3221a54"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#aee084d9a6a52af2a79a6d43fb3221a54">planning::SscPlannerAdapter::GetForwardTrajectories</a></div><div class="ttdeci">ErrorType GetForwardTrajectories(std::vector&lt; LateralBehavior &gt; *behaviors, vec_E&lt; vec_E&lt; common::Vehicle &gt;&gt; *trajs) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00046">map_adapter.cc:46</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a5ecb38c9aa56923568ab6289d1d6b6ab"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a5ecb38c9aa56923568ab6289d1d6b6ab">planning::SscPlannerAdapter::GetTimeStamp</a></div><div class="ttdeci">decimal_t GetTimeStamp() override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00021">map_adapter.cc:21</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_grid_map_n_d_html"><div class="ttname"><a href="classcommon_1_1_grid_map_n_d.html">common::GridMapND&lt; ObstacleMapType, 2 &gt;</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a2a0aada7d471fff4b39acb160105f225"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a2a0aada7d471fff4b39acb160105f225">planning::SscPlannerAdapter::GetEgoVehicle</a></div><div class="ttdeci">ErrorType GetEgoVehicle(Vehicle *vehicle) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00023">map_adapter.cc:23</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_a7a621845eddf3381e30d7967b9c78a96"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#a7a621845eddf3381e30d7967b9c78a96">planning::SscPlannerAdapter::GetLaneByLaneId</a></div><div class="ttdeci">ErrorType GetLaneByLaneId(const int lane_id, Lane *lane) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00077">map_adapter.cc:77</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html">planning::SscPlannerMapItf</a></div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2inc_2ssc__planner_2map__interface_8h_source.html#l00021">map_interface.h:21</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_ae1b493df3a56fb458540837e09a5663c"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#ae1b493df3a56fb458540837e09a5663c">planning::SscPlannerAdapter::GetLocalReferenceLane</a></div><div class="ttdeci">ErrorType GetLocalReferenceLane(Lane *lane) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00035">map_adapter.cc:35</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html_acf98f66871d0875cc9b4941f4b9d9623"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html#acf98f66871d0875cc9b4941f4b9d9623">planning::SscPlannerAdapter::GetObstacleMap</a></div><div class="ttdeci">ErrorType GetObstacleMap(GridMap2D *grid_map) override</div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc_source.html#l00100">map_adapter.cc:100</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

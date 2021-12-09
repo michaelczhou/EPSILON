@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/runge_kutta_controlled_concepts.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">runge_kutta_controlled_concepts.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="runge__kutta__controlled__concepts_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/runge_kutta_controlled_concepts.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the Stepper concepts of odeint with all Controlled Runge-Kutta steppers. </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> It&#39;s one of the main tests of odeint.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   24</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_runge_kutta_controlled_concepts</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/numeric/odeint/config.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;boost/utility.hpp&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;boost/type_traits/add_reference.hpp&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/for_each.hpp&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/insert_range.hpp&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/end.hpp&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/copy.hpp&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/placeholders.hpp&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/inserter.hpp&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__cash__karp54__classic_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54_classic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__cash__karp54_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__dopri5_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_dopri5.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__fehlberg78_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_fehlberg78.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="controlled__runge__kutta_8hpp.html">boost/numeric/odeint/stepper/controlled_runge_kutta.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="bulirsch__stoer_8hpp.html">boost/numeric/odeint/stepper/bulirsch_stoer.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="prepare__stepper__testing_8hpp.html">prepare_stepper_testing.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dummy__odes_8hpp.html">dummy_odes.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">using</span> std::vector;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">namespace </span>mpl = boost::mpl;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">   65</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> = 2.2; <span class="comment">// two steps</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">   67</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> = 1.0e-14;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper , <span class="keyword">class</span> System &gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( Stepper &amp;stepper , System system , <span class="keyword">typename</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">Stepper::state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">typedef</span> Stepper <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="code" href="fpu_8cpp.html#a13b15677bb262c47cd791aaf657c5d61">container_type</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//typedef typename stepper_type::order_type order_type;  controlled_error_stepper don&#39;t necessarily have a order (burlish-stoer)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> step_result = stepper.try_step( system , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    BOOST_CHECK_MESSAGE( step_result == <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9daaeba711603e432c6a1d4cfca1f8959e2">success</a> , <span class="stringliteral">&quot;step result: &quot;</span> &lt;&lt; step_result ); <span class="comment">// error = 0 for constant system -&gt; step size is always too small</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test.html">   85</a></span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> ControlledStepper , <span class="keyword">class</span> State &gt; <span class="keyword">struct </span><a class="code" href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> ControlledStepper &gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__type_01_4.html">   88</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test</a>&lt; ControlledStepper , <a class="code" href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a> &gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__type_01_4.html#ad28104e2df8b91018965df3489c62ec1">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__type_01_4.html#ad28104e2df8b91018965df3489c62ec1">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 , 2.0 );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//typename ControlledStepper::stepper_type error_stepper;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//default_error_checker&lt; typename ControlledStepper::value_type ,</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//                             typename ControlledStepper::algebra_type ,</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//                             typename ControlledStepper::operations_type &gt; error_checker;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//ControlledStepper controlled_stepper( error_stepper , error_checker );</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ControlledStepper controlled_stepper;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                          constant_system_standard&lt; vector_type , vector_type , double &gt; , </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                          <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , boost::cref( <a class="code" href="structconstant__system__functor__standard.html">constant_system_functor_standard</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        BOOST_CHECK_SMALL( fabs( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> ) , <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> ControlledStepper &gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__space__type_01_4.html">  108</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test</a>&lt; ControlledStepper , <a class="code" href="structvector__space__1d.html">vector_space_type</a> &gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__space__type_01_4.html#af0be4e0d8d58714bf0c1defd3765998a">  110</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__space__type_01_4.html#af0be4e0d8d58714bf0c1defd3765998a">operator()</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="structvector__space__1d.html">vector_space_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.m_x = 2.0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">/*typename ControlledStepper::stepper_type error_stepper;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">          default_error_checker&lt; typename ControlledStepper::value_type ,</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">          typename ControlledStepper::algebra_type ,</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">          typename ControlledStepper::operations_type &gt; error_checker;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">          ControlledStepper controlled_stepper( error_stepper , error_checker );*/</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ControlledStepper controlled_stepper;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                          constant_system_vector_space&lt; vector_space_type , vector_space_type , double &gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                          , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , boost::cref( <a class="code" href="structconstant__system__functor__vector__space.html">constant_system_functor_vector_space</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        BOOST_CHECK_SMALL( fabs( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.m_x - <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> ) , <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> ControlledStepper &gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01array__type_01_4.html">  129</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test</a>&lt; ControlledStepper , <a class="code" href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a> &gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01array__type_01_4.html#a0bc2f7612d26950fc5863214b7cc6c76">  131</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01array__type_01_4.html#a0bc2f7612d26950fc5863214b7cc6c76">operator()</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] = 2.0;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">/*typename ControlledStepper::stepper_type error_stepper;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">          default_error_checker&lt; typename ControlledStepper::value_type ,</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">          typename ControlledStepper::algebra_type ,</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">          typename ControlledStepper::operations_type &gt; error_checker;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">          ControlledStepper controlled_stepper( error_stepper , error_checker );*/</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        ControlledStepper controlled_stepper;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , constant_system_standard&lt; array_type , array_type , double &gt; , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a>( controlled_stepper , boost::cref( <a class="code" href="structconstant__system__functor__standard.html">constant_system_functor_standard</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        BOOST_CHECK_SMALL( fabs( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> ) , <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;};</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classcontrolled__stepper__methods.html">  147</a></span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> State &gt; <span class="keyword">class </span><a class="code" href="classcontrolled__stepper__methods.html">controlled_stepper_methods</a> : <span class="keyword">public</span> mpl::vector&lt;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    controlled_runge_kutta&lt; runge_kutta_cash_karp54_classic&lt; State , double , State , double , typename algebra_dispatcher&lt; State &gt;::type &gt; &gt; ,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    controlled_runge_kutta&lt; runge_kutta_dopri5&lt; State , double , State , double , typename algebra_dispatcher&lt; State &gt;::type &gt; &gt; , </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    controlled_runge_kutta&lt; runge_kutta_fehlberg78&lt; State , double , State , double , typename algebra_dispatcher&lt; State &gt;::type &gt; &gt; ,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    bulirsch_stoer&lt; State , double , State , double , typename algebra_dispatcher&lt; State &gt;::type &gt;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    &gt; { };</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">typedef</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">mpl::copy</a></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;&lt;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a> ,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    mpl::inserter</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    &lt;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        mpl::vector0&lt;&gt; ,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        mpl::insert_range</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        &lt;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            mpl::_1 ,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            mpl::end&lt; mpl::_1 &gt; ,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="classcontrolled__stepper__methods.html">controlled_stepper_methods&lt; mpl::_2 &gt;</a></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            &gt;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        &gt;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#a3a9a76d6cb515c746d7aced890a3f695">  167</a></span>&#160;    &gt;<a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">::type</a> <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3a9a76d6cb515c746d7aced890a3f695">all_controlled_stepper_methods</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;BOOST_AUTO_TEST_SUITE( controlled_runge_kutta_concept_test )</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="runge__kutta__controlled__concepts_8cpp.html#ad5878c3070b70a5107191348e8a939b8">  174</a></span>&#160;<a class="code" href="runge__kutta__controlled__concepts_8cpp.html#ad5878c3070b70a5107191348e8a939b8">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( controlled_stepper_test , ControlledStepper , <a class="code" href="runge__kutta__controlled__concepts_8cpp.html#a3a9a76d6cb515c746d7aced890a3f695">all_controlled_stepper_methods</a> )</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test&lt; ControlledStepper , typename ControlledStepper::state_type &gt;</a> tester;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    tester();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructperform__controlled__stepper__test_html"><div class="ttname"><a href="structperform__controlled__stepper__test.html">perform_controlled_stepper_test</a></div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00085">runge_kutta_controlled_concepts.cpp:85</a></div></div>
+<div class="ttc" id="aclasscontrolled__stepper__methods_html"><div class="ttname"><a href="classcontrolled__stepper__methods.html">controlled_stepper_methods</a></div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00147">runge_kutta_controlled_concepts.cpp:147</a></div></div>
+<div class="ttc" id="abulirsch__stoer_8hpp_html"><div class="ttname"><a href="bulirsch__stoer_8hpp.html">bulirsch_stoer.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__cash__karp54__classic_8hpp_html"><div class="ttname"><a href="runge__kutta__cash__karp54__classic_8hpp.html">runge_kutta_cash_karp54_classic.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__controlled__concepts_8cpp_html_a3a9a76d6cb515c746d7aced890a3f695"><div class="ttname"><a href="runge__kutta__controlled__concepts_8cpp.html#a3a9a76d6cb515c746d7aced890a3f695">all_controlled_stepper_methods</a></div><div class="ttdeci">mpl::copy&lt; container_types, mpl::inserter&lt; mpl::vector0&lt;&gt;, mpl::insert_range&lt; mpl::_1, mpl::end&lt; mpl::_1 &gt;, controlled_stepper_methods&lt; mpl::_2 &gt; &gt; &gt; &gt;::type all_controlled_stepper_methods</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00167">runge_kutta_controlled_concepts.cpp:167</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html">prepare_stepper_testing.hpp</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="astructconstant__system__functor__standard_html"><div class="ttname"><a href="structconstant__system__functor__standard.html">constant_system_functor_standard</a></div><div class="ttdef"><b>Definition:</b> <a href="dummy__odes_8hpp_source.html#l00033">dummy_odes.hpp:33</a></div></div>
+<div class="ttc" id="arunge__kutta__cash__karp54_8hpp_html"><div class="ttname"><a href="runge__kutta__cash__karp54_8hpp.html">runge_kutta_cash_karp54.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__controlled__concepts_8cpp_html_a994f4223bf54775b30127f1a5930dede"><div class="ttname"><a href="runge__kutta__controlled__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a></div><div class="ttdeci">const double result</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00065">runge_kutta_controlled_concepts.cpp:65</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_af9a26559b4b8a923f2af35f7e3523d9a"><div class="ttname"><a href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a></div><div class="ttdeci">boost::array&lt; double, 1 &gt; vector_type</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00044">stepper_details.cpp:44</a></div></div>
+<div class="ttc" id="astructperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__type_01_4_html_ad28104e2df8b91018965df3489c62ec1"><div class="ttname"><a href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__type_01_4.html#ad28104e2df8b91018965df3489c62ec1">perform_controlled_stepper_test&lt; ControlledStepper, vector_type &gt;::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00090">runge_kutta_controlled_concepts.cpp:90</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="astructperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__space__type_01_4_html_af0be4e0d8d58714bf0c1defd3765998a"><div class="ttname"><a href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01vector__space__type_01_4.html#af0be4e0d8d58714bf0c1defd3765998a">perform_controlled_stepper_test&lt; ControlledStepper, vector_space_type &gt;::operator()</a></div><div class="ttdeci">void operator()(void) const</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00110">runge_kutta_controlled_concepts.cpp:110</a></div></div>
+<div class="ttc" id="astructconstant__system__functor__vector__space_html"><div class="ttname"><a href="structconstant__system__functor__vector__space.html">constant_system_functor_vector_space</a></div><div class="ttdef"><b>Definition:</b> <a href="dummy__odes_8hpp_source.html#l00042">dummy_odes.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_ae001d7bcc6ae63bfe56ffae14d086d9d"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">boost::numeric::odeint::controlled_step_result</a></div><div class="ttdeci">controlled_step_result</div><div class="ttdoc">Enum representing the return values of the controlled steppers.</div><div class="ttdef"><b>Definition:</b> <a href="controlled__step__result_8hpp_source.html#l00031">controlled_step_result.hpp:31</a></div></div>
+<div class="ttc" id="arunge__kutta__controlled__concepts_8cpp_html_add7d359e1fcec0a0fcc5347c4243bd34"><div class="ttname"><a href="runge__kutta__controlled__concepts_8cpp.html#add7d359e1fcec0a0fcc5347c4243bd34">check_controlled_stepper_concept</a></div><div class="ttdeci">void check_controlled_stepper_concept(Stepper &amp;stepper, System system, typename Stepper::state_type &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00070">runge_kutta_controlled_concepts.cpp:70</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_a387a491511169449b42b665a034cf7e4"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a></div><div class="ttdeci">mpl::vector&lt; vector_type, vector_space_type, array_type &gt;::type container_types</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00041">prepare_stepper_testing.hpp:41</a></div></div>
+<div class="ttc" id="arunge__kutta__fehlberg78_8hpp_html"><div class="ttname"><a href="runge__kutta__fehlberg78_8hpp.html">runge_kutta_fehlberg78.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__dopri5_8hpp_html"><div class="ttname"><a href="runge__kutta__dopri5_8hpp.html">runge_kutta_dopri5.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__controlled__concepts_8cpp_html_a3d8c24629d725b9ef8c238cf27c9b158"><div class="ttname"><a href="runge__kutta__controlled__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a></div><div class="ttdeci">const double eps</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00067">runge_kutta_controlled_concepts.cpp:67</a></div></div>
+<div class="ttc" id="acontrolled__runge__kutta_8hpp_html"><div class="ttname"><a href="controlled__runge__kutta_8hpp.html">controlled_runge_kutta.hpp</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="arunge__kutta__controlled__concepts_8cpp_html_ad5878c3070b70a5107191348e8a939b8"><div class="ttname"><a href="runge__kutta__controlled__concepts_8cpp.html#ad5878c3070b70a5107191348e8a939b8">BOOST_AUTO_TEST_CASE_TEMPLATE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE_TEMPLATE(controlled_stepper_test, ControlledStepper, all_controlled_stepper_methods)</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00174">runge_kutta_controlled_concepts.cpp:174</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_ab3354d8f086286dedd7358305169a8d6"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 6, 4, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::time_type</a></div><div class="ttdeci">double time_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00076">symplectic_rkn_stepper_base.hpp:76</a></div></div>
+<div class="ttc" id="adummy__odes_8hpp_html"><div class="ttname"><a href="dummy__odes_8hpp.html">dummy_odes.hpp</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a22524f0bf8fa0712836f8142b0afa726"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></div><div class="ttdeci">units::quantity&lt; si::time, double &gt; time_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00042">harmonic_oscillator_units.cpp:42</a></div></div>
+<div class="ttc" id="astructvector__space__1d_html"><div class="ttname"><a href="structvector__space__1d.html">vector_space_1d</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__space__1d_8hpp_source.html#l00024">vector_space_1d.hpp:24</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_ae001d7bcc6ae63bfe56ffae14d086d9daaeba711603e432c6a1d4cfca1f8959e2"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9daaeba711603e432c6a1d4cfca1f8959e2">boost::numeric::odeint::success</a></div><div class="ttdeci">@ success</div><div class="ttdef"><b>Definition:</b> <a href="controlled__step__result_8hpp_source.html#l00033">controlled_step_result.hpp:33</a></div></div>
+<div class="ttc" id="afpu_8cpp_html_a13b15677bb262c47cd791aaf657c5d61"><div class="ttname"><a href="fpu_8cpp.html#a13b15677bb262c47cd791aaf657c5d61">container_type</a></div><div class="ttdeci">vector&lt; double &gt; container_type</div><div class="ttdef"><b>Definition:</b> <a href="fpu_8cpp_source.html#l00029">fpu.cpp:29</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_aeaf6a3a5bd0e828c49f32f8556916e60"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a></div><div class="ttdeci">boost::array&lt; double, 1 &gt; array_type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00039">prepare_stepper_testing.hpp:39</a></div></div>
+<div class="ttc" id="astructperform__controlled__stepper__test_3_01_controlled_stepper_00_01array__type_01_4_html_a0bc2f7612d26950fc5863214b7cc6c76"><div class="ttname"><a href="structperform__controlled__stepper__test_3_01_controlled_stepper_00_01array__type_01_4.html#a0bc2f7612d26950fc5863214b7cc6c76">perform_controlled_stepper_test&lt; ControlledStepper, array_type &gt;::operator()</a></div><div class="ttdeci">void operator()(void)</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__controlled__concepts_8cpp_source.html#l00131">runge_kutta_controlled_concepts.cpp:131</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a3b77b7883d7f12ac3457092dbf37a9a8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 6, 4, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::deriv_type</a></div><div class="ttdeci">std::pair&lt; coor_deriv_type, momentum_deriv_type &gt; deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00074">symplectic_rkn_stepper_base.hpp:74</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a8f265541b3dda9a90fcb63b43bea0f11"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">boost::numeric::odeint::copy</a></div><div class="ttdeci">void copy(const Container1 &amp;from, Container2 &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="copy_8hpp_source.html#l00064">copy.hpp:64</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

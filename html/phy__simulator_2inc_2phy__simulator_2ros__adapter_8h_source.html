@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/inc/phy_simulator/ros_adapter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b9389d25cc72c4b15245e222e6f23cef.html">inc</a></li><li class="navelem"><a class="el" href="dir_42c6245ecde1b4e5ef35d8e150ba415d.html">phy_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ros_adapter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ROS_ADAPTER_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ROS_ADAPTER_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;ros/ros.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="encoder_8h.html">vehicle_msgs/encoder.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_8h.html">phy_simulator/phy_simulator.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_ros_adapter.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphy__simulator_1_1_ros_adapter.html">RosAdapter</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classphy__simulator_1_1_ros_adapter.html#a7cd80ad1a3207de1b7006fc0d38d5ee1">RosAdapter</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classphy__simulator_1_1_ros_adapter.html#a7cd80ad1a3207de1b7006fc0d38d5ee1">RosAdapter</a>(ros::NodeHandle nh);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_ros_adapter.html#adbcaaa7dadef1d11f5e99104b908aba0">   41</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_ros_adapter.html#adbcaaa7dadef1d11f5e99104b908aba0">set_phy_sim</a>(<a class="code" href="classphy__simulator_1_1_phy_simulation.html">PhySimulation</a> *p_phy_sim) { p_phy_sim_ = p_phy_sim; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_ros_adapter.html#abc7a7b0b4c1512738dbbe804732edb8d">PublishDataWithStamp</a>(<span class="keyword">const</span> ros::Time &amp;stamp);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_ros_adapter.html#ad14f738ac1cce49a2182a8bffe6c9e17">PublishDynamicDataWithStamp</a>(<span class="keyword">const</span> ros::Time &amp;stamp);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_ros_adapter.html#a78fee69cd221f7555d9af659f0623979">PublishStaticDataWithStamp</a>(<span class="keyword">const</span> ros::Time &amp;stamp);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ros::NodeHandle nh_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ros::Publisher arena_info_pub_;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  ros::Publisher arena_info_static_pub_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  ros::Publisher arena_info_dynamic_pub_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classphy__simulator_1_1_phy_simulation.html">PhySimulation</a> *p_phy_sim_;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};  <span class="comment">// RosAdapter</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace phy_simulator</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif  // _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ROS_ADAPTER_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aencoder_8h_html"><div class="ttname"><a href="encoder_8h.html">encoder.h</a></div></div>
+<div class="ttc" id="aphy__simulator_8h_html"><div class="ttname"><a href="phy__simulator_8h.html">phy_simulator.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html">phy_simulator::PhySimulation</a></div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00032">phy_simulator.h:32</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_ad14f738ac1cce49a2182a8bffe6c9e17"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#ad14f738ac1cce49a2182a8bffe6c9e17">phy_simulator::RosAdapter::PublishDynamicDataWithStamp</a></div><div class="ttdeci">void PublishDynamicDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdoc">Publish dynamic data of simulator with time stamp</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00040">ros_adapter.cc:40</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_adbcaaa7dadef1d11f5e99104b908aba0"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#adbcaaa7dadef1d11f5e99104b908aba0">phy_simulator::RosAdapter::set_phy_sim</a></div><div class="ttdeci">void set_phy_sim(PhySimulation *p_phy_sim)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h_source.html#l00041">ros_adapter.h:41</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_a78fee69cd221f7555d9af659f0623979"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#a78fee69cd221f7555d9af659f0623979">phy_simulator::RosAdapter::PublishStaticDataWithStamp</a></div><div class="ttdeci">void PublishStaticDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdoc">Publish static data of simulator with time stamp</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00032">ros_adapter.cc:32</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_a7cd80ad1a3207de1b7006fc0d38d5ee1"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#a7cd80ad1a3207de1b7006fc0d38d5ee1">phy_simulator::RosAdapter::RosAdapter</a></div><div class="ttdeci">RosAdapter()</div><div class="ttdoc">Default constructor</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00014">ros_adapter.cc:14</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html">phy_simulator::RosAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h_source.html#l00027">ros_adapter.h:27</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_abc7a7b0b4c1512738dbbe804732edb8d"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#abc7a7b0b4c1512738dbbe804732edb8d">phy_simulator::RosAdapter::PublishDataWithStamp</a></div><div class="ttdeci">void PublishDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdoc">Publish data of simulator with time stamp</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00024">ros_adapter.cc:24</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

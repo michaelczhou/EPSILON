@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/my_vector.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">my_vector.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="my__vector_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Example for self defined vector type.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//[my_vector</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt; <span class="keywordtype">int</span> MAX_N &gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmy__vector.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmy__vector.html">my_vector</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">typedef</span> std::vector&lt; double &gt; vector;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classmy__vector.html#a21a13f124a7c6a746b36357106efe51b">   23</a></span>&#160;    <span class="keyword">typedef</span> vector::iterator <a class="code" href="classmy__vector.html#a21a13f124a7c6a746b36357106efe51b">iterator</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classmy__vector.html#a387c982ac7a5516710bd5a3c7c6a4168">   24</a></span>&#160;    <span class="keyword">typedef</span> vector::const_iterator <a class="code" href="classmy__vector.html#a387c982ac7a5516710bd5a3c7c6a4168">const_iterator</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmy__vector.html#a8028b16efae910a69483393798401433">   27</a></span>&#160;    <a class="code" href="classmy__vector.html#a8028b16efae910a69483393798401433">my_vector</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        : m_v( <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    { </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        m_v.reserve( MAX_N );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classmy__vector.html#acc72ebca2411ae1b46e692f826f0a7c0">   33</a></span>&#160;    <a class="code" href="classmy__vector.html#acc72ebca2411ae1b46e692f826f0a7c0">my_vector</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        : m_v()</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_v.reserve( MAX_N );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// ... [ implement container interface ]</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classmy__vector.html#a809dc81c8fa65717b83fa9ff2c3a73f0">   41</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="classmy__vector.html#a809dc81c8fa65717b83fa9ff2c3a73f0">operator[]</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_v[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>]; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classmy__vector.html#ab7740c2f3e6a6250013e1ba464d88c86">   44</a></span>&#160;    <span class="keywordtype">double</span> &amp; <a class="code" href="classmy__vector.html#ab7740c2f3e6a6250013e1ba464d88c86">operator[]</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    { <span class="keywordflow">return</span> m_v[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>]; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classmy__vector.html#aed4c00eb5db452614b2eb3c37c6eadc6">   47</a></span>&#160;    <a class="code" href="classmy__vector.html#a21a13f124a7c6a746b36357106efe51b">iterator</a> <a class="code" href="classmy__vector.html#aed4c00eb5db452614b2eb3c37c6eadc6">begin</a>()</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    { <span class="keywordflow">return</span> m_v.begin(); }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmy__vector.html#a0b2c793e86b038431dce4f5681201bdb">   50</a></span>&#160;    <a class="code" href="classmy__vector.html#a387c982ac7a5516710bd5a3c7c6a4168">const_iterator</a> <a class="code" href="classmy__vector.html#a0b2c793e86b038431dce4f5681201bdb">begin</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_v.begin(); }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmy__vector.html#ab60b9ef55f92543e03734b1d50e81fe8">   53</a></span>&#160;    <a class="code" href="classmy__vector.html#a21a13f124a7c6a746b36357106efe51b">iterator</a> <a class="code" href="classmy__vector.html#ab60b9ef55f92543e03734b1d50e81fe8">end</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    { <span class="keywordflow">return</span> m_v.end(); }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmy__vector.html#abc4626aa774ab9c107de84714b186722">   56</a></span>&#160;    <a class="code" href="classmy__vector.html#a387c982ac7a5516710bd5a3c7c6a4168">const_iterator</a> <a class="code" href="classmy__vector.html#abc4626aa774ab9c107de84714b186722">end</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_v.end(); }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmy__vector.html#af75f7bdefa1ffa5415249e417f806709">   59</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classmy__vector.html#af75f7bdefa1ffa5415249e417f806709">size</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_v.size(); }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classmy__vector.html#a3129274f51203fb8faa55b1b2b434413">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmy__vector.html#a3129274f51203fb8faa55b1b2b434413">resize</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    { m_v.resize( <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::vector&lt; double &gt; m_v;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//[my_vector_resizeable</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// define my_vector as resizeable</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>numeric { <span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4.html">   76</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; <a class="code" href="classmy__vector.html">my_vector</a>&lt;<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>&gt; &gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4.html#abb95bdc93eb4b9ad61a8675930ce6d7a">   78</a></span>&#160;    <span class="keyword">typedef</span> boost::true_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4.html#abb95bdc93eb4b9ad61a8675930ce6d7a">type</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4.html#a8accb7f8f1530bd389cbe9fafe88b227">   79</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} } }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="my__vector_8cpp.html#ac69a303f4e1753a4acc24418f36d93f3">   86</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classmy__vector.html">my_vector&lt;3&gt;</a> <a class="code" href="my__vector_8cpp.html#ac69a303f4e1753a4acc24418f36d93f3">state_type</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="my__vector_8cpp.html#ae9ca47be4a53af4c457eb4a22c06c2df">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="my__vector_8cpp.html#ae9ca47be4a53af4c457eb4a22c06c2df">lorenz</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keyword">const</span> <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a>( 10.0 );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a>( 28.0 );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>( 8.0 / 3.0 );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    dxdt[0] = <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    dxdt[1] = <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    dxdt[2] = -<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] + <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1];</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="my__vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  101</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="my__vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(3);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] = 5.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] = 10.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] = 10.0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// my_vector works with range_algebra as it implements </span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// the required parts of a container interface</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// no further work is required</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a401a862c799c92becd7b04cb9025db0b">integrate_const</a>( <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4&lt; state_type &gt;</a>() , <a class="code" href="structlorenz.html">lorenz</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 10.0 , 0.1 );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">boost::numeric::odeint::is_resizeable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00044">is_resizeable.hpp:44</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a8028b16efae910a69483393798401433"><div class="ttname"><a href="classmy__vector.html#a8028b16efae910a69483393798401433">my_vector::my_vector</a></div><div class="ttdeci">my_vector(const size_t N)</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00027">my_vector.cpp:27</a></div></div>
+<div class="ttc" id="aclassmy__vector_html"><div class="ttname"><a href="classmy__vector.html">my_vector</a></div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00018">my_vector.cpp:18</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_aed4c00eb5db452614b2eb3c37c6eadc6"><div class="ttname"><a href="classmy__vector.html#aed4c00eb5db452614b2eb3c37c6eadc6">my_vector::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00047">my_vector.cpp:47</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_ab7740c2f3e6a6250013e1ba464d88c86"><div class="ttname"><a href="classmy__vector.html#ab7740c2f3e6a6250013e1ba464d88c86">my_vector::operator[]</a></div><div class="ttdeci">double &amp; operator[](const size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00044">my_vector.cpp:44</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="amy__vector_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="my__vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00101">my_vector.cpp:101</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a809dc81c8fa65717b83fa9ff2c3a73f0"><div class="ttname"><a href="classmy__vector.html#a809dc81c8fa65717b83fa9ff2c3a73f0">my_vector::operator[]</a></div><div class="ttdeci">const double &amp; operator[](const size_t n) const</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00041">my_vector.cpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html_aeafd2e3101712b4bedb251024b78b58b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">boost::numeric::odeint::is_resizeable::value</a></div><div class="ttdeci">const static bool value</div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00048">is_resizeable.hpp:48</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4_html_abb95bdc93eb4b9ad61a8675930ce6d7a"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01my__vector_3_01_n_01_4_01_4.html#abb95bdc93eb4b9ad61a8675930ce6d7a">boost::numeric::odeint::is_resizeable&lt; my_vector&lt; N &gt; &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00078">my_vector.cpp:78</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_abc4626aa774ab9c107de84714b186722"><div class="ttname"><a href="classmy__vector.html#abc4626aa774ab9c107de84714b186722">my_vector::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00056">my_vector.cpp:56</a></div></div>
+<div class="ttc" id="amy__vector_8cpp_html_ae9ca47be4a53af4c457eb4a22c06c2df"><div class="ttname"><a href="my__vector_8cpp.html#ae9ca47be4a53af4c457eb4a22c06c2df">lorenz</a></div><div class="ttdeci">void lorenz(const state_type &amp;x, state_type &amp;dxdt, const double t)</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00088">my_vector.cpp:88</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a21a13f124a7c6a746b36357106efe51b"><div class="ttname"><a href="classmy__vector.html#a21a13f124a7c6a746b36357106efe51b">my_vector::iterator</a></div><div class="ttdeci">vector::iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00023">my_vector.cpp:23</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a387c982ac7a5516710bd5a3c7c6a4168"><div class="ttname"><a href="classmy__vector.html#a387c982ac7a5516710bd5a3c7c6a4168">my_vector::const_iterator</a></div><div class="ttdeci">vector::const_iterator const_iterator</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00024">my_vector.cpp:24</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4_8hpp_source.html#l00110">runge_kutta4.hpp:110</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_af75f7bdefa1ffa5415249e417f806709"><div class="ttname"><a href="classmy__vector.html#af75f7bdefa1ffa5415249e417f806709">my_vector::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00059">my_vector.cpp:59</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_acc72ebca2411ae1b46e692f826f0a7c0"><div class="ttname"><a href="classmy__vector.html#acc72ebca2411ae1b46e692f826f0a7c0">my_vector::my_vector</a></div><div class="ttdeci">my_vector()</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00033">my_vector.cpp:33</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_ab60b9ef55f92543e03734b1d50e81fe8"><div class="ttname"><a href="classmy__vector.html#ab60b9ef55f92543e03734b1d50e81fe8">my_vector::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00053">my_vector.cpp:53</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a3129274f51203fb8faa55b1b2b434413"><div class="ttname"><a href="classmy__vector.html#a3129274f51203fb8faa55b1b2b434413">my_vector::resize</a></div><div class="ttdeci">void resize(const size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00062">my_vector.cpp:62</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a401a862c799c92becd7b04cb9025db0b"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a401a862c799c92becd7b04cb9025db0b">boost::numeric::odeint::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer)</div><div class="ttdoc">Integrates the ODE with constant step size.</div><div class="ttdef"><b>Definition:</b> <a href="integrate__const_8hpp_source.html#l00041">integrate_const.hpp:41</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="amy__vector_8cpp_html_ac69a303f4e1753a4acc24418f36d93f3"><div class="ttname"><a href="my__vector_8cpp.html#ac69a303f4e1753a4acc24418f36d93f3">state_type</a></div><div class="ttdeci">my_vector&lt; 3 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00086">my_vector.cpp:86</a></div></div>
+<div class="ttc" id="astructlorenz_html"><div class="ttname"><a href="structlorenz.html">lorenz</a></div><div class="ttdef"><b>Definition:</b> <a href="bind__member__functions_8cpp_source.html#l00077">bind_member_functions.cpp:77</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="aclassmy__vector_html_a0b2c793e86b038431dce4f5681201bdb"><div class="ttname"><a href="classmy__vector.html#a0b2c793e86b038431dce4f5681201bdb">my_vector::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdef"><b>Definition:</b> <a href="my__vector_8cpp_source.html#l00050">my_vector.cpp:50</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

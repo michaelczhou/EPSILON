@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/src/phy_simulator/phy_simulator.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b0a9e9b8858f16122c992a3415e59f93.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cee39ace1e523efb0e63d981259869.html">phy_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">phy_simulator.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="phy__simulator_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_8h.html">phy_simulator/phy_simulator.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">    5</a></span>&#160;<a class="code" href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">PhySimulation::PhySimulation</a>() {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  p_arena_loader_ = <span class="keyword">new</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html">ArenaLoader</a>();</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">if</span> (!GetDataFromArenaLoader()) assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#ad0c23c0e811a3973dab7d7fbd06d88ca">   10</a></span>&#160;<a class="code" href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">PhySimulation::PhySimulation</a>(<span class="keyword">const</span> std::string &amp;vehicle_set_path,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                             <span class="keyword">const</span> std::string &amp;map_path,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                             <span class="keyword">const</span> std::string &amp;lane_net_path) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  std::cout &lt;&lt; <span class="stringliteral">&quot;[PhySimulation] Constructing...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  p_arena_loader_ = <span class="keyword">new</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html">ArenaLoader</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a5c9048ac50516d37229ebac4a6648f2a">set_vehicle_set_path</a>(vehicle_set_path);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a70655fb0ac036bfb962c8c3536a6d692">set_map_path</a>(map_path);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a9ac442bb13262db5b2e1b7f35a199712">set_lane_net_path</a>(lane_net_path);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  GetDataFromArenaLoader();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  SetupVehicleModelForVehicleSet();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">bool</span> PhySimulation::GetDataFromArenaLoader() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::cout &lt;&lt; <span class="stringliteral">&quot;[PhySimulation] Parsing simulation info...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a95d9ea20ed8d6bc29516eb82f8faba8e">ParseVehicleSet</a>(&amp;vehicle_set_);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#afe983c99ed82bf93ec15964a69035f4c">ParseMapInfo</a>(&amp;obstacle_set_);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  p_arena_loader_-&gt;<a class="code" href="classphy__simulator_1_1_arena_loader.html#ac14e874695279dd8d1316f760c9b1e0b">ParseLaneNetInfo</a>(&amp;lane_net_);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#acf572ca902b74697380da222964b59fc">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#acf572ca902b74697380da222964b59fc">PhySimulation::AddTemporaryObstacleToMap</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_point.html">common::Point</a> &amp;pt,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                              <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;s) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="structcommon_1_1_polygon_obstacle.html">common::PolygonObstacle</a> obs;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#aa13677998533488ca336a85c3965ca55">polygon</a>.<a class="code" href="structcommon_1_1_polygon.html#a6be77eb98d0607f6c61dd5bced1a6923">points</a>.push_back(<a class="code" href="structcommon_1_1_point.html">common::Point</a>(pt.<a class="code" href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">x</a> - s / 2, pt.<a class="code" href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">y</a> - s / 2));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#aa13677998533488ca336a85c3965ca55">polygon</a>.<a class="code" href="structcommon_1_1_polygon.html#a6be77eb98d0607f6c61dd5bced1a6923">points</a>.push_back(<a class="code" href="structcommon_1_1_point.html">common::Point</a>(pt.<a class="code" href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">x</a> - s / 2, pt.<a class="code" href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">y</a> + s / 2));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#aa13677998533488ca336a85c3965ca55">polygon</a>.<a class="code" href="structcommon_1_1_polygon.html#a6be77eb98d0607f6c61dd5bced1a6923">points</a>.push_back(<a class="code" href="structcommon_1_1_point.html">common::Point</a>(pt.<a class="code" href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">x</a> + s / 2, pt.<a class="code" href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">y</a> + s / 2));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#aa13677998533488ca336a85c3965ca55">polygon</a>.<a class="code" href="structcommon_1_1_polygon.html#a6be77eb98d0607f6c61dd5bced1a6923">points</a>.push_back(<a class="code" href="structcommon_1_1_point.html">common::Point</a>(pt.<a class="code" href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">x</a> + s / 2, pt.<a class="code" href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">y</a> - s / 2));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#af12b14a8168668dad3d0bb8585c4d45c">type</a> = 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#adadd0a345513d93a5adcbe8dc4600195">id</a> = temp_obs_idx_offset_ + temp_obstacle_cnt_;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  obstacle_set_.<a class="code" href="structcommon_1_1_obstacle_set.html#aec2aa8d7edeed5bc70698ad45104f44a">obs_polygon</a>.insert(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      std::pair&lt;int, common::PolygonObstacle&gt;(obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#adadd0a345513d93a5adcbe8dc4600195">id</a>, obs));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  temp_obstacle_set_.insert(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::pair&lt;int, common::PolygonObstacle&gt;(obs.<a class="code" href="structcommon_1_1_polygon_obstacle.html#adadd0a345513d93a5adcbe8dc4600195">id</a>, obs));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ++temp_obstacle_cnt_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">bool</span> PhySimulation::SetupVehicleModelForVehicleSet() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> : vehicle_set_.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classsimulator_1_1_vehicle_model.html">simulator::VehicleModel</a> vehicle_model(</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.second.param().wheel_base(), <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.second.param().max_steering_angle());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    vehicle_model.set_state(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.second.state());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    vehicle_model_set_.insert(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::pair&lt;int, simulator::VehicleModel&gt;(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.first, vehicle_model));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    vehicle_ids_.push_back(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.first);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">   65</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">PhySimulation::UpdateSimulatorUsingSignalSet</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a> &amp;signal_set, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;dt) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="class_tic_toc.html">TicToc</a> updata_vehicle_time;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  UpdateVehicleStates(signal_set, <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">bool</span> PhySimulation::UpdateVehicleStates(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a> &amp;signal_set, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;dt) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">if</span> (signal_set.<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">signal_set</a>.size() != vehicle_set_.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.size()) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;[PhySimulation] ERROR - Signal number error.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;[PhySimulation] signal_set num: &quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              &lt;&lt; signal_set.<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">signal_set</a>.size()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;, vehicle_set num: &quot;</span> &lt;&lt; vehicle_set_.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.size()</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = vehicle_set_.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.begin();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;       iter != vehicle_set_.<a class="code" href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">vehicles</a>.end(); ++iter) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = iter-&gt;first;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a> signal = signal_set.<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">signal_set</a>.at(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> steer_rate = signal.<a class="code" href="structcommon_1_1_vehicle_control_signal.html#a332a1801bd4d443376ed27c7b2b7b6f7">steer_rate</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> acc = signal.<a class="code" href="structcommon_1_1_vehicle_control_signal.html#a61641fd5c343cd5421567cf103295505">acc</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">auto</span> model_iter = vehicle_model_set_.find(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (!signal.<a class="code" href="structcommon_1_1_vehicle_control_signal.html#ac5a363e2405b5a12ae1b64df75d2ea5d">is_openloop</a>) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      model_iter-&gt;second.set_control(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;          <a class="code" href="structsimulator_1_1_vehicle_model_1_1_control.html">simulator::VehicleModel::Control</a>(steer_rate, acc));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      model_iter-&gt;second.Step(dt);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      model_iter-&gt;second.set_state(signal.<a class="code" href="structcommon_1_1_vehicle_control_signal.html#ad8486f482f93b80a60aa3ea02f2e47c5">state</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    iter-&gt;second.set_state(model_iter-&gt;second.state());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#a7cdfc61ba2326c1a447c9ce48b8a4519">  103</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a7cdfc61ba2326c1a447c9ce48b8a4519">PhySimulation::RemoveTemporaryObstacle</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_point.html">common::Point</a> &amp;pt,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;s) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = temp_obstacle_set_.begin(); it != temp_obstacle_set_.end();) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> sum_x = 0, sum_y = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> : it-&gt;second.polygon.points) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      sum_x += <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.x;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      sum_y += <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.y;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> center_x = sum_x / it-&gt;second.polygon.points.size();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> center_y = sum_y / it-&gt;second.polygon.points.size();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> dx = center_x - pt.<a class="code" href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">x</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> dy = center_y - pt.<a class="code" href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">y</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d = std::hypot(dx, dy);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (d &lt; s) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keyword">auto</span> it_obs_set = obstacle_set_.<a class="code" href="structcommon_1_1_obstacle_set.html#aec2aa8d7edeed5bc70698ad45104f44a">obs_polygon</a>.find(it-&gt;first);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">if</span> (it_obs_set != obstacle_set_.<a class="code" href="structcommon_1_1_obstacle_set.html#aec2aa8d7edeed5bc70698ad45104f44a">obs_polygon</a>.end()) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        obstacle_set_.<a class="code" href="structcommon_1_1_obstacle_set.html#aec2aa8d7edeed5bc70698ad45104f44a">obs_polygon</a>.erase(it_obs_set);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      it = temp_obstacle_set_.erase(it);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      ++it;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}  <span class="comment">// namespace phy_simulator</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aphy__simulator_8h_html"><div class="ttname"><a href="phy__simulator_8h.html">phy_simulator.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_polygon_obstacle_html_aa13677998533488ca336a85c3965ca55"><div class="ttname"><a href="structcommon_1_1_polygon_obstacle.html#aa13677998533488ca336a85c3965ca55">common::PolygonObstacle::polygon</a></div><div class="ttdeci">Polygon polygon</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00698">semantics.h:698</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html_a553c36ae25c3b17b32f09a1398c388bb"><div class="ttname"><a href="structcommon_1_1_point.html#a553c36ae25c3b17b32f09a1398c388bb">common::Point::x</a></div><div class="ttdeci">decimal_t x</div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00023">shapes.h:23</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_a0ab7a6eeb6981fc69beafe088ad240dc"><div class="ttname"><a href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">proc_geojson.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00076">proc_geojson.py:76</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a861779e1b237611ea0a32ccafce09c3d"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">phy_simulator::PhySimulation::UpdateSimulatorUsingSignalSet</a></div><div class="ttdeci">bool UpdateSimulatorUsingSignalSet(const common::VehicleControlSignalSet &amp;signal_set, const decimal_t &amp;dt)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00065">phy_simulator.cc:65</a></div></div>
+<div class="ttc" id="astructcommon_1_1_polygon_obstacle_html"><div class="ttname"><a href="structcommon_1_1_polygon_obstacle.html">common::PolygonObstacle</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00695">semantics.h:695</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_ac14e874695279dd8d1316f760c9b1e0b"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#ac14e874695279dd8d1316f760c9b1e0b">phy_simulator::ArenaLoader::ParseLaneNetInfo</a></div><div class="ttdeci">ErrorType ParseLaneNetInfo(common::LaneNet *p_lane_net)</div><div class="ttdoc">Parse map info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00111">arena_loader.cc:111</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html"><div class="ttname"><a href="structcommon_1_1_point.html">common::Point</a></div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00022">shapes.h:22</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00312">semantics.h:312</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_set_html_abb8b8791ff8e0bd396dc58379acb7acb"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">common::VehicleControlSignalSet::signal_set</a></div><div class="ttdeci">std::unordered_map&lt; int, VehicleControlSignal &gt; signal_set</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00313">semantics.h:313</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html_a332a1801bd4d443376ed27c7b2b7b6f7"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html#a332a1801bd4d443376ed27c7b2b7b6f7">common::VehicleControlSignal::steer_rate</a></div><div class="ttdeci">double steer_rate</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00287">semantics.h:287</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a95d9ea20ed8d6bc29516eb82f8faba8e"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a95d9ea20ed8d6bc29516eb82f8faba8e">phy_simulator::ArenaLoader::ParseVehicleSet</a></div><div class="ttdeci">bool ParseVehicleSet(common::VehicleSet *p_vehicle_set)</div><div class="ttdoc">Parse vehicles info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00025">arena_loader.cc:25</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html_ad8486f482f93b80a60aa3ea02f2e47c5"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html#ad8486f482f93b80a60aa3ea02f2e47c5">common::VehicleControlSignal::state</a></div><div class="ttdeci">common::State state</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00289">semantics.h:289</a></div></div>
+<div class="ttc" id="astructcommon_1_1_obstacle_set_html_aec2aa8d7edeed5bc70698ad45104f44a"><div class="ttname"><a href="structcommon_1_1_obstacle_set.html#aec2aa8d7edeed5bc70698ad45104f44a">common::ObstacleSet::obs_polygon</a></div><div class="ttdeci">std::unordered_map&lt; int, PolygonObstacle &gt; obs_polygon</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00708">semantics.h:708</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html"><div class="ttname"><a href="class_tic_toc.html">TicToc</a></div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00017">tic_toc.h:17</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html_ac5a363e2405b5a12ae1b64df75d2ea5d"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html#ac5a363e2405b5a12ae1b64df75d2ea5d">common::VehicleControlSignal::is_openloop</a></div><div class="ttdeci">bool is_openloop</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00288">semantics.h:288</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a70655fb0ac036bfb962c8c3536a6d692"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a70655fb0ac036bfb962c8c3536a6d692">phy_simulator::ArenaLoader::set_map_path</a></div><div class="ttdeci">void set_map_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00055">arena_loader.h:55</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html">simulator::VehicleModel</a></div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00015">vehicle_model.h:15</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html_a380c21e6084f2264ca28e25117e78215"><div class="ttname"><a href="structcommon_1_1_point.html#a380c21e6084f2264ca28e25117e78215">common::Point::y</a></div><div class="ttdeci">decimal_t y</div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00024">shapes.h:24</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_vehicle_model_1_1_control_html"><div class="ttname"><a href="structsimulator_1_1_vehicle_model_1_1_control.html">simulator::VehicleModel::Control</a></div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00018">vehicle_model.h:18</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_acf572ca902b74697380da222964b59fc"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#acf572ca902b74697380da222964b59fc">phy_simulator::PhySimulation::AddTemporaryObstacleToMap</a></div><div class="ttdeci">bool AddTemporaryObstacleToMap(const common::Point &amp;pt, const double &amp;size)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00032">phy_simulator.cc:32</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html_a9cacd828dc18d14f4c2d5a1cfe9ef001"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html#a9cacd828dc18d14f4c2d5a1cfe9ef001">common::VehicleSet::vehicles</a></div><div class="ttdeci">std::unordered_map&lt; int, Vehicle &gt; vehicles</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00264">semantics.h:264</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a7cdfc61ba2326c1a447c9ce48b8a4519"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a7cdfc61ba2326c1a447c9ce48b8a4519">phy_simulator::PhySimulation::RemoveTemporaryObstacle</a></div><div class="ttdeci">bool RemoveTemporaryObstacle(const common::Point &amp;pt, const double &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00103">phy_simulator.cc:103</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_afe983c99ed82bf93ec15964a69035f4c"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#afe983c99ed82bf93ec15964a69035f4c">phy_simulator::ArenaLoader::ParseMapInfo</a></div><div class="ttdeci">ErrorType ParseMapInfo(common::ObstacleSet *p_obstacle_set)</div><div class="ttdoc">Parse obstacle info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00077">arena_loader.cc:77</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html_a61641fd5c343cd5421567cf103295505"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html#a61641fd5c343cd5421567cf103295505">common::VehicleControlSignal::acc</a></div><div class="ttdeci">double acc</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00286">semantics.h:286</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a5c9048ac50516d37229ebac4a6648f2a"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a5c9048ac50516d37229ebac4a6648f2a">phy_simulator::ArenaLoader::set_vehicle_set_path</a></div><div class="ttdeci">void set_vehicle_set_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00052">arena_loader.h:52</a></div></div>
+<div class="ttc" id="astructcommon_1_1_polygon_obstacle_html_af12b14a8168668dad3d0bb8585c4d45c"><div class="ttname"><a href="structcommon_1_1_polygon_obstacle.html#af12b14a8168668dad3d0bb8585c4d45c">common::PolygonObstacle::type</a></div><div class="ttdeci">int type</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00697">semantics.h:697</a></div></div>
+<div class="ttc" id="astructcommon_1_1_polygon_obstacle_html_adadd0a345513d93a5adcbe8dc4600195"><div class="ttname"><a href="structcommon_1_1_polygon_obstacle.html#adadd0a345513d93a5adcbe8dc4600195">common::PolygonObstacle::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00696">semantics.h:696</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a9ac442bb13262db5b2e1b7f35a199712"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a9ac442bb13262db5b2e1b7f35a199712">phy_simulator::ArenaLoader::set_lane_net_path</a></div><div class="ttdeci">void set_lane_net_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00056">arena_loader.h:56</a></div></div>
+<div class="ttc" id="astructcommon_1_1_polygon_html_a6be77eb98d0607f6c61dd5bced1a6923"><div class="ttname"><a href="structcommon_1_1_polygon.html#a6be77eb98d0607f6c61dd5bced1a6923">common::Polygon::points</a></div><div class="ttdeci">std::vector&lt; Point &gt; points</div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00163">shapes.h:163</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a235cc5243485bf1281cf75ce8d22489e"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">phy_simulator::PhySimulation::PhySimulation</a></div><div class="ttdeci">PhySimulation()</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00005">phy_simulator.cc:5</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a></div><div class="ttdoc">Vehicle control signal, 2 modes embedded</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00285">semantics.h:285</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html">phy_simulator::ArenaLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00031">arena_loader.h:31</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

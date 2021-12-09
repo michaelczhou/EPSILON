@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/ssc_planner/src/ssc_planner/ssc_planner.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_6782f329ef35c22aa61a1af7641268d8.html">ssc_planner</a></li><li class="navelem"><a class="el" href="dir_615414ab33c443956b970b532f14c9ec.html">src</a></li><li class="navelem"><a class="el" href="dir_bc10e51c8f7bb10e4aa30c8de59c38d8.html">ssc_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ssc_planner.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ssc__planner_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ssc__planner_8h.html">ssc_planner/ssc_planner.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;glog/logging.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;google/protobuf/io/zero_copy_stream_impl.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;google/protobuf/text_format.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// ! Performance can be significantly influenced by multi-core task scheduling</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="ssc__planner_8cc.html#a01df339826abe970836832ae79e5f894">   17</a></span>&#160;<span class="preprocessor">#define USE_OPENMP 0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner.html#a5f2f16f4de56710caeef3d5dcbd616ad">   21</a></span>&#160;std::string <a class="code" href="classplanning_1_1_ssc_planner.html#a5f2f16f4de56710caeef3d5dcbd616ad">SscPlanner::Name</a>() { <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;ssc_planner&quot;</span>); }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner.html#ac97997b493b4559e591512239ba658c9">   23</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner.html#ac97997b493b4559e591512239ba658c9">SscPlanner::Init</a>(<span class="keyword">const</span> std::string config_path) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ReadConfig(config_path);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">// * Planner config</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  printf(<span class="stringliteral">&quot;\nSscPlanner Config:\n&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  printf(<span class="stringliteral">&quot; -- weight_proximity: %lf\n&quot;</span>, cfg_.planner_cfg().weight_proximity());</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;[Ssc]SscPlanner Config:&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;[Ssc] -- low spd threshold: &quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            &lt;&lt; cfg_.planner_cfg().low_speed_threshold();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;[Ssc] -- weight_proximity: &quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            &lt;&lt; cfg_.planner_cfg().weight_proximity();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// * SscMap config</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="structplanning_1_1_ssc_map_1_1_config.html">SscMap::Config</a> map_cfg;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a4411285945dbe5e8a24df996d285de14">map_size</a>[0] = cfg_.map_cfg().map_size_x();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a4411285945dbe5e8a24df996d285de14">map_size</a>[1] = cfg_.map_cfg().map_size_y();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a4411285945dbe5e8a24df996d285de14">map_size</a>[2] = cfg_.map_cfg().map_size_z();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#aafc1f15aefb92be6b8c32c30daf6c1f8">map_resolution</a>[0] = cfg_.map_cfg().map_resl_x();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#aafc1f15aefb92be6b8c32c30daf6c1f8">map_resolution</a>[1] = cfg_.map_cfg().map_resl_y();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#aafc1f15aefb92be6b8c32c30daf6c1f8">map_resolution</a>[2] = cfg_.map_cfg().map_resl_z();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a053ab64c21c24346f18dca13d45482b7">s_back_len</a> = cfg_.map_cfg().s_back_len();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a74ce4df50db6512fd8cee805e5c33449">kMaxLongitudinalVel</a> = cfg_.map_cfg().dyn_bounds().max_lon_vel();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a21d9ed79ab071eb4a8a74bec2f07d5e1">kMinLongitudinalVel</a> =</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(cfg_.map_cfg().dyn_bounds().min_lon_vel(),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;               cfg_.planner_cfg().velocity_singularity_eps());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a99fe9c65e97ebd3d2c21f2da40d0f3b2">kMaxLongitudinalAcc</a> = cfg_.map_cfg().dyn_bounds().max_lon_acc();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a449d74d5e81b4629729971f8ccb2df05">kMaxLongitudinalDecel</a> = cfg_.map_cfg().dyn_bounds().max_lon_dec();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a68451bb5a1106695df156e2c500ad25a">kMaxLateralVel</a> = cfg_.map_cfg().dyn_bounds().max_lat_vel();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a91414528efef271246157cef2e640fbb">kMaxLateralAcc</a> = cfg_.map_cfg().dyn_bounds().max_lat_acc();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#a637caf0831bc1cc9537a92b55ceead30">kMaxNumOfGridAlongTime</a> = cfg_.map_cfg().max_grids_along_time();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[0] = cfg_.map_cfg().infl_steps().x_p();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[1] = cfg_.map_cfg().infl_steps().x_n();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[2] = cfg_.map_cfg().infl_steps().y_p();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[3] = cfg_.map_cfg().infl_steps().y_n();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[4] = cfg_.map_cfg().infl_steps().z_p();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  map_cfg.<a class="code" href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">inflate_steps</a>[5] = cfg_.map_cfg().infl_steps().z_n();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  p_ssc_map_ = <span class="keyword">new</span> <a class="code" href="classplanning_1_1_ssc_map.html">SscMap</a>(map_cfg);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::ReadConfig(<span class="keyword">const</span> std::string config_path) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  printf(<span class="stringliteral">&quot;\n[EudmPlanner] Loading ssc planner config\n&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">using namespace </span>google::protobuf;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> fd = open(config_path.c_str(), O_RDONLY);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  io::FileInputStream fstream(fd);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  TextFormat::Parse(&amp;fstream, &amp;cfg_);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (!cfg_.IsInitialized()) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;failed to parse config from &quot;</span> &lt;&lt; config_path;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner.html#aa876a980d98ef45a33a9b5919c7c0ce3">   78</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner.html#aa876a980d98ef45a33a9b5919c7c0ce3">SscPlanner::set_initial_state</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">State</a>&amp; state) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  initial_state_ = state;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  has_initial_state_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner.html#a16ab59fb7c7c94f18e72c3b96293eb22">   84</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner.html#a16ab59fb7c7c94f18e72c3b96293eb22">SscPlanner::RunOnce</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  stamp_ = map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a92bc734116a548da6633e36fc9d50bdd">GetTimeStamp</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  LOG(WARNING) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[Ssc]******************** RUNONCE START: &quot;</span> &lt;&lt; stamp_</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; ********************\n&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_tic_toc.html">TicToc</a> ssc_timer;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ssc_timer.<a class="code" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">tic</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_tic_toc.html">TicToc</a> timer_prepare;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  timer_prepare.<a class="code" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">tic</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a88dad539fbb2569ce6a25e9d5472f090">GetEgoVehicle</a>(&amp;ego_vehicle_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get ego vehicle info.&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">// plan state</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (!has_initial_state_) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    initial_state_ = ego_vehicle_.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  has_initial_state_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  is_lateral_independent_ =</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      initial_state_.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> &gt; cfg_.planner_cfg().low_speed_threshold()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          ? true</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#aef71d6adf558227685aa4464ef4584b3">GetLocalReferenceLane</a>(&amp;nav_lane_local_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to find ego lane.&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  stf_ = <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a>(nav_lane_local_);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">if</span> (stf_.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(initial_state_, &amp;initial_frenet_state_) !=</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get init state frenet state.&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a6c8fdc22ea1acc224732cbe21c958ff5">GetEgoDiscretBehavior</a>(&amp;ego_behavior_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get ego behavior.&quot;</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a4f6c0202082c7ee26a11bd9583f7540e">GetObstacleMap</a>(&amp;grid_map_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get obstacle map.&quot;</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a323994ab77d4d7c2f05cbcab27a000f7">GetObstacleGrids</a>(&amp;obstacle_grids_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get obstacle grids.&quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span> (map_itf_-&gt;<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html#a800d746f5ebc5d702e54d8f420caeed5">GetForwardTrajectories</a>(&amp;forward_behaviors_, &amp;forward_trajs_,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                       &amp;surround_forward_trajs_) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get forward trajectories.&quot;</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keyword">auto</span> t_prepare = timer_prepare.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]prepare time cost: &quot;</span> &lt;&lt; t_prepare &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_tic_toc.html">TicToc</a> timer_stf;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  timer_stf.<a class="code" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">tic</a>();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordflow">if</span> (StateTransformForInputData() != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to transform state into ff.&quot;</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">auto</span> t_stf = timer_stf.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]state transform time cost: &quot;</span> &lt;&lt; t_stf &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_tic_toc.html">TicToc</a> timer_sscmap;  <span class="comment">// ! SscMap part sometimes can be very slow</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                               <span class="comment">// ! (Maybe CPU scheduling?)</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  timer_sscmap.<a class="code" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">tic</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  time_origin_ = initial_state_.<a class="code" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">time_stamp</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a24081901cfe690ca40a9a88fc85e5bde">ResetSscMap</a>(initial_frenet_state_);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// ~ For closed-loop simulation prediction</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">int</span> num_behaviors = forward_behaviors_.size();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_behaviors; ++i) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (!cfg_.planner_cfg().is_fitting_only()) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">if</span> (p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a7e4a07005b7aa4efe826c03266f488df">ConstructSscMap</a>(surround_forward_trajs_fs_[i],</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                      obstacle_grids_fs_)) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to construct ssc map.&quot;</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// ! Notice: No inflation here to save time in eudm project. Improve</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// ! efficiency in the future.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// TicToc timer_infl;</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// p_ssc_map_-&gt;InflateObstacleGrid(ego_vehicle_.param());</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// printf(&quot;[SscPlanner] InflateObstacleGrid time cost: %lf ms\n&quot;,</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">//        timer_infl.toc());</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#aae2c5f998d255299721a70f5556d8ea6">ConstructCorridorUsingInitialTrajectory</a>(</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a62b760d1d82026a19dda09742a39a32e">p_3d_grid</a>(), forward_trajs_fs_[i]) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to construct corridor for behavior &quot;</span> &lt;&lt; i;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a> != p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a089e5174e16ad35303272eba033869e5">GetFinalGlobalMetricCubesList</a>()) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to get final corridor&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keyword">auto</span> t_sscmap = timer_sscmap.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]construct ssc map and corridor time cost: &quot;</span> &lt;&lt; t_sscmap</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_tic_toc.html">TicToc</a> timer_opt;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  timer_opt.<a class="code" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">tic</a>();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span> (RunQpOptimization() != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail to optimize qp trajectories.\n&quot;</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordflow">if</span> (UpdateTrajectoryWithCurrentBehavior() != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: current behavior &quot;</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;               &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ego_behavior_) &lt;&lt; <span class="stringliteral">&quot; not valid.&quot;</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: has &quot;</span> &lt;&lt; qp_trajs_.size() &lt;&lt; <span class="stringliteral">&quot; traj, &quot;</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;               &lt;&lt; valid_behaviors_.size() &lt;&lt; <span class="stringliteral">&quot; behaviors.&quot;</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keyword">auto</span> traj = <a class="code" href="classplanning_1_1_ssc_planner.html#a4abcbab475fd8785628625e6b0317606">trajectory</a>();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">if</span> (ValidateTrajectory(*traj) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: infeasible traj.&quot;</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keyword">auto</span> t_opt = timer_opt.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]optimization time cost: &quot;</span> &lt;&lt; t_opt &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keyword">auto</span> t_sum = t_prepare + t_stf + t_sscmap + t_opt;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  time_cost_ = ssc_timer.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  LOG(WARNING) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[Ssc]Sum of time: &quot;</span> &lt;&lt; t_sum</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; ms, diff: &quot;</span> &lt;&lt; time_cost_ - t_sum &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  LOG(WARNING) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[Ssc]******************** RUNONCE FINISH: &quot;</span> &lt;&lt; stamp_ &lt;&lt; <span class="stringliteral">&quot; +&quot;</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;               &lt;&lt; time_cost_ &lt;&lt; <span class="stringliteral">&quot; ms ********************\n&quot;</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::RunQpOptimization() {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;vec_E&lt;common::SpatioTemporalSemanticCubeNd&lt;2&gt;</a>&gt;&gt; cube_list =</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a054d0e8f50ebaf2fcd5fa2f635bbec04">final_corridor_vec</a>();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  std::vector&lt;int&gt; if_corridor_valid = p_ssc_map_-&gt;<a class="code" href="classplanning_1_1_ssc_map.html#a74316f2e57138e48847a90131f2248f9">if_corridor_valid</a>();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordflow">if</span> (cube_list.empty()) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (cube_list.size() != forward_behaviors_.size()) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]cube list &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cube_list.size())</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; not consist with behavior size: &quot;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;               &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(forward_behaviors_.size())</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;, forward traj &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(forward_trajs_.size())</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;, flag size &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(if_corridor_valid.size());</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  qp_trajs_.clear();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  primitive_trajs_.clear();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  valid_behaviors_.clear();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  corridors_.clear();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  ref_states_list_.clear();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(cube_list.size()); i++) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">int</span> beh = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(forward_behaviors_[i]);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (if_corridor_valid[i] == 0) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: for behavior &quot;</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                 &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(forward_behaviors_[i])</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot; has no valid corridor.&quot;</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">auto</span> fs_vehicle_traj = forward_trajs_fs_[i];</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">int</span> num_states = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(fs_vehicle_traj.size());</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vecf&lt;2&gt;</a>&gt; start_constraints;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    start_constraints.push_back(</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#a1cdb1fe440d29a5ae2fe116d55abe346">vec_s</a>[0], ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#aabd48d260be0b9bd71b8daf2cb7338cc">vec_dt</a>[0]));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    start_constraints.push_back(</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(<a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#a1cdb1fe440d29a5ae2fe116d55abe346">vec_s</a>[1],</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                         cfg_.planner_cfg().velocity_singularity_eps()),</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#aabd48d260be0b9bd71b8daf2cb7338cc">vec_dt</a>[1]));</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    start_constraints.push_back(</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#a1cdb1fe440d29a5ae2fe116d55abe346">vec_s</a>[2], ego_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#aabd48d260be0b9bd71b8daf2cb7338cc">vec_dt</a>[2]));</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// printf(&quot;[Inconsist]Start sd position (%lf, %lf).\n&quot;,</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// start_constraints[0](0),</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">//        start_constraints[0](1));</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vecf&lt;2&gt;</a>&gt; end_constraints;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    end_constraints.push_back(</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(fs_vehicle_traj[num_states - 1].frenet_state.vec_s[0],</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                fs_vehicle_traj[num_states - 1].frenet_state.vec_dt[0]));</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    end_constraints.push_back(</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(<a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(fs_vehicle_traj[num_states - 1].frenet_state.vec_s[1],</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                         cfg_.planner_cfg().velocity_singularity_eps()),</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                fs_vehicle_traj[num_states - 1].frenet_state.vec_dt[1]));</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// end_constraints.push_back(</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">//     Vecf&lt;2&gt;(fs_vehicle_traj[num_states - 1].frenet_state.vec_s[2],</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">//             fs_vehicle_traj[num_states - 1].frenet_state.vec_dt[2]));</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="classcommon_1_1_spline_generator.html">common::SplineGenerator&lt;5, 2&gt;</a> spline_generator;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="classplanning_1_1_ssc_planner.html#a5cf1ec89b43ea874ef4e8f9bc77e1fb5">BezierSpline</a> bezier_spline;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    cube_list[i].back().t_ub = fs_vehicle_traj.back().frenet_state.time_stamp;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">if</span> (CorridorFeasibilityCheck(cube_list[i]) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: corridor not valid for optimization.&quot;</span>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::vector&lt;decimal_t&gt; ref_stamps;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vecf&lt;2&gt;</a>&gt; ref_points;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FrenetState&gt;</a> ref_states;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> = 0; <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> &lt; num_states; <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>++) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      ref_stamps.push_back(fs_vehicle_traj[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>].frenet_state.time_stamp);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      ref_points.push_back(<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(fs_vehicle_traj[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>].frenet_state.vec_s[0],</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                   fs_vehicle_traj[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>].frenet_state.vec_dt[0]));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      ref_states.push_back(fs_vehicle_traj[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>].frenet_state);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">bool</span> bezier_spline_gen_success = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (spline_generator.<a class="code" href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71">GetBezierSplineUsingCorridor</a>(</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            cube_list[i], start_constraints, end_constraints, ref_stamps,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            ref_points, cfg_.planner_cfg().weight_proximity(),</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            &amp;bezier_spline) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      <span class="keywordflow">if</span> (is_lateral_independent_) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]fail: solver error for behavior &quot;</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                   &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(forward_behaviors_[i]);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> t0 = cube_list[i].front().t_lb;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; cube : cube_list[i]) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;          LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(3) &lt;&lt; <span class="stringliteral">&quot;[Ssc] t: [&quot;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                     &lt;&lt; cube.t_lb - t0 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cube.t_ub - t0 &lt;&lt; <span class="stringliteral">&quot;], x: [&quot;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                     &lt;&lt; cube.p_lb[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cube.p_ub[0] &lt;&lt; <span class="stringliteral">&quot;], y: [&quot;</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                     &lt;&lt; cube.p_lb[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cube.p_ub[1] &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]ref points: &quot;</span>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; ref_stamps.size(); ++k) {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;          LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4) &lt;&lt; <span class="stringliteral">&quot;[Ssc]&quot;</span> &lt;&lt; k</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot; t: &quot;</span> &lt;&lt; ref_stamps[k] &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; ref_points[k].x()</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; ref_points[k].y();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]forward traj: &quot;</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; forward_trajs_[i].size(); ++k) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;          <span class="keyword">auto</span> v = forward_trajs_[i][k];</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;          LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4) &lt;&lt; <span class="stringliteral">&quot;[Ssc]&quot;</span> &lt;&lt; k</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot; t: &quot;</span> &lt;&lt; v.state().time_stamp</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; v.state().vec_position.x()</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; v.state().vec_position.y()</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;, v: &quot;</span> &lt;&lt; v.state().velocity;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]ref lane range: [&quot;</span> &lt;&lt; nav_lane_local_.<a class="code" href="classcommon_1_1_lane.html#adaaa268e50baf5e05940b52deec33854">begin</a>()</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; nav_lane_local_.<a class="code" href="classcommon_1_1_lane.html#ae695ed4a08cc4ed77f3140965fcf5e9b">end</a>() &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;[Ssc]Start sd velocity (&quot;</span> &lt;&lt; start_constraints[1](0)</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; start_constraints[1](1) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;[Ssc]Start sd acceleration (&quot;</span> &lt;&lt; start_constraints[2](0)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; start_constraints[2](1) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;[Ssc]End sd position (&quot;</span> &lt;&lt; end_constraints[0](0) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                   &lt;&lt; end_constraints[0](1) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;[Ssc]End sd velocity (&quot;</span> &lt;&lt; end_constraints[1](0) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                   &lt;&lt; end_constraints[1](1) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        LOG(ERROR) &lt;&lt; std::fixed &lt;&lt; std::setprecision(4)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;[Ssc]End state stamp: &quot;</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                   &lt;&lt; fs_vehicle_traj[num_states - 1].frenet_state.time_stamp;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      bezier_spline_gen_success = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="classplanning_1_1_ssc_planner.html#af3be7fbd9ac12f2f1d72ddcfbb7e00e0">FrenetPrimitive</a> primitive;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (!is_lateral_independent_) {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      primitive.<a class="code" href="classcommon_1_1_frenet_primitive.html#a7ab27d106cf9d7ddabec08d83f2065ce">Connect</a>(initial_frenet_state_,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                        fs_vehicle_traj.back().frenet_state,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                        initial_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#a39b74cad8105b656d1512a7346181017">time_stamp</a>,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                        fs_vehicle_traj.back().frenet_state.time_stamp -</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                            initial_frenet_state_.<a class="code" href="structcommon_1_1_frenet_state.html#a39b74cad8105b656d1512a7346181017">time_stamp</a>,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                        is_lateral_independent_);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">if</span> (is_lateral_independent_ &amp;&amp; !bezier_spline_gen_success) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// printf(&quot;[SscQP]spline begin stamp: %lf.\n&quot;, bezier_spline.begin());</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    qp_trajs_.push_back(bezier_spline);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    primitive_trajs_.push_back(primitive);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    corridors_.push_back(cube_list[i]);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    ref_states_list_.push_back(ref_states);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    valid_behaviors_.push_back(forward_behaviors_[i]);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::UpdateTrajectoryWithCurrentBehavior() {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keywordtype">int</span> num_valid_behaviors = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(valid_behaviors_.size());</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">if</span> (num_valid_behaviors &lt; 1) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="keywordtype">bool</span> find_exact_match_behavior = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_valid_behaviors; i++) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span> (valid_behaviors_[i] == ego_behavior_) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      find_exact_match_behavior = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;      index = i;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keywordtype">bool</span> find_candidate_behavior = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner.html#a9dd33b96c6b4ba80c23289dd617cc9fa">LateralBehavior</a> candidate_bahavior = <a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">if</span> (!find_exact_match_behavior) {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_valid_behaviors; i++) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;      <span class="keywordflow">if</span> (valid_behaviors_[i] == candidate_bahavior) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        find_candidate_behavior = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        index = i;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;      }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keywordflow">if</span> (!find_exact_match_behavior &amp;&amp; !find_candidate_behavior)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  trajectory_ = <a class="code" href="classplanning_1_1_ssc_planner.html#a9f27e7865eebd9699288808728d94230">FrenetBezierTrajectory</a>(qp_trajs_[index], stf_);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  low_spd_alternative_traj_ =</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;      <a class="code" href="classplanning_1_1_ssc_planner.html#a468b7ccd20c8eca4482e43c99db01131">FrenetPrimitiveTrajectory</a>(primitive_trajs_[index], stf_);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  final_corridor_ = corridors_[index];</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  final_ref_states_ = ref_states_list_[index];</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::CorridorFeasibilityCheck(</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="code" href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">common::SpatioTemporalSemanticCubeNd&lt;2&gt;</a>&gt;&amp; cubes) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  <span class="keywordtype">int</span> num_cubes = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cubes.size());</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="keywordflow">if</span> (num_cubes &lt; 1) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]number of cubes not enough.&quot;</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; num_cubes; i++) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">if</span> (cubes[i - 1].t_ub != cubes[i].t_lb) {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]Err- Corridor not consist.&quot;</span>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]Err - t: [&quot;</span> &lt;&lt; cubes[i - 1].t_lb &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                 &lt;&lt; cubes[i - 1].t_ub &lt;&lt; <span class="stringliteral">&quot;], x: [&quot;</span> &lt;&lt; cubes[i - 1].p_lb[0]</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubes[i - 1].p_ub[0] &lt;&lt; <span class="stringliteral">&quot;], y: [&quot;</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                 &lt;&lt; cubes[i - 1].p_lb[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubes[i - 1].p_ub[1] &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc]Err - t: [&quot;</span> &lt;&lt; cubes[i].t_lb &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubes[i].t_ub</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;], x: [&quot;</span> &lt;&lt; cubes[i].p_lb[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubes[i].p_ub[0]</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;], y: [&quot;</span> &lt;&lt; cubes[i].p_lb[1] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubes[i].p_ub[1]</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::StateTransformForInputData() {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;State&gt;</a> global_state_vec;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a> global_point_vec;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordtype">int</span> num_v;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="comment">// ~ Stage I. Package states and points</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  <span class="comment">// * Ego vehicle state and vertices</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  {</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    global_state_vec.push_back(initial_state_);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a> v_vec;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <a class="code" href="classcommon_1_1_semantics_utils.html#a73aeace706d758c939707dd00e8fa051">common::SemanticsUtils::GetVehicleVertices</a>(ego_vehicle_.<a class="code" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91">param</a>(),</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                                               initial_state_, &amp;v_vec);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    num_v = v_vec.size();</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    global_point_vec.insert(global_point_vec.end(), v_vec.begin(), v_vec.end());</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;  }</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;  <span class="comment">// * Ego forward simulation trajs states and vertices</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  {</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <a class="code" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a> ego_param = ego_vehicle_.<a class="code" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91">param</a>();</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)forward_trajs_.size(); ++i) {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;      <span class="keywordflow">if</span> (forward_trajs_[i].size() &lt; 1) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; (int)forward_trajs_[i].size(); ++k) {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="comment">// states</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <a class="code" href="classplanning_1_1_ssc_planner.html#a8d8993355a1e3c7e65f7a638144ec749">State</a> traj_state = forward_trajs_[i][k].state();</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        global_state_vec.push_back(traj_state);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="comment">// vertices</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a> v_vec;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="classcommon_1_1_semantics_utils.html#a73aeace706d758c939707dd00e8fa051">common::SemanticsUtils::GetVehicleVertices</a>(ego_param, traj_state,</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                                                   &amp;v_vec);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        global_point_vec.insert(global_point_vec.end(), v_vec.begin(),</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                                v_vec.end());</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;      }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    }</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  }</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  <span class="comment">// * Surrounding vehicle trajs from MPDM</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  {</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; surround_forward_trajs_.size(); ++i) {</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = surround_forward_trajs_[i].begin();</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;           it != surround_forward_trajs_[i].end(); ++it) {</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; it-&gt;second.size(); ++k) {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;          <span class="comment">// states</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;          <a class="code" href="classplanning_1_1_ssc_planner.html#a8d8993355a1e3c7e65f7a638144ec749">State</a> traj_state = it-&gt;second[k].state();</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;          global_state_vec.push_back(traj_state);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;          <span class="comment">// vertices</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a> v_vec;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;          <a class="code" href="classcommon_1_1_semantics_utils.html#a73aeace706d758c939707dd00e8fa051">common::SemanticsUtils::GetVehicleVertices</a>(it-&gt;second[k].param(),</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                                                     traj_state, &amp;v_vec);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;          global_point_vec.insert(global_point_vec.end(), v_vec.begin(),</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                                  v_vec.end());</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        }</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;      }</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    }</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;  }</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;  <span class="comment">// * Obstacle grids</span></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = obstacle_grids_.begin(); it != obstacle_grids_.end(); ++it) {</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a> pt((*it)[0], (*it)[1]);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;      global_point_vec.push_back(pt);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    }</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  }</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;FrenetState&gt;</a> frenet_state_vec(global_state_vec.size());</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a> fs_point_vec(global_point_vec.size());</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;  <span class="comment">// ~ Stage II. Do transformation in multi-thread flavor</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">#if USE_OPENMP</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;  <a class="code" href="class_tic_toc.html">TicToc</a> timer_stf;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  StateTransformUsingOpenMp(global_state_vec, global_point_vec,</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                            &amp;frenet_state_vec, &amp;fs_point_vec);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]OpenMp transform time cost: &quot;</span> &lt;&lt; timer_stf.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>()</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; ms.&quot;</span>;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <a class="code" href="class_tic_toc.html">TicToc</a> timer_stf;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  StateTransformSingleThread(global_state_vec, global_point_vec,</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                             &amp;frenet_state_vec, &amp;fs_point_vec);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]Single thread transform time cost: &quot;</span> &lt;&lt; timer_stf.<a class="code" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">toc</a>()</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; ms.&quot;</span>;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  <span class="comment">// ~ Stage III. Retrieve states and points</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordtype">int</span> offset = 0;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;  <span class="comment">// * Ego vehicle state and vertices</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  {</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    fs_ego_vehicle_.<a class="code" href="structcommon_1_1_fs_vehicle.html#a8d0d18d38882ff4e1a591400bf3b7514">frenet_state</a> = frenet_state_vec[offset];</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    fs_ego_vehicle_.<a class="code" href="structcommon_1_1_fs_vehicle.html#a3befe638592e316e9253ec33215e0c7a">vertices</a>.clear();</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_v; ++i) {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;      fs_ego_vehicle_.<a class="code" href="structcommon_1_1_fs_vehicle.html#a3befe638592e316e9253ec33215e0c7a">vertices</a>.push_back(fs_point_vec[offset * num_v + i]);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    offset++;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;  }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;  <span class="comment">// * Ego forward simulation trajs states and vertices</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;  {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    forward_trajs_fs_.clear();</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">if</span> (forward_trajs_.size() &lt; 1) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; (int)forward_trajs_.size(); ++j) {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;      <span class="keywordflow">if</span> (forward_trajs_[j].size() &lt; 1) assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FsVehicle&gt;</a> traj_fs;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; (int)forward_trajs_[j].size(); ++k) {</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="structcommon_1_1_fs_vehicle.html">common::FsVehicle</a> fs_v;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        fs_v.<a class="code" href="structcommon_1_1_fs_vehicle.html#a8d0d18d38882ff4e1a591400bf3b7514">frenet_state</a> = frenet_state_vec[offset];</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_v; ++i) {</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;          fs_v.<a class="code" href="structcommon_1_1_fs_vehicle.html#a3befe638592e316e9253ec33215e0c7a">vertices</a>.push_back(fs_point_vec[offset * num_v + i]);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        traj_fs.emplace_back(fs_v);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        offset++;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;      }</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;      forward_trajs_fs_.emplace_back(traj_fs);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    }</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;  }</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  <span class="comment">// * Surrounding vehicle trajs from MPDM</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  {</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    surround_forward_trajs_fs_.clear();</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; surround_forward_trajs_.size(); ++j) {</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;      std::unordered_map&lt;int, vec_E&lt;common::FsVehicle&gt;&gt; sur_trajs;</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = surround_forward_trajs_[j].begin();</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;           it != surround_forward_trajs_[j].end(); ++it) {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordtype">int</span> v_id = it-&gt;first;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FsVehicle&gt;</a> traj_fs;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; it-&gt;second.size(); ++k) {</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;          <a class="code" href="structcommon_1_1_fs_vehicle.html">common::FsVehicle</a> fs_v;</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;          fs_v.<a class="code" href="structcommon_1_1_fs_vehicle.html#a8d0d18d38882ff4e1a591400bf3b7514">frenet_state</a> = frenet_state_vec[offset];</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_v; ++i) {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            fs_v.<a class="code" href="structcommon_1_1_fs_vehicle.html#a3befe638592e316e9253ec33215e0c7a">vertices</a>.push_back(fs_point_vec[offset * num_v + i]);</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;          }</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;          traj_fs.emplace_back(fs_v);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;          offset++;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        }</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        sur_trajs.insert(</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            std::pair&lt;<span class="keywordtype">int</span>, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FsVehicle&gt;</a>&gt;(v_id, traj_fs));</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;      }</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;      surround_forward_trajs_fs_.emplace_back(sur_trajs);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    }</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;  }</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;  <span class="comment">// * Obstacle grids</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;  {</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    obstacle_grids_fs_.clear();</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(obstacle_grids_.size()); ++i) {</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;      obstacle_grids_fs_.push_back(fs_point_vec[offset * num_v + i]);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    }</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  }</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  ego_frenet_state_ = fs_ego_vehicle_.<a class="code" href="structcommon_1_1_fs_vehicle.html#a8d0d18d38882ff4e1a591400bf3b7514">frenet_state</a>;</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::StateTransformUsingOpenMp(</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;State&gt;</a>&amp; global_state_vec, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a>&amp; global_point_vec,</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;FrenetState&gt;</a>* frenet_state_vec, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a>* fs_point_vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;  <span class="keywordtype">int</span> state_num = global_state_vec.size();</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  <span class="keywordtype">int</span> point_num = global_point_vec.size();</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;  <span class="keyword">auto</span> ptr_state_vec = frenet_state_vec-&gt;data();</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;  <span class="keyword">auto</span> ptr_point_vec = fs_point_vec-&gt;data();</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;  LOG(WARNING) &lt;&lt; <span class="stringliteral">&quot;[Ssc]OpenMp - Total number of queries: &quot;</span></div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;               &lt;&lt; state_num + point_num;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  omp_set_num_threads(4);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;  {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state_num; ++i) {</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;      <a class="code" href="classplanning_1_1_ssc_planner.html#abc054d33bac14c47cb1e37429e0aa7d7">FrenetState</a> fs;</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a> != stf_.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(global_state_vec[i], &amp;fs)) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        fs.<a class="code" href="structcommon_1_1_frenet_state.html#a39b74cad8105b656d1512a7346181017">time_stamp</a> = global_state_vec[i].time_stamp;</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      }</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;      *(ptr_state_vec + i) = fs;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    }</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;  }</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  {</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; point_num; ++i) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a> fs_pt;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;      stf_.<a class="code" href="classcommon_1_1_state_transformer.html#a508eb3849a2046394b7118df26f1c4ad">GetFrenetPointFromPoint</a>(global_point_vec[i], &amp;fs_pt);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;      *(ptr_point_vec + i) = fs_pt;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    }</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;  }</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;}</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::StateTransformSingleThread(</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;State&gt;</a>&amp; global_state_vec, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a>&amp; global_point_vec,</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;FrenetState&gt;</a>* frenet_state_vec, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Vec2f&gt;</a>* fs_point_vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;  <span class="keywordtype">int</span> state_num = global_state_vec.size();</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;  <span class="keywordtype">int</span> point_num = global_point_vec.size();</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;  <span class="keyword">auto</span> ptr_state_vec = frenet_state_vec-&gt;data();</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;  <span class="keyword">auto</span> ptr_point_vec = fs_point_vec-&gt;data();</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;  {</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state_num; ++i) {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;      <a class="code" href="classplanning_1_1_ssc_planner.html#abc054d33bac14c47cb1e37429e0aa7d7">FrenetState</a> fs;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;      stf_.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(global_state_vec[i], &amp;fs);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;      *(ptr_state_vec + i) = fs;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    }</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;  }</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;  {</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; point_num; ++i) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a> fs_pt;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;      stf_.<a class="code" href="classcommon_1_1_state_transformer.html#a508eb3849a2046394b7118df26f1c4ad">GetFrenetPointFromPoint</a>(global_point_vec[i], &amp;fs_pt);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;      *(ptr_point_vec + i) = fs_pt;</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    }</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;  }</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;}</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner.html#a21078df5b20f8f4c77aa806b02b8a460">  640</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_ssc_planner.html#a21078df5b20f8f4c77aa806b02b8a460">SscPlanner::set_map_interface</a>(<a class="code" href="classplanning_1_1_ssc_planner_map_itf.html">SscPlannerMapItf</a>* map_itf) {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;  <span class="keywordflow">if</span> (map_itf == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a>;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;  map_itf_ = map_itf;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;  map_valid_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;}</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> SscPlanner::ValidateTrajectory(<span class="keyword">const</span> <a class="code" href="classplanning_1_1_ssc_planner.html#a0cafcb0200c9b24a18c0d773fb5123ca">FrenetTrajectory</a>&amp; traj) {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;  std::vector&lt;decimal_t&gt; t_vec_xy;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;  common::GetRangeVector&lt;decimal_t&gt;(traj.begin(), traj.end(), 0.1, <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                                    &amp;t_vec_xy);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  <a class="code" href="structcommon_1_1_state.html">common::State</a> state;</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  <span class="comment">// * check init state</span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  <span class="keywordflow">if</span> (traj.GetState(traj.begin(), &amp;state) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]State evaluation error&quot;</span>;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;  }</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;  <span class="keywordflow">if</span> ((state.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a> - initial_state_.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>).norm() &gt; 0.1) {</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]Init position miss match&quot;</span>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;  }</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;  <span class="keywordflow">if</span> (fabs(state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> - initial_state_.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>) &gt; 0.1) {</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]Init vel miss match&quot;</span>;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;  }</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;  <span class="comment">// * check end state</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;  <span class="keywordflow">if</span> (traj.GetState(traj.end(), &amp;state) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]End state eval error&quot;</span>;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;  }</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> t : t_vec_xy) {</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordflow">if</span> (traj.GetState(t, &amp;state) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]State eval error&quot;</span>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    }</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">if</span> (fabs(state.<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a>) &gt; 0.33) {</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;      LOG(ERROR) &lt;&lt; <span class="stringliteral">&quot;[Ssc][Validate]initial_state velocity &quot;</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                 &lt;&lt; initial_state_.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> &lt;&lt; <span class="stringliteral">&quot; Curvature &quot;</span> &lt;&lt; state.<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot; invalid.&quot;</span>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  }</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;}</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;}  <span class="comment">// namespace planning</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasscommon_1_1_semantics_utils_html_a73aeace706d758c939707dd00e8fa051"><div class="ttname"><a href="classcommon_1_1_semantics_utils.html#a73aeace706d758c939707dd00e8fa051">common::SemanticsUtils::GetVehicleVertices</a></div><div class="ttdeci">static ErrorType GetVehicleVertices(const VehicleParam &amp;param, const State &amp;state, vec_E&lt; Vec2f &gt; *vertices)</div><div class="ttdoc">Get the Vehicle Vertices</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8cc_source.html#l00473">semantics.cc:473</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a8eebe7f110a4478fd15e791150c21ea9"><div class="ttname"><a href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">common::State::vec_position</a></div><div class="ttdeci">Vecf&lt; 2 &gt; vec_position</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00009">state.h:9</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a4de935b8f4301b2b44fa9484f1950367"><div class="ttname"><a href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">common::State::curvature</a></div><div class="ttdeci">decimal_t curvature</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00011">state.h:11</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a053ab64c21c24346f18dca13d45482b7"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a053ab64c21c24346f18dca13d45482b7">planning::SscMap::Config::s_back_len</a></div><div class="ttdeci">decimal_t s_back_len</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00042">ssc_map.h:42</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a5f2f16f4de56710caeef3d5dcbd616ad"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a5f2f16f4de56710caeef3d5dcbd616ad">planning::SscPlanner::Name</a></div><div class="ttdeci">std::string Name() override</div><div class="ttdoc">Initialize the planner with config path</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8cc_source.html#l00021">ssc_planner.cc:21</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a4abcbab475fd8785628625e6b0317606"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a4abcbab475fd8785628625e6b0317606">planning::SscPlanner::trajectory</a></div><div class="ttdeci">std::unique_ptr&lt; FrenetTrajectory &gt; trajectory() const</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00096">ssc_planner.h:96</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a21078df5b20f8f4c77aa806b02b8a460"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a21078df5b20f8f4c77aa806b02b8a460">planning::SscPlanner::set_map_interface</a></div><div class="ttdeci">ErrorType set_map_interface(SscPlannerMapItf *map_itf)</div><div class="ttdoc">setters</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8cc_source.html#l00640">ssc_planner.cc:640</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html">planning::SscMap::Config</a></div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00038">ssc_map.h:38</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_a92e0f293f9557c4b438970b6c5b54a91"><div class="ttname"><a href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91">common::Vehicle::param</a></div><div class="ttdeci">VehicleParam param() const</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00089">semantics.h:89</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a74316f2e57138e48847a90131f2248f9"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a74316f2e57138e48847a90131f2248f9">planning::SscMap::if_corridor_valid</a></div><div class="ttdeci">std::vector&lt; int &gt; if_corridor_valid() const</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00093">ssc_map.h:93</a></div></div>
+<div class="ttc" id="astructcommon_1_1_frenet_state_html_a39b74cad8105b656d1512a7346181017"><div class="ttname"><a href="structcommon_1_1_frenet_state.html#a39b74cad8105b656d1512a7346181017">common::FrenetState::time_stamp</a></div><div class="ttdeci">decimal_t time_stamp</div><div class="ttdef"><b>Definition:</b> <a href="frenet__state_8h_source.html#l00014">frenet_state.h:14</a></div></div>
+<div class="ttc" id="astructcommon_1_1_frenet_state_html_aabd48d260be0b9bd71b8daf2cb7338cc"><div class="ttname"><a href="structcommon_1_1_frenet_state.html#aabd48d260be0b9bd71b8daf2cb7338cc">common::FrenetState::vec_dt</a></div><div class="ttdeci">Vecf&lt; 3 &gt; vec_dt</div><div class="ttdef"><b>Definition:</b> <a href="frenet__state_8h_source.html#l00016">frenet_state.h:16</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a0b47430c47a2f8171adccbfd9fccfdce"><div class="ttname"><a href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">common::State::time_stamp</a></div><div class="ttdeci">decimal_t time_stamp</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00008">state.h:8</a></div></div>
+<div class="ttc" id="assc__planner_8h_html"><div class="ttname"><a href="ssc__planner_8h.html">ssc_planner.h</a></div><div class="ttdoc">planner using spatio-temporal corridor</div></div>
+<div class="ttc" id="aclasscommon_1_1_frenet_primitive_html_a7ab27d106cf9d7ddabec08d83f2065ce"><div class="ttname"><a href="classcommon_1_1_frenet_primitive.html#a7ab27d106cf9d7ddabec08d83f2065ce">common::FrenetPrimitive::Connect</a></div><div class="ttdeci">ErrorType Connect(const FrenetState &amp;fs0, const FrenetState &amp;fs1, const decimal_t stamp, const decimal_t T, bool is_lateral_independent)</div><div class="ttdoc">Construct primitive in the frenet frame with two different modes</div><div class="ttdef"><b>Definition:</b> <a href="frenet__primitive_8cc_source.html#l00005">frenet_primitive.cc:5</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a74ce4df50db6512fd8cee805e5c33449"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a74ce4df50db6512fd8cee805e5c33449">planning::SscMap::Config::kMaxLongitudinalVel</a></div><div class="ttdeci">decimal_t kMaxLongitudinalVel</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00043">ssc_map.h:43</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_generator_html"><div class="ttname"><a href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="spline__generator_8h_source.html#l00022">spline_generator.h:22</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_aafc1f15aefb92be6b8c32c30daf6c1f8"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#aafc1f15aefb92be6b8c32c30daf6c1f8">planning::SscMap::Config::map_resolution</a></div><div class="ttdeci">std::array&lt; decimal_t, 3 &gt; map_resolution</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00040">ssc_map.h:40</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a637caf0831bc1cc9537a92b55ceead30"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a637caf0831bc1cc9537a92b55ceead30">planning::SscMap::Config::kMaxNumOfGridAlongTime</a></div><div class="ttdeci">int kMaxNumOfGridAlongTime</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00050">ssc_map.h:50</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_ab477367137d1a6163a9b81a6af0055e9"><div class="ttname"><a href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">common::Vehicle::state</a></div><div class="ttdeci">State state() const</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00090">semantics.h:90</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a468b7ccd20c8eca4482e43c99db01131"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a468b7ccd20c8eca4482e43c99db01131">planning::SscPlanner::FrenetPrimitiveTrajectory</a></div><div class="ttdeci">common::FrenetPrimitiveTrajectory FrenetPrimitiveTrajectory</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00046">ssc_planner.h:46</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a88dad539fbb2569ce6a25e9d5472f090"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a88dad539fbb2569ce6a25e9d5472f090">planning::SscPlannerMapItf::GetEgoVehicle</a></div><div class="ttdeci">virtual ErrorType GetEgoVehicle(Vehicle *vehicle)=0</div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html_a508eb3849a2046394b7118df26f1c4ad"><div class="ttname"><a href="classcommon_1_1_state_transformer.html#a508eb3849a2046394b7118df26f1c4ad">common::StateTransformer::GetFrenetPointFromPoint</a></div><div class="ttdeci">ErrorType GetFrenetPointFromPoint(const Vec2f &amp;s, Vec2f *fs) const</div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8cc_source.html#l00185">state_transformer.cc:185</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a0cafcb0200c9b24a18c0d773fb5123ca"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a0cafcb0200c9b24a18c0d773fb5123ca">planning::SscPlanner::FrenetTrajectory</a></div><div class="ttdeci">common::FrenetTrajectory FrenetTrajectory</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00043">ssc_planner.h:43</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a16ab59fb7c7c94f18e72c3b96293eb22"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a16ab59fb7c7c94f18e72c3b96293eb22">planning::SscPlanner::RunOnce</a></div><div class="ttdeci">ErrorType RunOnce() override</div><div class="ttdoc">Run one planning round with given states</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8cc_source.html#l00084">ssc_planner.cc:84</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a9dd33b96c6b4ba80c23289dd617cc9fa"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a9dd33b96c6b4ba80c23289dd617cc9fa">planning::SscPlanner::LateralBehavior</a></div><div class="ttdeci">common::LateralBehavior LateralBehavior</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00041">ssc_planner.h:41</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_ae695ed4a08cc4ed77f3140965fcf5e9b"><div class="ttname"><a href="classcommon_1_1_lane.html#ae695ed4a08cc4ed77f3140965fcf5e9b">common::Lane::end</a></div><div class="ttdeci">decimal_t end() const</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00078">lane.h:78</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html"><div class="ttname"><a href="classcommon_1_1_state_transformer.html">common::StateTransformer</a></div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8h_source.html#l00011">state_transformer.h:11</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a68451bb5a1106695df156e2c500ad25a"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a68451bb5a1106695df156e2c500ad25a">planning::SscMap::Config::kMaxLateralVel</a></div><div class="ttdeci">decimal_t kMaxLateralVel</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00047">ssc_map.h:47</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a4411285945dbe5e8a24df996d285de14"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a4411285945dbe5e8a24df996d285de14">planning::SscMap::Config::map_size</a></div><div class="ttdeci">std::array&lt; int, 3 &gt; map_size</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00039">ssc_map.h:39</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html_a5d76802851d3cbc366b4ccccb7257e2e"><div class="ttname"><a href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e">TicToc::tic</a></div><div class="ttdeci">void tic()</div><div class="ttdoc">start timing</div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00025">tic_toc.h:25</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a62b760d1d82026a19dda09742a39a32e"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a62b760d1d82026a19dda09742a39a32e">planning::SscMap::p_3d_grid</a></div><div class="ttdeci">GridMap3D * p_3d_grid() const</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00080">ssc_map.h:80</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a054d0e8f50ebaf2fcd5fa2f635bbec04"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a054d0e8f50ebaf2fcd5fa2f635bbec04">planning::SscMap::final_corridor_vec</a></div><div class="ttdeci">vec_E&lt; vec_E&lt; common::SpatioTemporalSemanticCubeNd&lt; 2 &gt; &gt; &gt; final_corridor_vec() const</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00088">ssc_map.h:88</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a></div><div class="ttdeci">@ kWrongStatus</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a7e4a07005b7aa4efe826c03266f488df"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a7e4a07005b7aa4efe826c03266f488df">planning::SscMap::ConstructSscMap</a></div><div class="ttdeci">ErrorType ConstructSscMap(const std::unordered_map&lt; int, vec_E&lt; common::FsVehicle &gt;&gt; &amp;sur_vehicle_trajs_fs, const vec_E&lt; Vec2f &gt; &amp;obstacle_grids)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8cc_source.html#l00064">ssc_map.cc:64</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html"><div class="ttname"><a href="classplanning_1_1_ssc_map.html">planning::SscMap</a></div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00034">ssc_map.h:34</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_param_html"><div class="ttname"><a href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00032">semantics.h:32</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html"><div class="ttname"><a href="class_tic_toc.html">TicToc</a></div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00017">tic_toc.h:17</a></div></div>
+<div class="ttc" id="astructcommon_1_1_fs_vehicle_html"><div class="ttname"><a href="structcommon_1_1_fs_vehicle.html">common::FsVehicle</a></div><div class="ttdoc">Vehicle info under Frenet-frame</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00275">semantics.h:275</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a5cf1ec89b43ea874ef4e8f9bc77e1fb5"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a5cf1ec89b43ea874ef4e8f9bc77e1fb5">planning::SscPlanner::BezierSpline</a></div><div class="ttdeci">common::BezierSpline&lt; 5, 2 &gt; BezierSpline</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00049">ssc_planner.h:49</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a63c2c123d3c1a5cbfe855a3082d30409"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a63c2c123d3c1a5cbfe855a3082d30409">Vec2f</a></div><div class="ttdeci">Vecf&lt; 2 &gt; Vec2f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00061">basics.h:61</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a></div><div class="ttdeci">@ kIllegalInput</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a></div><div class="ttdeci">@ kLaneKeeping</div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_adaaa268e50baf5e05940b52deec33854"><div class="ttname"><a href="classcommon_1_1_lane.html#adaaa268e50baf5e05940b52deec33854">common::Lane::begin</a></div><div class="ttdeci">decimal_t begin() const</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00076">lane.h:76</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_aae2c5f998d255299721a70f5556d8ea6"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#aae2c5f998d255299721a70f5556d8ea6">planning::SscMap::ConstructCorridorUsingInitialTrajectory</a></div><div class="ttdeci">ErrorType ConstructCorridorUsingInitialTrajectory(GridMap3D *p_grid, const vec_E&lt; common::FsVehicle &gt; &amp;trajs)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8cc_source.html#l00098">ssc_map.cc:98</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_aef71d6adf558227685aa4464ef4584b3"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#aef71d6adf558227685aa4464ef4584b3">planning::SscPlannerMapItf::GetLocalReferenceLane</a></div><div class="ttdeci">virtual ErrorType GetLocalReferenceLane(Lane *lane)=0</div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a24081901cfe690ca40a9a88fc85e5bde"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a24081901cfe690ca40a9a88fc85e5bde">planning::SscMap::ResetSscMap</a></div><div class="ttdeci">ErrorType ResetSscMap(const common::FrenetState &amp;ini_frenet_state)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8cc_source.html#l00025">ssc_map.cc:25</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html_a25dbb6f98c4d5cf7e085745024f7880e"><div class="ttname"><a href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">common::StateTransformer::GetFrenetStateFromState</a></div><div class="ttdeci">ErrorType GetFrenetStateFromState(const State &amp;s, FrenetState *fs) const</div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8cc_source.html#l00106">state_transformer.cc:106</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a800d746f5ebc5d702e54d8f420caeed5"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a800d746f5ebc5d702e54d8f420caeed5">planning::SscPlannerMapItf::GetForwardTrajectories</a></div><div class="ttdeci">virtual ErrorType GetForwardTrajectories(std::vector&lt; LateralBehavior &gt; *behaviors, vec_E&lt; vec_E&lt; common::Vehicle &gt;&gt; *trajs)=0</div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a99fe9c65e97ebd3d2c21f2da40d0f3b2"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a99fe9c65e97ebd3d2c21f2da40d0f3b2">planning::SscMap::Config::kMaxLongitudinalAcc</a></div><div class="ttdeci">decimal_t kMaxLongitudinalAcc</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00045">ssc_map.h:45</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a9f27e7865eebd9699288808728d94230"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a9f27e7865eebd9699288808728d94230">planning::SscPlanner::FrenetBezierTrajectory</a></div><div class="ttdeci">common::FrenetBezierTrajectory FrenetBezierTrajectory</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00045">ssc_planner.h:45</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_ac97997b493b4559e591512239ba658c9"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#ac97997b493b4559e591512239ba658c9">planning::SscPlanner::Init</a></div><div class="ttdeci">ErrorType Init(const std::string config_path) override</div><div class="ttdoc">Initialize the planner with config path</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8cc_source.html#l00023">ssc_planner.cc:23</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html_a10182e0061b91019467a8fa37089210e"><div class="ttname"><a href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e">TicToc::toc</a></div><div class="ttdeci">double toc()</div><div class="ttdoc">get time elapsed</div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00031">tic_toc.h:31</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_map_html_a089e5174e16ad35303272eba033869e5"><div class="ttname"><a href="classplanning_1_1_ssc_map.html#a089e5174e16ad35303272eba033869e5">planning::SscMap::GetFinalGlobalMetricCubesList</a></div><div class="ttdeci">ErrorType GetFinalGlobalMetricCubesList()</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8cc_source.html#l00643">ssc_map.cc:643</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_ac0218e6c15ecd121a9b691c8b50282d3"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#ac0218e6c15ecd121a9b691c8b50282d3">planning::SscMap::Config::inflate_steps</a></div><div class="ttdeci">std::array&lt; int, 6 &gt; inflate_steps</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00052">ssc_map.h:52</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a449d74d5e81b4629729971f8ccb2df05"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a449d74d5e81b4629729971f8ccb2df05">planning::SscMap::Config::kMaxLongitudinalDecel</a></div><div class="ttdeci">decimal_t kMaxLongitudinalDecel</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00046">ssc_map.h:46</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a323994ab77d4d7c2f05cbcab27a000f7"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a323994ab77d4d7c2f05cbcab27a000f7">planning::SscPlannerMapItf::GetObstacleGrids</a></div><div class="ttdeci">virtual ErrorType GetObstacleGrids(std::set&lt; std::array&lt; decimal_t, 2 &gt;&gt; *obs_grids)=0</div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_abc054d33bac14c47cb1e37429e0aa7d7"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#abc054d33bac14c47cb1e37429e0aa7d7">planning::SscPlanner::FrenetState</a></div><div class="ttdeci">common::FrenetState FrenetState</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00042">ssc_planner.h:42</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_af3be7fbd9ac12f2f1d72ddcfbb7e00e0"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#af3be7fbd9ac12f2f1d72ddcfbb7e00e0">planning::SscPlanner::FrenetPrimitive</a></div><div class="ttdeci">common::FrenetPrimitive FrenetPrimitive</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00044">ssc_planner.h:44</a></div></div>
+<div class="ttc" id="astructcommon_1_1_spatio_temporal_semantic_cube_nd_html"><div class="ttname"><a href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">common::SpatioTemporalSemanticCubeNd</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00761">semantics.h:761</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_generator_html_a02ccd277289e4bdff3b0faa92ad34b71"><div class="ttname"><a href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71">common::SplineGenerator::GetBezierSplineUsingCorridor</a></div><div class="ttdeci">static ErrorType GetBezierSplineUsingCorridor(const vec_E&lt; SpatioTemporalSemanticCubeNd&lt; N_DIM &gt;&gt; &amp;cubes, const vec_E&lt; Vecf&lt; N_DIM &gt;&gt; &amp;start_constraints, const vec_E&lt; Vecf&lt; N_DIM &gt;&gt; &amp;end_constraints, const std::vector&lt; decimal_t &gt; &amp;ref_stamps, const vec_E&lt; Vecf&lt; N_DIM &gt;&gt; &amp;ref_points, const decimal_t &amp;weight_proximity, BezierSplineType *bezier_spline)</div><div class="ttdoc">Return the optimal bezier curve in corridor</div><div class="ttdef"><b>Definition:</b> <a href="spline__generator_8cc_source.html#l00357">spline_generator.cc:357</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_a8d8993355a1e3c7e65f7a638144ec749"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#a8d8993355a1e3c7e65f7a638144ec749">planning::SscPlanner::State</a></div><div class="ttdeci">common::State State</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00039">ssc_planner.h:39</a></div></div>
+<div class="ttc" id="astructcommon_1_1_fs_vehicle_html_a8d0d18d38882ff4e1a591400bf3b7514"><div class="ttname"><a href="structcommon_1_1_fs_vehicle.html#a8d0d18d38882ff4e1a591400bf3b7514">common::FsVehicle::frenet_state</a></div><div class="ttdeci">FrenetState frenet_state</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00276">semantics.h:276</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a21d9ed79ab071eb4a8a74bec2f07d5e1"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a21d9ed79ab071eb4a8a74bec2f07d5e1">planning::SscMap::Config::kMinLongitudinalVel</a></div><div class="ttdeci">decimal_t kMinLongitudinalVel</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00044">ssc_map.h:44</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html_aa876a980d98ef45a33a9b5919c7c0ce3"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html#aa876a980d98ef45a33a9b5919c7c0ce3">planning::SscPlanner::set_initial_state</a></div><div class="ttdeci">ErrorType set_initial_state(const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8cc_source.html#l00078">ssc_planner.cc:78</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a6c8fdc22ea1acc224732cbe21c958ff5"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a6c8fdc22ea1acc224732cbe21c958ff5">planning::SscPlannerMapItf::GetEgoDiscretBehavior</a></div><div class="ttdeci">virtual ErrorType GetEgoDiscretBehavior(LateralBehavior *lat_behavior)=0</div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a4f6c0202082c7ee26a11bd9583f7540e"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a4f6c0202082c7ee26a11bd9583f7540e">planning::SscPlannerMapItf::GetObstacleMap</a></div><div class="ttdeci">virtual ErrorType GetObstacleMap(GridMap2D *grid_map)=0</div></div>
+<div class="ttc" id="astructcommon_1_1_fs_vehicle_html_a3befe638592e316e9253ec33215e0c7a"><div class="ttname"><a href="structcommon_1_1_fs_vehicle.html#a3befe638592e316e9253ec33215e0c7a">common::FsVehicle::vertices</a></div><div class="ttdeci">vec_E&lt; Vec2f &gt; vertices</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00277">semantics.h:277</a></div></div>
+<div class="ttc" id="astructcommon_1_1_frenet_state_html_a1cdb1fe440d29a5ae2fe116d55abe346"><div class="ttname"><a href="structcommon_1_1_frenet_state.html#a1cdb1fe440d29a5ae2fe116d55abe346">common::FrenetState::vec_s</a></div><div class="ttdeci">Vecf&lt; 3 &gt; vec_s</div><div class="ttdef"><b>Definition:</b> <a href="frenet__state_8h_source.html#l00015">frenet_state.h:15</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_map_1_1_config_html_a91414528efef271246157cef2e640fbb"><div class="ttname"><a href="structplanning_1_1_ssc_map_1_1_config.html#a91414528efef271246157cef2e640fbb">planning::SscMap::Config::kMaxLateralAcc</a></div><div class="ttdeci">decimal_t kMaxLateralAcc</div><div class="ttdef"><b>Definition:</b> <a href="ssc__map_8h_source.html#l00048">ssc_map.h:48</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html_a92bc734116a548da6633e36fc9d50bdd"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html#a92bc734116a548da6633e36fc9d50bdd">planning::SscPlannerMapItf::GetTimeStamp</a></div><div class="ttdeci">virtual decimal_t GetTimeStamp()=0</div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_map_itf_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner_map_itf.html">planning::SscPlannerMapItf</a></div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2inc_2ssc__planner_2map__interface_8h_source.html#l00021">map_interface.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

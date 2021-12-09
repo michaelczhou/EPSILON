@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::implicit_euler&lt; ValueType, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">implicit_euler</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::implicit_euler&lt; ValueType, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a063d22e460d42738d08466b57bbea891"><td class="memItemLeft" align="right" valign="top">typedef ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a></td></tr>
+<tr class="separator:a063d22e460d42738d08466b57bbea891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac161f18476be96ab997f52182fc3f485"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a></td></tr>
+<tr class="separator:ac161f18476be96ab997f52182fc3f485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebde4a3c63af7b77411899084cf54ecc"><td class="memItemLeft" align="right" valign="top">typedef boost::numeric::ublas::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a></td></tr>
+<tr class="separator:aebde4a3c63af7b77411899084cf54ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12780900ebeb3d7c46d753f8c7db7d6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ab12780900ebeb3d7c46d753f8c7db7d6">wrapped_state_type</a></td></tr>
+<tr class="separator:ab12780900ebeb3d7c46d753f8c7db7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281350b6e42e438f792dfad3b2efd07d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a281350b6e42e438f792dfad3b2efd07d">deriv_type</a></td></tr>
+<tr class="separator:a281350b6e42e438f792dfad3b2efd07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8905dcee92509f401b97a094c14e91"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a281350b6e42e438f792dfad3b2efd07d">deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aec8905dcee92509f401b97a094c14e91">wrapped_deriv_type</a></td></tr>
+<tr class="separator:aec8905dcee92509f401b97a094c14e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a223ad79da332fc2a63e98809da6305"><td class="memItemLeft" align="right" valign="top">typedef boost::numeric::ublas::matrix&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a6a223ad79da332fc2a63e98809da6305">matrix_type</a></td></tr>
+<tr class="separator:a6a223ad79da332fc2a63e98809da6305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9b3f3ddc60423130449ff953560eb2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a6a223ad79da332fc2a63e98809da6305">matrix_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a0f9b3f3ddc60423130449ff953560eb2">wrapped_matrix_type</a></td></tr>
+<tr class="separator:a0f9b3f3ddc60423130449ff953560eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca83fdb66524858ef1eb80a18cf4db0"><td class="memItemLeft" align="right" valign="top">typedef boost::numeric::ublas::permutation_matrix&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a5ca83fdb66524858ef1eb80a18cf4db0">pmatrix_type</a></td></tr>
+<tr class="separator:a5ca83fdb66524858ef1eb80a18cf4db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8af38e3599fabf12b554d7d7a82426"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a5ca83fdb66524858ef1eb80a18cf4db0">pmatrix_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#adb8af38e3599fabf12b554d7d7a82426">wrapped_pmatrix_type</a></td></tr>
+<tr class="separator:adb8af38e3599fabf12b554d7d7a82426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5bcdf80982ae662de268c56b667a89d"><td class="memItemLeft" align="right" valign="top">typedef Resizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ab5bcdf80982ae662de268c56b667a89d">resizer_type</a></td></tr>
+<tr class="separator:ab5bcdf80982ae662de268c56b667a89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e3909779b294d585c1bbd14642a65d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a98e3909779b294d585c1bbd14642a65d">stepper_category</a></td></tr>
+<tr class="separator:a98e3909779b294d585c1bbd14642a65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf59e9969bb9174dbf062969230c042c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">implicit_euler</a>&lt; ValueType, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#adf59e9969bb9174dbf062969230c042c">stepper_type</a></td></tr>
+<tr class="separator:adf59e9969bb9174dbf062969230c042c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1c10466f48fa6edffad8499068703e4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a1c10466f48fa6edffad8499068703e4e">implicit_euler</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> epsilon=1E-6)</td></tr>
+<tr class="separator:a1c10466f48fa6edffad8499068703e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc0a5a692b9214b3cf40f491053ca57"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:abbc0a5a692b9214b3cf40f491053ca57"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#abbc0a5a692b9214b3cf40f491053ca57">do_step</a> (System system, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a> &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="separator:abbc0a5a692b9214b3cf40f491053ca57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60eb14906d815fe276170e5f1a8eb7e"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:ad60eb14906d815fe276170e5f1a8eb7e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ad60eb14906d815fe276170e5f1a8eb7e">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="separator:ad60eb14906d815fe276170e5f1a8eb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class ValueType, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::implicit_euler&lt; ValueType, Resizer &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00048">48</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a281350b6e42e438f792dfad3b2efd07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281350b6e42e438f792dfad3b2efd07d">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a281350b6e42e438f792dfad3b2efd07d">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a223ad79da332fc2a63e98809da6305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a223ad79da332fc2a63e98809da6305">&#9670;&nbsp;</a></span>matrix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::numeric::ublas::matrix&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a6a223ad79da332fc2a63e98809da6305">matrix_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5ca83fdb66524858ef1eb80a18cf4db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca83fdb66524858ef1eb80a18cf4db0">&#9670;&nbsp;</a></span>pmatrix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::numeric::ublas::permutation_matrix&lt; size_t &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a5ca83fdb66524858ef1eb80a18cf4db0">pmatrix_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab5bcdf80982ae662de268c56b667a89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bcdf80982ae662de268c56b667a89d">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Resizer <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ab5bcdf80982ae662de268c56b667a89d">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aebde4a3c63af7b77411899084cf54ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebde4a3c63af7b77411899084cf54ecc">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::numeric::ublas::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a98e3909779b294d585c1bbd14642a65d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e3909779b294d585c1bbd14642a65d">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a98e3909779b294d585c1bbd14642a65d">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adf59e9969bb9174dbf062969230c042c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf59e9969bb9174dbf062969230c042c">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">implicit_euler</a>&lt; ValueType , Resizer &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#adf59e9969bb9174dbf062969230c042c">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac161f18476be96ab997f52182fc3f485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac161f18476be96ab997f52182fc3f485">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a063d22e460d42738d08466b57bbea891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a063d22e460d42738d08466b57bbea891">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ValueType <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aec8905dcee92509f401b97a094c14e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8905dcee92509f401b97a094c14e91">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a281350b6e42e438f792dfad3b2efd07d">deriv_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aec8905dcee92509f401b97a094c14e91">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0f9b3f3ddc60423130449ff953560eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9b3f3ddc60423130449ff953560eb2">&#9670;&nbsp;</a></span>wrapped_matrix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a6a223ad79da332fc2a63e98809da6305">matrix_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a0f9b3f3ddc60423130449ff953560eb2">wrapped_matrix_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adb8af38e3599fabf12b554d7d7a82426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8af38e3599fabf12b554d7d7a82426">&#9670;&nbsp;</a></span>wrapped_pmatrix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a5ca83fdb66524858ef1eb80a18cf4db0">pmatrix_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#adb8af38e3599fabf12b554d7d7a82426">wrapped_pmatrix_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab12780900ebeb3d7c46d753f8c7db7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12780900ebeb3d7c46d753f8c7db7d6">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ab12780900ebeb3d7c46d753f8c7db7d6">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1c10466f48fa6edffad8499068703e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c10466f48fa6edffad8499068703e4e">&#9670;&nbsp;</a></span>implicit_euler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">implicit_euler</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#a063d22e460d42738d08466b57bbea891">value_type</a>&#160;</td>
+          <td class="paramname"><em>epsilon</em> = <code>1E-6</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad60eb14906d815fe276170e5f1a8eb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60eb14906d815fe276170e5f1a8eb7e">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abbc0a5a692b9214b3cf40f491053ca57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc0a5a692b9214b3cf40f491053ca57">&#9670;&nbsp;</a></span>do_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType , class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a>&lt; ValueType, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#aebde4a3c63af7b77411899084cf54ecc">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#ac161f18476be96ab997f52182fc3f485">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a> 第 <a class="el" href="implicit__euler_8hpp_source.html#l00073">73</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1implicit__euler_abbc0a5a692b9214b3cf40f491053ca57_icgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1implicit__euler_abbc0a5a692b9214b3cf40f491053ca57_icgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1implicit__euler_abbc0a5a692b9214b3cf40f491053ca57_icgraph" id="classboost_1_1numeric_1_1odeint_1_1implicit__euler_abbc0a5a692b9214b3cf40f491053ca57_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,423,47"/>
+<area shape="rect" href="implicit__euler_8cpp.html#a81cdb57df2a213adb896e6a894da95fe" title=" " alt="" coords="5,13,196,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="implicit__euler_8hpp_source.html">implicit_euler.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

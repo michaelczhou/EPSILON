@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/odeint_rk4_lorenz_array.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">odeint_rk4_lorenz_array.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta4__classic_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta4_classic.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta4_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="array__algebra_8hpp_source.html">boost/numeric/odeint/algebra/array_algebra.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="rk__performance__test__case_8hpp_source.html">rk_performance_test_case.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lorenz_8hpp_source.html">lorenz.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+odeint_rk4_lorenz_array.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="odeint__rk4__lorenz__array_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__lorenz__array_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__lorenz__array_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__lorenz__array_8cpp">
+<area shape="rect" title=" " alt="" coords="2730,5,2969,76"/>
+<area shape="rect" title=" " alt="" coords="2869,533,2992,559"/>
+<area shape="rect" href="runge__kutta4__classic_8hpp.html" title=" " alt="" coords="1089,213,1255,269"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="2090,124,2283,165"/>
+<area shape="rect" href="array__algebra_8hpp.html" title=" " alt="" coords="2696,325,2893,366"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html" title=" " alt="" coords="3121,124,3279,165"/>
+<area shape="rect" href="lorenz_8hpp.html" title=" " alt="" coords="2872,131,2963,158"/>
+<area shape="rect" href="explicit__stepper__base_8hpp.html" title=" " alt="" coords="889,317,1052,373"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="523,429,695,470"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="737,615,901,656"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="1229,429,1389,470"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="1859,429,2059,470"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="2291,429,2520,470"/>
+<area shape="rect" title=" " alt="" coords="1003,615,1151,656"/>
+<area shape="rect" title=" " alt="" coords="216,704,363,745"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="1464,429,1624,470"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="1009,429,1205,470"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="38,615,269,656"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="771,421,933,477"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="1300,525,1460,567"/>
+<area shape="rect" title=" " alt="" coords="1485,533,1603,559"/>
+<area shape="rect" title=" " alt="" coords="2269,622,2400,649"/>
+<area shape="rect" title=" " alt="" coords="649,533,756,559"/>
+<area shape="rect" title=" " alt="" coords="5,704,192,745"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="1116,525,1276,567"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="881,525,1041,567"/>
+<area shape="rect" title=" " alt="" coords="1293,711,1355,738"/>
+<area shape="rect" title=" " alt="" coords="1380,704,1567,745"/>
+<area shape="rect" title=" " alt="" coords="387,704,541,745"/>
+<area shape="rect" title=" " alt="" coords="1591,704,1745,745"/>
+<area shape="rect" title=" " alt="" coords="565,711,723,738"/>
+<area shape="rect" title=" " alt="" coords="747,711,890,738"/>
+<area shape="rect" title=" " alt="" coords="915,711,1117,738"/>
+<area shape="rect" title=" " alt="" coords="1142,711,1269,738"/>
+<area shape="rect" title=" " alt="" coords="1175,622,1302,649"/>
+<area shape="rect" title=" " alt="" coords="2344,533,2501,559"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="1679,525,1875,567"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="1899,525,2103,567"/>
+<area shape="rect" href="reduce_8hpp.html" title=" " alt="" coords="2128,525,2320,567"/>
+<area shape="rect" title=" " alt="" coords="1697,622,1857,649"/>
+<area shape="rect" title=" " alt="" coords="2760,533,2845,559"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="2525,525,2685,567"/>
+<area shape="rect" title=" " alt="" coords="1997,221,2163,262"/>
+<area shape="rect" title=" " alt="" coords="2187,221,2399,262"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="1738,213,1921,269"/>
+<area shape="rect" href="generic__rk__algorithm_8hpp.html" title=" " alt="" coords="2029,317,2197,373"/>
+<area shape="rect" title=" " alt="" coords="3287,228,3367,255"/>
+<area shape="rect" title=" " alt="" coords="3391,221,3542,262"/>
+<area shape="rect" title=" " alt="" coords="2962,221,3113,262"/>
+<area shape="rect" title=" " alt="" coords="3137,228,3263,255"/>
+</map>
+</div>
+</div>
+<p><a href="odeint__rk4__lorenz__array_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classodeint__wrapper.html">odeint_wrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:affbfdadfb8d96a3cacec8c0ca8fa9329"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__lorenz__array_8cpp.html#affbfdadfb8d96a3cacec8c0ca8fa9329">state_type</a></td></tr>
+<tr class="separator:affbfdadfb8d96a3cacec8c0ca8fa9329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701e59533beff960a8e0a0acbd1f975f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">boost::numeric::odeint::array_algebra</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__lorenz__array_8cpp.html#a701e59533beff960a8e0a0acbd1f975f">rk4_odeint_type</a></td></tr>
+<tr class="separator:a701e59533beff960a8e0a0acbd1f975f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__lorenz__array_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a701e59533beff960a8e0a0acbd1f975f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701e59533beff960a8e0a0acbd1f975f">&#9670;&nbsp;</a></span>rk4_odeint_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">boost::numeric::odeint::array_algebra</a> &gt; <a class="el" href="odeint__rk4__lorenz__array_8cpp.html#a701e59533beff960a8e0a0acbd1f975f">rk4_odeint_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html">odeint_rk4_lorenz_array.cpp</a> 第 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="affbfdadfb8d96a3cacec8c0ca8fa9329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbfdadfb8d96a3cacec8c0ca8fa9329">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; double , 3 &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html">odeint_rk4_lorenz_array.cpp</a> 第 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html">odeint_rk4_lorenz_array.cpp</a> 第 <a class="el" href="odeint__rk4__lorenz__array_8cpp_source.html#l00064">64</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="odeint__rk4__lorenz__array_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#odeint__rk4__lorenz__array_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="odeint__rk4__lorenz__array_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="odeint__rk4__lorenz__array_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e" title=" " alt="" coords="108,5,151,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

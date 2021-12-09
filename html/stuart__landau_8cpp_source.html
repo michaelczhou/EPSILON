@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/stuart_landau.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stuart_landau.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stuart__landau_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * stuart_landau.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This example demonstrates how one can use odeint can be used with state types consisting of complex variables.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert and Mario Mulansky.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0. (See</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//[ stuart_landau_system_function</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="stuart__landau_8cpp.html#a0dbc8b84d67af509f100cde1a30e8452">   22</a></span>&#160;<span class="keyword">typedef</span> complex&lt; double &gt; <a class="code" href="stuart__landau_8cpp.html#a0dbc8b84d67af509f100cde1a30e8452">state_type</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structstuart__landau.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structstuart__landau.html">stuart_landau</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structstuart__landau.html#a170e2cdc838e295151f312eadfaf3419">   26</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structstuart__landau.html#a170e2cdc838e295151f312eadfaf3419">m_eta</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structstuart__landau.html#ab0902fd3745d848f9cbe3ffae62618b9">   27</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structstuart__landau.html#ab0902fd3745d848f9cbe3ffae62618b9">m_alpha</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structstuart__landau.html#a8fd01db25e874702fb0384a7766cfe0e">   29</a></span>&#160;    <a class="code" href="structstuart__landau.html#a8fd01db25e874702fb0384a7766cfe0e">stuart_landau</a>( <span class="keywordtype">double</span> eta = 1.0 , <span class="keywordtype">double</span> alpha = 1.0 )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    : m_eta( eta ) , m_alpha( alpha ) { }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structstuart__landau.html#a151eb9704ae4b1600236f859731daf3e">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structstuart__landau.html#a151eb9704ae4b1600236f859731daf3e">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keywordtype">double</span> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> complex&lt; double &gt; I( 0.0 , 1.0 );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        dxdt = ( 1.0 + m_eta * I ) * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> - ( 1.0 + m_alpha * I ) * <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> ) * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//[ stuart_landau_system_function_alternative</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">double eta = 1.0;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">double alpha = 1.0;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">void stuart_landau( const state_type &amp;x , state_type &amp;dxdt , double t )</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    const complex&lt; double &gt; I( 0.0 , 1.0 );</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    dxdt[0] = ( 1.0 + m_eta * I ) * x[0] - ( 1.0 + m_alpha * I ) * norm( x[0] ) * x[0];</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">struct </span><a class="code" href="structstreaming__observer.html">streaming_observer</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::ostream&amp; m_out;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">   59</a></span>&#160;    <a class="code" href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">streaming_observer</a>( std::ostream &amp;<a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> ) : m_out( <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> ) { }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State &gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">operator()</a>( <span class="keyword">const</span> State &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keywordtype">double</span> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        m_out &lt;&lt; t;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        m_out &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.real() &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.imag() ;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        m_out &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="stuart__landau_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   73</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="stuart__landau_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//[ stuart_landau_integration</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = complex&lt; double &gt;( 1.0 , 0.0 );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4</a>&lt; <a class="code" href="stuart__landau_8cpp.html#a0dbc8b84d67af509f100cde1a30e8452">state_type</a> , double , <a class="code" href="stuart__landau_8cpp.html#a0dbc8b84d67af509f100cde1a30e8452">state_type</a> , double , </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                          <a class="code" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> &gt; <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">integrate_const</a>( <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>() , <a class="code" href="structstuart__landau.html">stuart_landau</a>( 2.0 , 1.0 ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 10.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structstreaming__observer.html">streaming_observer</a>( cout ) );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructstreaming__observer_html"><div class="ttname"><a href="structstreaming__observer.html">streaming_observer</a></div><div class="ttdef"><b>Definition:</b> <a href="fpu_8cpp_source.html#l00106">fpu.cpp:106</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html_a72a4b8f614dcd3d82832ebd37cdc2756"><div class="ttname"><a href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">streaming_observer::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x, double t) const</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00062">stuart_landau.cpp:62</a></div></div>
+<div class="ttc" id="astructstuart__landau_html_a170e2cdc838e295151f312eadfaf3419"><div class="ttname"><a href="structstuart__landau.html#a170e2cdc838e295151f312eadfaf3419">stuart_landau::m_eta</a></div><div class="ttdeci">double m_eta</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00026">stuart_landau.cpp:26</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a12b08855d25ca7201ad3d12dc6212bbb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__const_8hpp_source.html#l00042">integrate_const.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1vector__space__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">boost::numeric::odeint::vector_space_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__space__algebra_8hpp_source.html#l00049">vector_space_algebra.hpp:49</a></div></div>
+<div class="ttc" id="astuart__landau_8cpp_html_a0dbc8b84d67af509f100cde1a30e8452"><div class="ttname"><a href="stuart__landau_8cpp.html#a0dbc8b84d67af509f100cde1a30e8452">state_type</a></div><div class="ttdeci">complex&lt; double &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00022">stuart_landau.cpp:22</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html_a7c8eb117770fe856f62d9fabb4fb1865"><div class="ttname"><a href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">streaming_observer::streaming_observer</a></div><div class="ttdeci">streaming_observer(std::ostream &amp;out)</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00059">stuart_landau.cpp:59</a></div></div>
+<div class="ttc" id="astructstuart__landau_html"><div class="ttname"><a href="structstuart__landau.html">stuart_landau</a></div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00024">stuart_landau.cpp:24</a></div></div>
+<div class="ttc" id="astructstuart__landau_html_a151eb9704ae4b1600236f859731daf3e"><div class="ttname"><a href="structstuart__landau.html#a151eb9704ae4b1600236f859731daf3e">stuart_landau::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, double t) const</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00032">stuart_landau.cpp:32</a></div></div>
+<div class="ttc" id="astuart__landau_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="stuart__landau_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00073">stuart_landau.cpp:73</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4_8hpp_source.html#l00110">runge_kutta4.hpp:110</a></div></div>
+<div class="ttc" id="astructstuart__landau_html_ab0902fd3745d848f9cbe3ffae62618b9"><div class="ttname"><a href="structstuart__landau.html#ab0902fd3745d848f9cbe3ffae62618b9">stuart_landau::m_alpha</a></div><div class="ttdeci">double m_alpha</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00027">stuart_landau.cpp:27</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aexamples_2bulirsch__stoer_8cpp_html_a6b6d589c8106948670006f3e22b2c378"><div class="ttname"><a href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a></div><div class="ttdeci">ofstream out</div><div class="ttdef"><b>Definition:</b> <a href="examples_2bulirsch__stoer_8cpp_source.html#l00047">bulirsch_stoer.cpp:47</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="apoint__type_8hpp_html_a05e87d568b6887a112d20241232da13f"><div class="ttname"><a href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a></div><div class="ttdeci">T norm(const point&lt; T, Dim &gt; &amp;p1)</div><div class="ttdef"><b>Definition:</b> <a href="point__type_8hpp_source.html#l00144">point_type.hpp:144</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructstuart__landau_html_a8fd01db25e874702fb0384a7766cfe0e"><div class="ttname"><a href="structstuart__landau.html#a8fd01db25e874702fb0384a7766cfe0e">stuart_landau::stuart_landau</a></div><div class="ttdeci">stuart_landau(double eta=1.0, double alpha=1.0)</div><div class="ttdef"><b>Definition:</b> <a href="stuart__landau_8cpp_source.html#l00029">stuart_landau.cpp:29</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

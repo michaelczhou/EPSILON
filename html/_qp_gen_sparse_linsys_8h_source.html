@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/QpGenSparseLinsys.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QpGenSparseLinsys.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_qp_gen_sparse_linsys_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef QPGENSPARSELINSYS</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define QPGENSPARSELINSYS</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_qp_gen_linsys_8h.html">QpGenLinsys.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sparse_sym_matrix_handle_8h.html">SparseSymMatrixHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_qp_gen_sparse_linsys.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_gen_sparse_linsys.html">QpGenSparseLinsys</a> : <span class="keyword">public</span> <a class="code" href="class_qp_gen_linsys.html">QpGenLinsys</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_qp_gen_sparse_linsys.html#a545e83b5205009200fbe80bb803764c0">   21</a></span>&#160;  <a class="code" href="class_smart_pointer.html">SparseSymMatrixHandle</a> <a class="code" href="class_qp_gen_sparse_linsys.html#a545e83b5205009200fbe80bb803764c0">Mat</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_qp_gen_sparse_linsys.html#a01f7738e7801a903429825d6f4a6a78f">   22</a></span>&#160;  <a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a> * <a class="code" href="class_qp_gen_sparse_linsys.html#a01f7738e7801a903429825d6f4a6a78f">solver</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="class_qp_gen_sparse_linsys.html#a95b294491c30b72e53a26f1b4e653d25">QpGenSparseLinsys</a>(  <a class="code" href="class_qp_gen.html">QpGen</a> * <a class="code" href="class_qp_gen_linsys.html#a03140d8d7a584a2a3f409d02e422a553">factory</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_qp_gen_data.html">QpGenData</a> * data,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a> * la, <a class="code" href="class_sparse_sym_matrix.html">SparseSymMatrix</a> * <a class="code" href="class_qp_gen_sparse_linsys.html#a545e83b5205009200fbe80bb803764c0">Mat</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a> * <a class="code" href="class_qp_gen_sparse_linsys.html#a01f7738e7801a903429825d6f4a6a78f">solver</a> );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_sparse_linsys.html#ac4bcd438394de7192e18df58d3344f76">solveCompressed</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="class_qp_gen_linsys.html#a8542c82d61d1655d62c8f9ca497bea2d">rhs</a> );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_sparse_linsys.html#ab3849ac77a7d4aaffdff8bf0020d3bf6">putXDiagonal</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xdiag );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_sparse_linsys.html#a033fcf61bc4e0008ffe77a569e88b89f">putZDiagonal</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; zdiag );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_sparse_linsys.html#a74619599ab445664ed3d77b6907b908a">factor</a>(<a class="code" href="class_data.html">Data</a> *prob, <a class="code" href="class_variables.html">Variables</a> *vars);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_qp_gen_sparse_linsys.html#a683669607609bd59e1b51a5d298b3b33">~QpGenSparseLinsys</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_qp_gen_html"><div class="ttname"><a href="class_qp_gen.html">QpGen</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00034">QpGen.h:34</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a01f7738e7801a903429825d6f4a6a78f"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a01f7738e7801a903429825d6f4a6a78f">QpGenSparseLinsys::solver</a></div><div class="ttdeci">DoubleLinearSolver * solver</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_sparse_linsys_8h_source.html#l00022">QpGenSparseLinsys.h:22</a></div></div>
+<div class="ttc" id="a_qp_gen_linsys_8h_html"><div class="ttname"><a href="_qp_gen_linsys_8h.html">QpGenLinsys.h</a></div></div>
+<div class="ttc" id="aclass_qp_gen_data_html"><div class="ttname"><a href="class_qp_gen_data.html">QpGenData</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_data_8h_source.html#l00027">QpGenData.h:27</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_ab3849ac77a7d4aaffdff8bf0020d3bf6"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#ab3849ac77a7d4aaffdff8bf0020d3bf6">QpGenSparseLinsys::putXDiagonal</a></div><div class="ttdeci">virtual void putXDiagonal(OoqpVector &amp;xdiag)</div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a74619599ab445664ed3d77b6907b908a"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a74619599ab445664ed3d77b6907b908a">QpGenSparseLinsys::factor</a></div><div class="ttdeci">virtual void factor(Data *prob, Variables *vars)</div></div>
+<div class="ttc" id="aclass_sparse_sym_matrix_html"><div class="ttname"><a href="class_sparse_sym_matrix.html">SparseSymMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_sparse_sym_matrix_8h_source.html#l00018">SparseSymMatrix.h:18</a></div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="aclass_linear_algebra_package_html"><div class="ttname"><a href="class_linear_algebra_package.html">LinearAlgebraPackage</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_algebra_package_8h_source.html#l00021">LinearAlgebraPackage.h:21</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html">QpGenSparseLinsys</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_sparse_linsys_8h_source.html#l00019">QpGenSparseLinsys.h:19</a></div></div>
+<div class="ttc" id="aclass_smart_pointer_html"><div class="ttname"><a href="class_smart_pointer.html">SmartPointer&lt; SparseSymMatrix &gt;</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a545e83b5205009200fbe80bb803764c0"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a545e83b5205009200fbe80bb803764c0">QpGenSparseLinsys::Mat</a></div><div class="ttdeci">SparseSymMatrixHandle Mat</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_sparse_linsys_8h_source.html#l00021">QpGenSparseLinsys.h:21</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_ac4bcd438394de7192e18df58d3344f76"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#ac4bcd438394de7192e18df58d3344f76">QpGenSparseLinsys::solveCompressed</a></div><div class="ttdeci">virtual void solveCompressed(OoqpVector &amp;rhs)</div></div>
+<div class="ttc" id="a_sparse_sym_matrix_handle_8h_html"><div class="ttname"><a href="_sparse_sym_matrix_handle_8h.html">SparseSymMatrixHandle.h</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a95b294491c30b72e53a26f1b4e653d25"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a95b294491c30b72e53a26f1b4e653d25">QpGenSparseLinsys::QpGenSparseLinsys</a></div><div class="ttdeci">QpGenSparseLinsys(QpGen *factory, QpGenData *data, LinearAlgebraPackage *la, SparseSymMatrix *Mat, DoubleLinearSolver *solver)</div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a683669607609bd59e1b51a5d298b3b33"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a683669607609bd59e1b51a5d298b3b33">QpGenSparseLinsys::~QpGenSparseLinsys</a></div><div class="ttdeci">virtual ~QpGenSparseLinsys()</div></div>
+<div class="ttc" id="aclass_qp_gen_linsys_html_a8542c82d61d1655d62c8f9ca497bea2d"><div class="ttname"><a href="class_qp_gen_linsys.html#a8542c82d61d1655d62c8f9ca497bea2d">QpGenLinsys::rhs</a></div><div class="ttdeci">OoqpVectorHandle rhs</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_linsys_8h_source.html#l00041">QpGenLinsys.h:41</a></div></div>
+<div class="ttc" id="aclass_qp_gen_linsys_html"><div class="ttname"><a href="class_qp_gen_linsys.html">QpGenLinsys</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_linsys_8h_source.html#l00034">QpGenLinsys.h:34</a></div></div>
+<div class="ttc" id="aclass_double_linear_solver_html"><div class="ttname"><a href="class_double_linear_solver.html">DoubleLinearSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_linear_solver_8h_source.html#l00020">DoubleLinearSolver.h:20</a></div></div>
+<div class="ttc" id="aclass_qp_gen_linsys_html_a03140d8d7a584a2a3f409d02e422a553"><div class="ttname"><a href="class_qp_gen_linsys.html#a03140d8d7a584a2a3f409d02e422a553">QpGenLinsys::factory</a></div><div class="ttdeci">QpGen * factory</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_linsys_8h_source.html#l00043">QpGenLinsys.h:43</a></div></div>
+<div class="ttc" id="aclass_qp_gen_sparse_linsys_html_a033fcf61bc4e0008ffe77a569e88b89f"><div class="ttname"><a href="class_qp_gen_sparse_linsys.html#a033fcf61bc4e0008ffe77a569e88b89f">QpGenSparseLinsys::putZDiagonal</a></div><div class="ttdeci">virtual void putZDiagonal(OoqpVector &amp;zdiag)</div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

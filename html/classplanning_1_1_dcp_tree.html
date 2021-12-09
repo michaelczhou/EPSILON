@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: planning::DcpTree类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceplanning.html">planning</a></li><li class="navelem"><a class="el" href="classplanning_1_1_dcp_tree.html">DcpTree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classplanning_1_1_dcp_tree-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">planning::DcpTree类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html">DcpAction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:acbdde36f2adaebd85781c460878a3eda"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a> { <a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaab7a982bcf349a64bde1f959e153d130d">DcpLonAction::kMaintain</a> = 0, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaa3e54227ebd133e19d77da63505b7a2c1">DcpLonAction::kAccelerate</a>, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaa4e10491291f0e06e0594d9bf9d17498d">DcpLonAction::kDecelerate</a>, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaafd4487453885e6013ddea8e02030afb0">DcpLonAction::MAX_COUNT</a> = 3
+ }</td></tr>
+<tr class="separator:acbdde36f2adaebd85781c460878a3eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81a00998a739d34582c169c465beb2a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">DcpLatAction</a> { <a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aab1767ed2387eb7d369f4a1da9089520a">DcpLatAction::kLaneKeeping</a> = 0, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aaec45f9b3f1023908b0fe488f060051b9">DcpLatAction::kLaneChangeLeft</a>, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aa36f68877e150ae170ea576b1402bf525">DcpLatAction::kLaneChangeRight</a>, 
+<a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aafd4487453885e6013ddea8e02030afb0">DcpLatAction::MAX_COUNT</a> = 3
+ }</td></tr>
+<tr class="separator:ab81a00998a739d34582c169c465beb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181fefaa09c812cec01d739eb2d173d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a181fefaa09c812cec01d739eb2d173d7">LateralBehavior</a> = <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td></tr>
+<tr class="separator:a181fefaa09c812cec01d739eb2d173d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae789693e3cda6a9dc250efd047c21fbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#ae789693e3cda6a9dc250efd047c21fbd">DcpTree</a> (const int &amp;<a class="el" href="classplanning_1_1_dcp_tree.html#a601fab6ae3cbba1f0508e4be06ef7328">tree_height</a>, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;layer_time)</td></tr>
+<tr class="separator:ae789693e3cda6a9dc250efd047c21fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2397721b552376e5237885aac4fae3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#aa2397721b552376e5237885aac4fae3f">DcpTree</a> (const int &amp;<a class="el" href="classplanning_1_1_dcp_tree.html#a601fab6ae3cbba1f0508e4be06ef7328">tree_height</a>, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;layer_time, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;last_layer_time)</td></tr>
+<tr class="separator:aa2397721b552376e5237885aac4fae3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a112da3f7fb2b481459869135c445ce90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a112da3f7fb2b481459869135c445ce90">~DcpTree</a> ()=default</td></tr>
+<tr class="separator:a112da3f7fb2b481459869135c445ce90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe0c3f1416649041bf043a22241875a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#afbe0c3f1416649041bf043a22241875a">set_ongoing_action</a> (const <a class="el" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html">DcpAction</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>)</td></tr>
+<tr class="separator:afbe0c3f1416649041bf043a22241875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88df0ffe53c4ce3df2169cd438e7c889"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html">DcpAction</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a88df0ffe53c4ce3df2169cd438e7c889">action_script</a> () const</td></tr>
+<tr class="separator:a88df0ffe53c4ce3df2169cd438e7c889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f5eba12ce03bf07f2d7807f4ed0d5a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">planning_horizon</a> () const</td></tr>
+<tr class="separator:a8f5eba12ce03bf07f2d7807f4ed0d5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601fab6ae3cbba1f0508e4be06ef7328"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a601fab6ae3cbba1f0508e4be06ef7328">tree_height</a> () const</td></tr>
+<tr class="separator:a601fab6ae3cbba1f0508e4be06ef7328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72988633cddb01723f29318a39edb91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#ae72988633cddb01723f29318a39edb91">sim_time_per_layer</a> () const</td></tr>
+<tr class="separator:ae72988633cddb01723f29318a39edb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6a566fa969a8724b82b451053f14e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#abf6a566fa969a8724b82b451053f14e8">UpdateScript</a> ()</td></tr>
+<tr class="separator:abf6a566fa969a8724b82b451053f14e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a669cb6ec55b7a4e5f0fbeeba5e0b4b32"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a669cb6ec55b7a4e5f0fbeeba5e0b4b32">RetLonActionName</a> (const <a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>)</td></tr>
+<tr class="separator:a669cb6ec55b7a4e5f0fbeeba5e0b4b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c87bdb316576e451947c4796cb4f80"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_dcp_tree.html#a36c87bdb316576e451947c4796cb4f80">RetLatActionName</a> (const <a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">DcpLatAction</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>)</td></tr>
+<tr class="separator:a36c87bdb316576e451947c4796cb4f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00024">24</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a181fefaa09c812cec01d739eb2d173d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181fefaa09c812cec01d739eb2d173d7">&#9670;&nbsp;</a></span>LateralBehavior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">planning::DcpTree::LateralBehavior</a> =  <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="ab81a00998a739d34582c169c465beb2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81a00998a739d34582c169c465beb2a">&#9670;&nbsp;</a></span>DcpLatAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">planning::DcpTree::DcpLatAction</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ab81a00998a739d34582c169c465beb2aab1767ed2387eb7d369f4a1da9089520a"></a>kLaneKeeping&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab81a00998a739d34582c169c465beb2aaec45f9b3f1023908b0fe488f060051b9"></a>kLaneChangeLeft&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab81a00998a739d34582c169c465beb2aa36f68877e150ae170ea576b1402bf525"></a>kLaneChangeRight&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab81a00998a739d34582c169c465beb2aafd4487453885e6013ddea8e02030afb0"></a>MAX_COUNT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acbdde36f2adaebd85781c460878a3eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbdde36f2adaebd85781c460878a3eda">&#9670;&nbsp;</a></span>DcpLonAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">planning::DcpTree::DcpLonAction</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="acbdde36f2adaebd85781c460878a3edaab7a982bcf349a64bde1f959e153d130d"></a>kMaintain&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acbdde36f2adaebd85781c460878a3edaa3e54227ebd133e19d77da63505b7a2c1"></a>kAccelerate&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acbdde36f2adaebd85781c460878a3edaa4e10491291f0e06e0594d9bf9d17498d"></a>kDecelerate&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acbdde36f2adaebd85781c460878a3edaafd4487453885e6013ddea8e02030afb0"></a>MAX_COUNT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae789693e3cda6a9dc250efd047c21fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae789693e3cda6a9dc250efd047c21fbd">&#9670;&nbsp;</a></span>DcpTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">planning::DcpTree::DcpTree </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>tree_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>layer_time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8cc_source.html">dcp_tree.cc</a> 第 <a class="el" href="dcp__tree_8cc_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa2397721b552376e5237885aac4fae3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2397721b552376e5237885aac4fae3f">&#9670;&nbsp;</a></span>DcpTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">planning::DcpTree::DcpTree </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>tree_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>layer_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>last_layer_time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8cc_source.html">dcp_tree.cc</a> 第 <a class="el" href="dcp__tree_8cc_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a112da3f7fb2b481459869135c445ce90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112da3f7fb2b481459869135c445ce90">&#9670;&nbsp;</a></span>~DcpTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">planning::DcpTree::~DcpTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a88df0ffe53c4ce3df2169cd438e7c889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88df0ffe53c4ce3df2169cd438e7c889">&#9670;&nbsp;</a></span>action_script()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html">DcpAction</a>&gt; &gt; planning::DcpTree::action_script </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00068">68</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_a88df0ffe53c4ce3df2169cd438e7c889_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_a88df0ffe53c4ce3df2169cd438e7c889_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_a88df0ffe53c4ce3df2169cd438e7c889_icgraph" id="classplanning_1_1_dcp_tree_a88df0ffe53c4ce3df2169cd438e7c889_icgraph">
+<area shape="rect" title=" " alt="" coords="977,89,1124,131"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a463f0e012ff0e2458a9162d95ec19df0" title=" " alt="" coords="757,60,929,101"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a7aa0406b8cdee626c32b1b1c9024b1ab" title=" " alt="" coords="533,5,705,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="288,64,460,105"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a68f7f862b10e348b009f3568d8d16249" title=" " alt="" coords="757,177,929,219"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,71,219,98"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#ac4ec5e4ca1fd8f71ab630d7f3746a01a" title=" " alt="" coords="529,177,709,219"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner_server.html#a29f374442648c8fa9a4c857fb96a372f" title=" " alt="" coords="267,177,481,219"/>
+<area shape="rect" href="test__ssc__with__eudm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="85,185,139,211"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8f5eba12ce03bf07f2d7807f4ed0d5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f5eba12ce03bf07f2d7807f4ed0d5a9">&#9670;&nbsp;</a></span>planning_horizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::DcpTree::planning_horizon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8cc_source.html">dcp_tree.cc</a> 第 <a class="el" href="dcp__tree_8cc_source.html#l00072">72</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_a8f5eba12ce03bf07f2d7807f4ed0d5a9_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_a8f5eba12ce03bf07f2d7807f4ed0d5a9_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_a8f5eba12ce03bf07f2d7807f4ed0d5a9_icgraph" id="classplanning_1_1_dcp_tree_a8f5eba12ce03bf07f2d7807f4ed0d5a9_icgraph">
+<area shape="rect" title=" " alt="" coords="225,5,372,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#ad6ff5273add96d4b3fb5349aeb04311f" title=" " alt="" coords="5,5,177,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36c87bdb316576e451947c4796cb4f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c87bdb316576e451947c4796cb4f80">&#9670;&nbsp;</a></span>RetLatActionName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string planning::DcpTree::RetLatActionName </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">DcpLatAction</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00103">103</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_a36c87bdb316576e451947c4796cb4f80_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_a36c87bdb316576e451947c4796cb4f80_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_a36c87bdb316576e451947c4796cb4f80_icgraph" id="classplanning_1_1_dcp_tree_a36c87bdb316576e451947c4796cb4f80_icgraph">
+<area shape="rect" title=" " alt="" coords="707,30,853,71"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,8,219,35"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a7aa0406b8cdee626c32b1b1c9024b1ab" title=" " alt="" coords="487,30,659,71"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,30,439,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a669cb6ec55b7a4e5f0fbeeba5e0b4b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669cb6ec55b7a4e5f0fbeeba5e0b4b32">&#9670;&nbsp;</a></span>RetLonActionName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string planning::DcpTree::RetLonActionName </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00080">80</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_a669cb6ec55b7a4e5f0fbeeba5e0b4b32_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_a669cb6ec55b7a4e5f0fbeeba5e0b4b32_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_a669cb6ec55b7a4e5f0fbeeba5e0b4b32_icgraph" id="classplanning_1_1_dcp_tree_a669cb6ec55b7a4e5f0fbeeba5e0b4b32_icgraph">
+<area shape="rect" title=" " alt="" coords="707,30,853,71"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,8,219,35"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a7aa0406b8cdee626c32b1b1c9024b1ab" title=" " alt="" coords="487,30,659,71"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,30,439,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afbe0c3f1416649041bf043a22241875a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe0c3f1416649041bf043a22241875a">&#9670;&nbsp;</a></span>set_ongoing_action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::DcpTree::set_ongoing_action </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html">DcpAction</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00066">66</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_afbe0c3f1416649041bf043a22241875a_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_afbe0c3f1416649041bf043a22241875a_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_afbe0c3f1416649041bf043a22241875a_icgraph" id="classplanning_1_1_dcp_tree_afbe0c3f1416649041bf043a22241875a_icgraph">
+<area shape="rect" title=" " alt="" coords="225,5,373,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#ad6ff5273add96d4b3fb5349aeb04311f" title=" " alt="" coords="5,5,177,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae72988633cddb01723f29318a39edb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72988633cddb01723f29318a39edb91">&#9670;&nbsp;</a></span>sim_time_per_layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::DcpTree::sim_time_per_layer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a601fab6ae3cbba1f0508e4be06ef7328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601fab6ae3cbba1f0508e4be06ef7328">&#9670;&nbsp;</a></span>tree_height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::DcpTree::tree_height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a> 第 <a class="el" href="dcp__tree_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abf6a566fa969a8724b82b451053f14e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6a566fa969a8724b82b451053f14e8">&#9670;&nbsp;</a></span>UpdateScript()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::DcpTree::UpdateScript </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dcp__tree_8cc_source.html">dcp_tree.cc</a> 第 <a class="el" href="dcp__tree_8cc_source.html#l00029">29</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_dcp_tree_abf6a566fa969a8724b82b451053f14e8_icgraph.png" border="0" usemap="#classplanning_1_1_dcp_tree_abf6a566fa969a8724b82b451053f14e8_icgraph" alt=""/></div>
+<map name="classplanning_1_1_dcp_tree_abf6a566fa969a8724b82b451053f14e8_icgraph" id="classplanning_1_1_dcp_tree_abf6a566fa969a8724b82b451053f14e8_icgraph">
+<area shape="rect" title=" " alt="" coords="225,5,372,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#ad6ff5273add96d4b3fb5349aeb04311f" title=" " alt="" coords="5,5,177,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>util/eudm_planner/inc/eudm_planner/<a class="el" href="dcp__tree_8h_source.html">dcp_tree.h</a></li>
+<li>util/eudm_planner/src/eudm_planner/<a class="el" href="dcp__tree_8cc_source.html">dcp_tree.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

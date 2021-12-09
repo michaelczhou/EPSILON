@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/inc/vehicle_model/controllers/pid_controller.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_59e02de5e9ae4c2a4b1de997eb2a14b2.html">inc</a></li><li class="navelem"><a class="el" href="dir_130ee179c2e1c25f0ce8c4812733a0d6.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_95cbcc4514f2fd04e86563e34a82819c.html">controllers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pid_controller.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pid__controller_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_VEHICLE_MODEL_INC_CONTROLLERS_PID_CONTROLLER_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_VEHICLE_MODEL_INC_CONTROLLERS_PID_CONTROLLER_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecontrol.html">control</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classcontrol_1_1_p_i_d_control.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcontrol_1_1_p_i_d_control.html">PIDControl</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html">   12</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html">ControlParam</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ad48b9e70eecd4d45d8c6e0ccd2a76d8c">   13</a></span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ad48b9e70eecd4d45d8c6e0ccd2a76d8c">kP</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#afa1064852395a25571a6d66d78c4d3d0">   14</a></span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#afa1064852395a25571a6d66d78c4d3d0">kI</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ab020995beee9072cfe08bcb29d63faf6">   15</a></span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ab020995beee9072cfe08bcb29d63faf6">kD</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a0ef80058338194209e0cd7767d865b08">   16</a></span>&#160;    <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a0ef80058338194209e0cd7767d865b08">ControlParam</a>() : <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ad48b9e70eecd4d45d8c6e0ccd2a76d8c">kP</a>(1.0), <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#afa1064852395a25571a6d66d78c4d3d0">kI</a>(1.0), <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ab020995beee9072cfe08bcb29d63faf6">kD</a>(0.5) {}</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a170316171d9e9ceace384a2adad3ff96">   17</a></span>&#160;    <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a170316171d9e9ceace384a2adad3ff96">ControlParam</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> i, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        : <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ad48b9e70eecd4d45d8c6e0ccd2a76d8c">kP</a>(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>), <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#afa1064852395a25571a6d66d78c4d3d0">kI</a>(i), <a class="code" href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ab020995beee9072cfe08bcb29d63faf6">kD</a>(d) {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  };</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classcontrol_1_1_p_i_d_control.html#ae78f4c1b10db90bf9c56acc1ded14a0b">PIDControl</a>(<span class="keyword">const</span> ControlParam&amp; param);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classcontrol_1_1_p_i_d_control.html#ae78f4c1b10db90bf9c56acc1ded14a0b">PIDControl</a>(<span class="keyword">const</span> ControlParam&amp; param, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> dt);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classcontrol_1_1_p_i_d_control.html#a8374dd08344fd6e10c29fa6569f23912">CalculatePIDControl</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> true_state);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ControlParam param_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> dt_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">int</span> max_history_len_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  std::deque&lt;decimal_t&gt; error_hist_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}  <span class="comment">// namespace control</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html_afa1064852395a25571a6d66d78c4d3d0"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#afa1064852395a25571a6d66d78c4d3d0">control::PIDControl::ControlParam::kI</a></div><div class="ttdeci">decimal_t kI</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00014">pid_controller.h:14</a></div></div>
+<div class="ttc" id="aclasscontrol_1_1_p_i_d_control_html"><div class="ttname"><a href="classcontrol_1_1_p_i_d_control.html">control::PIDControl</a></div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00010">pid_controller.h:10</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_a0ab7a6eeb6981fc69beafe088ad240dc"><div class="ttname"><a href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">proc_geojson.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00076">proc_geojson.py:76</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html_ab020995beee9072cfe08bcb29d63faf6"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ab020995beee9072cfe08bcb29d63faf6">control::PIDControl::ControlParam::kD</a></div><div class="ttdeci">decimal_t kD</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00015">pid_controller.h:15</a></div></div>
+<div class="ttc" id="aclasscontrol_1_1_p_i_d_control_html_a8374dd08344fd6e10c29fa6569f23912"><div class="ttname"><a href="classcontrol_1_1_p_i_d_control.html#a8374dd08344fd6e10c29fa6569f23912">control::PIDControl::CalculatePIDControl</a></div><div class="ttdeci">decimal_t CalculatePIDControl(const decimal_t desired_state, const decimal_t true_state)</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8cc_source.html#l00011">pid_controller.cc:11</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a33bd78c60a9e0fe01a43d2dbc9bc3e48"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a></div><div class="ttdeci">common::State desired_state</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00031">onlane_ai_agent.cc:31</a></div></div>
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html_a170316171d9e9ceace384a2adad3ff96"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a170316171d9e9ceace384a2adad3ff96">control::PIDControl::ControlParam::ControlParam</a></div><div class="ttdeci">ControlParam(const decimal_t p, const decimal_t i, const decimal_t d)</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00017">pid_controller.h:17</a></div></div>
+<div class="ttc" id="aclasscontrol_1_1_p_i_d_control_html_ae78f4c1b10db90bf9c56acc1ded14a0b"><div class="ttname"><a href="classcontrol_1_1_p_i_d_control.html#ae78f4c1b10db90bf9c56acc1ded14a0b">control::PIDControl::PIDControl</a></div><div class="ttdeci">PIDControl(const ControlParam &amp;param)</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8cc_source.html#l00004">pid_controller.cc:4</a></div></div>
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html_ad48b9e70eecd4d45d8c6e0ccd2a76d8c"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#ad48b9e70eecd4d45d8c6e0ccd2a76d8c">control::PIDControl::ControlParam::kP</a></div><div class="ttdeci">decimal_t kP</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00013">pid_controller.h:13</a></div></div>
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html">control::PIDControl::ControlParam</a></div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00012">pid_controller.h:12</a></div></div>
+<div class="ttc" id="astructcontrol_1_1_p_i_d_control_1_1_control_param_html_a0ef80058338194209e0cd7767d865b08"><div class="ttname"><a href="structcontrol_1_1_p_i_d_control_1_1_control_param.html#a0ef80058338194209e0cd7767d865b08">control::PIDControl::ControlParam::ControlParam</a></div><div class="ttdeci">ControlParam()</div><div class="ttdef"><b>Definition:</b> <a href="pid__controller_8h_source.html#l00016">pid_controller.h:16</a></div></div>
+<div class="ttc" id="anamespacecontrol_html"><div class="ttname"><a href="namespacecontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__velocity__controller_8h_source.html#l00007">ctx_idm_velocity_controller.h:7</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

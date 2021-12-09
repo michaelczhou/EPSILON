@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/external/thrust/thrust_resize.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_fe1c5e4aa41cd872964ae7e484bdab9a.html">external</a></li><li class="navelem"><a class="el" href="dir_0de3f5e1b325da80e5b521f3b8ad2cad.html">thrust</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">thrust_resize.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="thrust__resize_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/external/thrust/thrust_resize.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Enable resizing for thrusts device and host_vector.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_EXTERNAL_THRUST_THRUST_RESIZE_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_EXTERNAL_THRUST_THRUST_RESIZE_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;thrust/device_vector.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;thrust/host_vector.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="copy_8hpp.html">boost/numeric/odeint/util/copy.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1device__vector_3_01_t_01_4_01_4.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; thrust::device_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1device__vector_3_01_t_01_4_01_4_1_1type.html">   34</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">type</a> : <span class="keyword">public</span> boost::true_type { };</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1device__vector_3_01_t_01_4_01_4.html#aed53cbe8713b38bae804d794716f21a9">   35</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00e06661876cce519cbbef0910bf1accfc.html">   39</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; thrust::device_vector&lt; T &gt; , thrust::device_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00e06661876cce519cbbef0910bf1accfc.html#a575f8e2a69a8866aefb2b1440592e05b">   41</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00e06661876cce519cbbef0910bf1accfc.html#a575f8e2a69a8866aefb2b1440592e05b">same_size</a>( <span class="keyword">const</span> thrust::device_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> thrust::device_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.size() == <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>.size();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00_01tfad19cf2ec6fd30510b610745c402cd4.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; thrust::device_vector&lt; T &gt; , thrust::device_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00_01tfad19cf2ec6fd30510b610745c402cd4.html#aeab4ddb5e1bd63c56cd2f02c16cd3742">   50</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00_01tfad19cf2ec6fd30510b610745c402cd4.html#aeab4ddb5e1bd63c56cd2f02c16cd3742">resize</a>( thrust::device_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> thrust::device_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.resize( <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>.size() );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1host__vector_3_01_t_01_4_01_4.html">   58</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; thrust::host_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1host__vector_3_01_t_01_4_01_4_1_1type.html">   60</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">type</a> : <span class="keyword">public</span> boost::true_type { };</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01thrust_1_1host__vector_3_01_t_01_4_01_4.html#a7b1852c104fdef493baf9010e3cf0f79">   61</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_0df3d31681f11a4435078210f77074d59.html">   65</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; thrust::host_vector&lt; T &gt; , thrust::host_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_0df3d31681f11a4435078210f77074d59.html#a752d6dcd2584230a87ea8cd919495a3a">   67</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_0df3d31681f11a4435078210f77074d59.html#a752d6dcd2584230a87ea8cd919495a3a">same_size</a>( <span class="keyword">const</span> thrust::host_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> thrust::host_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.size() == <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>.size();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_01thred08ddfe90e7887ba0b2e5dd6246f03b.html">   74</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; thrust::host_vector&lt; T &gt; , thrust::host_vector&lt; T &gt; &gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_01thred08ddfe90e7887ba0b2e5dd6246f03b.html#a6d72a6496b7a780961dea5fb362c8048">   76</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_01thred08ddfe90e7887ba0b2e5dd6246f03b.html#a6d72a6496b7a780961dea5fb362c8048">resize</a>( thrust::host_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> thrust::host_vector&lt; T &gt; &amp;<a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.resize( <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>.size() );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Container1, <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01_container1_00_01thrust_1_1device__vector_3_01_value_01_4_01_4.html">   85</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html">copy_impl</a>&lt; Container1 , thrust::device_vector&lt; Value &gt; &gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01_container1_00_01thrust_1_1device__vector_3_01_value_01_4_01_4.html#a3accce1cfa38255784c12303fd8b25ce">   87</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01_container1_00_01thrust_1_1device__vector_3_01_value_01_4_01_4.html#a3accce1cfa38255784c12303fd8b25ce">copy</a>( <span class="keyword">const</span> Container1 &amp;from , thrust::device_vector&lt; Value &gt; &amp;to )</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">thrust::copy</a>( boost::begin( from ) , boost::end( from ) , boost::begin( to ) );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Container2 &gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_01_container2_01_4.html">   94</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html">copy_impl</a>&lt; thrust::device_vector&lt; Value &gt; , Container2 &gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_01_container2_01_4.html#aaae952e68e7a9cfb60790d682ea7a1a9">   96</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_01_container2_01_4.html#aaae952e68e7a9cfb60790d682ea7a1a9">copy</a>( <span class="keyword">const</span> thrust::device_vector&lt; Value &gt; &amp;from , Container2 &amp;to )</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">thrust::copy</a>( boost::begin( from ) , boost::end( from ) , boost::begin( to ) );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_03dcad2f68cc47eec7778ac82d499b218.html">  103</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html">copy_impl</a>&lt; thrust::device_vector&lt; Value &gt; , thrust::device_vector&lt; Value &gt; &gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_03dcad2f68cc47eec7778ac82d499b218.html#a09d934ca7b9826da6c6e73296aed412e">  105</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_03dcad2f68cc47eec7778ac82d499b218.html#a09d934ca7b9826da6c6e73296aed412e">copy</a>( <span class="keyword">const</span> thrust::device_vector&lt; Value &gt; &amp;from , thrust::device_vector&lt; Value &gt; &amp;to )</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">thrust::copy</a>( boost::begin( from ) , boost::end( from ) , boost::begin( to ) );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_EXTERNAL_THRUST_THRUST_RESIZE_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acopy_8hpp_html"><div class="ttname"><a href="copy_8hpp.html">copy.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">boost::numeric::odeint::is_resizeable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00044">is_resizeable.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_01_container2_01_4_html_aaae952e68e7a9cfb60790d682ea7a1a9"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_01_container2_01_4.html#aaae952e68e7a9cfb60790d682ea7a1a9">boost::numeric::odeint::copy_impl&lt; thrust::device_vector&lt; Value &gt;, Container2 &gt;::copy</a></div><div class="ttdeci">static void copy(const thrust::device_vector&lt; Value &gt; &amp;from, Container2 &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00096">thrust_resize.hpp:96</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_0df3d31681f11a4435078210f77074d59_html_a752d6dcd2584230a87ea8cd919495a3a"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_0df3d31681f11a4435078210f77074d59.html#a752d6dcd2584230a87ea8cd919495a3a">boost::numeric::odeint::same_size_impl&lt; thrust::host_vector&lt; T &gt;, thrust::host_vector&lt; T &gt; &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const thrust::host_vector&lt; T &gt; &amp;x, const thrust::host_vector&lt; T &gt; &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00067">thrust_resize.hpp:67</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html_aeafd2e3101712b4bedb251024b78b58b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">boost::numeric::odeint::is_resizeable::value</a></div><div class="ttdeci">const static bool value</div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00048">is_resizeable.hpp:48</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00_01tfad19cf2ec6fd30510b610745c402cd4_html_aeab4ddb5e1bd63c56cd2f02c16cd3742"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00_01tfad19cf2ec6fd30510b610745c402cd4.html#aeab4ddb5e1bd63c56cd2f02c16cd3742">boost::numeric::odeint::resize_impl&lt; thrust::device_vector&lt; T &gt;, thrust::device_vector&lt; T &gt; &gt;::resize</a></div><div class="ttdeci">static void resize(thrust::device_vector&lt; T &gt; &amp;x, const thrust::device_vector&lt; T &gt; &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00050">thrust_resize.hpp:50</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">boost::numeric::odeint::same_size_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="same__size_8hpp_source.html#l00041">same_size.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1copy__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html">boost::numeric::odeint::copy_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="copy_8hpp_source.html#l00054">copy.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00e06661876cce519cbbef0910bf1accfc_html_a575f8e2a69a8866aefb2b1440592e05b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01thrust_1_1device__vector_3_01_t_01_4_00e06661876cce519cbbef0910bf1accfc.html#a575f8e2a69a8866aefb2b1440592e05b">boost::numeric::odeint::same_size_impl&lt; thrust::device_vector&lt; T &gt;, thrust::device_vector&lt; T &gt; &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const thrust::device_vector&lt; T &gt; &amp;x, const thrust::device_vector&lt; T &gt; &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00041">thrust_resize.hpp:41</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1copy__impl_3_01_container1_00_01thrust_1_1device__vector_3_01_value_01_4_01_4_html_a3accce1cfa38255784c12303fd8b25ce"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01_container1_00_01thrust_1_1device__vector_3_01_value_01_4_01_4.html#a3accce1cfa38255784c12303fd8b25ce">boost::numeric::odeint::copy_impl&lt; Container1, thrust::device_vector&lt; Value &gt; &gt;::copy</a></div><div class="ttdeci">static void copy(const Container1 &amp;from, thrust::device_vector&lt; Value &gt; &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00087">thrust_resize.hpp:87</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html_a18f88ea53250c74989de11db172f88d0"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">boost::numeric::odeint::is_resizeable::type</a></div><div class="ttdeci">boost::false_type type</div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00047">is_resizeable.hpp:47</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">boost::numeric::odeint::resize_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="resize_8hpp_source.html#l00040">resize.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_03dcad2f68cc47eec7778ac82d499b218_html_a09d934ca7b9826da6c6e73296aed412e"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1copy__impl_3_01thrust_1_1device__vector_3_01_value_01_4_00_03dcad2f68cc47eec7778ac82d499b218.html#a09d934ca7b9826da6c6e73296aed412e">boost::numeric::odeint::copy_impl&lt; thrust::device_vector&lt; Value &gt;, thrust::device_vector&lt; Value &gt; &gt;::copy</a></div><div class="ttdeci">static void copy(const thrust::device_vector&lt; Value &gt; &amp;from, thrust::device_vector&lt; Value &gt; &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00105">thrust_resize.hpp:105</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_01thred08ddfe90e7887ba0b2e5dd6246f03b_html_a6d72a6496b7a780961dea5fb362c8048"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01thrust_1_1host__vector_3_01_t_01_4_00_01thred08ddfe90e7887ba0b2e5dd6246f03b.html#a6d72a6496b7a780961dea5fb362c8048">boost::numeric::odeint::resize_impl&lt; thrust::host_vector&lt; T &gt;, thrust::host_vector&lt; T &gt; &gt;::resize</a></div><div class="ttdeci">static void resize(thrust::host_vector&lt; T &gt; &amp;x, const thrust::host_vector&lt; T &gt; &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="thrust__resize_8hpp_source.html#l00076">thrust_resize.hpp:76</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a8f265541b3dda9a90fcb63b43bea0f11"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">boost::numeric::odeint::copy</a></div><div class="ttdeci">void copy(const Container1 &amp;from, Container2 &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="copy_8hpp_source.html#l00064">copy.hpp:64</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/2d_lattice/spreading.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li><li class="navelem"><a class="el" href="dir_074fe8fde5b3d3be3bbedbc2248028ab.html">2d_lattice</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">spreading.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;boost/ref.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html">boost/numeric/odeint/stepper/symplectic_rkn_sb3a_mclachlan.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="nested__range__algebra_8hpp_source.html">nested_range_algebra.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vector__vector__resize_8hpp_source.html">vector_vector_resize.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lattice2d_8hpp_source.html">lattice2d.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+spreading.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="spreading_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2examples_22d__lattice_2spreading_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2examples_22d__lattice_2spreading_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2examples_22d__lattice_2spreading_8cpp">
+<area shape="rect" title=" " alt="" coords="1233,5,1452,76"/>
+<area shape="rect" title=" " alt="" coords="5,139,85,165"/>
+<area shape="rect" title=" " alt="" coords="110,139,183,165"/>
+<area shape="rect" title=" " alt="" coords="445,622,507,649"/>
+<area shape="rect" title=" " alt="" coords="2742,139,2807,165"/>
+<area shape="rect" title=" " alt="" coords="2832,139,2923,165"/>
+<area shape="rect" title=" " alt="" coords="2727,443,2833,470"/>
+<area shape="rect" href="symplectic__rkn__sb3a__mclachlan_8hpp.html" title=" " alt="" coords="2104,124,2283,180"/>
+<area shape="rect" href="nested__range__algebra_8hpp.html" title=" " alt="" coords="2947,139,3141,165"/>
+<area shape="rect" href="vector__vector__resize_8hpp.html" title=" " alt="" coords="481,443,666,470"/>
+<area shape="rect" href="lattice2d_8hpp.html" title=" " alt="" coords="349,139,456,165"/>
+<area shape="rect" href="symplectic__rkn__stepper__base_8hpp.html" title=" " alt="" coords="2101,228,2286,284"/>
+<area shape="rect" title=" " alt="" coords="2820,347,2943,373"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="1075,235,1275,277"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="2823,235,3052,277"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="2231,339,2391,381"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="2599,339,2795,381"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="1428,339,1588,381"/>
+<area shape="rect" href="is__pair_8hpp.html" title=" " alt="" coords="2415,339,2575,381"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1983,339,2155,381"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="1799,339,1959,381"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="2351,525,2582,567"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="1612,332,1775,388"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="2543,436,2703,477"/>
+<area shape="rect" title=" " alt="" coords="2251,443,2370,470"/>
+<area shape="rect" title=" " alt="" coords="3044,533,3175,559"/>
+<area shape="rect" title=" " alt="" coords="1418,436,1585,477"/>
+<area shape="rect" title=" " alt="" coords="1666,525,1814,567"/>
+<area shape="rect" href="is__range_8hpp.html" title=" " alt="" coords="1219,436,1394,477"/>
+<area shape="rect" title=" " alt="" coords="1150,533,1221,559"/>
+<area shape="rect" title=" " alt="" coords="1245,533,1416,559"/>
+<area shape="rect" title=" " alt="" coords="2180,533,2327,559"/>
+<area shape="rect" title=" " alt="" coords="2458,443,2518,470"/>
+<area shape="rect" title=" " alt="" coords="2049,615,2236,656"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="1891,525,2055,567"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="1844,436,2004,477"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="1660,436,1820,477"/>
+<area shape="rect" title=" " alt="" coords="1466,533,1593,559"/>
+<area shape="rect" title=" " alt="" coords="1196,347,1353,373"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="531,339,727,381"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="751,339,955,381"/>
+<area shape="rect" href="reduce_8hpp.html" title=" " alt="" coords="980,339,1172,381"/>
+<area shape="rect" title=" " alt="" coords="888,443,1048,470"/>
+<area shape="rect" title=" " alt="" coords="691,443,864,470"/>
+<area shape="rect" title=" " alt="" coords="2967,347,3052,373"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="3127,339,3287,381"/>
+<area shape="rect" title=" " alt="" coords="3332,443,3511,470"/>
+<area shape="rect" title=" " alt="" coords="2858,443,3081,470"/>
+<area shape="rect" title=" " alt="" coords="3105,443,3308,470"/>
+<area shape="rect" title=" " alt="" coords="259,235,405,277"/>
+</map>
+</div>
+</div>
+<p><a href="spreading_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a7263b6b0b16edd81d94f5b848354a903"><td class="memItemLeft" align="right" valign="top">typedef vector&lt; vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td></tr>
+<tr class="separator:a7263b6b0b16edd81d94f5b848354a903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c997d919d79af61f9c73be868d170a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="structnested__range__algebra.html">nested_range_algebra</a>&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a> &gt;, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></td></tr>
+<tr class="separator:a60c997d919d79af61f9c73be868d170a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7bce399a9d7e786f67d082cfff260f69"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#a7bce399a9d7e786f67d082cfff260f69">time_diff_in_ms</a> (timeval &amp;t1, timeval &amp;t2)</td></tr>
+<tr class="separator:a7bce399a9d7e786f67d082cfff260f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f2228420376f4db7e1274f2b41667c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a> (int argc, const char *argv[])</td></tr>
+<tr class="separator:ac0f2228420376f4db7e1274f2b41667c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ad2bc690617b9b8894f1a3313ba4cb210"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> = 1.0</td></tr>
+<tr class="separator:ad2bc690617b9b8894f1a3313ba4cb210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9424343761f8c4f4c1afe8f5b6bf471b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a> = 1.0</td></tr>
+<tr class="separator:a9424343761f8c4f4c1afe8f5b6bf471b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2521abf0ae47d8077b64c81e89d7c1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spreading_8cpp.html#ac2521abf0ae47d8077b64c81e89d7c1e">realization_index</a> = 0</td></tr>
+<tr class="separator:ac2521abf0ae47d8077b64c81e89d7c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a7263b6b0b16edd81d94f5b848354a903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7263b6b0b16edd81d94f5b848354a903">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef vector&lt; vector&lt; double &gt; &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a60c997d919d79af61f9c73be868d170a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60c997d919d79af61f9c73be868d170a">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="structnested__range__algebra.html">nested_range_algebra</a>&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a> &gt; , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a> &gt; <a class="el" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ac0f2228420376f4db7e1274f2b41667c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f2228420376f4db7e1274f2b41667c">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00075">75</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="spreading_8cpp_ac0f2228420376f4db7e1274f2b41667c_cgraph.png" border="0" usemap="#spreading_8cpp_ac0f2228420376f4db7e1274f2b41667c_cgraph" alt=""/></div>
+<map name="spreading_8cpp_ac0f2228420376f4db7e1274f2b41667c_cgraph" id="spreading_8cpp_ac0f2228420376f4db7e1274f2b41667c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c" title=" " alt="" coords="108,5,171,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7bce399a9d7e786f67d082cfff260f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bce399a9d7e786f67d082cfff260f69">&#9670;&nbsp;</a></span>time_diff_in_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time_diff_in_ms </td>
+          <td>(</td>
+          <td class="paramtype">timeval &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">timeval &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a9424343761f8c4f4c1afe8f5b6bf471b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9424343761f8c4f4c1afe8f5b6bf471b">&#9670;&nbsp;</a></span>beta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double beta = 1.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad2bc690617b9b8894f1a3313ba4cb210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bc690617b9b8894f1a3313ba4cb210">&#9670;&nbsp;</a></span>initial_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double initial_e = 1.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac2521abf0ae47d8077b64c81e89d7c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2521abf0ae47d8077b64c81e89d7c1e">&#9670;&nbsp;</a></span>realization_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int realization_index = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spreading_8cpp_source.html">spreading.cpp</a> 第 <a class="el" href="spreading_8cpp_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

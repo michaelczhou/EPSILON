@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: LinearSystem类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_linear_system-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">LinearSystem类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___abstract_problem_formulation.html">AbstractProblemFormulation</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_linear_system_8h_source.html">LinearSystem.h</a>&gt;</code></p>
+<div class="dynheader">
+类 LinearSystem 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_linear_system__inherit__graph.png" border="0" usemap="#_linear_system_inherit__map" alt="Inheritance graph"/></div>
+<map name="_linear_system_inherit__map" id="_linear_system_inherit__map">
+<area shape="rect" title=" " alt="" coords="208,5,319,32"/>
+<area shape="rect" href="class_huber_linsys.html" title=" " alt="" coords="5,80,108,107"/>
+<area shape="rect" href="class_qp_bound_linsys.html" title=" " alt="" coords="133,80,255,107"/>
+<area shape="rect" href="class_qp_gen_linsys.html" title=" " alt="" coords="279,80,386,107"/>
+<area shape="rect" href="class_svm_linsys.html" title=" " alt="" coords="411,80,503,107"/>
+<area shape="rect" href="class_qp_bound_dense_linsys.html" title=" " alt="" coords="71,155,234,181"/>
+<area shape="rect" href="class_qp_gen_dense_linsys.html" title=" " alt="" coords="259,155,407,181"/>
+<area shape="rect" href="class_qp_gen_sparse_linsys.html" title=" " alt="" coords="431,155,581,181"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae6e5b92f2421df9bf60fb120f1373f5a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_system.html#ae6e5b92f2421df9bf60fb120f1373f5a">factor</a> (<a class="el" href="class_data.html">Data</a> *prob, <a class="el" href="class_variables.html">Variables</a> *vars)=0</td></tr>
+<tr class="separator:ae6e5b92f2421df9bf60fb120f1373f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1be3aee343624b113fe4caeea6913c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_system.html#afa1be3aee343624b113fe4caeea6913c">solve</a> (<a class="el" href="class_data.html">Data</a> *prob, <a class="el" href="class_variables.html">Variables</a> *vars, <a class="el" href="class_residuals.html">Residuals</a> *resids, <a class="el" href="class_variables.html">Variables</a> *step)=0</td></tr>
+<tr class="separator:afa1be3aee343624b113fe4caeea6913c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeefd7d4071bd38a0aa493943aca6886f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_system.html#aeefd7d4071bd38a0aa493943aca6886f">~LinearSystem</a> ()</td></tr>
+<tr class="separator:aeefd7d4071bd38a0aa493943aca6886f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Implements the main solver for linear systems that arise in primal-dual interior-point methods for QP </p>
+
+<p class="definition">在文件 <a class="el" href="_linear_system_8h_source.html">LinearSystem.h</a> 第 <a class="el" href="_linear_system_8h_source.html#l00017">17</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aeefd7d4071bd38a0aa493943aca6886f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeefd7d4071bd38a0aa493943aca6886f">&#9670;&nbsp;</a></span>~LinearSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual LinearSystem::~LinearSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_linear_system_8h_source.html">LinearSystem.h</a> 第 <a class="el" href="_linear_system_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae6e5b92f2421df9bf60fb120f1373f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e5b92f2421df9bf60fb120f1373f5a">&#9670;&nbsp;</a></span>factor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LinearSystem::factor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a> *&#160;</td>
+          <td class="paramname"><em>prob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>factorizes the matrix, stores data related to the factorization to prepare for later calls to "solve" </p>
+
+<p>在 <a class="el" href="class_qp_bound_dense_linsys.html#a6db3d966c7a884c31ad0143f027b25c5">QpBoundDenseLinsys</a>, <a class="el" href="class_qp_gen_linsys.html#a8c7fbe4cd4cd43615ca1ef8370c447b0">QpGenLinsys</a>, <a class="el" href="class_qp_bound_linsys.html#a6d7c837fd29cb5b6b57423a2b5dfb0b4">QpBoundLinsys</a>, <a class="el" href="class_svm_linsys.html#a02c1c32e04a32424f4fa18dc6af76c19">SvmLinsys</a>, <a class="el" href="class_qp_gen_dense_linsys.html#a8f23ac4c1cb03685b34e2cad6dbdd166">QpGenDenseLinsys</a>, <a class="el" href="class_huber_linsys.html#acba9e3e0c7108b6d55c5d406624ed947">HuberLinsys</a> , 以及 <a class="el" href="class_qp_gen_sparse_linsys.html#a74619599ab445664ed3d77b6907b908a">QpGenSparseLinsys</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="afa1be3aee343624b113fe4caeea6913c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1be3aee343624b113fe4caeea6913c">&#9670;&nbsp;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LinearSystem::solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a> *&#160;</td>
+          <td class="paramname"><em>prob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_residuals.html">Residuals</a> *&#160;</td>
+          <td class="paramname"><em>resids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>assuming the "factor" call was successful, supplies the right-hand side and solves the system. </p>
+
+<p>在 <a class="el" href="class_qp_bound_linsys.html#a7a79b79ec6cd1984afcd52de4b64475e">QpBoundLinsys</a>, <a class="el" href="class_svm_linsys.html#a038fc7eb7c5afdd697d409e6b8d94814">SvmLinsys</a>, <a class="el" href="class_huber_linsys.html#a9e4ffc93d129827b3b59fbe365210c42">HuberLinsys</a> , 以及 <a class="el" href="class_qp_gen_linsys.html#afb6cb45ac735b8388735dec8a235af35">QpGenLinsys</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/ooqp/include/ooqp/<a class="el" href="_linear_system_8h_source.html">LinearSystem.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

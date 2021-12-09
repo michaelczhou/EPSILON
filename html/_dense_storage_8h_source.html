@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/DenseStorage.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DenseStorage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dense_storage_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DENSEDOUBLEMATRIX_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DENSEDOUBLEMATRIX_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_double_matrix_8h.html">DoubleMatrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dense_storage_handle_8h.html">DenseStorageHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="_dense_storage_8h.html#a4034de82f7daf22d14ec620a68e0ce1a">DenseStorageInstances</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_dense_storage.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dense_storage.html">DenseStorage</a> : <span class="keyword">public</span> <a class="code" href="class_double_storage.html">DoubleStorage</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_dense_storage.html#a7bba039812cd2157e69cc507dc0aa2bf">   18</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#a7bba039812cd2157e69cc507dc0aa2bf">neverDeleteElts</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">   20</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">m</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">   21</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">n</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_dense_storage.html#adff80aeb5251066269fafccf5d661f85">   22</a></span>&#160;  <span class="keywordtype">double</span> ** <a class="code" href="class_dense_storage.html#adff80aeb5251066269fafccf5d661f85">M</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="class_dense_storage.html#a8fa8a96c19ad98c1256f6ecf5578227c">DenseStorage</a>( <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">m</a>, <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">n</a> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="class_dense_storage.html#a8fa8a96c19ad98c1256f6ecf5578227c">DenseStorage</a>( <span class="keywordtype">double</span> A[], <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">m</a>, <span class="keywordtype">int</span> <a class="code" href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">n</a> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_dense_storage.html#acf6054478a44fe3b56d99a26e1db42aa">~DenseStorage</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a682e5d68b3a1ab321515fb6827a12832">getSize</a>( <span class="keywordtype">int</span>&amp; <a class="code" href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">m</a>, <span class="keywordtype">int</span>&amp; <a class="code" href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">n</a> );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a67706d7c0321cc2a3c2e90b0a8456d88">getDiagonal</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; vec );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#ad049709c93fe89750b8c8dd7ef75eb4c">setToDiagonal</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; vec );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a382d57b0671529e66038a877fae11a2e">atPutDense</a>( <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">double</span> * A, <span class="keywordtype">int</span> lda,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;               <span class="keywordtype">int</span> rowExtent, <span class="keywordtype">int</span> colExtent );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a48550a0466572f0595a30ce14e0f3a4f">fromGetDense</a>( <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">double</span> * A, <span class="keywordtype">int</span> lda,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                 <span class="keywordtype">int</span> rowExtent, <span class="keywordtype">int</span> colExtent );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#af7c02a6af2b2c53a10f7a27dc3ab3ad5">atPutZeros</a>( <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;               <span class="keywordtype">int</span> rowExtent, <span class="keywordtype">int</span> colExtent );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a58c4c9f2507618f7cb43915687167ee0">atAddOuterProductOf</a>( <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">double</span> alpha,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordtype">double</span> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <span class="keywordtype">int</span> incx, <span class="keywordtype">int</span> nx );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#ad33b83faa80fc829b87aef5d01ea3e95">addToDiagonalAt</a>( <span class="keywordtype">double</span> alpha, <span class="keywordtype">double</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[], <span class="keywordtype">int</span> incx,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">int</span> idiag, <span class="keywordtype">int</span> extent );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a624958d5b2204368daf8ae39da7e377c">fromGetSpRow</a>( <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                 <span class="keywordtype">double</span> A[], <span class="keywordtype">int</span> lenA, <span class="keywordtype">int</span> irowA[], <span class="keywordtype">int</span>&amp; nnz,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                 <span class="keywordtype">int</span> rowExtent, <span class="keywordtype">int</span>&amp; info );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a39e454b8109c6a1f26552a2c63223409">ColumnScale</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; vec );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a4012ea28632207b840ceeb7d31b52d68">SymmetricScale</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; vec );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#ac00255ce15a3eb8af6b25b6da33acfba">scalarMult</a>( <span class="keywordtype">double</span> num);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a9e6459cc09cf7d2673ea3a5652397932">atPutSpRow</a>( <span class="keywordtype">int</span> col, <span class="keywordtype">double</span> A[], <span class="keywordtype">int</span> lenA, <span class="keywordtype">int</span> irowA[],</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               <span class="keywordtype">int</span>&amp; info );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a7b03614ee1fbdd3a1a6ade88a0da22d8">putSparseTriple</a>( <span class="keywordtype">int</span> irow[], <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> jcol[], <span class="keywordtype">double</span> A[], </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">int</span>&amp; info );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a6fae3135ae190222981ce81285bea917">atPutDiagonal</a>(   <span class="keywordtype">int</span> idiag, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; v );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a5e93e03ce4d44c156c6b8260414e4730">fromGetDiagonal</a>( <span class="keywordtype">int</span> idiag, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; v );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_dense_storage.html#a6fae3135ae190222981ce81285bea917">atPutDiagonal</a>( <span class="keywordtype">int</span> idiag, <span class="keywordtype">double</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[], <span class="keywordtype">int</span> incx, <span class="keywordtype">int</span> extent );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_dense_storage_html_af7c02a6af2b2c53a10f7a27dc3ab3ad5"><div class="ttname"><a href="class_dense_storage.html#af7c02a6af2b2c53a10f7a27dc3ab3ad5">DenseStorage::atPutZeros</a></div><div class="ttdeci">virtual void atPutZeros(int row, int col, int rowExtent, int colExtent)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_ad049709c93fe89750b8c8dd7ef75eb4c"><div class="ttname"><a href="class_dense_storage.html#ad049709c93fe89750b8c8dd7ef75eb4c">DenseStorage::setToDiagonal</a></div><div class="ttdeci">virtual void setToDiagonal(OoqpVector &amp;vec)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a58c4c9f2507618f7cb43915687167ee0"><div class="ttname"><a href="class_dense_storage.html#a58c4c9f2507618f7cb43915687167ee0">DenseStorage::atAddOuterProductOf</a></div><div class="ttdeci">virtual void atAddOuterProductOf(int row, int col, double alpha, double *x, int incx, int nx)</div></div>
+<div class="ttc" id="aclass_double_storage_html"><div class="ttname"><a href="class_double_storage.html">DoubleStorage</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_8h_source.html#l00024">DoubleMatrix.h:24</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_aa73b8e8f0adf5fbdc42427d81cf75211"><div class="ttname"><a href="class_dense_storage.html#aa73b8e8f0adf5fbdc42427d81cf75211">DenseStorage::m</a></div><div class="ttdeci">int m</div><div class="ttdef"><b>Definition:</b> <a href="_dense_storage_8h_source.html#l00020">DenseStorage.h:20</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_a682e5d68b3a1ab321515fb6827a12832"><div class="ttname"><a href="class_dense_storage.html#a682e5d68b3a1ab321515fb6827a12832">DenseStorage::getSize</a></div><div class="ttdeci">virtual void getSize(int &amp;m, int &amp;n)</div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_a9e6459cc09cf7d2673ea3a5652397932"><div class="ttname"><a href="class_dense_storage.html#a9e6459cc09cf7d2673ea3a5652397932">DenseStorage::atPutSpRow</a></div><div class="ttdeci">virtual void atPutSpRow(int col, double A[], int lenA, int irowA[], int &amp;info)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_acf6054478a44fe3b56d99a26e1db42aa"><div class="ttname"><a href="class_dense_storage.html#acf6054478a44fe3b56d99a26e1db42aa">DenseStorage::~DenseStorage</a></div><div class="ttdeci">virtual ~DenseStorage()</div></div>
+<div class="ttc" id="aclass_dense_storage_html_abd2eeb64e0017b0a44053aefcd0c1560"><div class="ttname"><a href="class_dense_storage.html#abd2eeb64e0017b0a44053aefcd0c1560">DenseStorage::n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="_dense_storage_8h_source.html#l00021">DenseStorage.h:21</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_ac00255ce15a3eb8af6b25b6da33acfba"><div class="ttname"><a href="class_dense_storage.html#ac00255ce15a3eb8af6b25b6da33acfba">DenseStorage::scalarMult</a></div><div class="ttdeci">virtual void scalarMult(double num)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_ad33b83faa80fc829b87aef5d01ea3e95"><div class="ttname"><a href="class_dense_storage.html#ad33b83faa80fc829b87aef5d01ea3e95">DenseStorage::addToDiagonalAt</a></div><div class="ttdeci">virtual void addToDiagonalAt(double alpha, double x[], int incx, int idiag, int extent)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a7bba039812cd2157e69cc507dc0aa2bf"><div class="ttname"><a href="class_dense_storage.html#a7bba039812cd2157e69cc507dc0aa2bf">DenseStorage::neverDeleteElts</a></div><div class="ttdeci">int neverDeleteElts</div><div class="ttdef"><b>Definition:</b> <a href="_dense_storage_8h_source.html#l00018">DenseStorage.h:18</a></div></div>
+<div class="ttc" id="a_dense_storage_handle_8h_html"><div class="ttname"><a href="_dense_storage_handle_8h.html">DenseStorageHandle.h</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html"><div class="ttname"><a href="class_dense_storage.html">DenseStorage</a></div><div class="ttdef"><b>Definition:</b> <a href="_dense_storage_8h_source.html#l00016">DenseStorage.h:16</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_a39e454b8109c6a1f26552a2c63223409"><div class="ttname"><a href="class_dense_storage.html#a39e454b8109c6a1f26552a2c63223409">DenseStorage::ColumnScale</a></div><div class="ttdeci">virtual void ColumnScale(OoqpVector &amp;vec)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a382d57b0671529e66038a877fae11a2e"><div class="ttname"><a href="class_dense_storage.html#a382d57b0671529e66038a877fae11a2e">DenseStorage::atPutDense</a></div><div class="ttdeci">virtual void atPutDense(int row, int col, double *A, int lda, int rowExtent, int colExtent)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a48550a0466572f0595a30ce14e0f3a4f"><div class="ttname"><a href="class_dense_storage.html#a48550a0466572f0595a30ce14e0f3a4f">DenseStorage::fromGetDense</a></div><div class="ttdeci">virtual void fromGetDense(int row, int col, double *A, int lda, int rowExtent, int colExtent)</div></div>
+<div class="ttc" id="a_dense_storage_8h_html_a4034de82f7daf22d14ec620a68e0ce1a"><div class="ttname"><a href="_dense_storage_8h.html#a4034de82f7daf22d14ec620a68e0ce1a">DenseStorageInstances</a></div><div class="ttdeci">int DenseStorageInstances</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a6fae3135ae190222981ce81285bea917"><div class="ttname"><a href="class_dense_storage.html#a6fae3135ae190222981ce81285bea917">DenseStorage::atPutDiagonal</a></div><div class="ttdeci">virtual void atPutDiagonal(int idiag, OoqpVector &amp;v)</div></div>
+<div class="ttc" id="a_double_matrix_8h_html"><div class="ttname"><a href="_double_matrix_8h.html">DoubleMatrix.h</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_a624958d5b2204368daf8ae39da7e377c"><div class="ttname"><a href="class_dense_storage.html#a624958d5b2204368daf8ae39da7e377c">DenseStorage::fromGetSpRow</a></div><div class="ttdeci">virtual void fromGetSpRow(int row, int col, double A[], int lenA, int irowA[], int &amp;nnz, int rowExtent, int &amp;info)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_adff80aeb5251066269fafccf5d661f85"><div class="ttname"><a href="class_dense_storage.html#adff80aeb5251066269fafccf5d661f85">DenseStorage::M</a></div><div class="ttdeci">double ** M</div><div class="ttdef"><b>Definition:</b> <a href="_dense_storage_8h_source.html#l00022">DenseStorage.h:22</a></div></div>
+<div class="ttc" id="aclass_dense_storage_html_a8fa8a96c19ad98c1256f6ecf5578227c"><div class="ttname"><a href="class_dense_storage.html#a8fa8a96c19ad98c1256f6ecf5578227c">DenseStorage::DenseStorage</a></div><div class="ttdeci">DenseStorage(int m, int n)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a67706d7c0321cc2a3c2e90b0a8456d88"><div class="ttname"><a href="class_dense_storage.html#a67706d7c0321cc2a3c2e90b0a8456d88">DenseStorage::getDiagonal</a></div><div class="ttdeci">virtual void getDiagonal(OoqpVector &amp;vec)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a7b03614ee1fbdd3a1a6ade88a0da22d8"><div class="ttname"><a href="class_dense_storage.html#a7b03614ee1fbdd3a1a6ade88a0da22d8">DenseStorage::putSparseTriple</a></div><div class="ttdeci">virtual void putSparseTriple(int irow[], int len, int jcol[], double A[], int &amp;info)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a4012ea28632207b840ceeb7d31b52d68"><div class="ttname"><a href="class_dense_storage.html#a4012ea28632207b840ceeb7d31b52d68">DenseStorage::SymmetricScale</a></div><div class="ttdeci">virtual void SymmetricScale(OoqpVector &amp;vec)</div></div>
+<div class="ttc" id="aclass_dense_storage_html_a5e93e03ce4d44c156c6b8260414e4730"><div class="ttname"><a href="class_dense_storage.html#a5e93e03ce4d44c156c6b8260414e4730">DenseStorage::fromGetDiagonal</a></div><div class="ttdeci">virtual void fromGetDiagonal(int idiag, OoqpVector &amp;v)</div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

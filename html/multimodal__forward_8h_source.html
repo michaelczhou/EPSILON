@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/forward_simulator/inc/forward_simulator/multimodal_forward.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_8dcc178b2d70e1552a25252105e4e3ce.html">forward_simulator</a></li><li class="navelem"><a class="el" href="dir_882ae1d1a4f2eae60bfaec14b11bad52.html">inc</a></li><li class="navelem"><a class="el" href="dir_7563d35358ba225a2cb2254896f13d40.html">forward_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">multimodal_forward.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="multimodal__forward_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_FORWARD_SIMULATOR_MULTIMODAL_FORWARD_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_FORWARD_SIMULATOR_MULTIMODAL_FORWARD_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane_8h.html">common/lane/lane.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="onlane__forward__simulation_8h.html">forward_simulator/onlane_forward_simulation.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_multi_modal_forward.html">MultiModalForward</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#a9d33a9fb04ec0ca923faa2b0a30dcf6f">   14</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classcommon_1_1_lane.html">Lane</a> = <a class="code" href="classcommon_1_1_lane.html">common::Lane</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#aadb4fd1a090f7657b1276b2131dc0e02">   15</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_vehicle_set.html">VehicleSet</a> = <a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#aaee0af494ca7e2672ae471cc783ed1e3">   16</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classcommon_1_1_grid_map_n_d.html">GridMap</a> = <a class="code" href="classcommon_1_1_grid_map_n_d.html">common::GridMapND&lt;uint8_t, 2&gt;</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#ad433a74baf8ee4ca18c0760bbd3d067a">   17</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_state.html">State</a> = <a class="code" href="structcommon_1_1_state.html">common::State</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#a2637a892a9083a5894949e9a22840ba6">   18</a></span>&#160;  <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="classplanning_1_1_multi_modal_forward.html#a2637a892a9083a5894949e9a22840ba6">AggressivenessLevel</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classplanning_1_1_multi_modal_forward.html#a06bed6c9e93a93f1064bfa5367f18054">   20</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_multi_modal_forward.html#a06bed6c9e93a93f1064bfa5367f18054">ParamLookUp</a>(<span class="keyword">const</span> <a class="code" href="classplanning_1_1_multi_modal_forward.html#a2637a892a9083a5894949e9a22840ba6">AggressivenessLevel</a>&amp; agg_level,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                               <a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">OnLaneForwardSimulation::Param</a>* param) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">switch</span> (agg_level) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">kDesiredHeadwayTime</a> = 2.0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">kMinimumSpacing</a> = 2.5;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">kAcceleration</a> = 1.0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">kComfortableBrakingDeceleration</a> = 1.0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">steer_control_gain</a> = 2.0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">kDesiredHeadwayTime</a> = 1.7;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">kMinimumSpacing</a> = 2.5;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">kAcceleration</a> = 1.0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">kComfortableBrakingDeceleration</a> = 1.67;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">steer_control_gain</a> = 2.0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">kDesiredHeadwayTime</a> = 1.5;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">kMinimumSpacing</a> = 2.5;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">kAcceleration</a> = 2.0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">kComfortableBrakingDeceleration</a> = 3.0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">steer_control_gain</a> = 2.0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">kDesiredHeadwayTime</a> = 1.0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">kMinimumSpacing</a> = 1.5;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">kAcceleration</a> = 2.0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">kComfortableBrakingDeceleration</a> = 3.0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">steer_control_gain</a> = 2.0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">kDesiredHeadwayTime</a> = 0.5;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">kMinimumSpacing</a> = 1.0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">kAcceleration</a> = 2.0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">kComfortableBrakingDeceleration</a> = 3.0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        param-&gt;<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">steer_control_gain</a> = 2.0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html_a1f6e452287c1ab80c85094261842a991"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a1f6e452287c1ab80c85094261842a991">common::IntelligentDriverModel::Param::kMinimumSpacing</a></div><div class="ttdeci">decimal_t kMinimumSpacing</div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00025">intelligent_driver_model.h:25</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_multi_modal_forward_html_a06bed6c9e93a93f1064bfa5367f18054"><div class="ttname"><a href="classplanning_1_1_multi_modal_forward.html#a06bed6c9e93a93f1064bfa5367f18054">planning::MultiModalForward::ParamLookUp</a></div><div class="ttdeci">static ErrorType ParamLookUp(const AggressivenessLevel &amp;agg_level, OnLaneForwardSimulation::Param *param)</div><div class="ttdef"><b>Definition:</b> <a href="multimodal__forward_8h_source.html#l00020">multimodal_forward.h:20</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="astructplanning_1_1_on_lane_forward_simulation_1_1_param_html_a9b7f5f76f0279143cbe8865315a74fb3"><div class="ttname"><a href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">planning::OnLaneForwardSimulation::Param::idm_param</a></div><div class="ttdeci">simulator::IntelligentDriverModel::Param idm_param</div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00028">onlane_forward_simulation.h:28</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html_a82fc3f5ba258ee673bbcf35cfe26b20c"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a82fc3f5ba258ee673bbcf35cfe26b20c">common::IntelligentDriverModel::Param::kDesiredHeadwayTime</a></div><div class="ttdeci">decimal_t kDesiredHeadwayTime</div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00026">intelligent_driver_model.h:26</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html_a110171f1e27728c1273744a4f87552b6"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a110171f1e27728c1273744a4f87552b6">common::IntelligentDriverModel::Param::kAcceleration</a></div><div class="ttdeci">decimal_t kAcceleration</div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00027">intelligent_driver_model.h:27</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00263">semantics.h:263</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_multi_modal_forward_html"><div class="ttname"><a href="classplanning_1_1_multi_modal_forward.html">planning::MultiModalForward</a></div><div class="ttdef"><b>Definition:</b> <a href="multimodal__forward_8h_source.html#l00012">multimodal_forward.h:12</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_multi_modal_forward_html_a2637a892a9083a5894949e9a22840ba6"><div class="ttname"><a href="classplanning_1_1_multi_modal_forward.html#a2637a892a9083a5894949e9a22840ba6">planning::MultiModalForward::AggressivenessLevel</a></div><div class="ttdeci">int AggressivenessLevel</div><div class="ttdef"><b>Definition:</b> <a href="multimodal__forward_8h_source.html#l00018">multimodal_forward.h:18</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html_a55b6e019dc7401f0acd8adb6e46cbf77"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html#a55b6e019dc7401f0acd8adb6e46cbf77">common::IntelligentDriverModel::Param::kComfortableBrakingDeceleration</a></div><div class="ttdeci">decimal_t kComfortableBrakingDeceleration</div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00028">intelligent_driver_model.h:28</a></div></div>
+<div class="ttc" id="alane_8h_html"><div class="ttname"><a href="lane_8h.html">lane.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aonlane__forward__simulation_8h_html"><div class="ttname"><a href="onlane__forward__simulation_8h.html">onlane_forward_simulation.h</a></div></div>
+<div class="ttc" id="astructplanning_1_1_on_lane_forward_simulation_1_1_param_html_a23aa511d0182b863df8e0de2591f2eb6"><div class="ttname"><a href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a23aa511d0182b863df8e0de2591f2eb6">planning::OnLaneForwardSimulation::Param::steer_control_gain</a></div><div class="ttdeci">decimal_t steer_control_gain</div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00029">onlane_forward_simulation.h:29</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_grid_map_n_d_html"><div class="ttname"><a href="classcommon_1_1_grid_map_n_d.html">common::GridMapND</a></div><div class="ttdoc">Occupancy grid map</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00350">semantics.h:350</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="astructplanning_1_1_on_lane_forward_simulation_1_1_param_html"><div class="ttname"><a href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a></div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00027">onlane_forward_simulation.h:27</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

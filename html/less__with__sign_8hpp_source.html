@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/util/detail/less_with_sign.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_a6aa6f021fc27c9d9b77bce87b9afa51.html">util</a></li><li class="navelem"><a class="el" href="dir_6914674a38c94719051646db72643737.html">detail</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">less_with_sign.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="less__with__sign_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/integrate/detail/less_with_sign.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Helper function to compare times taking into account the sign of dt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_INTEGRATE_DETAIL_LESS_WITH_SIGN_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_INTEGRATE_DETAIL_LESS_WITH_SIGN_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="unit__helper_8hpp.html">boost/numeric/odeint/util/unit_helper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> T1 , <span class="keyword">typename</span> T2 , <span class="keyword">typename</span> T3 &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">   31</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">less_with_sign</a>( T1 t1 , T2 t2 , T3 dt )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0b47c9d2c02f524076bb89bfe4d4e1b5">get_unit_value</a>(<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>) &gt; 0 )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> t1 &lt; t2;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> t1 &gt; t2;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> T1 , <span class="keyword">typename</span> T2 , <span class="keyword">typename</span> T3&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a233c61edc8b3a7a5aee72dbe629075c4">   43</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a233c61edc8b3a7a5aee72dbe629075c4">less_eq_with_sign</a>( T1 t1 , T2 t2 , T3 dt )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0b47c9d2c02f524076bb89bfe4d4e1b5">get_unit_value</a>(<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>) &gt; 0 )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> t1 &lt;= t2;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> t1 &gt;= t2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} } } }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a0b47c9d2c02f524076bb89bfe4d4e1b5"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a0b47c9d2c02f524076bb89bfe4d4e1b5">boost::numeric::odeint::get_unit_value</a></div><div class="ttdeci">detail::get_unit_value_impl&lt; T &gt;::result_type get_unit_value(const T &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="unit__helper_8hpp_source.html#l00089">unit_helper.hpp:89</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00016">nested_range_algebra.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a233c61edc8b3a7a5aee72dbe629075c4"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a233c61edc8b3a7a5aee72dbe629075c4">boost::numeric::odeint::detail::less_eq_with_sign</a></div><div class="ttdeci">bool less_eq_with_sign(T1 t1, T2 t2, T3 dt)</div><div class="ttdef"><b>Definition:</b> <a href="less__with__sign_8hpp_source.html#l00043">less_with_sign.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a7be05bba33c9e8fe42544410c6b7d2d1"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">boost::numeric::odeint::detail::less_with_sign</a></div><div class="ttdeci">bool less_with_sign(T1 t1, T2 t2, T3 dt)</div><div class="ttdef"><b>Definition:</b> <a href="less__with__sign_8hpp_source.html#l00031">less_with_sign.hpp:31</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aunit__helper_8hpp_html"><div class="ttname"><a href="unit__helper_8hpp.html">unit_helper.hpp</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

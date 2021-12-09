@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/ssc_planner/inc/ssc_planner/ssc_server_ros.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_6782f329ef35c22aa61a1af7641268d8.html">ssc_planner</a></li><li class="navelem"><a class="el" href="dir_1acbbf9d98344ab84cd1ca89f0328134.html">inc</a></li><li class="navelem"><a class="el" href="dir_8cbbac23f70f298c6d6ff7af7fcab6fb.html">ssc_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ssc_server_ros.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ssc__server__ros_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _UTIL_SSC_PLANNER_INC_SSC_SERVER_ROS_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _UTIL_SSC_PLANNER_INC_SSC_SERVER_ROS_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colormap_8h.html">common/basics/colormap.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tic__toc_8h.html">common/basics/tic_toc.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane_8h.html">common/lane/lane.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane__generator_8h.html">common/lane/lane_generator.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="frenet__traj_8h.html">common/trajectory/frenet_traj.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common__visualization__util_8h.html">common/visualization/common_visualization_util.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="atomicops_8h.html">moodycamel/atomicops.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="readerwriterqueue_8h.html">moodycamel/readerwriterqueue.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;ros/ros.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantic__map__manager_8h.html">semantic_map_manager/semantic_map_manager.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2semantic__map__manager_2inc_2semantic__map__manager_2visualizer_8h.html">semantic_map_manager/visualizer.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h.html">ssc_planner/map_adapter.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ssc__planner_8h.html">ssc_planner/ssc_planner.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ssc__visualizer_8h.html">ssc_planner/ssc_visualizer.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;tf/tf.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;tf/transform_datatypes.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;vehicle_msgs/ControlSignal.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="encoder_8h.html">vehicle_msgs/encoder.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;visualization_msgs/Marker.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;visualization_msgs/MarkerArray.h&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner_server.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_ssc_planner_server.html">SscPlannerServer</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner_server.html#a354937b01d82feba05dae3972ee75185">   40</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">SemanticMapManager</a> = <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classplanning_1_1_ssc_planner_server.html#a6e14864729d3262988d46f9c6cbc8bb8">   41</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classcommon_1_1_frenet_trajectory.html">FrenetTrajectory</a> = <a class="code" href="classcommon_1_1_frenet_trajectory.html">common::FrenetTrajectory</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structplanning_1_1_ssc_planner_server_1_1_config.html">   42</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structplanning_1_1_ssc_planner_server_1_1_config.html">Config</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structplanning_1_1_ssc_planner_server_1_1_config.html#a382ce1190253448aa556b82aadb8dcf5">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structplanning_1_1_ssc_planner_server_1_1_config.html#a382ce1190253448aa556b82aadb8dcf5">kInputBufferSize</a>{100};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner_server.html#a9fe5d7d5dd841d95587b63cb8e5be8bf">SscPlannerServer</a>(ros::NodeHandle nh, <span class="keywordtype">int</span> <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner_server.html#a9fe5d7d5dd841d95587b63cb8e5be8bf">SscPlannerServer</a>(ros::NodeHandle nh, <span class="keywordtype">double</span> work_rate, <span class="keywordtype">int</span> <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_ssc_planner_server.html#aa61e077080d8a6fb126bd9632184301e">PushSemanticMap</a>(<span class="keyword">const</span> <a class="code" href="classplanning_1_1_ssc_planner_server.html#a354937b01d82feba05dae3972ee75185">SemanticMapManager</a> &amp;smm);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_ssc_planner_server.html#a508f25086e57892c1398ed5a36902f4f">Init</a>(<span class="keyword">const</span> std::string &amp;config_path);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_ssc_planner_server.html#ad015bdb2aee6f960a502e8d94f7c3a5f">Start</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> PlanCycleCallback();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> Replan();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> PublishData();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> MainThread();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> FilterSingularityState(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::State&gt;</a> &amp;hist,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                   <a class="code" href="structcommon_1_1_state.html">common::State</a> *filter_state);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  Config config_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> is_replan_on_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> is_map_updated_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> use_sim_state_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::unique_ptr&lt;FrenetTrajectory&gt; executing_traj_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  std::unique_ptr&lt;FrenetTrajectory&gt; next_traj_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner.html">SscPlanner</a> planner_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner_adapter.html">SscPlannerAdapter</a> map_adapter_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="class_tic_toc.html">TicToc</a> time_profile_tool_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> global_init_stamp_{0.0};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// ros related</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ros::NodeHandle nh_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> work_rate_ = 20.0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">int</span> ego_id_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">bool</span> require_intervention_signal_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  ros::Publisher ctrl_signal_pub_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  ros::Publisher map_marker_pub_;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ros::Publisher executing_traj_vis_pub_;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// input buffer</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="classmoodycamel_1_1_reader_writer_queue.html">moodycamel::ReaderWriterQueue&lt;SemanticMapManager&gt;</a> *p_input_smm_buff_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="classplanning_1_1_ssc_planner_server.html#a354937b01d82feba05dae3972ee75185">SemanticMapManager</a> last_smm_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="classsemantic__map__manager_1_1_visualizer.html">semantic_map_manager::Visualizer</a> *p_smm_vis_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  SscVisualizer *p_ssc_vis_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">int</span> last_trajmk_cnt_{0};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::State&gt;</a> desired_state_hist_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::State&gt;</a> ctrl_state_hist_;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif  // _UTIL_SSC_PLANNER_INC_SSC_SERVER_ROS_H__</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aencoder_8h_html"><div class="ttname"><a href="encoder_8h.html">encoder.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html_a508f25086e57892c1398ed5a36902f4f"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html#a508f25086e57892c1398ed5a36902f4f">planning::SscPlannerServer::Init</a></div><div class="ttdeci">void Init(const std::string &amp;config_path)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8cc_source.html#l00140">ssc_server_ros.cc:140</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="assc__visualizer_8h_html"><div class="ttname"><a href="ssc__visualizer_8h.html">ssc_visualizer.h</a></div><div class="ttdoc">visualizer for the planner</div></div>
+<div class="ttc" id="autil_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h_html"><div class="ttname"><a href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h.html">map_adapter.h</a></div><div class="ttdoc">map adapter (inherits map interface) for ssc planner</div></div>
+<div class="ttc" id="aclasssemantic__map__manager_1_1_semantic_map_manager_html"><div class="ttname"><a href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a></div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_8h_source.html#l00029">semantic_map_manager.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html_ad015bdb2aee6f960a502e8d94f7c3a5f"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html#ad015bdb2aee6f960a502e8d94f7c3a5f">planning::SscPlannerServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8cc_source.html#l00155">ssc_server_ros.cc:155</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner.html">planning::SscPlanner</a></div><div class="ttdef"><b>Definition:</b> <a href="ssc__planner_8h_source.html#l00033">ssc_planner.h:33</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_planner_server_1_1_config_html"><div class="ttname"><a href="structplanning_1_1_ssc_planner_server_1_1_config.html">planning::SscPlannerServer::Config</a></div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8h_source.html#l00042">ssc_server_ros.h:42</a></div></div>
+<div class="ttc" id="assc__planner_8h_html"><div class="ttname"><a href="ssc__planner_8h.html">ssc_planner.h</a></div><div class="ttdoc">planner using spatio-temporal corridor</div></div>
+<div class="ttc" id="aclassmoodycamel_1_1_reader_writer_queue_html"><div class="ttname"><a href="classmoodycamel_1_1_reader_writer_queue.html">moodycamel::ReaderWriterQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="readerwriterqueue_8h_source.html#l00060">readerwriterqueue.h:60</a></div></div>
+<div class="ttc" id="aclasssemantic__map__manager_1_1_visualizer_html"><div class="ttname"><a href="classsemantic__map__manager_1_1_visualizer.html">semantic_map_manager::Visualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2semantic__map__manager_2inc_2semantic__map__manager_2visualizer_8h_source.html#l00020">visualizer.h:20</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html_aa61e077080d8a6fb126bd9632184301e"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html#aa61e077080d8a6fb126bd9632184301e">planning::SscPlannerServer::PushSemanticMap</a></div><div class="ttdeci">void PushSemanticMap(const SemanticMapManager &amp;smm)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8cc_source.html#l00031">ssc_server_ros.cc:31</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html">planning::SscPlannerServer</a></div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8h_source.html#l00038">ssc_server_ros.h:38</a></div></div>
+<div class="ttc" id="atic__toc_8h_html"><div class="ttname"><a href="tic__toc_8h.html">tic_toc.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_adapter_html"><div class="ttname"><a href="classplanning_1_1_ssc_planner_adapter.html">planning::SscPlannerAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h_source.html#l00018">map_adapter.h:18</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon__visualization__util_8h_html"><div class="ttname"><a href="common__visualization__util_8h.html">common_visualization_util.h</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="alane_8h_html"><div class="ttname"><a href="lane_8h.html">lane.h</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html"><div class="ttname"><a href="class_tic_toc.html">TicToc</a></div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00017">tic_toc.h:17</a></div></div>
+<div class="ttc" id="aatomicops_8h_html"><div class="ttname"><a href="atomicops_8h.html">atomicops.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="asemantic__map__manager_8h_html"><div class="ttname"><a href="semantic__map__manager_8h.html">semantic_map_manager.h</a></div></div>
+<div class="ttc" id="afrenet__traj_8h_html"><div class="ttname"><a href="frenet__traj_8h.html">frenet_traj.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_frenet_trajectory_html"><div class="ttname"><a href="classcommon_1_1_frenet_trajectory.html">common::FrenetTrajectory</a></div><div class="ttdef"><b>Definition:</b> <a href="frenet__traj_8h_source.html#l00011">frenet_traj.h:11</a></div></div>
+<div class="ttc" id="astructplanning_1_1_ssc_planner_server_1_1_config_html_a382ce1190253448aa556b82aadb8dcf5"><div class="ttname"><a href="structplanning_1_1_ssc_planner_server_1_1_config.html#a382ce1190253448aa556b82aadb8dcf5">planning::SscPlannerServer::Config::kInputBufferSize</a></div><div class="ttdeci">int kInputBufferSize</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8h_source.html#l00043">ssc_server_ros.h:43</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html_a354937b01d82feba05dae3972ee75185"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html#a354937b01d82feba05dae3972ee75185">planning::SscPlannerServer::SemanticMapManager</a></div><div class="ttdeci">semantic_map_manager::SemanticMapManager SemanticMapManager</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8h_source.html#l00040">ssc_server_ros.h:40</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_ae74ea9c9013053f81b7f7ada745fc89e"><div class="ttname"><a href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a></div><div class="ttdeci">int ego_id</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00023">onlane_ai_agent.cc:23</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_ssc_planner_server_html_a9fe5d7d5dd841d95587b63cb8e5be8bf"><div class="ttname"><a href="classplanning_1_1_ssc_planner_server.html#a9fe5d7d5dd841d95587b63cb8e5be8bf">planning::SscPlannerServer::SscPlannerServer</a></div><div class="ttdeci">SscPlannerServer(ros::NodeHandle nh, int ego_id)</div><div class="ttdef"><b>Definition:</b> <a href="ssc__server__ros_8cc_source.html#l00014">ssc_server_ros.cc:14</a></div></div>
+<div class="ttc" id="alane__generator_8h_html"><div class="ttname"><a href="lane__generator_8h.html">lane_generator.h</a></div></div>
+<div class="ttc" id="areaderwriterqueue_8h_html"><div class="ttname"><a href="readerwriterqueue_8h.html">readerwriterqueue.h</a></div></div>
+<div class="ttc" id="acore_2semantic__map__manager_2inc_2semantic__map__manager_2visualizer_8h_html"><div class="ttname"><a href="core_2semantic__map__manager_2inc_2semantic__map__manager_2visualizer_8h.html">visualizer.h</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="acolormap_8h_html"><div class="ttname"><a href="colormap_8h.html">colormap.h</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

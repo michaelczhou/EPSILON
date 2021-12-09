@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/src/vehicle_model/vehicle_model.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_60f5ef0e2b4621f3ff1c461a32b4fdc2.html">src</a></li><li class="navelem"><a class="el" href="dir_b399d751824403670cf209f94e3f2e46.html">vehicle_model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vehicle_model.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="vehicle__model_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vehicle__model_8h.html">vehicle_model/vehicle_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calculations_8h.html">common/math/calculations.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="odeint_8hpp.html">odeint-v2/boost/numeric/odeint.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> = <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesimulator.html">simulator</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#af6cb194dbb73b5893c2491970f429519">   11</a></span>&#160;<a class="code" href="classsimulator_1_1_vehicle_model.html#af6cb194dbb73b5893c2491970f429519">VehicleModel::VehicleModel</a>() : wheelbase_len_(2.5) { UpdateInternalState(); }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a684a1cf37fe3267b1e493d65cda4ed96">   13</a></span>&#160;<a class="code" href="classsimulator_1_1_vehicle_model.html#af6cb194dbb73b5893c2491970f429519">VehicleModel::VehicleModel</a>(<span class="keywordtype">double</span> wheelbase_len, <span class="keywordtype">double</span> max_steering_angle)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : wheelbase_len_(wheelbase_len), max_steering_angle_(max_steering_angle) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  UpdateInternalState();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a63f986fc1b09c79639e43d42197eadea">   18</a></span>&#160;<a class="code" href="classsimulator_1_1_vehicle_model.html#a63f986fc1b09c79639e43d42197eadea">VehicleModel::~VehicleModel</a>() {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a85d08bb85f5898616bc936c332882302">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_vehicle_model.html#a85d08bb85f5898616bc936c332882302">VehicleModel::Step</a>(<span class="keywordtype">double</span> dt) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a72842b716327475b2194090017168c9a">odeint::integrate</a>(boost::ref(*<span class="keyword">this</span>), internal_state_, 0.0, <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>, <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(0) = internal_state_[0];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(1) = internal_state_[1];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a> = <a class="code" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a>(internal_state_[2]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a> = internal_state_[3];</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (fabs(state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>) &gt;= fabs(max_steering_angle_)) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a> &gt; 0)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a> = max_steering_angle_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a> = -max_steering_angle_;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> = internal_state_[4];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a> = tan(state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>) * 1.0 / wheelbase_len_;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  state_.<a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a> = control_.<a class="code" href="structsimulator_1_1_vehicle_model_1_1_control.html#a8cf94dab6a874f9a97ebb473fd03eab5">acc_long</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  UpdateInternalState();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a5222a2b4f7113e251943f2d06ce3a6bd">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_vehicle_model.html#a5222a2b4f7113e251943f2d06ce3a6bd">VehicleModel::operator()</a>(<span class="keyword">const</span> <a class="code" href="classsimulator_1_1_vehicle_model.html#a95d82ebe6298fc2c1df500c92218e672">InternalState</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <a class="code" href="classsimulator_1_1_vehicle_model.html#a95d82ebe6298fc2c1df500c92218e672">InternalState</a> &amp;dxdt,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">double</span> <span class="comment">/* t */</span>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="structcommon_1_1_state.html">State</a> cur_state;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  cur_state.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(0) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  cur_state.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(1) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  cur_state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a> = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  cur_state.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a> = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[3];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  cur_state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[4];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  dxdt[0] = cos(cur_state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>) * cur_state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  dxdt[1] = sin(cur_state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>) * cur_state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  dxdt[2] = tan(cur_state.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>) * cur_state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> / wheelbase_len_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  dxdt[3] = control_.<a class="code" href="structsimulator_1_1_vehicle_model_1_1_control.html#a23e83f8b274ddcdac1f4f821af483405">steer_rate</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  dxdt[4] = control_.<a class="code" href="structsimulator_1_1_vehicle_model_1_1_control.html#a8cf94dab6a874f9a97ebb473fd03eab5">acc_long</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a5f51ccf6a7fe02ff7e03dd1dddeafd83">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_vehicle_model.html#a5f51ccf6a7fe02ff7e03dd1dddeafd83">VehicleModel::set_control</a>(<span class="keyword">const</span> <a class="code" href="structsimulator_1_1_vehicle_model_1_1_control.html">Control</a> &amp;<a class="code" href="namespacecontrol.html">control</a>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  control_ = <a class="code" href="namespacecontrol.html">control</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// TODO: (@denny.ding) add control limit here</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#a66b26e57cadacb0db9116117fff85bb2">   59</a></span>&#160;<span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">VehicleModel::State</a> &amp;<a class="code" href="classsimulator_1_1_vehicle_model.html#a66b26e57cadacb0db9116117fff85bb2">VehicleModel::state</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state_; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classsimulator_1_1_vehicle_model.html#ac1e43cc768a5a89586807a2ec8ca59a2">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_vehicle_model.html#ac1e43cc768a5a89586807a2ec8ca59a2">VehicleModel::set_state</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">VehicleModel::State</a> &amp;state) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  state_ = <a class="code" href="classsimulator_1_1_vehicle_model.html#a66b26e57cadacb0db9116117fff85bb2">state</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  UpdateInternalState();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> VehicleModel::UpdateInternalState(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  internal_state_[0] = state_.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(0);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  internal_state_[1] = state_.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  internal_state_[2] = state_.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  internal_state_[3] = state_.<a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  internal_state_[4] = state_.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}  <span class="comment">// namespace simulator</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="avehicle__model_8h_html"><div class="ttname"><a href="vehicle__model_8h.html">vehicle_model.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a8eebe7f110a4478fd15e791150c21ea9"><div class="ttname"><a href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">common::State::vec_position</a></div><div class="ttdeci">Vecf&lt; 2 &gt; vec_position</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00009">state.h:9</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a4de935b8f4301b2b44fa9484f1950367"><div class="ttname"><a href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">common::State::curvature</a></div><div class="ttdeci">decimal_t curvature</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00011">state.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a52e4c3baf521a43d459fa41bb93b5ebb"><div class="ttname"><a href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">common::State::acceleration</a></div><div class="ttdeci">decimal_t acceleration</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00013">state.h:13</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a66b26e57cadacb0db9116117fff85bb2"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a66b26e57cadacb0db9116117fff85bb2">simulator::VehicleModel::state</a></div><div class="ttdeci">const State &amp; state(void) const</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00059">vehicle_model.cc:59</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a6d4df8fd60f477765e5f9393c06268f8"><div class="ttname"><a href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">common::State::steer</a></div><div class="ttdeci">decimal_t steer</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00014">state.h:14</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a85d08bb85f5898616bc936c332882302"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a85d08bb85f5898616bc936c332882302">simulator::VehicleModel::Step</a></div><div class="ttdeci">void Step(double dt)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00020">vehicle_model.cc:20</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a95d82ebe6298fc2c1df500c92218e672"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a95d82ebe6298fc2c1df500c92218e672">simulator::VehicleModel::InternalState</a></div><div class="ttdeci">boost::array&lt; double, 5 &gt; InternalState</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00040">vehicle_model.h:40</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a69bd9bd32d79da40494c17a8923118f0"><div class="ttname"><a href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a></div><div class="ttdeci">decimal_t normalize_angle(const decimal_t &amp;theta)</div><div class="ttdoc">Normalize angle to [-pi, pi)</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00018">calculations.cc:18</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a63f986fc1b09c79639e43d42197eadea"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a63f986fc1b09c79639e43d42197eadea">simulator::VehicleModel::~VehicleModel</a></div><div class="ttdeci">~VehicleModel()</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00018">vehicle_model.cc:18</a></div></div>
+<div class="ttc" id="acalculations_8h_html"><div class="ttname"><a href="calculations_8h.html">calculations.h</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_vehicle_model_1_1_control_html_a23e83f8b274ddcdac1f4f821af483405"><div class="ttname"><a href="structsimulator_1_1_vehicle_model_1_1_control.html#a23e83f8b274ddcdac1f4f821af483405">simulator::VehicleModel::Control::steer_rate</a></div><div class="ttdeci">double steer_rate</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00019">vehicle_model.h:19</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_vehicle_model_1_1_control_html"><div class="ttname"><a href="structsimulator_1_1_vehicle_model_1_1_control.html">simulator::VehicleModel::Control</a></div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00018">vehicle_model.h:18</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a72842b716327475b2194090017168c9a"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a72842b716327475b2194090017168c9a">boost::numeric::odeint::integrate</a></div><div class="ttdeci">size_t integrate(System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer)</div><div class="ttdoc">Integrates the ODE.</div><div class="ttdef"><b>Definition:</b> <a href="integrate_8hpp_source.html#l00040">integrate.hpp:40</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_vehicle_model_1_1_control_html_a8cf94dab6a874f9a97ebb473fd03eab5"><div class="ttname"><a href="structsimulator_1_1_vehicle_model_1_1_control.html#a8cf94dab6a874f9a97ebb473fd03eab5">simulator::VehicleModel::Control::acc_long</a></div><div class="ttdeci">double acc_long</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8h_source.html#l00020">vehicle_model.h:20</a></div></div>
+<div class="ttc" id="anamespacesimulator_html"><div class="ttname"><a href="namespacesimulator.html">simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00014">ctx_idm_model.h:14</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a65b4aea2471a5a6a9e6c429f7d862339"><div class="ttname"><a href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">common::State::angle</a></div><div class="ttdeci">decimal_t angle</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00010">state.h:10</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a5f51ccf6a7fe02ff7e03dd1dddeafd83"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a5f51ccf6a7fe02ff7e03dd1dddeafd83">simulator::VehicleModel::set_control</a></div><div class="ttdeci">void set_control(const Control &amp;control)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00054">vehicle_model.cc:54</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_ac1e43cc768a5a89586807a2ec8ca59a2"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#ac1e43cc768a5a89586807a2ec8ca59a2">simulator::VehicleModel::set_state</a></div><div class="ttdeci">void set_state(const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00061">vehicle_model.cc:61</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_a5222a2b4f7113e251943f2d06ce3a6bd"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#a5222a2b4f7113e251943f2d06ce3a6bd">simulator::VehicleModel::operator()</a></div><div class="ttdeci">void operator()(const InternalState &amp;x, InternalState &amp;dxdt, const double)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00038">vehicle_model.cc:38</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="anamespacecontrol_html"><div class="ttname"><a href="namespacecontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__velocity__controller_8h_source.html#l00007">ctx_idm_velocity_controller.h:7</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_vehicle_model_html_af6cb194dbb73b5893c2491970f429519"><div class="ttname"><a href="classsimulator_1_1_vehicle_model.html#af6cb194dbb73b5893c2491970f429519">simulator::VehicleModel::VehicleModel</a></div><div class="ttdeci">VehicleModel()</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__model_8cc_source.html#l00011">vehicle_model.cc:11</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

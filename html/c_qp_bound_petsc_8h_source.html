@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/cQpBoundPetsc.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cQpBoundPetsc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_qp_bound_petsc_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef QPBOUNDPETSCMEHROTRA</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define QPBOUNDPETSCMEHROTRA</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;petscmat.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_monitor_data_8h.html">OoqpMonitorData.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> { </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_qp_bound_petsc_context.html">   17</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_qp_bound_petsc_context.html#a1e0a7bbbf9094b1301acbc2bce4475ac">   18</a></span>&#160;    <span class="keywordtype">void</span> * <a class="code" href="struct_qp_bound_petsc_context.html#a1e0a7bbbf9094b1301acbc2bce4475ac">solver</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_qp_bound_petsc_context.html#a87c0c86660d072731d212aef9ccc0069">   19</a></span>&#160;    <span class="keywordtype">void</span> * <a class="code" href="struct_qp_bound_petsc_context.html#a87c0c86660d072731d212aef9ccc0069">prob</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_qp_bound_petsc_context.html#a99da976d9e1a6bfa5333daae0ef79e4e">   20</a></span>&#160;    <span class="keywordtype">void</span> * <a class="code" href="struct_qp_bound_petsc_context.html#a99da976d9e1a6bfa5333daae0ef79e4e">qp</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  } <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a82a99660a556e51a4bbc69a96afb2f4d">PetscQpBoundSolve</a>( <span class="keywordtype">double</span> alpha, Vec <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,    Mat Q,     <span class="keywordtype">int</span> nnzQ,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;              Vec xlow, Vec ixlow, Vec xupp, Vec ixupp,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;              Vec <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;              <span class="keywordtype">int</span> * ierr );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a96f9152e0f874590e31475f019be3f7f">PetscQpBoundSetup</a>( <span class="keywordtype">double</span> alpha, Vec <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,    Mat Q,     <span class="keywordtype">int</span> nnzQ,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;              Vec xlow, Vec ixlow, Vec xupp, Vec ixupp,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;              <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;              <span class="keywordtype">int</span> * ierr );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a990316a5b84271da579ba00be21f98f6">PetscQpBoundFinish</a>( <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;               Vec <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, Vec t, Vec v, Vec tau, Vec nu,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <span class="keywordtype">int</span> * ierr );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a5ebbd9b72c784b80ff04d0a58efe631c">PetscQpBoundCleanUp</a>( <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a721029bcf8db9493d4188e98ee9d3970">PetscQpBoundAddMonitor</a> ( <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx, <a class="code" href="_ooqp_monitor_data_8h.html#a0f154131efad9cdcce71b2d15a5aae33">DoItCFunc</a> cmon,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordtype">void</span> * monitorContext );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a19c790c74be2fb5c6de2dd180ac7f11c">PetscQpBoundUseStatus</a> ( <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx, <span class="keywordtype">int</span> (*sta)(<span class="keywordtype">void</span> *),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordtype">void</span> * statusContext );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="c_qp_bound_petsc_8h.html#a2e2d3fbc978acdc7af7e1f29608381e6">PetscQpBoundMonitorSelf</a>( <a class="code" href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a> * ctx );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a990316a5b84271da579ba00be21f98f6"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a990316a5b84271da579ba00be21f98f6">PetscQpBoundFinish</a></div><div class="ttdeci">void PetscQpBoundFinish(QpBoundPetscContext *ctx, Vec x, Vec t, Vec v, Vec tau, Vec nu, int *ierr)</div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="a_ooqp_monitor_data_8h_html"><div class="ttname"><a href="_ooqp_monitor_data_8h.html">OoqpMonitorData.h</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astruct_qp_bound_petsc_context_html_a99da976d9e1a6bfa5333daae0ef79e4e"><div class="ttname"><a href="struct_qp_bound_petsc_context.html#a99da976d9e1a6bfa5333daae0ef79e4e">QpBoundPetscContext::qp</a></div><div class="ttdeci">void * qp</div><div class="ttdef"><b>Definition:</b> <a href="c_qp_bound_petsc_8h_source.html#l00020">cQpBoundPetsc.h:20</a></div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a19c790c74be2fb5c6de2dd180ac7f11c"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a19c790c74be2fb5c6de2dd180ac7f11c">PetscQpBoundUseStatus</a></div><div class="ttdeci">void PetscQpBoundUseStatus(QpBoundPetscContext *ctx, int(*sta)(void *), void *statusContext)</div></div>
+<div class="ttc" id="astruct_qp_bound_petsc_context_html_a87c0c86660d072731d212aef9ccc0069"><div class="ttname"><a href="struct_qp_bound_petsc_context.html#a87c0c86660d072731d212aef9ccc0069">QpBoundPetscContext::prob</a></div><div class="ttdeci">void * prob</div><div class="ttdef"><b>Definition:</b> <a href="c_qp_bound_petsc_8h_source.html#l00019">cQpBoundPetsc.h:19</a></div></div>
+<div class="ttc" id="astruct_qp_bound_petsc_context_html"><div class="ttname"><a href="struct_qp_bound_petsc_context.html">QpBoundPetscContext</a></div><div class="ttdef"><b>Definition:</b> <a href="c_qp_bound_petsc_8h_source.html#l00017">cQpBoundPetsc.h:17</a></div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a2e2d3fbc978acdc7af7e1f29608381e6"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a2e2d3fbc978acdc7af7e1f29608381e6">PetscQpBoundMonitorSelf</a></div><div class="ttdeci">void PetscQpBoundMonitorSelf(QpBoundPetscContext *ctx)</div></div>
+<div class="ttc" id="a_ooqp_monitor_data_8h_html_a0f154131efad9cdcce71b2d15a5aae33"><div class="ttname"><a href="_ooqp_monitor_data_8h.html#a0f154131efad9cdcce71b2d15a5aae33">DoItCFunc</a></div><div class="ttdeci">int(* DoItCFunc)(OoqpMonitorData *data)</div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_monitor_data_8h_source.html#l00028">OoqpMonitorData.h:28</a></div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a721029bcf8db9493d4188e98ee9d3970"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a721029bcf8db9493d4188e98ee9d3970">PetscQpBoundAddMonitor</a></div><div class="ttdeci">void PetscQpBoundAddMonitor(QpBoundPetscContext *ctx, DoItCFunc cmon, void *monitorContext)</div></div>
+<div class="ttc" id="astruct_qp_bound_petsc_context_html_a1e0a7bbbf9094b1301acbc2bce4475ac"><div class="ttname"><a href="struct_qp_bound_petsc_context.html#a1e0a7bbbf9094b1301acbc2bce4475ac">QpBoundPetscContext::solver</a></div><div class="ttdeci">void * solver</div><div class="ttdef"><b>Definition:</b> <a href="c_qp_bound_petsc_8h_source.html#l00018">cQpBoundPetsc.h:18</a></div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a5ebbd9b72c784b80ff04d0a58efe631c"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a5ebbd9b72c784b80ff04d0a58efe631c">PetscQpBoundCleanUp</a></div><div class="ttdeci">void PetscQpBoundCleanUp(QpBoundPetscContext *ctx)</div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a82a99660a556e51a4bbc69a96afb2f4d"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a82a99660a556e51a4bbc69a96afb2f4d">PetscQpBoundSolve</a></div><div class="ttdeci">void PetscQpBoundSolve(double alpha, Vec c, Mat Q, int nnzQ, Vec xlow, Vec ixlow, Vec xupp, Vec ixupp, Vec x, int *ierr)</div></div>
+<div class="ttc" id="ac_qp_bound_petsc_8h_html_a96f9152e0f874590e31475f019be3f7f"><div class="ttname"><a href="c_qp_bound_petsc_8h.html#a96f9152e0f874590e31475f019be3f7f">PetscQpBoundSetup</a></div><div class="ttdeci">void PetscQpBoundSetup(double alpha, Vec c, Mat Q, int nnzQ, Vec xlow, Vec ixlow, Vec xupp, Vec ixupp, QpBoundPetscContext *ctx, int *ierr)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

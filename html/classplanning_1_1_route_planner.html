@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: planning::RoutePlanner类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceplanning.html">planning</a></li><li class="navelem"><a class="el" href="classplanning_1_1_route_planner.html">RoutePlanner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classplanning_1_1_route_planner-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">planning::RoutePlanner类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="route__planner_8h_source.html">route_planner.h</a>&gt;</code></p>
+<div class="dynheader">
+类 planning::RoutePlanner 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner__inherit__graph.png" border="0" usemap="#planning_1_1_route_planner_inherit__map" alt="Inheritance graph"/></div>
+<map name="planning_1_1_route_planner_inherit__map" id="planning_1_1_route_planner_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,179,107"/>
+<area shape="rect" href="classplanning_1_1_planner.html" title="A general base class for different planners including path/motion/behavior planners" alt="" coords="25,5,159,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+planning::RoutePlanner 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner__coll__graph.png" border="0" usemap="#planning_1_1_route_planner_coll__map" alt="Collaboration graph"/></div>
+<map name="planning_1_1_route_planner_coll__map" id="planning_1_1_route_planner_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,179,107"/>
+<area shape="rect" href="classplanning_1_1_planner.html" title="A general base class for different planners including path/motion/behavior planners" alt="" coords="25,5,159,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aef9a3200a145fbdb3f9125fafc182d7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a> { <a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb">kRandomExpansion</a>, 
+<a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba455ae805fa48294bb75ebe8c268b2b0a">kAssignedTarget</a>
+ }</td></tr>
+<tr class="separator:aef9a3200a145fbdb3f9125fafc182d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c2eaac1e4eb6e685848c8635ef3f35"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">NaviStatus</a> { <a class="el" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f">kReadyToGo</a>, 
+<a class="el" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35adf155ad7872aeee053bcc93c928fd95b">kInProgress</a>, 
+<a class="el" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35ac4edec66d4b913f3c3e968c9a49e6349">kFinished</a>
+ }</td></tr>
+<tr class="separator:a21c2eaac1e4eb6e685848c8635ef3f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5e6fc6060a4caeb99fdeb4ec7905f985"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a5e6fc6060a4caeb99fdeb4ec7905f985">Name</a> () <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:a5e6fc6060a4caeb99fdeb4ec7905f985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af46dba6a7d5308266f6ee232fe3b7386"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#af46dba6a7d5308266f6ee232fe3b7386">Init</a> (const std::string config) <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:af46dba6a7d5308266f6ee232fe3b7386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57610a25742f04b71e5859dcb6367c3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a57610a25742f04b71e5859dcb6367c3f">RunOnce</a> () <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:a57610a25742f04b71e5859dcb6367c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a0e011f64e55e886ef785831657442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442">set_navi_mode</a> (const <a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a> &amp;mode)</td></tr>
+<tr class="separator:a21a0e011f64e55e886ef785831657442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3403efc6e70cd1e2fa6548057cb2c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4">set_ego_state</a> (const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;state)</td></tr>
+<tr class="separator:abf3403efc6e70cd1e2fa6548057cb2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6330f8ae1b50df5c890510f8ed8318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318">set_nearest_lane_id</a> (const int &amp;id)</td></tr>
+<tr class="separator:a3d6330f8ae1b50df5c890510f8ed8318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3090306943f8c7c6b5b11aebb7fed9a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6">set_lane_net</a> (const <a class="el" href="structcommon_1_1_lane_net.html">common::LaneNet</a> &amp;lane_net)</td></tr>
+<tr class="separator:a3090306943f8c7c6b5b11aebb7fed9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2591faecb5873bd19a060622c7f90227"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227">navi_path</a> () const</td></tr>
+<tr class="separator:a2591faecb5873bd19a060622c7f90227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5d932df151462eceabb05100287800"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcommon_1_1_lane.html">common::Lane</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a2e5d932df151462eceabb05100287800">navi_lane</a> () const</td></tr>
+<tr class="separator:a2e5d932df151462eceabb05100287800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7f38841fd3d6865e479249d2dbec84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84">if_get_lane_net</a> () const</td></tr>
+<tr class="separator:a8a7f38841fd3d6865e479249d2dbec84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5ef540c6d11ba515116b35ba6a1aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_route_planner.html#aba5ef540c6d11ba515116b35ba6a1aae">navi_cur_arc_len</a> () const</td></tr>
+<tr class="separator:aba5ef540c6d11ba515116b35ba6a1aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classplanning_1_1_planner"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classplanning_1_1_planner')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classplanning_1_1_planner.html">planning::Planner</a></td></tr>
+<tr class="memitem:a1b704dd276b043a3fbef34712cff54f5 inherit pub_methods_classplanning_1_1_planner"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_planner.html#a1b704dd276b043a3fbef34712cff54f5">Planner</a> ()=default</td></tr>
+<tr class="separator:a1b704dd276b043a3fbef34712cff54f5 inherit pub_methods_classplanning_1_1_planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f85157362f54234fe961add1a0c2ee inherit pub_methods_classplanning_1_1_planner"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_planner.html#aa3f85157362f54234fe961add1a0c2ee">~Planner</a> ()=default</td></tr>
+<tr class="separator:aa3f85157362f54234fe961add1a0c2ee inherit pub_methods_classplanning_1_1_planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00018">18</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="aef9a3200a145fbdb3f9125fafc182d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9a3200a145fbdb3f9125fafc182d7b">&#9670;&nbsp;</a></span>NaviMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">planning::RoutePlanner::NaviMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb"></a>kRandomExpansion&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aef9a3200a145fbdb3f9125fafc182d7ba455ae805fa48294bb75ebe8c268b2b0a"></a>kAssignedTarget&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a21c2eaac1e4eb6e685848c8635ef3f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c2eaac1e4eb6e685848c8635ef3f35">&#9670;&nbsp;</a></span>NaviStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">planning::RoutePlanner::NaviStatus</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f"></a>kReadyToGo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a21c2eaac1e4eb6e685848c8635ef3f35adf155ad7872aeee053bcc93c928fd95b"></a>kInProgress&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a21c2eaac1e4eb6e685848c8635ef3f35ac4edec66d4b913f3c3e968c9a49e6349"></a>kFinished&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a8a7f38841fd3d6865e479249d2dbec84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7f38841fd3d6865e479249d2dbec84">&#9670;&nbsp;</a></span>if_get_lane_net()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool planning::RoutePlanner::if_get_lane_net </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a8a7f38841fd3d6865e479249d2dbec84_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a8a7f38841fd3d6865e479249d2dbec84_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a8a7f38841fd3d6865e479249d2dbec84_icgraph" id="classplanning_1_1_route_planner_a8a7f38841fd3d6865e479249d2dbec84_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af46dba6a7d5308266f6ee232fe3b7386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46dba6a7d5308266f6ee232fe3b7386">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::RoutePlanner::Init </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#aa03d64234fb17b8fb8d164dfd04a543f">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="route__planner_8cc_source.html">route_planner.cc</a> 第 <a class="el" href="route__planner_8cc_source.html#l00009">9</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e6fc6060a4caeb99fdeb4ec7905f985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6fc6060a4caeb99fdeb4ec7905f985">&#9670;&nbsp;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string planning::RoutePlanner::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#a42d016a7b9ece5f65af7ef381c8eaeca">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="route__planner_8cc_source.html">route_planner.cc</a> 第 <a class="el" href="route__planner_8cc_source.html#l00005">5</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba5ef540c6d11ba515116b35ba6a1aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba5ef540c6d11ba515116b35ba6a1aae">&#9670;&nbsp;</a></span>navi_cur_arc_len()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::RoutePlanner::navi_cur_arc_len </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2e5d932df151462eceabb05100287800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5d932df151462eceabb05100287800">&#9670;&nbsp;</a></span>navi_lane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcommon_1_1_lane.html">common::Lane</a> planning::RoutePlanner::navi_lane </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2591faecb5873bd19a060622c7f90227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2591faecb5873bd19a060622c7f90227">&#9670;&nbsp;</a></span>navi_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; planning::RoutePlanner::navi_path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00037">37</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a2591faecb5873bd19a060622c7f90227_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a2591faecb5873bd19a060622c7f90227_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a2591faecb5873bd19a060622c7f90227_icgraph" id="classplanning_1_1_route_planner_a2591faecb5873bd19a060622c7f90227_icgraph">
+<area shape="rect" title=" " alt="" coords="1212,93,1385,135"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#af15f19731cd0d899b547261b3e059ab6" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,64,199,105"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="971,123,1164,164"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="971,188,1164,229"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="729,123,923,164"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,123,681,164"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,123,440,164"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57610a25742f04b71e5859dcb6367c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57610a25742f04b71e5859dcb6367c3f">&#9670;&nbsp;</a></span>RunOnce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::RoutePlanner::RunOnce </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#a269b582ecae9ac3f62a128711e8ed8fe">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="route__planner_8cc_source.html">route_planner.cc</a> 第 <a class="el" href="route__planner_8cc_source.html#l00014">14</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_cgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_cgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_cgraph" id="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="227,13,397,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_icgraph" id="classplanning_1_1_route_planner_a57610a25742f04b71e5859dcb6367c3f_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf3403efc6e70cd1e2fa6548057cb2c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3403efc6e70cd1e2fa6548057cb2c4">&#9670;&nbsp;</a></span>set_ego_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::RoutePlanner::set_ego_state </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00030">30</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_abf3403efc6e70cd1e2fa6548057cb2c4_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_abf3403efc6e70cd1e2fa6548057cb2c4_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_abf3403efc6e70cd1e2fa6548057cb2c4_icgraph" id="classplanning_1_1_route_planner_abf3403efc6e70cd1e2fa6548057cb2c4_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3090306943f8c7c6b5b11aebb7fed9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3090306943f8c7c6b5b11aebb7fed9a6">&#9670;&nbsp;</a></span>set_lane_net()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::RoutePlanner::set_lane_net </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_lane_net.html">common::LaneNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>lane_net</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00032">32</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a3090306943f8c7c6b5b11aebb7fed9a6_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a3090306943f8c7c6b5b11aebb7fed9a6_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a3090306943f8c7c6b5b11aebb7fed9a6_icgraph" id="classplanning_1_1_route_planner_a3090306943f8c7c6b5b11aebb7fed9a6_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a21a0e011f64e55e886ef785831657442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a0e011f64e55e886ef785831657442">&#9670;&nbsp;</a></span>set_navi_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::RoutePlanner::set_navi_mode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00029">29</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a21a0e011f64e55e886ef785831657442_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a21a0e011f64e55e886ef785831657442_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a21a0e011f64e55e886ef785831657442_icgraph" id="classplanning_1_1_route_planner_a21a0e011f64e55e886ef785831657442_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3d6330f8ae1b50df5c890510f8ed8318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6330f8ae1b50df5c890510f8ed8318">&#9670;&nbsp;</a></span>set_nearest_lane_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::RoutePlanner::set_nearest_lane_id </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="route__planner_8h_source.html">route_planner.h</a> 第 <a class="el" href="route__planner_8h_source.html#l00031">31</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_route_planner_a3d6330f8ae1b50df5c890510f8ed8318_icgraph.png" border="0" usemap="#classplanning_1_1_route_planner_a3d6330f8ae1b50df5c890510f8ed8318_icgraph" alt=""/></div>
+<map name="classplanning_1_1_route_planner_a3d6330f8ae1b50df5c890510f8ed8318_icgraph" id="classplanning_1_1_route_planner_a3d6330f8ae1b50df5c890510f8ed8318_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,661,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/route_planner/inc/route_planner/<a class="el" href="route__planner_8h_source.html">route_planner.h</a></li>
+<li>core/route_planner/src/route_planner/<a class="el" href="route__planner_8cc_source.html">route_planner.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/stepper_with_ranges.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stepper_with_ranges.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stepper__with__ranges_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/stepper_with_ranges.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests if the steppers play well with Boost.Range.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   23</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_stepper_with_ranges</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;boost/range.hpp&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="euler_8hpp.html">boost/numeric/odeint/stepper/euler.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__cash__karp54__classic_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54_classic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta__dopri5_8hpp.html">boost/numeric/odeint/stepper/runge_kutta_dopri5.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="controlled__runge__kutta_8hpp.html">boost/numeric/odeint/stepper/controlled_runge_kutta.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="symplectic__euler_8hpp.html">boost/numeric/odeint/stepper/symplectic_euler.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dense__output__runge__kutta_8hpp.html">boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ac81efbc71a13babc87c8b2fb5546dd4c">   42</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt; double &gt; <a class="code" href="stepper__with__ranges_8cpp.html#ac81efbc71a13babc87c8b2fb5546dd4c">state_type</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ab54368cce229b859cced8d72c8ebc76e">   43</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , 3 &gt; <a class="code" href="stepper__with__ranges_8cpp.html#ab54368cce229b859cced8d72c8ebc76e">state_type2</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * The two systems are needed, since for steppers with more than</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * one internal step it is difficult to calculate the exact result</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * system1 is suited for euler</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structsystem1.html">   52</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsystem1.html">system1</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structsystem1.html#a8dc622847e84b883ce3eef83bf14b09c">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsystem1.html#a8dc622847e84b883ce3eef83bf14b09c">operator()</a>( <span class="keyword">const</span> State &amp;x_ , Deriv &amp;dxdt_ , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; const State &gt;::type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = boost::begin( x_ );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        dxdt[0] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structsystem1.html#ad512bc059161417bfab1cc97f5e6dafd">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsystem1.html#ad512bc059161417bfab1cc97f5e6dafd">operator()</a>( <span class="keyword">const</span> State &amp;x_ , <span class="keyword">const</span> Deriv &amp;dxdt_ , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; const State &gt;::type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = boost::begin( x_ );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        dxdt[0] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * system2 is suited for all steppers, it allows you to calculate the result analytically.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structsystem2.html">   80</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsystem2.html">system2</a></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structsystem2.html#a8e329b836712a8bf35fad1f88a76a8fd">   83</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsystem2.html#a8e329b836712a8bf35fad1f88a76a8fd">operator()</a>( <span class="keyword">const</span> State &amp;x_ , Deriv &amp;dxdt_ , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        dxdt[0] = 1.0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="structsystem2.html#a56f217e9166c134ef1d38160a4e38fc7">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsystem2.html#a56f217e9166c134ef1d38160a4e38fc7">operator()</a>( <span class="keyword">const</span> State &amp;x_ , <span class="keyword">const</span> Deriv &amp;dxdt_ , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        dxdt[0] = 1.0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * Useful for Hamiltonian systems</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structham__sys.html">  107</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structham__sys.html">ham_sys</a></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structham__sys.html#a6c4f481aac1c32870bf23fb06efdbb88">  110</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structham__sys.html#a6c4f481aac1c32870bf23fb06efdbb88">operator()</a>( <span class="keyword">const</span> State &amp;x_ , Deriv &amp;dxdt_ )</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        dxdt[0] = 1.0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structham__sys.html#a5d61373ddf676bf2f7e5a8e3e5822729">  119</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structham__sys.html#a5d61373ddf676bf2f7e5a8e3e5822729">operator()</a>( <span class="keyword">const</span> State &amp;x_ , <span class="keyword">const</span> Deriv &amp;dxdt_ )</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        dxdt[0] = 1.0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        dxdt[1] = 2.0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        dxdt[2] = 3.0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structvector__fixture.html">  129</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structvector__fixture.html">vector_fixture</a></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structvector__fixture.html#a5d460accc1932c8ab993974ec6cfc36d">  131</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="structvector__fixture.html#a5d460accc1932c8ab993974ec6cfc36d">dim</a> = 6;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">  132</a></span>&#160;    boost::array&lt; double , dim &gt; <a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">  133</a></span>&#160;    boost::array&lt; double , dim &gt; <a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">  134</a></span>&#160;    boost::array&lt; double , dim &gt; <a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">  135</a></span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">err</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structvector__fixture.html#a5e3913d3cd6066a1caef4f192f4c40a5">  137</a></span>&#160;    <a class="code" href="structvector__fixture.html#a5e3913d3cd6066a1caef4f192f4c40a5">vector_fixture</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        : <a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>() , <a class="code" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">err</a>( 3 )</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="structvector__fixture.html#a5d460accc1932c8ab993974ec6cfc36d">dim</a> ; ++i )</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>[ i ] = <a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>[i] = <a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>[i] = double( i );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;3 ; ++i )</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">err</a>[i] = double( i ) * 10.0;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structvector__fixture.html#a1235c52d218a456cff9727d6033a1d04">  150</a></span>&#160;    <a class="code" href="structvector__fixture.html#a1235c52d218a456cff9727d6033a1d04">~vector_fixture</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">  155</a></span>&#160;<span class="preprocessor">#define CHECK_VALUES( x , x0 , x1 , x2 , x3 , x4 , x5 ) \</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[0] , x0 , 1.0e-8 );            \</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[1] , x1 , 1.0e-8 );            \</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[2] , x2 , 1.0e-8 );            \</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[3] , x3 , 1.0e-8 );            \</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[4] , x4 , 1.0e-8 );            \</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">    BOOST_CHECK_CLOSE( x[5] , x5 , 1.0e-8 )</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;BOOST_AUTO_TEST_SUITE( stepper_with_ranges )</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">  167</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( explicit_euler_with_range_v1 )</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1euler.html">boost::numeric::odeint::euler&lt; state_type &gt;</a> euler;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    euler.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a4761ba2f9fa5e256c2c593a80de8a5cf">do_step</a>( <a class="code" href="structsystem1.html">system1</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.1 , 0.1 );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#af4b1649e1530a1b698995d36c5c01847">  177</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( explicit_error_k54_with_range_v1 )</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">boost::numeric::odeint::runge_kutta_cash_karp54_classic&lt; state_type &gt;</a> rk54;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    rk54.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__base.html#ac0a7d6a92c123a45367aed867db5dfc2">do_step</a>( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.1 , 0.1 );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a2b3eacf11c9af06d835a8eeabfa9c032">  185</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( explicit_error_k54_with_range_v5 )</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">boost::numeric::odeint::runge_kutta_cash_karp54_classic&lt; state_type &gt;</a> rk54;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    rk54.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__base.html#ac0a7d6a92c123a45367aed867db5dfc2">do_step</a>( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.1 , 0.1 , f.<a class="code" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">err</a> );</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a0a0ae62818ee9a11f3845c813b3bdd93">  194</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( runge_kutta_dopri5_with_range_v1 )</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5&lt; state_type &gt;</a> dopri5;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    dopri5.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a25a2d6db4f450f47102815b393679670">do_step</a>( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.1 , 0.1 );</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a14aef3742888d48c8edc85626d116d3a">  203</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( runge_kutta_dopri5_with_range_v5 )</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5&lt; state_type &gt;</a> dopri5;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    dopri5.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a25a2d6db4f450f47102815b393679670">do_step</a>( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.1 , 0.1 , f.<a class="code" href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">err</a> );</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a24e632ccf29235243c1b4331f22e4dd7">  212</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( controlled_error_stepper_rk54 )</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">double</span> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta&lt; boost::numeric::odeint::runge_kutta_cash_karp54_classic&lt; state_type &gt;</a> &gt; stepper;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    stepper.try_step( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ad1bf4877cfdbf08b2b0b3dad83ed154c">  221</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( controlled_error_stepper_dopri5 )</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">double</span> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta&lt; boost::numeric::odeint::runge_kutta_dopri5&lt; state_type &gt;</a> &gt; stepper;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    stepper.try_step( <a class="code" href="structsystem2.html">system2</a>() , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a426f7cda022a8c015db1bf3c87523157">  231</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( symplectic_euler_coor_func )</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">boost::numeric::odeint::symplectic_euler&lt; state_type &gt;</a> euler;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    euler.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( <a class="code" href="structham__sys.html">ham_sys</a>() ,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                   std::make_pair( f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>.begin() + 4 ) ,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                   std::make_pair( f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>.begin() + 3 , f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>.begin() + 6 ) ,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                   0.0 , 0.1 );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a> , 0.0 , 1.3 , 2.4 , 3.5 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a> , 0.0 , 1.0 , 2.0 , 3.1 , 4.2 , 5.3 );</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ae8297c291b334353c6c8e62e13471974">  243</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( symplectic_euler_coor_and_mom_func )</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">boost::numeric::odeint::symplectic_euler&lt; state_type &gt;</a> euler;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    euler.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( std::make_pair( <a class="code" href="structham__sys.html">ham_sys</a>() , <a class="code" href="structham__sys.html">ham_sys</a>() ) ,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                   std::make_pair( f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>.begin() + 1 , f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a>.begin() + 4 ) ,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                   std::make_pair( f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>.begin() + 3 , f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a>.begin() + 6 ) ,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                   0.0 , 0.1 );</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">q</a> , 0.0 , 1.1 , 2.2 , 3.3 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">p</a> , 0.0 , 1.0 , 2.0 , 3.1 , 4.2 , 5.3 );</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#ab80e41342aeabf6c5554a20e0aeb3bc9">  256</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( dense_output_euler_with_ranges )</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta&lt; euler&lt; state_type &gt;</a> &gt; stepper;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    stepper.initialize( std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1, f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    stepper.do_step( <a class="code" href="structsystem1.html">system1</a>() );</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    stepper.calc_state( 0.05 , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 ,f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() +4 ) );</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.05 , 2.1 , 3.15 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="stepper__with__ranges_8cpp.html#a9b88a5fd698ddec21c1aa35b7514f3c1">  267</a></span>&#160;<a class="code" href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a>( dense_output_dopri5_with_ranges )</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="structvector__fixture.html">vector_fixture</a> f;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta</a>&lt;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5&lt; state_type &gt;</a></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            &gt; &gt; stepper;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a1ebfdc843575580070edf292a1133f92">initialize</a>( std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1, f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 4 ) , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    stepper.do_step( <a class="code" href="structsystem2.html">system2</a>() );</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    stepper.calc_state( 0.05 , std::make_pair( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() + 1 ,f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a>.begin() +4 ) );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <a class="code" href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a>( f.<a class="code" href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">in</a> , 0.0 , 1.05 , 2.1 , 3.15 , 4.0 , 5.0 );</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructvector__fixture_html_ab9c2f920c9099265c07f57c6f91fd0ee"><div class="ttname"><a href="structvector__fixture.html#ab9c2f920c9099265c07f57c6f91fd0ee">vector_fixture::p</a></div><div class="ttdeci">boost::array&lt; double, dim &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00134">stepper_with_ranges.cpp:134</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="controlled__runge__kutta_8hpp_source.html#l00115">controlled_runge_kutta.hpp:115</a></div></div>
+<div class="ttc" id="arunge__kutta__cash__karp54__classic_8hpp_html"><div class="ttname"><a href="runge__kutta__cash__karp54__classic_8hpp.html">runge_kutta_cash_karp54_classic.hpp</a></div></div>
+<div class="ttc" id="astructsystem2_html"><div class="ttname"><a href="structsystem2.html">system2</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00080">stepper_with_ranges.cpp:80</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_aa293e218c1774c794c674fa5382ad307"><div class="ttname"><a href="structvector__fixture.html#aa293e218c1774c794c674fa5382ad307">vector_fixture::in</a></div><div class="ttdeci">boost::array&lt; double, dim &gt; in</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00132">stepper_with_ranges.cpp:132</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1euler_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1euler.html">boost::numeric::odeint::euler</a></div><div class="ttdoc">An implementation of the Euler method.</div><div class="ttdef"><b>Definition:</b> <a href="euler_8hpp_source.html#l00043">euler.hpp:43</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a></div><div class="ttdoc">The Runge-Kutta Dormand-Prince 5 method.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__dopri5_8hpp_source.html#l00049">runge_kutta_dopri5.hpp:49</a></div></div>
+<div class="ttc" id="astructsystem1_html_ad512bc059161417bfab1cc97f5e6dafd"><div class="ttname"><a href="structsystem1.html#ad512bc059161417bfab1cc97f5e6dafd">system1::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, const Deriv &amp;dxdt_, double t)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00066">stepper_with_ranges.cpp:66</a></div></div>
+<div class="ttc" id="astepper__with__ranges_8cpp_html_ab54368cce229b859cced8d72c8ebc76e"><div class="ttname"><a href="stepper__with__ranges_8cpp.html#ab54368cce229b859cced8d72c8ebc76e">state_type2</a></div><div class="ttdeci">boost::array&lt; double, 3 &gt; state_type2</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00043">stepper_with_ranges.cpp:43</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_a0a191147c2ea2b24c31ec047466a4649"><div class="ttname"><a href="structvector__fixture.html#a0a191147c2ea2b24c31ec047466a4649">vector_fixture::q</a></div><div class="ttdeci">boost::array&lt; double, dim &gt; q</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00133">stepper_with_ranges.cpp:133</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">boost::numeric::odeint::symplectic_euler</a></div><div class="ttdoc">Implementation of the symplectic Euler method.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00074">symplectic_euler.hpp:74</a></div></div>
+<div class="ttc" id="astructvector__fixture_html"><div class="ttname"><a href="structvector__fixture.html">vector_fixture</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00129">stepper_with_ranges.cpp:129</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_a1235c52d218a456cff9727d6033a1d04"><div class="ttname"><a href="structvector__fixture.html#a1235c52d218a456cff9727d6033a1d04">vector_fixture::~vector_fixture</a></div><div class="ttdeci">~vector_fixture(void)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00150">stepper_with_ranges.cpp:150</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a76f77d159f14a4e01aaf592a1e88e592"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 1, 1, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::do_step</a></div><div class="ttdeci">void do_step(System system, const StateInOut &amp;state, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. The system can be either a pair of two function object describing the ...</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00107">symplectic_rkn_stepper_base.hpp:107</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_abaa68b24033e036b732bc4e7b53943cd"><div class="ttname"><a href="structvector__fixture.html#abaa68b24033e036b732bc4e7b53943cd">vector_fixture::err</a></div><div class="ttdeci">state_type err</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00135">stepper_with_ranges.cpp:135</a></div></div>
+<div class="ttc" id="astructham__sys_html"><div class="ttname"><a href="structham__sys.html">ham_sys</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00107">stepper_with_ranges.cpp:107</a></div></div>
+<div class="ttc" id="arunge__kutta__dopri5_8hpp_html"><div class="ttname"><a href="runge__kutta__dopri5_8hpp.html">runge_kutta_dopri5.hpp</a></div></div>
+<div class="ttc" id="adense__output__runge__kutta_8hpp_html"><div class="ttname"><a href="dense__output__runge__kutta_8hpp.html">dense_output_runge_kutta.hpp</a></div></div>
+<div class="ttc" id="astructham__sys_html_a5d61373ddf676bf2f7e5a8e3e5822729"><div class="ttname"><a href="structham__sys.html#a5d61373ddf676bf2f7e5a8e3e5822729">ham_sys::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, const Deriv &amp;dxdt_)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00119">stepper_with_ranges.cpp:119</a></div></div>
+<div class="ttc" id="astepper__with__ranges_8cpp_html_aea2797de2872db26015c95f208a6721c"><div class="ttname"><a href="stepper__with__ranges_8cpp.html#aea2797de2872db26015c95f208a6721c">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(explicit_euler_with_range_v1)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00167">stepper_with_ranges.cpp:167</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">boost::numeric::odeint::runge_kutta_cash_karp54_classic</a></div><div class="ttdoc">The Runge-Kutta Cash-Karp method implemented without the generic Runge-Kutta algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__cash__karp54__classic_8hpp_source.html#l00049">runge_kutta_cash_karp54_classic.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="dense__output__runge__kutta_8hpp_source.html#l00042">dense_output_runge_kutta.hpp:42</a></div></div>
+<div class="ttc" id="acontrolled__runge__kutta_8hpp_html"><div class="ttname"><a href="controlled__runge__kutta_8hpp.html">controlled_runge_kutta.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__stepper__base_html_a4761ba2f9fa5e256c2c593a80de8a5cf"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a4761ba2f9fa5e256c2c593a80de8a5cf">boost::numeric::odeint::explicit_stepper_base&lt; euler&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 1, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;::do_step</a></div><div class="ttdeci">void do_step(System system, StateInOut &amp;x, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. It transforms the result in-place.</div><div class="ttdef"><b>Definition:</b> <a href="explicit__stepper__base_8hpp_source.html#l00111">explicit_stepper_base.hpp:111</a></div></div>
+<div class="ttc" id="asymplectic__euler_8hpp_html"><div class="ttname"><a href="symplectic__euler_8hpp.html">symplectic_euler.hpp</a></div></div>
+<div class="ttc" id="astructsystem2_html_a8e329b836712a8bf35fad1f88a76a8fd"><div class="ttname"><a href="structsystem2.html#a8e329b836712a8bf35fad1f88a76a8fd">system2::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, Deriv &amp;dxdt_, double t)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00083">stepper_with_ranges.cpp:83</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="astepper__with__ranges_8cpp_html_ac81efbc71a13babc87c8b2fb5546dd4c"><div class="ttname"><a href="stepper__with__ranges_8cpp.html#ac81efbc71a13babc87c8b2fb5546dd4c">state_type</a></div><div class="ttdeci">std::vector&lt; double &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00042">stepper_with_ranges.cpp:42</a></div></div>
+<div class="ttc" id="astructham__sys_html_a6c4f481aac1c32870bf23fb06efdbb88"><div class="ttname"><a href="structham__sys.html#a6c4f481aac1c32870bf23fb06efdbb88">ham_sys::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, Deriv &amp;dxdt_)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00110">stepper_with_ranges.cpp:110</a></div></div>
+<div class="ttc" id="aeuler_8hpp_html"><div class="ttname"><a href="euler_8hpp.html">euler.hpp</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_a5e3913d3cd6066a1caef4f192f4c40a5"><div class="ttname"><a href="structvector__fixture.html#a5e3913d3cd6066a1caef4f192f4c40a5">vector_fixture::vector_fixture</a></div><div class="ttdeci">vector_fixture(void)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00137">stepper_with_ranges.cpp:137</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base_html_a25a2d6db4f450f47102815b393679670"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a25a2d6db4f450f47102815b393679670">boost::numeric::odeint::explicit_error_stepper_fsal_base&lt; runge_kutta_dopri5&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;::do_step</a></div><div class="ttdeci">void do_step(System system, StateInOut &amp;x, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. It transforms the result in-place.</div><div class="ttdef"><b>Definition:</b> <a href="explicit__error__stepper__fsal__base_8hpp_source.html#l00121">explicit_error_stepper_fsal_base.hpp:121</a></div></div>
+<div class="ttc" id="astructsystem2_html_a56f217e9166c134ef1d38160a4e38fc7"><div class="ttname"><a href="structsystem2.html#a56f217e9166c134ef1d38160a4e38fc7">system2::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, const Deriv &amp;dxdt_, double t)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00093">stepper_with_ranges.cpp:93</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="astructsystem1_html"><div class="ttname"><a href="structsystem1.html">system1</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00052">stepper_with_ranges.cpp:52</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base_html_a1ebfdc843575580070edf292a1133f92"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a1ebfdc843575580070edf292a1133f92">boost::numeric::odeint::explicit_error_stepper_fsal_base::initialize</a></div><div class="ttdeci">void initialize(const DerivIn &amp;deriv)</div><div class="ttdoc">Initializes the internal state of the stepper.</div><div class="ttdef"><b>Definition:</b> <a href="explicit__error__stepper__fsal__base_8hpp_source.html#l00268">explicit_error_stepper_fsal_base.hpp:268</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructsystem1_html_a8dc622847e84b883ce3eef83bf14b09c"><div class="ttname"><a href="structsystem1.html#a8dc622847e84b883ce3eef83bf14b09c">system1::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, Deriv &amp;dxdt_, double t)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00055">stepper_with_ranges.cpp:55</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__base_html_ac0a7d6a92c123a45367aed867db5dfc2"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__base.html#ac0a7d6a92c123a45367aed867db5dfc2">boost::numeric::odeint::explicit_error_stepper_base&lt; runge_kutta_cash_karp54_classic&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;::do_step</a></div><div class="ttdeci">void do_step(System system, StateInOut &amp;x, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. It transforms the result in-place.</div><div class="ttdef"><b>Definition:</b> <a href="explicit__error__stepper__base_8hpp_source.html#l00122">explicit_error_stepper_base.hpp:122</a></div></div>
+<div class="ttc" id="astructvector__fixture_html_a5d460accc1932c8ab993974ec6cfc36d"><div class="ttname"><a href="structvector__fixture.html#a5d460accc1932c8ab993974ec6cfc36d">vector_fixture::dim</a></div><div class="ttdeci">const static size_t dim</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00131">stepper_with_ranges.cpp:131</a></div></div>
+<div class="ttc" id="astepper__with__ranges_8cpp_html_ae718510717a2eb582fdd06af0625962d"><div class="ttname"><a href="stepper__with__ranges_8cpp.html#ae718510717a2eb582fdd06af0625962d">CHECK_VALUES</a></div><div class="ttdeci">#define CHECK_VALUES(x, x0, x1, x2, x3, x4, x5)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__with__ranges_8cpp_source.html#l00155">stepper_with_ranges.cpp:155</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

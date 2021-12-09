@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/DoubleMatrixTypes.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DoubleMatrixTypes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_double_matrix_types_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DOUBLEMATRIXTYPES</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DOUBLEMATRIXTYPES</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Types for dynamic cast (we wouldn&#39;t have to do this if more C++ compilers</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// supported C++ RTTI). kSquareMatrix = 2 is reserved.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">   10</a></span>&#160;<span class="keyword">enum</span> {<a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1">kGenMatrix</a>=0x01, <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">kSymMatrix</a> = 0x03,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      <span class="comment">// 0x10-0x1F - Dense matrices</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b">   12</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b">kDenseMatrix</a>     = 0x10,</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aaf44158f0c88772fa778666aeea50882">   13</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aaf44158f0c88772fa778666aeea50882">kDenseGenMatrix</a>  = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1">kGenMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b">kDenseMatrix</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ade47922acdbca018398e347c0fb2d214">   14</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ade47922acdbca018398e347c0fb2d214">kDenseSymMatrix</a>  = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">kSymMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b">kDenseMatrix</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <span class="comment">// 0x20-0x2F - SparseMatrices</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef">   16</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef">kSparseMatrix</a>    = 0x20,</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a473886eaef2c65c7ec65862f661b2ee6">   17</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a473886eaef2c65c7ec65862f661b2ee6">kSparseGenMatrix</a> = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef">kSparseMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1">kGenMatrix</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a8ef9bbf08f82043c838a4e022369a2ba">   18</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a8ef9bbf08f82043c838a4e022369a2ba">kSparseSymMatrix</a> = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef">kSparseMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">kSymMatrix</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="comment">// 0x30-0x3F - PetscMatrices</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea">   20</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea">kPetscSpMatrix</a>     = 0x30,</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6f94600b9df96433fa240e329009a428">   21</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6f94600b9df96433fa240e329009a428">kPetscSpGenMatrix</a>  = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea">kPetscSpMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1">kGenMatrix</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a434741c3b6d681caee66c73b244738da">   22</a></span>&#160;      <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a434741c3b6d681caee66c73b244738da">kPetscSpSymMatrix</a>  = <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea">kPetscSpMatrix</a> + <a class="code" href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">kSymMatrix</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a8ef9bbf08f82043c838a4e022369a2ba"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a8ef9bbf08f82043c838a4e022369a2ba">kSparseSymMatrix</a></div><div class="ttdeci">@ kSparseSymMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00018">DoubleMatrixTypes.h:18</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7aaf44158f0c88772fa778666aeea50882"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aaf44158f0c88772fa778666aeea50882">kDenseGenMatrix</a></div><div class="ttdeci">@ kDenseGenMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00013">DoubleMatrixTypes.h:13</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a996f97391b53ab216ba6dcc78bba464b">kDenseMatrix</a></div><div class="ttdeci">@ kDenseMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00012">DoubleMatrixTypes.h:12</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7ade47922acdbca018398e347c0fb2d214"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ade47922acdbca018398e347c0fb2d214">kDenseSymMatrix</a></div><div class="ttdeci">@ kDenseSymMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00014">DoubleMatrixTypes.h:14</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a473886eaef2c65c7ec65862f661b2ee6"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a473886eaef2c65c7ec65862f661b2ee6">kSparseGenMatrix</a></div><div class="ttdeci">@ kSparseGenMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00017">DoubleMatrixTypes.h:17</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7b8a9eb934c29000a23bd69ecb2112b0">kSymMatrix</a></div><div class="ttdeci">@ kSymMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00010">DoubleMatrixTypes.h:10</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aeb68a41eeca5e832594d153e7d9531c1">kGenMatrix</a></div><div class="ttdeci">@ kGenMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00010">DoubleMatrixTypes.h:10</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aef253b40b2456ff5af4ad398301f8aef">kSparseMatrix</a></div><div class="ttdeci">@ kSparseMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00016">DoubleMatrixTypes.h:16</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a434741c3b6d681caee66c73b244738da"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a434741c3b6d681caee66c73b244738da">kPetscSpSymMatrix</a></div><div class="ttdeci">@ kPetscSpSymMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00022">DoubleMatrixTypes.h:22</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7a6f94600b9df96433fa240e329009a428"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6f94600b9df96433fa240e329009a428">kPetscSpGenMatrix</a></div><div class="ttdeci">@ kPetscSpGenMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00021">DoubleMatrixTypes.h:21</a></div></div>
+<div class="ttc" id="a_double_matrix_types_8h_html_adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea"><div class="ttname"><a href="_double_matrix_types_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab085e63bf522fff6de662f1654b39aea">kPetscSpMatrix</a></div><div class="ttdeci">@ kPetscSpMatrix</div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_types_8h_source.html#l00020">DoubleMatrixTypes.h:20</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

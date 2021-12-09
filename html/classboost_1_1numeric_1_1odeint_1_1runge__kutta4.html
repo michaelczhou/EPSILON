@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::runge_kutta4&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::runge_kutta4&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The classical Runge-Kutta stepper of fourth order.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 boost::numeric::odeint::runge_kutta4&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1runge__kutta4__inherit__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map" id="boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map">
+<area shape="rect" title="The classical Runge&#45;Kutta stepper of fourth order." alt="" coords="271,20,479,91"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html" title=" " alt="" coords="5,5,223,105"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+boost::numeric::odeint::runge_kutta4&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1runge__kutta4__coll__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" id="boost_1_1numeric_1_1odeint_1_1runge__kutta4_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map">
+<area shape="rect" title="The classical Runge&#45;Kutta stepper of fourth order." alt="" coords="271,20,479,91"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html" title=" " alt="" coords="5,5,223,105"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7bc228b26351651b5eeb1dbb0786d57c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">explicit_generic_rk</a>&lt; 4, 4, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a7bc228b26351651b5eeb1dbb0786d57c">stepper_base_type</a></td></tr>
+<tr class="separator:a7bc228b26351651b5eeb1dbb0786d57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac427e6f0c884ceb3b543b53da8d690bd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad510c2817e28afa815d4926a729fce33">stepper_base_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ac427e6f0c884ceb3b543b53da8d690bd">state_type</a></td></tr>
+<tr class="separator:ac427e6f0c884ceb3b543b53da8d690bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a37bf7a1ad75d80b3a3606533c0a54"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ac4a774b500034336cec3b5360b66e37c">stepper_base_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#aa1a37bf7a1ad75d80b3a3606533c0a54">value_type</a></td></tr>
+<tr class="separator:aa1a37bf7a1ad75d80b3a3606533c0a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4eb004b6fb6594258417082d413f9b1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a87e3ebc242c1a19a96d39506330b15c8">stepper_base_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ad4eb004b6fb6594258417082d413f9b1">deriv_type</a></td></tr>
+<tr class="separator:ad4eb004b6fb6594258417082d413f9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32bb86d44720f6a5ea1310784490d3e5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">stepper_base_type::time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a32bb86d44720f6a5ea1310784490d3e5">time_type</a></td></tr>
+<tr class="separator:a32bb86d44720f6a5ea1310784490d3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52cddd8d455991d4dd29e02809a2a654"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#afe85e24fa6947c05e41b675c6f85920f">stepper_base_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a></td></tr>
+<tr class="separator:a52cddd8d455991d4dd29e02809a2a654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4998c30314b0f0bbaea757e78e766ab"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aa938593e41703499752cb4ee4087c359">stepper_base_type::operations_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#af4998c30314b0f0bbaea757e78e766ab">operations_type</a></td></tr>
+<tr class="separator:af4998c30314b0f0bbaea757e78e766ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04a4430ee089d4ff05802df2e107d08"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a2dbed251b0aee582c30ad9abee39d6b0">stepper_base_type::resizer_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ab04a4430ee089d4ff05802df2e107d08">resizer_type</a></td></tr>
+<tr class="separator:ab04a4430ee089d4ff05802df2e107d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341f93f14b4d266081ae200882e0a55d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aae9f11443eab0aaa4d9ea1bb8fcdc7c3">stepper_base_type::wrapped_state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a341f93f14b4d266081ae200882e0a55d">wrapped_state_type</a></td></tr>
+<tr class="separator:a341f93f14b4d266081ae200882e0a55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe110c54f4e983d2f09201647530ad2c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#acbbb7df60cdd4a91edd5eb9d3fb33145">stepper_base_type::wrapped_deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#abe110c54f4e983d2f09201647530ad2c">wrapped_deriv_type</a></td></tr>
+<tr class="separator:abe110c54f4e983d2f09201647530ad2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc45e8d7c55a2a03a32e558fd4841b4f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a0be816c9815057de82894284b9cd5e02">stepper_base_type::stepper_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#adc45e8d7c55a2a03a32e558fd4841b4f">stepper_type</a></td></tr>
+<tr class="separator:adc45e8d7c55a2a03a32e558fd4841b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">boost::numeric::odeint::explicit_generic_rk&lt; 4, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:aaca730eab18b1726e567fce07bc148ce inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html">explicit_stepper_base</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">explicit_generic_rk</a>&lt; StageCount, Order, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;, Order, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aaca730eab18b1726e567fce07bc148ce">stepper_base_type</a></td></tr>
+<tr class="separator:aaca730eab18b1726e567fce07bc148ce inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad510c2817e28afa815d4926a729fce33 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#aee3f6345907a2d7f7393b73b1ce40a64">stepper_base_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad510c2817e28afa815d4926a729fce33">state_type</a></td></tr>
+<tr class="separator:ad510c2817e28afa815d4926a729fce33 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9f11443eab0aaa4d9ea1bb8fcdc7c3 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#ad0160aec02ab955838d29de8ac01480a">stepper_base_type::wrapped_state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aae9f11443eab0aaa4d9ea1bb8fcdc7c3">wrapped_state_type</a></td></tr>
+<tr class="separator:aae9f11443eab0aaa4d9ea1bb8fcdc7c3 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a774b500034336cec3b5360b66e37c inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a74a33fc0f656405493afd30ddc7f2946">stepper_base_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ac4a774b500034336cec3b5360b66e37c">value_type</a></td></tr>
+<tr class="separator:ac4a774b500034336cec3b5360b66e37c inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e3ebc242c1a19a96d39506330b15c8 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#acc1c1ddc842618d164a33cc1af14b896">stepper_base_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a87e3ebc242c1a19a96d39506330b15c8">deriv_type</a></td></tr>
+<tr class="separator:a87e3ebc242c1a19a96d39506330b15c8 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbb7df60cdd4a91edd5eb9d3fb33145 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a39890933a0dcacb0dd4f941310a562c6">stepper_base_type::wrapped_deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#acbbb7df60cdd4a91edd5eb9d3fb33145">wrapped_deriv_type</a></td></tr>
+<tr class="separator:acbbb7df60cdd4a91edd5eb9d3fb33145 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e2cd5286d132d3c18c0dd5d67a7226 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a909fa464d607c48265b9f8d035098162">stepper_base_type::time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">time_type</a></td></tr>
+<tr class="separator:af9e2cd5286d132d3c18c0dd5d67a7226 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe85e24fa6947c05e41b675c6f85920f inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#add4a309deb914686842557e8244a6899">stepper_base_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#afe85e24fa6947c05e41b675c6f85920f">algebra_type</a></td></tr>
+<tr class="separator:afe85e24fa6947c05e41b675c6f85920f inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa938593e41703499752cb4ee4087c359 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#a1ba2e7a2698916dd4c1e5b6f54e65b19">stepper_base_type::operations_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aa938593e41703499752cb4ee4087c359">operations_type</a></td></tr>
+<tr class="separator:aa938593e41703499752cb4ee4087c359 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbed251b0aee582c30ad9abee39d6b0 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html#add82a4837bc75e0a8f69711071f64279">stepper_base_type::resizer_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a2dbed251b0aee582c30ad9abee39d6b0">resizer_type</a></td></tr>
+<tr class="separator:a2dbed251b0aee582c30ad9abee39d6b0 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be816c9815057de82894284b9cd5e02 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">explicit_generic_rk</a>&lt; StageCount, Order, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a0be816c9815057de82894284b9cd5e02">stepper_type</a></td></tr>
+<tr class="separator:a0be816c9815057de82894284b9cd5e02 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e3645f9fff597dcdbec591c64dda86 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad5e3645f9fff597dcdbec591c64dda86">rk_algorithm_type</a></td></tr>
+<tr class="separator:ad5e3645f9fff597dcdbec591c64dda86 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320b588a08a01ec3d3bebe55d3860390 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5d22cbbec7e0eaae78b7e4e10ce61b47">rk_algorithm_type::coef_a_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a320b588a08a01ec3d3bebe55d3860390">coef_a_type</a></td></tr>
+<tr class="separator:a320b588a08a01ec3d3bebe55d3860390 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443461e7fdb62d4d48e7baa9d14b62c0 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#acdcae9468eb412013cf1405410406708">rk_algorithm_type::coef_b_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a443461e7fdb62d4d48e7baa9d14b62c0">coef_b_type</a></td></tr>
+<tr class="separator:a443461e7fdb62d4d48e7baa9d14b62c0 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5991cf71ae02621a5f37ed934abaad inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5818ff41eae8ddfba715c97fed84fa76">rk_algorithm_type::coef_c_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a9d5991cf71ae02621a5f37ed934abaad">coef_c_type</a></td></tr>
+<tr class="separator:a9d5991cf71ae02621a5f37ed934abaad inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac5e9a5ed687ba8a9e5985eb75c8fb57c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ac5e9a5ed687ba8a9e5985eb75c8fb57c">runge_kutta4</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a> &amp;<a class="el" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a>())</td></tr>
+<tr class="memdesc:ac5e9a5ed687ba8a9e5985eb75c8fb57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html" title="The classical Runge-Kutta stepper of fourth order.">runge_kutta4</a> class. This constructor can be used as a default constructor if the algebra has a default constructor.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ac5e9a5ed687ba8a9e5985eb75c8fb57c">更多...</a><br /></td></tr>
+<tr class="separator:ac5e9a5ed687ba8a9e5985eb75c8fb57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">boost::numeric::odeint::explicit_generic_rk&lt; 4, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:a56d0e8cfe196c0ead811a13ac64c9855 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a56d0e8cfe196c0ead811a13ac64c9855">explicit_generic_rk</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a320b588a08a01ec3d3bebe55d3860390">coef_a_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a443461e7fdb62d4d48e7baa9d14b62c0">coef_b_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a9d5991cf71ae02621a5f37ed934abaad">coef_c_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#afe85e24fa6947c05e41b675c6f85920f">algebra_type</a> &amp;<a class="el" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#afe85e24fa6947c05e41b675c6f85920f">algebra_type</a>())</td></tr>
+<tr class="memdesc:a56d0e8cfe196c0ead811a13ac64c9855 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the explicit_generic_rk class. See examples section for details on the coefficients.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a56d0e8cfe196c0ead811a13ac64c9855">更多...</a><br /></td></tr>
+<tr class="separator:a56d0e8cfe196c0ead811a13ac64c9855 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7688c874a5adc21210b12ab1631fb1f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ae7688c874a5adc21210b12ab1631fb1f">do_step_impl</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ae7688c874a5adc21210b12ab1631fb1f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method performs one step. The derivative <code>dxdt</code> of <code>in</code> at the time <code>t</code> is passed to the method. The result is updated out of place, hence the input is in <code>in</code> and the output in <code>out</code>. Access to this step functionality is provided by explicit_stepper_base and <code>do_step_impl</code> should not be called directly.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ae7688c874a5adc21210b12ab1631fb1f">更多...</a><br /></td></tr>
+<tr class="separator:ae7688c874a5adc21210b12ab1631fb1f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2d50c48be465200b4a4438fed6767c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a5d2d50c48be465200b4a4438fed6767c">adjust_size</a> (const StateIn &amp;x)</td></tr>
+<tr class="memdesc:a5d2d50c48be465200b4a4438fed6767c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a5d2d50c48be465200b4a4438fed6767c">更多...</a><br /></td></tr>
+<tr class="separator:a5d2d50c48be465200b4a4438fed6767c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk')"><img src="closed.png" alt="-"/>&#160;静态 Public 属性 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">boost::numeric::odeint::explicit_generic_rk&lt; 4, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:a2799eb3af5d2a87077b58ff60806f3c3 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a2799eb3af5d2a87077b58ff60806f3c3">stage_count</a></td></tr>
+<tr class="separator:a2799eb3af5d2a87077b58ff60806f3c3 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class State, class Value = double, class Deriv = State, class Time = Value, class Algebra = range_algebra, class Operations = default_operations, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::runge_kutta4&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</h3>
+
+<p>The classical Runge-Kutta stepper of fourth order. </p>
+<p>The Runge-Kutta method of fourth order is one standard method for solving ordinary differential equations and is widely used, see also <a href="http://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">en.wikipedia.org/wiki/Runge-Kutta_methods</a> The method is explicit and fulfills the Stepper concept. Step size control or continuous output are not provided.</p>
+<p>This class derives from <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html" title="Base class for explicit steppers without step size control and without dense output.">explicit_stepper_base</a> and inherits its interface via CRTP (current recurring template pattern). Furthermore, it derivs from <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html" title="A generic implementation of explicit Runge-Kutta algorithms. This class is as a base class for all ex...">explicit_generic_rk</a> which is a generic Runge-Kutta algorithm. For more details see <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html" title="Base class for explicit steppers without step size control and without dense output.">explicit_stepper_base</a> and <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html" title="A generic implementation of explicit Runge-Kutta algorithms. This class is as a base class for all ex...">explicit_generic_rk</a>.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">State</td><td>The state type. </td></tr>
+    <tr><td class="paramname">Value</td><td>The value type. </td></tr>
+    <tr><td class="paramname">Deriv</td><td>The type representing the time derivative of the state. </td></tr>
+    <tr><td class="paramname">Time</td><td>The time representing the independent variable - the time. </td></tr>
+    <tr><td class="paramname">Algebra</td><td>The algebra type. </td></tr>
+    <tr><td class="paramname">Operations</td><td>The operations type. </td></tr>
+    <tr><td class="paramname">Resizer</td><td>The resizer policy type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00110">110</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a52cddd8d455991d4dd29e02809a2a654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52cddd8d455991d4dd29e02809a2a654">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#afe85e24fa6947c05e41b675c6f85920f">stepper_base_type::algebra_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00127">127</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad4eb004b6fb6594258417082d413f9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4eb004b6fb6594258417082d413f9b1">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a87e3ebc242c1a19a96d39506330b15c8">stepper_base_type::deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ad4eb004b6fb6594258417082d413f9b1">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00125">125</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af4998c30314b0f0bbaea757e78e766ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4998c30314b0f0bbaea757e78e766ab">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aa938593e41703499752cb4ee4087c359">stepper_base_type::operations_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#af4998c30314b0f0bbaea757e78e766ab">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00128">128</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab04a4430ee089d4ff05802df2e107d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04a4430ee089d4ff05802df2e107d08">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a2dbed251b0aee582c30ad9abee39d6b0">stepper_base_type::resizer_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ab04a4430ee089d4ff05802df2e107d08">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00129">129</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac427e6f0c884ceb3b543b53da8d690bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac427e6f0c884ceb3b543b53da8d690bd">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad510c2817e28afa815d4926a729fce33">stepper_base_type::state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#ac427e6f0c884ceb3b543b53da8d690bd">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00123">123</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7bc228b26351651b5eeb1dbb0786d57c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc228b26351651b5eeb1dbb0786d57c">&#9670;&nbsp;</a></span>stepper_base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">explicit_generic_rk</a>&lt; 4 , 4 , State , Value , Deriv , Time , Algebra , Operations , Resizer &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a7bc228b26351651b5eeb1dbb0786d57c">stepper_base_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00121">121</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adc45e8d7c55a2a03a32e558fd4841b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc45e8d7c55a2a03a32e558fd4841b4f">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a0be816c9815057de82894284b9cd5e02">stepper_base_type::stepper_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#adc45e8d7c55a2a03a32e558fd4841b4f">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00134">134</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a32bb86d44720f6a5ea1310784490d3e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32bb86d44720f6a5ea1310784490d3e5">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">stepper_base_type::time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a32bb86d44720f6a5ea1310784490d3e5">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00126">126</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa1a37bf7a1ad75d80b3a3606533c0a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a37bf7a1ad75d80b3a3606533c0a54">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ac4a774b500034336cec3b5360b66e37c">stepper_base_type::value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#aa1a37bf7a1ad75d80b3a3606533c0a54">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00124">124</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abe110c54f4e983d2f09201647530ad2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe110c54f4e983d2f09201647530ad2c">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#acbbb7df60cdd4a91edd5eb9d3fb33145">stepper_base_type::wrapped_deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#abe110c54f4e983d2f09201647530ad2c">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00133">133</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a341f93f14b4d266081ae200882e0a55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a341f93f14b4d266081ae200882e0a55d">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#aae9f11443eab0aaa4d9ea1bb8fcdc7c3">stepper_base_type::wrapped_state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a341f93f14b4d266081ae200882e0a55d">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00132">132</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac5e9a5ed687ba8a9e5985eb75c8fb57c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e9a5ed687ba8a9e5985eb75c8fb57c">&#9670;&nbsp;</a></span>runge_kutta4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>algebra</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html#a52cddd8d455991d4dd29e02809a2a654">algebra_type</a>()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html" title="The classical Runge-Kutta stepper of fourth order.">runge_kutta4</a> class. This constructor can be used as a default constructor if the algebra has a default constructor. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algebra</td><td>A copy of algebra is made and stored inside <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html" title="Base class for explicit steppers without step size control and without dense output.">explicit_stepper_base</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a> 第 <a class="el" href="runge__kutta4_8hpp_source.html#l00137">137</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="runge__kutta4_8hpp_source.html">runge_kutta4.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::calculate_stage&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt; 模板结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">generic_rk_algorithm</a></li><li class="navelem"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::calculate_stage&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt; 模板结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3d1a639fa1c44d4ac8183cce073c8053"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a3d1a639fa1c44d4ac8183cce073c8053">calculate_stage</a> (Algebra &amp;_algebra, System &amp;_system, const StateIn &amp;_x, const DerivIn &amp;_dxdt, StateOut &amp;_out, StateTemp &amp;_x_tmp, Deriv *_F, Time _t, Time _dt)</td></tr>
+<tr class="separator:a3d1a639fa1c44d4ac8183cce073c8053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb526b1fae807b7069a049953ef28e5"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t stage_number&gt; </td></tr>
+<tr class="memitem:abbb526b1fae807b7069a049953ef28e5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#abbb526b1fae807b7069a049953ef28e5">operator()</a> (<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1stage.html">stage</a>&lt; T, stage_number &gt; const &amp;<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1stage.html">stage</a>) const</td></tr>
+<tr class="separator:abbb526b1fae807b7069a049953ef28e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aeb4c20f4c82811acabc418993a79cc26"><td class="memItemLeft" align="right" valign="top">Algebra &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#aeb4c20f4c82811acabc418993a79cc26">algebra</a></td></tr>
+<tr class="separator:aeb4c20f4c82811acabc418993a79cc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831dcb2dad7070c5f377195357313673"><td class="memItemLeft" align="right" valign="top">System &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a831dcb2dad7070c5f377195357313673">system</a></td></tr>
+<tr class="separator:a831dcb2dad7070c5f377195357313673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1642bd9635a1f88bf6c8ce9151d5339"><td class="memItemLeft" align="right" valign="top">const StateIn &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#ae1642bd9635a1f88bf6c8ce9151d5339">x</a></td></tr>
+<tr class="separator:ae1642bd9635a1f88bf6c8ce9151d5339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621137b36f76af4abd579caa68a5de66"><td class="memItemLeft" align="right" valign="top">StateTemp &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a621137b36f76af4abd579caa68a5de66">x_tmp</a></td></tr>
+<tr class="separator:a621137b36f76af4abd579caa68a5de66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a37bf1781a9fcec771d56ec16b2fe39"><td class="memItemLeft" align="right" valign="top">StateOut &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a9a37bf1781a9fcec771d56ec16b2fe39">x_out</a></td></tr>
+<tr class="separator:a9a37bf1781a9fcec771d56ec16b2fe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6214959801d764fd63cbdec7f677d472"><td class="memItemLeft" align="right" valign="top">const DerivIn &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a6214959801d764fd63cbdec7f677d472">dxdt</a></td></tr>
+<tr class="separator:a6214959801d764fd63cbdec7f677d472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7584ba5713910162e2aad94e5cece2c2"><td class="memItemLeft" align="right" valign="top">Deriv *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a7584ba5713910162e2aad94e5cece2c2">F</a></td></tr>
+<tr class="separator:a7584ba5713910162e2aad94e5cece2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada31b3d0c9c8809a753409ac30d6f67d"><td class="memItemLeft" align="right" valign="top">Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#ada31b3d0c9c8809a753409ac30d6f67d">t</a></td></tr>
+<tr class="separator:ada31b3d0c9c8809a753409ac30d6f67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8ce9bba2f1572de8d848f5444963ae"><td class="memItemLeft" align="right" valign="top">Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html#a5a8ce9bba2f1572de8d848f5444963ae">dt</a></td></tr>
+<tr class="separator:a5a8ce9bba2f1572de8d848f5444963ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;size_t StageCount, class Value = double, class Algebra = range_algebra, class Operations = default_operations&gt;<br />
+template&lt;class System, class StateIn, class StateTemp, class DerivIn, class Deriv, class StateOut, class Time&gt;<br />
+struct boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::calculate_stage&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00172">172</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3d1a639fa1c44d4ac8183cce073c8053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1a639fa1c44d4ac8183cce073c8053">&#9670;&nbsp;</a></span>calculate_stage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a> </td>
+          <td>(</td>
+          <td class="paramtype">Algebra &amp;&#160;</td>
+          <td class="paramname"><em>_algebra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System &amp;&#160;</td>
+          <td class="paramname"><em>_system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>_dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateTemp &amp;&#160;</td>
+          <td class="paramname"><em>_x_tmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Deriv *&#160;</td>
+          <td class="paramname"><em>_F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Time&#160;</td>
+          <td class="paramname"><em>_t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Time&#160;</td>
+          <td class="paramname"><em>_dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00184">184</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="abbb526b1fae807b7069a049953ef28e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb526b1fae807b7069a049953ef28e5">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+<div class="memtemplate">
+template&lt;typename T , size_t stage_number&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1stage.html">stage</a>&lt; T, stage_number &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00191">191</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aeb4c20f4c82811acabc418993a79cc26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4c20f4c82811acabc418993a79cc26">&#9670;&nbsp;</a></span>algebra</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Algebra&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::algebra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00174">174</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5a8ce9bba2f1572de8d848f5444963ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a8ce9bba2f1572de8d848f5444963ae">&#9670;&nbsp;</a></span>dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Time <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::dt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00182">182</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6214959801d764fd63cbdec7f677d472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6214959801d764fd63cbdec7f677d472">&#9670;&nbsp;</a></span>dxdt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const DerivIn&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::dxdt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00179">179</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7584ba5713910162e2aad94e5cece2c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7584ba5713910162e2aad94e5cece2c2">&#9670;&nbsp;</a></span>F</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Deriv* <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00180">180</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a831dcb2dad7070c5f377195357313673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831dcb2dad7070c5f377195357313673">&#9670;&nbsp;</a></span>system</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">System&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::system</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00175">175</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ada31b3d0c9c8809a753409ac30d6f67d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada31b3d0c9c8809a753409ac30d6f67d">&#9670;&nbsp;</a></span>t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Time <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00181">181</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae1642bd9635a1f88bf6c8ce9151d5339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1642bd9635a1f88bf6c8ce9151d5339">&#9670;&nbsp;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const StateIn&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00176">176</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9a37bf1781a9fcec771d56ec16b2fe39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a37bf1781a9fcec771d56ec16b2fe39">&#9670;&nbsp;</a></span>x_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">StateOut&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::x_out</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00178">178</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a621137b36f76af4abd579caa68a5de66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a621137b36f76af4abd579caa68a5de66">&#9670;&nbsp;</a></span>x_tmp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateTemp , class DerivIn , class Deriv , class StateOut , class Time &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">StateTemp&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::<a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1calculate__stage.html">calculate_stage</a>&lt; System, StateIn, StateTemp, DerivIn, Deriv, StateOut, Time &gt;::x_tmp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00177">177</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/detail/<a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/adams_bashforth_moulton.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">adams_bashforth_moulton.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/list.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/size_t.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/range_c.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="adams__bashforth__moulton_8hpp_source.html">boost/numeric/odeint/stepper/adams_bashforth_moulton.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+adams_bashforth_moulton.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="adams__bashforth__moulton_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2adams__bashforth__moulton_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2adams__bashforth__moulton_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2adams__bashforth__moulton_8cpp">
+<area shape="rect" title=" " alt="" coords="1261,5,1487,76"/>
+<area shape="rect" title=" " alt="" coords="925,139,985,165"/>
+<area shape="rect" title=" " alt="" coords="1010,139,1186,165"/>
+<area shape="rect" title=" " alt="" coords="1210,139,1349,165"/>
+<area shape="rect" title=" " alt="" coords="2727,533,2885,559"/>
+<area shape="rect" title=" " alt="" coords="2926,139,3097,165"/>
+<area shape="rect" href="adams__bashforth__moulton_8hpp.html" title=" " alt="" coords="1373,124,1565,180"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="1194,325,1354,366"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="29,325,260,366"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="2186,429,2386,470"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="1843,429,2073,470"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="487,429,659,470"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="734,429,894,470"/>
+<area shape="rect" href="adams__bashforth_8hpp.html" title=" " alt="" coords="1433,228,1653,269"/>
+<area shape="rect" href="adams__moulton_8hpp.html" title=" " alt="" coords="796,228,1008,269"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="1609,429,1769,470"/>
+<area shape="rect" title=" " alt="" coords="1188,436,1307,463"/>
+<area shape="rect" title=" " alt="" coords="1563,533,1694,559"/>
+<area shape="rect" title=" " alt="" coords="25,704,211,745"/>
+<area shape="rect" title=" " alt="" coords="1351,622,1477,649"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="2279,525,2475,567"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="2499,525,2703,567"/>
+<area shape="rect" href="reduce_8hpp.html" title=" " alt="" coords="2062,525,2254,567"/>
+<area shape="rect" title=" " alt="" coords="2309,622,2469,649"/>
+<area shape="rect" title=" " alt="" coords="2670,622,2843,649"/>
+<area shape="rect" title=" " alt="" coords="1718,533,1803,559"/>
+<area shape="rect" title=" " alt="" coords="1417,533,1539,559"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="1878,525,2038,567"/>
+<area shape="rect" title=" " alt="" coords="1631,622,1810,649"/>
+<area shape="rect" title=" " alt="" coords="1835,622,2057,649"/>
+<area shape="rect" title=" " alt="" coords="2082,622,2285,649"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="699,615,863,656"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="818,525,978,567"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="1233,525,1393,567"/>
+<area shape="rect" title=" " alt="" coords="236,711,299,738"/>
+<area shape="rect" title=" " alt="" coords="323,704,510,745"/>
+<area shape="rect" title=" " alt="" coords="535,704,688,745"/>
+<area shape="rect" title=" " alt="" coords="1289,704,1443,745"/>
+<area shape="rect" title=" " alt="" coords="712,711,871,738"/>
+<area shape="rect" title=" " alt="" coords="895,711,1037,738"/>
+<area shape="rect" title=" " alt="" coords="1062,711,1265,738"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="1581,325,1777,366"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="1801,325,1995,366"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="2121,317,2283,373"/>
+<area shape="rect" href="adams__bashforth__coefficients_8hpp.html" title=" " alt="" coords="1382,421,1585,477"/>
+<area shape="rect" href="adams__bashforth__call__algebra_8hpp.html" title=" " alt="" coords="2307,317,2513,373"/>
+<area shape="rect" href="rotating__buffer_8hpp.html" title=" " alt="" coords="999,317,1170,373"/>
+<area shape="rect" href="runge__kutta4__classic_8hpp.html" title=" " alt="" coords="759,317,925,373"/>
+<area shape="rect" href="adams__moulton__call__algebra_8hpp.html" title=" " alt="" coords="437,317,634,373"/>
+<area shape="rect" href="adams__moulton__coefficients_8hpp.html" title=" " alt="" coords="918,421,1113,477"/>
+</map>
+</div>
+</div>
+<p><a href="adams__bashforth__moulton_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlorenz.html">lorenz</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_adams_bashforth_moulton</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></td></tr>
+<tr class="separator:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493d367f67fbbce206f858e7d3b5ba8d"><td class="memItemLeft" align="right" valign="top">typedef boost::mpl::range_c&lt; size_t, 1, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a></td></tr>
+<tr class="separator:a493d367f67fbbce206f858e7d3b5ba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a5f4cb23dd8c11eb45aac852345ca85fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#a5f4cb23dd8c11eb45aac852345ca85fd">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (test_init_and_steps, step_type, <a class="el" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a>)</td></tr>
+<tr class="separator:a5f4cb23dd8c11eb45aac852345ca85fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a2c479874b4bdc1426bc67f03fd29f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#af5a2c479874b4bdc1426bc67f03fd29f">BOOST_AUTO_TEST_CASE</a> (test_copying)</td></tr>
+<tr class="separator:af5a2c479874b4bdc1426bc67f03fd29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104f26b2028e51852918c78313cbf3b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adams__bashforth__moulton_8cpp.html#a104f26b2028e51852918c78313cbf3b8">BOOST_AUTO_TEST_CASE</a> (test_instantiation)</td></tr>
+<tr class="separator:a104f26b2028e51852918c78313cbf3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_adams_bashforth_moulton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="aba0996e183cdbebc61c5cbdcccf9da15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0996e183cdbebc61c5cbdcccf9da15">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a493d367f67fbbce206f858e7d3b5ba8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493d367f67fbbce206f858e7d3b5ba8d">&#9670;&nbsp;</a></span>vector_of_steps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::mpl::range_c&lt; size_t , 1 , 6 &gt; <a class="el" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af5a2c479874b4bdc1426bc67f03fd29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5a2c479874b4bdc1426bc67f03fd29f">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_copying&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a104f26b2028e51852918c78313cbf3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104f26b2028e51852918c78313cbf3b8">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_instantiation&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5f4cb23dd8c11eb45aac852345ca85fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4cb23dd8c11eb45aac852345ca85fd">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">test_init_and_steps&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">step_type&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8cpp_source.html">adams_bashforth_moulton.cpp</a> 第 <a class="el" href="adams__bashforth__moulton_8cpp_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/default_operations.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">default_operations.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/test/floating_point_comparison.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/length.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/time.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/velocity.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/acceleration.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/io.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/list.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="default__operations_8hpp_source.html">boost/numeric/odeint/algebra/default_operations.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+default_operations.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2default__operations_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2default__operations_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2default__operations_8cpp">
+<area shape="rect" title=" " alt="" coords="757,5,937,76"/>
+<area shape="rect" title=" " alt="" coords="5,131,68,158"/>
+<area shape="rect" title=" " alt="" coords="92,131,171,158"/>
+<area shape="rect" title=" " alt="" coords="195,131,371,158"/>
+<area shape="rect" title=" " alt="" coords="395,124,569,165"/>
+<area shape="rect" title=" " alt="" coords="593,124,747,165"/>
+<area shape="rect" title=" " alt="" coords="771,124,924,165"/>
+<area shape="rect" title=" " alt="" coords="948,124,1101,165"/>
+<area shape="rect" title=" " alt="" coords="1125,124,1279,165"/>
+<area shape="rect" title=" " alt="" coords="1303,124,1456,165"/>
+<area shape="rect" title=" " alt="" coords="1481,131,1619,158"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="1643,124,1873,165"/>
+<area shape="rect" title=" " alt="" coords="1509,221,1594,247"/>
+<area shape="rect" title=" " alt="" coords="1618,221,1749,247"/>
+<area shape="rect" title=" " alt="" coords="1773,221,1895,247"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="1919,213,2079,255"/>
+<area shape="rect" title=" " alt="" coords="1685,303,1863,329"/>
+<area shape="rect" title=" " alt="" coords="1888,303,2111,329"/>
+<area shape="rect" title=" " alt="" coords="2135,303,2338,329"/>
+</map>
+</div>
+</div>
+<p><a href="default__operations_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinternal__value__type.html">internal_value_type&lt; Value &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinternal__value__type_3_01std_1_1complex_3_01_t_01_4_01_4.html">internal_value_type&lt; std::complex&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__eps.html">default_eps&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__eps_3_01double_01_4.html">default_eps&lt; double &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__eps_3_01float_01_4.html">default_eps&lt; float &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdouble__fixture.html">double_fixture&lt; Value, Compare &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structunit__fixture.html">unit_fixture&lt; Value, Compare &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_standard_operations</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a291d8472355bc408c53f1c5e0f811754"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 2 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a291d8472355bc408c53f1c5e0f811754">time_2</a></td></tr>
+<tr class="separator:a291d8472355bc408c53f1c5e0f811754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ea37e0f995ba82af5d70ef99c7d00d"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 3 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a83ea37e0f995ba82af5d70ef99c7d00d">time_3</a></td></tr>
+<tr class="separator:a83ea37e0f995ba82af5d70ef99c7d00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745ebbdc1365207eb5cd5f83b18d045a"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 4 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a745ebbdc1365207eb5cd5f83b18d045a">time_4</a></td></tr>
+<tr class="separator:a745ebbdc1365207eb5cd5f83b18d045a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9c91c754ddf3488a738e83fe92d300"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 5 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a5e9c91c754ddf3488a738e83fe92d300">time_5</a></td></tr>
+<tr class="separator:a5e9c91c754ddf3488a738e83fe92d300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f9db060bf44ea5f6bbd3e3267e92d0"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 6 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#aa2f9db060bf44ea5f6bbd3e3267e92d0">time_6</a></td></tr>
+<tr class="separator:aa2f9db060bf44ea5f6bbd3e3267e92d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72db7f3bc3225dd0d2c4bd24d486a99c"><td class="memItemLeft" align="right" valign="top">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension, 7 &gt;::type, si::system &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a72db7f3bc3225dd0d2c4bd24d486a99c">time_7</a></td></tr>
+<tr class="separator:a72db7f3bc3225dd0d2c4bd24d486a99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad899dadcf55d485f5049a034f97e8a79"><td class="memItemLeft" align="right" valign="top">typedef mpl::list&lt; float, double, std::complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a></td></tr>
+<tr class="separator:ad899dadcf55d485f5049a034f97e8a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a8c4a2e30695aac3f01acfae3e9eeae57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a8c4a2e30695aac3f01acfae3e9eeae57">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum2_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a8c4a2e30695aac3f01acfae3e9eeae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f01d669ca2a03c409ca5da2942afe9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#ae3f01d669ca2a03c409ca5da2942afe9">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum3_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:ae3f01d669ca2a03c409ca5da2942afe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b483588f9e0b7795ef104a3807eeec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a70b483588f9e0b7795ef104a3807eeec">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum4_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a70b483588f9e0b7795ef104a3807eeec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2952656cff6138678129276d539b75fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a2952656cff6138678129276d539b75fe">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum5_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a2952656cff6138678129276d539b75fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13cba80107b90b2d9e74a45136723ea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a13cba80107b90b2d9e74a45136723ea3">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum6_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a13cba80107b90b2d9e74a45136723ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868fba3dd94d5215641b26fc82146939"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a868fba3dd94d5215641b26fc82146939">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum7_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a868fba3dd94d5215641b26fc82146939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab05a92b2d351a11a0ae2b18178b8e9f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#ab05a92b2d351a11a0ae2b18178b8e9f3">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (rel_error_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:ab05a92b2d351a11a0ae2b18178b8e9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c14d359070c2de27a377b2222425699"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a3c14d359070c2de27a377b2222425699">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (maximum_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a3c14d359070c2de27a377b2222425699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43cd74485ae5a44fc22946226112ccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#af43cd74485ae5a44fc22946226112ccf">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum2_units_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:af43cd74485ae5a44fc22946226112ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2430a2b04ccf84e23370924b23e95a51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a2430a2b04ccf84e23370924b23e95a51">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (scale_sum3_units_test, T, <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>)</td></tr>
+<tr class="separator:a2430a2b04ccf84e23370924b23e95a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ababb6fa8007aaa8c0520cb8f5a6e04a9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#a291d8472355bc408c53f1c5e0f811754">time_2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#ababb6fa8007aaa8c0520cb8f5a6e04a9">second2</a> = si::second * si::second</td></tr>
+<tr class="separator:ababb6fa8007aaa8c0520cb8f5a6e04a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26b25aa59e4a35bc11657292d4ccb84"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#a83ea37e0f995ba82af5d70ef99c7d00d">time_3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#ad26b25aa59e4a35bc11657292d4ccb84">second3</a> = <a class="el" href="default__operations_8cpp.html#ababb6fa8007aaa8c0520cb8f5a6e04a9">second2</a> * si::second</td></tr>
+<tr class="separator:ad26b25aa59e4a35bc11657292d4ccb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50154913c2c068dc0a6ded2b2b22418f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#a745ebbdc1365207eb5cd5f83b18d045a">time_4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a50154913c2c068dc0a6ded2b2b22418f">second4</a> = <a class="el" href="default__operations_8cpp.html#ad26b25aa59e4a35bc11657292d4ccb84">second3</a> * si::second</td></tr>
+<tr class="separator:a50154913c2c068dc0a6ded2b2b22418f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ba03da383805ef5c32f826016983cd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#a5e9c91c754ddf3488a738e83fe92d300">time_5</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a88ba03da383805ef5c32f826016983cd">second5</a> = <a class="el" href="default__operations_8cpp.html#a50154913c2c068dc0a6ded2b2b22418f">second4</a> * si::second</td></tr>
+<tr class="separator:a88ba03da383805ef5c32f826016983cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6357136fc94d93928dab462a593d3323"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#aa2f9db060bf44ea5f6bbd3e3267e92d0">time_6</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a6357136fc94d93928dab462a593d3323">second6</a> = <a class="el" href="default__operations_8cpp.html#a88ba03da383805ef5c32f826016983cd">second5</a> * si::second</td></tr>
+<tr class="separator:a6357136fc94d93928dab462a593d3323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096cbb15b97634b07768381a896ae511"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="default__operations_8cpp.html#a72db7f3bc3225dd0d2c4bd24d486a99c">time_7</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__operations_8cpp.html#a096cbb15b97634b07768381a896ae511">second7</a> = <a class="el" href="default__operations_8cpp.html#a6357136fc94d93928dab462a593d3323">second6</a> * si::second</td></tr>
+<tr class="separator:a096cbb15b97634b07768381a896ae511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_standard_operations</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ad899dadcf55d485f5049a034f97e8a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad899dadcf55d485f5049a034f97e8a79">&#9670;&nbsp;</a></span>test_types</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef mpl::list&lt; float , double , std::complex&lt; double &gt; &gt; <a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00136">136</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a291d8472355bc408c53f1c5e0f811754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291d8472355bc408c53f1c5e0f811754">&#9670;&nbsp;</a></span>time_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 2 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#a291d8472355bc408c53f1c5e0f811754">time_2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a83ea37e0f995ba82af5d70ef99c7d00d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ea37e0f995ba82af5d70ef99c7d00d">&#9670;&nbsp;</a></span>time_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 3 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#a83ea37e0f995ba82af5d70ef99c7d00d">time_3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a745ebbdc1365207eb5cd5f83b18d045a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745ebbdc1365207eb5cd5f83b18d045a">&#9670;&nbsp;</a></span>time_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 4 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#a745ebbdc1365207eb5cd5f83b18d045a">time_4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e9c91c754ddf3488a738e83fe92d300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9c91c754ddf3488a738e83fe92d300">&#9670;&nbsp;</a></span>time_5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 5 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#a5e9c91c754ddf3488a738e83fe92d300">time_5</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa2f9db060bf44ea5f6bbd3e3267e92d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f9db060bf44ea5f6bbd3e3267e92d0">&#9670;&nbsp;</a></span>time_6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 6 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#aa2f9db060bf44ea5f6bbd3e3267e92d0">time_6</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a72db7f3bc3225dd0d2c4bd24d486a99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72db7f3bc3225dd0d2c4bd24d486a99c">&#9670;&nbsp;</a></span>time_7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::unit&lt; units::derived_dimension&lt; units::time_base_dimension , 7 &gt;::type , si::system &gt; <a class="el" href="default__operations_8cpp.html#a72db7f3bc3225dd0d2c4bd24d486a99c">time_7</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a3c14d359070c2de27a377b2222425699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c14d359070c2de27a377b2222425699">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">maximum_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00213">213</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a3c14d359070c2de27a377b2222425699_cgraph.png" border="0" usemap="#default__operations_8cpp_a3c14d359070c2de27a377b2222425699_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a3c14d359070c2de27a377b2222425699_cgraph" id="default__operations_8cpp_a3c14d359070c2de27a377b2222425699_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab05a92b2d351a11a0ae2b18178b8e9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05a92b2d351a11a0ae2b18178b8e9f3">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">rel_error_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00202">202</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_ab05a92b2d351a11a0ae2b18178b8e9f3_cgraph.png" border="0" usemap="#default__operations_8cpp_ab05a92b2d351a11a0ae2b18178b8e9f3_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_ab05a92b2d351a11a0ae2b18178b8e9f3_cgraph" id="default__operations_8cpp_ab05a92b2d351a11a0ae2b18178b8e9f3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c4a2e30695aac3f01acfae3e9eeae57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4a2e30695aac3f01acfae3e9eeae57">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum2_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00142">142</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a8c4a2e30695aac3f01acfae3e9eeae57_cgraph.png" border="0" usemap="#default__operations_8cpp_a8c4a2e30695aac3f01acfae3e9eeae57_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a8c4a2e30695aac3f01acfae3e9eeae57_cgraph" id="default__operations_8cpp_a8c4a2e30695aac3f01acfae3e9eeae57_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af43cd74485ae5a44fc22946226112ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43cd74485ae5a44fc22946226112ccf">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum2_units_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00227">227</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_af43cd74485ae5a44fc22946226112ccf_cgraph.png" border="0" usemap="#default__operations_8cpp_af43cd74485ae5a44fc22946226112ccf_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_af43cd74485ae5a44fc22946226112ccf_cgraph" id="default__operations_8cpp_af43cd74485ae5a44fc22946226112ccf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3f01d669ca2a03c409ca5da2942afe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f01d669ca2a03c409ca5da2942afe9">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum3_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00152">152</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_ae3f01d669ca2a03c409ca5da2942afe9_cgraph.png" border="0" usemap="#default__operations_8cpp_ae3f01d669ca2a03c409ca5da2942afe9_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_ae3f01d669ca2a03c409ca5da2942afe9_cgraph" id="default__operations_8cpp_ae3f01d669ca2a03c409ca5da2942afe9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2430a2b04ccf84e23370924b23e95a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2430a2b04ccf84e23370924b23e95a51">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum3_units_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00246">246</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a2430a2b04ccf84e23370924b23e95a51_cgraph.png" border="0" usemap="#default__operations_8cpp_a2430a2b04ccf84e23370924b23e95a51_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a2430a2b04ccf84e23370924b23e95a51_cgraph" id="default__operations_8cpp_a2430a2b04ccf84e23370924b23e95a51_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a70b483588f9e0b7795ef104a3807eeec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b483588f9e0b7795ef104a3807eeec">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum4_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00162">162</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a70b483588f9e0b7795ef104a3807eeec_cgraph.png" border="0" usemap="#default__operations_8cpp_a70b483588f9e0b7795ef104a3807eeec_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a70b483588f9e0b7795ef104a3807eeec_cgraph" id="default__operations_8cpp_a70b483588f9e0b7795ef104a3807eeec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2952656cff6138678129276d539b75fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2952656cff6138678129276d539b75fe">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum5_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00172">172</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a2952656cff6138678129276d539b75fe_cgraph.png" border="0" usemap="#default__operations_8cpp_a2952656cff6138678129276d539b75fe_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a2952656cff6138678129276d539b75fe_cgraph" id="default__operations_8cpp_a2952656cff6138678129276d539b75fe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13cba80107b90b2d9e74a45136723ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13cba80107b90b2d9e74a45136723ea3">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum6_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00182">182</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a13cba80107b90b2d9e74a45136723ea3_cgraph.png" border="0" usemap="#default__operations_8cpp_a13cba80107b90b2d9e74a45136723ea3_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a13cba80107b90b2d9e74a45136723ea3_cgraph" id="default__operations_8cpp_a13cba80107b90b2d9e74a45136723ea3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a868fba3dd94d5215641b26fc82146939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868fba3dd94d5215641b26fc82146939">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">scale_sum7_test&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="default__operations_8cpp.html#ad899dadcf55d485f5049a034f97e8a79">test_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00192">192</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="default__operations_8cpp_a868fba3dd94d5215641b26fc82146939_cgraph.png" border="0" usemap="#default__operations_8cpp_a868fba3dd94d5215641b26fc82146939_cgraph" alt=""/></div>
+<map name="default__operations_8cpp_a868fba3dd94d5215641b26fc82146939_cgraph" id="default__operations_8cpp_a868fba3dd94d5215641b26fc82146939_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="244,13,289,39"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="337,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ababb6fa8007aaa8c0520cb8f5a6e04a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababb6fa8007aaa8c0520cb8f5a6e04a9">&#9670;&nbsp;</a></span>second2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#a291d8472355bc408c53f1c5e0f811754">time_2</a> second2 = si::second * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad26b25aa59e4a35bc11657292d4ccb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26b25aa59e4a35bc11657292d4ccb84">&#9670;&nbsp;</a></span>second3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#a83ea37e0f995ba82af5d70ef99c7d00d">time_3</a> second3 = <a class="el" href="default__operations_8cpp.html#ababb6fa8007aaa8c0520cb8f5a6e04a9">second2</a> * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a50154913c2c068dc0a6ded2b2b22418f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50154913c2c068dc0a6ded2b2b22418f">&#9670;&nbsp;</a></span>second4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#a745ebbdc1365207eb5cd5f83b18d045a">time_4</a> second4 = <a class="el" href="default__operations_8cpp.html#ad26b25aa59e4a35bc11657292d4ccb84">second3</a> * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a88ba03da383805ef5c32f826016983cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ba03da383805ef5c32f826016983cd">&#9670;&nbsp;</a></span>second5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#a5e9c91c754ddf3488a738e83fe92d300">time_5</a> second5 = <a class="el" href="default__operations_8cpp.html#a50154913c2c068dc0a6ded2b2b22418f">second4</a> * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6357136fc94d93928dab462a593d3323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6357136fc94d93928dab462a593d3323">&#9670;&nbsp;</a></span>second6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#aa2f9db060bf44ea5f6bbd3e3267e92d0">time_6</a> second6 = <a class="el" href="default__operations_8cpp.html#a88ba03da383805ef5c32f826016983cd">second5</a> * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a096cbb15b97634b07768381a896ae511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096cbb15b97634b07768381a896ae511">&#9670;&nbsp;</a></span>second7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="default__operations_8cpp.html#a72db7f3bc3225dd0d2c4bd24d486a99c">time_7</a> second7 = <a class="el" href="default__operations_8cpp.html#a6357136fc94d93928dab462a593d3323">second6</a> * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="default__operations_8cpp_source.html">default_operations.cpp</a> 第 <a class="el" href="default__operations_8cpp_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

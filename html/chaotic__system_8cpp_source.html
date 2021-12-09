@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/chaotic_system.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">chaotic_system.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="chaotic__system_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * chaotic_system.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This example demonstrates how one can use odeint to determine the Lyapunov</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * exponents of a chaotic system namely the well known Lorenz system. Furthermore,</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * it shows how odeint interacts with boost.range.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gram__schmidt_8hpp.html">gram_schmidt.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">   28</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> = 10.0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">   29</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> = 28.0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">   30</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> = 8.0 / 3.0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//[ system_function_without_perturbations</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">struct </span><a class="code" href="structlorenz.html">lorenz</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv &gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structlorenz.html#ae024b1f55e4ae79934517eac59f91d7e">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structlorenz.html#ae024b1f55e4ae79934517eac59f91d7e">operator()</a>( <span class="keyword">const</span> State &amp;x_ , Deriv &amp;dxdt_ , <span class="keywordtype">double</span> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; const State &gt;::type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = boost::begin( x_ );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( dxdt_ );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        dxdt[0] = <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        dxdt[1] = <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dxdt[2] = -<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] + <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//[ system_function_with_perturbations</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">   51</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> = 3;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">   52</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> = 3;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">   53</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> = <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> + <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>*<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#acd881fb03b3110536086c522b5a9e31f">   55</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , N &gt; <a class="code" href="chaotic__system_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a3bfe61bab6e090f2b93df77e01192155">   56</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , num_of_lyap &gt; <a class="code" href="chaotic__system_8cpp.html#a3bfe61bab6e090f2b93df77e01192155">lyap_type</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a46fc5ad1642c924eabadaec1605d9dd8">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="chaotic__system_8cpp.html#a46fc5ad1642c924eabadaec1605d9dd8">lorenz_with_lyap</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keywordtype">double</span> t )</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>()( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , dxdt , t );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> l=0 ; l&lt;<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ; ++l )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> *pert = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() + 3 + l * 3;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">double</span> *dpert = dxdt.begin() + 3 + l * 3;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        dpert[0] = - <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * pert[0] + 10.0 * pert[1];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        dpert[1] = ( <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] ) * pert[0] - pert[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * pert[2];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        dpert[2] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] * pert[0] + <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * pert[1] - <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * pert[2];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="chaotic__system_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   77</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="chaotic__system_8cpp.html#a3bfe61bab6e090f2b93df77e01192155">lyap_type</a> lyap;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4&lt; state_type &gt;</a> rk4;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fill( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.end() , 0.0 );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] = 10.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] = 10.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] = 5.0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.01;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//[ integrate_transients_with_range</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// perform 10000 transient steps</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>( rk4 , <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , std::make_pair( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() + <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ) , 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 10000 );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//[ lyapunov_full_code</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    fill( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin()+<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.end() , 0.0 );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ; ++i ) <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>+<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>*i+i] = 1.0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fill( lyap.begin() , lyap.end() , 0.0 );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">double</span> t = 0.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">size_t</span> count = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span>( <span class="keyword">true</span> )</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        t = <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>( rk4 , <a class="code" href="chaotic__system_8cpp.html#a46fc5ad1642c924eabadaec1605d9dd8">lorenz_with_lyap</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 100 );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        gram_schmidt&lt; num_of_lyap &gt;( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , lyap , <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ++count;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span>( !(count % 100000) )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            cout &lt;&lt; t;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ; ++i ) cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; lyap[i] / t ;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a7782832b8bc4ddfcf466ac730c122aa5"><div class="ttname"><a href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a></div><div class="ttdeci">const size_t num_of_lyap</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00052">chaotic_system.cpp:52</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="agram__schmidt_8hpp_html"><div class="ttname"><a href="gram__schmidt_8hpp.html">gram_schmidt.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="chaotic__system_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00077">chaotic_system.cpp:77</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a3bfe61bab6e090f2b93df77e01192155"><div class="ttname"><a href="chaotic__system_8cpp.html#a3bfe61bab6e090f2b93df77e01192155">lyap_type</a></div><div class="ttdeci">boost::array&lt; double, num_of_lyap &gt; lyap_type</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00056">chaotic_system.cpp:56</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_acd881fb03b3110536086c522b5a9e31f"><div class="ttname"><a href="chaotic__system_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a></div><div class="ttdeci">boost::array&lt; double, N &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00055">chaotic_system.cpp:55</a></div></div>
+<div class="ttc" id="alorenz__point_8cpp_html_a70d5147828a4853dda9ea916b4493bba"><div class="ttname"><a href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a></div><div class="ttdeci">void lorenz(const point3D &amp;x, point3D &amp;dxdt, const double t)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__point_8cpp_source.html#l00103">lorenz_point.cpp:103</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_abff395699fa8a3126412297d53caef62"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">boost::numeric::odeint::detail::integrate_n_steps</a></div><div class="ttdeci">Time integrate_n_steps(Stepper stepper, System system, State &amp;start_state, Time start_time, Time dt, size_t num_of_steps, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__n__steps_8hpp_source.html#l00043">integrate_n_steps.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a46fc5ad1642c924eabadaec1605d9dd8"><div class="ttname"><a href="chaotic__system_8cpp.html#a46fc5ad1642c924eabadaec1605d9dd8">lorenz_with_lyap</a></div><div class="ttdeci">void lorenz_with_lyap(const state_type &amp;x, state_type &amp;dxdt, double t)</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00058">chaotic_system.cpp:58</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4_8hpp_source.html#l00110">runge_kutta4.hpp:110</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="astructlorenz_html"><div class="ttname"><a href="structlorenz.html">lorenz</a></div><div class="ttdef"><b>Definition:</b> <a href="bind__member__functions_8cpp_source.html#l00077">bind_member_functions.cpp:77</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructlorenz_html_ae024b1f55e4ae79934517eac59f91d7e"><div class="ttname"><a href="structlorenz.html#ae024b1f55e4ae79934517eac59f91d7e">lorenz::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x_, Deriv &amp;dxdt_, double t) const</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00036">chaotic_system.cpp:36</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

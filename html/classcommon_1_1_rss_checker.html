@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: common::RssChecker类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecommon.html">common</a></li><li class="navelem"><a class="el" href="classcommon_1_1_rss_checker.html">RssChecker</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classcommon_1_1_rss_checker-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">common::RssChecker类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rss__checker_8h_source.html">rss_checker.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a70a2370c8947c67514167d0893100d0f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> { <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0fa883562e77e357df99f326a51583f2029">Front</a> = 0, 
+<a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0fae3169e5956ae31b83c40d376517012eb">Rear</a>
+ }</td></tr>
+<tr class="separator:a70a2370c8947c67514167d0893100d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c47d2ec1cb6923a97b086acd1f80c28"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">LateralDirection</a> { <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28a7d87ce25337bb4dd35038f8d93f1b8cd">Left</a> = 0, 
+<a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28a50944e425a64e56fdb86458f948438f0">Right</a>
+ }</td></tr>
+<tr class="separator:a5c47d2ec1cb6923a97b086acd1f80c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a33e5e0d6eee9377abc3996b505253"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253">LongitudinalViolateType</a> { <a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253aa10a9bcd450087de1ce1f80b35f44883">LongitudinalViolateType::Legal</a> = 0, 
+<a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253a7ed51091aa24c89cdef945fd606fafed">LongitudinalViolateType::TooFast</a>, 
+<a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253a7d02020399c3a285c8dafd26cc67ee2f">LongitudinalViolateType::TooSlow</a>
+ }</td></tr>
+<tr class="separator:a59a33e5e0d6eee9377abc3996b505253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a0884b748cf0d86cae69b0f5b9c2d5e11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a0884b748cf0d86cae69b0f5b9c2d5e11">CalculateSafeLongitudinalDistance</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> ego_vel, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> other_vel, const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;direction, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *distance)</td></tr>
+<tr class="separator:a0884b748cf0d86cae69b0f5b9c2d5e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107dc0a8988b392686c52f7653340c64"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a107dc0a8988b392686c52f7653340c64">CalculateSafeLateralDistance</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> ego_vel, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> other_vel, const <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">LateralDirection</a> &amp;direction, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *distance)</td></tr>
+<tr class="separator:a107dc0a8988b392686c52f7653340c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadf32cdbb3e011bf029570f5699940e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#afadf32cdbb3e011bf029570f5699940e">CalculateRssSafeDistances</a> (const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;ego_vels, const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;other_vels, const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;long_direct, const <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">LateralDirection</a> &amp;lat_direct, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; *safe_distances)</td></tr>
+<tr class="separator:afadf32cdbb3e011bf029570f5699940e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40ece00a0dbcb2b6213364878fe300a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#ae40ece00a0dbcb2b6213364878fe300a">RssCheck</a> (const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;ego_fs, const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;other_fs, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, bool *is_safe)</td></tr>
+<tr class="separator:ae40ece00a0dbcb2b6213364878fe300a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d1517ff31d4f00af1740f2fc43c107"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a25d1517ff31d4f00af1740f2fc43c107">RssCheck</a> (const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;ego_vehicle, const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;other_vehicle, const <a class="el" href="classcommon_1_1_state_transformer.html">StateTransformer</a> &amp;stf, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, bool *is_safe, <a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253">LongitudinalViolateType</a> *lon_type, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *rss_vel_low, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *rss_vel_up)</td></tr>
+<tr class="separator:a25d1517ff31d4f00af1740f2fc43c107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b815750438fe65264a57907009a0c80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_rss_checker.html#a8b815750438fe65264a57907009a0c80">CalculateSafeLongitudinalVelocity</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> other_vel, const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;direction, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;lon_distance_abs, const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;config, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *ego_vel_low, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *ego_vel_upp)</td></tr>
+<tr class="separator:a8b815750438fe65264a57907009a0c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="rss__checker_8h_source.html">rss_checker.h</a> 第 <a class="el" href="rss__checker_8h_source.html#l00012">12</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a5c47d2ec1cb6923a97b086acd1f80c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c47d2ec1cb6923a97b086acd1f80c28">&#9670;&nbsp;</a></span>LateralDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">common::RssChecker::LateralDirection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a5c47d2ec1cb6923a97b086acd1f80c28a7d87ce25337bb4dd35038f8d93f1b8cd"></a>Left&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5c47d2ec1cb6923a97b086acd1f80c28a50944e425a64e56fdb86458f948438f0"></a>Right&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8h_source.html">rss_checker.h</a> 第 <a class="el" href="rss__checker_8h_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a70a2370c8947c67514167d0893100d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a2370c8947c67514167d0893100d0f">&#9670;&nbsp;</a></span>LongitudinalDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">common::RssChecker::LongitudinalDirection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a70a2370c8947c67514167d0893100d0fa883562e77e357df99f326a51583f2029"></a>Front&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a70a2370c8947c67514167d0893100d0fae3169e5956ae31b83c40d376517012eb"></a>Rear&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8h_source.html">rss_checker.h</a> 第 <a class="el" href="rss__checker_8h_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a59a33e5e0d6eee9377abc3996b505253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a33e5e0d6eee9377abc3996b505253">&#9670;&nbsp;</a></span>LongitudinalViolateType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253">common::RssChecker::LongitudinalViolateType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a59a33e5e0d6eee9377abc3996b505253aa10a9bcd450087de1ce1f80b35f44883"></a>Legal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a59a33e5e0d6eee9377abc3996b505253a7ed51091aa24c89cdef945fd606fafed"></a>TooFast&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a59a33e5e0d6eee9377abc3996b505253a7d02020399c3a285c8dafd26cc67ee2f"></a>TooSlow&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8h_source.html">rss_checker.h</a> 第 <a class="el" href="rss__checker_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afadf32cdbb3e011bf029570f5699940e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afadf32cdbb3e011bf029570f5699940e">&#9670;&nbsp;</a></span>CalculateRssSafeDistances()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::CalculateRssSafeDistances </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ego_vels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other_vels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;&#160;</td>
+          <td class="paramname"><em>long_direct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">LateralDirection</a> &amp;&#160;</td>
+          <td class="paramname"><em>lat_direct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; *&#160;</td>
+          <td class="paramname"><em>safe_distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00242">242</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_cgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_cgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_cgraph" id="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,212,84"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a107dc0a8988b392686c52f7653340c64" title=" " alt="" coords="260,5,483,47"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a0884b748cf0d86cae69b0f5b9c2d5e11" title=" " alt="" coords="271,71,471,127"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_icgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_icgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_icgraph" id="classcommon_1_1_rss_checker_afadf32cdbb3e011bf029570f5699940e_icgraph">
+<area shape="rect" title=" " alt="" coords="1163,13,1369,54"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#ae40ece00a0dbcb2b6213364878fe300a" title=" " alt="" coords="952,13,1115,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450" title=" " alt="" coords="607,13,904,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a107dc0a8988b392686c52f7653340c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107dc0a8988b392686c52f7653340c64">&#9670;&nbsp;</a></span>CalculateSafeLateralDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::CalculateSafeLateralDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>ego_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>other_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_rss_checker.html#a5c47d2ec1cb6923a97b086acd1f80c28">LateralDirection</a> &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00141">141</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_a107dc0a8988b392686c52f7653340c64_icgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_a107dc0a8988b392686c52f7653340c64_icgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_a107dc0a8988b392686c52f7653340c64_icgraph" id="classcommon_1_1_rss_checker_a107dc0a8988b392686c52f7653340c64_icgraph">
+<area shape="rect" title=" " alt="" coords="1417,46,1640,87"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#afadf32cdbb3e011bf029570f5699940e" title=" " alt="" coords="1163,13,1369,54"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a25d1517ff31d4f00af1740f2fc43c107" title=" " alt="" coords="1185,78,1347,119"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#ae40ece00a0dbcb2b6213364878fe300a" title=" " alt="" coords="952,13,1115,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450" title=" " alt="" coords="607,13,904,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0884b748cf0d86cae69b0f5b9c2d5e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0884b748cf0d86cae69b0f5b9c2d5e11">&#9670;&nbsp;</a></span>CalculateSafeLongitudinalDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::CalculateSafeLongitudinalDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>ego_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>other_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00005">5</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_a0884b748cf0d86cae69b0f5b9c2d5e11_icgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_a0884b748cf0d86cae69b0f5b9c2d5e11_icgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_a0884b748cf0d86cae69b0f5b9c2d5e11_icgraph" id="classcommon_1_1_rss_checker_a0884b748cf0d86cae69b0f5b9c2d5e11_icgraph">
+<area shape="rect" title=" " alt="" coords="1417,5,1617,61"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#afadf32cdbb3e011bf029570f5699940e" title=" " alt="" coords="1163,13,1369,54"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#ae40ece00a0dbcb2b6213364878fe300a" title=" " alt="" coords="952,13,1115,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450" title=" " alt="" coords="607,13,904,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b815750438fe65264a57907009a0c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b815750438fe65264a57907009a0c80">&#9670;&nbsp;</a></span>CalculateSafeLongitudinalVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::CalculateSafeLongitudinalVelocity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>other_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_rss_checker.html#a70a2370c8947c67514167d0893100d0f">LongitudinalDirection</a> &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>lon_distance_abs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>ego_vel_low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>ego_vel_upp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00064">64</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_cgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_cgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_cgraph" id="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_cgraph">
+<area shape="rect" title=" " alt="" coords="5,16,205,72"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="253,5,331,32"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="255,56,329,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_icgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_icgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_icgraph" id="classcommon_1_1_rss_checker_a8b815750438fe65264a57907009a0c80_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,416,61"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a25d1517ff31d4f00af1740f2fc43c107" title=" " alt="" coords="5,13,168,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae40ece00a0dbcb2b6213364878fe300a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40ece00a0dbcb2b6213364878fe300a">&#9670;&nbsp;</a></span>RssCheck() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::RssCheck </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>ego_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>other_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>is_safe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00258">258</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_cgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_cgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_cgraph" id="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,168,84"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#afadf32cdbb3e011bf029570f5699940e" title=" " alt="" coords="216,43,423,84"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a107dc0a8988b392686c52f7653340c64" title=" " alt="" coords="471,5,693,47"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a0884b748cf0d86cae69b0f5b9c2d5e11" title=" " alt="" coords="482,71,682,127"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_icgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_icgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_icgraph" id="classcommon_1_1_rss_checker_ae40ece00a0dbcb2b6213364878fe300a_icgraph">
+<area shape="rect" title=" " alt="" coords="952,13,1115,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450" title=" " alt="" coords="607,13,904,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a25d1517ff31d4f00af1740f2fc43c107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d1517ff31d4f00af1740f2fc43c107">&#9670;&nbsp;</a></span>RssCheck() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::RssChecker::RssCheck </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>ego_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>other_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_state_transformer.html">StateTransformer</a> &amp;&#160;</td>
+          <td class="paramname"><em>stf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_rss_checker_1_1_rss_config.html">RssConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>is_safe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_rss_checker.html#a59a33e5e0d6eee9377abc3996b505253">LongitudinalViolateType</a> *&#160;</td>
+          <td class="paramname"><em>lon_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>rss_vel_low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>rss_vel_up</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a> 第 <a class="el" href="rss__checker_8cc_source.html#l00290">290</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_rss_checker_a25d1517ff31d4f00af1740f2fc43c107_cgraph.png" border="0" usemap="#classcommon_1_1_rss_checker_a25d1517ff31d4f00af1740f2fc43c107_cgraph" alt=""/></div>
+<map name="classcommon_1_1_rss_checker_a25d1517ff31d4f00af1740f2fc43c107_cgraph" id="classcommon_1_1_rss_checker_a25d1517ff31d4f00af1740f2fc43c107_cgraph">
+<area shape="rect" title=" " alt="" coords="5,803,168,844"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a107dc0a8988b392686c52f7653340c64" title=" " alt="" coords="216,488,439,529"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a8b815750438fe65264a57907009a0c80" title=" " alt="" coords="227,663,427,719"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ace67e4af2f7bf76db41b486f3ef5d23a" title=" " alt="" coords="239,744,416,785"/>
+<area shape="rect" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e" title=" " alt="" coords="227,553,427,595"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="250,810,405,837"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="239,861,416,903"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="235,927,420,954"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="239,978,415,1005"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="239,1029,416,1071"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="555,721,633,747"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="557,771,631,798"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a22494461a963340822938a5fed024de5" title=" " alt="" coords="487,415,701,456"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="1031,443,1201,470"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a3fe8a1f03a453aca34588a808166f29d" title="Get curvature by arc length" alt="" coords="487,284,701,325"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af4afb26222cd153da4b1e977c4c28a44" title=" " alt="" coords="760,5,961,47"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a0dabc7c50c1e9c9eff83b7c15800e884" title=" " alt="" coords="494,349,694,391"/>
+<area shape="rect" href="structcommon_1_1_frenet_state.html#a01cc69c2098545a919d1e195c980c462" title=" " alt="" coords="513,553,675,595"/>
+<area shape="rect" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0" title="Normalize angle to [&#45;pi, pi)" alt="" coords="529,619,659,646"/>
+<area shape="rect" href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d" title="Return normalized angle by vec2d" alt="" coords="532,670,656,697"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46" title="Get the begin of the parameterization" alt="" coords="1031,363,1201,390"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4" title="Get the end of the parameterization" alt="" coords="1037,305,1195,331"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d" title="Return evaluation of spline at given parameterization" alt="" coords="1020,107,1212,134"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af74607072e3623e96e04482a31872217" title=" " alt="" coords="749,239,972,280"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1093,191,1139,218"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="1091,246,1141,273"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af8faae7d797f87f85dbeac2182d82626" title=" " alt="" coords="761,356,960,397"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ab6afde2fdc44a1895d54279ce04194fe" title="Get derivative by arc length (d = 0 means position evaluation)" alt="" coords="752,71,969,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/inc/common/rss/<a class="el" href="rss__checker_8h_source.html">rss_checker.h</a></li>
+<li>core/common/src/common/rss/<a class="el" href="rss__checker_8cc_source.html">rss_checker.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

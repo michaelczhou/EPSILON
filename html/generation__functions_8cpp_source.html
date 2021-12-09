@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/generation_functions.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">generation_functions.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generation__functions_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> libs/numeric/odeint/examples/stochastic_euler.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> Copyright 2009 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> Copyright 2009 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> Stochastic euler stepper example and Ornstein-Uhlenbeck process</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">(See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="generation__functions_8cpp.html#a0e0d5ee45890e34d16598f3556c8d70f">   18</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , 1 &gt; <a class="code" href="generation__functions_8cpp.html#a0e0d5ee45890e34d16598f3556c8d70f">state_type</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//[ generation_functions_own_steppers</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classcustom__stepper.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcustom__stepper.html">custom_stepper</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classcustom__stepper.html#aa9148b484aff48b19bf3a82f2a521237">   28</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="classcustom__stepper.html#aa9148b484aff48b19bf3a82f2a521237">value_type</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// ...</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcustom__controller.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcustom__controller.html">custom_controller</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// ...</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classcustom__dense__output.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcustom__dense__output.html">custom_dense_output</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// ...</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//[ generation_functions_get_controller</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>numeric { <span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1get__controller_3_01custom__stepper_01_4.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1get__controller.html">get_controller</a>&lt; <a class="code" href="classcustom__stepper.html">custom_stepper</a> &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1get__controller_3_01custom__stepper_01_4.html#a1ed235fd8005da1fd4afe62b7874ba94">   50</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classcustom__controller.html">custom_controller</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1get__controller_3_01custom__stepper_01_4.html#a1ed235fd8005da1fd4afe62b7874ba94">type</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} } }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//[ generation_functions_controller_factory</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>numeric { <span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1controller__factory_3_01custom__stepper_00_01custom__controller_01_4.html">   60</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1controller__factory.html">controller_factory</a>&lt; <a class="code" href="classcustom__stepper.html">custom_stepper</a> , <a class="code" href="classcustom__controller.html">custom_controller</a> &gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1controller__factory_3_01custom__stepper_00_01custom__controller_01_4.html#a617cbef16beaa272044e1e958447bab6">   62</a></span>&#160;    <a class="code" href="classcustom__controller.html">custom_controller</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1controller__factory_3_01custom__stepper_00_01custom__controller_01_4.html#a617cbef16beaa272044e1e958447bab6">operator()</a>( <span class="keywordtype">double</span> abs_tol , <span class="keywordtype">double</span> rel_tol , <span class="keyword">const</span> <a class="code" href="classcustom__stepper.html">custom_stepper</a> &amp; )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classcustom__controller.html">custom_controller</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} } }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="generation__functions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   71</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="generation__functions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5&lt; state_type &gt;</a> <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">        //[ generation_functions_syntax_auto</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">        auto stepper1 = make_controlled( 1.0e-6 , 1.0e-6 , stepper_type() );</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">        auto stepper2 = make_dense_output( 1.0e-6 , 1.0e-6 , stepper_type() );</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">        //]</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//[ generation_functions_syntax_result_of</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1result__of_1_1make__controlled.html#a56e7716530b64b97e3fc0e75021f386b">boost::numeric::odeint::result_of::make_controlled&lt; stepper_type &gt;::type</a> stepper3 = <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-6 , <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>() );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1result__of_1_1make__dense__output.html#a7fb590369060a30f70a73369ca07358e">boost::numeric::odeint::result_of::make_dense_output&lt; stepper_type &gt;::type</a> stepper4 = <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede">make_dense_output</a>( 1.0e-6 , 1.0e-6 , <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>() );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">//]</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">        //[ generation_functions_example_custom_controller</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">        auto stepper5 = make_controlled( 1.0e-6 , 1.0e-6 , custom_stepper() );</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">        //]</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1result__of_1_1make__controlled.html#a56e7716530b64b97e3fc0e75021f386b">boost::numeric::odeint::result_of::make_controlled&lt; custom_stepper &gt;::type</a> stepper5 = <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-6 , <a class="code" href="classcustom__stepper.html">custom_stepper</a>() );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ageneration__functions_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="generation__functions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00071">generation_functions.cpp:71</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1controller__factory_3_01custom__stepper_00_01custom__controller_01_4_html_a617cbef16beaa272044e1e958447bab6"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1controller__factory_3_01custom__stepper_00_01custom__controller_01_4.html#a617cbef16beaa272044e1e958447bab6">boost::numeric::odeint::controller_factory&lt; custom_stepper, custom_controller &gt;::operator()</a></div><div class="ttdeci">custom_controller operator()(double abs_tol, double rel_tol, const custom_stepper &amp;) const</div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00062">generation_functions.cpp:62</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1get__controller_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1get__controller.html">boost::numeric::odeint::get_controller</a></div><div class="ttdef"><b>Definition:</b> <a href="make__controlled_8hpp_source.html#l00031">make_controlled.hpp:31</a></div></div>
+<div class="ttc" id="aclasscustom__stepper_html_aa9148b484aff48b19bf3a82f2a521237"><div class="ttname"><a href="classcustom__stepper.html#aa9148b484aff48b19bf3a82f2a521237">custom_stepper::value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00028">generation_functions.cpp:28</a></div></div>
+<div class="ttc" id="aclasscustom__controller_html"><div class="ttname"><a href="classcustom__controller.html">custom_controller</a></div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00032">generation_functions.cpp:32</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a></div><div class="ttdoc">The Runge-Kutta Dormand-Prince 5 method.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__dopri5_8hpp_source.html#l00049">runge_kutta_dopri5.hpp:49</a></div></div>
+<div class="ttc" id="aclasscustom__dense__output_html"><div class="ttname"><a href="classcustom__dense__output.html">custom_dense_output</a></div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00037">generation_functions.cpp:37</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1controller__factory_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1controller__factory.html">boost::numeric::odeint::controller_factory</a></div><div class="ttdef"><b>Definition:</b> <a href="make__controlled_8hpp_source.html#l00037">make_controlled.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1get__controller_3_01custom__stepper_01_4_html_a1ed235fd8005da1fd4afe62b7874ba94"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1get__controller_3_01custom__stepper_01_4.html#a1ed235fd8005da1fd4afe62b7874ba94">boost::numeric::odeint::get_controller&lt; custom_stepper &gt;::type</a></div><div class="ttdeci">custom_controller type</div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00050">generation_functions.cpp:50</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1result__of_1_1make__dense__output_html_a7fb590369060a30f70a73369ca07358e"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1result__of_1_1make__dense__output.html#a7fb590369060a30f70a73369ca07358e">boost::numeric::odeint::result_of::make_dense_output::type</a></div><div class="ttdeci">get_dense_output&lt; Stepper &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="make__dense__output_8hpp_source.html#l00051">make_dense_output.hpp:51</a></div></div>
+<div class="ttc" id="aclasscustom__stepper_html"><div class="ttname"><a href="classcustom__stepper.html">custom_stepper</a></div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00024">generation_functions.cpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_adae55091b4f3878ef956b7adea641dd1"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">boost::numeric::odeint::make_controlled</a></div><div class="ttdeci">result_of::make_controlled&lt; Stepper &gt;::type make_controlled(typename Stepper::value_type abs_error, typename Stepper::value_type rel_error, const Stepper &amp;stepper=Stepper())</div><div class="ttdef"><b>Definition:</b> <a href="make__controlled_8hpp_source.html#l00062">make_controlled.hpp:62</a></div></div>
+<div class="ttc" id="ageneration__functions_8cpp_html_a0e0d5ee45890e34d16598f3556c8d70f"><div class="ttname"><a href="generation__functions_8cpp.html#a0e0d5ee45890e34d16598f3556c8d70f">state_type</a></div><div class="ttdeci">boost::array&lt; double, 1 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__functions_8cpp_source.html#l00018">generation_functions.cpp:18</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1result__of_1_1make__controlled_html_a56e7716530b64b97e3fc0e75021f386b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1result__of_1_1make__controlled.html#a56e7716530b64b97e3fc0e75021f386b">boost::numeric::odeint::result_of::make_controlled::type</a></div><div class="ttdeci">get_controller&lt; Stepper &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="make__controlled_8hpp_source.html#l00056">make_controlled.hpp:56</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a648d58d4ae3311b67b5ad87d2c1b5ede"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede">boost::numeric::odeint::make_dense_output</a></div><div class="ttdeci">result_of::make_dense_output&lt; Stepper &gt;::type make_dense_output(typename Stepper::value_type abs_error, typename Stepper::value_type rel_error, const Stepper &amp;stepper=Stepper())</div><div class="ttdef"><b>Definition:</b> <a href="make__dense__output_8hpp_source.html#l00058">make_dense_output.hpp:58</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

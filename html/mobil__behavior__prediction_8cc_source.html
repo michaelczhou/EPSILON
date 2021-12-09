@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/mobil/mobil_behavior_prediction.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_6fa366bbfa1156049131107778bec189.html">mobil</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mobil_behavior_prediction.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mobil__behavior__prediction_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mobil__behavior__prediction_8h.html">common/mobil/mobil_behavior_prediction.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classcommon_1_1_mobil_behavior_prediction.html#a4ca9b10adb8b43bb28888df1dc9f2088">    5</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_mobil_behavior_prediction.html#a4ca9b10adb8b43bb28888df1dc9f2088">MobilBehaviorPrediction::RemapGainsToProb</a>(</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_lcl_safe, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> mobil_gain_left,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_lcr_safe, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> mobil_gain_right,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="structcommon_1_1_prob_dist_of_lat_behaviors.html">ProbDistOfLatBehaviors</a> *<a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> lower_bound = -1.0;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">// decimal_t upper_bound = 1.0;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> upper_bound = 6.0;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span> (is_lcl_safe &amp;&amp; is_lcr_safe) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> gain_l = <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(mobil_gain_left, lower_bound,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                            upper_bound, 0.0, 1.0);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> gain_k =</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(1.0, lower_bound, upper_bound, 0.0, 1.0);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> gain_r = <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(mobil_gain_right, lower_bound,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                            upper_bound, 0.0, 1.0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> p_l = gain_l / (gain_k + gain_l + gain_r);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> p_k = gain_k / (gain_k + gain_l + gain_r);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> p_r = gain_r / (gain_k + gain_l + gain_r);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>, p_l);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>, p_r);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>, p_k);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;is_valid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_lcl_safe) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> gain = <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(mobil_gain_left, lower_bound,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                          upper_bound, 0.0, 1.0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>, gain);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>, 0.0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>, 1.0 - gain);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;is_valid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_lcr_safe) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> gain = <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(mobil_gain_right, lower_bound,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                          upper_bound, 0.0, 1.0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>, 0.0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>, gain);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>, 1.0 - gain);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;is_valid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>, 0.0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>, 0.0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>, 1.0);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;is_valid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405">   53</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405">MobilBehaviorPrediction::LateralBehaviorPrediction</a>(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;vehicle, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Lane&gt;</a> &amp;lanes,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::Vehicle&gt;</a> &amp;leading_vehicles,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FrenetState&gt;</a> &amp;leading_frenet_states,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::Vehicle&gt;</a> &amp;following_vehicles,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;common::FrenetState&gt;</a> &amp;follow_frenet_states,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;nearby_vehicles, <a class="code" href="structcommon_1_1_prob_dist_of_lat_behaviors.html">ProbDistOfLatBehaviors</a> *<a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (lanes.size() != 3) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    printf(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="stringliteral">&quot;[MobilBehaviorPrediction]Must have three lanes (invalid also &quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="stringliteral">&quot;acceptable).\n&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// * Notations here are following MOBIL paper</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> acc_c = 0.0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> acc_o = 0.0, acc_o_tilda = 0.0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> politeness_coeff = 0.0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> is_lcl_safe = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> is_lcr_safe = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> mobil_gain_left = -<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a142bc45e8f6c50c9fbc66dacb666edc2">kInf</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> mobil_gain_right = -<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a142bc45e8f6c50c9fbc66dacb666edc2">kInf</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// * When the vehicle is almost stop, we assume the behavior is lane keeping</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a> = vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>().<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">if</span> (fabs(<a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>) &lt; <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a2b330070a7f9ff0cf1b5f4a0dc198d85">kBigEPS</a>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>, 0.0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>, 0.0);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;SetEntry(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a>, 1.0);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>-&gt;is_valid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// ~ For current lane</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="classcommon_1_1_lane.html">common::Lane</a> lk_lane = lanes[0];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span> (lk_lane.<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> leading_vehicle = leading_vehicles[0];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> leading_fs = leading_frenet_states[0];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> following_vehicle = following_vehicles[0];</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> following_fs = follow_frenet_states[0];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a> stf(lk_lane);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> ego_frenet_state;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    stf.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>(), &amp;ego_frenet_state);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classcommon_1_1_mobil_lane_changing_model.html#ac473d56b977c7ecf99e3fb3f291e3537">MobilLaneChangingModel::GetMobilAccChangesOnCurrentLane</a>(</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            ego_frenet_state, leading_vehicle, leading_fs, following_vehicle,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            following_fs, &amp;acc_o, &amp;acc_o_tilda, &amp;acc_c) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      printf(<span class="stringliteral">&quot;[MobilBehaviorPrediction]lane-keep lane not valid.\n&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// ~ For lane change left</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="classcommon_1_1_lane.html">common::Lane</a> lcl_lane = lanes[1];</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span> (lcl_lane.<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> leading_vehicle = leading_vehicles[1];</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> leading_fs = leading_frenet_states[1];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> following_vehicle = following_vehicles[1];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> following_fs = follow_frenet_states[1];</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> acc_n = 0.0, acc_n_tilda = 0.0, acc_c_tilda = 0.0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a> stf(lcl_lane);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> projected_frenet_state;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    stf.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>(), &amp;projected_frenet_state);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450">MobilLaneChangingModel::GetMobilAccChangesOnTargetLane</a>(</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        projected_frenet_state, leading_vehicle, leading_fs, following_vehicle,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        following_fs, &amp;is_lcl_safe, &amp;acc_n, &amp;acc_n_tilda, &amp;acc_c_tilda);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (is_lcl_safe) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_c = acc_c_tilda - acc_c;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_n = acc_n_tilda - acc_n;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_o = acc_o_tilda - acc_o;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      mobil_gain_left = d_a_c + politeness_coeff * (d_a_n + d_a_o);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">// ~ For lane change right</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="classcommon_1_1_lane.html">common::Lane</a> lcr_lane = lanes[2];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span> (lcr_lane.<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> leading_vehicle = leading_vehicles[2];</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> leading_fs = leading_frenet_states[2];</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> following_vehicle = following_vehicles[2];</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> following_fs = follow_frenet_states[2];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> acc_n = 0.0, acc_n_tilda = 0.0, acc_c_tilda = 0.0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a> stf(lcr_lane);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> projected_frenet_state;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    stf.<a class="code" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">GetFrenetStateFromState</a>(vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>(), &amp;projected_frenet_state);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450">MobilLaneChangingModel::GetMobilAccChangesOnTargetLane</a>(</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        projected_frenet_state, leading_vehicle, leading_fs, following_vehicle,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        following_fs, &amp;is_lcr_safe, &amp;acc_n, &amp;acc_n_tilda, &amp;acc_c_tilda);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (is_lcr_safe) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_c = acc_c_tilda - acc_c;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_n = acc_n_tilda - acc_n;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d_a_o = acc_o_tilda - acc_o;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      mobil_gain_right = d_a_c + politeness_coeff * (d_a_n + d_a_o);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="classcommon_1_1_mobil_behavior_prediction.html#a4ca9b10adb8b43bb28888df1dc9f2088">RemapGainsToProb</a>(is_lcl_safe, mobil_gain_left, is_lcr_safe, mobil_gain_right,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                   <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  printf(<span class="stringliteral">&quot;[Mobil]%d, Left gain: %.3lf, Right gain: %.3lf\n&quot;</span>, vehicle.<a class="code" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09">id</a>(),</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;         mobil_gain_left, mobil_gain_right);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}  <span class="comment">// namespace common</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_mobil_lane_changing_model_html_a8c46c22bc09d6aaac4986c8b9f368450"><div class="ttname"><a href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450">common::MobilLaneChangingModel::GetMobilAccChangesOnTargetLane</a></div><div class="ttdeci">static ErrorType GetMobilAccChangesOnTargetLane(const FrenetState &amp;projected_cur_fs, const Vehicle &amp;leading_vehicle, const FrenetState &amp;leading_fs, const Vehicle &amp;following_vehicle, const FrenetState &amp;following_fs, bool *is_lc_safe, decimal_t *acc_n, decimal_t *acc_n_tilda, decimal_t *acc_c_tilda)</div><div class="ttdef"><b>Definition:</b> <a href="mobil__model_8cc_source.html#l00061">mobil_model.cc:61</a></div></div>
+<div class="ttc" id="anamespaceperformance_html_af2e6eea9da5cf3f396df76424a11061b"><div class="ttname"><a href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">performance.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="performance_8py_source.html#l00039">performance.py:39</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a></div><div class="ttdeci">@ kLaneChangeRight</div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00263">semantics.h:263</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a03e30373b24292fd8e708ffcd6130981"><div class="ttname"><a href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a></div><div class="ttdeci">decimal_t normalize_with_bound(const decimal_t &amp;val_in, const decimal_t &amp;lower, const decimal_t &amp;upper, const decimal_t &amp;new_lower, const decimal_t &amp;new_upper)</div><div class="ttdoc">Return normalize value</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00044">calculations.cc:44</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_ab477367137d1a6163a9b81a6af0055e9"><div class="ttname"><a href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">common::Vehicle::state</a></div><div class="ttdeci">State state() const</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00090">semantics.h:90</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a2b330070a7f9ff0cf1b5f4a0dc198d85"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a2b330070a7f9ff0cf1b5f4a0dc198d85">kBigEPS</a></div><div class="ttdeci">const decimal_t kBigEPS</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00076">basics.h:76</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="astructcommon_1_1_prob_dist_of_lat_behaviors_html"><div class="ttname"><a href="structcommon_1_1_prob_dist_of_lat_behaviors.html">common::ProbDistOfLatBehaviors</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00173">semantics.h:173</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html"><div class="ttname"><a href="classcommon_1_1_state_transformer.html">common::StateTransformer</a></div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8h_source.html#l00011">state_transformer.h:11</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_mobil_behavior_prediction_html_a4ca9b10adb8b43bb28888df1dc9f2088"><div class="ttname"><a href="classcommon_1_1_mobil_behavior_prediction.html#a4ca9b10adb8b43bb28888df1dc9f2088">common::MobilBehaviorPrediction::RemapGainsToProb</a></div><div class="ttdeci">static ErrorType RemapGainsToProb(const bool is_lcl_safe, const decimal_t mobil_gain_left, const bool is_lcr_safe, const decimal_t mobil_gain_right, ProbDistOfLatBehaviors *res)</div><div class="ttdef"><b>Definition:</b> <a href="mobil__behavior__prediction_8cc_source.html#l00005">mobil_behavior_prediction.cc:5</a></div></div>
+<div class="ttc" id="astructcommon_1_1_frenet_state_html"><div class="ttname"><a href="structcommon_1_1_frenet_state.html">common::FrenetState</a></div><div class="ttdoc">Definition of frenet state</div><div class="ttdef"><b>Definition:</b> <a href="frenet__state_8h_source.html#l00012">frenet_state.h:12</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_mobil_behavior_prediction_html_af36b62d5b9546177fedb232128681405"><div class="ttname"><a href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405">common::MobilBehaviorPrediction::LateralBehaviorPrediction</a></div><div class="ttdeci">static ErrorType LateralBehaviorPrediction(const Vehicle &amp;vehicle, const vec_E&lt; Lane &gt; &amp;lanes, const vec_E&lt; common::Vehicle &gt; &amp;leading_vehicles, const vec_E&lt; common::FrenetState &gt; &amp;leading_frenet_states, const vec_E&lt; common::Vehicle &gt; &amp;following_vehicles, const vec_E&lt; common::FrenetState &gt; &amp;follow_frenet_states, const common::VehicleSet &amp;nearby_vehicles, ProbDistOfLatBehaviors *res)</div><div class="ttdef"><b>Definition:</b> <a href="mobil__behavior__prediction_8cc_source.html#l00053">mobil_behavior_prediction.cc:53</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_a808e864427428586105a15b8a21fee09"><div class="ttname"><a href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09">common::Vehicle::id</a></div><div class="ttdeci">int id() const</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00087">semantics.h:87</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a142bc45e8f6c50c9fbc66dacb666edc2"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a142bc45e8f6c50c9fbc66dacb666edc2">kInf</a></div><div class="ttdeci">const decimal_t kInf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00084">basics.h:84</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a></div><div class="ttdeci">@ kWrongStatus</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html"><div class="ttname"><a href="classcommon_1_1_vehicle.html">common::Vehicle</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00079">semantics.h:79</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">common::LateralBehavior::kLaneKeeping</a></div><div class="ttdeci">@ kLaneKeeping</div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html_a25dbb6f98c4d5cf7e085745024f7880e"><div class="ttname"><a href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e">common::StateTransformer::GetFrenetStateFromState</a></div><div class="ttdeci">ErrorType GetFrenetStateFromState(const State &amp;s, FrenetState *fs) const</div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8cc_source.html#l00106">state_transformer.cc:106</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_ac8dd5e82e8c24ec5d4b0275c5e045a87"><div class="ttname"><a href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">common::Lane::IsValid</a></div><div class="ttdeci">bool IsValid() const</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00017">lane.h:17</a></div></div>
+<div class="ttc" id="amobil__behavior__prediction_8h_html"><div class="ttname"><a href="mobil__behavior__prediction_8h.html">mobil_behavior_prediction.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_mobil_lane_changing_model_html_ac473d56b977c7ecf99e3fb3f291e3537"><div class="ttname"><a href="classcommon_1_1_mobil_lane_changing_model.html#ac473d56b977c7ecf99e3fb3f291e3537">common::MobilLaneChangingModel::GetMobilAccChangesOnCurrentLane</a></div><div class="ttdeci">static ErrorType GetMobilAccChangesOnCurrentLane(const FrenetState &amp;cur_fs, const Vehicle &amp;leading_vehicle, const FrenetState &amp;leading_fs, const Vehicle &amp;following_vehicle, const FrenetState &amp;following_fs, decimal_t *acc_o, decimal_t *acc_o_tilda, decimal_t *acc_c)</div><div class="ttdef"><b>Definition:</b> <a href="mobil__model_8cc_source.html#l00005">mobil_model.cc:5</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a></div><div class="ttdeci">@ kLaneChangeLeft</div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a19b9154545b6d241b9611f734e4ed978"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a></div><div class="ttdeci">double desired_vel</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00033">onlane_ai_agent.cc:33</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

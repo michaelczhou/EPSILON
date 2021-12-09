@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/math/poly_roots.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_3a7a96a09b33c773409d2b94188cf321.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">poly_roots.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="common_2inc_2common_2basics_2basics_8h_source.html">common/basics/basics.h</a>&quot;</code><br />
+<code>#include &lt;unsupported/Eigen/Polynomials&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+poly_roots.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h__incl.png" border="0" usemap="#core_2common_2inc_2common_2math_2poly__roots_8h" alt=""/></div>
+<map name="core_2common_2inc_2common_2math_2poly__roots_8h" id="core_2common_2inc_2common_2math_2poly__roots_8h">
+<area shape="rect" title=" " alt="" coords="1449,5,1644,47"/>
+<area shape="rect" href="common_2inc_2common_2basics_2basics_8h.html" title=" " alt="" coords="871,95,1052,121"/>
+<area shape="rect" title=" " alt="" coords="1491,244,1571,271"/>
+<area shape="rect" title=" " alt="" coords="1584,95,1811,121"/>
+<area shape="rect" href="macros_8h.html" title=" " alt="" coords="1321,169,1509,196"/>
+<area shape="rect" href="tic__toc_8h.html" title=" " alt="" coords="87,169,270,196"/>
+<area shape="rect" title=" " alt="" coords="835,169,903,196"/>
+<area shape="rect" title=" " alt="" coords="928,169,995,196"/>
+<area shape="rect" title=" " alt="" coords="269,244,331,271"/>
+<area shape="rect" title=" " alt="" coords="1019,169,1146,196"/>
+<area shape="rect" title=" " alt="" coords="1171,169,1296,196"/>
+<area shape="rect" href="backward_8hpp.html" title=" " alt="" coords="698,169,811,196"/>
+<area shape="rect" title=" " alt="" coords="88,244,155,271"/>
+<area shape="rect" title=" " alt="" coords="179,244,245,271"/>
+<area shape="rect" title=" " alt="" coords="5,244,64,271"/>
+<area shape="rect" title=" " alt="" coords="983,244,1068,271"/>
+<area shape="rect" title=" " alt="" coords="1093,244,1158,271"/>
+<area shape="rect" title=" " alt="" coords="1183,244,1244,271"/>
+<area shape="rect" title=" " alt="" coords="1268,244,1335,271"/>
+<area shape="rect" title=" " alt="" coords="1359,244,1433,271"/>
+<area shape="rect" title=" " alt="" coords="356,244,431,271"/>
+<area shape="rect" title=" " alt="" coords="455,244,505,271"/>
+<area shape="rect" title=" " alt="" coords="529,244,604,271"/>
+<area shape="rect" title=" " alt="" coords="629,244,718,271"/>
+<area shape="rect" title=" " alt="" coords="743,244,801,271"/>
+<area shape="rect" title=" " alt="" coords="825,244,884,271"/>
+<area shape="rect" title=" " alt="" coords="908,244,959,271"/>
+</map>
+</div>
+</div>
+<p><a href="poly__roots_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a1c1bd4de0387b9e1bee6b976d62f8e35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#a1c1bd4de0387b9e1bee6b976d62f8e35">_CORE_COMMON_INC_COMMON_MATH_POLY_ROOTS_H_</a></td></tr>
+<tr class="separator:a1c1bd4de0387b9e1bee6b976d62f8e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a5b1ef571b298b14e320d7d9f31528871"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#a5b1ef571b298b14e320d7d9f31528871">quad</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d)</td></tr>
+<tr class="memdesc:a5b1ef571b298b14e320d7d9f31528871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quadratic equation: <img class="formulaInl" alt="$b*t^2+c*t+d = 0$" src="form_0.png"/>  <a href="poly__roots_8h.html#a5b1ef571b298b14e320d7d9f31528871">更多...</a><br /></td></tr>
+<tr class="separator:a5b1ef571b298b14e320d7d9f31528871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af270499b7f6d6b2bb04528b3d46adec3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3">cubic</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d)</td></tr>
+<tr class="memdesc:af270499b7f6d6b2bb04528b3d46adec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cubic equation: <img class="formulaInl" alt="$a*t^3+b*t^2+c*t+d = 0$" src="form_1.png"/>  <a href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3">更多...</a><br /></td></tr>
+<tr class="separator:af270499b7f6d6b2bb04528b3d46adec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e53038927f416e637df83d4a0b18bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc">quartic</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> e)</td></tr>
+<tr class="memdesc:a11e53038927f416e637df83d4a0b18bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quartic equation: <img class="formulaInl" alt="$a*t^4+b*t^3+c*t^2+d*t+e = 0$" src="form_2.png"/>  <a href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc">更多...</a><br /></td></tr>
+<tr class="separator:a11e53038927f416e637df83d4a0b18bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981120793ddb8cdf9ce466e8c2e70e4b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b">solve</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> e)</td></tr>
+<tr class="memdesc:a981120793ddb8cdf9ce466e8c2e70e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">General solver for <img class="formulaInl" alt="$a*t^4+b*t^3+c*t^2+d*t+e = 0$" src="form_2.png"/> <img class="formulaInl" alt="$a, b, c$" src="form_3.png"/> can be zero. The function itself checks the highest order of the polynomial.  <a href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b">更多...</a><br /></td></tr>
+<tr class="separator:a981120793ddb8cdf9ce466e8c2e70e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a087eab8672b8862096d476893434b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b">solve</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> e, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> f)</td></tr>
+<tr class="memdesc:ac6a087eab8672b8862096d476893434b"><td class="mdescLeft">&#160;</td><td class="mdescRight">General solver for <img class="formulaInl" alt="$a*t^5+b*t^4+c*t^3+d*t^2+e*t+f = 0$" src="form_4.png"/>  <a href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b">更多...</a><br /></td></tr>
+<tr class="separator:ac6a087eab8672b8862096d476893434b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81382faed5667c02f3f447c3eefd064"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poly__roots_8h.html#af81382faed5667c02f3f447c3eefd064">solve</a> (<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> d, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> e, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> f, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> g)</td></tr>
+<tr class="memdesc:af81382faed5667c02f3f447c3eefd064"><td class="mdescLeft">&#160;</td><td class="mdescRight">General solver for <img class="formulaInl" alt="$a*t^6+b*t^5+c*t^4+d*t^3+e*t^2+f*t+g = 0$" src="form_5.png"/>  <a href="poly__roots_8h.html#af81382faed5667c02f3f447c3eefd064">更多...</a><br /></td></tr>
+<tr class="separator:af81382faed5667c02f3f447c3eefd064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a1c1bd4de0387b9e1bee6b976d62f8e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1bd4de0387b9e1bee6b976d62f8e35">&#9670;&nbsp;</a></span>_CORE_COMMON_INC_COMMON_MATH_POLY_ROOTS_H_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _CORE_COMMON_INC_COMMON_MATH_POLY_ROOTS_H_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00009">9</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af270499b7f6d6b2bb04528b3d46adec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af270499b7f6d6b2bb04528b3d46adec3">&#9670;&nbsp;</a></span>cubic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; cubic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cubic equation: <img class="formulaInl" alt="$a*t^3+b*t^2+c*t+d = 0$" src="form_1.png"/> </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00028">28</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_cgraph.png" border="0" usemap="#poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_cgraph" alt=""/></div>
+<map name="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_cgraph" id="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_cgraph">
+<area shape="rect" title="Cubic equation:" alt="" coords="5,5,61,32"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="109,5,184,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_icgraph.png" border="0" usemap="#poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_icgraph" alt=""/></div>
+<map name="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_icgraph" id="poly__roots_8h_af270499b7f6d6b2bb04528b3d46adec3_icgraph">
+<area shape="rect" title="Cubic equation:" alt="" coords="331,31,387,57"/>
+<area shape="rect" href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc" title="Quartic equation:" alt="" coords="216,5,283,32"/>
+<area shape="rect" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,31,168,57"/>
+<area shape="rect" href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b" title="General solver for" alt="" coords="5,31,63,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5b1ef571b298b14e320d7d9f31528871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1ef571b298b14e320d7d9f31528871">&#9670;&nbsp;</a></span>quad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; quad </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Quadratic equation: <img class="formulaInl" alt="$b*t^2+c*t+d = 0$" src="form_0.png"/> </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00015">15</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_cgraph.png" border="0" usemap="#poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_cgraph" alt=""/></div>
+<map name="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_cgraph" id="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_cgraph">
+<area shape="rect" title="Quadratic equation:" alt="" coords="5,5,60,32"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="108,5,183,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_icgraph.png" border="0" usemap="#poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_icgraph" alt=""/></div>
+<map name="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_icgraph" id="poly__roots_8h_a5b1ef571b298b14e320d7d9f31528871_icgraph">
+<area shape="rect" title="Quadratic equation:" alt="" coords="216,5,271,32"/>
+<area shape="rect" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,5,168,32"/>
+<area shape="rect" href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b" title="General solver for" alt="" coords="5,5,63,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a11e53038927f416e637df83d4a0b18bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e53038927f416e637df83d4a0b18bc">&#9670;&nbsp;</a></span>quartic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; quartic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Quartic equation: <img class="formulaInl" alt="$a*t^4+b*t^3+c*t^2+d*t+e = 0$" src="form_2.png"/> </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00063">63</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_cgraph.png" border="0" usemap="#poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_cgraph" alt=""/></div>
+<map name="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_cgraph" id="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_cgraph">
+<area shape="rect" title="Quartic equation:" alt="" coords="5,31,72,57"/>
+<area shape="rect" href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3" title="Cubic equation:" alt="" coords="120,5,176,32"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="224,31,299,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_icgraph.png" border="0" usemap="#poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_icgraph" alt=""/></div>
+<map name="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_icgraph" id="poly__roots_8h_a11e53038927f416e637df83d4a0b18bc_icgraph">
+<area shape="rect" title="Quartic equation:" alt="" coords="216,5,283,32"/>
+<area shape="rect" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,5,168,32"/>
+<area shape="rect" href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b" title="General solver for" alt="" coords="5,5,63,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a981120793ddb8cdf9ce466e8c2e70e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981120793ddb8cdf9ce466e8c2e70e4b">&#9670;&nbsp;</a></span>solve() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>General solver for <img class="formulaInl" alt="$a*t^4+b*t^3+c*t^2+d*t+e = 0$" src="form_2.png"/> <img class="formulaInl" alt="$a, b, c$" src="form_3.png"/> can be zero. The function itself checks the highest order of the polynomial. </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00109">109</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_cgraph.png" border="0" usemap="#poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_cgraph" alt=""/></div>
+<map name="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_cgraph" id="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_cgraph">
+<area shape="rect" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="5,56,63,83"/>
+<area shape="rect" href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3" title="Cubic equation:" alt="" coords="225,56,281,83"/>
+<area shape="rect" href="poly__roots_8h.html#a5b1ef571b298b14e320d7d9f31528871" title="Quadratic equation:" alt="" coords="226,5,281,32"/>
+<area shape="rect" href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc" title="Quartic equation:" alt="" coords="111,107,177,133"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="329,56,404,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_icgraph.png" border="0" usemap="#poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_icgraph" alt=""/></div>
+<map name="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_icgraph" id="poly__roots_8h_a981120793ddb8cdf9ce466e8c2e70e4b_icgraph">
+<area shape="rect" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,5,168,32"/>
+<area shape="rect" href="poly__roots_8h.html#ac6a087eab8672b8862096d476893434b" title="General solver for" alt="" coords="5,5,63,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac6a087eab8672b8862096d476893434b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a087eab8672b8862096d476893434b">&#9670;&nbsp;</a></span>solve() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>General solver for <img class="formulaInl" alt="$a*t^5+b*t^4+c*t^3+d*t^2+e*t+f = 0$" src="form_4.png"/> </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00126">126</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_ac6a087eab8672b8862096d476893434b_cgraph.png" border="0" usemap="#poly__roots_8h_ac6a087eab8672b8862096d476893434b_cgraph" alt=""/></div>
+<map name="poly__roots_8h_ac6a087eab8672b8862096d476893434b_cgraph" id="poly__roots_8h_ac6a087eab8672b8862096d476893434b_cgraph">
+<area shape="rect" title="General solver for" alt="" coords="5,56,63,83"/>
+<area shape="rect" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,56,168,83"/>
+<area shape="rect" href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3" title="Cubic equation:" alt="" coords="331,56,387,83"/>
+<area shape="rect" href="poly__roots_8h.html#a5b1ef571b298b14e320d7d9f31528871" title="Quadratic equation:" alt="" coords="331,5,386,32"/>
+<area shape="rect" href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc" title="Quartic equation:" alt="" coords="216,107,283,133"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="435,56,509,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af81382faed5667c02f3f447c3eefd064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81382faed5667c02f3f447c3eefd064">&#9670;&nbsp;</a></span>solve() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>General solver for <img class="formulaInl" alt="$a*t^6+b*t^5+c*t^4+d*t^3+e*t^2+f*t+g = 0$" src="form_5.png"/> </p>
+
+<p class="definition">在文件 <a class="el" href="poly__roots_8h_source.html">poly_roots.h</a> 第 <a class="el" href="poly__roots_8h_source.html#l00152">152</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="poly__roots_8h_af81382faed5667c02f3f447c3eefd064_cgraph.png" border="0" usemap="#poly__roots_8h_af81382faed5667c02f3f447c3eefd064_cgraph" alt=""/></div>
+<map name="poly__roots_8h_af81382faed5667c02f3f447c3eefd064_cgraph" id="poly__roots_8h_af81382faed5667c02f3f447c3eefd064_cgraph">
+<area shape="rect" title="General solver for" alt="" coords="5,56,63,83"/>
+<area shape="rect" href="poly__roots_8h.html#a981120793ddb8cdf9ce466e8c2e70e4b" title="General solver for &#160;&#160;can be zero. The function itself checks the highest order of the polynomial." alt="" coords="111,56,168,83"/>
+<area shape="rect" href="poly__roots_8h.html#af270499b7f6d6b2bb04528b3d46adec3" title="Cubic equation:" alt="" coords="331,56,387,83"/>
+<area shape="rect" href="poly__roots_8h.html#a5b1ef571b298b14e320d7d9f31528871" title="Quadratic equation:" alt="" coords="331,5,386,32"/>
+<area shape="rect" href="poly__roots_8h.html#a11e53038927f416e637df83d4a0b18bc" title="Quartic equation:" alt="" coords="216,107,283,133"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="435,56,509,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

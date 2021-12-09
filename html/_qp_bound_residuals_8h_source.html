@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/QpBoundResiduals.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QpBoundResiduals.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_qp_bound_residuals_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef QPBOUNDRESIDUALS_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define QPBOUNDRESIDUALS_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_residuals_8h.html">Residuals.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_bound_data.html">QpBoundData</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_bound.html">QpBound</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_bound_residuals.html">QpBoundResiduals</a> : <span class="keyword">public</span> <a class="code" href="class_residuals.html">Residuals</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a03f50b48089360335f59062b4169a19e">   23</a></span>&#160;  <a class="code" href="class_qp_bound.html">QpBound</a> * <a class="code" href="class_qp_bound_residuals.html#a03f50b48089360335f59062b4169a19e">factory</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#aeba00eba78b9e00e4224fe8720cdc1a4">   25</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_qp_bound_residuals.html#aeba00eba78b9e00e4224fe8720cdc1a4">nx</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#afc5e1dae8e74a9d2396af977f3fd8d69">   27</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#afc5e1dae8e74a9d2396af977f3fd8d69">rc</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a2371cbdacbe1c721b88710eb02d8666b">   28</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#a2371cbdacbe1c721b88710eb02d8666b">rl</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a3881eb889570db10891eab57a14938c6">   29</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#a3881eb889570db10891eab57a14938c6">ru</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a204f6b1be2b30196dd9623c911694f4e">   30</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#a204f6b1be2b30196dd9623c911694f4e">rttau</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#ab17a1a870aedd2bb94d00d109a489fd0">   31</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#ab17a1a870aedd2bb94d00d109a489fd0">rvnu</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a7c7c2febb37be5e81b5500bc3bb358ed">   32</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#a7c7c2febb37be5e81b5500bc3bb358ed">index_lower</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_qp_bound_residuals.html#a541f7e7e506f86dfef66e93c733429df">   33</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_bound_residuals.html#a541f7e7e506f86dfef66e93c733429df">index_upper</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="class_qp_bound_residuals.html#afa7fc5f641b812fed518ab395afaf35c">QpBoundResiduals</a>( <a class="code" href="class_qp_bound.html">QpBound</a> * f, <a class="code" href="class_qp_bound_data.html">QpBoundData</a> * prob, <span class="keywordtype">int</span> nx_);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="class_qp_bound_residuals.html#afa7fc5f641b812fed518ab395afaf35c">QpBoundResiduals</a>( <a class="code" href="class_qp_bound.html">QpBound</a> * f, <a class="code" href="class_ooqp_vector.html">OoqpVector</a> * rc_,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="class_qp_bound_data.html">QpBoundData</a> * prob, <span class="keywordtype">int</span> nx_);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_qp_bound_residuals.html#a4ce5483930b6ceef3567ac45a827f0ef">~QpBoundResiduals</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_qp_bound_residuals.html">QpBoundResiduals</a> *<a class="code" href="class_qp_bound_residuals.html#a8653720c154ffa753dadcea0bde79f33">clone</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#af6b0e824e2e26c07b056ab78e44e42db">calcresids</a>( <a class="code" href="class_data.html">Data</a> *problem, <a class="code" href="class_variables.html">Variables</a> *vars );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#a41902623904b366d8957af2e238be0c8">add_r3_xz_alpha</a>(<a class="code" href="class_variables.html">Variables</a> *vars, <span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#a8ea3d646c1e87601d0b0075c603f1392">set_r3_xz_alpha</a>(<a class="code" href="class_variables.html">Variables</a> *vars, <span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#ae5ed2c9880dbac723a5957d567874894">clear_r1r2</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#a380dedce346037714861f916625d137c">clear_r3</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_bound_residuals.html#ae4d679faa4d363f3b203f4b8adebc8d7">project_r3</a>(<span class="keywordtype">double</span> rmin, <span class="keywordtype">double</span> rmax);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_qp_bound_residuals_html_a4ce5483930b6ceef3567ac45a827f0ef"><div class="ttname"><a href="class_qp_bound_residuals.html#a4ce5483930b6ceef3567ac45a827f0ef">QpBoundResiduals::~QpBoundResiduals</a></div><div class="ttdeci">virtual ~QpBoundResiduals()</div></div>
+<div class="ttc" id="aclass_qp_bound_data_html"><div class="ttname"><a href="class_qp_bound_data.html">QpBoundData</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_data_8h_source.html#l00024">QpBoundData.h:24</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_afa7fc5f641b812fed518ab395afaf35c"><div class="ttname"><a href="class_qp_bound_residuals.html#afa7fc5f641b812fed518ab395afaf35c">QpBoundResiduals::QpBoundResiduals</a></div><div class="ttdeci">QpBoundResiduals(QpBound *f, QpBoundData *prob, int nx_)</div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_af6b0e824e2e26c07b056ab78e44e42db"><div class="ttname"><a href="class_qp_bound_residuals.html#af6b0e824e2e26c07b056ab78e44e42db">QpBoundResiduals::calcresids</a></div><div class="ttdeci">virtual void calcresids(Data *problem, Variables *vars)</div></div>
+<div class="ttc" id="a_residuals_8h_html"><div class="ttname"><a href="_residuals_8h.html">Residuals.h</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_aeba00eba78b9e00e4224fe8720cdc1a4"><div class="ttname"><a href="class_qp_bound_residuals.html#aeba00eba78b9e00e4224fe8720cdc1a4">QpBoundResiduals::nx</a></div><div class="ttdeci">int nx</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00025">QpBoundResiduals.h:25</a></div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html"><div class="ttname"><a href="class_qp_bound_residuals.html">QpBoundResiduals</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00020">QpBoundResiduals.h:20</a></div></div>
+<div class="ttc" id="aclass_qp_bound_html"><div class="ttname"><a href="class_qp_bound.html">QpBound</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_8h_source.html#l00027">QpBound.h:27</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a3881eb889570db10891eab57a14938c6"><div class="ttname"><a href="class_qp_bound_residuals.html#a3881eb889570db10891eab57a14938c6">QpBoundResiduals::ru</a></div><div class="ttdeci">OoqpVectorHandle ru</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00029">QpBoundResiduals.h:29</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_ae4d679faa4d363f3b203f4b8adebc8d7"><div class="ttname"><a href="class_qp_bound_residuals.html#ae4d679faa4d363f3b203f4b8adebc8d7">QpBoundResiduals::project_r3</a></div><div class="ttdeci">virtual void project_r3(double rmin, double rmax)</div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a7c7c2febb37be5e81b5500bc3bb358ed"><div class="ttname"><a href="class_qp_bound_residuals.html#a7c7c2febb37be5e81b5500bc3bb358ed">QpBoundResiduals::index_lower</a></div><div class="ttdeci">OoqpVectorHandle index_lower</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00032">QpBoundResiduals.h:32</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a2371cbdacbe1c721b88710eb02d8666b"><div class="ttname"><a href="class_qp_bound_residuals.html#a2371cbdacbe1c721b88710eb02d8666b">QpBoundResiduals::rl</a></div><div class="ttdeci">OoqpVectorHandle rl</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00028">QpBoundResiduals.h:28</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_smart_pointer_html"><div class="ttname"><a href="class_smart_pointer.html">SmartPointer&lt; OoqpVector &gt;</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a541f7e7e506f86dfef66e93c733429df"><div class="ttname"><a href="class_qp_bound_residuals.html#a541f7e7e506f86dfef66e93c733429df">QpBoundResiduals::index_upper</a></div><div class="ttdeci">OoqpVectorHandle index_upper</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00033">QpBoundResiduals.h:33</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_afc5e1dae8e74a9d2396af977f3fd8d69"><div class="ttname"><a href="class_qp_bound_residuals.html#afc5e1dae8e74a9d2396af977f3fd8d69">QpBoundResiduals::rc</a></div><div class="ttdeci">OoqpVectorHandle rc</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00027">QpBoundResiduals.h:27</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a03f50b48089360335f59062b4169a19e"><div class="ttname"><a href="class_qp_bound_residuals.html#a03f50b48089360335f59062b4169a19e">QpBoundResiduals::factory</a></div><div class="ttdeci">QpBound * factory</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00023">QpBoundResiduals.h:23</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a8653720c154ffa753dadcea0bde79f33"><div class="ttname"><a href="class_qp_bound_residuals.html#a8653720c154ffa753dadcea0bde79f33">QpBoundResiduals::clone</a></div><div class="ttdeci">QpBoundResiduals * clone()</div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a380dedce346037714861f916625d137c"><div class="ttname"><a href="class_qp_bound_residuals.html#a380dedce346037714861f916625d137c">QpBoundResiduals::clear_r3</a></div><div class="ttdeci">virtual void clear_r3()</div></div>
+<div class="ttc" id="a_ooqp_vector_handle_8h_html"><div class="ttname"><a href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a204f6b1be2b30196dd9623c911694f4e"><div class="ttname"><a href="class_qp_bound_residuals.html#a204f6b1be2b30196dd9623c911694f4e">QpBoundResiduals::rttau</a></div><div class="ttdeci">OoqpVectorHandle rttau</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00030">QpBoundResiduals.h:30</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a41902623904b366d8957af2e238be0c8"><div class="ttname"><a href="class_qp_bound_residuals.html#a41902623904b366d8957af2e238be0c8">QpBoundResiduals::add_r3_xz_alpha</a></div><div class="ttdeci">virtual void add_r3_xz_alpha(Variables *vars, double alpha)</div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_ab17a1a870aedd2bb94d00d109a489fd0"><div class="ttname"><a href="class_qp_bound_residuals.html#ab17a1a870aedd2bb94d00d109a489fd0">QpBoundResiduals::rvnu</a></div><div class="ttdeci">OoqpVectorHandle rvnu</div><div class="ttdef"><b>Definition:</b> <a href="_qp_bound_residuals_8h_source.html#l00031">QpBoundResiduals.h:31</a></div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_ae5ed2c9880dbac723a5957d567874894"><div class="ttname"><a href="class_qp_bound_residuals.html#ae5ed2c9880dbac723a5957d567874894">QpBoundResiduals::clear_r1r2</a></div><div class="ttdeci">virtual void clear_r1r2()</div></div>
+<div class="ttc" id="aclass_qp_bound_residuals_html_a8ea3d646c1e87601d0b0075c603f1392"><div class="ttname"><a href="class_qp_bound_residuals.html#a8ea3d646c1e87601d0b0075c603f1392">QpBoundResiduals::set_r3_xz_alpha</a></div><div class="ttdeci">virtual void set_r3_xz_alpha(Variables *vars, double alpha)</div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

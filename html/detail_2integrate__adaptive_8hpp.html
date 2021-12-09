@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/integrate/detail/integrate_adaptive.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_50840dcb10be723b7334bf54ab1a8e31.html">integrate</a></li><li class="navelem"><a class="el" href="dir_19be3db3dc9def5e63f7731659bf8e49.html">detail</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">integrate_adaptive.hpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;<a class="el" href="stepper__categories_8hpp_source.html">boost/numeric/odeint/stepper/stepper_categories.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controlled__step__result_8hpp_source.html">boost/numeric/odeint/stepper/controlled_step_result.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="detail_2integrate__const_8hpp_source.html">boost/numeric/odeint/integrate/detail/integrate_const.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="bind_8hpp_source.html">boost/numeric/odeint/util/bind.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="unwrap__reference_8hpp_source.html">boost/numeric/odeint/util/unwrap_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="copy_8hpp_source.html">boost/numeric/odeint/util/copy.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="less__with__sign_8hpp_source.html">boost/numeric/odeint/util/detail/less_with_sign.hpp</a>&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+integrate_adaptive.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="detail_2integrate__adaptive_8hpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hpp">
+<area shape="rect" title=" " alt="" coords="455,5,645,91"/>
+<area shape="rect" title=" " alt="" coords="177,153,264,180"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="5,250,236,291"/>
+<area shape="rect" href="controlled__step__result_8hpp.html" title=" " alt="" coords="838,139,1017,195"/>
+<area shape="rect" href="detail_2integrate__const_8hpp.html" title=" " alt="" coords="390,139,579,195"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="260,250,456,291"/>
+<area shape="rect" href="less__with__sign_8hpp.html" title=" " alt="" coords="531,243,691,299"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="654,146,814,187"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="1041,146,1201,187"/>
+<area shape="rect" title=" " alt="" coords="1225,153,1305,180"/>
+<area shape="rect" title=" " alt="" coords="17,347,203,388"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="542,347,702,388"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="358,347,518,388"/>
+<area shape="rect" title=" " alt="" coords="227,354,334,381"/>
+<area shape="rect" title=" " alt="" coords="258,436,389,463"/>
+<area shape="rect" title=" " alt="" coords="639,436,818,463"/>
+<area shape="rect" title=" " alt="" coords="843,436,1065,463"/>
+<area shape="rect" title=" " alt="" coords="413,436,615,463"/>
+<area shape="rect" title=" " alt="" coords="767,257,885,284"/>
+<area shape="rect" title=" " alt="" coords="909,250,1076,291"/>
+<area shape="rect" title=" " alt="" coords="1100,250,1248,291"/>
+<area shape="rect" href="is__range_8hpp.html" title=" " alt="" coords="1272,250,1447,291"/>
+<area shape="rect" title=" " alt="" coords="1455,354,1525,381"/>
+<area shape="rect" title=" " alt="" coords="1550,354,1721,381"/>
+<area shape="rect" title=" " alt="" coords="919,354,1093,381"/>
+<area shape="rect" title=" " alt="" coords="1117,354,1263,381"/>
+<area shape="rect" title=" " alt="" coords="1288,354,1431,381"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="detail_2integrate__adaptive_8hpp__dep__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hppdep" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hppdep" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2integrate_2detail_2integrate__adaptive_8hppdep">
+<area shape="rect" title=" " alt="" coords="3847,5,4036,91"/>
+<area shape="rect" href="detail_2integrate__const_8hpp.html" title=" " alt="" coords="3847,139,4036,224"/>
+<area shape="rect" href="integrate__const_8hpp.html" title=" " alt="" coords="3779,279,3997,350"/>
+<area shape="rect" href="detail_2integrate__n__steps_8hpp.html" title=" " alt="" coords="4060,139,4249,224"/>
+<area shape="rect" href="integrate__adaptive_8hpp.html" title=" " alt="" coords="4273,146,4513,217"/>
+<area shape="rect" href="odeint_8hpp.html" title=" " alt="" coords="4269,413,4461,469"/>
+<area shape="rect" href="integrate_8cpp.html" title=" " alt="" coords="3861,405,4041,476"/>
+<area shape="rect" href="integrate__implicit_8cpp.html" title=" " alt="" coords="4065,405,4245,476"/>
+<area shape="rect" href="lorenz_8cpp.html" title=" " alt="" coords="3643,405,3837,476"/>
+<area shape="rect" href="ctx__idm__model_8cc.html" title=" " alt="" coords="5,531,173,587"/>
+<area shape="rect" href="ideal__steer__model_8cc.html" title=" " alt="" coords="198,531,378,587"/>
+<area shape="rect" href="idm__model_8cc.html" title=" " alt="" coords="403,531,576,587"/>
+<area shape="rect" href="vehicle__model_8cc.html" title=" " alt="" coords="600,531,795,587"/>
+<area shape="rect" href="bind__member__functions_8cpp.html" title=" " alt="" coords="819,524,1037,595"/>
+<area shape="rect" href="bind__member__functions__cpp11_8cpp.html" title=" " alt="" coords="1061,524,1317,595"/>
+<area shape="rect" href="examples_2bulirsch__stoer_8cpp.html" title=" " alt="" coords="1341,524,1560,595"/>
+<area shape="rect" href="chaotic__system_8cpp.html" title=" " alt="" coords="1584,524,1803,595"/>
+<area shape="rect" href="elliptic__functions_8cpp.html" title=" " alt="" coords="1827,524,2045,595"/>
+<area shape="rect" href="fpu_8cpp.html" title=" " alt="" coords="2069,524,2288,595"/>
+<area shape="rect" href="generation__functions_8cpp.html" title=" " alt="" coords="2312,524,2531,595"/>
+<area shape="rect" href="lorenz__gmpxx_8cpp.html" title=" " alt="" coords="2555,524,2773,595"/>
+<area shape="rect" href="harmonic__oscillator_8cpp.html" title=" " alt="" coords="2797,524,3016,595"/>
+<area shape="rect" href="harmonic__oscillator__units_8cpp.html" title=" " alt="" coords="3041,524,3261,595"/>
+<area shape="rect" href="heun_8cpp.html" title=" " alt="" coords="3285,524,3504,595"/>
+<area shape="rect" href="list__lattice_8cpp.html" title=" " alt="" coords="3528,524,3747,595"/>
+<area shape="rect" href="lorenz__point_8cpp.html" title=" " alt="" coords="3771,524,3989,595"/>
+<area shape="rect" href="gauss__packet_8cpp.html" title=" " alt="" coords="4013,524,4232,595"/>
+<area shape="rect" href="implicit__euler__mtl_8cpp.html" title=" " alt="" coords="4256,524,4475,595"/>
+<area shape="rect" href="my__vector_8cpp.html" title=" " alt="" coords="4499,524,4717,595"/>
+<area shape="rect" href="phase__oscillator__ensemble_8cpp.html" title=" " alt="" coords="4742,524,4973,595"/>
+<area shape="rect" href="black__hole_8cpp.html" title=" " alt="" coords="4997,524,5216,595"/>
+<area shape="rect" href="resizing__lattice_8cpp.html" title=" " alt="" coords="5240,524,5459,595"/>
+<area shape="rect" href="simple1d_8cpp.html" title=" " alt="" coords="5483,524,5701,595"/>
+<area shape="rect" href="solar__system_8cpp.html" title=" " alt="" coords="5725,524,5944,595"/>
+<area shape="rect" href="stepper__details_8cpp.html" title=" " alt="" coords="5968,524,6187,595"/>
+<area shape="rect" href="stiff__system_8cpp.html" title=" " alt="" coords="6211,524,6429,595"/>
+<area shape="rect" href="stochastic__euler_8cpp.html" title=" " alt="" coords="6453,524,6672,595"/>
+<area shape="rect" href="stuart__landau_8cpp.html" title=" " alt="" coords="6696,524,6915,595"/>
+<area shape="rect" href="two__dimensional__phase__lattice_8cpp.html" title=" " alt="" coords="6939,524,7197,595"/>
+<area shape="rect" href="lorenz__ublas_8cpp.html" title=" " alt="" coords="7221,524,7440,595"/>
+<area shape="rect" href="van__der__pol__stiff_8cpp.html" title=" " alt="" coords="7464,524,7683,595"/>
+<area shape="rect" href="lorenz__ensemble_8cpp.html" title=" " alt="" coords="7707,524,7925,595"/>
+<area shape="rect" href="runge__kutta_8cpp.html" title=" " alt="" coords="7950,524,8138,595"/>
+<area shape="rect" href="symplectic_8cpp.html" title=" " alt="" coords="8163,524,8344,595"/>
+<area shape="rect" href="check__gmp_8cpp.html" title=" " alt="" coords="8368,524,8589,595"/>
+<area shape="rect" href="gmp__integrate_8cpp.html" title=" " alt="" coords="8613,524,8856,595"/>
+<area shape="rect" href="integrate__n__steps_8hpp.html" title=" " alt="" coords="4073,272,4237,357"/>
+<area shape="rect" href="integrate_8hpp.html" title=" " alt="" coords="4568,279,4744,350"/>
+<area shape="rect" href="test_2bulirsch__stoer_8cpp.html" title=" " alt="" coords="4363,279,4543,350"/>
+<area shape="rect" href="trivial__state_8cpp.html" title=" " alt="" coords="4769,279,4949,350"/>
+</map>
+</div>
+</div>
+<p><a href="detail_2integrate__adaptive_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric.html">boost::numeric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html">boost::numeric::odeint::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a12b08855d25ca7201ad3d12dc6212bbb"><td class="memTemplParams" colspan="2">template&lt;class Stepper , class System , class State , class Time , class Observer &gt; </td></tr>
+<tr class="memitem:a12b08855d25ca7201ad3d12dc6212bbb"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a> (Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Observer observer, stepper_tag)</td></tr>
+<tr class="separator:a12b08855d25ca7201ad3d12dc6212bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ebbdc4d88092abf455348c6d3ac708"><td class="memTemplParams" colspan="2">template&lt;class Stepper , class System , class State , class Time , class Observer &gt; </td></tr>
+<tr class="memitem:a52ebbdc4d88092abf455348c6d3ac708"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">boost::numeric::odeint::detail::integrate_adaptive</a> (Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Observer observer, stepper_tag)</td></tr>
+<tr class="separator:a52ebbdc4d88092abf455348c6d3ac708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b37b49efa341ba06f0c7a1259d03ec8"><td class="memTemplParams" colspan="2">template&lt;class Stepper , class System , class State , class Time , class Observer &gt; </td></tr>
+<tr class="memitem:a7b37b49efa341ba06f0c7a1259d03ec8"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7b37b49efa341ba06f0c7a1259d03ec8">boost::numeric::odeint::detail::integrate_adaptive</a> (Stepper stepper, System system, State &amp;start_state, Time &amp;start_time, Time end_time, Time &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Observer observer, controlled_stepper_tag)</td></tr>
+<tr class="separator:a7b37b49efa341ba06f0c7a1259d03ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a88d812ca5e20f23a40fa587aeb49d"><td class="memTemplParams" colspan="2">template&lt;class Stepper , class System , class State , class Time , class Observer &gt; </td></tr>
+<tr class="memitem:a95a88d812ca5e20f23a40fa587aeb49d"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a95a88d812ca5e20f23a40fa587aeb49d">boost::numeric::odeint::detail::integrate_adaptive</a> (Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Observer observer, dense_output_stepper_tag)</td></tr>
+<tr class="separator:a95a88d812ca5e20f23a40fa587aeb49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

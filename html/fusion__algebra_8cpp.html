@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/fusion_algebra.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">fusion_algebra.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/numeric/odeint/config.hpp</a>&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/test/floating_point_comparison.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/length.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/time.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/velocity.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/acceleration.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/io.hpp&gt;</code><br />
+<code>#include &lt;boost/fusion/container.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="default__operations_8hpp_source.html">boost/numeric/odeint/algebra/default_operations.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="boost_2numeric_2odeint_2algebra_2fusion__algebra_8hpp_source.html">boost/numeric/odeint/algebra/fusion_algebra.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+fusion_algebra.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2fusion__algebra_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2fusion__algebra_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2fusion__algebra_8cpp">
+<area shape="rect" title=" " alt="" coords="959,5,1139,76"/>
+<area shape="rect" title=" " alt="" coords="5,131,68,158"/>
+<area shape="rect" title=" " alt="" coords="92,131,171,158"/>
+<area shape="rect" title=" " alt="" coords="195,131,255,158"/>
+<area shape="rect" title=" " alt="" coords="279,131,365,158"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="390,124,550,165"/>
+<area shape="rect" title=" " alt="" coords="574,131,750,158"/>
+<area shape="rect" title=" " alt="" coords="774,124,947,165"/>
+<area shape="rect" title=" " alt="" coords="972,124,1125,165"/>
+<area shape="rect" title=" " alt="" coords="1149,124,1303,165"/>
+<area shape="rect" title=" " alt="" coords="1327,124,1480,165"/>
+<area shape="rect" title=" " alt="" coords="1504,124,1657,165"/>
+<area shape="rect" title=" " alt="" coords="1681,124,1835,165"/>
+<area shape="rect" title=" " alt="" coords="1859,131,2054,158"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="2078,124,2307,165"/>
+<area shape="rect" href="boost_2numeric_2odeint_2algebra_2fusion__algebra_8hpp.html" title=" " alt="" coords="2649,124,2851,165"/>
+<area shape="rect" title=" " alt="" coords="1137,221,1267,247"/>
+<area shape="rect" title=" " alt="" coords="1939,221,2025,247"/>
+<area shape="rect" title=" " alt="" coords="2049,221,2171,247"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="2195,213,2355,255"/>
+<area shape="rect" title=" " alt="" coords="1961,303,2139,329"/>
+<area shape="rect" title=" " alt="" coords="2164,303,2387,329"/>
+<area shape="rect" title=" " alt="" coords="2411,303,2614,329"/>
+<area shape="rect" title=" " alt="" coords="2380,213,2547,255"/>
+<area shape="rect" title=" " alt="" coords="2571,213,2740,255"/>
+<area shape="rect" title=" " alt="" coords="2765,213,2925,255"/>
+<area shape="rect" title=" " alt="" coords="2949,213,3156,255"/>
+<area shape="rect" title=" " alt="" coords="3181,213,3370,255"/>
+</map>
+</div>
+</div>
+<p><a href="fusion__algebra_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfusion__fixture.html">fusion_fixture</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_fusion_algebra</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84593eeb093702aa28cf1013e8557d30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a84593eeb093702aa28cf1013e8557d30">BOOST_FUSION_INVOKE_MAX_ARITY</a>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:a84593eeb093702aa28cf1013e8557d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79716614bb96fdbecc892e5a660782a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a79716614bb96fdbecc892e5a660782a3">BOOST_RESULT_OF_NUM_ARGS</a>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:a79716614bb96fdbecc892e5a660782a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></td></tr>
+<tr class="separator:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c7d9ec1c2fcb8703531e446f28430a"><td class="memItemLeft" align="right" valign="top">typedef units::quantity&lt; si::time, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a98c7d9ec1c2fcb8703531e446f28430a">time_type</a></td></tr>
+<tr class="separator:a98c7d9ec1c2fcb8703531e446f28430a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f6787deb506fe0fa838d7dcc337c45"><td class="memItemLeft" align="right" valign="top">typedef units::quantity&lt; si::length, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a95f6787deb506fe0fa838d7dcc337c45">length_type</a></td></tr>
+<tr class="separator:a95f6787deb506fe0fa838d7dcc337c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e496c09944564b719b634685f96fc3"><td class="memItemLeft" align="right" valign="top">typedef units::quantity&lt; si::velocity, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a03e496c09944564b719b634685f96fc3">velocity_type</a></td></tr>
+<tr class="separator:a03e496c09944564b719b634685f96fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b63d69921ec4416fc9923d6b67484d"><td class="memItemLeft" align="right" valign="top">typedef units::quantity&lt; si::acceleration, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a99b63d69921ec4416fc9923d6b67484d">acceleration_type</a></td></tr>
+<tr class="separator:a99b63d69921ec4416fc9923d6b67484d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4733a36e3a96b3f315b78bf8df4f4660"><td class="memItemLeft" align="right" valign="top">typedef fusion::vector&lt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a0a88c51c041d1233ff760271fce7981d">length_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a4733a36e3a96b3f315b78bf8df4f4660">state_type</a></td></tr>
+<tr class="separator:a4733a36e3a96b3f315b78bf8df4f4660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b476c4b408dace62bb7bb17dade626c"><td class="memItemLeft" align="right" valign="top">typedef fusion::vector&lt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a001f86c036dd835fa025c8c3b4db7ee6">acceleration_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a></td></tr>
+<tr class="separator:a6b476c4b408dace62bb7bb17dade626c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:afcacfe502e09cdc0f74998bcf8121eb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#afcacfe502e09cdc0f74998bcf8121eb5">BOOST_AUTO_TEST_CASE</a> (for_each2)</td></tr>
+<tr class="separator:afcacfe502e09cdc0f74998bcf8121eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3863296929de746f83dfea7927fae5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#aab3863296929de746f83dfea7927fae5">BOOST_AUTO_TEST_CASE</a> (for_each3)</td></tr>
+<tr class="separator:aab3863296929de746f83dfea7927fae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9f2b54c5f9b683bcaa1cf00bad563b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a6a9f2b54c5f9b683bcaa1cf00bad563b">BOOST_AUTO_TEST_CASE</a> (for_each4)</td></tr>
+<tr class="separator:a6a9f2b54c5f9b683bcaa1cf00bad563b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fed0245fa2599b2a458d74d379f47d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#aa2fed0245fa2599b2a458d74d379f47d">BOOST_AUTO_TEST_CASE</a> (for_each5)</td></tr>
+<tr class="separator:aa2fed0245fa2599b2a458d74d379f47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc628631097931cf21016c729d1ceab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a3fc628631097931cf21016c729d1ceab">BOOST_AUTO_TEST_CASE</a> (for_each6)</td></tr>
+<tr class="separator:a3fc628631097931cf21016c729d1ceab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30533f1bc7e5332b4209226715cfa437"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a30533f1bc7e5332b4209226715cfa437">BOOST_AUTO_TEST_CASE</a> (for_each7)</td></tr>
+<tr class="separator:a30533f1bc7e5332b4209226715cfa437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36a8df1a5717acd62acc6e8edee8364"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#ac36a8df1a5717acd62acc6e8edee8364">BOOST_AUTO_TEST_CASE</a> (for_each8)</td></tr>
+<tr class="separator:ac36a8df1a5717acd62acc6e8edee8364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748c1540aec2fd7a0d529693fffcd1ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a748c1540aec2fd7a0d529693fffcd1ed">BOOST_AUTO_TEST_CASE</a> (for_each15)</td></tr>
+<tr class="separator:a748c1540aec2fd7a0d529693fffcd1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad1f878c5af0cc8843bef8c942f3247"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a9ad1f878c5af0cc8843bef8c942f3247">BOOST_AUTO_TEST_CASE</a> (reduce)</td></tr>
+<tr class="separator:a9ad1f878c5af0cc8843bef8c942f3247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a2c798c714835b255d7485dc364d9de6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1 * si::second</td></tr>
+<tr class="separator:a2c798c714835b255d7485dc364d9de6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d866f3179a58b12228da40113dfd546"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html">fusion_algebra</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion__algebra_8cpp.html#a7d866f3179a58b12228da40113dfd546">algebra</a></td></tr>
+<tr class="separator:a7d866f3179a58b12228da40113dfd546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a84593eeb093702aa28cf1013e8557d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84593eeb093702aa28cf1013e8557d30">&#9670;&nbsp;</a></span>BOOST_FUSION_INVOKE_MAX_ARITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_INVOKE_MAX_ARITY&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a79716614bb96fdbecc892e5a660782a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79716614bb96fdbecc892e5a660782a3">&#9670;&nbsp;</a></span>BOOST_RESULT_OF_NUM_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RESULT_OF_NUM_ARGS&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_fusion_algebra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a99b63d69921ec4416fc9923d6b67484d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b63d69921ec4416fc9923d6b67484d">&#9670;&nbsp;</a></span>acceleration_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::quantity&lt; si::acceleration , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a001f86c036dd835fa025c8c3b4db7ee6">acceleration_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6b476c4b408dace62bb7bb17dade626c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b476c4b408dace62bb7bb17dade626c">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fusion::vector&lt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a001f86c036dd835fa025c8c3b4db7ee6">acceleration_type</a> &gt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a95f6787deb506fe0fa838d7dcc337c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f6787deb506fe0fa838d7dcc337c45">&#9670;&nbsp;</a></span>length_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::quantity&lt; si::length , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a0a88c51c041d1233ff760271fce7981d">length_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4733a36e3a96b3f315b78bf8df4f4660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4733a36e3a96b3f315b78bf8df4f4660">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fusion::vector&lt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a0a88c51c041d1233ff760271fce7981d">length_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a> &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a98c7d9ec1c2fcb8703531e446f28430a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c7d9ec1c2fcb8703531e446f28430a">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::quantity&lt; si::time , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba0996e183cdbebc61c5cbdcccf9da15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0996e183cdbebc61c5cbdcccf9da15">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a03e496c09944564b719b634685f96fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e496c09944564b719b634685f96fc3">&#9670;&nbsp;</a></span>velocity_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef units::quantity&lt; si::velocity , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a748c1540aec2fd7a0d529693fffcd1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748c1540aec2fd7a0d529693fffcd1ed">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each15&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00166">166</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_a748c1540aec2fd7a0d529693fffcd1ed_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_a748c1540aec2fd7a0d529693fffcd1ed_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_a748c1540aec2fd7a0d529693fffcd1ed_cgraph" id="fusion__algebra_8cpp_a748c1540aec2fd7a0d529693fffcd1ed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,20,196,47"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#aedaa19450cc139cb700faf3e192dd8c1" title=" " alt="" coords="244,5,412,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afcacfe502e09cdc0f74998bcf8121eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcacfe502e09cdc0f74998bcf8121eb5">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each2&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00103">103</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_afcacfe502e09cdc0f74998bcf8121eb5_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_afcacfe502e09cdc0f74998bcf8121eb5_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_afcacfe502e09cdc0f74998bcf8121eb5_cgraph" id="fusion__algebra_8cpp_afcacfe502e09cdc0f74998bcf8121eb5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a7f4c0eb61e7c442b700847413475f498" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab3863296929de746f83dfea7927fae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3863296929de746f83dfea7927fae5">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each3&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00112">112</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_aab3863296929de746f83dfea7927fae5_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_aab3863296929de746f83dfea7927fae5_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_aab3863296929de746f83dfea7927fae5_cgraph" id="fusion__algebra_8cpp_aab3863296929de746f83dfea7927fae5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a12e24e8e97bc8dbb0c0bfa70380cae5e" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6a9f2b54c5f9b683bcaa1cf00bad563b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9f2b54c5f9b683bcaa1cf00bad563b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each4&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00121">121</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_a6a9f2b54c5f9b683bcaa1cf00bad563b_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_a6a9f2b54c5f9b683bcaa1cf00bad563b_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_a6a9f2b54c5f9b683bcaa1cf00bad563b_cgraph" id="fusion__algebra_8cpp_a6a9f2b54c5f9b683bcaa1cf00bad563b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a48ae4e4e8eaf7019d3223afaf2936f4f" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa2fed0245fa2599b2a458d74d379f47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fed0245fa2599b2a458d74d379f47d">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each5&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00130">130</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_aa2fed0245fa2599b2a458d74d379f47d_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_aa2fed0245fa2599b2a458d74d379f47d_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_aa2fed0245fa2599b2a458d74d379f47d_cgraph" id="fusion__algebra_8cpp_aa2fed0245fa2599b2a458d74d379f47d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a716f63d2ed8df0a096d323354121843b" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3fc628631097931cf21016c729d1ceab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc628631097931cf21016c729d1ceab">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each6&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00139">139</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_a3fc628631097931cf21016c729d1ceab_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_a3fc628631097931cf21016c729d1ceab_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_a3fc628631097931cf21016c729d1ceab_cgraph" id="fusion__algebra_8cpp_a3fc628631097931cf21016c729d1ceab_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a6516bc1f11ac36698e3daff18b254332" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a30533f1bc7e5332b4209226715cfa437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30533f1bc7e5332b4209226715cfa437">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each7&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00148">148</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_a30533f1bc7e5332b4209226715cfa437_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_a30533f1bc7e5332b4209226715cfa437_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_a30533f1bc7e5332b4209226715cfa437_cgraph" id="fusion__algebra_8cpp_a30533f1bc7e5332b4209226715cfa437_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a77ce1e6776d6c2be9dc041b8305cc21d" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac36a8df1a5717acd62acc6e8edee8364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36a8df1a5717acd62acc6e8edee8364">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">for_each8&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00157">157</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_ac36a8df1a5717acd62acc6e8edee8364_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_ac36a8df1a5717acd62acc6e8edee8364_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_ac36a8df1a5717acd62acc6e8edee8364_cgraph" id="fusion__algebra_8cpp_ac36a8df1a5717acd62acc6e8edee8364_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#afc9f4569c85e6fb30707d2cb0ef5ad04" title=" " alt="" coords="244,5,443,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ad1f878c5af0cc8843bef8c942f3247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad1f878c5af0cc8843bef8c942f3247">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">reduce&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00177">177</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="fusion__algebra_8cpp_a9ad1f878c5af0cc8843bef8c942f3247_cgraph.png" border="0" usemap="#fusion__algebra_8cpp_a9ad1f878c5af0cc8843bef8c942f3247_cgraph" alt=""/></div>
+<map name="fusion__algebra_8cpp_a9ad1f878c5af0cc8843bef8c942f3247_cgraph" id="fusion__algebra_8cpp_a9ad1f878c5af0cc8843bef8c942f3247_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,196,39"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html#a42a37b28eb32fe8f9690db6236c0daf0" title=" " alt="" coords="244,5,423,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a7d866f3179a58b12228da40113dfd546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d866f3179a58b12228da40113dfd546">&#9670;&nbsp;</a></span>algebra</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1fusion__algebra.html">fusion_algebra</a> algebra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2c798c714835b255d7485dc364d9de6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c798c714835b255d7485dc364d9de6a">&#9670;&nbsp;</a></span>dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> dt = 0.1 * si::second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__algebra_8cpp_source.html">fusion_algebra.cpp</a> 第 <a class="el" href="fusion__algebra_8cpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

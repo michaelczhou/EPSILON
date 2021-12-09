@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/inc/phy_simulator/arena_loader.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b9389d25cc72c4b15245e222e6f23cef.html">inc</a></li><li class="navelem"><a class="el" href="dir_42c6245ecde1b4e5ef35d8e150ba415d.html">phy_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">arena_loader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="arena__loader_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ARENA_LOADER_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ARENA_LOADER_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="json_8hpp.html">json/json.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="free__state_8h.html">common/state/free_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">phy_simulator/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacephy__simulator.html">   29</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphy__simulator_1_1_arena_loader.html">ArenaLoader</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classphy__simulator_1_1_arena_loader.html#ab7b33093d6660257e921fe4787b437a6">ArenaLoader</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classphy__simulator_1_1_arena_loader.html#ab7b33093d6660257e921fe4787b437a6">ArenaLoader</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classphy__simulator_1_1_arena_loader.html#ac8cbcb21b58b9f008e598cd930d7a4e5">vehicle_set_path</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a25898a75d46c089133074713220f48c6">map_path</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;              <span class="keyword">const</span> std::string &amp;<a class="code" href="classphy__simulator_1_1_arena_loader.html#a893b1ed98d247a7f918dcfdc3ebd6efa">lane_net_path</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#ac8cbcb21b58b9f008e598cd930d7a4e5">   48</a></span>&#160;  <span class="keyword">inline</span> std::string <a class="code" href="classphy__simulator_1_1_arena_loader.html#ac8cbcb21b58b9f008e598cd930d7a4e5">vehicle_set_path</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vehicle_set_path_; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#a25898a75d46c089133074713220f48c6">   49</a></span>&#160;  <span class="keyword">inline</span> std::string <a class="code" href="classphy__simulator_1_1_arena_loader.html#a25898a75d46c089133074713220f48c6">map_path</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> map_path_; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#a893b1ed98d247a7f918dcfdc3ebd6efa">   50</a></span>&#160;  <span class="keyword">inline</span> std::string <a class="code" href="classphy__simulator_1_1_arena_loader.html#a893b1ed98d247a7f918dcfdc3ebd6efa">lane_net_path</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lane_net_path_; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#a5c9048ac50516d37229ebac4a6648f2a">   52</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html#a5c9048ac50516d37229ebac4a6648f2a">set_vehicle_set_path</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    vehicle_set_path_ = path;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#a70655fb0ac036bfb962c8c3536a6d692">   55</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html#a70655fb0ac036bfb962c8c3536a6d692">set_map_path</a>(<span class="keyword">const</span> std::string &amp;path) { map_path_ = path; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_arena_loader.html#a9ac442bb13262db5b2e1b7f35a199712">   56</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html#a9ac442bb13262db5b2e1b7f35a199712">set_lane_net_path</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    lane_net_path_ = path;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_arena_loader.html#a95d9ea20ed8d6bc29516eb82f8faba8e">ParseVehicleSet</a>(<a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> *p_vehicle_set);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classphy__simulator_1_1_arena_loader.html#afe983c99ed82bf93ec15964a69035f4c">ParseMapInfo</a>(<a class="code" href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a> *p_obstacle_set);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classphy__simulator_1_1_arena_loader.html#ac14e874695279dd8d1316f760c9b1e0b">ParseLaneNetInfo</a>(<a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a> *p_lane_net);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::string vehicle_set_path_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  std::string map_path_;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  std::string lane_net_path_;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  std::string pedestrian_set_path_;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace phy_simulator</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif  // _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_ARENA_LOADER_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_lane_net_html"><div class="ttname"><a href="structcommon_1_1_lane_net.html">common::LaneNet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00631">semantics.h:631</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_ac14e874695279dd8d1316f760c9b1e0b"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#ac14e874695279dd8d1316f760c9b1e0b">phy_simulator::ArenaLoader::ParseLaneNetInfo</a></div><div class="ttdeci">ErrorType ParseLaneNetInfo(common::LaneNet *p_lane_net)</div><div class="ttdoc">Parse map info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00111">arena_loader.cc:111</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00263">semantics.h:263</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a95d9ea20ed8d6bc29516eb82f8faba8e"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a95d9ea20ed8d6bc29516eb82f8faba8e">phy_simulator::ArenaLoader::ParseVehicleSet</a></div><div class="ttdeci">bool ParseVehicleSet(common::VehicleSet *p_vehicle_set)</div><div class="ttdoc">Parse vehicles info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00025">arena_loader.cc:25</a></div></div>
+<div class="ttc" id="afree__state_8h_html"><div class="ttname"><a href="free__state_8h.html">free_state.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_ab7b33093d6660257e921fe4787b437a6"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#ab7b33093d6660257e921fe4787b437a6">phy_simulator::ArenaLoader::ArenaLoader</a></div><div class="ttdeci">ArenaLoader()</div><div class="ttdoc">Default constructor</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00016">arena_loader.cc:16</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a70655fb0ac036bfb962c8c3536a6d692"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a70655fb0ac036bfb962c8c3536a6d692">phy_simulator::ArenaLoader::set_map_path</a></div><div class="ttdeci">void set_map_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00055">arena_loader.h:55</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a25898a75d46c089133074713220f48c6"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a25898a75d46c089133074713220f48c6">phy_simulator::ArenaLoader::map_path</a></div><div class="ttdeci">std::string map_path() const</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00049">arena_loader.h:49</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_ac8cbcb21b58b9f008e598cd930d7a4e5"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#ac8cbcb21b58b9f008e598cd930d7a4e5">phy_simulator::ArenaLoader::vehicle_set_path</a></div><div class="ttdeci">std::string vehicle_set_path() const</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00048">arena_loader.h:48</a></div></div>
+<div class="ttc" id="astructcommon_1_1_obstacle_set_html"><div class="ttname"><a href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00706">semantics.h:706</a></div></div>
+<div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_afe983c99ed82bf93ec15964a69035f4c"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#afe983c99ed82bf93ec15964a69035f4c">phy_simulator::ArenaLoader::ParseMapInfo</a></div><div class="ttdeci">ErrorType ParseMapInfo(common::ObstacleSet *p_obstacle_set)</div><div class="ttdoc">Parse obstacle info from json</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8cc_source.html#l00077">arena_loader.cc:77</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a893b1ed98d247a7f918dcfdc3ebd6efa"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a893b1ed98d247a7f918dcfdc3ebd6efa">phy_simulator::ArenaLoader::lane_net_path</a></div><div class="ttdeci">std::string lane_net_path() const</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00050">arena_loader.h:50</a></div></div>
+<div class="ttc" id="aphy__simulator_2inc_2phy__simulator_2basics_8h_html"><div class="ttname"><a href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a5c9048ac50516d37229ebac4a6648f2a"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a5c9048ac50516d37229ebac4a6648f2a">phy_simulator::ArenaLoader::set_vehicle_set_path</a></div><div class="ttdeci">void set_vehicle_set_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00052">arena_loader.h:52</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html_a9ac442bb13262db5b2e1b7f35a199712"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html#a9ac442bb13262db5b2e1b7f35a199712">phy_simulator::ArenaLoader::set_lane_net_path</a></div><div class="ttdeci">void set_lane_net_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00056">arena_loader.h:56</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html">phy_simulator::ArenaLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00031">arena_loader.h:31</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/rt_explicit_rk.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rt_explicit_rk.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rt__explicit__rk_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * rt_explicit_rk.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef RT_EXPLICIT_RK_HPP_</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define RT_EXPLICIT_RK_HPP_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rt__algebra_8hpp.html">rt_algebra.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> StateType &gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrt__explicit__rk.html">rt_explicit_rk</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">   26</a></span>&#160;    <span class="keyword">typedef</span> StateType <a class="code" href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">state_type</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#a9b0b03eba0085ab3a2baef2b67d2e2a5">   27</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span>* <span class="keyword">const</span> * <a class="code" href="classrt__explicit__rk.html#a9b0b03eba0085ab3a2baef2b67d2e2a5">coeff_a_type</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">   28</a></span>&#160;    <span class="keyword">typedef</span> vector&lt; double &gt; <a class="code" href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">coeff_b_type</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">   29</a></span>&#160;    <span class="keyword">typedef</span> vector&lt; double &gt; <a class="code" href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">coeff_c_type</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#a2ee83f35b730ec033d897acd570553a6">   31</a></span>&#160;    <a class="code" href="classrt__explicit__rk.html#a2ee83f35b730ec033d897acd570553a6">rt_explicit_rk</a>( <span class="keywordtype">size_t</span> <a class="code" href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> ) : m_s( <a class="code" href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        m_F = <span class="keyword">new</span> <a class="code" href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">state_type</a>[ m_s ];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#a4b9d558759a35f63c78a4737112a201e">   36</a></span>&#160;    <a class="code" href="classrt__explicit__rk.html#a4b9d558759a35f63c78a4737112a201e">rt_explicit_rk</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> , </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classrt__explicit__rk.html#a9b0b03eba0085ab3a2baef2b67d2e2a5">coeff_a_type</a> <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> , </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">coeff_b_type</a> &amp;<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , <span class="keyword">const</span> <a class="code" href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">coeff_c_type</a> &amp;<a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : m_s( <a class="code" href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> ) , m_a( <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> ) , m_b( <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> ) , m_c( <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        m_F = <span class="keyword">new</span> <a class="code" href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">state_type</a>[ m_s ];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#a5a97886fbaf525fdd75280ae7759c961">   44</a></span>&#160;    <a class="code" href="classrt__explicit__rk.html#a5a97886fbaf525fdd75280ae7759c961">~rt_explicit_rk</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span>[] m_F;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/* void set_params( coeff_a_type &amp;a , coeff_b_type &amp;b , coeff_c_type &amp;c )</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        m_a = a;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">        m_b = b;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">        m_c = c;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System &gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classrt__explicit__rk.html#a1ba5bedf1c3e5b41b564b2ec1564c413">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrt__explicit__rk.html#a1ba5bedf1c3e5b41b564b2ec1564c413">do_step</a>( System <a class="code" href="structsys.html">sys</a> , <a class="code" href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> <span class="keywordtype">double</span> t , <span class="keyword">const</span> <span class="keywordtype">double</span> dt )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// first stage separately</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , m_F[0] , t + m_c[0]*t );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>( m_s == 1 )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">rt_algebra::foreach</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , &amp;m_b[0] , m_F , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 1 );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">rt_algebra::foreach</a>( m_x_tmp , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , m_a[0] , m_F , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 1 );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> <a class="code" href="structstage.html">stage</a> = 2 ; <a class="code" href="structstage.html">stage</a> &lt;= m_s ; ++<a class="code" href="structstage.html">stage</a> )</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>( m_x_tmp , m_F[<a class="code" href="structstage.html">stage</a>-1] , t + m_c[<a class="code" href="structstage.html">stage</a>-1]*<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>( <a class="code" href="structstage.html">stage</a> == m_s )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">rt_algebra::foreach</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , &amp;m_b[0] , m_F , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structstage.html">stage</a>-1 );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">rt_algebra::foreach</a>( m_x_tmp , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , m_a[<a class="code" href="structstage.html">stage</a>-1] , m_F , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structstage.html">stage</a>-1 );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> m_s;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> coeff_a_type m_a;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> coeff_b_type m_b;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> coeff_c_type m_c;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> m_x_tmp;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> *m_F;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RT_EXPLICIT_RK_HPP_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a5a97886fbaf525fdd75280ae7759c961"><div class="ttname"><a href="classrt__explicit__rk.html#a5a97886fbaf525fdd75280ae7759c961">rt_explicit_rk::~rt_explicit_rk</a></div><div class="ttdeci">~rt_explicit_rk()</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00044">rt_explicit_rk.hpp:44</a></div></div>
+<div class="ttc" id="astructrt__algebra_html_a8b9065642f43bf52b469f44c338a3dc9"><div class="ttname"><a href="structrt__algebra.html#a8b9065642f43bf52b469f44c338a3dc9">rt_algebra::foreach</a></div><div class="ttdeci">static void foreach(boost::array&lt; T, dim &gt; &amp;x_tmp, const boost::array&lt; T, dim &gt; &amp;x, const double *a, const boost::array&lt; T, dim &gt; *k_vector, const double dt, const size_t s)</div><div class="ttdef"><b>Definition:</b> <a href="rt__algebra_8hpp_source.html#l00018">rt_algebra.hpp:18</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_ace243e218e2fb1b3521754e4b492e9ef"><div class="ttname"><a href="classrt__explicit__rk.html#ace243e218e2fb1b3521754e4b492e9ef">rt_explicit_rk::state_type</a></div><div class="ttdeci">StateType state_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00026">rt_explicit_rk.hpp:26</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_afec03377d5bf362a663e4b945dcb3ce5"><div class="ttname"><a href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">rt_explicit_rk::coeff_b_type</a></div><div class="ttdeci">vector&lt; double &gt; coeff_b_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00028">rt_explicit_rk.hpp:28</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_a34c08a7a7d7e6c10905fc8d5629495be"><div class="ttname"><a href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a></div><div class="ttdeci">void sys(const state_type &amp;, state_type &amp;, const double)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00028">stepper_details.cpp:28</a></div></div>
+<div class="ttc" id="art__generic__rk4__lorenz_8cpp_html_a85155711bc2a05edff40d182052fdc48"><div class="ttname"><a href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a></div><div class="ttdeci">const size_t stage_count</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__lorenz_8cpp_source.html#l00025">rt_generic_rk4_lorenz.cpp:25</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_ac820e77d2dd58f742e1c94d477c43a5e"><div class="ttname"><a href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">rt_explicit_rk::coeff_c_type</a></div><div class="ttdeci">vector&lt; double &gt; coeff_c_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00029">rt_explicit_rk.hpp:29</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a1ba5bedf1c3e5b41b564b2ec1564c413"><div class="ttname"><a href="classrt__explicit__rk.html#a1ba5bedf1c3e5b41b564b2ec1564c413">rt_explicit_rk::do_step</a></div><div class="ttdeci">void do_step(System sys, state_type &amp;x, const double t, const double dt)</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00057">rt_explicit_rk.hpp:57</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a2ee83f35b730ec033d897acd570553a6"><div class="ttname"><a href="classrt__explicit__rk.html#a2ee83f35b730ec033d897acd570553a6">rt_explicit_rk::rt_explicit_rk</a></div><div class="ttdeci">rt_explicit_rk(size_t stage_count)</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00031">rt_explicit_rk.hpp:31</a></div></div>
+<div class="ttc" id="astructstage_html"><div class="ttname"><a href="structstage.html">stage</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00048">fusion_explicit_rk_new.hpp:48</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a4b9d558759a35f63c78a4737112a201e"><div class="ttname"><a href="classrt__explicit__rk.html#a4b9d558759a35f63c78a4737112a201e">rt_explicit_rk::rt_explicit_rk</a></div><div class="ttdeci">rt_explicit_rk(const size_t stage_count, const coeff_a_type a, const coeff_b_type &amp;b, const coeff_c_type &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00036">rt_explicit_rk.hpp:36</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a9b0b03eba0085ab3a2baef2b67d2e2a5"><div class="ttname"><a href="classrt__explicit__rk.html#a9b0b03eba0085ab3a2baef2b67d2e2a5">rt_explicit_rk::coeff_a_type</a></div><div class="ttdeci">double *const * coeff_a_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00027">rt_explicit_rk.hpp:27</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html"><div class="ttname"><a href="classrt__explicit__rk.html">rt_explicit_rk</a></div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00023">rt_explicit_rk.hpp:23</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<div class="ttc" id="art__algebra_8hpp_html"><div class="ttname"><a href="rt__algebra_8hpp.html">rt_algebra.hpp</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

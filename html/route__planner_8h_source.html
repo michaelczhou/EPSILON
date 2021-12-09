@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/route_planner/inc/route_planner/route_planner.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_d41d7e498be3fa8068ee6d0e3a2a4718.html">route_planner</a></li><li class="navelem"><a class="el" href="dir_f08c255b1eb93e97eb1841b9efd17852.html">inc</a></li><li class="navelem"><a class="el" href="dir_d97d781d04a535e97e3cf52d6f8736be.html">route_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">route_planner.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="route__planner_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_ROUTE_PLANNER_INC_ROUTE_PLANNER_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_ROUTE_PLANNER_INC_ROUTE_PLANNER_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="planner_8h.html">common/interface/planner.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane_8h.html">common/lane/lane.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane__generator_8h.html">common/lane/lane_generator.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_route_planner.html">RoutePlanner</a> : <span class="keyword">public</span> <a class="code" href="classplanning_1_1_planner.html">Planner</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">   20</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a> { <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb">kRandomExpansion</a>, <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba455ae805fa48294bb75ebe8c268b2b0a">kAssignedTarget</a> };</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">   21</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">NaviStatus</a> { <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f">kReadyToGo</a>, <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35adf155ad7872aeee053bcc93c928fd95b">kInProgress</a>, <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35ac4edec66d4b913f3c3e968c9a49e6349">kFinished</a> };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  std::string <a class="code" href="classplanning_1_1_route_planner.html#a5e6fc6060a4caeb99fdeb4ec7905f985">Name</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_route_planner.html#af46dba6a7d5308266f6ee232fe3b7386">Init</a>(<span class="keyword">const</span> std::string config) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_route_planner.html#a57610a25742f04b71e5859dcb6367c3f">RunOnce</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442">   29</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442">set_navi_mode</a>(<span class="keyword">const</span> <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a>&amp; mode) { navi_mode_ = mode; };</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4">   30</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4">set_ego_state</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">common::State</a>&amp; state) { ego_state_ = state; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318">   31</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318">set_nearest_lane_id</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <span class="keywordtype">id</span>) { nearest_lane_id_ = id; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6">   32</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6">set_lane_net</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a>&amp; lane_net) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    lane_net_ = lane_net;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    if_get_lane_net_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227">   37</a></span>&#160;  std::vector&lt;int&gt; <a class="code" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227">navi_path</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> navi_path_; }</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a2e5d932df151462eceabb05100287800">   38</a></span>&#160;  <a class="code" href="classcommon_1_1_lane.html">common::Lane</a> <a class="code" href="classplanning_1_1_route_planner.html#a2e5d932df151462eceabb05100287800">navi_lane</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> navi_lane_; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84">   40</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84">if_get_lane_net</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> if_get_lane_net_; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classplanning_1_1_route_planner.html#aba5ef540c6d11ba515116b35ba6a1aae">   42</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_route_planner.html#aba5ef540c6d11ba515116b35ba6a1aae">navi_cur_arc_len</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> navi_cur_arc_len_; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> GetChildLaneIds(<span class="keyword">const</span> <span class="keywordtype">int</span> lane_id, std::vector&lt;int&gt;* child_ids);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> GetNaviPathByRandomExpansion();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">bool</span> CheckIfArriveTargetLane();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> CheckNaviProgress();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> NaviLoopRandomExpansion();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> NaviLoopAssignedTarget();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a> lane_net_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="structcommon_1_1_state.html">common::State</a> ego_state_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> nearest_lane_id_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">NaviStatus</a> navi_status_ = <a class="code" href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f">kReadyToGo</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">NaviMode</a> navi_mode_ = <a class="code" href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb">kRandomExpansion</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">bool</span> if_restart_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> if_get_lane_net_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// decimal_t navi_path_max_length_ = 1500;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> navi_path_max_length_ = 200;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> navi_start_arc_length_{0.0};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// decimal_t navi_tail_remain_ = 200;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> navi_path_length_{0.0};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> navi_cur_arc_len_{0.0};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::vector&lt;int&gt; navi_path_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="classcommon_1_1_lane.html">common::Lane</a> navi_lane_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  std::random_device rd_gen_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif  //_CORE_ROUTE_PLANNER_INC_ROUTE_PLANNER_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_abf3403efc6e70cd1e2fa6548057cb2c4"><div class="ttname"><a href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4">planning::RoutePlanner::set_ego_state</a></div><div class="ttdeci">void set_ego_state(const common::State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00030">route_planner.h:30</a></div></div>
+<div class="ttc" id="aplanner_8h_html"><div class="ttname"><a href="planner_8h.html">planner.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a3090306943f8c7c6b5b11aebb7fed9a6"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6">planning::RoutePlanner::set_lane_net</a></div><div class="ttdeci">void set_lane_net(const common::LaneNet &amp;lane_net)</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00032">route_planner.h:32</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a21c2eaac1e4eb6e685848c8635ef3f35"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35">planning::RoutePlanner::NaviStatus</a></div><div class="ttdeci">NaviStatus</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00021">route_planner.h:21</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35a5b63dcce6a3454654ac5b864d8c72b0f">planning::RoutePlanner::kReadyToGo</a></div><div class="ttdeci">@ kReadyToGo</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00021">route_planner.h:21</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html"><div class="ttname"><a href="classplanning_1_1_route_planner.html">planning::RoutePlanner</a></div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00018">route_planner.h:18</a></div></div>
+<div class="ttc" id="astructcommon_1_1_lane_net_html"><div class="ttname"><a href="structcommon_1_1_lane_net.html">common::LaneNet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00631">semantics.h:631</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_aba5ef540c6d11ba515116b35ba6a1aae"><div class="ttname"><a href="classplanning_1_1_route_planner.html#aba5ef540c6d11ba515116b35ba6a1aae">planning::RoutePlanner::navi_cur_arc_len</a></div><div class="ttdeci">decimal_t navi_cur_arc_len() const</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00042">route_planner.h:42</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a8a7f38841fd3d6865e479249d2dbec84"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84">planning::RoutePlanner::if_get_lane_net</a></div><div class="ttdeci">bool if_get_lane_net() const</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00040">route_planner.h:40</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a57610a25742f04b71e5859dcb6367c3f"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a57610a25742f04b71e5859dcb6367c3f">planning::RoutePlanner::RunOnce</a></div><div class="ttdeci">ErrorType RunOnce() override</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8cc_source.html#l00014">route_planner.cc:14</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a2e5d932df151462eceabb05100287800"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a2e5d932df151462eceabb05100287800">planning::RoutePlanner::navi_lane</a></div><div class="ttdeci">common::Lane navi_lane() const</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00038">route_planner.h:38</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a21c2eaac1e4eb6e685848c8635ef3f35ac4edec66d4b913f3c3e968c9a49e6349"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35ac4edec66d4b913f3c3e968c9a49e6349">planning::RoutePlanner::kFinished</a></div><div class="ttdeci">@ kFinished</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00021">route_planner.h:21</a></div></div>
+<div class="ttc" id="alane_8h_html"><div class="ttname"><a href="lane_8h.html">lane.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a2591faecb5873bd19a060622c7f90227"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227">planning::RoutePlanner::navi_path</a></div><div class="ttdeci">std::vector&lt; int &gt; navi_path() const</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00037">route_planner.h:37</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a21a0e011f64e55e886ef785831657442"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442">planning::RoutePlanner::set_navi_mode</a></div><div class="ttdeci">void set_navi_mode(const NaviMode &amp;mode)</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00029">route_planner.h:29</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_planner_html"><div class="ttname"><a href="classplanning_1_1_planner.html">planning::Planner</a></div><div class="ttdoc">A general base class for different planners including path/motion/behavior planners</div><div class="ttdef"><b>Definition:</b> <a href="planner_8h_source.html#l00013">planner.h:13</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_aef9a3200a145fbdb3f9125fafc182d7b"><div class="ttname"><a href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7b">planning::RoutePlanner::NaviMode</a></div><div class="ttdeci">NaviMode</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00020">route_planner.h:20</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a21c2eaac1e4eb6e685848c8635ef3f35adf155ad7872aeee053bcc93c928fd95b"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a21c2eaac1e4eb6e685848c8635ef3f35adf155ad7872aeee053bcc93c928fd95b">planning::RoutePlanner::kInProgress</a></div><div class="ttdeci">@ kInProgress</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00021">route_planner.h:21</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb"><div class="ttname"><a href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba5a062250161af3bcbd1f63eba3ed75bb">planning::RoutePlanner::kRandomExpansion</a></div><div class="ttdeci">@ kRandomExpansion</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00020">route_planner.h:20</a></div></div>
+<div class="ttc" id="alane__generator_8h_html"><div class="ttname"><a href="lane__generator_8h.html">lane_generator.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_af46dba6a7d5308266f6ee232fe3b7386"><div class="ttname"><a href="classplanning_1_1_route_planner.html#af46dba6a7d5308266f6ee232fe3b7386">planning::RoutePlanner::Init</a></div><div class="ttdeci">ErrorType Init(const std::string config) override</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8cc_source.html#l00009">route_planner.cc:9</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a3d6330f8ae1b50df5c890510f8ed8318"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318">planning::RoutePlanner::set_nearest_lane_id</a></div><div class="ttdeci">void set_nearest_lane_id(const int &amp;id)</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00031">route_planner.h:31</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_a5e6fc6060a4caeb99fdeb4ec7905f985"><div class="ttname"><a href="classplanning_1_1_route_planner.html#a5e6fc6060a4caeb99fdeb4ec7905f985">planning::RoutePlanner::Name</a></div><div class="ttdeci">std::string Name() override</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8cc_source.html#l00005">route_planner.cc:5</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_route_planner_html_aef9a3200a145fbdb3f9125fafc182d7ba455ae805fa48294bb75ebe8c268b2b0a"><div class="ttname"><a href="classplanning_1_1_route_planner.html#aef9a3200a145fbdb3f9125fafc182d7ba455ae805fa48294bb75ebe8c268b2b0a">planning::RoutePlanner::kAssignedTarget</a></div><div class="ttdeci">@ kAssignedTarget</div><div class="ttdef"><b>Definition:</b> <a href="route__planner_8h_source.html#l00020">route_planner.h:20</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

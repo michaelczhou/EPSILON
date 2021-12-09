@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/semantic_map_manager/inc/semantic_map_manager/semantic_map_manager.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_aa50a5b1b751f2f86c2d52666faadafd.html">semantic_map_manager</a></li><li class="navelem"><a class="el" href="dir_d2e13eafc94f222018afce71cf664b2f.html">inc</a></li><li class="navelem"><a class="el" href="dir_0f2a7adb775d9b7978e98c42c8ab4d0e.html">semantic_map_manager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">semantic_map_manager.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;set&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="semantics_8h_source.html">common/basics/semantics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shapes_8h_source.html">common/basics/shapes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lane_8h_source.html">common/lane/lane.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lane__generator_8h_source.html">common/lane/lane_generator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="calculations_8h_source.html">common/math/calculations.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mobil__behavior__prediction_8h_source.html">common/mobil/mobil_behavior_prediction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rss__checker_8h_source.html">common/rss/rss_checker.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="onlane__fs__predictor_8h_source.html">motion_predictor/onlane_fs_predictor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config__loader_8h_source.html">semantic_map_manager/config_loader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="traffic__signal__manager_8h_source.html">semantic_map_manager/traffic_signal_manager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="idm__model_8h_source.html">vehicle_model/idm_model.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+semantic_map_manager.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="semantic__map__manager_8h__incl.png" border="0" usemap="#core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8h" alt=""/></div>
+<map name="core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8h" id="core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8h">
+<area shape="rect" title=" " alt="" coords="1431,5,1646,61"/>
+<area shape="rect" title=" " alt="" coords="2900,645,2975,672"/>
+<area shape="rect" title=" " alt="" coords="843,795,928,821"/>
+<area shape="rect" title=" " alt="" coords="3896,795,3976,821"/>
+<area shape="rect" title=" " alt="" coords="808,117,851,143"/>
+<area shape="rect" title=" " alt="" coords="3125,645,3203,672"/>
+<area shape="rect" title=" " alt="" coords="1284,206,1327,233"/>
+<area shape="rect" title=" " alt="" coords="1193,117,1257,143"/>
+<area shape="rect" title=" " alt="" coords="1281,117,1396,143"/>
+<area shape="rect" title=" " alt="" coords="2629,795,2691,821"/>
+<area shape="rect" href="semantics_8h.html" title=" " alt="" coords="2057,385,2263,411"/>
+<area shape="rect" href="shapes_8h.html" title=" " alt="" coords="203,474,389,501"/>
+<area shape="rect" href="calculations_8h.html" title=" " alt="" coords="665,563,876,590"/>
+<area shape="rect" href="lane_8h.html" title=" " alt="" coords="1477,474,1632,501"/>
+<area shape="rect" href="lane__generator_8h.html" title=" " alt="" coords="925,385,1150,411"/>
+<area shape="rect" href="mobil__behavior__prediction_8h.html" title=" " alt="" coords="999,109,1169,151"/>
+<area shape="rect" href="rss__checker_8h.html" title=" " alt="" coords="1072,295,1267,322"/>
+<area shape="rect" href="onlane__fs__predictor_8h.html" title=" " alt="" coords="1475,199,1656,240"/>
+<area shape="rect" href="config__loader_8h.html" title=" " alt="" coords="2559,199,2742,240"/>
+<area shape="rect" href="traffic__signal__manager_8h.html" title=" " alt="" coords="1731,288,1919,329"/>
+<area shape="rect" href="idm__model_8h.html" title=" " alt="" coords="3489,474,3695,501"/>
+<area shape="rect" title=" " alt="" coords="3025,720,3151,747"/>
+<area shape="rect" title=" " alt="" coords="3228,720,3353,747"/>
+<area shape="rect" title=" " alt="" coords="2203,795,2261,821"/>
+<area shape="rect" title=" " alt="" coords="2498,645,2622,672"/>
+<area shape="rect" href="common_2inc_2common_2basics_2basics_8h.html" title=" " alt="" coords="1604,645,1785,672"/>
+<area shape="rect" href="tool__func_8h.html" title=" " alt="" coords="2106,556,2259,597"/>
+<area shape="rect" href="state_8h.html" title=" " alt="" coords="1511,563,1676,590"/>
+<area shape="rect" href="free__state_8h.html" title=" " alt="" coords="2093,474,2291,501"/>
+<area shape="rect" href="frenet__state_8h.html" title=" " alt="" coords="1657,467,1815,508"/>
+<area shape="rect" href="macros_8h.html" title=" " alt="" coords="1299,720,1487,747"/>
+<area shape="rect" href="tic__toc_8h.html" title=" " alt="" coords="1603,720,1786,747"/>
+<area shape="rect" title=" " alt="" coords="1810,720,1878,747"/>
+<area shape="rect" title=" " alt="" coords="1512,720,1579,747"/>
+<area shape="rect" href="backward_8hpp.html" title=" " alt="" coords="2055,720,2169,747"/>
+<area shape="rect" title=" " alt="" coords="1721,795,1788,821"/>
+<area shape="rect" title=" " alt="" coords="1932,795,1983,821"/>
+<area shape="rect" title=" " alt="" coords="421,563,590,590"/>
+<area shape="rect" href="colormap_8h.html" title=" " alt="" coords="195,563,397,590"/>
+<area shape="rect" title=" " alt="" coords="2207,645,2270,672"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="1255,563,1435,590"/>
+<area shape="rect" href="inc_2common_2spline_2spline_8h.html" title=" " alt="" coords="2518,563,2695,590"/>
+<area shape="rect" href="intelligent__driver__model_8h.html" title=" " alt="" coords="951,556,1129,597"/>
+<area shape="rect" href="mobil__model_8h.html" title=" " alt="" coords="977,199,1138,240"/>
+<area shape="rect" href="state__transformer_8h.html" title=" " alt="" coords="1326,377,1479,419"/>
+<area shape="rect" href="onlane__forward__simulation_8h.html" title=" " alt="" coords="1341,288,1531,329"/>
+<area shape="rect" href="json_8hpp.html" title=" " alt="" coords="2283,563,2391,590"/>
+<area shape="rect" href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h.html" title=" " alt="" coords="2959,288,3142,329"/>
+<area shape="rect" title=" " alt="" coords="3531,563,3653,590"/>
+<area shape="rect" title=" " alt="" coords="3678,563,3797,590"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="semantic__map__manager_8h__dep__incl.png" border="0" usemap="#core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8hdep" alt=""/></div>
+<map name="core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8hdep" id="core_2semantic__map__manager_2inc_2semantic__map__manager_2semantic__map__manager_8hdep">
+<area shape="rect" title=" " alt="" coords="1222,5,1436,61"/>
+<area shape="rect" href="test__ssc__with__eudm_8cc.html" title="test ssc planner with eudm behavior planner" alt="" coords="1318,518,1516,559"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html" title=" " alt="" coords="998,325,1202,366"/>
+<area shape="rect" href="behavior__server__ros_8h.html" title=" " alt="" coords="221,213,392,269"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html" title=" " alt="" coords="438,325,612,366"/>
+<area shape="rect" href="core_2behavior__planner_2inc_2behavior__planner_2map__adapter_8h.html" title=" " alt="" coords="223,109,390,165"/>
+<area shape="rect" href="data__renderer_8h.html" title=" " alt="" coords="758,109,972,165"/>
+<area shape="rect" href="core_2semantic__map__manager_2inc_2semantic__map__manager_2visualizer_8h.html" title=" " alt="" coords="1150,109,1364,165"/>
+<area shape="rect" href="ssc__server__ros_8h.html" title="planner server" alt="" coords="1440,221,1655,262"/>
+<area shape="rect" href="semantic__map__manager_8cc.html" title=" " alt="" coords="1491,117,1719,158"/>
+<area shape="rect" href="eudm__server__ros_8h.html" title=" " alt="" coords="2259,421,2506,463"/>
+<area shape="rect" href="util_2eudm__planner_2inc_2eudm__planner_2map__adapter_8h.html" title=" " alt="" coords="1996,117,2217,158"/>
+<area shape="rect" href="util_2ssc__planner_2inc_2ssc__planner_2map__adapter_8h.html" title="map adapter (inherits map interface) for ssc planner" alt="" coords="1744,117,1949,158"/>
+<area shape="rect" href="behavior__server__ros_8cc.html" title=" " alt="" coords="218,317,394,373"/>
+<area shape="rect" href="core_2behavior__planner_2src_2behavior__planner_2map__adapter_8cc.html" title=" " alt="" coords="30,213,196,269"/>
+<area shape="rect" href="semantic__map__manager_2inc_2semantic__map__manager_2ros__adapter_8h.html" title=" " alt="" coords="758,213,972,269"/>
+<area shape="rect" href="data__renderer_8cc.html" title=" " alt="" coords="416,221,631,262"/>
+<area shape="rect" href="semantic__map__manager_2src_2ros__adapter_8cc.html" title=" " alt="" coords="707,325,922,366"/>
+<area shape="rect" href="semantic__map__manager_2src_2visualizer_8cc.html" title=" " alt="" coords="1150,221,1364,262"/>
+<area shape="rect" href="ssc__server__ros_8cc.html" title=" " alt="" coords="1480,317,1656,373"/>
+<area shape="rect" href="eudm__server__ros_8cc.html" title=" " alt="" coords="2278,511,2486,567"/>
+<area shape="rect" href="eudm__manager_8h.html" title=" " alt="" coords="2266,221,2504,262"/>
+<area shape="rect" href="util_2eudm__planner_2src_2eudm__planner_2map__adapter_8cc.html" title=" " alt="" coords="2016,221,2242,262"/>
+<area shape="rect" href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h.html" title=" " alt="" coords="2283,325,2482,366"/>
+<area shape="rect" href="eudm__manager_8cc.html" title=" " alt="" coords="2016,325,2258,366"/>
+<area shape="rect" href="util_2ssc__planner_2src_2ssc__planner_2map__adapter_8cc.html" title=" " alt="" coords="1730,221,1941,262"/>
+</map>
+</div>
+</div>
+<p><a href="semantic__map__manager_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespacesemantic__map__manager"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesemantic__map__manager.html">semantic_map_manager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

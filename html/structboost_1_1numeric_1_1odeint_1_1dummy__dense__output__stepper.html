@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::dummy_dense_output_stepper结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html">dummy_dense_output_stepper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::dummy_dense_output_stepper结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ae3e96fbf3647f6e22534698040a81080"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">value_type</a></td></tr>
+<tr class="separator:ae3e96fbf3647f6e22534698040a81080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32957a464cf327f104ee4d5f34cd76b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a></td></tr>
+<tr class="separator:aa32957a464cf327f104ee4d5f34cd76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04abb8df891d6e6c9644a6e2aa1750b5"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">value_type</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a></td></tr>
+<tr class="separator:a04abb8df891d6e6c9644a6e2aa1750b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8759476c2f94b6b46bd550d8e1b411bd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a8759476c2f94b6b46bd550d8e1b411bd">deriv_type</a></td></tr>
+<tr class="separator:a8759476c2f94b6b46bd550d8e1b411bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285b06ed59ccbfec2c0f6260a67a9cf2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a285b06ed59ccbfec2c0f6260a67a9cf2">stepper_category</a></td></tr>
+<tr class="separator:a285b06ed59ccbfec2c0f6260a67a9cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aaee29f06ddcbda5fbaab913e24511778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aaee29f06ddcbda5fbaab913e24511778">initialize</a> (const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> &amp;x0, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> t0, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> dt0)</td></tr>
+<tr class="separator:aaee29f06ddcbda5fbaab913e24511778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1370a1aa2ce725718be2c66ddcb0db80"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a1370a1aa2ce725718be2c66ddcb0db80"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a1370a1aa2ce725718be2c66ddcb0db80">do_step</a> (System <a class="el" href="structsys.html">sys</a>)</td></tr>
+<tr class="separator:a1370a1aa2ce725718be2c66ddcb0db80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1f490a82dc023430e6373baea3545b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a7e1f490a82dc023430e6373baea3545b">calc_state</a> (<a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> t_inter, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> &amp;x) const</td></tr>
+<tr class="separator:a7e1f490a82dc023430e6373baea3545b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98905dd89847658a6447cc9b410fa8f7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a98905dd89847658a6447cc9b410fa8f7">current_time</a> (void) const</td></tr>
+<tr class="separator:a98905dd89847658a6447cc9b410fa8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bbcc9bbe72e7b1bc5bb06eee3b6b896"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a2bbcc9bbe72e7b1bc5bb06eee3b6b896">current_state</a> (void) const</td></tr>
+<tr class="separator:a2bbcc9bbe72e7b1bc5bb06eee3b6b896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aaa3ac5b07458b5bf19593fef9a4ea21e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aaa3ac5b07458b5bf19593fef9a4ea21e">m_x</a></td></tr>
+<tr class="separator:aaa3ac5b07458b5bf19593fef9a4ea21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb6080b38ed1136edbcfb41e0a67a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a6fb6080b38ed1136edbcfb41e0a67a8e">m_t</a></td></tr>
+<tr class="separator:a6fb6080b38ed1136edbcfb41e0a67a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6478f5524cbd79786fd67028aefef13d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a6478f5524cbd79786fd67028aefef13d">m_dt</a></td></tr>
+<tr class="separator:a6478f5524cbd79786fd67028aefef13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00047">47</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a8759476c2f94b6b46bd550d8e1b411bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8759476c2f94b6b46bd550d8e1b411bd">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a8759476c2f94b6b46bd550d8e1b411bd">boost::numeric::odeint::dummy_dense_output_stepper::deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a04abb8df891d6e6c9644a6e2aa1750b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04abb8df891d6e6c9644a6e2aa1750b5">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">value_type</a> , 1 &gt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">boost::numeric::odeint::dummy_dense_output_stepper::state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a285b06ed59ccbfec2c0f6260a67a9cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285b06ed59ccbfec2c0f6260a67a9cf2">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a> <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a285b06ed59ccbfec2c0f6260a67a9cf2">boost::numeric::odeint::dummy_dense_output_stepper::stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa32957a464cf327f104ee4d5f34cd76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32957a464cf327f104ee4d5f34cd76b">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">value_type</a> <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">boost::numeric::odeint::dummy_dense_output_stepper::time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae3e96fbf3647f6e22534698040a81080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e96fbf3647f6e22534698040a81080">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#ae3e96fbf3647f6e22534698040a81080">boost::numeric::odeint::dummy_dense_output_stepper::value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7e1f490a82dc023430e6373baea3545b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1f490a82dc023430e6373baea3545b">&#9670;&nbsp;</a></span>calc_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::numeric::odeint::dummy_dense_output_stepper::calc_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t_inter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2bbcc9bbe72e7b1bc5bb06eee3b6b896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbcc9bbe72e7b1bc5bb06eee3b6b896">&#9670;&nbsp;</a></span>current_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a>&amp; boost::numeric::odeint::dummy_dense_output_stepper::current_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a98905dd89847658a6447cc9b410fa8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98905dd89847658a6447cc9b410fa8f7">&#9670;&nbsp;</a></span>current_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&amp; boost::numeric::odeint::dummy_dense_output_stepper::current_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1370a1aa2ce725718be2c66ddcb0db80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1370a1aa2ce725718be2c66ddcb0db80">&#9670;&nbsp;</a></span>do_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> &gt; boost::numeric::odeint::dummy_dense_output_stepper::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>sys</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaee29f06ddcbda5fbaab913e24511778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee29f06ddcbda5fbaab913e24511778">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::numeric::odeint::dummy_dense_output_stepper::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&#160;</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6478f5524cbd79786fd67028aefef13d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6478f5524cbd79786fd67028aefef13d">&#9670;&nbsp;</a></span>m_dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> boost::numeric::odeint::dummy_dense_output_stepper::m_dt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6fb6080b38ed1136edbcfb41e0a67a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb6080b38ed1136edbcfb41e0a67a8e">&#9670;&nbsp;</a></span>m_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#aa32957a464cf327f104ee4d5f34cd76b">time_type</a> boost::numeric::odeint::dummy_dense_output_stepper::m_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaa3ac5b07458b5bf19593fef9a4ea21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3ac5b07458b5bf19593fef9a4ea21e">&#9670;&nbsp;</a></span>m_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1dummy__dense__output__stepper.html#a04abb8df891d6e6c9644a6e2aa1750b5">state_type</a> boost::numeric::odeint::dummy_dense_output_stepper::m_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a> 第 <a class="el" href="dummy__steppers_8hpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/<a class="el" href="dummy__steppers_8hpp_source.html">dummy_steppers.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

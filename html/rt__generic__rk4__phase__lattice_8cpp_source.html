@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/rt_generic_rk4_phase_lattice.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rt_generic_rk4_phase_lattice.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rt__generic__rk4__phase__lattice_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * rt_generic_rk4_lorenz.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rt__explicit__rk_8hpp.html">rt_explicit_rk.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rk__performance__test__case_8hpp.html">rk_performance_test_case.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phase__lattice_8hpp.html">phase_lattice.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">   21</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> = 1024;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="rt__generic__rk4__phase__lattice_8cpp.html#acd881fb03b3110536086c522b5a9e31f">   23</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , N &gt; <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="rt__generic__rk4__phase__lattice_8cpp.html#a035d661a1e6bac2dd60cec7830abd619">   25</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classrt__explicit__rk.html">rt_explicit_rk&lt; state_type &gt;</a> <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#a035d661a1e6bac2dd60cec7830abd619">rk_stepper_type</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">   27</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> = 4;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span><a class="code" href="classrt__generic__wrapper.html">rt_generic_wrapper</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classrt__generic__wrapper.html#a2ed9ac4599805aa00619854a79bce4d6">   34</a></span>&#160;    <a class="code" href="classrt__generic__wrapper.html#a2ed9ac4599805aa00619854a79bce4d6">rt_generic_wrapper</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> * <span class="keyword">const</span> * <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> , </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="keyword">const</span> <a class="code" href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">rk_stepper_type::coeff_b_type</a> &amp;<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> ,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keyword">const</span> <a class="code" href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">rk_stepper_type::coeff_c_type</a> &amp;<a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> ) </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        : m_stepper( <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> , </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     (<a class="code" href="classrt__explicit__rk.html">rk_stepper_type</a>::coeff_a_type) <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> , <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    { }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classrt__generic__wrapper.html#a9a26a4e3d164bfc5555b589dfa4e7692">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrt__generic__wrapper.html#a9a26a4e3d164bfc5555b589dfa4e7692">reset_init_cond</a>()</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0 ; i&lt;<a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> ; ++i )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            m_x[i] = 2.0*3.1415927*rand() / RAND_MAX;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        m_t = 0.0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classrt__generic__wrapper.html#acf581bbb524de01e023b6572cd032ac0">   48</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classrt__generic__wrapper.html#acf581bbb524de01e023b6572cd032ac0">do_step</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> dt )</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_stepper.<a class="code" href="classrt__explicit__rk.html#a1ba5bedf1c3e5b41b564b2ec1564c413">do_step</a>( <a class="code" href="structphase__lattice.html">phase_lattice&lt;N&gt;</a>() , m_x , m_t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">//m_t += dt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classrt__generic__wrapper.html#a54e195eabf12db9ccb2c9a5d3766e95f">   54</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classrt__generic__wrapper.html#a54e195eabf12db9ccb2c9a5d3766e95f">state</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> i )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_x[i]; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> m_x;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">double</span> m_t;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classrt__explicit__rk.html">rk_stepper_type</a> m_stepper;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="rt__generic__rk4__phase__lattice_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   65</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    srand( 12312354 );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> a_tmp[3*4/2] = { 0.5 ,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                  0.0 , 1.0 ,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                  0.0 , 0.0 , 1.0 };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span>* <span class="keyword">const</span> <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>[3] = { a_tmp , a_tmp+1 , a_tmp+3 };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">rk_stepper_type::coeff_b_type</a> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>( <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[0] = 1.0/6; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[1] = 1.0/3; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[2] = 1.0/3; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[3] = 1.0/6;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">rk_stepper_type::coeff_c_type</a> <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>( <a class="code" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[0] = 0.0; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[1] = 0.5; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[2] = 0.5; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[3] = 1.0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classrt__generic__wrapper.html">rt_generic_wrapper</a> stepper( <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> , <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e">run</a>( stepper , 10000 , 1E-6 );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="art__generic__rk4__phase__lattice_8cpp_html_a85155711bc2a05edff40d182052fdc48"><div class="ttname"><a href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a></div><div class="ttdeci">const size_t stage_count</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00027">rt_generic_rk4_phase_lattice.cpp:27</a></div></div>
+<div class="ttc" id="aclassrt__generic__wrapper_html_acf581bbb524de01e023b6572cd032ac0"><div class="ttname"><a href="classrt__generic__wrapper.html#acf581bbb524de01e023b6572cd032ac0">rt_generic_wrapper::do_step</a></div><div class="ttdeci">void do_step(const double dt)</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00048">rt_generic_rk4_phase_lattice.cpp:48</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html"><div class="ttname"><a href="rk__performance__test__case_8hpp.html">rk_performance_test_case.hpp</a></div></div>
+<div class="ttc" id="aclassrt__generic__wrapper_html_a9a26a4e3d164bfc5555b589dfa4e7692"><div class="ttname"><a href="classrt__generic__wrapper.html#a9a26a4e3d164bfc5555b589dfa4e7692">rt_generic_wrapper::reset_init_cond</a></div><div class="ttdeci">void reset_init_cond()</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00041">rt_generic_rk4_phase_lattice.cpp:41</a></div></div>
+<div class="ttc" id="art__generic__rk4__phase__lattice_8cpp_html_a035d661a1e6bac2dd60cec7830abd619"><div class="ttname"><a href="rt__generic__rk4__phase__lattice_8cpp.html#a035d661a1e6bac2dd60cec7830abd619">rk_stepper_type</a></div><div class="ttdeci">rt_explicit_rk&lt; state_type &gt; rk_stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00025">rt_generic_rk4_phase_lattice.cpp:25</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_afec03377d5bf362a663e4b945dcb3ce5"><div class="ttname"><a href="classrt__explicit__rk.html#afec03377d5bf362a663e4b945dcb3ce5">rt_explicit_rk&lt; state_type &gt;::coeff_b_type</a></div><div class="ttdeci">vector&lt; double &gt; coeff_b_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00028">rt_explicit_rk.hpp:28</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html_a1c00e45dac21970165399c4b6b20891e"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e">run</a></div><div class="ttdeci">void run(Stepper &amp;stepper, const size_t num_of_steps=20000000, const double dt=1E-10)</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00038">rk_performance_test_case.hpp:38</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_ac820e77d2dd58f742e1c94d477c43a5e"><div class="ttname"><a href="classrt__explicit__rk.html#ac820e77d2dd58f742e1c94d477c43a5e">rt_explicit_rk&lt; state_type &gt;::coeff_c_type</a></div><div class="ttdeci">vector&lt; double &gt; coeff_c_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00029">rt_explicit_rk.hpp:29</a></div></div>
+<div class="ttc" id="art__generic__rk4__phase__lattice_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00021">rt_generic_rk4_phase_lattice.cpp:21</a></div></div>
+<div class="ttc" id="aphase__lattice_8hpp_html"><div class="ttname"><a href="phase__lattice_8hpp.html">phase_lattice.hpp</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html_a1ba5bedf1c3e5b41b564b2ec1564c413"><div class="ttname"><a href="classrt__explicit__rk.html#a1ba5bedf1c3e5b41b564b2ec1564c413">rt_explicit_rk::do_step</a></div><div class="ttdeci">void do_step(System sys, state_type &amp;x, const double t, const double dt)</div><div class="ttdef"><b>Definition:</b> <a href="rt__explicit__rk_8hpp_source.html#l00057">rt_explicit_rk.hpp:57</a></div></div>
+<div class="ttc" id="aclassrt__generic__wrapper_html_a54e195eabf12db9ccb2c9a5d3766e95f"><div class="ttname"><a href="classrt__generic__wrapper.html#a54e195eabf12db9ccb2c9a5d3766e95f">rt_generic_wrapper::state</a></div><div class="ttdeci">double state(const size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00054">rt_generic_rk4_phase_lattice.cpp:54</a></div></div>
+<div class="ttc" id="art__explicit__rk_8hpp_html"><div class="ttname"><a href="rt__explicit__rk_8hpp.html">rt_explicit_rk.hpp</a></div></div>
+<div class="ttc" id="aclassrt__explicit__rk_html"><div class="ttname"><a href="classrt__explicit__rk.html">rt_explicit_rk&lt; state_type &gt;</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aclassrt__generic__wrapper_html"><div class="ttname"><a href="classrt__generic__wrapper.html">rt_generic_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__lorenz_8cpp_source.html#l00028">rt_generic_rk4_lorenz.cpp:28</a></div></div>
+<div class="ttc" id="aclassrt__generic__wrapper_html_a2ed9ac4599805aa00619854a79bce4d6"><div class="ttname"><a href="classrt__generic__wrapper.html#a2ed9ac4599805aa00619854a79bce4d6">rt_generic_wrapper::rt_generic_wrapper</a></div><div class="ttdeci">rt_generic_wrapper(const double *const *a, const rk_stepper_type::coeff_b_type &amp;b, const rk_stepper_type::coeff_c_type &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00034">rt_generic_rk4_phase_lattice.cpp:34</a></div></div>
+<div class="ttc" id="art__generic__rk4__phase__lattice_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="rt__generic__rk4__phase__lattice_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00065">rt_generic_rk4_phase_lattice.cpp:65</a></div></div>
+<div class="ttc" id="art__generic__rk4__phase__lattice_8cpp_html_acd881fb03b3110536086c522b5a9e31f"><div class="ttname"><a href="rt__generic__rk4__phase__lattice_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a></div><div class="ttdeci">boost::array&lt; double, N &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="rt__generic__rk4__phase__lattice_8cpp_source.html#l00023">rt_generic_rk4_phase_lattice.cpp:23</a></div></div>
+<div class="ttc" id="astructphase__lattice_html"><div class="ttname"><a href="structphase__lattice.html">phase_lattice</a></div><div class="ttdef"><b>Definition:</b> <a href="phase__lattice_8hpp_source.html#l00015">phase_lattice.hpp:15</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/state/state.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_d36fe7413731c3be7f0c80f568540705.html">state</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">state.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="state_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _COMMON_INC_COMMON_STATE_STATE_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _COMMON_INC_COMMON_STATE_STATE_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcommon_1_1_state.html">State</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">    8</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">time_stamp</a>{0.0};</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">    9</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> <a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>{<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;::Zero</a>()};</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">   10</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>{0.0};</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">   11</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a>{0.0};</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">   12</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>{0.0};</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">   13</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a>{0.0};</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">   14</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>{0.0};</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a660a5c686570a69a88f6ae674318b434">   15</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structcommon_1_1_state.html#a660a5c686570a69a88f6ae674318b434">print</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    printf(<span class="stringliteral">&quot;State:\n&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    printf(<span class="stringliteral">&quot; -- time_stamp: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">time_stamp</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    printf(<span class="stringliteral">&quot; -- vec_position: (%lf, %lf).\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>[0], <a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>[1]);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    printf(<span class="stringliteral">&quot; -- angle: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    printf(<span class="stringliteral">&quot; -- curvature: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    printf(<span class="stringliteral">&quot; -- velocity: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    printf(<span class="stringliteral">&quot; -- acceleration: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    printf(<span class="stringliteral">&quot; -- steer: %lf.\n&quot;</span>, <a class="code" href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">steer</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structcommon_1_1_state.html#a0622d15c25e4522efdf895f7adbfdb8c">   26</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a> <a class="code" href="structcommon_1_1_state.html#a0622d15c25e4522efdf895f7adbfdb8c">ToXYTheta</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(0), <a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>(1), <a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  EIGEN_MAKE_ALIGNED_OPERATOR_NEW</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace common</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif  // _COMMON_INC_COMMON_STATE_STATE_H__</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a8eebe7f110a4478fd15e791150c21ea9"><div class="ttname"><a href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">common::State::vec_position</a></div><div class="ttdeci">Vecf&lt; 2 &gt; vec_position</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00009">state.h:9</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a4de935b8f4301b2b44fa9484f1950367"><div class="ttname"><a href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">common::State::curvature</a></div><div class="ttdeci">decimal_t curvature</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00011">state.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a52e4c3baf521a43d459fa41bb93b5ebb"><div class="ttname"><a href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">common::State::acceleration</a></div><div class="ttdeci">decimal_t acceleration</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00013">state.h:13</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a0b47430c47a2f8171adccbfd9fccfdce"><div class="ttname"><a href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">common::State::time_stamp</a></div><div class="ttdeci">decimal_t time_stamp</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00008">state.h:8</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a6d4df8fd60f477765e5f9393c06268f8"><div class="ttname"><a href="structcommon_1_1_state.html#a6d4df8fd60f477765e5f9393c06268f8">common::State::steer</a></div><div class="ttdeci">decimal_t steer</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00014">state.h:14</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a660a5c686570a69a88f6ae674318b434"><div class="ttname"><a href="structcommon_1_1_state.html#a660a5c686570a69a88f6ae674318b434">common::State::print</a></div><div class="ttdeci">void print() const</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00015">state.h:15</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a65b4aea2471a5a6a9e6c429f7d862339"><div class="ttname"><a href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">common::State::angle</a></div><div class="ttdeci">decimal_t angle</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00010">state.h:10</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a131a743ea2c866aeadfcdf143b8c7f56"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a></div><div class="ttdeci">Vecf&lt; 3 &gt; Vec3f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00062">basics.h:62</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a0622d15c25e4522efdf895f7adbfdb8c"><div class="ttname"><a href="structcommon_1_1_state.html#a0622d15c25e4522efdf895f7adbfdb8c">common::State::ToXYTheta</a></div><div class="ttdeci">Vec3f ToXYTheta() const</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00026">state.h:26</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::rosenbrock4_controller&lt; Stepper &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::rosenbrock4_controller&lt; Stepper &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a97a0fce25eb739376b11be7a12766d4f"><td class="memItemLeft" align="right" valign="top">typedef Stepper&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a></td></tr>
+<tr class="separator:a97a0fce25eb739376b11be7a12766d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc4efc76101b90f6ae5e4f00873aea6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a></td></tr>
+<tr class="separator:a1cc4efc76101b90f6ae5e4f00873aea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c078959e45bc2c62c847d118388ccc3"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a></td></tr>
+<tr class="separator:a5c078959e45bc2c62c847d118388ccc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a13df5ecadd9907d3a9d19ba53459c"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_state_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ad6a13df5ecadd9907d3a9d19ba53459c">wrapped_state_type</a></td></tr>
+<tr class="separator:ad6a13df5ecadd9907d3a9d19ba53459c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab426484d0972d30e75cc7aca9d8c39ae"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a></td></tr>
+<tr class="separator:ab426484d0972d30e75cc7aca9d8c39ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e2d1d92e957f10d4c160fe7d48fca9"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab8e2d1d92e957f10d4c160fe7d48fca9">deriv_type</a></td></tr>
+<tr class="separator:ab8e2d1d92e957f10d4c160fe7d48fca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe27c662d483daa8e2b46fa9aafb4245"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_deriv_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#abe27c662d483daa8e2b46fa9aafb4245">wrapped_deriv_type</a></td></tr>
+<tr class="separator:abe27c662d483daa8e2b46fa9aafb4245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95308bab640c056909a1e351ffdac777"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a4edcaf9265bb104cea486a43a0542dca">stepper_type::resizer_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a95308bab640c056909a1e351ffdac777">resizer_type</a></td></tr>
+<tr class="separator:a95308bab640c056909a1e351ffdac777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5074ffbbd33214afa1978db8985106b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag.html">controlled_stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ad5074ffbbd33214afa1978db8985106b">stepper_category</a></td></tr>
+<tr class="separator:ad5074ffbbd33214afa1978db8985106b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f65e36587eafba1e429d1eaa73aeec"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller</a>&lt; Stepper &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a77f65e36587eafba1e429d1eaa73aeec">controller_type</a></td></tr>
+<tr class="separator:a77f65e36587eafba1e429d1eaa73aeec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4c802c720ff2efda6865e9d119d561a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a4c802c720ff2efda6865e9d119d561a7">rosenbrock4_controller</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a> atol=1.0e-6, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a> rtol=1.0e-6, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab4f2759b123e9703b8cdbbd615b67316">stepper</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a>())</td></tr>
+<tr class="separator:a4c802c720ff2efda6865e9d119d561a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744f978a69d5ce637247916699fa63ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a744f978a69d5ce637247916699fa63ff">error</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;x, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;xold, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;xerr)</td></tr>
+<tr class="separator:a744f978a69d5ce637247916699fa63ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16f7e3f699f0a62732c5753c6ea9eeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#af16f7e3f699f0a62732c5753c6ea9eeb">last_error</a> (void) const</td></tr>
+<tr class="separator:af16f7e3f699f0a62732c5753c6ea9eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dda2502bf085435360ca5da84b4135f"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a7dda2502bf085435360ca5da84b4135f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">boost::numeric::odeint::controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a7dda2502bf085435360ca5da84b4135f">try_step</a> (System <a class="el" href="structsys.html">sys</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="separator:a7dda2502bf085435360ca5da84b4135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f535ca6dbdee8369837a28cc43616ba"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a7f535ca6dbdee8369837a28cc43616ba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">boost::numeric::odeint::controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a7f535ca6dbdee8369837a28cc43616ba">try_step</a> (System <a class="el" href="structsys.html">sys</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;xout, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="separator:a7f535ca6dbdee8369837a28cc43616ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c23e625eed24094c9946742e033a729"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:a1c23e625eed24094c9946742e033a729"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1c23e625eed24094c9946742e033a729">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="separator:a1c23e625eed24094c9946742e033a729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f2759b123e9703b8cdbbd615b67316"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab4f2759b123e9703b8cdbbd615b67316">stepper</a> (void)</td></tr>
+<tr class="separator:ab4f2759b123e9703b8cdbbd615b67316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387aae77a2c4c8fef3cb5f75b7c3dfd2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a387aae77a2c4c8fef3cb5f75b7c3dfd2">stepper</a> (void) const</td></tr>
+<tr class="separator:a387aae77a2c4c8fef3cb5f75b7c3dfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class Stepper&gt;<br />
+class boost::numeric::odeint::rosenbrock4_controller&lt; Stepper &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00037">37</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a77f65e36587eafba1e429d1eaa73aeec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f65e36587eafba1e429d1eaa73aeec">&#9670;&nbsp;</a></span>controller_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller</a>&lt; Stepper &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a77f65e36587eafba1e429d1eaa73aeec">controller_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab8e2d1d92e957f10d4c160fe7d48fca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e2d1d92e957f10d4c160fe7d48fca9">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab8e2d1d92e957f10d4c160fe7d48fca9">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a95308bab640c056909a1e351ffdac777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95308bab640c056909a1e351ffdac777">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a4edcaf9265bb104cea486a43a0542dca">stepper_type::resizer_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a95308bab640c056909a1e351ffdac777">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5c078959e45bc2c62c847d118388ccc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c078959e45bc2c62c847d118388ccc3">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad5074ffbbd33214afa1978db8985106b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5074ffbbd33214afa1978db8985106b">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag.html">controlled_stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ad5074ffbbd33214afa1978db8985106b">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a97a0fce25eb739376b11be7a12766d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a0fce25eb739376b11be7a12766d4f">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Stepper <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab426484d0972d30e75cc7aca9d8c39ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab426484d0972d30e75cc7aca9d8c39ae">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1cc4efc76101b90f6ae5e4f00873aea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc4efc76101b90f6ae5e4f00873aea6">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abe27c662d483daa8e2b46fa9aafb4245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe27c662d483daa8e2b46fa9aafb4245">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_deriv_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#abe27c662d483daa8e2b46fa9aafb4245">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad6a13df5ecadd9907d3a9d19ba53459c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a13df5ecadd9907d3a9d19ba53459c">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_state_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ad6a13df5ecadd9907d3a9d19ba53459c">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4c802c720ff2efda6865e9d119d561a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c802c720ff2efda6865e9d119d561a7">&#9670;&nbsp;</a></span>rosenbrock4_controller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a>&#160;</td>
+          <td class="paramname"><em>atol</em> = <code>1.0e-6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a>&#160;</td>
+          <td class="paramname"><em>rtol</em> = <code>1.0e-6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1c23e625eed24094c9946742e033a729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c23e625eed24094c9946742e033a729">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00151">151</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a744f978a69d5ce637247916699fa63ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a744f978a69d5ce637247916699fa63ff">&#9670;&nbsp;</a></span>error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::error </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>xold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>xerr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00064">64</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_a744f978a69d5ce637247916699fa63ff_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_a744f978a69d5ce637247916699fa63ff_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_a744f978a69d5ce637247916699fa63ff_cgraph" id="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_a744f978a69d5ce637247916699fa63ff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,76,184,132"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="471,7,544,34"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="305,32,350,59"/>
+<area shape="rect" href="vector__space__1d_8hpp.html#a289b0b412d13dd7750292ba3d3aa9e1f" title=" " alt="" coords="232,84,423,125"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="302,150,353,176"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="290,200,365,227"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af16f7e3f699f0a62732c5753c6ea9eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16f7e3f699f0a62732c5753c6ea9eeb">&#9670;&nbsp;</a></span>last_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a1cc4efc76101b90f6ae5e4f00873aea6">value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::last_error </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00079">79</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab4f2759b123e9703b8cdbbd615b67316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f2759b123e9703b8cdbbd615b67316">&#9670;&nbsp;</a></span>stepper() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::stepper </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00159">159</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a387aae77a2c4c8fef3cb5f75b7c3dfd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387aae77a2c4c8fef3cb5f75b7c3dfd2">&#9670;&nbsp;</a></span>stepper() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a97a0fce25eb739376b11be7a12766d4f">stepper_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::stepper </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7f535ca6dbdee8369837a28cc43616ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f535ca6dbdee8369837a28cc43616ba">&#9670;&nbsp;</a></span>try_step() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">boost::numeric::odeint::controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>sys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>xout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00103">103</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7dda2502bf085435360ca5da84b4135f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dda2502bf085435360ca5da84b4135f">&#9670;&nbsp;</a></span>try_step() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">boost::numeric::odeint::controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a>&lt; Stepper &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>sys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#a5c078959e45bc2c62c847d118388ccc3">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html#ab426484d0972d30e75cc7aca9d8c39ae">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a> 第 <a class="el" href="rosenbrock4__controller_8hpp_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="rosenbrock4__controller_8hpp_source.html">rosenbrock4_controller.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

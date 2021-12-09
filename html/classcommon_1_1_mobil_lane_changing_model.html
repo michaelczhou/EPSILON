@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: common::MobilLaneChangingModel类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecommon.html">common</a></li><li class="navelem"><a class="el" href="classcommon_1_1_mobil_lane_changing_model.html">MobilLaneChangingModel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classcommon_1_1_mobil_lane_changing_model-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">common::MobilLaneChangingModel类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mobil__model_8h_source.html">mobil_model.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:ac473d56b977c7ecf99e3fb3f291e3537"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_mobil_lane_changing_model.html#ac473d56b977c7ecf99e3fb3f291e3537">GetMobilAccChangesOnCurrentLane</a> (const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;cur_fs, const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;leading_vehicle, const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;leading_fs, const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;following_vehicle, const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;following_fs, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_o, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_o_tilda, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_c)</td></tr>
+<tr class="separator:ac473d56b977c7ecf99e3fb3f291e3537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c46c22bc09d6aaac4986c8b9f368450"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_mobil_lane_changing_model.html#a8c46c22bc09d6aaac4986c8b9f368450">GetMobilAccChangesOnTargetLane</a> (const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;projected_cur_fs, const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;leading_vehicle, const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;leading_fs, const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;following_vehicle, const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;following_fs, bool *is_lc_safe, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_n, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_n_tilda, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *acc_c_tilda)</td></tr>
+<tr class="separator:a8c46c22bc09d6aaac4986c8b9f368450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="mobil__model_8h_source.html">mobil_model.h</a> 第 <a class="el" href="mobil__model_8h_source.html#l00011">11</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="ac473d56b977c7ecf99e3fb3f291e3537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac473d56b977c7ecf99e3fb3f291e3537">&#9670;&nbsp;</a></span>GetMobilAccChangesOnCurrentLane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::MobilLaneChangingModel::GetMobilAccChangesOnCurrentLane </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>cur_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>leading_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>leading_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>following_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>following_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_o_tilda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="mobil__model_8cc_source.html">mobil_model.cc</a> 第 <a class="el" href="mobil__model_8cc_source.html#l00005">5</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_cgraph.png" border="0" usemap="#classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_cgraph" alt=""/></div>
+<map name="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_cgraph" id="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,311,47"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="359,13,513,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_icgraph.png" border="0" usemap="#classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_icgraph" alt=""/></div>
+<map name="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_icgraph" id="classcommon_1_1_mobil_lane_changing_model_ac473d56b977c7ecf99e3fb3f291e3537_icgraph">
+<area shape="rect" title=" " alt="" coords="607,13,912,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c46c22bc09d6aaac4986c8b9f368450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c46c22bc09d6aaac4986c8b9f368450">&#9670;&nbsp;</a></span>GetMobilAccChangesOnTargetLane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> common::MobilLaneChangingModel::GetMobilAccChangesOnTargetLane </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>projected_cur_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>leading_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>leading_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>following_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_frenet_state.html">FrenetState</a> &amp;&#160;</td>
+          <td class="paramname"><em>following_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>is_lc_safe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_n_tilda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>acc_c_tilda</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="mobil__model_8cc_source.html">mobil_model.cc</a> 第 <a class="el" href="mobil__model_8cc_source.html#l00061">61</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_cgraph.png" border="0" usemap="#classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_cgraph" alt=""/></div>
+<map name="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_cgraph" id="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_cgraph">
+<area shape="rect" title=" " alt="" coords="5,27,303,69"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="355,5,509,32"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#ae40ece00a0dbcb2b6213364878fe300a" title=" " alt="" coords="351,57,513,98"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#afadf32cdbb3e011bf029570f5699940e" title=" " alt="" coords="561,57,768,98"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a107dc0a8988b392686c52f7653340c64" title=" " alt="" coords="816,19,1039,61"/>
+<area shape="rect" href="classcommon_1_1_rss_checker.html#a0884b748cf0d86cae69b0f5b9c2d5e11" title=" " alt="" coords="827,85,1027,141"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_icgraph.png" border="0" usemap="#classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_icgraph" alt=""/></div>
+<map name="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_icgraph" id="classcommon_1_1_mobil_lane_changing_model_a8c46c22bc09d6aaac4986c8b9f368450_icgraph">
+<area shape="rect" title=" " alt="" coords="607,13,904,54"/>
+<area shape="rect" href="classcommon_1_1_mobil_behavior_prediction.html#af36b62d5b9546177fedb232128681405" title=" " alt="" coords="312,13,559,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/inc/common/mobil/<a class="el" href="mobil__model_8h_source.html">mobil_model.h</a></li>
+<li>core/common/src/common/mobil/<a class="el" href="mobil__model_8cc_source.html">mobil_model.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

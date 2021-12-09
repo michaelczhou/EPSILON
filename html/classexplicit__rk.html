@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: explicit_rk&lt; StateType, stage_count &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classexplicit__rk-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">explicit_rk&lt; StateType, stage_count &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 explicit_rk&lt; StateType, stage_count &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classexplicit__rk__inherit__graph.png" border="0" usemap="#explicit__rk_3_01_state_type_00_01stage__count_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="explicit__rk_3_01_state_type_00_01stage__count_01_4_inherit__map" id="explicit__rk_3_01_state_type_00_01stage__count_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="15,5,188,47"/>
+<area shape="rect" href="classexplicit__error__rk.html" title=" " alt="" coords="5,95,197,136"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structexplicit__rk_1_1calculate__stage.html">calculate_stage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structexplicit__rk_1_1stage__vector.html">stage_vector</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a790cc49bcdb60ced5079650a27f409cc"><td class="memItemLeft" align="right" valign="top">typedef StateType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a></td></tr>
+<tr class="separator:a790cc49bcdb60ced5079650a27f409cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfec233e00de1a96eab3ac66a08b2449"><td class="memItemLeft" align="right" valign="top">typedef mpl::range_c&lt; size_t, 1, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a></td></tr>
+<tr class="separator:abfec233e00de1a96eab3ac66a08b2449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa9a36746b50a2ad36d9cfc697ed070"><td class="memItemLeft" align="right" valign="top">typedef fusion::result_of::as_vector&lt; typename mpl::copy&lt; <a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a>, mpl::inserter&lt; mpl::vector0&lt; &gt;, mpl::push_back&lt; mpl::_1, <a class="el" href="structarray__wrapper.html">array_wrapper</a>&lt; double, mpl::_2 &gt; &gt; &gt; &gt;::type &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">coef_a_type</a></td></tr>
+<tr class="separator:a8aa9a36746b50a2ad36d9cfc697ed070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04117e75eed01d7b4d11184a11b23ee"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; double, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">coef_b_type</a></td></tr>
+<tr class="separator:ad04117e75eed01d7b4d11184a11b23ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f032394ed1af23ad76f77b059a8127"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; double, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">coef_c_type</a></td></tr>
+<tr class="separator:a63f032394ed1af23ad76f77b059a8127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e932f2987ec4cda247c53b6be4ec5b7"><td class="memItemLeft" align="right" valign="top">typedef fusion::result_of::as_vector&lt; typename mpl::push_back&lt; typename mpl::copy&lt; <a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a>, mpl::inserter&lt; mpl::vector0&lt;&gt;, mpl::push_back&lt; mpl::_1, <a class="el" href="structstage__wrapper.html">stage_wrapper</a>&lt; double, mpl::_2, <a class="el" href="structintermediate__stage.html">intermediate_stage</a> &gt; &gt; &gt; &gt;::type, <a class="el" href="structstage.html">stage</a>&lt; double, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a>, <a class="el" href="structlast__stage.html">last_stage</a> &gt; &gt;::type &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a5e932f2987ec4cda247c53b6be4ec5b7">stage_vector_base</a></td></tr>
+<tr class="separator:a5e932f2987ec4cda247c53b6be4ec5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a862521624dee701e46a87b89ff9ec39a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a862521624dee701e46a87b89ff9ec39a">explicit_rk</a> (const <a class="el" href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">coef_a_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, const <a class="el" href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">coef_b_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, const <a class="el" href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">coef_c_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>)</td></tr>
+<tr class="separator:a862521624dee701e46a87b89ff9ec39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0341bc5d0e7294a15e6362afb6a871eb"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a0341bc5d0e7294a15e6362afb6a871eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a0341bc5d0e7294a15e6362afb6a871eb">do_step</a> (System system, <a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a> &amp;x, const double t, const double <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="separator:a0341bc5d0e7294a15e6362afb6a871eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a6ce49e931fded160e407ea787f4b77a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplicit__rk.html#a6ce49e931fded160e407ea787f4b77a0">m_F</a> [<a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a>]</td></tr>
+<tr class="separator:a6ce49e931fded160e407ea787f4b77a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class StateType, size_t stage_count&gt;<br />
+class explicit_rk&lt; StateType, stage_count &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00073">73</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a8aa9a36746b50a2ad36d9cfc697ed070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa9a36746b50a2ad36d9cfc697ed070">&#9670;&nbsp;</a></span>coef_a_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fusion::result_of::as_vector&lt; typename mpl::copy &lt; <a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a> , mpl::inserter &lt; mpl::vector0&lt; &gt; , mpl::push_back&lt; mpl::_1 , <a class="el" href="structarray__wrapper.html">array_wrapper</a>&lt; double , mpl::_2 &gt; &gt; &gt; &gt;::type &gt;::type <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">coef_a_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad04117e75eed01d7b4d11184a11b23ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04117e75eed01d7b4d11184a11b23ee">&#9670;&nbsp;</a></span>coef_b_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; double , <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt; <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">coef_b_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a63f032394ed1af23ad76f77b059a8127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f032394ed1af23ad76f77b059a8127">&#9670;&nbsp;</a></span>coef_c_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; double , <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt; <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">coef_c_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00096">96</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abfec233e00de1a96eab3ac66a08b2449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfec233e00de1a96eab3ac66a08b2449">&#9670;&nbsp;</a></span>stage_indices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef mpl::range_c&lt; size_t , 1 , <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt; <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e932f2987ec4cda247c53b6be4ec5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e932f2987ec4cda247c53b6be4ec5b7">&#9670;&nbsp;</a></span>stage_vector_base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fusion::result_of::as_vector&lt; typename mpl::push_back &lt; typename mpl::copy &lt; <a class="el" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">stage_indices</a>, mpl::inserter &lt; mpl::vector0&lt;&gt; , mpl::push_back&lt; mpl::_1 , <a class="el" href="structstage__wrapper.html">stage_wrapper</a>&lt; double , mpl::_2 , <a class="el" href="structintermediate__stage.html">intermediate_stage</a> &gt; &gt; &gt; &gt;::type , <a class="el" href="structstage.html">stage</a>&lt; double , <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> , <a class="el" href="structlast__stage.html">last_stage</a> &gt; &gt;::type &gt;::type <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#a5e932f2987ec4cda247c53b6be4ec5b7">stage_vector_base</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00113">113</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a790cc49bcdb60ced5079650a27f409cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a790cc49bcdb60ced5079650a27f409cc">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef StateType <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a862521624dee701e46a87b89ff9ec39a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862521624dee701e46a87b89ff9ec39a">&#9670;&nbsp;</a></span>explicit_rk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::<a class="el" href="classexplicit__rk.html">explicit_rk</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">coef_a_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">coef_b_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">coef_c_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00193">193</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0341bc5d0e7294a15e6362afb6a871eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0341bc5d0e7294a15e6362afb6a871eb">&#9670;&nbsp;</a></span>do_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00202">202</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6ce49e931fded160e407ea787f4b77a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce49e931fded160e407ea787f4b77a0">&#9670;&nbsp;</a></span>m_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class StateType , size_t stage_count&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classexplicit__rk.html#a790cc49bcdb60ced5079650a27f409cc">state_type</a> <a class="el" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> &gt;::m_F[<a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a> 第 <a class="el" href="fusion__explicit__rk__new_8hpp_source.html#l00213">213</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/<a class="el" href="fusion__explicit__rk__new_8hpp_source.html">fusion_explicit_rk_new.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

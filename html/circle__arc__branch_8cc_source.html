@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/circle_arc/circle_arc_branch.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_51ce552c80afd960fb38d4d9d92e3245.html">circle_arc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">circle_arc_branch.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="circle__arc__branch_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="circle__arc__branch_8h.html">common/circle_arc/circle_arc_branch.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classcommon_1_1_circle_arc_branch.html#ae9515fcda8260d3f91af10eb9387d6a9">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_circle_arc_branch.html#ae9515fcda8260d3f91af10eb9387d6a9">CircleArcBranch::RetFinalStates</a>(std::vector&lt;Vec3f&gt; *p_states)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;arc : circle_arc_vec_) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    p_states-&gt;emplace_back(arc.final_state());</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  }</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classcommon_1_1_circle_arc_branch.html#ac769835796f76ba8d3f51ac2391b09ec">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_circle_arc_branch.html#ac769835796f76ba8d3f51ac2391b09ec">CircleArcBranch::RetAllSampledStates</a>(std::vector&lt;Vec3f&gt; *p_states)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;arc : circle_arc_vec_) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::vector&lt;Vec3f&gt; samples;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    arc.GetSampledStates(0.2, &amp;samples);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;state : samples) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      p_states-&gt;emplace_back(state);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> CircleArcBranch::CalculateCircleArcBranch() {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">int</span> n_arcs = curvature_vec_.size();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)length_vec_.size() != n_arcs) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;[CircleArcBranch] ERROR - Size of vec are not equal&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n_arcs; ++i) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    CircleArc arc(start_state_, curvature_vec_[i], length_vec_[i]);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    circle_arc_vec_.emplace_back(arc);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}  <span class="comment">// namespace common</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acircle__arc__branch_8h_html"><div class="ttname"><a href="circle__arc__branch_8h.html">circle_arc_branch.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_circle_arc_branch_html_ae9515fcda8260d3f91af10eb9387d6a9"><div class="ttname"><a href="classcommon_1_1_circle_arc_branch.html#ae9515fcda8260d3f91af10eb9387d6a9">common::CircleArcBranch::RetFinalStates</a></div><div class="ttdeci">void RetFinalStates(std::vector&lt; Vec3f &gt; *p_states) const</div><div class="ttdoc">Return all final states of circle arcs</div><div class="ttdef"><b>Definition:</b> <a href="circle__arc__branch_8cc_source.html#l00005">circle_arc_branch.cc:5</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_circle_arc_branch_html_ac769835796f76ba8d3f51ac2391b09ec"><div class="ttname"><a href="classcommon_1_1_circle_arc_branch.html#ac769835796f76ba8d3f51ac2391b09ec">common::CircleArcBranch::RetAllSampledStates</a></div><div class="ttdeci">void RetAllSampledStates(std::vector&lt; Vec3f &gt; *p_states) const</div><div class="ttdoc">Return all sampled states in circle arc branch</div><div class="ttdef"><b>Definition:</b> <a href="circle__arc__branch_8cc_source.html#l00011">circle_arc_branch.cc:11</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

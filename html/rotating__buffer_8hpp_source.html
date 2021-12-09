@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/detail/rotating_buffer.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li><li class="navelem"><a class="el" href="dir_0819929eb866b117f91d4cb10b0592a9.html">detail</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rotating_buffer.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rotating__buffer_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/stepper/detail/rotating_buffer.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Implemetation of a rotating (cyclic) buffer for use in the Adam Bashforth stepper</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ROTATING_BUFFER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ROTATING_BUFFER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> T , <span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html">rotating_buffer</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">   33</a></span>&#160;    <span class="keyword">typedef</span> T <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">value_type</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">   34</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">dim</a> = <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a68579a72f75c34e8f15d5fd2b68de667">   36</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a68579a72f75c34e8f15d5fd2b68de667">rotating_buffer</a>( <span class="keywordtype">void</span> ) : m_first( 0 )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    { }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a358a870fe6826d44430da971287c3517">   39</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a358a870fe6826d44430da971287c3517">size</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">dim</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#ad1e66769b9bd01de787c789fb425d612">   44</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">value_type</a>&amp; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#ad1e66769b9bd01de787c789fb425d612">operator[]</a>( <span class="keywordtype">size_t</span> i )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a3d4dd577b2e2e3e75c0cca7c3c8207b8">m_data</a>[ get_index( i ) ];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a612078364a7f9ee27b597db33f4753a4">   49</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">value_type</a>&amp; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a612078364a7f9ee27b597db33f4753a4">operator[]</a>( <span class="keywordtype">size_t</span> i )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a3d4dd577b2e2e3e75c0cca7c3c8207b8">m_data</a>[ get_index( i ) ];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a65edb2b76b130b6e1a73853120cb00aa">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a65edb2b76b130b6e1a73853120cb00aa">rotate</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span>( m_first == 0 )</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            m_first = <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">dim</a>-1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            --m_first;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a3d4dd577b2e2e3e75c0cca7c3c8207b8">   64</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">value_type</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a3d4dd577b2e2e3e75c0cca7c3c8207b8">m_data</a>[<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">size_t</span> get_index( <span class="keywordtype">size_t</span> i )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> ( ( i + m_first ) % <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">dim</a> );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">size_t</span> m_first;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// detail</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ROTATING_BUFFER_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_ad1e66769b9bd01de787c789fb425d612"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#ad1e66769b9bd01de787c789fb425d612">boost::numeric::odeint::detail::rotating_buffer::operator[]</a></div><div class="ttdeci">value_type &amp; operator[](size_t i)</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00044">rotating_buffer.hpp:44</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a358a870fe6826d44430da971287c3517"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a358a870fe6826d44430da971287c3517">boost::numeric::odeint::detail::rotating_buffer::size</a></div><div class="ttdeci">size_t size(void) const</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00039">rotating_buffer.hpp:39</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_aa92798bb47648bc5dea6246dc8f28745"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#aa92798bb47648bc5dea6246dc8f28745">boost::numeric::odeint::detail::rotating_buffer::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00033">rotating_buffer.hpp:33</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00016">nested_range_algebra.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a57eab7d331e3377323aa4b2a1a50f850"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a57eab7d331e3377323aa4b2a1a50f850">boost::numeric::odeint::detail::rotating_buffer::dim</a></div><div class="ttdeci">const static size_t dim</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00034">rotating_buffer.hpp:34</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html">boost::numeric::odeint::detail::rotating_buffer</a></div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00029">rotating_buffer.hpp:29</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a3d4dd577b2e2e3e75c0cca7c3c8207b8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a3d4dd577b2e2e3e75c0cca7c3c8207b8">boost::numeric::odeint::detail::rotating_buffer::m_data</a></div><div class="ttdeci">value_type m_data[N]</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00064">rotating_buffer.hpp:64</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a612078364a7f9ee27b597db33f4753a4"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a612078364a7f9ee27b597db33f4753a4">boost::numeric::odeint::detail::rotating_buffer::operator[]</a></div><div class="ttdeci">const value_type &amp; operator[](size_t i) const</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00049">rotating_buffer.hpp:49</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a65edb2b76b130b6e1a73853120cb00aa"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a65edb2b76b130b6e1a73853120cb00aa">boost::numeric::odeint::detail::rotating_buffer::rotate</a></div><div class="ttdeci">void rotate(void)</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00054">rotating_buffer.hpp:54</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer_html_a68579a72f75c34e8f15d5fd2b68de667"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1rotating__buffer.html#a68579a72f75c34e8f15d5fd2b68de667">boost::numeric::odeint::detail::rotating_buffer::rotating_buffer</a></div><div class="ttdeci">rotating_buffer(void)</div><div class="ttdef"><b>Definition:</b> <a href="rotating__buffer_8hpp_source.html#l00036">rotating_buffer.hpp:36</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

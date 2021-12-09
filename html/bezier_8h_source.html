@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/spline/bezier.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_548191efa841f3f0830025becb9336a6.html">spline</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">bezier.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="bezier_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_COMMON_INC_COMMON_SPLINE_BEZIER_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_COMMON_INC_COMMON_SPLINE_BEZIER_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// forward declaration</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N_DEG&gt;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_utils.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommon_1_1_bezier_utils.html">BezierUtils</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N_DEG, <span class="keywordtype">int</span> N_DIM&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommon_1_1_bezier_spline.html">BezierSpline</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#a0751fb798e92df16ab865875a79e6b5a">   22</a></span>&#160;  <a class="code" href="classcommon_1_1_bezier_spline.html#a0751fb798e92df16ab865875a79e6b5a">BezierSpline</a>() {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9">   27</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9">set_vec_domain</a>(<span class="keyword">const</span> std::vector&lt;decimal_t&gt;&amp; <a class="code" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    assert(<a class="code" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>.size() &gt; 1);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    vec_domain_ = <a class="code" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ctrl_pts_.resize(<a class="code" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>.size() - 1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; static_cast&lt;int&gt;(ctrl_pts_.size()); j++) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      ctrl_pts_[j].setZero();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340">   36</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340">set_coeff</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> segment_idx, <span class="keyword">const</span> <span class="keywordtype">int</span> ctrl_pt_index,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a>&amp; coeff) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ctrl_pts_[segment_idx].row(ctrl_pt_index) = coeff;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#abbb67ec217cf0e097fa142ad42eae96b">   41</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_bezier_spline.html#abbb67ec217cf0e097fa142ad42eae96b">set_ctrl_pts</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf&lt;N_DEG + 1, N_DIM&gt;</a>&gt;&amp; pts) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ctrl_pts_ = pts;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#ae52980ec1f2ee3eba84678367120f54c">   49</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classcommon_1_1_bezier_spline.html#ae52980ec1f2ee3eba84678367120f54c">num_segments</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ctrl_pts_.size()); }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">   55</a></span>&#160;  std::vector&lt;decimal_t&gt; <a class="code" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vec_domain_; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#a53be5d482a9dd325cbe21e6d103b6552">   62</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Matf&lt;N_DEG + 1, N_DIM&gt;</a>&gt; <a class="code" href="classcommon_1_1_bezier_spline.html#a53be5d482a9dd325cbe21e6d103b6552">ctrl_pts</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ctrl_pts_; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#a73eecf8dc4d55d895b75913822eb2d6f">   67</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classcommon_1_1_bezier_spline.html#a73eecf8dc4d55d895b75913822eb2d6f">begin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (vec_domain_.size() &lt; 1) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> vec_domain_.front();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187">   75</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187">end</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (vec_domain_.size() &lt; 1) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> vec_domain_.back();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#a583d1354c99f7d101b35b8eef71d9a70">   86</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_bezier_spline.html#a583d1354c99f7d101b35b8eef71d9a70">evaluate</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s, <span class="keyword">const</span> <span class="keywordtype">int</span> d, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a>* ret)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> num_pts = vec_domain_.size();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (num_pts &lt; 1) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">auto</span> it = std::lower_bound(vec_domain_.begin(), vec_domain_.end(), s);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> idx =</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997">std::min</a>(<a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it - vec_domain_.begin()) - 1, 0),</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                 num_pts - 2);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> h = s - vec_domain_[idx];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (s &lt; vec_domain_[0]) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> duration = vec_domain_[idx + 1] - vec_domain_[idx];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> normalized_s = h / duration;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="comment">// printf(&quot;derivative %d, normalized s: %lf.\n&quot;, d, normalized_s);</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DEG + 1&gt;</a> basis =</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          <a class="code" href="classcommon_1_1_bezier_utils.html#a9a83c3f93a0ee472732cc6dbb0fe05ce">BezierUtils&lt;N_DEG&gt;::GetBezierBasis</a>(d, normalized_s);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a> <a class="code" href="runge__kutta__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a> =</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          (<a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(duration, 1 - d) * basis.transpose() * ctrl_pts_[idx])</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              .transpose();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      *ret = <a class="code" href="runge__kutta__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_spline.html#abb6a5e9fb355f3ac090cb4c343f396cf">  111</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_bezier_spline.html#abb6a5e9fb355f3ac090cb4c343f396cf">print</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    printf(<span class="stringliteral">&quot;Bezier control points.\n&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; static_cast&lt;int&gt;(ctrl_pts_.size()); j++) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      printf(<span class="stringliteral">&quot;segment %d --&gt;.\n&quot;</span>, j);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      std::cout &lt;&lt; ctrl_pts_[j] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;Matf&lt;N_DEG + 1, N_DIM&gt;</a>&gt; ctrl_pts_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  std::vector&lt;decimal_t&gt; vec_domain_;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N_DEG&gt;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">class </span>BezierUtils {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_utils.html#a1254d7f08e5d9afebe8d58d0cb2f11df">  130</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#abd4bb0529c80787daa8a2b4f80dd744d">MatNf&lt;N_DEG + 1&gt;</a> <a class="code" href="classcommon_1_1_bezier_utils.html#a1254d7f08e5d9afebe8d58d0cb2f11df">GetBezierHessianMat</a>(<span class="keywordtype">int</span> derivative_degree) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#abd4bb0529c80787daa8a2b4f80dd744d">MatNf&lt;N_DEG + 1&gt;</a> hessian;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">switch</span> (N_DEG) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">case</span> 5: {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (derivative_degree == 3) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;          <span class="comment">// jerk hessian</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          hessian &lt;&lt; 720.0, -1800.0, 1200.0, 0.0, 0.0, -120.0, -1800.0, 4800.0,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;              -3600.0, 0.0, 600.0, 0.0, 1200.0, -3600.0, 3600.0, -1200.0, 0.0,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;              0.0, 0.0, 0.0, -1200.0, 3600.0, -3600.0, 1200.0, 0.0, 600.0, 0.0,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;              -3600.0, 4800.0, -1800.0, -120.0, 0.0, 0.0, 1200.0, -1800.0,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;              720.0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> hessian;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classcommon_1_1_bezier_utils.html#a9a83c3f93a0ee472732cc6dbb0fe05ce">  157</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DEG + 1&gt;</a> <a class="code" href="classcommon_1_1_bezier_utils.html#a9a83c3f93a0ee472732cc6dbb0fe05ce">GetBezierBasis</a>(<span class="keywordtype">int</span> derivative_degree, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> t) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    t = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<a class="code" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997">std::min</a>(1.0, t), 0.0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DEG + 1&gt;</a> basis;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">switch</span> (N_DEG) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (derivative_degree == 0) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          basis &lt;&lt; -<a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 5), 5 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 4),</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;              -10 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 2) * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3), 10 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 3) * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2),</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;              -5 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 4) * (t - 1), <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 5);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (derivative_degree == 1) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          basis &lt;&lt; -5 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 4),</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;              20 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3) + 5 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 4),</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;              -20 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3) - 30 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 2) * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2),</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;              10 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 3) * (2 * t - 2) + 30 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 2) * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2),</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;              -20 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 3) * (t - 1) - 5 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 4), 5 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t, 4);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (derivative_degree == 2) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;          basis &lt;&lt; -20 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3),</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;              60 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2) + 40 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3),</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;              -120 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2) - 20 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 3) -</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                  30 * t * t * (2 * t - 2),</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;              60 * t * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2) + 60 * t * t * (2 * t - 2) +</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                  20 * t * t * t,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;              -60 * t * t * (t - 1) - 40 * t * t * t, 20 * t * t * t;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (derivative_degree == 3) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;          basis &lt;&lt; -60 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2),</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;              60 * t * (2 * t - 2) + 180 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2),</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;              -180 * t * (2 * t - 2) - 180 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2) - 60 * t * t,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;              180 * t * (2 * t - 2) + 60 * <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(t - 1, 2) + 180 * t * t,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;              -120 * t * (t - 1) - 180 * t * t, 60 * t * t;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        printf(<span class="stringliteral">&quot;N_DEG %d, derivative_degree %d.\n&quot;</span>, N_DEG, derivative_degree);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> basis;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}  <span class="comment">// namespace common</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a1eeda0bad4efd3be8cb2da1941982410"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, M, N &gt; Matf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00039">basics.h:39</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_a36bf617b1fc2ff1ecadc234231c9e997"><div class="ttname"><a href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997">min</a></div><div class="ttdeci">value_type min(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00038">check_gmp.cpp:38</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_utils_html"><div class="ttname"><a href="classcommon_1_1_bezier_utils.html">common::BezierUtils</a></div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00011">bezier.h:11</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_a53be5d482a9dd325cbe21e6d103b6552"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#a53be5d482a9dd325cbe21e6d103b6552">common::BezierSpline::ctrl_pts</a></div><div class="ttdeci">vec_E&lt; Matf&lt; N_DEG+1, N_DIM &gt; &gt; ctrl_pts() const</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00062">bezier.h:62</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_af8a48700f53c38fa59d209861f0fe4fb"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">common::BezierSpline::vec_domain</a></div><div class="ttdeci">std::vector&lt; decimal_t &gt; vec_domain() const</div><div class="ttdoc">Get the vec domain of the spline</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00055">bezier.h:55</a></div></div>
+<div class="ttc" id="anamespacestd_html_ac08a71c2d905847e8fb4640dd396f60b"><div class="ttname"><a href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a></div><div class="ttdeci">__float128 pow(__float128 x, __float128 y)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00046">black_hole.cpp:46</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_ad9f9b5c229de595e42d2c2000ac20340"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340">common::BezierSpline::set_coeff</a></div><div class="ttdeci">void set_coeff(const int segment_idx, const int ctrl_pt_index, const Vecf&lt; N_DIM &gt; &amp;coeff)</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00036">bezier.h:36</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_utils_html_a9a83c3f93a0ee472732cc6dbb0fe05ce"><div class="ttname"><a href="classcommon_1_1_bezier_utils.html#a9a83c3f93a0ee472732cc6dbb0fe05ce">common::BezierUtils::GetBezierBasis</a></div><div class="ttdeci">static Vecf&lt; N_DEG+1 &gt; GetBezierBasis(int derivative_degree, decimal_t t)</div><div class="ttdoc">compute the bezier basis for non-scaled control points [c_0, c_1, ....]</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00157">bezier.h:157</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_abbb67ec217cf0e097fa142ad42eae96b"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#abbb67ec217cf0e097fa142ad42eae96b">common::BezierSpline::set_ctrl_pts</a></div><div class="ttdeci">void set_ctrl_pts(const vec_E&lt; Matf&lt; N_DEG+1, N_DIM &gt;&gt; &amp;pts)</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00041">bezier.h:41</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_abd4bb0529c80787daa8a2b4f80dd744d"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#abd4bb0529c80787daa8a2b4f80dd744d">MatNf</a></div><div class="ttdeci">Matf&lt; N, N &gt; MatNf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00048">basics.h:48</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_abb6a5e9fb355f3ac090cb4c343f396cf"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#abb6a5e9fb355f3ac090cb4c343f396cf">common::BezierSpline::print</a></div><div class="ttdeci">void print() const</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00111">bezier.h:111</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_ab4e18533255e503678809a36d4af8187"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187">common::BezierSpline::end</a></div><div class="ttdeci">decimal_t end() const</div><div class="ttdoc">Get the end of the parameterization</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00075">bezier.h:75</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a></div><div class="ttdeci">@ kIllegalInput</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_utils_html_a1254d7f08e5d9afebe8d58d0cb2f11df"><div class="ttname"><a href="classcommon_1_1_bezier_utils.html#a1254d7f08e5d9afebe8d58d0cb2f11df">common::BezierUtils::GetBezierHessianMat</a></div><div class="ttdeci">static MatNf&lt; N_DEG+1 &gt; GetBezierHessianMat(int derivative_degree)</div><div class="ttdoc">compute the hessian matrix for non-scaled Bezier basis</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00130">bezier.h:130</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_ae52980ec1f2ee3eba84678367120f54c"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#ae52980ec1f2ee3eba84678367120f54c">common::BezierSpline::num_segments</a></div><div class="ttdeci">int num_segments() const</div><div class="ttdoc">Get the number of segments of the spline</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00049">bezier.h:49</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a></div><div class="ttdoc">Bezier spline class The the j-th segment evaluation is given by B_j(t) = s_j*\sum_{i=0}^{N_DEG} c_j^i...</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00020">bezier.h:20</a></div></div>
+<div class="ttc" id="arunge__kutta__concepts_8cpp_html_a994f4223bf54775b30127f1a5930dede"><div class="ttname"><a href="runge__kutta__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a></div><div class="ttdeci">const double result</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__concepts_8cpp_source.html#l00067">runge_kutta_concepts.cpp:67</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_a73eecf8dc4d55d895b75913822eb2d6f"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#a73eecf8dc4d55d895b75913822eb2d6f">common::BezierSpline::begin</a></div><div class="ttdeci">decimal_t begin() const</div><div class="ttdoc">Get the begin of the parameterization</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00067">bezier.h:67</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_a583d1354c99f7d101b35b8eef71d9a70"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#a583d1354c99f7d101b35b8eef71d9a70">common::BezierSpline::evaluate</a></div><div class="ttdeci">ErrorType evaluate(const decimal_t s, const int d, Vecf&lt; N_DIM &gt; *ret) const</div><div class="ttdoc">Return evaluation of spline at given parameterization</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00086">bezier.h:86</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_a0751fb798e92df16ab865875a79e6b5a"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#a0751fb798e92df16ab865875a79e6b5a">common::BezierSpline::BezierSpline</a></div><div class="ttdeci">BezierSpline()</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00022">bezier.h:22</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_bezier_spline_html_adec237ab54f9489c9b239f3a53ea2bc9"><div class="ttname"><a href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9">common::BezierSpline::set_vec_domain</a></div><div class="ttdeci">void set_vec_domain(const std::vector&lt; decimal_t &gt; &amp;vec_domain)</div><div class="ttdoc">Set the vector domain</div><div class="ttdef"><b>Definition:</b> <a href="bezier_8h_source.html#l00027">bezier.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

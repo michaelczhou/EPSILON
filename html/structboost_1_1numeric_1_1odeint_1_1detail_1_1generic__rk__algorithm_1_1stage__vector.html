@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">generic_rk_algorithm</a></li><li class="navelem"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector.html">stage_vector</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector__inherit__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_inherit__map" alt="Inheritance graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_inherit__map" id="boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,224,151"/>
+<area shape="rect" title=" " alt="" coords="43,5,187,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector__coll__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_coll__map" alt="Collaboration graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_coll__map" id="boost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_3_01_stage_count_00_01_value_00_01_algebra_00_01_operations_01_4_1_1stage__vector_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,224,151"/>
+<area shape="rect" title=" " alt="" coords="43,5,187,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector_1_1do__insertion.html">do_insertion</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector_1_1print__butcher.html">print_butcher</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a74c47d014fae69509e849d2787086838"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector.html#a74c47d014fae69509e849d2787086838">stage_vector</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5d22cbbec7e0eaae78b7e4e10ce61b47">coef_a_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#acdcae9468eb412013cf1405410406708">coef_b_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5818ff41eae8ddfba715c97fed84fa76">coef_c_type</a> &amp;<a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>)</td></tr>
+<tr class="separator:a74c47d014fae69509e849d2787086838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819caa29158a8ada9f45aaa8dadb509d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm_1_1stage__vector.html#a819caa29158a8ada9f45aaa8dadb509d">print</a> (std::ostream &amp;os) const</td></tr>
+<tr class="separator:a819caa29158a8ada9f45aaa8dadb509d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;size_t StageCount, class Value = double, class Algebra = range_algebra, class Operations = default_operations&gt;<br />
+struct boost::numeric::odeint::detail::generic_rk_algorithm&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector</h3>
+
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00114">114</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a74c47d014fae69509e849d2787086838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c47d014fae69509e849d2787086838">&#9670;&nbsp;</a></span>stage_vector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector::stage_vector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5d22cbbec7e0eaae78b7e4e10ce61b47">coef_a_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#acdcae9468eb412013cf1405410406708">coef_b_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html#a5818ff41eae8ddfba715c97fed84fa76">coef_c_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00153">153</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a819caa29158a8ada9f45aaa8dadb509d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819caa29158a8ada9f45aaa8dadb509d">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t StageCount, class Value  = double, class Algebra  = range_algebra, class Operations  = default_operations&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1generic__rk__algorithm.html">boost::numeric::odeint::detail::generic_rk_algorithm</a>&lt; StageCount, Value, Algebra, Operations &gt;::stage_vector::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a> 第 <a class="el" href="generic__rk__algorithm_8hpp_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/detail/<a class="el" href="generic__rk__algorithm_8hpp_source.html">generic_rk_algorithm.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

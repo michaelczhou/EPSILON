@@ -1,0 +1,1185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: planning::EudmPlannerMapItf类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceplanning.html">planning</a></li><li class="navelem"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html">EudmPlannerMapItf</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classplanning_1_1_eudm_planner_map_itf-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">planning::EudmPlannerMapItf类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a>&gt;</code></p>
+<div class="dynheader">
+类 planning::EudmPlannerMapItf 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_eudm_planner_map_itf__inherit__graph.png" border="0" usemap="#planning_1_1_eudm_planner_map_itf_inherit__map" alt="Inheritance graph"/></div>
+<map name="planning_1_1_eudm_planner_map_itf_inherit__map" id="planning_1_1_eudm_planner_map_itf_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,5,220,32"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner_map_adapter.html" title=" " alt="" coords="13,80,213,121"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a0ac1e8ee562c7dbe2d83f32f5e32ad25"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> = <a class="el" href="structcommon_1_1_state.html">common::State</a></td></tr>
+<tr class="separator:a0ac1e8ee562c7dbe2d83f32f5e32ad25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d516f544029cfd3ea0aa6f6a92df097"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">Lane</a> = <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td></tr>
+<tr class="separator:a4d516f544029cfd3ea0aa6f6a92df097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdee97a79db70325d652c071ace67339"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#acdee97a79db70325d652c071ace67339">Behavior</a> = <a class="el" href="structcommon_1_1_semantic_behavior.html">common::SemanticBehavior</a></td></tr>
+<tr class="separator:acdee97a79db70325d652c071ace67339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dae54f422aaae1ac73a7e4d5c3135ed"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a3dae54f422aaae1ac73a7e4d5c3135ed">Vehicle</a> = <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a></td></tr>
+<tr class="separator:a3dae54f422aaae1ac73a7e4d5c3135ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47707e70ffb220015d7ab9ae70a22872"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a47707e70ffb220015d7ab9ae70a22872">LateralBehavior</a> = <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td></tr>
+<tr class="separator:a47707e70ffb220015d7ab9ae70a22872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8b62e7c4a51cc6630c4b0a3a0fc28046"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a8b62e7c4a51cc6630c4b0a3a0fc28046">IsValid</a> ()=0</td></tr>
+<tr class="separator:a8b62e7c4a51cc6630c4b0a3a0fc28046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05259e6621fcb5c84e1599c3d718ed6d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a05259e6621fcb5c84e1599c3d718ed6d">GetEgoState</a> (<a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> *state)=0</td></tr>
+<tr class="separator:a05259e6621fcb5c84e1599c3d718ed6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9c1d105b1a8a522f3c3ce81286ceb9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a7f9c1d105b1a8a522f3c3ce81286ceb9">GetEgoId</a> (int *id)=0</td></tr>
+<tr class="separator:a7f9c1d105b1a8a522f3c3ce81286ceb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9d0d4c3f9d1e32d67d00efa6319afa"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a9c9d0d4c3f9d1e32d67d00efa6319afa">GetEgoVehicle</a> (<a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *vehicle)=0</td></tr>
+<tr class="separator:a9c9d0d4c3f9d1e32d67d00efa6319afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80475e4c9d833e4edde5d3ffa419d26"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#af80475e4c9d833e4edde5d3ffa419d26">GetEgoLaneIdByPosition</a> (const std::vector&lt; int &gt; &amp;navi_path, int *lane_id)=0</td></tr>
+<tr class="separator:af80475e4c9d833e4edde5d3ffa419d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f0bf5856e9e5f1cd8ca4ef9ab384a7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a85f0bf5856e9e5f1cd8ca4ef9ab384a7">GetNearestLaneIdUsingState</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a> &amp;state, const std::vector&lt; int &gt; &amp;navi_path, int *id, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *distance, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *arc_len)=0</td></tr>
+<tr class="separator:a85f0bf5856e9e5f1cd8ca4ef9ab384a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac195be298728984ea7114be214513c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#adac195be298728984ea7114be214513c">IsTopologicallyReachable</a> (const int lane_id, const std::vector&lt; int &gt; &amp;path, int *num_lane_changes, bool *res)=0</td></tr>
+<tr class="separator:adac195be298728984ea7114be214513c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafcd91d709e2eec573adfc3806032599"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#aafcd91d709e2eec573adfc3806032599">IsLaneConsistent</a> (const int lane_id_old, const int lane_id_new)=0</td></tr>
+<tr class="separator:aafcd91d709e2eec573adfc3806032599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeeb72133b299e9a84b2ef1f37b911bd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#afeeb72133b299e9a84b2ef1f37b911bd">GetKeyVehicles</a> (<a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> *key_vehicle_set)=0</td></tr>
+<tr class="separator:afeeb72133b299e9a84b2ef1f37b911bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3d39324920b5bf9321804403fef1a3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4e3d39324920b5bf9321804403fef1a3">GetSurroundingVehicles</a> (<a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> *key_vehicle_set)=0</td></tr>
+<tr class="separator:a4e3d39324920b5bf9321804403fef1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fa27e1a1934cdf3b9b083f0e38b8f3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a85fa27e1a1934cdf3b9b083f0e38b8f3">GetKeySemanticVehicles</a> (<a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> *key_vehicle_set)=0</td></tr>
+<tr class="separator:a85fa27e1a1934cdf3b9b083f0e38b8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c66384fd4d4e5cd374c9d808e9b70b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a70c66384fd4d4e5cd374c9d808e9b70b">GetRightLaneId</a> (const int lane_id, int *r_lane_id)=0</td></tr>
+<tr class="separator:a70c66384fd4d4e5cd374c9d808e9b70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e2de14b547349821ce7677497cbaca"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a21e2de14b547349821ce7677497cbaca">GetLeftLaneId</a> (const int lane_id, int *l_lane_id)=0</td></tr>
+<tr class="separator:a21e2de14b547349821ce7677497cbaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81aad54780d8559b435462eb03eaf78"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#ae81aad54780d8559b435462eb03eaf78">GetChildLaneIds</a> (const int lane_id, std::vector&lt; int &gt; *child_ids)=0</td></tr>
+<tr class="separator:ae81aad54780d8559b435462eb03eaf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6faef9d0ab58ea131f51a8236fe4f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a6b6faef9d0ab58ea131f51a8236fe4f7">GetFatherLaneIds</a> (const int lane_id, std::vector&lt; int &gt; *father_ids)=0</td></tr>
+<tr class="separator:a6b6faef9d0ab58ea131f51a8236fe4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4755ce0ef4642e84240625d9308b1174"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4755ce0ef4642e84240625d9308b1174">GetLaneByLaneId</a> (const int lane_id, <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">Lane</a> *lane)=0</td></tr>
+<tr class="separator:a4755ce0ef4642e84240625d9308b1174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca5382288a7852330b2864ac2c9223d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#aeca5382288a7852330b2864ac2c9223d">GetLocalLaneSamplesByState</a> (const <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> &amp;state, const int lane_id, const std::vector&lt; int &gt; &amp;navi_path, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> max_reflane_dist, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> max_backward_dist, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; 2 &gt; *samples)=0</td></tr>
+<tr class="separator:aeca5382288a7852330b2864ac2c9223d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830dcb879bcc33445e0806de4c63134e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a830dcb879bcc33445e0806de4c63134e">GetRefLaneForStateByBehavior</a> (const <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> &amp;state, const std::vector&lt; int &gt; &amp;navi_path, const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;behavior, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;max_forward_len, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;max_back_len, const bool is_high_quality, <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">Lane</a> *lane)=0</td></tr>
+<tr class="separator:a830dcb879bcc33445e0806de4c63134e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc5fbd47826cf71403a512fc2c9ac32"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0fc5fbd47826cf71403a512fc2c9ac32">GetWholeLaneNet</a> (<a class="el" href="structcommon_1_1_lane_net.html">common::LaneNet</a> *lane_net)=0</td></tr>
+<tr class="separator:a0fc5fbd47826cf71403a512fc2c9ac32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ba476625df649a2a4b7fedc401b21b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#ac8ba476625df649a2a4b7fedc401b21b">CheckCollisionUsingState</a> (const <a class="el" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a> &amp;param_a, const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;state_a, const <a class="el" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a> &amp;param_b, const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;state_b, bool *res)=0</td></tr>
+<tr class="separator:ac8ba476625df649a2a4b7fedc401b21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c72144eebd6e280363650e905644af"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a31c72144eebd6e280363650e905644af">GetLeadingVehicleOnLane</a> (const <a class="el" href="classcommon_1_1_lane.html">common::Lane</a> &amp;ref_lane, const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;ref_state, const <a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;vehicle_set, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;lat_range, <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *leading_vehicle, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *distance_residual_ratio)=0</td></tr>
+<tr class="separator:a31c72144eebd6e280363650e905644af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf47966a62b1c0a6c8616ffffe0f40f1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#aaf47966a62b1c0a6c8616ffffe0f40f1">GetLeadingAndFollowingVehiclesFrenetStateOnLane</a> (const <a class="el" href="classcommon_1_1_lane.html">common::Lane</a> &amp;ref_lane, const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;ref_state, const <a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;vehicle_set, bool *has_leading_vehicle, <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *leading_vehicle, <a class="el" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> *leading_fs, bool *has_following_vehicle, <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *following_vehicle, <a class="el" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> *following_fs)=0</td></tr>
+<tr class="separator:aaf47966a62b1c0a6c8616ffffe0f40f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00014">14</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="acdee97a79db70325d652c071ace67339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdee97a79db70325d652c071ace67339">&#9670;&nbsp;</a></span>Behavior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#acdee97a79db70325d652c071ace67339">planning::EudmPlannerMapItf::Behavior</a> =  <a class="el" href="structcommon_1_1_semantic_behavior.html">common::SemanticBehavior</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4d516f544029cfd3ea0aa6f6a92df097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d516f544029cfd3ea0aa6f6a92df097">&#9670;&nbsp;</a></span>Lane</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">planning::EudmPlannerMapItf::Lane</a> =  <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a47707e70ffb220015d7ab9ae70a22872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47707e70ffb220015d7ab9ae70a22872">&#9670;&nbsp;</a></span>LateralBehavior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">planning::EudmPlannerMapItf::LateralBehavior</a> =  <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0ac1e8ee562c7dbe2d83f32f5e32ad25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac1e8ee562c7dbe2d83f32f5e32ad25">&#9670;&nbsp;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">planning::EudmPlannerMapItf::State</a> =  <a class="el" href="structcommon_1_1_state.html">common::State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3dae54f422aaae1ac73a7e4d5c3135ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dae54f422aaae1ac73a7e4d5c3135ed">&#9670;&nbsp;</a></span>Vehicle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a3dae54f422aaae1ac73a7e4d5c3135ed">planning::EudmPlannerMapItf::Vehicle</a> =  <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a> 第 <a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac8ba476625df649a2a4b7fedc401b21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ba476625df649a2a4b7fedc401b21b">&#9670;&nbsp;</a></span>CheckCollisionUsingState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::CheckCollisionUsingState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle_param.html">common::VehicleParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a3901f6b938a3719fad15ca4629ed58e8">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ae81aad54780d8559b435462eb03eaf78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81aad54780d8559b435462eb03eaf78">&#9670;&nbsp;</a></span>GetChildLaneIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetChildLaneIds </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>child_ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a946c466ad3b9d36cd9861f6f4ae75e1a">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a7f9c1d105b1a8a522f3c3ce81286ceb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9c1d105b1a8a522f3c3ce81286ceb9">&#9670;&nbsp;</a></span>GetEgoId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetEgoId </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#ac6f48146e591a3f01cd9dd0b4f91f43b">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="af80475e4c9d833e4edde5d3ffa419d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80475e4c9d833e4edde5d3ffa419d26">&#9670;&nbsp;</a></span>GetEgoLaneIdByPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetEgoLaneIdByPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>navi_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>lane_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a616a71aeaa53720f8ccf24a1a4815033">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_eudm_planner_map_itf_af80475e4c9d833e4edde5d3ffa419d26_icgraph.png" border="0" usemap="#classplanning_1_1_eudm_planner_map_itf_af80475e4c9d833e4edde5d3ffa419d26_icgraph" alt=""/></div>
+<map name="classplanning_1_1_eudm_planner_map_itf_af80475e4c9d833e4edde5d3ffa419d26_icgraph" id="classplanning_1_1_eudm_planner_map_itf_af80475e4c9d833e4edde5d3ffa419d26_icgraph">
+<area shape="rect" title=" " alt="" coords="487,5,689,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,5,439,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05259e6621fcb5c84e1599c3d718ed6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05259e6621fcb5c84e1599c3d718ed6d">&#9670;&nbsp;</a></span>GetEgoState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetEgoState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a5ecf59a62b5486b27450ee9e01f62535">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a9c9d0d4c3f9d1e32d67d00efa6319afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9d0d4c3f9d1e32d67d00efa6319afa">&#9670;&nbsp;</a></span>GetEgoVehicle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetEgoVehicle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *&#160;</td>
+          <td class="paramname"><em>vehicle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a2ae58633666c873c5329e414eabfb47a">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_eudm_planner_map_itf_a9c9d0d4c3f9d1e32d67d00efa6319afa_icgraph.png" border="0" usemap="#classplanning_1_1_eudm_planner_map_itf_a9c9d0d4c3f9d1e32d67d00efa6319afa_icgraph" alt=""/></div>
+<map name="classplanning_1_1_eudm_planner_map_itf_a9c9d0d4c3f9d1e32d67d00efa6319afa_icgraph" id="classplanning_1_1_eudm_planner_map_itf_a9c9d0d4c3f9d1e32d67d00efa6319afa_icgraph">
+<area shape="rect" title=" " alt="" coords="487,5,687,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,5,439,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b6faef9d0ab58ea131f51a8236fe4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b6faef9d0ab58ea131f51a8236fe4f7">&#9670;&nbsp;</a></span>GetFatherLaneIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetFatherLaneIds </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>father_ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a584f991e3d33a74c390b0b21e74ea218">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a85fa27e1a1934cdf3b9b083f0e38b8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fa27e1a1934cdf3b9b083f0e38b8f3">&#9670;&nbsp;</a></span>GetKeySemanticVehicles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetKeySemanticVehicles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> *&#160;</td>
+          <td class="paramname"><em>key_vehicle_set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#acc342d802d7afe141df80a3e57b4a7f4">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_eudm_planner_map_itf_a85fa27e1a1934cdf3b9b083f0e38b8f3_icgraph.png" border="0" usemap="#classplanning_1_1_eudm_planner_map_itf_a85fa27e1a1934cdf3b9b083f0e38b8f3_icgraph" alt=""/></div>
+<map name="classplanning_1_1_eudm_planner_map_itf_a85fa27e1a1934cdf3b9b083f0e38b8f3_icgraph" id="classplanning_1_1_eudm_planner_map_itf_a85fa27e1a1934cdf3b9b083f0e38b8f3_icgraph">
+<area shape="rect" title=" " alt="" coords="707,5,913,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a7aa0406b8cdee626c32b1b1c9024b1ab" title=" " alt="" coords="487,5,659,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,5,439,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afeeb72133b299e9a84b2ef1f37b911bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeeb72133b299e9a84b2ef1f37b911bd">&#9670;&nbsp;</a></span>GetKeyVehicles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetKeyVehicles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> *&#160;</td>
+          <td class="paramname"><em>key_vehicle_set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a8d60d1e8a82bef98fa31dd02a71ec355">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a4755ce0ef4642e84240625d9308b1174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4755ce0ef4642e84240625d9308b1174">&#9670;&nbsp;</a></span>GetLaneByLaneId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetLaneByLaneId </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">Lane</a> *&#160;</td>
+          <td class="paramname"><em>lane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#aaf584744ebc84b35e1e0911dccfa8a72">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aaf47966a62b1c0a6c8616ffffe0f40f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf47966a62b1c0a6c8616ffffe0f40f1">&#9670;&nbsp;</a></span>GetLeadingAndFollowingVehiclesFrenetStateOnLane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetLeadingAndFollowingVehiclesFrenetStateOnLane </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_lane.html">common::Lane</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_lane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>vehicle_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>has_leading_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *&#160;</td>
+          <td class="paramname"><em>leading_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> *&#160;</td>
+          <td class="paramname"><em>leading_fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>has_following_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *&#160;</td>
+          <td class="paramname"><em>following_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_frenet_state.html">common::FrenetState</a> *&#160;</td>
+          <td class="paramname"><em>following_fs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a508dd7cc646f23381a3d9d4efc9626a8">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a31c72144eebd6e280363650e905644af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c72144eebd6e280363650e905644af">&#9670;&nbsp;</a></span>GetLeadingVehicleOnLane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetLeadingVehicleOnLane </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_lane.html">common::Lane</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_lane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_state.html">common::State</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>vehicle_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>lat_range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> *&#160;</td>
+          <td class="paramname"><em>leading_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>distance_residual_ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#ab618def174b80eef3a2b9ba5c9415560">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a21e2de14b547349821ce7677497cbaca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e2de14b547349821ce7677497cbaca">&#9670;&nbsp;</a></span>GetLeftLaneId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetLeftLaneId </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>l_lane_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a80476e686ea9e0b82afe1b722910ae03">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aeca5382288a7852330b2864ac2c9223d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca5382288a7852330b2864ac2c9223d">&#9670;&nbsp;</a></span>GetLocalLaneSamplesByState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetLocalLaneSamplesByState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>navi_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>max_reflane_dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>max_backward_dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; 2 &gt; *&#160;</td>
+          <td class="paramname"><em>samples</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a9ce5652abd178f1470d2e5faefdc7c97">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a85f0bf5856e9e5f1cd8ca4ef9ab384a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f0bf5856e9e5f1cd8ca4ef9ab384a7">&#9670;&nbsp;</a></span>GetNearestLaneIdUsingState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetNearestLaneIdUsingState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>navi_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>arc_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#ad69c776d1e2ecd161e0243fbbc3d5eb3">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a830dcb879bcc33445e0806de4c63134e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830dcb879bcc33445e0806de4c63134e">&#9670;&nbsp;</a></span>GetRefLaneForStateByBehavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetRefLaneForStateByBehavior </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a0ac1e8ee562c7dbe2d83f32f5e32ad25">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>navi_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>behavior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>max_forward_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>max_back_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is_high_quality</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_eudm_planner_map_itf.html#a4d516f544029cfd3ea0aa6f6a92df097">Lane</a> *&#160;</td>
+          <td class="paramname"><em>lane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#acb5ed54fa81608f929e56c741d02abb0">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_eudm_planner_map_itf_a830dcb879bcc33445e0806de4c63134e_icgraph.png" border="0" usemap="#classplanning_1_1_eudm_planner_map_itf_a830dcb879bcc33445e0806de4c63134e_icgraph" alt=""/></div>
+<map name="classplanning_1_1_eudm_planner_map_itf_a830dcb879bcc33445e0806de4c63134e_icgraph" id="classplanning_1_1_eudm_planner_map_itf_a830dcb879bcc33445e0806de4c63134e_icgraph">
+<area shape="rect" title=" " alt="" coords="487,5,735,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_planner.html#a33f853b377e810cd41dd7b212533b59d" title=" " alt="" coords="267,5,439,47"/>
+<area shape="rect" href="classplanning_1_1_eudm_manager.html#a3bde05e7512ec60322113e9e21ed71bf" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a70c66384fd4d4e5cd374c9d808e9b70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c66384fd4d4e5cd374c9d808e9b70b">&#9670;&nbsp;</a></span>GetRightLaneId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetRightLaneId </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r_lane_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a24bf186b477de5c3542f831f08cfb5bc">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a4e3d39324920b5bf9321804403fef1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3d39324920b5bf9321804403fef1a3">&#9670;&nbsp;</a></span>GetSurroundingVehicles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetSurroundingVehicles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> *&#160;</td>
+          <td class="paramname"><em>key_vehicle_set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a446cbe0fe1af8b86294ec780d921b01d">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a0fc5fbd47826cf71403a512fc2c9ac32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc5fbd47826cf71403a512fc2c9ac32">&#9670;&nbsp;</a></span>GetWholeLaneNet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::GetWholeLaneNet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcommon_1_1_lane_net.html">common::LaneNet</a> *&#160;</td>
+          <td class="paramname"><em>lane_net</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#affc84587a77adfb473fd5f72c53ee9f8">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aafcd91d709e2eec573adfc3806032599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcd91d709e2eec573adfc3806032599">&#9670;&nbsp;</a></span>IsLaneConsistent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool planning::EudmPlannerMapItf::IsLaneConsistent </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id_new</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#ae7be951fa46f1b8e15c32d8b0d00b43e">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="adac195be298728984ea7114be214513c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac195be298728984ea7114be214513c">&#9670;&nbsp;</a></span>IsTopologicallyReachable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::EudmPlannerMapItf::IsTopologicallyReachable </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>num_lane_changes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a76a42d2ba05c5407e797981c500750fa">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a8b62e7c4a51cc6630c4b0a3a0fc28046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b62e7c4a51cc6630c4b0a3a0fc28046">&#9670;&nbsp;</a></span>IsValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool planning::EudmPlannerMapItf::IsValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classplanning_1_1_eudm_planner_map_adapter.html#a7e697abd5d71f6ac8a20b16d3055c979">planning::EudmPlannerMapAdapter</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>util/eudm_planner/inc/eudm_planner/<a class="el" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h_source.html">map_interface.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

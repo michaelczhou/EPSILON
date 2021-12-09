@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/solver/ooqp_interface.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_0fceb2dba94651a7b4b4c0c5b1a63d1d.html">solver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ooqp_interface.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ooqp__interface_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_COMMON_INC_COMMON_SOLVER_OOQP_INTERFACE_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_COMMON_INC_COMMON_SOLVER_OOQP_INTERFACE_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Eigen/SparseCore&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span>  <span class="comment">// std::max</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span>      <span class="comment">// std::abs</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span>     <span class="comment">// std::numeric_limits</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classcommon_1_1_oo_qp_itf.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommon_1_1_oo_qp_itf.html">OoQpItf</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcommon_1_1_oo_qp_itf.html#aa83d1c3d2c5f35884ed6de51162dcf0f">solve</a>(<span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; Q,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <span class="keyword">const</span> Eigen::VectorXd&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; A,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <span class="keyword">const</span> Eigen::VectorXd&amp; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; C,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keyword">const</span> Eigen::VectorXd&amp; d, <span class="keyword">const</span> Eigen::VectorXd&amp; f,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keyword">const</span> Eigen::VectorXd&amp; l, <span class="keyword">const</span> Eigen::VectorXd&amp; u,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    Eigen::VectorXd&amp; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <span class="keyword">const</span> <span class="keywordtype">bool</span> ignoreUnknownError = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">bool</span> verbose = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> generateLimits(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; l, <span class="keyword">const</span> Eigen::VectorXd&amp; u,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      Eigen::Matrix&lt;char, Eigen::Dynamic, 1&gt;&amp; useLowerLimit,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      Eigen::Matrix&lt;char, Eigen::Dynamic, 1&gt;&amp; useUpperLimit,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      Eigen::VectorXd&amp; lowerLimit, Eigen::VectorXd&amp; upperLimit);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> printProblemFormulation(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; Q,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; A,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">const</span> Eigen::SparseMatrix&lt;double, Eigen::RowMajor&gt;&amp; C,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; d, <span class="keyword">const</span> Eigen::VectorXd&amp; f,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; l, <span class="keyword">const</span> Eigen::VectorXd&amp; u);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> printLimits(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">const</span> Eigen::Matrix&lt;char, Eigen::Dynamic, 1&gt;&amp; useLowerLimit,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">const</span> Eigen::Matrix&lt;char, Eigen::Dynamic, 1&gt;&amp; useUpperLimit,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">const</span> Eigen::VectorXd&amp; lowerLimit, <span class="keyword">const</span> Eigen::VectorXd&amp; upperLimit);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> printSolution(<span class="keyword">const</span> <span class="keywordtype">int</span> status, <span class="keyword">const</span> Eigen::VectorXd&amp; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classcommon_1_1_numerical_util.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommon_1_1_numerical_util.html">NumericalUtil</a> {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType_&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classcommon_1_1_numerical_util.html#aaf83e0a7d43bd348ffdcd080354970c2">   83</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> ValueType_ <a class="code" href="classcommon_1_1_numerical_util.html#aaf83e0a7d43bd348ffdcd080354970c2">maxTimesEpsilon</a>(<span class="keyword">const</span> ValueType_ <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                           <span class="keyword">const</span> ValueType_ <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                           <span class="keyword">const</span> ValueType_ epsilon) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>(<a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>), <a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>(<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>)) * epsilon;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType_&gt;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classcommon_1_1_numerical_util.html#a480b2b40fde83e9af879dfe1443bc6a0">   97</a></span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcommon_1_1_numerical_util.html#a480b2b40fde83e9af879dfe1443bc6a0">ApproximatelyEqual</a>(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keyword">const</span> ValueType_ <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>, <span class="keyword">const</span> ValueType_ <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      ValueType_ epsilon = std::numeric_limits&lt;ValueType_&gt;::epsilon()) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>(<a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> - <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>) &lt;= <a class="code" href="classcommon_1_1_numerical_util.html#aaf83e0a7d43bd348ffdcd080354970c2">maxTimesEpsilon</a>(<a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>, <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>, epsilon);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}  <span class="comment">// namespace common</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasscommon_1_1_oo_qp_itf_html"><div class="ttname"><a href="classcommon_1_1_oo_qp_itf.html">common::OoQpItf</a></div><div class="ttdef"><b>Definition:</b> <a href="ooqp__interface_8h_source.html#l00014">ooqp_interface.h:14</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_numerical_util_html_a480b2b40fde83e9af879dfe1443bc6a0"><div class="ttname"><a href="classcommon_1_1_numerical_util.html#a480b2b40fde83e9af879dfe1443bc6a0">common::NumericalUtil::ApproximatelyEqual</a></div><div class="ttdeci">static bool ApproximatelyEqual(const ValueType_ a, const ValueType_ b, ValueType_ epsilon=std::numeric_limits&lt; ValueType_ &gt;::epsilon())</div><div class="ttdef"><b>Definition:</b> <a href="ooqp__interface_8h_source.html#l00097">ooqp_interface.h:97</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_oo_qp_itf_html_aa83d1c3d2c5f35884ed6de51162dcf0f"><div class="ttname"><a href="classcommon_1_1_oo_qp_itf.html#aa83d1c3d2c5f35884ed6de51162dcf0f">common::OoQpItf::solve</a></div><div class="ttdeci">static bool solve(const Eigen::SparseMatrix&lt; double, Eigen::RowMajor &gt; &amp;Q, const Eigen::VectorXd &amp;c, const Eigen::SparseMatrix&lt; double, Eigen::RowMajor &gt; &amp;A, const Eigen::VectorXd &amp;b, const Eigen::SparseMatrix&lt; double, Eigen::RowMajor &gt; &amp;C, const Eigen::VectorXd &amp;d, const Eigen::VectorXd &amp;f, const Eigen::VectorXd &amp;l, const Eigen::VectorXd &amp;u, Eigen::VectorXd &amp;x, const bool ignoreUnknownError=false, const bool verbose=false)</div><div class="ttdef"><b>Definition:</b> <a href="ooqp__interface_8cc_source.html#l00017">ooqp_interface.cc:17</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5a5fd36a4f3066cb68f5e4081bd19ef4"><div class="ttname"><a href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a></div><div class="ttdeci">__float128 abs(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00036">black_hole.cpp:36</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_numerical_util_html_aaf83e0a7d43bd348ffdcd080354970c2"><div class="ttname"><a href="classcommon_1_1_numerical_util.html#aaf83e0a7d43bd348ffdcd080354970c2">common::NumericalUtil::maxTimesEpsilon</a></div><div class="ttdeci">static ValueType_ maxTimesEpsilon(const ValueType_ a, const ValueType_ b, const ValueType_ epsilon)</div><div class="ttdef"><b>Definition:</b> <a href="ooqp__interface_8h_source.html#l00083">ooqp_interface.h:83</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_numerical_util_html"><div class="ttname"><a href="classcommon_1_1_numerical_util.html">common::NumericalUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="ooqp__interface_8h_source.html#l00073">ooqp_interface.h:73</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

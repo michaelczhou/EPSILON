@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Residuals类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_residuals-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Residuals类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___abstract_problem_formulation.html">AbstractProblemFormulation</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_residuals_8h_source.html">Residuals.h</a>&gt;</code></p>
+<div class="dynheader">
+类 Residuals 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_residuals__inherit__graph.png" border="0" usemap="#_residuals_inherit__map" alt="Inheritance graph"/></div>
+<map name="_residuals_inherit__map" id="_residuals_inherit__map">
+<area shape="rect" title=" " alt="" coords="263,5,349,32"/>
+<area shape="rect" href="class_huber_residuals.html" title=" " alt="" coords="5,80,129,107"/>
+<area shape="rect" href="class_qp_bound_residuals.html" title=" " alt="" coords="154,80,298,107"/>
+<area shape="rect" href="class_qp_gen_residuals.html" title=" " alt="" coords="323,80,452,107"/>
+<area shape="rect" href="class_svm_residuals.html" title=" " alt="" coords="477,80,591,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aee4dd268e1df4248a79afeee1b7e56f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#aee4dd268e1df4248a79afeee1b7e56f1">residualNorm</a> ()</td></tr>
+<tr class="separator:aee4dd268e1df4248a79afeee1b7e56f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636aabb9fa9c4490eacacbbd1a5ff6cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a636aabb9fa9c4490eacacbbd1a5ff6cd">dualityGap</a> ()</td></tr>
+<tr class="separator:a636aabb9fa9c4490eacacbbd1a5ff6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d3f592b131201cf1e169008bef96d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#ab1d3f592b131201cf1e169008bef96d8">calcresids</a> (<a class="el" href="class_data.html">Data</a> *problem, <a class="el" href="class_variables.html">Variables</a> *vars)=0</td></tr>
+<tr class="separator:ab1d3f592b131201cf1e169008bef96d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5797a52cbba01e242bd2edbce7f6fe02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a5797a52cbba01e242bd2edbce7f6fe02">add_r3_xz_alpha</a> (<a class="el" href="class_variables.html">Variables</a> *vars, double alpha)=0</td></tr>
+<tr class="separator:a5797a52cbba01e242bd2edbce7f6fe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af869dde4861d60afd5a02aec3dfcb41e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#af869dde4861d60afd5a02aec3dfcb41e">set_r3_xz_alpha</a> (<a class="el" href="class_variables.html">Variables</a> *vars, double alpha)=0</td></tr>
+<tr class="separator:af869dde4861d60afd5a02aec3dfcb41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb96c74b9c34174ab0fb3d28670d472f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#acb96c74b9c34174ab0fb3d28670d472f">clear_r3</a> ()=0</td></tr>
+<tr class="separator:acb96c74b9c34174ab0fb3d28670d472f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34b97276f431aeda9a57046fd4cf7e19"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a34b97276f431aeda9a57046fd4cf7e19">clear_r1r2</a> ()</td></tr>
+<tr class="separator:a34b97276f431aeda9a57046fd4cf7e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada416adff2e75edd6fa430fd157c7bf8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#ada416adff2e75edd6fa430fd157c7bf8">project_r3</a> (double rmin, double rmax)=0</td></tr>
+<tr class="separator:ada416adff2e75edd6fa430fd157c7bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa75086ea9b9d68e365aab698d7465f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#abfa75086ea9b9d68e365aab698d7465f">~Residuals</a> ()</td></tr>
+<tr class="separator:abfa75086ea9b9d68e365aab698d7465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aa2c1a0ab7776c4c1d27294ac6b85a3ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#aa2c1a0ab7776c4c1d27294ac6b85a3ce">m</a></td></tr>
+<tr class="separator:aa2c1a0ab7776c4c1d27294ac6b85a3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c6014f4b9058304340c2c28d8a5427"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a52c6014f4b9058304340c2c28d8a5427">n</a></td></tr>
+<tr class="separator:a52c6014f4b9058304340c2c28d8a5427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a054e5010b88a648564c0b7765b8d934f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a054e5010b88a648564c0b7765b8d934f">mResidualNorm</a></td></tr>
+<tr class="separator:a054e5010b88a648564c0b7765b8d934f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8e912e32434777f4600cde54a9ee28"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residuals.html#a8c8e912e32434777f4600cde54a9ee28">mDualityGap</a></td></tr>
+<tr class="separator:a8c8e912e32434777f4600cde54a9ee28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Represents the residuals of a QP when solved by an interior point QP solver. In terms of our abstract QP formulation, these residuals are rQ, rA, rC and r3. </p>
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00022">22</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="abfa75086ea9b9d68e365aab698d7465f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa75086ea9b9d68e365aab698d7465f">&#9670;&nbsp;</a></span>~Residuals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Residuals::~Residuals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5797a52cbba01e242bd2edbce7f6fe02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5797a52cbba01e242bd2edbce7f6fe02">&#9670;&nbsp;</a></span>add_r3_xz_alpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::add_r3_xz_alpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Modify the "complementarity" component of the residuals, by adding the pairwise products of the complementary variables plus a constant alpha to this term. <br  />
+ </p>
+
+<p>在 <a class="el" href="class_qp_gen_residuals.html#a5b8804ee92769677f73a60ff16a53d48">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#a41902623904b366d8957af2e238be0c8">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#ae21fee8bd9f8e310d533a02cde6e7eac">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#aa5bf6b8d928c884259cbffd593334d87">HuberResiduals</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ab1d3f592b131201cf1e169008bef96d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d3f592b131201cf1e169008bef96d8">&#9670;&nbsp;</a></span>calcresids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::calcresids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>calculate residuals, their norms, and duality/complementarity gap, given a problem and variable set. <br  />
+ </p>
+
+<p>在 <a class="el" href="class_qp_gen_residuals.html#a4dfd175cf2a385e113f17e5ec89d6d07">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#af6b0e824e2e26c07b056ab78e44e42db">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#a6bd331933fe66efdd10b2122b0277fa7">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#a7a9d0ac3e81351524311f79f0aee4bc1">HuberResiduals</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a34b97276f431aeda9a57046fd4cf7e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b97276f431aeda9a57046fd4cf7e19">&#9670;&nbsp;</a></span>clear_r1r2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::clear_r1r2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>set the noncomplementarity components of the residual (the terms arising from the linear equalities in the KKT conditions) to 0. <br  />
+ </p>
+
+<p>被 <a class="el" href="class_qp_gen_residuals.html#a76402efdffec01c7fb5a5f0ce9b4f130">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#ae5ed2c9880dbac723a5957d567874894">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#af88498be99c5869c980bf132f4d7baf2">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#ab44c8a0e739fa51ca738eb40d4b815d0">HuberResiduals</a> 重载.</p>
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acb96c74b9c34174ab0fb3d28670d472f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb96c74b9c34174ab0fb3d28670d472f">&#9670;&nbsp;</a></span>clear_r3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::clear_r3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>set the complementarity component of the residuals to 0. </p>
+
+<p>在 <a class="el" href="class_qp_gen_residuals.html#ae24721145b9c48ea95979d2c4cfd5703">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#a380dedce346037714861f916625d137c">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#a8c0191624851355d1a693b8732dc48e0">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#a68ace7ec34d121713a13246e11d6d4ba">HuberResiduals</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a636aabb9fa9c4490eacacbbd1a5ff6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636aabb9fa9c4490eacacbbd1a5ff6cd">&#9670;&nbsp;</a></span>dualityGap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Residuals::dualityGap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A quantity that measures progress toward feasibility. IN terms of the abstract problem formulation, this quantity is defined as </p><div class="fragment"><div class="line"><a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a><span class="stringliteral">&#39; * Q * x - b&#39;</span> * <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> + <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a><span class="stringliteral">&#39; * x - d&#39;</span> * z</div>
+</div><!-- fragment --> 
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ada416adff2e75edd6fa430fd157c7bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada416adff2e75edd6fa430fd157c7bf8">&#9670;&nbsp;</a></span>project_r3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::project_r3 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rmax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>perform the projection operation required by Gondzio algorithm: replace each component r3_i of the complementarity component of the residuals by r3p_i - r3_i, where r3p_i is the projection of r3_i onto the box [rmin, rmax]. Then if the resulting value is less than -rmax, replace it by -rmax.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="class_simple_vector.html#aa14104ed452d8101105c5026cc721c66">SimpleVector::gondzioProjection</a> </dd></dl>
+
+<p>在 <a class="el" href="class_qp_gen_residuals.html#ac75fd85ca1a20c187d3a4fdb17d95239">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#ae4d679faa4d363f3b203f4b8adebc8d7">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#adfa92296bd23670ebfb5e7a55d5a41d0">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#ac9ffd2101067e15cf2150ee7108bb71d">HuberResiduals</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aee4dd268e1df4248a79afeee1b7e56f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee4dd268e1df4248a79afeee1b7e56f1">&#9670;&nbsp;</a></span>residualNorm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Residuals::residualNorm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The norm of the residuals, ommiting the complementariy conditions </p>
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af869dde4861d60afd5a02aec3dfcb41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af869dde4861d60afd5a02aec3dfcb41e">&#9670;&nbsp;</a></span>set_r3_xz_alpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Residuals::set_r3_xz_alpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_variables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the "complementarity" component of the residuals to the pairwise products of the complementary variables plus a constant alpha </p>
+
+<p>在 <a class="el" href="class_qp_gen_residuals.html#a92230bb20e9509a77134c60b46358d2d">QpGenResiduals</a>, <a class="el" href="class_qp_bound_residuals.html#a8ea3d646c1e87601d0b0075c603f1392">QpBoundResiduals</a>, <a class="el" href="class_svm_residuals.html#a58a7cc752dc8dfacb12a0a03a8225f4a">SvmResiduals</a> , 以及 <a class="el" href="class_huber_residuals.html#af16691ee44c700ec6031e173c920dcd0">HuberResiduals</a> 内被实现.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aa2c1a0ab7776c4c1d27294ac6b85a3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c1a0ab7776c4c1d27294ac6b85a3ce">&#9670;&nbsp;</a></span>m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Residuals::m</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8c8e912e32434777f4600cde54a9ee28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8e912e32434777f4600cde54a9ee28">&#9670;&nbsp;</a></span>mDualityGap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Residuals::mDualityGap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a054e5010b88a648564c0b7765b8d934f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054e5010b88a648564c0b7765b8d934f">&#9670;&nbsp;</a></span>mResidualNorm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Residuals::mResidualNorm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a52c6014f4b9058304340c2c28d8a5427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c6014f4b9058304340c2c28d8a5427">&#9670;&nbsp;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Residuals::n</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_residuals_8h_source.html">Residuals.h</a> 第 <a class="el" href="_residuals_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/ooqp/include/ooqp/<a class="el" href="_residuals_8h_source.html">Residuals.h</a></li>
+</ul>
+</div><!-- contents -->
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

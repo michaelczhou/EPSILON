@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/inc/vehicle_model/idm_model.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_59e02de5e9ae4c2a4b1de997eb2a14b2.html">inc</a></li><li class="navelem"><a class="el" href="dir_130ee179c2e1c25f0ce8c4812733a0d6.html">vehicle_model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">idm_model.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="idm__model_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _VEHICLE_MODEL_INC_VEHIDLE_MODEL_IDM_MODEL_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _VEHICLE_MODEL_INC_VEHIDLE_MODEL_IDM_MODEL_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="intelligent__driver__model_8h.html">common/idm/intelligent_driver_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesimulator.html">simulator</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classsimulator_1_1_intelligent_driver_model.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsimulator_1_1_intelligent_driver_model.html">IntelligentDriverModel</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classsimulator_1_1_intelligent_driver_model.html#aaa5111b533e55fcdaf0d978c972b35ec">   18</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html">Param</a> = <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html">common::IntelligentDriverModel::Param</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classsimulator_1_1_intelligent_driver_model.html#aed672ad9f5347bea186b2cdb1dc19911">   19</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_state.html">State</a> = <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_state.html">common::IntelligentDriverModel::State</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#abcaa95d885c2832db312a804357eef0b">IntelligentDriverModel</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#abcaa95d885c2832db312a804357eef0b">IntelligentDriverModel</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html">Param</a> &amp;parm);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ac22f2dae86a64edcab49da91e5976fb5">~IntelligentDriverModel</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">const</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_state.html">State</a> &amp;<a class="code" href="classsimulator_1_1_intelligent_driver_model.html#a7b59a67d56c75f2efcd007dfde8bd3ae">state</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ad58eb873cb487bda60aa25e896d561da">set_state</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_state.html">State</a> &amp;<a class="code" href="classsimulator_1_1_intelligent_driver_model.html#a7b59a67d56c75f2efcd007dfde8bd3ae">state</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#a73a23c239d1ce8f259b0c7fd5277be09">Step</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// For internal use, but needs to be public for odeint</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">   34</a></span>&#160;  <span class="keyword">typedef</span> boost::array&lt;double, 4&gt; <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#aa6be12ad2545d4b1bc69d0ea8bdee466">operator()</a>(<span class="keyword">const</span> <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a> &amp;dxdt,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">double</span> <span class="comment">/* t */</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> UpdateInternalState(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> Linear(<span class="keyword">const</span> <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> dt, <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a> *x_out);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">InternalState</a> internal_state_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html">Param</a> param_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_state.html">State</a> state_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace simulator</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_abcaa95d885c2832db312a804357eef0b"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#abcaa95d885c2832db312a804357eef0b">simulator::IntelligentDriverModel::IntelligentDriverModel</a></div><div class="ttdeci">IntelligentDriverModel()</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00010">idm_model.cc:10</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_ae5178b1b8e8a8497f7321c8dbb7afb4a"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#ae5178b1b8e8a8497f7321c8dbb7afb4a">simulator::IntelligentDriverModel::InternalState</a></div><div class="ttdeci">boost::array&lt; double, 4 &gt; InternalState</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8h_source.html#l00034">idm_model.h:34</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_ac22f2dae86a64edcab49da91e5976fb5"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#ac22f2dae86a64edcab49da91e5976fb5">simulator::IntelligentDriverModel::~IntelligentDriverModel</a></div><div class="ttdeci">~IntelligentDriverModel()</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00017">idm_model.cc:17</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html">simulator::IntelligentDriverModel</a></div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8h_source.html#l00016">idm_model.h:16</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_a7b59a67d56c75f2efcd007dfde8bd3ae"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#a7b59a67d56c75f2efcd007dfde8bd3ae">simulator::IntelligentDriverModel::state</a></div><div class="ttdeci">const State &amp; state(void) const</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00076">idm_model.cc:76</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_a73a23c239d1ce8f259b0c7fd5277be09"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#a73a23c239d1ce8f259b0c7fd5277be09">simulator::IntelligentDriverModel::Step</a></div><div class="ttdeci">void Step(double dt)</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00019">idm_model.cc:19</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_state.html">common::IntelligentDriverModel::State</a></div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00010">intelligent_driver_model.h:10</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_ad58eb873cb487bda60aa25e896d561da"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#ad58eb873cb487bda60aa25e896d561da">simulator::IntelligentDriverModel::set_state</a></div><div class="ttdeci">void set_state(const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00080">idm_model.cc:80</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_intelligent_driver_model_html_aa6be12ad2545d4b1bc69d0ea8bdee466"><div class="ttname"><a href="classsimulator_1_1_intelligent_driver_model.html#aa6be12ad2545d4b1bc69d0ea8bdee466">simulator::IntelligentDriverModel::operator()</a></div><div class="ttdeci">void operator()(const InternalState &amp;x, InternalState &amp;dxdt, const double)</div><div class="ttdef"><b>Definition:</b> <a href="idm__model_8cc_source.html#l00057">idm_model.cc:57</a></div></div>
+<div class="ttc" id="anamespacesimulator_html"><div class="ttname"><a href="namespacesimulator.html">simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00014">ctx_idm_model.h:14</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aintelligent__driver__model_8h_html"><div class="ttname"><a href="intelligent__driver__model_8h.html">intelligent_driver_model.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html">common::IntelligentDriverModel::Param</a></div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00022">intelligent_driver_model.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

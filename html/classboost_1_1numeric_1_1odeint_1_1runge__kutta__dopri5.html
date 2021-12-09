@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::runge_kutta_dopri5&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::runge_kutta_dopri5&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The Runge-Kutta Dormand-Prince 5 method.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 boost::numeric::odeint::runge_kutta_dopri5&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5__inherit__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map" id="boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_inherit__map">
+<area shape="rect" title="The Runge&#45;Kutta Dormand&#45;Prince 5 method." alt="" coords="591,42,817,113"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title=" " alt="" coords="237,5,543,149"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html" title=" " alt="" coords="5,42,189,113"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+boost::numeric::odeint::runge_kutta_dopri5&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5__coll__graph.png" border="0" usemap="#boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map" id="boost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_3_01_state_00_01_value_00_01_deriv_00_01_time_00_01_algebra_00_01_operations_00_01_resizer_01_4_coll__map">
+<area shape="rect" title="The Runge&#45;Kutta Dormand&#45;Prince 5 method." alt="" coords="935,76,1161,147"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title=" " alt="" coords="580,39,885,183"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html" title=" " alt="" coords="295,5,479,76"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html" title=" " alt="" coords="5,20,173,61"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html" title=" " alt="" coords="301,101,472,157"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ac93683a09bbd2102b9cfbd90481fd49d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">explicit_error_stepper_fsal_base</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;, 5, 5, 4, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ac93683a09bbd2102b9cfbd90481fd49d">stepper_base_type</a></td></tr>
+<tr class="separator:ac93683a09bbd2102b9cfbd90481fd49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc0dd4c985553be844ff373890fe492"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aded1c8a2297b448e884778304c8ee906">stepper_base_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a9dc0dd4c985553be844ff373890fe492">state_type</a></td></tr>
+<tr class="separator:a9dc0dd4c985553be844ff373890fe492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6a7fc4fd2617028a2299d69c858f2f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a349c2ede1ca23392ccf90b312a361148">stepper_base_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a8a6a7fc4fd2617028a2299d69c858f2f">value_type</a></td></tr>
+<tr class="separator:a8a6a7fc4fd2617028a2299d69c858f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c22f970929a09031faf39f620e6a7d5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5256e441db6268b8975d84b6d3e0fe5">stepper_base_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a1c22f970929a09031faf39f620e6a7d5">deriv_type</a></td></tr>
+<tr class="separator:a1c22f970929a09031faf39f620e6a7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f43825808b12cc21852dfea1897edd7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">stepper_base_type::time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a></td></tr>
+<tr class="separator:a5f43825808b12cc21852dfea1897edd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6be9d31e4b020c150a2c5ee57e2bd70"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af071ed490c0329399aecfc1222f68b80">stepper_base_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a></td></tr>
+<tr class="separator:ad6be9d31e4b020c150a2c5ee57e2bd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545875e259bd43c81feb1b8c1e2bb0b7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_base_type::operations_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a545875e259bd43c81feb1b8c1e2bb0b7">operations_type</a></td></tr>
+<tr class="separator:a545875e259bd43c81feb1b8c1e2bb0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bfc79b415da2a616a22c3c570e07e03"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ab3c7e07e3c90eba020c0ddb3cb43e17c">stepper_base_type::resizer_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a4bfc79b415da2a616a22c3c570e07e03">resizer_type</a></td></tr>
+<tr class="separator:a4bfc79b415da2a616a22c3c570e07e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f444aaf4b88a3d2059587d8f08ce46"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a430e5034f45c8ffd17b4e6c3dc512ab4">stepper_base_type::stepper_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ab9f444aaf4b88a3d2059587d8f08ce46">stepper_type</a></td></tr>
+<tr class="separator:ab9f444aaf4b88a3d2059587d8f08ce46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9bd1762148a2f894d2e7652eb57bb0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a06b3edece7adb5b4e8ea38e6bea90f97">stepper_base_type::wrapped_state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#aef9bd1762148a2f894d2e7652eb57bb0">wrapped_state_type</a></td></tr>
+<tr class="separator:aef9bd1762148a2f894d2e7652eb57bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88df004ca8171532fa9c9367af90b1c2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af027e6952905ce55483c2d02f06b2512">stepper_base_type::wrapped_deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a88df004ca8171532fa9c9367af90b1c2">wrapped_deriv_type</a></td></tr>
+<tr class="separator:a88df004ca8171532fa9c9367af90b1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">boost::numeric::odeint::explicit_error_stepper_fsal_base&lt; runge_kutta_dopri5&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:ac1af961deb253e2e96cca8a3656697b7 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html">algebra_stepper_base</a>&lt; <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ac1af961deb253e2e96cca8a3656697b7">algebra_stepper_base_type</a></td></tr>
+<tr class="separator:ac1af961deb253e2e96cca8a3656697b7 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af071ed490c0329399aecfc1222f68b80 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_stepper_base_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af071ed490c0329399aecfc1222f68b80">algebra_type</a></td></tr>
+<tr class="separator:af071ed490c0329399aecfc1222f68b80 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded1c8a2297b448e884778304c8ee906 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aded1c8a2297b448e884778304c8ee906">state_type</a></td></tr>
+<tr class="separator:aded1c8a2297b448e884778304c8ee906 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349c2ede1ca23392ccf90b312a361148 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a349c2ede1ca23392ccf90b312a361148">value_type</a></td></tr>
+<tr class="separator:a349c2ede1ca23392ccf90b312a361148 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5256e441db6268b8975d84b6d3e0fe5 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5256e441db6268b8975d84b6d3e0fe5">deriv_type</a></td></tr>
+<tr class="separator:af5256e441db6268b8975d84b6d3e0fe5 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4695f891f765bd5bb47fbf1b7f99b7b1 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a></td></tr>
+<tr class="separator:a4695f891f765bd5bb47fbf1b7f99b7b1 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c7e07e3c90eba020c0ddb3cb43e17c inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ab3c7e07e3c90eba020c0ddb3cb43e17c">resizer_type</a></td></tr>
+<tr class="separator:ab3c7e07e3c90eba020c0ddb3cb43e17c inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430e5034f45c8ffd17b4e6c3dc512ab4 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; State, double, State, double, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a430e5034f45c8ffd17b4e6c3dc512ab4">stepper_type</a></td></tr>
+<tr class="separator:a430e5034f45c8ffd17b4e6c3dc512ab4 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc570c1015e2b79e99718087f04811f inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__tag.html">explicit_error_stepper_fsal_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#afbc570c1015e2b79e99718087f04811f">stepper_category</a></td></tr>
+<tr class="separator:afbc570c1015e2b79e99718087f04811f inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b3edece7adb5b4e8ea38e6bea90f97 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aded1c8a2297b448e884778304c8ee906">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a06b3edece7adb5b4e8ea38e6bea90f97">wrapped_state_type</a></td></tr>
+<tr class="separator:a06b3edece7adb5b4e8ea38e6bea90f97 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af027e6952905ce55483c2d02f06b2512 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5256e441db6268b8975d84b6d3e0fe5">deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af027e6952905ce55483c2d02f06b2512">wrapped_deriv_type</a></td></tr>
+<tr class="separator:af027e6952905ce55483c2d02f06b2512 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a557bf1947e96620cd116b324b57b4d inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">explicit_error_stepper_fsal_base</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; State, double, State, double, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a> &gt;, Order, StepperOrder, ErrorOrder, State, double, State, double, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a1a557bf1947e96620cd116b324b57b4d">internal_stepper_base_type</a></td></tr>
+<tr class="separator:a1a557bf1947e96620cd116b324b57b4d inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e869938ded5e56bf3ff248050fedae inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a></td></tr>
+<tr class="separator:af5e869938ded5e56bf3ff248050fedae inherit pub_types_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html">boost::numeric::odeint::algebra_stepper_base&lt; range_algebra, default_operations &gt;</a></td></tr>
+<tr class="memitem:aa80ea86f235f49fc6c431761a784e747 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a></td></tr>
+<tr class="separator:aa80ea86f235f49fc6c431761a784e747 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd9c674059728aa619828f44d913367 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">operations_type</a></td></tr>
+<tr class="separator:a6fd9c674059728aa619828f44d913367 inherit pub_types_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8b6dd2866eb442ffb9c0c9e770697db6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a8b6dd2866eb442ffb9c0c9e770697db6">runge_kutta_dopri5</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a>())</td></tr>
+<tr class="memdesc:a8b6dd2866eb442ffb9c0c9e770697db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html" title="The Runge-Kutta Dormand-Prince 5 method.">runge_kutta_dopri5</a> class. This constructor can be used as a default constructor if the algebra has a default constructor.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a8b6dd2866eb442ffb9c0c9e770697db6">更多...</a><br /></td></tr>
+<tr class="separator:a8b6dd2866eb442ffb9c0c9e770697db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2499073087cdde5981f362e8cd424c6b"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut &gt; </td></tr>
+<tr class="memitem:a2499073087cdde5981f362e8cd424c6b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a2499073087cdde5981f362e8cd424c6b">do_step_impl</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt_in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, DerivOut &amp;dxdt_out, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a2499073087cdde5981f362e8cd424c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method performs one step. The derivative <code>dxdt_in</code> of <code>in</code> at the time <code>t</code> is passed to the method. The result is updated out-of-place, hence the input is in <code>in</code> and the output in <code>out</code>. Furthermore, the derivative is update out-of-place, hence the input is assumed to be in <code>dxdt_in</code> and the output in <code>dxdt_out</code>. Access to this step functionality is provided by <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> and <code>do_step_impl</code> should not be called directly.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a2499073087cdde5981f362e8cd424c6b">更多...</a><br /></td></tr>
+<tr class="separator:a2499073087cdde5981f362e8cd424c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9a4baffa7c7c521d1b4a72c887f0ee"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut , class Err &gt; </td></tr>
+<tr class="memitem:a2b9a4baffa7c7c521d1b4a72c887f0ee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a2b9a4baffa7c7c521d1b4a72c887f0ee">do_step_impl</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt_in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, DerivOut &amp;dxdt_out, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:a2b9a4baffa7c7c521d1b4a72c887f0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method performs one step. The derivative <code>dxdt_in</code> of <code>in</code> at the time <code>t</code> is passed to the method. The result is updated out-of-place, hence the input is in <code>in</code> and the output in <code>out</code>. Furthermore, the derivative is update out-of-place, hence the input is assumed to be in <code>dxdt_in</code> and the output in <code>dxdt_out</code>. Access to this step functionality is provided by <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> and <code>do_step_impl</code> should not be called directly. An estimation of the error is calculated.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a2b9a4baffa7c7c521d1b4a72c887f0ee">更多...</a><br /></td></tr>
+<tr class="separator:a2b9a4baffa7c7c521d1b4a72c887f0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a001b493456ed9574aa22a6764ecbd"><td class="memTemplParams" colspan="2">template&lt;class StateOut , class StateIn1 , class DerivIn1 , class StateIn2 , class DerivIn2 &gt; </td></tr>
+<tr class="memitem:a24a001b493456ed9574aa22a6764ecbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a24a001b493456ed9574aa22a6764ecbd">calc_state</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> t, StateOut &amp;x, const StateIn1 &amp;x_old, const DerivIn1 &amp;deriv_old, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> t_old, const StateIn2 &amp;, const DerivIn2 &amp;deriv_new, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a> t_new) const</td></tr>
+<tr class="memdesc:a24a001b493456ed9574aa22a6764ecbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used for continuous output and it calculates the state <code>x</code> at a time <code>t</code> from the knowledge of two states <code>old_state</code> and <code>current_state</code> at time points <code>t_old</code> and <code>t_new</code>. It also uses internal variables to calculate the result. Hence this method must be called after two successful <code>do_step</code> calls.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a24a001b493456ed9574aa22a6764ecbd">更多...</a><br /></td></tr>
+<tr class="separator:a24a001b493456ed9574aa22a6764ecbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f25efc08e3023af10937380d8e793"><td class="memTemplParams" colspan="2">template&lt;class StateIn &gt; </td></tr>
+<tr class="memitem:a7c6f25efc08e3023af10937380d8e793"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a7c6f25efc08e3023af10937380d8e793">adjust_size</a> (const StateIn &amp;x)</td></tr>
+<tr class="memdesc:a7c6f25efc08e3023af10937380d8e793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a7c6f25efc08e3023af10937380d8e793">更多...</a><br /></td></tr>
+<tr class="separator:a7c6f25efc08e3023af10937380d8e793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">boost::numeric::odeint::explicit_error_stepper_fsal_base&lt; runge_kutta_dopri5&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:a6436f7346d14abe4222a01f0b473f39f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a6436f7346d14abe4222a01f0b473f39f">explicit_error_stepper_fsal_base</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a>())</td></tr>
+<tr class="memdesc:a6436f7346d14abe4222a01f0b473f39f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a explicit_stepper_fsal_base class. This constructor can be used as a default constructor if the algebra has a default constructor.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a6436f7346d14abe4222a01f0b473f39f">更多...</a><br /></td></tr>
+<tr class="separator:a6436f7346d14abe4222a01f0b473f39f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985b22718a6f1517c377151ca995e4e0 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a985b22718a6f1517c377151ca995e4e0">order</a> (void) const</td></tr>
+<tr class="separator:a985b22718a6f1517c377151ca995e4e0 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016b13b9cd9b629644e3d45ca142ce0b inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a016b13b9cd9b629644e3d45ca142ce0b">stepper_order</a> (void) const</td></tr>
+<tr class="separator:a016b13b9cd9b629644e3d45ca142ce0b inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c46f4b1af689aeb24b308cfbc68ec85 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a6c46f4b1af689aeb24b308cfbc68ec85">error_order</a> (void) const</td></tr>
+<tr class="separator:a6c46f4b1af689aeb24b308cfbc68ec85 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a2d6db4f450f47102815b393679670 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a25a2d6db4f450f47102815b393679670">do_step</a> (System system, StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a25a2d6db4f450f47102815b393679670 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method performs one step. It transforms the result in-place.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a25a2d6db4f450f47102815b393679670">更多...</a><br /></td></tr>
+<tr class="separator:a25a2d6db4f450f47102815b393679670 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a8eabbbb7e209657a1d5fd0987db67 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae7a8eabbbb7e209657a1d5fd0987db67">do_step</a> (System system, const StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ae7a8eabbbb7e209657a1d5fd0987db67 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second version to solve the forwarding problem, can be called with Boost.Range as StateInOut.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae7a8eabbbb7e209657a1d5fd0987db67">更多...</a><br /></td></tr>
+<tr class="separator:ae7a8eabbbb7e209657a1d5fd0987db67 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79788d5f69c77ac63171518e5b0c6286 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">boost::disable_if&lt; boost::is_same&lt; StateInOut, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> &gt;, void &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a79788d5f69c77ac63171518e5b0c6286">do_step</a> (System system, StateInOut &amp;x, DerivInOut &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a79788d5f69c77ac63171518e5b0c6286 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. Additionally to the other methods the derivative of x is also passed to this method. Therefore, dxdt must be evaluated initially:  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a79788d5f69c77ac63171518e5b0c6286">更多...</a><br /></td></tr>
+<tr class="separator:a79788d5f69c77ac63171518e5b0c6286 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab445427f914406741cfae7e0f679836e inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">boost::disable_if&lt; boost::is_same&lt; StateIn, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> &gt;, void &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ab445427f914406741cfae7e0f679836e">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ab445427f914406741cfae7e0f679836e inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place. This method is disabled if StateIn and Time are the same type. In this case the method can not be distinguished from other <code>do_step</code> variants.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ab445427f914406741cfae7e0f679836e">更多...</a><br /></td></tr>
+<tr class="separator:ab445427f914406741cfae7e0f679836e inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d36de1ab0974606b378d303404473f0 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a5d36de1ab0974606b378d303404473f0">do_step</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt_in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, DerivOut &amp;dxdt_out, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a5d36de1ab0974606b378d303404473f0 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place. Furthermore, the derivative of x at t is passed to the stepper and updated by the stepper to its new value at t+dt.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a5d36de1ab0974606b378d303404473f0">更多...</a><br /></td></tr>
+<tr class="separator:a5d36de1ab0974606b378d303404473f0 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec97b79508eb595ad190bb9ed288c170 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aec97b79508eb595ad190bb9ed288c170">do_step</a> (System system, StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:aec97b79508eb595ad190bb9ed288c170 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper and estimates the error. The state of the ODE is updated in-place.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aec97b79508eb595ad190bb9ed288c170">更多...</a><br /></td></tr>
+<tr class="separator:aec97b79508eb595ad190bb9ed288c170 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79d145d94e23394796609dc11a5230a inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af79d145d94e23394796609dc11a5230a">do_step</a> (System system, const StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:af79d145d94e23394796609dc11a5230a inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second version to solve the forwarding problem, can be called with Boost.Range as StateInOut.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af79d145d94e23394796609dc11a5230a">更多...</a><br /></td></tr>
+<tr class="separator:af79d145d94e23394796609dc11a5230a inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1b92901e968def01f1cb02d93e534d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">boost::disable_if&lt; boost::is_same&lt; StateInOut, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> &gt;, void &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a3e1b92901e968def01f1cb02d93e534d">do_step</a> (System system, StateInOut &amp;x, DerivInOut &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:a3e1b92901e968def01f1cb02d93e534d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. Additionally to the other method the derivative of x is also passed to this method and updated by this method.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a3e1b92901e968def01f1cb02d93e534d">更多...</a><br /></td></tr>
+<tr class="separator:a3e1b92901e968def01f1cb02d93e534d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2eefc737a2b514ef77a474139916a3c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae2eefc737a2b514ef77a474139916a3c">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:ae2eefc737a2b514ef77a474139916a3c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place. Furthermore, the error is estimated.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae2eefc737a2b514ef77a474139916a3c">更多...</a><br /></td></tr>
+<tr class="separator:ae2eefc737a2b514ef77a474139916a3c inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7951cc05378e793f69d7f2d5b0864811 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a7951cc05378e793f69d7f2d5b0864811">do_step</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt_in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, DerivOut &amp;dxdt_out, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>, Err &amp;xerr)</td></tr>
+<tr class="memdesc:a7951cc05378e793f69d7f2d5b0864811 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place. Furthermore, the derivative of x at t is passed to the stepper and the error is estimated.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a7951cc05378e793f69d7f2d5b0864811">更多...</a><br /></td></tr>
+<tr class="separator:a7951cc05378e793f69d7f2d5b0864811 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba4b17691232a0a04944a82e637bab03 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aba4b17691232a0a04944a82e637bab03">adjust_size</a> (const StateIn &amp;x)</td></tr>
+<tr class="memdesc:aba4b17691232a0a04944a82e637bab03 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aba4b17691232a0a04944a82e637bab03">更多...</a><br /></td></tr>
+<tr class="separator:aba4b17691232a0a04944a82e637bab03 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b92378ec4ad3cc540f29111911f6c8 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ac5b92378ec4ad3cc540f29111911f6c8">reset</a> (void)</td></tr>
+<tr class="memdesc:ac5b92378ec4ad3cc540f29111911f6c8 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the internal state of this stepper. After calling this method it is safe to use all <code>do_step</code> method without explicitly initializing the stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ac5b92378ec4ad3cc540f29111911f6c8">更多...</a><br /></td></tr>
+<tr class="separator:ac5b92378ec4ad3cc540f29111911f6c8 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebfdc843575580070edf292a1133f92 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a1ebfdc843575580070edf292a1133f92">initialize</a> (const DerivIn &amp;deriv)</td></tr>
+<tr class="memdesc:a1ebfdc843575580070edf292a1133f92 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the internal state of the stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a1ebfdc843575580070edf292a1133f92">更多...</a><br /></td></tr>
+<tr class="separator:a1ebfdc843575580070edf292a1133f92 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb85e16b4406888bb68105ff67e2b82 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#acdb85e16b4406888bb68105ff67e2b82">initialize</a> (System system, const StateIn &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">time_type</a> t)</td></tr>
+<tr class="memdesc:acdb85e16b4406888bb68105ff67e2b82 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the internal state of the stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#acdb85e16b4406888bb68105ff67e2b82">更多...</a><br /></td></tr>
+<tr class="separator:acdb85e16b4406888bb68105ff67e2b82 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6b9ba2e45bbdd4c40482458cc85d06 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a9d6b9ba2e45bbdd4c40482458cc85d06">is_initialized</a> (void) const</td></tr>
+<tr class="memdesc:a9d6b9ba2e45bbdd4c40482458cc85d06 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the stepper is already initialized. If the stepper is not initialized, the first call of <code>do_step</code> will initialize the state of the stepper. If the stepper is already initialized the system function can not be safely exchanged between consecutive <code>do_step</code> calls.  <a href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a9d6b9ba2e45bbdd4c40482458cc85d06">更多...</a><br /></td></tr>
+<tr class="separator:a9d6b9ba2e45bbdd4c40482458cc85d06 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html">boost::numeric::odeint::algebra_stepper_base&lt; range_algebra, default_operations &gt;</a></td></tr>
+<tr class="memitem:acccb18b94ff7c977a871778400daa85d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#acccb18b94ff7c977a871778400daa85d">algebra_stepper_base</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a>())</td></tr>
+<tr class="memdesc:acccb18b94ff7c977a871778400daa85d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a algebra_stepper_base and creates the algebra. This constructor can be used as a default constructor if the algebra has a default constructor.  <a href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#acccb18b94ff7c977a871778400daa85d">更多...</a><br /></td></tr>
+<tr class="separator:acccb18b94ff7c977a871778400daa85d inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddfcb848b440684bb1777113f3d5b9f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a> ()</td></tr>
+<tr class="separator:a4ddfcb848b440684bb1777113f3d5b9f inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed8a76eb62ecd9e41516d367e197fa3 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a0ed8a76eb62ecd9e41516d367e197fa3">algebra</a> () const</td></tr>
+<tr class="separator:a0ed8a76eb62ecd9e41516d367e197fa3 inherit pub_methods_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base')"><img src="closed.png" alt="-"/>&#160;静态 Public 属性 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">boost::numeric::odeint::explicit_error_stepper_fsal_base&lt; runge_kutta_dopri5&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:a4a365ab52efe4143fdbe4cc3b6d6ba3a inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4a365ab52efe4143fdbe4cc3b6d6ba3a">order_value</a></td></tr>
+<tr class="separator:a4a365ab52efe4143fdbe4cc3b6d6ba3a inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d00d9a50986f583e151aae559a5ec7 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae8d00d9a50986f583e151aae559a5ec7">stepper_order_value</a></td></tr>
+<tr class="separator:ae8d00d9a50986f583e151aae559a5ec7 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02707c10c6d148ffea91f8847b4be5f2 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5e869938ded5e56bf3ff248050fedae">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a02707c10c6d148ffea91f8847b4be5f2">error_order_value</a></td></tr>
+<tr class="separator:a02707c10c6d148ffea91f8847b4be5f2 inherit pub_static_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">boost::numeric::odeint::explicit_error_stepper_fsal_base&lt; runge_kutta_dopri5&lt; State, double, State, double, range_algebra, default_operations, initially_resizer &gt;, 5, 5, 4, State, double, State, double, range_algebra, default_operations, initially_resizer &gt;</a></td></tr>
+<tr class="memitem:ae78067131b05fb175a4ed8952c889f80 inherit pro_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af027e6952905ce55483c2d02f06b2512">wrapped_deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ae78067131b05fb175a4ed8952c889f80">m_dxdt</a></td></tr>
+<tr class="separator:ae78067131b05fb175a4ed8952c889f80 inherit pro_attribs_classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html">boost::numeric::odeint::algebra_stepper_base&lt; range_algebra, default_operations &gt;</a></td></tr>
+<tr class="memitem:ade14c6383957d33adef5297f5d271fb5 inherit pro_attribs_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#aa80ea86f235f49fc6c431761a784e747">algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#ade14c6383957d33adef5297f5d271fb5">m_algebra</a></td></tr>
+<tr class="separator:ade14c6383957d33adef5297f5d271fb5 inherit pro_attribs_classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class State, class Value = double, class Deriv = State, class Time = Value, class Algebra = range_algebra, class Operations = default_operations, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::runge_kutta_dopri5&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</h3>
+
+<p>The Runge-Kutta Dormand-Prince 5 method. </p>
+<p>The Runge-Kutta Dormand-Prince 5 method is a very popular method for solving ODEs, see <a href=""></a>. The method is explicit and fulfills the Error Stepper concept. Step size control is provided but continuous output is available which make this method favourable for many applications.</p>
+<p>This class derives from <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> and inherits its interface via CRTP (current recurring template pattern). The method possesses the FSAL (first-same-as-last) property. See <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> for more details.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">State</td><td>The state type. </td></tr>
+    <tr><td class="paramname">Value</td><td>The value type. </td></tr>
+    <tr><td class="paramname">Deriv</td><td>The type representing the time derivative of the state. </td></tr>
+    <tr><td class="paramname">Time</td><td>The time representing the independent variable - the time. </td></tr>
+    <tr><td class="paramname">Algebra</td><td>The algebra type. </td></tr>
+    <tr><td class="paramname">Operations</td><td>The operations type. </td></tr>
+    <tr><td class="paramname">Resizer</td><td>The resizer policy type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00049">49</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ad6be9d31e4b020c150a2c5ee57e2bd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6be9d31e4b020c150a2c5ee57e2bd70">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af071ed490c0329399aecfc1222f68b80">stepper_base_type::algebra_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1c22f970929a09031faf39f620e6a7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c22f970929a09031faf39f620e6a7d5">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af5256e441db6268b8975d84b6d3e0fe5">stepper_base_type::deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a1c22f970929a09031faf39f620e6a7d5">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a545875e259bd43c81feb1b8c1e2bb0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545875e259bd43c81feb1b8c1e2bb0b7">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_base_type::operations_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a545875e259bd43c81feb1b8c1e2bb0b7">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4bfc79b415da2a616a22c3c570e07e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfc79b415da2a616a22c3c570e07e03">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#ab3c7e07e3c90eba020c0ddb3cb43e17c">stepper_base_type::resizer_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a4bfc79b415da2a616a22c3c570e07e03">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9dc0dd4c985553be844ff373890fe492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dc0dd4c985553be844ff373890fe492">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aded1c8a2297b448e884778304c8ee906">stepper_base_type::state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a9dc0dd4c985553be844ff373890fe492">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac93683a09bbd2102b9cfbd90481fd49d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93683a09bbd2102b9cfbd90481fd49d">&#9670;&nbsp;</a></span>stepper_base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html">explicit_error_stepper_fsal_base</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; State , Value , Deriv , Time , Algebra , Operations , Resizer &gt; , 5 , 5 , 4 , State , Value , Deriv , Time , Algebra , Operations , Resizer &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ac93683a09bbd2102b9cfbd90481fd49d">stepper_base_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab9f444aaf4b88a3d2059587d8f08ce46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f444aaf4b88a3d2059587d8f08ce46">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a430e5034f45c8ffd17b4e6c3dc512ab4">stepper_base_type::stepper_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ab9f444aaf4b88a3d2059587d8f08ce46">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5f43825808b12cc21852dfea1897edd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f43825808b12cc21852dfea1897edd7">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a4695f891f765bd5bb47fbf1b7f99b7b1">stepper_base_type::time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8a6a7fc4fd2617028a2299d69c858f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6a7fc4fd2617028a2299d69c858f2f">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a349c2ede1ca23392ccf90b312a361148">stepper_base_type::value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a8a6a7fc4fd2617028a2299d69c858f2f">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a88df004ca8171532fa9c9367af90b1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88df004ca8171532fa9c9367af90b1c2">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#af027e6952905ce55483c2d02f06b2512">stepper_base_type::wrapped_deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a88df004ca8171532fa9c9367af90b1c2">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aef9bd1762148a2f894d2e7652eb57bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9bd1762148a2f894d2e7652eb57bb0">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#a06b3edece7adb5b4e8ea38e6bea90f97">stepper_base_type::wrapped_state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#aef9bd1762148a2f894d2e7652eb57bb0">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00079">79</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8b6dd2866eb442ffb9c0c9e770697db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6dd2866eb442ffb9c0c9e770697db6">&#9670;&nbsp;</a></span>runge_kutta_dopri5()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>algebra</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#ad6be9d31e4b020c150a2c5ee57e2bd70">algebra_type</a>()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html" title="The Runge-Kutta Dormand-Prince 5 method.">runge_kutta_dopri5</a> class. This constructor can be used as a default constructor if the algebra has a default constructor. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algebra</td><td>A copy of algebra is made and stored inside <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__stepper__base.html" title="Base class for explicit steppers without step size control and without dense output.">explicit_stepper_base</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7c6f25efc08e3023af10937380d8e793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f25efc08e3023af10937380d8e793">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateIn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjust the size of all temporaries in the stepper manually. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A state from which the size of the temporaries to be resized is deduced. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00270">270</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_a7c6f25efc08e3023af10937380d8e793_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_a7c6f25efc08e3023af10937380d8e793_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_a7c6f25efc08e3023af10937380d8e793_cgraph" id="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_a7c6f25efc08e3023af10937380d8e793_cgraph">
+<area shape="rect" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="5,5,173,61"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html#aba4b17691232a0a04944a82e637bab03" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="221,5,393,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a24a001b493456ed9574aa22a6764ecbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a001b493456ed9574aa22a6764ecbd">&#9670;&nbsp;</a></span>calc_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateOut , class StateIn1 , class DerivIn1 , class StateIn2 , class DerivIn2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::calc_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn1 &amp;&#160;</td>
+          <td class="paramname"><em>x_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn1 &amp;&#160;</td>
+          <td class="paramname"><em>deriv_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>t_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn2 &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn2 &amp;&#160;</td>
+          <td class="paramname"><em>deriv_new</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>t_new</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is used for continuous output and it calculates the state <code>x</code> at a time <code>t</code> from the knowledge of two states <code>old_state</code> and <code>current_state</code> at time points <code>t_old</code> and <code>t_new</code>. It also uses internal variables to calculate the result. Hence this method must be called after two successful <code>do_step</code> calls. </p>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00224">224</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2499073087cdde5981f362e8cd424c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2499073087cdde5981f362e8cd424c6b">&#9670;&nbsp;</a></span>do_step_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step_impl </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>dxdt_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DerivOut &amp;&#160;</td>
+          <td class="paramname"><em>dxdt_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method performs one step. The derivative <code>dxdt_in</code> of <code>in</code> at the time <code>t</code> is passed to the method. The result is updated out-of-place, hence the input is in <code>in</code> and the output in <code>out</code>. Furthermore, the derivative is update out-of-place, hence the input is assumed to be in <code>dxdt_in</code> and the output in <code>dxdt_out</code>. Access to this step functionality is provided by <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> and <code>do_step_impl</code> should not be called directly. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. in is not modified in this method </td></tr>
+    <tr><td class="paramname">dxdt_in</td><td>The derivative of x at t. dxdt_in is not modified by this method </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">out</td><td>The result of the step is written in out. </td></tr>
+    <tr><td class="paramname">dxdt_out</td><td>The result of the new derivative at time t+dt. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2b9a4baffa7c7c521d1b4a72c887f0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9a4baffa7c7c521d1b4a72c887f0ee">&#9670;&nbsp;</a></span>do_step_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class DerivIn , class StateOut , class DerivOut , class Err &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a>&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step_impl </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>dxdt_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DerivOut &amp;&#160;</td>
+          <td class="paramname"><em>dxdt_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html#a5f43825808b12cc21852dfea1897edd7">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Err &amp;&#160;</td>
+          <td class="paramname"><em>xerr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method performs one step. The derivative <code>dxdt_in</code> of <code>in</code> at the time <code>t</code> is passed to the method. The result is updated out-of-place, hence the input is in <code>in</code> and the output in <code>out</code>. Furthermore, the derivative is update out-of-place, hence the input is assumed to be in <code>dxdt_in</code> and the output in <code>dxdt_out</code>. Access to this step functionality is provided by <a class="el" href="classboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__fsal__base.html" title="Base class for explicit steppers with error estimation and stepper fulfilling the FSAL (first-same-as...">explicit_error_stepper_fsal_base</a> and <code>do_step_impl</code> should not be called directly. An estimation of the error is calculated. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. in is not modified in this method </td></tr>
+    <tr><td class="paramname">dxdt_in</td><td>The derivative of x at t. dxdt_in is not modified by this method </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">out</td><td>The result of the step is written in out. </td></tr>
+    <tr><td class="paramname">dxdt_out</td><td>The result of the new derivative at time t+dt. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+    <tr><td class="paramname">xerr</td><td>An estimation of the error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a> 第 <a class="el" href="runge__kutta__dopri5_8hpp_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="runge__kutta__dopri5_8hpp_source.html">runge_kutta_dopri5.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

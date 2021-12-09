@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/src/vehicle_model/ideal_steer_model.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_60f5ef0e2b4621f3ff1c461a32b4fdc2.html">src</a></li><li class="navelem"><a class="el" href="dir_b399d751824403670cf209f94e3f2e46.html">vehicle_model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">ideal_steer_model.cc 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="ideal__steer__model_8h_source.html">vehicle_model/ideal_steer_model.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="calculations_8h_source.html">common/math/calculations.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="odeint_8hpp_source.html">odeint-v2/boost/numeric/odeint.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ideal_steer_model.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ideal__steer__model_8cc__incl.png" border="0" usemap="#core_2vehicle__model_2src_2vehicle__model_2ideal__steer__model_8cc" alt=""/></div>
+<map name="core_2vehicle__model_2src_2vehicle__model_2ideal__steer__model_8cc" id="core_2vehicle__model_2src_2vehicle__model_2ideal__steer__model_8cc">
+<area shape="rect" title=" " alt="" coords="1548,5,1728,61"/>
+<area shape="rect" href="ideal__steer__model_8h.html" title=" " alt="" coords="1561,109,1715,151"/>
+<area shape="rect" href="calculations_8h.html" title=" " alt="" coords="1285,117,1495,143"/>
+<area shape="rect" href="odeint_8hpp.html" title=" " alt="" coords="3079,273,3261,315"/>
+<area shape="rect" title=" " alt="" coords="4429,481,4551,508"/>
+<area shape="rect" title=" " alt="" coords="1676,199,1795,225"/>
+<area shape="rect" title=" " alt="" coords="2826,481,2906,508"/>
+<area shape="rect" href="common_2inc_2common_2basics_2basics_8h.html" title=" " alt="" coords="634,281,815,307"/>
+<area shape="rect" href="state_8h.html" title=" " alt="" coords="1151,199,1317,225"/>
+<area shape="rect" href="macros_8h.html" title=" " alt="" coords="180,377,368,404"/>
+<area shape="rect" href="tic__toc_8h.html" title=" " alt="" coords="392,377,575,404"/>
+<area shape="rect" title=" " alt="" coords="599,377,667,404"/>
+<area shape="rect" title=" " alt="" coords="691,377,758,404"/>
+<area shape="rect" title=" " alt="" coords="1024,481,1087,508"/>
+<area shape="rect" title=" " alt="" coords="783,377,909,404"/>
+<area shape="rect" title=" " alt="" coords="30,377,155,404"/>
+<area shape="rect" href="backward_8hpp.html" title=" " alt="" coords="1201,377,1315,404"/>
+<area shape="rect" title=" " alt="" coords="1239,481,1314,508"/>
+<area shape="rect" title=" " alt="" coords="1373,481,1431,508"/>
+<area shape="rect" href="version_8hpp.html" title=" " alt="" coords="1339,370,1499,411"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="4734,474,4894,515"/>
+<area shape="rect" href="ublas__wrapper_8hpp.html" title=" " alt="" coords="2879,660,3053,701"/>
+<area shape="rect" href="euler_8hpp.html" title=" " alt="" coords="2313,370,2473,411"/>
+<area shape="rect" href="runge__kutta4__classic_8hpp.html" title=" " alt="" coords="2497,363,2662,419"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="4508,370,4701,411"/>
+<area shape="rect" href="runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="3878,363,4038,419"/>
+<area shape="rect" href="runge__kutta__cash__karp54__classic_8hpp.html" title=" " alt="" coords="2737,363,2928,419"/>
+<area shape="rect" href="runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1771,467,1931,523"/>
+<area shape="rect" href="runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="4726,363,4886,419"/>
+<area shape="rect" href="controlled__runge__kutta_8hpp.html" title=" " alt="" coords="3143,467,3331,523"/>
+<area shape="rect" href="dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="3276,363,3443,419"/>
+<area shape="rect" href="bulirsch__stoer_8hpp.html" title=" " alt="" coords="3003,370,3201,411"/>
+<area shape="rect" href="bulirsch__stoer__dense__out_8hpp.html" title=" " alt="" coords="3467,363,3638,419"/>
+<area shape="rect" href="symplectic__euler_8hpp.html" title=" " alt="" coords="4265,370,4483,411"/>
+<area shape="rect" href="symplectic__rkn__sb3a__mclachlan_8hpp.html" title=" " alt="" coords="4062,363,4241,419"/>
+<area shape="rect" href="adams__bashforth__moulton_8hpp.html" title=" " alt="" coords="3662,363,3854,419"/>
+<area shape="rect" href="implicit__euler_8hpp.html" title=" " alt="" coords="4101,571,4297,612"/>
+<area shape="rect" href="rosenbrock4_8hpp.html" title=" " alt="" coords="2606,571,2793,612"/>
+<area shape="rect" href="rosenbrock4__controller_8hpp.html" title=" " alt="" coords="2619,467,2779,523"/>
+<area shape="rect" href="rosenbrock4__dense__output_8hpp.html" title=" " alt="" coords="2129,363,2289,419"/>
+<area shape="rect" href="vector__space__algebra_8hpp.html" title=" " alt="" coords="5011,363,5177,419"/>
+<area shape="rect" href="integrate_8hpp.html" title=" " alt="" coords="1878,370,2054,411"/>
+<area shape="rect" href="integrate__adaptive_8hpp.html" title=" " alt="" coords="1530,467,1690,523"/>
+<area shape="rect" href="integrate__const_8hpp.html" title=" " alt="" coords="5201,363,5361,419"/>
+<area shape="rect" href="integrate__n__steps_8hpp.html" title=" " alt="" coords="5385,363,5545,419"/>
+<area shape="rect" href="integrate__times_8hpp.html" title=" " alt="" coords="5569,363,5729,419"/>
+<area shape="rect" href="observer__collection_8hpp.html" title=" " alt="" coords="933,370,1177,411"/>
+<area shape="rect" href="generation_8hpp.html" title=" " alt="" coords="1676,370,1853,411"/>
+<area shape="rect" title=" " alt="" coords="3171,578,3302,605"/>
+<area shape="rect" title=" " alt="" coords="2873,749,3059,791"/>
+</map>
+</div>
+</div>
+<p><a href="ideal__steer__model_8cc_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespacesimulator"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesimulator.html">simulator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

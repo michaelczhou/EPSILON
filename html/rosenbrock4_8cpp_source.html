@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/rosenbrock4.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rosenbrock4.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rosenbrock4_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/rosenbrock4.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the Rosenbrock 4 stepper and its controller and dense output stepper.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   23</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_rosenbrock4</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4__controller_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4_controller.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="rosenbrock4__dense__output_8hpp.html">boost/numeric/odeint/stepper/rosenbrock4_dense_output.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/matrix.hpp&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="rosenbrock4_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">   41</a></span>&#160;<span class="keyword">typedef</span> boost::numeric::ublas::vector&lt; value_type &gt; <a class="code" href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">   42</a></span>&#160;<span class="keyword">typedef</span> boost::numeric::ublas::matrix&lt; value_type &gt; <a class="code" href="rosenbrock4_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">struct </span><a class="code" href="structsys.html">sys</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &amp;t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        dxdt( 0 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 0 ) + 2 * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        dxdt( 1 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">struct </span><a class="code" href="structjacobi.html">jacobi</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a> &amp;<a class="code" href="structjacobi.html">jacobi</a> , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &amp;t , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dfdt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 0 ) = 1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 1 ) = 2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 0 ) = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 1 ) = 1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        dfdt( 0 ) = 0.0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        dfdt( 1 ) = 0.0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;BOOST_AUTO_TEST_SUITE( rosenbrock4_test )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">   69</a></span>&#160;<a class="code" href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">BOOST_AUTO_TEST_CASE</a>( test_rosenbrock4_stepper )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">rosenbrock4&lt; value_type &gt;</a> <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="code" href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> stepper_value_type;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 ) , xerr( 2 );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) = 0.0; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) = 1.0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 0.1 , xerr );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">//    using std::abs;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//    value_type eps = 1E-12;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">//    // compare with analytic solution of above system</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">//    BOOST_CHECK_SMALL( abs( x(0) - 20.0/81.0 ) , eps );</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">//    BOOST_CHECK_SMALL( abs( x(1) - 10.0/9.0 ) , eps );</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#afb2757198d91a401cb42e58cbbca45ba">   95</a></span>&#160;<a class="code" href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">BOOST_AUTO_TEST_CASE</a>( test_rosenbrock4_controller )</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt;</a> &gt; <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="code" href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> stepper_value_type;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 0 ) = 0.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) = 1.0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.01;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    stepper.try_step( std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#a2a840a9780c11a3b23cf86d6c9941caa">  112</a></span>&#160;<a class="code" href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">BOOST_AUTO_TEST_CASE</a>( test_rosenbrock4_dense_output )</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">rosenbrock4_dense_output&lt; rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt;</a> &gt; &gt; <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt;</a> &gt; controlled_stepper_type;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    controlled_stepper_type  c_stepper;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper( c_stepper );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="code" href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> stepper_value_type;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 0 ) = 0.0 ; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) = 1.0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    stepper.initialize( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::pair&lt; value_type , value_type &gt; tr = stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) );</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    stepper.calc_state( 0.5 * ( tr.first + tr.second ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="rosenbrock4_8cpp.html#a58b85f8deea792ad5766d3564fbb53c2">  130</a></span>&#160;<a class="code" href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">BOOST_AUTO_TEST_CASE</a>( test_rosenbrock4_copy_dense_output )</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4&lt; value_type &gt;</a> &gt; controlled_stepper_type;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">rosenbrock4_dense_output&lt; controlled_stepper_type &gt;</a> <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    controlled_stepper_type  c_stepper;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper( c_stepper );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper2( stepper );</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a></div><div class="ttdoc">Implement of the symmetric B3A method of Runge-Kutta-Nystroem method of sixth order.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00093">symplectic_rkn_sb3a_mclachlan.hpp:93</a></div></div>
+<div class="ttc" id="astructsys_html_a588ead988f58dbf2acfff1fa9ee21649"><div class="ttname"><a href="structsys.html#a588ead988f58dbf2acfff1fa9ee21649">sys::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, const value_type &amp;t) const</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00047">rosenbrock4.cpp:47</a></div></div>
+<div class="ttc" id="arosenbrock4_8hpp_html"><div class="ttname"><a href="rosenbrock4_8hpp.html">rosenbrock4.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html_a855c765b59cb9eb32614c242358d8a39"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan::value_type</a></div><div class="ttdeci">stepper_base_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00112">symplectic_rkn_sb3a_mclachlan.hpp:112</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">boost::numeric::odeint::rosenbrock4</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8hpp_source.html#l00128">rosenbrock4.hpp:128</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_a34c08a7a7d7e6c10905fc8d5629495be"><div class="ttname"><a href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a></div><div class="ttdeci">void sys(const state_type &amp;, state_type &amp;, const double)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00028">stepper_details.cpp:28</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="arosenbrock4_8cpp_html_a9018fe527287332f6438b7cf4bc832b2"><div class="ttname"><a href="rosenbrock4_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; value_type &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00042">rosenbrock4.cpp:42</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">boost::numeric::odeint::rosenbrock4_dense_output</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4__dense__output_8hpp_source.html#l00035">rosenbrock4_dense_output.hpp:35</a></div></div>
+<div class="ttc" id="arosenbrock4__dense__output_8hpp_html"><div class="ttname"><a href="rosenbrock4__dense__output_8hpp.html">rosenbrock4_dense_output.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a76f77d159f14a4e01aaf592a1e88e592"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">boost::numeric::odeint::symplectic_nystroem_stepper_base::do_step</a></div><div class="ttdeci">void do_step(System system, const StateInOut &amp;state, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. The system can be either a pair of two function object describing the ...</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00107">symplectic_rkn_stepper_base.hpp:107</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="arosenbrock4_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="rosenbrock4_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00040">rosenbrock4.cpp:40</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_ab79c329d9a4e8fb1b7e24480478b1b95"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 6, 4, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::state_type</a></div><div class="ttdeci">std::pair&lt; coor_type, momentum_type &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00069">symplectic_rkn_stepper_base.hpp:69</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a6b476c4b408dace62bb7bb17dade626c"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a></div><div class="ttdeci">fusion::vector&lt; velocity_type, acceleration_type &gt; deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00049">harmonic_oscillator_units.cpp:49</a></div></div>
+<div class="ttc" id="astructjacobi_html_a7722c1e503af4a1a47cf2fceaa160bc3"><div class="ttname"><a href="structjacobi.html#a7722c1e503af4a1a47cf2fceaa160bc3">jacobi::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, matrix_type &amp;jacobi, const value_type &amp;t, state_type &amp;dfdt) const</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00056">rosenbrock4.cpp:56</a></div></div>
+<div class="ttc" id="astiff__system_8cpp_html_abd6c5fdc1f08c03c2027eafe32658e38"><div class="ttname"><a href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; double &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="stiff__system_8cpp_source.html#l00031">stiff_system.cpp:31</a></div></div>
+<div class="ttc" id="arosenbrock4__controller_8hpp_html"><div class="ttname"><a href="rosenbrock4__controller_8hpp.html">rosenbrock4_controller.hpp</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_ab3354d8f086286dedd7358305169a8d6"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 6, 4, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::time_type</a></div><div class="ttdeci">double time_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00076">symplectic_rkn_stepper_base.hpp:76</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a22524f0bf8fa0712836f8142b0afa726"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></div><div class="ttdeci">units::quantity&lt; si::time, double &gt; time_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00042">harmonic_oscillator_units.cpp:42</a></div></div>
+<div class="ttc" id="arosenbrock4_8cpp_html_aeb5c3aa860f4db4a53552b1909dc9b41"><div class="ttname"><a href="rosenbrock4_8cpp.html#aeb5c3aa860f4db4a53552b1909dc9b41">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(test_rosenbrock4_stepper)</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00069">rosenbrock4.cpp:69</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4__controller_8hpp_source.html#l00037">rosenbrock4_controller.hpp:37</a></div></div>
+<div class="ttc" id="arosenbrock4_8cpp_html_a75cfffa67fb3d002a7a89ba1a3f6121a"><div class="ttname"><a href="rosenbrock4_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a></div><div class="ttdeci">boost::numeric::ublas::vector&lt; value_type &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8cpp_source.html#l00041">rosenbrock4.cpp:41</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructjacobi_html"><div class="ttname"><a href="structjacobi.html">jacobi</a></div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00054">implicit_euler.cpp:54</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a3b77b7883d7f12ac3457092dbf37a9a8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">boost::numeric::odeint::symplectic_nystroem_stepper_base&lt; 6, 4, Coor, Coor, double, Coor, Coor, double, range_algebra, default_operations, initially_resizer &gt;::deriv_type</a></div><div class="ttdeci">std::pair&lt; coor_deriv_type, momentum_deriv_type &gt; deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00074">symplectic_rkn_stepper_base.hpp:74</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/src/phy_simulator_planning_node.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b0a9e9b8858f16122c992a3415e59f93.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">phy_simulator_planning_node.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="phy__simulator__planning__node_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;ros/ros.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;geometry_msgs/PoseArray.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;geometry_msgs/PoseStamped.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;geometry_msgs/PoseWithCovarianceStamped.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;sensor_msgs/PointCloud.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;vehicle_msgs/ControlSignal.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="decoder_8h.html">vehicle_msgs/decoder.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">phy_simulator/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_8h.html">phy_simulator/phy_simulator.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h.html">phy_simulator/ros_adapter.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h.html">phy_simulator/visualizer.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a8f6a19d5bdcc9e08f601cc00a9befe13">   24</a></span>&#160;<a class="code" href="phy__simulator__planning__node_8cc.html#a8f6a19d5bdcc9e08f601cc00a9befe13">DECLARE_BACKWARD</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a9d8fdaa06c88303cec512ad91c77c7c8">   25</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a9d8fdaa06c88303cec512ad91c77c7c8">simulation_rate</a> = 500.0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a54f8f5d3a0fcbfbaac994934affd9d5d">   26</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a54f8f5d3a0fcbfbaac994934affd9d5d">gt_msg_rate</a> = 100.0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#aacac670870bf8b9525d2d504c0335983">   27</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="phy__simulator__planning__node_8cc.html#aacac670870bf8b9525d2d504c0335983">gt_static_msg_rate</a> = 10.0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#ad8204de65f29acda58a26cb80af9336a">   28</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="phy__simulator__planning__node_8cc.html#ad8204de65f29acda58a26cb80af9336a">visualization_msg_rate</a> = 20.0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">   30</a></span>&#160;<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a> <a class="code" href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">_signal_set</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">   31</a></span>&#160;std::vector&lt;ros::Subscriber&gt; <a class="code" href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">_ros_sub</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a> <a class="code" href="phy__simulator__planning__node_8cc.html#af214d1f01fa1c97a1864de32d4d85e6d">initial_state</a>(0, 0, 0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a22eede93621f0c27a10c04110a4401d2">   34</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a22eede93621f0c27a10c04110a4401d2">flag_rcv_initial_state</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a> <a class="code" href="phy__simulator__planning__node_8cc.html#a65ee7d09dbf429ffab3779eb1f75e0f8">goal_state</a>(0, 0, 0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#abbe7ab8089c2d8af98b9a6c62a32b2bf">   37</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="phy__simulator__planning__node_8cc.html#abbe7ab8089c2d8af98b9a6c62a32b2bf">flag_rcv_goal_state</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a2bc5e8d098c982f123288ca36b01a5a3">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a2bc5e8d098c982f123288ca36b01a5a3">CtrlSignalCallback</a>(<span class="keyword">const</span> vehicle_msgs::ControlSignal::ConstPtr&amp; msg,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a> ctrl;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classvehicle__msgs_1_1_decoder.html#afaa620bb758730885dce75be931873dc">vehicle_msgs::Decoder::GetControlSignalFromRosControlSignal</a>(*msg, &amp;ctrl);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">_signal_set</a>.<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">signal_set</a>[index] = ctrl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a131297c28cb3d08997c7e7364e0853ff">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a131297c28cb3d08997c7e7364e0853ff">InitialPoseCallback</a>(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> geometry_msgs::PoseWithCovarianceStamped::ConstPtr&amp; msg) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="classcommon_1_1_visualization_util.html#a4ad9dcb1ddc09ab91ac5226e64fa555f">common::VisualizationUtil::Get3DofStateFromRosPose</a>(msg-&gt;pose.pose,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                     &amp;<a class="code" href="phy__simulator__planning__node_8cc.html#af214d1f01fa1c97a1864de32d4d85e6d">initial_state</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="phy__simulator__planning__node_8cc.html#a22eede93621f0c27a10c04110a4401d2">flag_rcv_initial_state</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a289ff51737db51b797d238624d141898">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a289ff51737db51b797d238624d141898">NavGoalCallback</a>(<span class="keyword">const</span> geometry_msgs::PoseStamped::ConstPtr&amp; msg) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classcommon_1_1_visualization_util.html#a4ad9dcb1ddc09ab91ac5226e64fa555f">common::VisualizationUtil::Get3DofStateFromRosPose</a>(msg-&gt;pose, &amp;<a class="code" href="phy__simulator__planning__node_8cc.html#a65ee7d09dbf429ffab3779eb1f75e0f8">goal_state</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="phy__simulator__planning__node_8cc.html#abbe7ab8089c2d8af98b9a6c62a32b2bf">flag_rcv_goal_state</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="phy__simulator__planning__node_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">   58</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="phy__simulator__planning__node_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  ros::init(argc, argv, <span class="stringliteral">&quot;~&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ros::NodeHandle nh(<span class="stringliteral">&quot;~&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  std::string vehicle_info_path;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">if</span> (!nh.getParam(<span class="stringliteral">&quot;vehicle_info_path&quot;</span>, vehicle_info_path)) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Failed to get param %s&quot;</span>, vehicle_info_path.c_str());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::string map_path;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span> (!nh.getParam(<span class="stringliteral">&quot;map_path&quot;</span>, map_path)) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Failed to get param %s&quot;</span>, map_path.c_str());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  std::string lane_net_path;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (!nh.getParam(<span class="stringliteral">&quot;lane_net_path&quot;</span>, lane_net_path)) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ROS_ERROR(<span class="stringliteral">&quot;Failed to get param %s&quot;</span>, lane_net_path.c_str());</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classphy__simulator_1_1_phy_simulation.html">PhySimulation</a> phy_sim(vehicle_info_path, map_path, lane_net_path);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="classphy__simulator_1_1_ros_adapter.html">RosAdapter</a> ros_adapter(nh);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ros_adapter.<a class="code" href="classphy__simulator_1_1_ros_adapter.html#adbcaaa7dadef1d11f5e99104b908aba0">set_phy_sim</a>(&amp;phy_sim);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="classphy__simulator_1_1_visualizer.html">Visualizer</a> visualizer(nh);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  visualizer.<a class="code" href="classphy__simulator_1_1_visualizer.html#ab948be7259644b35ef92a40205a632ef">set_phy_sim</a>(&amp;phy_sim);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">auto</span> vehicle_ids = phy_sim.<a class="code" href="classphy__simulator_1_1_phy_simulation.html#a52b32ca3cb3fd71ee150d1db2fcd0254">vehicle_ids</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">int</span> num_vehicles = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(vehicle_ids.size());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">_ros_sub</a>.resize(num_vehicles);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_vehicles; i++) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">auto</span> vehicle_id = vehicle_ids[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::string topic_name =</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::string(<span class="stringliteral">&quot;/ctrl/agent_&quot;</span>) + <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(vehicle_id);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    printf(<span class="stringliteral">&quot;subscribing to %s\n&quot;</span>, topic_name.c_str());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">_ros_sub</a>[i] = nh.subscribe&lt;vehicle_msgs::ControlSignal&gt;(</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        topic_name, 10, boost::bind(<a class="code" href="phy__simulator__planning__node_8cc.html#a2bc5e8d098c982f123288ca36b01a5a3">CtrlSignalCallback</a>, _1, vehicle_id));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; vehicle_id : vehicle_ids) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a> default_signal;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">_signal_set</a>.<a class="code" href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">signal_set</a>.insert(std::pair&lt;int, common::VehicleControlSignal&gt;(</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        vehicle_id, default_signal));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  ros::Subscriber ini_pos_sub =</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      nh.subscribe(<span class="stringliteral">&quot;/initialpose&quot;</span>, 10, <a class="code" href="phy__simulator__planning__node_8cc.html#a131297c28cb3d08997c7e7364e0853ff">InitialPoseCallback</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  ros::Subscriber goal_pos_sub =</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      nh.subscribe(<span class="stringliteral">&quot;/move_base_simple/goal&quot;</span>, 10, <a class="code" href="phy__simulator__planning__node_8cc.html#a289ff51737db51b797d238624d141898">NavGoalCallback</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  ros::Rate rate(<a class="code" href="phy__simulator__planning__node_8cc.html#a9d8fdaa06c88303cec512ad91c77c7c8">simulation_rate</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  ros::Time next_gt_pub_time = ros::Time::now();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  ros::Time next_gt_static_pub_time = next_gt_pub_time;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  ros::Time <a class="code" href="onlane__ai__agent_8cc.html#a0c349878f6c87e03081d18f4e973462d">next_vis_pub_time</a> = ros::Time::now();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  std::cout &lt;&lt; <span class="stringliteral">&quot;[PhySimulation] Initialization finished, waiting for callback&quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">int</span> gt_msg_counter = 0;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">while</span> (ros::ok()) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ros::spinOnce();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    phy_sim.<a class="code" href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">UpdateSimulatorUsingSignalSet</a>(<a class="code" href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">_signal_set</a>, 1.0 / <a class="code" href="phy__simulator__planning__node_8cc.html#a9d8fdaa06c88303cec512ad91c77c7c8">simulation_rate</a>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ros::Time tnow = ros::Time::now();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (tnow &gt;= next_gt_pub_time) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      next_gt_pub_time += ros::Duration(1.0 / <a class="code" href="phy__simulator__planning__node_8cc.html#a54f8f5d3a0fcbfbaac994934affd9d5d">gt_msg_rate</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      ros_adapter.<a class="code" href="classphy__simulator_1_1_ros_adapter.html#ad14f738ac1cce49a2182a8bffe6c9e17">PublishDynamicDataWithStamp</a>(tnow);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (tnow &gt;= next_gt_static_pub_time) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      next_gt_static_pub_time += ros::Duration(1.0 / <a class="code" href="phy__simulator__planning__node_8cc.html#aacac670870bf8b9525d2d504c0335983">gt_static_msg_rate</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      ros_adapter.<a class="code" href="classphy__simulator_1_1_ros_adapter.html#a78fee69cd221f7555d9af659f0623979">PublishStaticDataWithStamp</a>(tnow);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (tnow &gt;= <a class="code" href="onlane__ai__agent_8cc.html#a0c349878f6c87e03081d18f4e973462d">next_vis_pub_time</a>) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <a class="code" href="onlane__ai__agent_8cc.html#a0c349878f6c87e03081d18f4e973462d">next_vis_pub_time</a> += ros::Duration(1.0 / <a class="code" href="phy__simulator__planning__node_8cc.html#ad8204de65f29acda58a26cb80af9336a">visualization_msg_rate</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      visualizer.<a class="code" href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">VisualizeDataWithStamp</a>(tnow);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    rate.sleep();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">_ros_sub</a>.clear();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  ros::shutdown();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aphy__simulator_8h_html"><div class="ttname"><a href="phy__simulator_8h.html">phy_simulator.h</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a1c34affccbf4a12cd1921e203996b108"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a1c34affccbf4a12cd1921e203996b108">_ros_sub</a></div><div class="ttdeci">std::vector&lt; ros::Subscriber &gt; _ros_sub</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00031">phy_simulator_planning_node.cc:31</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_ad8204de65f29acda58a26cb80af9336a"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#ad8204de65f29acda58a26cb80af9336a">visualization_msg_rate</a></div><div class="ttdeci">const double visualization_msg_rate</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00028">phy_simulator_planning_node.cc:28</a></div></div>
+<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l22620">json.hpp:22620</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a8f6a19d5bdcc9e08f601cc00a9befe13"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a8f6a19d5bdcc9e08f601cc00a9befe13">DECLARE_BACKWARD</a></div><div class="ttdeci">DECLARE_BACKWARD</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00024">phy_simulator_planning_node.cc:24</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html">phy_simulator::PhySimulation</a></div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00032">phy_simulator.h:32</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a131297c28cb3d08997c7e7364e0853ff"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a131297c28cb3d08997c7e7364e0853ff">InitialPoseCallback</a></div><div class="ttdeci">void InitialPoseCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &amp;msg)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00046">phy_simulator_planning_node.cc:46</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_ad14f738ac1cce49a2182a8bffe6c9e17"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#ad14f738ac1cce49a2182a8bffe6c9e17">phy_simulator::RosAdapter::PublishDynamicDataWithStamp</a></div><div class="ttdeci">void PublishDynamicDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdoc">Publish dynamic data of simulator with time stamp</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00040">ros_adapter.cc:40</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a9d8fdaa06c88303cec512ad91c77c7c8"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a9d8fdaa06c88303cec512ad91c77c7c8">simulation_rate</a></div><div class="ttdeci">const double simulation_rate</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00025">phy_simulator_planning_node.cc:25</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a861779e1b237611ea0a32ccafce09c3d"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">phy_simulator::PhySimulation::UpdateSimulatorUsingSignalSet</a></div><div class="ttdeci">bool UpdateSimulatorUsingSignalSet(const common::VehicleControlSignalSet &amp;signal_set, const decimal_t &amp;dt)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00065">phy_simulator.cc:65</a></div></div>
+<div class="ttc" id="aclassvehicle__msgs_1_1_decoder_html_afaa620bb758730885dce75be931873dc"><div class="ttname"><a href="classvehicle__msgs_1_1_decoder.html#afaa620bb758730885dce75be931873dc">vehicle_msgs::Decoder::GetControlSignalFromRosControlSignal</a></div><div class="ttdeci">static ErrorType GetControlSignalFromRosControlSignal(const vehicle_msgs::ControlSignal &amp;msg, common::VehicleControlSignal *ctrl)</div><div class="ttdef"><b>Definition:</b> <a href="decoder_8h_source.html#l00216">decoder.h:216</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_adbcaaa7dadef1d11f5e99104b908aba0"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#adbcaaa7dadef1d11f5e99104b908aba0">phy_simulator::RosAdapter::set_phy_sim</a></div><div class="ttdeci">void set_phy_sim(PhySimulation *p_phy_sim)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h_source.html#l00041">ros_adapter.h:41</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a65ee7d09dbf429ffab3779eb1f75e0f8"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a65ee7d09dbf429ffab3779eb1f75e0f8">goal_state</a></div><div class="ttdeci">Vec3f goal_state(0, 0, 0)</div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_a4ad9dcb1ddc09ab91ac5226e64fa555f"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#a4ad9dcb1ddc09ab91ac5226e64fa555f">common::VisualizationUtil::Get3DofStateFromRosPose</a></div><div class="ttdeci">static ErrorType Get3DofStateFromRosPose(const geometry_msgs::Pose &amp;pose, Vec3f *p_state)</div><div class="ttdoc">Get 3-Dof State From Ros Pose</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00608">common_visualization_util.h:608</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html_a78fee69cd221f7555d9af659f0623979"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html#a78fee69cd221f7555d9af659f0623979">phy_simulator::RosAdapter::PublishStaticDataWithStamp</a></div><div class="ttdeci">void PublishStaticDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdoc">Publish static data of simulator with time stamp</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2ros__adapter_8cc_source.html#l00032">ros_adapter.cc:32</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html_a9480c48a2cb9bc220f219820ad5b984e"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html#a9480c48a2cb9bc220f219820ad5b984e">phy_simulator::Visualizer::VisualizeDataWithStamp</a></div><div class="ttdeci">void VisualizeDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2src_2phy__simulator_2visualizer_8cc_source.html#l00022">visualizer.cc:22</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_ros_adapter_html"><div class="ttname"><a href="classphy__simulator_1_1_ros_adapter.html">phy_simulator::RosAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h_source.html#l00027">ros_adapter.h:27</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00058">phy_simulator_planning_node.cc:58</a></div></div>
+<div class="ttc" id="aphy__simulator_2inc_2phy__simulator_2ros__adapter_8h_html"><div class="ttname"><a href="phy__simulator_2inc_2phy__simulator_2ros__adapter_8h.html">ros_adapter.h</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_abbe7ab8089c2d8af98b9a6c62a32b2bf"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#abbe7ab8089c2d8af98b9a6c62a32b2bf">flag_rcv_goal_state</a></div><div class="ttdeci">bool flag_rcv_goal_state</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00037">phy_simulator_planning_node.cc:37</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_af214d1f01fa1c97a1864de32d4d85e6d"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#af214d1f01fa1c97a1864de32d4d85e6d">initial_state</a></div><div class="ttdeci">Vec3f initial_state(0, 0, 0)</div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html_ab948be7259644b35ef92a40205a632ef"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html#ab948be7259644b35ef92a40205a632ef">phy_simulator::Visualizer::set_phy_sim</a></div><div class="ttdeci">void set_phy_sim(PhySimulation *p_phy_sim)</div><div class="ttdef"><b>Definition:</b> <a href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h_source.html#l00036">visualizer.h:36</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00312">semantics.h:312</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_set_html_abb8b8791ff8e0bd396dc58379acb7acb"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal_set.html#abb8b8791ff8e0bd396dc58379acb7acb">common::VehicleControlSignalSet::signal_set</a></div><div class="ttdeci">std::unordered_map&lt; int, VehicleControlSignal &gt; signal_set</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00313">semantics.h:313</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a0c349878f6c87e03081d18f4e973462d"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a0c349878f6c87e03081d18f4e973462d">next_vis_pub_time</a></div><div class="ttdeci">ros::Time next_vis_pub_time</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00035">onlane_ai_agent.cc:35</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a54f8f5d3a0fcbfbaac994934affd9d5d"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a54f8f5d3a0fcbfbaac994934affd9d5d">gt_msg_rate</a></div><div class="ttdeci">const double gt_msg_rate</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00026">phy_simulator_planning_node.cc:26</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_aafd2059ec4ec1dc0b0f9746efc7b0ae9"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#aafd2059ec4ec1dc0b0f9746efc7b0ae9">_signal_set</a></div><div class="ttdeci">common::VehicleControlSignalSet _signal_set</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00030">phy_simulator_planning_node.cc:30</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a131a743ea2c866aeadfcdf143b8c7f56"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a></div><div class="ttdeci">Vecf&lt; 3 &gt; Vec3f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00062">basics.h:62</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_aacac670870bf8b9525d2d504c0335983"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#aacac670870bf8b9525d2d504c0335983">gt_static_msg_rate</a></div><div class="ttdeci">const double gt_static_msg_rate</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00027">phy_simulator_planning_node.cc:27</a></div></div>
+<div class="ttc" id="aphy__simulator_2inc_2phy__simulator_2basics_8h_html"><div class="ttname"><a href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_visualizer_html"><div class="ttname"><a href="classphy__simulator_1_1_visualizer.html">phy_simulator::Visualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h_source.html#l00030">visualizer.h:30</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a22eede93621f0c27a10c04110a4401d2"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a22eede93621f0c27a10c04110a4401d2">flag_rcv_initial_state</a></div><div class="ttdeci">bool flag_rcv_initial_state</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00034">phy_simulator_planning_node.cc:34</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a2bc5e8d098c982f123288ca36b01a5a3"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a2bc5e8d098c982f123288ca36b01a5a3">CtrlSignalCallback</a></div><div class="ttdeci">void CtrlSignalCallback(const vehicle_msgs::ControlSignal::ConstPtr &amp;msg, int index)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00039">phy_simulator_planning_node.cc:39</a></div></div>
+<div class="ttc" id="aphy__simulator__planning__node_8cc_html_a289ff51737db51b797d238624d141898"><div class="ttname"><a href="phy__simulator__planning__node_8cc.html#a289ff51737db51b797d238624d141898">NavGoalCallback</a></div><div class="ttdeci">void NavGoalCallback(const geometry_msgs::PoseStamped::ConstPtr &amp;msg)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator__planning__node_8cc_source.html#l00053">phy_simulator_planning_node.cc:53</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a52b32ca3cb3fd71ee150d1db2fcd0254"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a52b32ca3cb3fd71ee150d1db2fcd0254">phy_simulator::PhySimulation::vehicle_ids</a></div><div class="ttdeci">const std::vector&lt; int &gt; vehicle_ids() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00042">phy_simulator.h:42</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a></div><div class="ttdoc">Vehicle control signal, 2 modes embedded</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00285">semantics.h:285</a></div></div>
+<div class="ttc" id="acore_2phy__simulator_2inc_2phy__simulator_2visualizer_8h_html"><div class="ttname"><a href="core_2phy__simulator_2inc_2phy__simulator_2visualizer_8h.html">visualizer.h</a></div></div>
+<div class="ttc" id="adecoder_8h_html"><div class="ttname"><a href="decoder_8h.html">decoder.h</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

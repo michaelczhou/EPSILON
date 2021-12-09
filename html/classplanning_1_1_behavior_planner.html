@@ -1,0 +1,2494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: planning::BehaviorPlanner类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceplanning.html">planning</a></li><li class="navelem"><a class="el" href="classplanning_1_1_behavior_planner.html">BehaviorPlanner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classplanning_1_1_behavior_planner-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">planning::BehaviorPlanner类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a>&gt;</code></p>
+<div class="dynheader">
+类 planning::BehaviorPlanner 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner__inherit__graph.png" border="0" usemap="#planning_1_1_behavior_planner_inherit__map" alt="Inheritance graph"/></div>
+<map name="planning_1_1_behavior_planner_inherit__map" id="planning_1_1_behavior_planner_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,199,107"/>
+<area shape="rect" href="classplanning_1_1_planner.html" title="A general base class for different planners including path/motion/behavior planners" alt="" coords="35,5,169,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+planning::BehaviorPlanner 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner__coll__graph.png" border="0" usemap="#planning_1_1_behavior_planner_coll__map" alt="Collaboration graph"/></div>
+<map name="planning_1_1_behavior_planner_coll__map" id="planning_1_1_behavior_planner_coll__map">
+<area shape="rect" title=" " alt="" coords="748,96,941,123"/>
+<area shape="rect" href="classplanning_1_1_planner.html" title="A general base class for different planners including path/motion/behavior planners" alt="" coords="35,12,169,39"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html" title=" " alt="" coords="367,37,541,64"/>
+<area shape="rect" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html" title=" " alt="" coords="325,89,583,130"/>
+<area shape="rect" href="structcommon_1_1_intelligent_driver_model_1_1_param.html" title=" " alt="" coords="5,89,199,130"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html" title=" " alt="" coords="357,154,551,195"/>
+<area shape="rect" href="structcommon_1_1_semantic_behavior.html" title="Semantic behavior is a collection of different behaviors to describe a complex intention." alt="" coords="351,220,557,247"/>
+<area shape="rect" href="structcommon_1_1_state.html" title=" " alt="" coords="41,195,163,221"/>
+<area shape="rect" href="classcommon_1_1_lane.html" title=" " alt="" coords="43,245,161,272"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a28b65ceaad779be58dabc032fa37a1c5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a28b65ceaad779be58dabc032fa37a1c5">State</a> = <a class="el" href="structcommon_1_1_state.html">common::State</a></td></tr>
+<tr class="separator:a28b65ceaad779be58dabc032fa37a1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de43402656cded23a1b195fcccd3da5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">Lane</a> = <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td></tr>
+<tr class="separator:a1de43402656cded23a1b195fcccd3da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f083192529cccc0a495f3f0d0648e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">Behavior</a> = <a class="el" href="structcommon_1_1_semantic_behavior.html">common::SemanticBehavior</a></td></tr>
+<tr class="separator:af4f083192529cccc0a495f3f0d0648e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431003b163f33ed7d875d093dd567361"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a431003b163f33ed7d875d093dd567361">LateralBehavior</a> = <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td></tr>
+<tr class="separator:a431003b163f33ed7d875d093dd567361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ab6e5cfbc259a9d21385a448eb72e24da"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ab6e5cfbc259a9d21385a448eb72e24da">Name</a> () <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:ab6e5cfbc259a9d21385a448eb72e24da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3078789762251f63deadf37482480d84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a3078789762251f63deadf37482480d84">Init</a> (const std::string config) <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:a3078789762251f63deadf37482480d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff9ca81f3233625cd560b4f402b4387"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387">RunOnce</a> () <a class="el" href="backward_8hpp.html#a421c2a84099be332814e021bcf72c6cf">override</a></td></tr>
+<tr class="separator:a7ff9ca81f3233625cd560b4f402b4387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095a66a0479ed61cc4adea195cfeb809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a095a66a0479ed61cc4adea195cfeb809">set_map_interface</a> (<a class="el" href="classplanning_1_1_behavior_planner_map_itf.html">BehaviorPlannerMapItf</a> *itf)</td></tr>
+<tr class="separator:a095a66a0479ed61cc4adea195cfeb809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113a89f85dda49e822faf5fcb8cda08d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">set_user_desired_velocity</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>)</td></tr>
+<tr class="memdesc:a113a89f85dda49e822faf5fcb8cda08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">set desired velocity  <a href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">更多...</a><br /></td></tr>
+<tr class="separator:a113a89f85dda49e822faf5fcb8cda08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab142f32b3f26efc19491c89ba3cd26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aab142f32b3f26efc19491c89ba3cd26f">set_hmi_behavior</a> (const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;hmi_behavior)</td></tr>
+<tr class="memdesc:aab142f32b3f26efc19491c89ba3cd26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2-level human-commanded lane changes  <a href="classplanning_1_1_behavior_planner.html#aab142f32b3f26efc19491c89ba3cd26f">更多...</a><br /></td></tr>
+<tr class="separator:aab142f32b3f26efc19491c89ba3cd26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b71e910ff6750799bd77fa437b23693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a5b71e910ff6750799bd77fa437b23693">set_autonomous_level</a> (int level)</td></tr>
+<tr class="memdesc:a5b71e910ff6750799bd77fa437b23693"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the level of autonomous driving  <a href="classplanning_1_1_behavior_planner.html#a5b71e910ff6750799bd77fa437b23693">更多...</a><br /></td></tr>
+<tr class="separator:a5b71e910ff6750799bd77fa437b23693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2b19bfe3424e410615b29fb2638463"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ade2b19bfe3424e410615b29fb2638463">set_sim_resolution</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> sim_resolution)</td></tr>
+<tr class="separator:ade2b19bfe3424e410615b29fb2638463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1922f7654e1ef430ab00218c3f8eed07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a1922f7654e1ef430ab00218c3f8eed07">set_sim_horizon</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> sim_horizon)</td></tr>
+<tr class="separator:a1922f7654e1ef430ab00218c3f8eed07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9663c89556c43ca2b95b0d9063d91f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a4b9663c89556c43ca2b95b0d9063d91f">set_use_sim_state</a> (bool use_sim_state)</td></tr>
+<tr class="separator:a4b9663c89556c43ca2b95b0d9063d91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef442b03c0fad77906d00460801488e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aef442b03c0fad77906d00460801488e0">set_aggressive_level</a> (int level)</td></tr>
+<tr class="separator:aef442b03c0fad77906d00460801488e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1485247b0539f9a7f32e049ce4c576"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576">RunRoutePlanner</a> (const int nearest_lane_id)</td></tr>
+<tr class="separator:a3b1485247b0539f9a7f32e049ce4c576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404fffe1e0411e2f8aab97cc446af416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416">RunMpdm</a> ()</td></tr>
+<tr class="separator:a404fffe1e0411e2f8aab97cc446af416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1410d4110b53dfe5b79fc09e7670694c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">Behavior</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c">behavior</a> () const</td></tr>
+<tr class="separator:a1410d4110b53dfe5b79fc09e7670694c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a56fc9d2c41fd09ba2b4b8f3d02a25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">user_desired_velocity</a> () const</td></tr>
+<tr class="separator:a1a56fc9d2c41fd09ba2b4b8f3d02a25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf70a8a531abc9092328b7838de0748a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aaf70a8a531abc9092328b7838de0748a">reference_desired_velocity</a> () const</td></tr>
+<tr class="separator:aaf70a8a531abc9092328b7838de0748a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d135830f3be47b42bbe998deb43d50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ab2d135830f3be47b42bbe998deb43d50">autonomous_level</a> () const</td></tr>
+<tr class="separator:ab2d135830f3be47b42bbe998deb43d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8f9880b3ecbf1c44e514d5fe6c2668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a4b8f9880b3ecbf1c44e514d5fe6c2668">forward_trajs</a> () const</td></tr>
+<tr class="separator:a4b8f9880b3ecbf1c44e514d5fe6c2668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb4baf2ce98245ce7a0c0f847f99df4d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aeb4baf2ce98245ce7a0c0f847f99df4d">forward_behaviors</a> () const</td></tr>
+<tr class="separator:aeb4baf2ce98245ce7a0c0f847f99df4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classplanning_1_1_planner"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classplanning_1_1_planner')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classplanning_1_1_planner.html">planning::Planner</a></td></tr>
+<tr class="memitem:a1b704dd276b043a3fbef34712cff54f5 inherit pub_methods_classplanning_1_1_planner"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_planner.html#a1b704dd276b043a3fbef34712cff54f5">Planner</a> ()=default</td></tr>
+<tr class="separator:a1b704dd276b043a3fbef34712cff54f5 inherit pub_methods_classplanning_1_1_planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f85157362f54234fe961add1a0c2ee inherit pub_methods_classplanning_1_1_planner"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_planner.html#aa3f85157362f54234fe961add1a0c2ee">~Planner</a> ()=default</td></tr>
+<tr class="separator:aa3f85157362f54234fe961add1a0c2ee inherit pub_methods_classplanning_1_1_planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:af15f19731cd0d899b547261b3e059ab6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#af15f19731cd0d899b547261b3e059ab6">ConstructReferenceLane</a> (const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;lat_behavior, <a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">Lane</a> *lane)</td></tr>
+<tr class="separator:af15f19731cd0d899b547261b3e059ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a917feff72160eaa4ee9c946ec35cd173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a917feff72160eaa4ee9c946ec35cd173">ConstructLaneFromSamples</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; 2 &gt;&gt; &amp;samples, <a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">Lane</a> *lane)</td></tr>
+<tr class="separator:a917feff72160eaa4ee9c946ec35cd173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf20926d75a6647bca1079781ec98c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2">MultiBehaviorJudge</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> previous_desired_vel, <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *mpdm_behavior, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *actual_desired_velocity)</td></tr>
+<tr class="separator:acaf20926d75a6647bca1079781ec98c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e47ecbd77697d885861c45f77f5016a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a6e47ecbd77697d885861c45f77f5016a">GetPotentialLaneIds</a> (const int source_lane_id, const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;beh, std::vector&lt; int &gt; *candidate_lane_ids)</td></tr>
+<tr class="separator:a6e47ecbd77697d885861c45f77f5016a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f61181ba606d0f7f5ebdd36796dc45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a88f61181ba606d0f7f5ebdd36796dc45">UpdateEgoLaneId</a> (const int new_ego_lane_id)</td></tr>
+<tr class="separator:a88f61181ba606d0f7f5ebdd36796dc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee40984be5ae22aa09b12dd2d777b4a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aee40984be5ae22aa09b12dd2d777b4a7">JudgeBehaviorByLaneId</a> (const int ego_lane_id_by_pos, <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *behavior_by_lane_id)</td></tr>
+<tr class="separator:aee40984be5ae22aa09b12dd2d777b4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a18ff1188a01f0560d450590563dda0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a0a18ff1188a01f0560d450590563dda0">UpdateEgoBehavior</a> (const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;behavior_by_lane_id)</td></tr>
+<tr class="separator:a0a18ff1188a01f0560d450590563dda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c487f87511a9ae98a25cec6553c19a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ab3c487f87511a9ae98a25cec6553c19a">MultiAgentSimForward</a> (const int <a class="el" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>, const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;semantic_vehicle_set, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *traj, std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *surround_trajs)</td></tr>
+<tr class="separator:ab3c487f87511a9ae98a25cec6553c19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2096bd4e9075bf3077ebc4a2813467ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a2096bd4e9075bf3077ebc4a2813467ee">OpenloopSimForward</a> (const <a class="el" href="structcommon_1_1_semantic_vehicle.html">common::SemanticVehicle</a> &amp;ego_semantic_vehicle, const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;agent_vehicles, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *traj, std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *surround_trajs)</td></tr>
+<tr class="separator:a2096bd4e9075bf3077ebc4a2813467ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba784cc865f86388b56a9627587a8f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95">SimulateEgoBehavior</a> (const <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &amp;ego_vehicle, const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;ego_behavior, const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;semantic_vehicle_set, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *traj, std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *surround_trajs)</td></tr>
+<tr class="separator:aba784cc865f86388b56a9627587a8f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c19fd39b766e487f5227e5c7972c2d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6">EvaluateMultiPolicyTrajs</a> (const std::vector&lt; <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &gt; &amp;valid_behaviors, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; &amp;valid_forward_trajs, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt;&gt; &amp;valid_surround_trajs, <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *winner_behavior, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *winner_forward_traj, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *winner_score, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *<a class="el" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>)</td></tr>
+<tr class="separator:a1c19fd39b766e487f5227e5c7972c2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a2df9ec928753cd6fb086c052ef106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106">EvaluateSinglePolicyTraj</a> (const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;behaivor, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;forward_traj, const std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; &amp;surround_traj, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *score, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *<a class="el" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>)</td></tr>
+<tr class="separator:a89a2df9ec928753cd6fb086c052ef106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5718e503c71fa44eee1c44e84861487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aa5718e503c71fa44eee1c44e84861487">EvaluateSafetyCost</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;traj_a, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;traj_b, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *cost)</td></tr>
+<tr class="separator:aa5718e503c71fa44eee1c44e84861487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63be56c312f1ad9191cce4f989dce35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#aa63be56c312f1ad9191cce4f989dce35">GetDesiredVelocityOfTrajectory</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; vehicle_vec, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *vel)</td></tr>
+<tr class="separator:aa63be56c312f1ad9191cce4f989dce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a322fb2db24bfdf968497ad52a8420f3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classplanning_1_1_behavior_planner_map_itf.html">BehaviorPlannerMapItf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a322fb2db24bfdf968497ad52a8420f3c">map_itf_</a> {<a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a>}</td></tr>
+<tr class="separator:a322fb2db24bfdf968497ad52a8420f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad58e4b6522d9432a90a39aa7d47d17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">Behavior</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#afad58e4b6522d9432a90a39aa7d47d17">behavior_</a></td></tr>
+<tr class="separator:afad58e4b6522d9432a90a39aa7d47d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412ee993756f0c4f37d879f2bbaeeedd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classplanning_1_1_route_planner.html">planning::RoutePlanner</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a412ee993756f0c4f37d879f2bbaeeedd">p_route_planner_</a> {<a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a>}</td></tr>
+<tr class="separator:a412ee993756f0c4f37d879f2bbaeeedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae932d93b3f81a0ee943341e4d5733aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ae932d93b3f81a0ee943341e4d5733aa3">user_desired_velocity_</a> {5.0}</td></tr>
+<tr class="separator:ae932d93b3f81a0ee943341e4d5733aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc99f5f000266f6d617ad9f153ed559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a9fc99f5f000266f6d617ad9f153ed559">reference_desired_velocity_</a> {5.0}</td></tr>
+<tr class="separator:a9fc99f5f000266f6d617ad9f153ed559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c95203c5d2a07644af6d4002a7dfa29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a0c95203c5d2a07644af6d4002a7dfa29">autonomous_level_</a> {2}</td></tr>
+<tr class="separator:a0c95203c5d2a07644af6d4002a7dfa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ede7f4c26579331f9492bd8a182e143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a2ede7f4c26579331f9492bd8a182e143">sim_resolution_</a> {0.4}</td></tr>
+<tr class="separator:a2ede7f4c26579331f9492bd8a182e143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425115aa9dd019b7653d1933facf7f53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a425115aa9dd019b7653d1933facf7f53">sim_horizon_</a> {4.0}</td></tr>
+<tr class="separator:a425115aa9dd019b7653d1933facf7f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246355d6d94b1565ad07ad9455836c85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a246355d6d94b1565ad07ad9455836c85">aggressive_level_</a> {3}</td></tr>
+<tr class="separator:a246355d6d94b1565ad07ad9455836c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c7109e1366d6ee3f85d40a0ba74303"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#af6c7109e1366d6ee3f85d40a0ba74303">sim_param_</a></td></tr>
+<tr class="separator:af6c7109e1366d6ee3f85d40a0ba74303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1aba5b5f492af629ad0793a3ee1693a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ad1aba5b5f492af629ad0793a3ee1693a">use_sim_state_</a> = true</td></tr>
+<tr class="separator:ad1aba5b5f492af629ad0793a3ee1693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac26b5242f4bd489c4a498e8fe05ef6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a9ac26b5242f4bd489c4a498e8fe05ef6">lock_to_hmi_</a> = false</td></tr>
+<tr class="separator:a9ac26b5242f4bd489c4a498e8fe05ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e78676f835609cb75703c3d3ad81714"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a5e78676f835609cb75703c3d3ad81714">hmi_behavior_</a> = <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">LateralBehavior::kLaneKeeping</a></td></tr>
+<tr class="separator:a5e78676f835609cb75703c3d3ad81714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a93570395b35f494f556a546b7f268"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a90a93570395b35f494f556a546b7f268">ego_lane_id_</a> {<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a214dcfb6e0212ed0c0bf9d41709fcbc1">kInvalidLaneId</a>}</td></tr>
+<tr class="separator:a90a93570395b35f494f556a546b7f268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3395b5349fbac87b9b6f7dbcb0c76a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#af3395b5349fbac87b9b6f7dbcb0c76a2">ego_id_</a></td></tr>
+<tr class="separator:af3395b5349fbac87b9b6f7dbcb0c76a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bf6145d5238baed47af7099df9dcd7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ad0bf6145d5238baed47af7099df9dcd7">potential_lcl_lane_ids_</a></td></tr>
+<tr class="separator:ad0bf6145d5238baed47af7099df9dcd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5354291974d5c1323f7aad82de8efb2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#ab5354291974d5c1323f7aad82de8efb2">potential_lcr_lane_ids_</a></td></tr>
+<tr class="separator:ab5354291974d5c1323f7aad82de8efb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ede0cb8bcbdae3c08cd5c0c04130aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a92ede0cb8bcbdae3c08cd5c0c04130aa">potential_lk_lane_ids_</a></td></tr>
+<tr class="separator:a92ede0cb8bcbdae3c08cd5c0c04130aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313b84f649299a49417071d7486d201e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a313b84f649299a49417071d7486d201e">forward_trajs_</a></td></tr>
+<tr class="separator:a313b84f649299a49417071d7486d201e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7383cba207e925e295bf10ba41d3ddb6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a7383cba207e925e295bf10ba41d3ddb6">forward_behaviors_</a></td></tr>
+<tr class="separator:a7383cba207e925e295bf10ba41d3ddb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d840ad78fc93c3516ba7a908d568ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_behavior_planner.html#a96d840ad78fc93c3516ba7a908d568ce">surround_trajs_</a></td></tr>
+<tr class="separator:a96d840ad78fc93c3516ba7a908d568ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="af4f083192529cccc0a495f3f0d0648e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f083192529cccc0a495f3f0d0648e4">&#9670;&nbsp;</a></span>Behavior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">planning::BehaviorPlanner::Behavior</a> =  <a class="el" href="structcommon_1_1_semantic_behavior.html">common::SemanticBehavior</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1de43402656cded23a1b195fcccd3da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de43402656cded23a1b195fcccd3da5">&#9670;&nbsp;</a></span>Lane</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">planning::BehaviorPlanner::Lane</a> =  <a class="el" href="classcommon_1_1_lane.html">common::Lane</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a431003b163f33ed7d875d093dd567361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431003b163f33ed7d875d093dd567361">&#9670;&nbsp;</a></span>LateralBehavior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">planning::BehaviorPlanner::LateralBehavior</a> =  <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">common::LateralBehavior</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a28b65ceaad779be58dabc032fa37a1c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b65ceaad779be58dabc032fa37a1c5">&#9670;&nbsp;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classplanning_1_1_behavior_planner.html#a28b65ceaad779be58dabc032fa37a1c5">planning::BehaviorPlanner::State</a> =  <a class="el" href="structcommon_1_1_state.html">common::State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab2d135830f3be47b42bbe998deb43d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d135830f3be47b42bbe998deb43d50">&#9670;&nbsp;</a></span>autonomous_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::BehaviorPlanner::autonomous_level </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00912">912</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_ab2d135830f3be47b42bbe998deb43d50_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_ab2d135830f3be47b42bbe998deb43d50_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_ab2d135830f3be47b42bbe998deb43d50_icgraph" id="classplanning_1_1_behavior_planner_ab2d135830f3be47b42bbe998deb43d50_icgraph">
+<area shape="rect" title=" " alt="" coords="349,5,543,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0" title=" " alt="" coords="108,5,301,47"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1410d4110b53dfe5b79fc09e7670694c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1410d4110b53dfe5b79fc09e7670694c">&#9670;&nbsp;</a></span>behavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">BehaviorPlanner::Behavior</a> planning::BehaviorPlanner::behavior </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00899">899</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a1410d4110b53dfe5b79fc09e7670694c_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a1410d4110b53dfe5b79fc09e7670694c_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a1410d4110b53dfe5b79fc09e7670694c_icgraph" id="classplanning_1_1_behavior_planner_a1410d4110b53dfe5b79fc09e7670694c_icgraph">
+<area shape="rect" title=" " alt="" coords="1212,5,1405,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="971,35,1164,76"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a917feff72160eaa4ee9c946ec35cd173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917feff72160eaa4ee9c946ec35cd173">&#9670;&nbsp;</a></span>ConstructLaneFromSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::ConstructLaneFromSamples </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; 2 &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">Lane</a> *&#160;</td>
+          <td class="paramname"><em>lane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00700">700</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_cgraph" id="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_cgraph">
+<area shape="rect" title=" " alt="" coords="5,93,217,134"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e" title="get lane by least square fitting with continuity constraints" alt="" coords="265,93,456,134"/>
+<area shape="rect" href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb" title="Return optimal spline fitting with continuity constraints" alt="" coords="504,34,749,75"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="541,100,712,127"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a46ae4d4030b2607bff00580e76516cd9" title="Set the parameterization of the lane" alt="" coords="524,151,729,193"/>
+<area shape="rect" href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5" title="Calculate factorial" alt="" coords="865,5,908,32"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="848,56,925,83"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a57b658a9567aff29b09a0bfd63d64543" title=" " alt="" coords="797,137,976,178"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628" title="Get the vec domain of the spline" alt="" coords="807,202,966,243"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_icgraph" id="classplanning_1_1_behavior_planner_a917feff72160eaa4ee9c946ec35cd173_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,700,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#af15f19731cd0d899b547261b3e059ab6" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af15f19731cd0d899b547261b3e059ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15f19731cd0d899b547261b3e059ab6">&#9670;&nbsp;</a></span>ConstructReferenceLane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::ConstructReferenceLane </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>lat_behavior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_behavior_planner.html#a1de43402656cded23a1b195fcccd3da5">Lane</a> *&#160;</td>
+          <td class="paramname"><em>lane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00612">612</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_cgraph" id="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,992,199,1033"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a917feff72160eaa4ee9c946ec35cd173" title=" " alt="" coords="274,219,486,260"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ae695ed4a08cc4ed77f3140965fcf5e9b" title=" " alt="" coords="871,350,1022,377"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a3fe8a1f03a453aca34588a808166f29d" title="Get curvature by arc length" alt="" coords="562,444,775,485"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a5d6149be4d3bc105db592dc33e49e3f1" title=" " alt="" coords="283,1021,477,1063"/>
+<area shape="rect" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e" title=" " alt="" coords="280,596,480,637"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="1188,945,1239,971"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1190,869,1237,895"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ab2c66315ac45d7343e3429fcb5000e52" title=" " alt="" coords="283,1087,477,1128"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a5599e16a7c929f5d108bc930c3c4b107" title=" " alt="" coords="247,1152,513,1193"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a55c311433a09d760b4b1e860d00ba787" title=" " alt="" coords="283,1217,477,1259"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="293,1283,467,1324"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="343,1349,417,1375"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e" title="get lane by least square fitting with continuity constraints" alt="" coords="573,132,764,173"/>
+<area shape="rect" href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb" title="Return optimal spline fitting with continuity constraints" alt="" coords="824,132,1069,173"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="1128,409,1299,435"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a46ae4d4030b2607bff00580e76516cd9" title="Set the parameterization of the lane" alt="" coords="844,67,1049,108"/>
+<area shape="rect" href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5" title="Calculate factorial" alt="" coords="1192,139,1235,166"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="1175,194,1252,221"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a57b658a9567aff29b09a0bfd63d64543" title=" " alt="" coords="1124,71,1303,112"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628" title="Get the vec domain of the spline" alt="" coords="1134,5,1293,47"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4" title="Get the end of the parameterization" alt="" coords="1134,522,1293,549"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af8faae7d797f87f85dbeac2182d82626" title=" " alt="" coords="847,401,1046,443"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ab6afde2fdc44a1895d54279ce04194fe" title="Get derivative by arc length (d = 0 means position evaluation)" alt="" coords="838,467,1055,508"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46" title="Get the begin of the parameterization" alt="" coords="1128,634,1299,661"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d" title="Return evaluation of spline at given parameterization" alt="" coords="1117,722,1309,749"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a22494461a963340822938a5fed024de5" title=" " alt="" coords="561,627,776,668"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af4afb26222cd153da4b1e977c4c28a44" title=" " alt="" coords="846,803,1047,844"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a0dabc7c50c1e9c9eff83b7c15800e884" title=" " alt="" coords="569,561,769,603"/>
+<area shape="rect" href="structcommon_1_1_frenet_state.html#a01cc69c2098545a919d1e195c980c462" title=" " alt="" coords="587,795,750,836"/>
+<area shape="rect" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0" title="Normalize angle to [&#45;pi, pi)" alt="" coords="603,510,734,537"/>
+<area shape="rect" href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d" title="Return normalized angle by vec2d" alt="" coords="607,743,731,770"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af74607072e3623e96e04482a31872217" title=" " alt="" coords="835,685,1058,727"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_icgraph" id="classplanning_1_1_behavior_planner_af15f19731cd0d899b547261b3e059ab6_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c19fd39b766e487f5227e5c7972c2d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c19fd39b766e487f5227e5c7972c2d6">&#9670;&nbsp;</a></span>EvaluateMultiPolicyTrajs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::EvaluateMultiPolicyTrajs </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>valid_behaviors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>valid_forward_trajs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>valid_surround_trajs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *&#160;</td>
+          <td class="paramname"><em>winner_behavior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *&#160;</td>
+          <td class="paramname"><em>winner_forward_traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>winner_score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>desired_vel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00363">363</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_cgraph" id="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,244,199,285"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c" title=" " alt="" coords="529,57,723,99"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="247,273,440,315"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa5718e503c71fa44eee1c44e84861487" title=" " alt="" coords="529,123,723,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="843,189,1019,215"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa63be56c312f1ad9191cce4f989dce35" title=" " alt="" coords="508,240,744,281"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="505,305,747,347"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="488,371,764,412"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="601,437,651,463"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="539,488,713,529"/>
+<area shape="rect" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f" title=" " alt="" coords="598,554,654,581"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="812,5,1051,47"/>
+<area shape="rect" href="classcommon_1_1_semantics_utils.html#a934373d1c9432fcb1c9e3d2aed871c42" title=" " alt="" coords="839,123,1024,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="1099,6,1284,33"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="1103,57,1280,99"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ae1ef873cc0e81e794d4cc3df21891759" title=" " alt="" coords="1103,123,1280,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a406a432b920dab394d4680f24cf88cfa" title=" " alt="" coords="1110,188,1273,229"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#a04e8c4adc121db120f9b315b7f47b346" title=" " alt="" coords="1103,253,1280,295"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="1103,319,1280,360"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="893,247,970,274"/>
+<area shape="rect" href="point__type_8hpp.html#afbc8bdb7228ad64c0cc35370fbcd98b3" title=" " alt="" coords="883,554,980,581"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_icgraph" id="classplanning_1_1_behavior_planner_a1c19fd39b766e487f5227e5c7972c2d6_icgraph">
+<area shape="rect" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa5718e503c71fa44eee1c44e84861487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5718e503c71fa44eee1c44e84861487">&#9670;&nbsp;</a></span>EvaluateSafetyCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::EvaluateSafetyCost </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>traj_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>traj_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>cost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00401">401</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_cgraph" id="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_cgraph">
+<area shape="rect" title=" " alt="" coords="5,93,199,135"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="247,5,485,47"/>
+<area shape="rect" href="classcommon_1_1_semantics_utils.html#a934373d1c9432fcb1c9e3d2aed871c42" title=" " alt="" coords="273,123,459,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="533,6,719,33"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="278,189,454,215"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="537,57,715,99"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ae1ef873cc0e81e794d4cc3df21891759" title=" " alt="" coords="537,123,715,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a406a432b920dab394d4680f24cf88cfa" title=" " alt="" coords="545,188,707,229"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#a04e8c4adc121db120f9b315b7f47b346" title=" " alt="" coords="537,253,715,295"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="537,319,715,360"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_icgraph" id="classplanning_1_1_behavior_planner_aa5718e503c71fa44eee1c44e84861487_icgraph">
+<area shape="rect" title=" " alt="" coords="1212,5,1405,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="971,5,1164,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89a2df9ec928753cd6fb086c052ef106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a2df9ec928753cd6fb086c052ef106">&#9670;&nbsp;</a></span>EvaluateSinglePolicyTraj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::EvaluateSinglePolicyTraj </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>behaivor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>forward_traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>surround_traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>desired_vel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00429">429</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_cgraph" id="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_cgraph">
+<area shape="rect" title=" " alt="" coords="5,305,199,347"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c" title=" " alt="" coords="288,57,481,99"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa5718e503c71fa44eee1c44e84861487" title=" " alt="" coords="288,123,481,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="602,189,778,215"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa63be56c312f1ad9191cce4f989dce35" title=" " alt="" coords="267,240,503,281"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="263,305,506,347"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="247,371,523,412"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="359,437,410,463"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="298,488,471,529"/>
+<area shape="rect" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f" title=" " alt="" coords="357,554,413,581"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="571,5,809,47"/>
+<area shape="rect" href="classcommon_1_1_semantics_utils.html#a934373d1c9432fcb1c9e3d2aed871c42" title=" " alt="" coords="597,123,783,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="857,6,1043,33"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="861,57,1039,99"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ae1ef873cc0e81e794d4cc3df21891759" title=" " alt="" coords="861,123,1039,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a406a432b920dab394d4680f24cf88cfa" title=" " alt="" coords="869,188,1031,229"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#a04e8c4adc121db120f9b315b7f47b346" title=" " alt="" coords="861,253,1039,295"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="861,319,1039,360"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="651,247,729,274"/>
+<area shape="rect" href="point__type_8hpp.html#afbc8bdb7228ad64c0cc35370fbcd98b3" title=" " alt="" coords="641,554,739,581"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_icgraph" id="classplanning_1_1_behavior_planner_a89a2df9ec928753cd6fb086c052ef106_icgraph">
+<area shape="rect" title=" " alt="" coords="971,5,1164,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb4baf2ce98245ce7a0c0f847f99df4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4baf2ce98245ce7a0c0f847f99df4d">&#9670;&nbsp;</a></span>forward_behaviors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">BehaviorPlanner::LateralBehavior</a> &gt; planning::BehaviorPlanner::forward_behaviors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00908">908</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b8f9880b3ecbf1c44e514d5fe6c2668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8f9880b3ecbf1c44e514d5fe6c2668">&#9670;&nbsp;</a></span>forward_trajs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; &gt; planning::BehaviorPlanner::forward_trajs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00903">903</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a4b8f9880b3ecbf1c44e514d5fe6c2668_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a4b8f9880b3ecbf1c44e514d5fe6c2668_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a4b8f9880b3ecbf1c44e514d5fe6c2668_icgraph" id="classplanning_1_1_behavior_planner_a4b8f9880b3ecbf1c44e514d5fe6c2668_icgraph">
+<area shape="rect" title=" " alt="" coords="297,5,491,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_visualizer.html#a65ca9c7eee2a1b678ee330e55a9e5f2f" title=" " alt="" coords="5,5,249,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa63be56c312f1ad9191cce4f989dce35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63be56c312f1ad9191cce4f989dce35">&#9670;&nbsp;</a></span>GetDesiredVelocityOfTrajectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::GetDesiredVelocityOfTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&#160;</td>
+          <td class="paramname"><em>vehicle_vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>vel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00507">507</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_cgraph" id="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,241,47"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="289,13,367,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_icgraph" id="classplanning_1_1_behavior_planner_aa63be56c312f1ad9191cce4f989dce35_icgraph">
+<area shape="rect" title=" " alt="" coords="1212,5,1448,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="971,5,1164,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e47ecbd77697d885861c45f77f5016a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e47ecbd77697d885861c45f77f5016a">&#9670;&nbsp;</a></span>GetPotentialLaneIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::GetPotentialLaneIds </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>source_lane_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>beh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>candidate_lane_ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00824">824</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_cgraph" id="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,199,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a76f3a9109f6ff409307afa1838ca3399" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ab2c66315ac45d7343e3429fcb5000e52" title=" " alt="" coords="247,71,440,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a55c311433a09d760b4b1e860d00ba787" title=" " alt="" coords="247,136,440,177"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_icgraph" id="classplanning_1_1_behavior_planner_a6e47ecbd77697d885861c45f77f5016a_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a88f61181ba606d0f7f5ebdd36796dc45" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3078789762251f63deadf37482480d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3078789762251f63deadf37482480d84">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::Init </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#aa03d64234fb17b8fb8d164dfd04a543f">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00009">9</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a3078789762251f63deadf37482480d84_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a3078789762251f63deadf37482480d84_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a3078789762251f63deadf37482480d84_icgraph" id="classplanning_1_1_behavior_planner_a3078789762251f63deadf37482480d84_icgraph">
+<area shape="rect" title=" " alt="" coords="349,5,543,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0" title=" " alt="" coords="108,5,301,47"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee40984be5ae22aa09b12dd2d777b4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee40984be5ae22aa09b12dd2d777b4a7">&#9670;&nbsp;</a></span>JudgeBehaviorByLaneId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::JudgeBehaviorByLaneId </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ego_lane_id_by_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *&#160;</td>
+          <td class="paramname"><em>behavior_by_lane_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00727">727</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aee40984be5ae22aa09b12dd2d777b4a7_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aee40984be5ae22aa09b12dd2d777b4a7_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aee40984be5ae22aa09b12dd2d777b4a7_icgraph" id="classplanning_1_1_behavior_planner_aee40984be5ae22aa09b12dd2d777b4a7_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab3c487f87511a9ae98a25cec6553c19a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c487f87511a9ae98a25cec6553c19a">&#9670;&nbsp;</a></span>MultiAgentSimForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::MultiAgentSimForward </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ego_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>semantic_vehicle_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *&#160;</td>
+          <td class="paramname"><em>traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>surround_trajs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00520">520</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_cgraph" id="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,220,199,261"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="256,5,495,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="254,71,497,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a361f35ca8555fcb446480ac68844e3bf" title=" " alt="" coords="279,136,472,177"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="352,202,399,229"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="283,253,468,279"/>
+<area shape="rect" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10" title=" " alt="" coords="247,304,504,345"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="287,370,463,397"/>
+<area shape="rect" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e" title="start timing" alt="" coords="333,421,418,447"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_icgraph" id="classplanning_1_1_behavior_planner_ab3c487f87511a9ae98a25cec6553c19a_icgraph">
+<area shape="rect" title=" " alt="" coords="971,5,1164,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acaf20926d75a6647bca1079781ec98c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaf20926d75a6647bca1079781ec98c2">&#9670;&nbsp;</a></span>MultiBehaviorJudge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::MultiBehaviorJudge </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>previous_desired_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> *&#160;</td>
+          <td class="paramname"><em>mpdm_behavior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> *&#160;</td>
+          <td class="paramname"><em>actual_desired_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00131">131</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_cgraph" id="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,493,199,535"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="267,300,461,341"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="1135,303,1311,330"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="771,409,1047,451"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="883,658,934,685"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a2dc18fdb8bb523f5a1d350939cff3859" title=" " alt="" coords="267,493,461,535"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ad80ded29814a33a54ec07ac6ccfdb09c" title=" " alt="" coords="247,559,481,600"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a4ff93384fa9c4aa6a4e66a8afb7b15ff" title=" " alt="" coords="257,624,471,665"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="831,775,986,802"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="529,563,723,604"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c" title=" " alt="" coords="812,59,1005,100"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="529,300,723,341"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa5718e503c71fa44eee1c44e84861487" title=" " alt="" coords="812,241,1005,283"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa63be56c312f1ad9191cce4f989dce35" title=" " alt="" coords="791,124,1027,165"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="1102,420,1345,461"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="822,475,995,516"/>
+<area shape="rect" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f" title=" " alt="" coords="881,190,937,217"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="1104,355,1343,396"/>
+<area shape="rect" href="classcommon_1_1_semantics_utils.html#a934373d1c9432fcb1c9e3d2aed871c42" title=" " alt="" coords="1131,187,1316,228"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="1400,518,1585,545"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="1404,121,1581,163"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ae1ef873cc0e81e794d4cc3df21891759" title=" " alt="" coords="1404,187,1581,228"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a406a432b920dab394d4680f24cf88cfa" title=" " alt="" coords="1411,252,1574,293"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#a04e8c4adc121db120f9b315b7f47b346" title=" " alt="" coords="1404,317,1581,359"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="1404,56,1581,97"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="1185,85,1262,111"/>
+<area shape="rect" href="point__type_8hpp.html#afbc8bdb7228ad64c0cc35370fbcd98b3" title=" " alt="" coords="1175,135,1272,162"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#ab3c487f87511a9ae98a25cec6553c19a" title=" " alt="" coords="812,592,1005,633"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a2096bd4e9075bf3077ebc4a2813467ee" title=" " alt="" coords="812,709,1005,751"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a361f35ca8555fcb446480ac68844e3bf" title=" " alt="" coords="1127,485,1320,527"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1200,551,1247,578"/>
+<area shape="rect" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10" title=" " alt="" coords="1095,704,1352,745"/>
+<area shape="rect" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e" title="start timing" alt="" coords="1181,602,1266,629"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ac9e079f73a915e50ef5345a51e69aea0" title=" " alt="" coords="1127,821,1320,863"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e" title=" " alt="" coords="1142,887,1305,928"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_icgraph" id="classplanning_1_1_behavior_planner_acaf20926d75a6647bca1079781ec98c2_icgraph">
+<area shape="rect" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab6e5cfbc259a9d21385a448eb72e24da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6e5cfbc259a9d21385a448eb72e24da">&#9670;&nbsp;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string planning::BehaviorPlanner::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#a42d016a7b9ece5f65af7ef381c8eaeca">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00005">5</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2096bd4e9075bf3077ebc4a2813467ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2096bd4e9075bf3077ebc4a2813467ee">&#9670;&nbsp;</a></span>OpenloopSimForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::OpenloopSimForward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_semantic_vehicle.html">common::SemanticVehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>ego_semantic_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>agent_vehicles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *&#160;</td>
+          <td class="paramname"><em>traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>surround_trajs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00259">259</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_cgraph" id="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,93,199,135"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ac9e079f73a915e50ef5345a51e69aea0" title=" " alt="" coords="279,5,472,47"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="283,71,468,98"/>
+<area shape="rect" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10" title=" " alt="" coords="247,123,504,164"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e" title=" " alt="" coords="294,188,457,229"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_icgraph" id="classplanning_1_1_behavior_planner_a2096bd4e9075bf3077ebc4a2813467ee_icgraph">
+<area shape="rect" title=" " alt="" coords="971,5,1164,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf70a8a531abc9092328b7838de0748a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf70a8a531abc9092328b7838de0748a">&#9670;&nbsp;</a></span>reference_desired_velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::reference_desired_velocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00895">895</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aaf70a8a531abc9092328b7838de0748a_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aaf70a8a531abc9092328b7838de0748a_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aaf70a8a531abc9092328b7838de0748a_icgraph" id="classplanning_1_1_behavior_planner_aaf70a8a531abc9092328b7838de0748a_icgraph">
+<area shape="rect" title=" " alt="" coords="513,13,720,54"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#a0bb8ed8164bc73bcc8deada6b7262c02" title=" " alt="" coords="272,5,465,61"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a4aea2cfb625574d4ee70a45b93103e39" title=" " alt="" coords="108,20,224,47"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,60,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a404fffe1e0411e2f8aab97cc446af416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404fffe1e0411e2f8aab97cc446af416">&#9670;&nbsp;</a></span>RunMpdm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::RunMpdm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00015">15</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_cgraph" id="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_cgraph">
+<area shape="rect" title=" " alt="" coords="5,523,199,564"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="247,493,440,535"/>
+<area shape="rect" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e" title="get time elapsed" alt="" coords="299,559,388,586"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="509,300,702,341"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="1377,303,1553,330"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="1012,409,1288,451"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="1125,658,1175,685"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a2dc18fdb8bb523f5a1d350939cff3859" title=" " alt="" coords="509,493,702,535"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ad80ded29814a33a54ec07ac6ccfdb09c" title=" " alt="" coords="488,559,723,600"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a4ff93384fa9c4aa6a4e66a8afb7b15ff" title=" " alt="" coords="499,624,712,665"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="1073,775,1227,802"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="771,563,964,604"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c" title=" " alt="" coords="1053,59,1247,100"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a89a2df9ec928753cd6fb086c052ef106" title=" " alt="" coords="771,300,964,341"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa5718e503c71fa44eee1c44e84861487" title=" " alt="" coords="1053,241,1247,283"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aa63be56c312f1ad9191cce4f989dce35" title=" " alt="" coords="1032,124,1268,165"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="1343,420,1586,461"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="1063,475,1237,516"/>
+<area shape="rect" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f" title=" " alt="" coords="1122,190,1178,217"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="1345,355,1584,396"/>
+<area shape="rect" href="classcommon_1_1_semantics_utils.html#a934373d1c9432fcb1c9e3d2aed871c42" title=" " alt="" coords="1372,187,1557,228"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="1641,518,1827,545"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#af09958890cf2d07bdf5a2ccf085d2cee" title=" " alt="" coords="1645,121,1823,163"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#ae1ef873cc0e81e794d4cc3df21891759" title=" " alt="" coords="1645,187,1823,228"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a406a432b920dab394d4680f24cf88cfa" title=" " alt="" coords="1653,252,1815,293"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#a04e8c4adc121db120f9b315b7f47b346" title=" " alt="" coords="1645,317,1823,359"/>
+<area shape="rect" href="classcommon_1_1_vehicle_param.html#abb12c49e2abb3900c2766d4bdd13083f" title=" " alt="" coords="1645,56,1823,97"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="1426,85,1503,111"/>
+<area shape="rect" href="point__type_8hpp.html#afbc8bdb7228ad64c0cc35370fbcd98b3" title=" " alt="" coords="1416,135,1513,162"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#ab3c487f87511a9ae98a25cec6553c19a" title=" " alt="" coords="1053,592,1247,633"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a2096bd4e9075bf3077ebc4a2813467ee" title=" " alt="" coords="1053,709,1247,751"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a361f35ca8555fcb446480ac68844e3bf" title=" " alt="" coords="1368,485,1561,527"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1441,551,1488,578"/>
+<area shape="rect" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10" title=" " alt="" coords="1336,704,1593,745"/>
+<area shape="rect" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e" title="start timing" alt="" coords="1422,602,1507,629"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ac9e079f73a915e50ef5345a51e69aea0" title=" " alt="" coords="1368,821,1561,863"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e" title=" " alt="" coords="1383,887,1546,928"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_icgraph" id="classplanning_1_1_behavior_planner_a404fffe1e0411e2f8aab97cc446af416_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ff9ca81f3233625cd560b4f402b4387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff9ca81f3233625cd560b4f402b4387">&#9670;&nbsp;</a></span>RunOnce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::RunOnce </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classplanning_1_1_planner.html#a269b582ecae9ac3f62a128711e8ed8fe">planning::Planner</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00057">57</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a7ff9ca81f3233625cd560b4f402b4387_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a7ff9ca81f3233625cd560b4f402b4387_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a7ff9ca81f3233625cd560b4f402b4387_cgraph" id="classplanning_1_1_behavior_planner_a7ff9ca81f3233625cd560b4f402b4387_cgraph">
+<area shape="rect" title=" " alt="" coords="5,1407,199,1448"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#af15f19731cd0d899b547261b3e059ab6" title=" " alt="" coords="525,800,719,841"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="1133,1157,1306,1199"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aaca6460cbd8e002828dbd1cd1f429bb9" title=" " alt="" coords="247,1545,477,1587"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a2dc18fdb8bb523f5a1d350939cff3859" title=" " alt="" coords="803,1201,997,1243"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="1142,1633,1297,1659"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aee40984be5ae22aa09b12dd2d777b4a7" title=" " alt="" coords="265,1611,459,1652"/>
+<area shape="rect" href="classplanning_1_1_multi_modal_forward.html#a06bed6c9e93a93f1064bfa5367f18054" title=" " alt="" coords="257,1676,467,1717"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="265,1377,459,1419"/>
+<area shape="rect" href="class_tic_toc.html#a10182e0061b91019467a8fa37089210e" title="get time elapsed" alt="" coords="577,1443,667,1470"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a3b1485247b0539f9a7f32e049ce4c576" title=" " alt="" coords="525,253,719,295"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a0a18ff1188a01f0560d450590563dda0" title=" " alt="" coords="265,1741,459,1783"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a88f61181ba606d0f7f5ebdd36796dc45" title=" " alt="" coords="265,1084,459,1125"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a917feff72160eaa4ee9c946ec35cd173" title=" " alt="" coords="794,567,1006,608"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ae695ed4a08cc4ed77f3140965fcf5e9b" title=" " alt="" coords="1439,573,1589,599"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a3fe8a1f03a453aca34588a808166f29d" title="Get curvature by arc length" alt="" coords="1113,624,1326,665"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a5d6149be4d3bc105db592dc33e49e3f1" title=" " alt="" coords="803,449,997,491"/>
+<area shape="rect" href="classcommon_1_1_state_transformer.html#a25dbb6f98c4d5cf7e085745024f7880e" title=" " alt="" coords="800,800,1000,841"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="1491,1077,1537,1103"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ab2c66315ac45d7343e3429fcb5000e52" title=" " alt="" coords="803,1084,997,1125"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a5599e16a7c929f5d108bc930c3c4b107" title=" " alt="" coords="767,735,1033,776"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a55c311433a09d760b4b1e860d00ba787" title=" " alt="" coords="803,1019,997,1060"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="1194,1267,1245,1294"/>
+<area shape="rect" href="namespacestd.html#a5969491e6e437adb343327d79538c679" title=" " alt="" coords="863,515,937,542"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e" title="get lane by least square fitting with continuity constraints" alt="" coords="1419,456,1609,497"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="1671,522,1841,549"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4" title="Get the end of the parameterization" alt="" coords="1677,697,1835,723"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af8faae7d797f87f85dbeac2182d82626" title=" " alt="" coords="1415,689,1613,731"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ab6afde2fdc44a1895d54279ce04194fe" title="Get derivative by arc length (d = 0 means position evaluation)" alt="" coords="1405,624,1623,665"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a22494461a963340822938a5fed024de5" title=" " alt="" coords="1112,1040,1327,1081"/>
+<area shape="rect" href="classcommon_1_1_lane.html#af4afb26222cd153da4b1e977c4c28a44" title=" " alt="" coords="1119,909,1320,951"/>
+<area shape="rect" href="classcommon_1_1_lane.html#a0dabc7c50c1e9c9eff83b7c15800e884" title=" " alt="" coords="1119,741,1319,783"/>
+<area shape="rect" href="structcommon_1_1_frenet_state.html#a01cc69c2098545a919d1e195c980c462" title=" " alt="" coords="1138,975,1301,1016"/>
+<area shape="rect" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0" title="Normalize angle to [&#45;pi, pi)" alt="" coords="1154,690,1285,717"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="1181,807,1258,834"/>
+<area shape="rect" href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d" title="Return normalized angle by vec2d" alt="" coords="1157,858,1281,885"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="525,1377,719,1419"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a1c19fd39b766e487f5227e5c7972c2d6" title=" " alt="" coords="803,1567,997,1608"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ad80ded29814a33a54ec07ac6ccfdb09c" title=" " alt="" coords="783,1436,1017,1477"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a4ff93384fa9c4aa6a4e66a8afb7b15ff" title=" " alt="" coords="793,1501,1007,1543"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="1081,1348,1357,1389"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#aba784cc865f86388b56a9627587a8f95" title=" " alt="" coords="803,1319,997,1360"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a2df5c7364c5fda32ea31fbe4939563ee" title=" " alt="" coords="803,253,997,295"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84" title=" " alt="" coords="813,319,987,360"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a57610a25742f04b71e5859dcb6367c3f" title=" " alt="" coords="1427,292,1601,333"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4" title=" " alt="" coords="813,384,987,425"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6" title=" " alt="" coords="813,5,987,47"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442" title=" " alt="" coords="813,71,987,112"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318" title=" " alt="" coords="813,136,987,177"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a6e47ecbd77697d885861c45f77f5016a" title=" " alt="" coords="525,1084,719,1125"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b1485247b0539f9a7f32e049ce4c576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1485247b0539f9a7f32e049ce4c576">&#9670;&nbsp;</a></span>RunRoutePlanner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::RunRoutePlanner </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nearest_lane_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00038">38</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_cgraph" id="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_cgraph">
+<area shape="rect" title=" " alt="" coords="5,235,199,276"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a5d6149be4d3bc105db592dc33e49e3f1" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a2df5c7364c5fda32ea31fbe4939563ee" title=" " alt="" coords="247,71,440,112"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a8a7f38841fd3d6865e479249d2dbec84" title=" " alt="" coords="257,136,430,177"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a57610a25742f04b71e5859dcb6367c3f" title=" " alt="" coords="257,201,430,243"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#abf3403efc6e70cd1e2fa6548057cb2c4" title=" " alt="" coords="257,267,430,308"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a3090306943f8c7c6b5b11aebb7fed9a6" title=" " alt="" coords="257,332,430,373"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a21a0e011f64e55e886ef785831657442" title=" " alt="" coords="257,397,430,439"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a3d6330f8ae1b50df5c890510f8ed8318" title=" " alt="" coords="257,463,430,504"/>
+<area shape="rect" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87" title=" " alt="" coords="488,209,659,235"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_icgraph" id="classplanning_1_1_behavior_planner_a3b1485247b0539f9a7f32e049ce4c576_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aef442b03c0fad77906d00460801488e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef442b03c0fad77906d00460801488e0">&#9670;&nbsp;</a></span>set_aggressive_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_aggressive_level </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00869">869</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aef442b03c0fad77906d00460801488e0_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aef442b03c0fad77906d00460801488e0_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aef442b03c0fad77906d00460801488e0_icgraph" id="classplanning_1_1_behavior_planner_aef442b03c0fad77906d00460801488e0_icgraph">
+<area shape="rect" title=" " alt="" coords="365,5,559,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#aab7c1f7695d3bbcb2fd8f68bc78be380" title=" " alt="" coords="108,5,317,47"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5b71e910ff6750799bd77fa437b23693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b71e910ff6750799bd77fa437b23693">&#9670;&nbsp;</a></span>set_autonomous_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_autonomous_level </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the level of autonomous driving </p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00865">865</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a5b71e910ff6750799bd77fa437b23693_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a5b71e910ff6750799bd77fa437b23693_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a5b71e910ff6750799bd77fa437b23693_icgraph" id="classplanning_1_1_behavior_planner_a5b71e910ff6750799bd77fa437b23693_icgraph">
+<area shape="rect" title="set the level of autonomous driving" alt="" coords="375,5,568,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#a4e6d1caa42f0705a5e89e7c973e83fe5" title="set the level of autonomous driving" alt="" coords="108,5,327,47"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab142f32b3f26efc19491c89ba3cd26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab142f32b3f26efc19491c89ba3cd26f">&#9670;&nbsp;</a></span>set_hmi_behavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_hmi_behavior </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>hmi_behavior</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L2-level human-commanded lane changes </p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00853">853</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a095a66a0479ed61cc4adea195cfeb809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095a66a0479ed61cc4adea195cfeb809">&#9670;&nbsp;</a></span>set_map_interface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_map_interface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classplanning_1_1_behavior_planner_map_itf.html">BehaviorPlannerMapItf</a> *&#160;</td>
+          <td class="paramname"><em>itf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00849">849</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a095a66a0479ed61cc4adea195cfeb809_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a095a66a0479ed61cc4adea195cfeb809_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a095a66a0479ed61cc4adea195cfeb809_icgraph" id="classplanning_1_1_behavior_planner_a095a66a0479ed61cc4adea195cfeb809_icgraph">
+<area shape="rect" title=" " alt="" coords="349,5,543,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#a8ab4a5899950065d190ce5630cdb425e" title=" " alt="" coords="108,5,301,47"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1922f7654e1ef430ab00218c3f8eed07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1922f7654e1ef430ab00218c3f8eed07">&#9670;&nbsp;</a></span>set_sim_horizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_sim_horizon </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>sim_horizon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00887">887</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ade2b19bfe3424e410615b29fb2638463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2b19bfe3424e410615b29fb2638463">&#9670;&nbsp;</a></span>set_sim_resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_sim_resolution </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>sim_resolution</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00883">883</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b9663c89556c43ca2b95b0d9063d91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9663c89556c43ca2b95b0d9063d91f">&#9670;&nbsp;</a></span>set_use_sim_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_use_sim_state </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_sim_state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00879">879</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a4b9663c89556c43ca2b95b0d9063d91f_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a4b9663c89556c43ca2b95b0d9063d91f_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a4b9663c89556c43ca2b95b0d9063d91f_icgraph" id="classplanning_1_1_behavior_planner_a4b9663c89556c43ca2b95b0d9063d91f_icgraph">
+<area shape="rect" title=" " alt="" coords="349,5,543,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0" title=" " alt="" coords="108,5,301,47"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a113a89f85dda49e822faf5fcb8cda08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113a89f85dda49e822faf5fcb8cda08d">&#9670;&nbsp;</a></span>set_user_desired_velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void planning::BehaviorPlanner::set_user_desired_velocity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>desired_vel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set desired velocity </p>
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00873">873</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_cgraph" id="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_cgraph">
+<area shape="rect" title="set desired velocity" alt="" coords="5,5,204,47"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="252,13,303,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_icgraph" id="classplanning_1_1_behavior_planner_a113a89f85dda49e822faf5fcb8cda08d_icgraph">
+<area shape="rect" title="set desired velocity" alt="" coords="429,23,628,65"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#a0a819e55e97cf6561c3f900a9f67d62e" title="set desired velocity" alt="" coords="188,16,381,72"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="45,5,100,32"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html#a8fe1c18c016fc9f50915a84c5a328289" title=" " alt="" coords="5,56,140,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aba784cc865f86388b56a9627587a8f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba784cc865f86388b56a9627587a8f95">&#9670;&nbsp;</a></span>SimulateEgoBehavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::SimulateEgoBehavior </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &amp;&#160;</td>
+          <td class="paramname"><em>ego_vehicle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>ego_behavior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcommon_1_1_semantic_vehicle_set.html">common::SemanticVehicleSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>semantic_vehicle_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt; *&#160;</td>
+          <td class="paramname"><em>traj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a> &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>surround_trajs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00318">318</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_cgraph" id="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_cgraph">
+<area shape="rect" title=" " alt="" coords="5,245,199,287"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#af1b9c36b2361aceb910b3a6828713607" title=" " alt="" coords="247,77,523,119"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a808e864427428586105a15b8a21fee09" title=" " alt="" coords="307,143,462,170"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="359,194,410,221"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#ab3c487f87511a9ae98a25cec6553c19a" title=" " alt="" coords="288,245,481,287"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9" title=" " alt="" coords="611,303,787,330"/>
+<area shape="rect" href="classplanning_1_1_route_planner.html#a2591faecb5873bd19a060622c7f90227" title=" " alt="" coords="298,449,471,491"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a2096bd4e9075bf3077ebc4a2813467ee" title=" " alt="" coords="288,384,481,425"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#aa96588e16e10102f326209408a66d7a4" title=" " alt="" coords="580,5,819,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a1da454a37837bf562ae335aa4f5e2426" title=" " alt="" coords="578,71,821,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a361f35ca8555fcb446480ac68844e3bf" title=" " alt="" coords="603,136,796,177"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="676,202,723,229"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a92e0f293f9557c4b438970b6c5b54a91" title=" " alt="" coords="607,354,792,381"/>
+<area shape="rect" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10" title=" " alt="" coords="571,405,828,447"/>
+<area shape="rect" href="class_tic_toc.html#a5d76802851d3cbc366b4ccccb7257e2e" title="start timing" alt="" coords="657,253,742,279"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ac9e079f73a915e50ef5345a51e69aea0" title=" " alt="" coords="603,471,796,512"/>
+<area shape="rect" href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e" title=" " alt="" coords="618,536,781,577"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_icgraph" id="classplanning_1_1_behavior_planner_aba784cc865f86388b56a9627587a8f95_icgraph">
+<area shape="rect" title=" " alt="" coords="729,5,923,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#acaf20926d75a6647bca1079781ec98c2" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a404fffe1e0411e2f8aab97cc446af416" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0a18ff1188a01f0560d450590563dda0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a18ff1188a01f0560d450590563dda0">&#9670;&nbsp;</a></span>UpdateEgoBehavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::UpdateEgoBehavior </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> &amp;&#160;</td>
+          <td class="paramname"><em>behavior_by_lane_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00762">762</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a0a18ff1188a01f0560d450590563dda0_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a0a18ff1188a01f0560d450590563dda0_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a0a18ff1188a01f0560d450590563dda0_icgraph" id="classplanning_1_1_behavior_planner_a0a18ff1188a01f0560d450590563dda0_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a88f61181ba606d0f7f5ebdd36796dc45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f61181ba606d0f7f5ebdd36796dc45">&#9670;&nbsp;</a></span>UpdateEgoLaneId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> planning::BehaviorPlanner::UpdateEgoLaneId </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>new_ego_lane_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00813">813</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_cgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_cgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_cgraph" id="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,199,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a6e47ecbd77697d885861c45f77f5016a" title=" " alt="" coords="247,71,440,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a76f3a9109f6ff409307afa1838ca3399" title=" " alt="" coords="488,5,681,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#ab2c66315ac45d7343e3429fcb5000e52" title=" " alt="" coords="488,71,681,112"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_map_itf.html#a55c311433a09d760b4b1e860d00ba787" title=" " alt="" coords="488,136,681,177"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_icgraph" id="classplanning_1_1_behavior_planner_a88f61181ba606d0f7f5ebdd36796dc45_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1a56fc9d2c41fd09ba2b4b8f3d02a25c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">&#9670;&nbsp;</a></span>user_desired_velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::user_desired_velocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a> 第 <a class="el" href="behavior__planner_8cc_source.html#l00891">891</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classplanning_1_1_behavior_planner_a1a56fc9d2c41fd09ba2b4b8f3d02a25c_icgraph.png" border="0" usemap="#classplanning_1_1_behavior_planner_a1a56fc9d2c41fd09ba2b4b8f3d02a25c_icgraph" alt=""/></div>
+<map name="classplanning_1_1_behavior_planner_a1a56fc9d2c41fd09ba2b4b8f3d02a25c_icgraph" id="classplanning_1_1_behavior_planner_a1a56fc9d2c41fd09ba2b4b8f3d02a25c_icgraph">
+<area shape="rect" title=" " alt="" coords="268,5,461,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner_server.html#abecb3018e8e158a34330e36fa476e7a6" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a246355d6d94b1565ad07ad9455836c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246355d6d94b1565ad07ad9455836c85">&#9670;&nbsp;</a></span>aggressive_level_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::BehaviorPlanner::aggressive_level_ {3}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00141">141</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0c95203c5d2a07644af6d4002a7dfa29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c95203c5d2a07644af6d4002a7dfa29">&#9670;&nbsp;</a></span>autonomous_level_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::BehaviorPlanner::autonomous_level_ {2}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00137">137</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afad58e4b6522d9432a90a39aa7d47d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad58e4b6522d9432a90a39aa7d47d17">&#9670;&nbsp;</a></span>behavior_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classplanning_1_1_behavior_planner.html#af4f083192529cccc0a495f3f0d0648e4">Behavior</a> planning::BehaviorPlanner::behavior_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00131">131</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af3395b5349fbac87b9b6f7dbcb0c76a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3395b5349fbac87b9b6f7dbcb0c76a2">&#9670;&nbsp;</a></span>ego_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::BehaviorPlanner::ego_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00150">150</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a90a93570395b35f494f556a546b7f268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a93570395b35f494f556a546b7f268">&#9670;&nbsp;</a></span>ego_lane_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int planning::BehaviorPlanner::ego_lane_id_ {<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a214dcfb6e0212ed0c0bf9d41709fcbc1">kInvalidLaneId</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7383cba207e925e295bf10ba41d3ddb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7383cba207e925e295bf10ba41d3ddb6">&#9670;&nbsp;</a></span>forward_behaviors_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a>&gt; planning::BehaviorPlanner::forward_behaviors_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00156">156</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a313b84f649299a49417071d7486d201e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313b84f649299a49417071d7486d201e">&#9670;&nbsp;</a></span>forward_trajs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a>&gt; &gt; planning::BehaviorPlanner::forward_trajs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00155">155</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e78676f835609cb75703c3d3ad81714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e78676f835609cb75703c3d3ad81714">&#9670;&nbsp;</a></span>hmi_behavior_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4a">LateralBehavior</a> planning::BehaviorPlanner::hmi_behavior_ = <a class="el" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aab1767ed2387eb7d369f4a1da9089520a">LateralBehavior::kLaneKeeping</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00146">146</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9ac26b5242f4bd489c4a498e8fe05ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac26b5242f4bd489c4a498e8fe05ef6">&#9670;&nbsp;</a></span>lock_to_hmi_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool planning::BehaviorPlanner::lock_to_hmi_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00145">145</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a322fb2db24bfdf968497ad52a8420f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322fb2db24bfdf968497ad52a8420f3c">&#9670;&nbsp;</a></span>map_itf_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classplanning_1_1_behavior_planner_map_itf.html">BehaviorPlannerMapItf</a>* planning::BehaviorPlanner::map_itf_ {<a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00130">130</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a412ee993756f0c4f37d879f2bbaeeedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412ee993756f0c4f37d879f2bbaeeedd">&#9670;&nbsp;</a></span>p_route_planner_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classplanning_1_1_route_planner.html">planning::RoutePlanner</a>* planning::BehaviorPlanner::p_route_planner_ {<a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00133">133</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad0bf6145d5238baed47af7099df9dcd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bf6145d5238baed47af7099df9dcd7">&#9670;&nbsp;</a></span>potential_lcl_lane_ids_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; planning::BehaviorPlanner::potential_lcl_lane_ids_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00151">151</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab5354291974d5c1323f7aad82de8efb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5354291974d5c1323f7aad82de8efb2">&#9670;&nbsp;</a></span>potential_lcr_lane_ids_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; planning::BehaviorPlanner::potential_lcr_lane_ids_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00152">152</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a92ede0cb8bcbdae3c08cd5c0c04130aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ede0cb8bcbdae3c08cd5c0c04130aa">&#9670;&nbsp;</a></span>potential_lk_lane_ids_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; planning::BehaviorPlanner::potential_lk_lane_ids_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00153">153</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9fc99f5f000266f6d617ad9f153ed559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc99f5f000266f6d617ad9f153ed559">&#9670;&nbsp;</a></span>reference_desired_velocity_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::reference_desired_velocity_ {5.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00136">136</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a425115aa9dd019b7653d1933facf7f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a425115aa9dd019b7653d1933facf7f53">&#9670;&nbsp;</a></span>sim_horizon_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::sim_horizon_ {4.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00140">140</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af6c7109e1366d6ee3f85d40a0ba74303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c7109e1366d6ee3f85d40a0ba74303">&#9670;&nbsp;</a></span>sim_param_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a> planning::BehaviorPlanner::sim_param_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00142">142</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2ede7f4c26579331f9492bd8a182e143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ede7f4c26579331f9492bd8a182e143">&#9670;&nbsp;</a></span>sim_resolution_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::sim_resolution_ {0.4}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00139">139</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a96d840ad78fc93c3516ba7a908d568ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d840ad78fc93c3516ba7a908d568ce">&#9670;&nbsp;</a></span>surround_trajs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;std::unordered_map&lt;int, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="classcommon_1_1_vehicle.html">common::Vehicle</a>&gt; &gt; &gt; planning::BehaviorPlanner::surround_trajs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00157">157</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad1aba5b5f492af629ad0793a3ee1693a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1aba5b5f492af629ad0793a3ee1693a">&#9670;&nbsp;</a></span>use_sim_state_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool planning::BehaviorPlanner::use_sim_state_ = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00144">144</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae932d93b3f81a0ee943341e4d5733aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae932d93b3f81a0ee943341e4d5733aa3">&#9670;&nbsp;</a></span>user_desired_velocity_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> planning::BehaviorPlanner::user_desired_velocity_ {5.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a> 第 <a class="el" href="behavior__planner_8h_source.html#l00135">135</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/behavior_planner/inc/behavior_planner/<a class="el" href="behavior__planner_8h_source.html">behavior_planner.h</a></li>
+<li>core/behavior_planner/src/behavior_planner/<a class="el" href="behavior__planner_8cc_source.html">behavior_planner.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

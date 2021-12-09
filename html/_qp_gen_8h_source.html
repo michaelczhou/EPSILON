@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/QpGen.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QpGen.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_qp_gen_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef QPGENFACTORY</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define QPGENFACTORY</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_problem_formulation_8h.html">ProblemFormulation.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_data.html">Data</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_residuals.html">Residuals</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_linear_system.html">LinearSystem</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_ooqp_vector.html">OoqpVector</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_qp_gen.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_gen.html">QpGen</a> : <span class="keyword">public</span> <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_qp_gen.html#a42a0f96ecfd5bfaf56b04a1073642191">   36</a></span>&#160;  <a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a> * <a class="code" href="class_qp_gen.html#a42a0f96ecfd5bfaf56b04a1073642191">la</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_qp_gen.html#a070d20405c0b365286d87fc3a509c52b">   38</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_qp_gen.html#a070d20405c0b365286d87fc3a509c52b">nx</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_qp_gen.html#a0c85e030a32002391df6ea5c6f0374f7">   41</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_qp_gen.html#a0c85e030a32002391df6ea5c6f0374f7">my</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_qp_gen.html#acd8c824d4c09ea9b99b4503ea8c4ebf5">   44</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_qp_gen.html#acd8c824d4c09ea9b99b4503ea8c4ebf5">mz</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="class_qp_gen.html#aecab7a0202e66769c1b974cd5016c2b1">QpGen</a>( <span class="keywordtype">int</span> nx_, <span class="keywordtype">int</span> my_, <span class="keywordtype">int</span> mz_ );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_residuals.html">Residuals</a>     * <a class="code" href="class_qp_gen.html#a90d2b2ff924aeea00608156aa6bdb818">makeResiduals</a>( <a class="code" href="class_data.html">Data</a> * prob_in );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_variables.html">Variables</a>     * <a class="code" href="class_qp_gen.html#a96f2bdeb8991d3ba27c423943084ea22">makeVariables</a>( <a class="code" href="class_data.html">Data</a> * prob_in );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen.html#a000201e3760c27bda4bdb5494a23559c">joinRHS</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; rhs_in,  <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; rhs1_in,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; rhs2_in, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; rhs3_in ) = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen.html#a146f8571c850a453a920c1f73c096154">separateVars</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; x_in, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; y_in,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                 <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; z_in, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; vars_in ) = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_qp_gen.html#a29122ede5574446fd055aa3b884d9abb">   57</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_qp_gen.html#a29122ede5574446fd055aa3b884d9abb">~QpGen</a>() {};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_qp_gen_html"><div class="ttname"><a href="class_qp_gen.html">QpGen</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00034">QpGen.h:34</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_aecab7a0202e66769c1b974cd5016c2b1"><div class="ttname"><a href="class_qp_gen.html#aecab7a0202e66769c1b974cd5016c2b1">QpGen::QpGen</a></div><div class="ttdeci">QpGen(int nx_, int my_, int mz_)</div></div>
+<div class="ttc" id="aclass_qp_gen_html_a42a0f96ecfd5bfaf56b04a1073642191"><div class="ttname"><a href="class_qp_gen.html#a42a0f96ecfd5bfaf56b04a1073642191">QpGen::la</a></div><div class="ttdeci">LinearAlgebraPackage * la</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00036">QpGen.h:36</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_a070d20405c0b365286d87fc3a509c52b"><div class="ttname"><a href="class_qp_gen.html#a070d20405c0b365286d87fc3a509c52b">QpGen::nx</a></div><div class="ttdeci">int nx</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00038">QpGen.h:38</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_a90d2b2ff924aeea00608156aa6bdb818"><div class="ttname"><a href="class_qp_gen.html#a90d2b2ff924aeea00608156aa6bdb818">QpGen::makeResiduals</a></div><div class="ttdeci">virtual Residuals * makeResiduals(Data *prob_in)</div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_a0c85e030a32002391df6ea5c6f0374f7"><div class="ttname"><a href="class_qp_gen.html#a0c85e030a32002391df6ea5c6f0374f7">QpGen::my</a></div><div class="ttdeci">int my</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00041">QpGen.h:41</a></div></div>
+<div class="ttc" id="aclass_linear_algebra_package_html"><div class="ttname"><a href="class_linear_algebra_package.html">LinearAlgebraPackage</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_algebra_package_8h_source.html#l00021">LinearAlgebraPackage.h:21</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_a96f2bdeb8991d3ba27c423943084ea22"><div class="ttname"><a href="class_qp_gen.html#a96f2bdeb8991d3ba27c423943084ea22">QpGen::makeVariables</a></div><div class="ttdeci">virtual Variables * makeVariables(Data *prob_in)</div></div>
+<div class="ttc" id="aclass_qp_gen_html_a146f8571c850a453a920c1f73c096154"><div class="ttname"><a href="class_qp_gen.html#a146f8571c850a453a920c1f73c096154">QpGen::separateVars</a></div><div class="ttdeci">virtual void separateVars(OoqpVector &amp;x_in, OoqpVector &amp;y_in, OoqpVector &amp;z_in, OoqpVector &amp;vars_in)=0</div></div>
+<div class="ttc" id="aclass_problem_formulation_html"><div class="ttname"><a href="class_problem_formulation.html">ProblemFormulation</a></div><div class="ttdef"><b>Definition:</b> <a href="_problem_formulation_8h_source.html#l00049">ProblemFormulation.h:49</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_a000201e3760c27bda4bdb5494a23559c"><div class="ttname"><a href="class_qp_gen.html#a000201e3760c27bda4bdb5494a23559c">QpGen::joinRHS</a></div><div class="ttdeci">virtual void joinRHS(OoqpVector &amp;rhs_in, OoqpVector &amp;rhs1_in, OoqpVector &amp;rhs2_in, OoqpVector &amp;rhs3_in)=0</div></div>
+<div class="ttc" id="aclass_qp_gen_html_a29122ede5574446fd055aa3b884d9abb"><div class="ttname"><a href="class_qp_gen.html#a29122ede5574446fd055aa3b884d9abb">QpGen::~QpGen</a></div><div class="ttdeci">virtual ~QpGen()</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00057">QpGen.h:57</a></div></div>
+<div class="ttc" id="aclass_linear_system_html"><div class="ttname"><a href="class_linear_system.html">LinearSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_system_8h_source.html#l00017">LinearSystem.h:17</a></div></div>
+<div class="ttc" id="aclass_qp_gen_html_acd8c824d4c09ea9b99b4503ea8c4ebf5"><div class="ttname"><a href="class_qp_gen.html#acd8c824d4c09ea9b99b4503ea8c4ebf5">QpGen::mz</a></div><div class="ttdeci">int mz</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00044">QpGen.h:44</a></div></div>
+<div class="ttc" id="a_problem_formulation_8h_html"><div class="ttname"><a href="_problem_formulation_8h.html">ProblemFormulation.h</a></div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

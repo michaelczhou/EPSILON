@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/QpGenDriver.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">QpGenDriver.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &quot;<a class="el" href="_qp_gen_vars_8h_source.html">QpGenVars.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_qp_gen_residuals_8h_source.html">QpGenResiduals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_mps_reader_8h_source.html">MpsReader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_simple_vector_8h_source.html">SimpleVector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_status_8h_source.html">Status.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_qp_gen_data_8h_source.html">QpGenData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ooqp_version_8h_source.html">OoqpVersion.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+QpGenDriver.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_qp_gen_driver_8h__incl.png" border="0" usemap="#core_2common_2thirdparty_2ooqp_2include_2ooqp_2_qp_gen_driver_8h" alt=""/></div>
+<map name="core_2common_2thirdparty_2ooqp_2include_2ooqp_2_qp_gen_driver_8h" id="core_2common_2thirdparty_2ooqp_2include_2ooqp_2_qp_gen_driver_8h">
+<area shape="rect" title=" " alt="" coords="587,5,832,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,83,121"/>
+<area shape="rect" title=" " alt="" coords="125,244,192,271"/>
+<area shape="rect" title=" " alt="" coords="221,244,301,271"/>
+<area shape="rect" title=" " alt="" coords="329,244,402,271"/>
+<area shape="rect" title=" " alt="" coords="1078,95,1165,121"/>
+<area shape="rect" title=" " alt="" coords="1189,95,1254,121"/>
+<area shape="rect" href="_qp_gen_vars_8h.html" title=" " alt="" coords="804,95,911,121"/>
+<area shape="rect" href="_qp_gen_residuals_8h.html" title=" " alt="" coords="639,95,780,121"/>
+<area shape="rect" href="_mps_reader_8h.html" title=" " alt="" coords="947,95,1053,121"/>
+<area shape="rect" href="_simple_vector_8h.html" title=" " alt="" coords="493,95,614,121"/>
+<area shape="rect" href="_status_8h.html" title=" " alt="" coords="1279,95,1353,121"/>
+<area shape="rect" href="_qp_gen_data_8h.html" title=" " alt="" coords="359,95,468,121"/>
+<area shape="rect" href="_ooqp_version_8h.html" title=" " alt="" coords="1377,95,1495,121"/>
+<area shape="rect" href="_variables_8h.html" title=" " alt="" coords="810,169,905,196"/>
+<area shape="rect" href="_ooqp_vector_handle_8h.html" title=" " alt="" coords="634,244,790,271"/>
+<area shape="rect" href="_iotr_ref_count_8h.html" title=" " alt="" coords="677,319,793,345"/>
+<area shape="rect" href="_smart_pointer_8h.html" title=" " alt="" coords="827,319,946,345"/>
+<area shape="rect" title=" " alt="" coords="771,393,840,420"/>
+<area shape="rect" href="_residuals_8h.html" title=" " alt="" coords="586,169,683,196"/>
+<area shape="rect" href="_double_matrix_handle_8h.html" title=" " alt="" coords="815,244,983,271"/>
+<area shape="rect" href="_simple_vector_handle_8h.html" title=" " alt="" coords="929,169,1095,196"/>
+<area shape="rect" title=" " alt="" coords="1221,169,1283,196"/>
+<area shape="rect" href="hash_8h.html" title=" " alt="" coords="1307,169,1373,196"/>
+<area shape="rect" href="_ooqp_vector_8h.html" title=" " alt="" coords="349,169,459,196"/>
+<area shape="rect" href="_data_8h.html" title=" " alt="" coords="259,169,325,196"/>
+</map>
+</div>
+</div>
+<p><a href="_qp_gen_driver_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a989f0c24ab22d994247de015415f63f2"><td class="memTemplParams" colspan="2">template&lt;class SOLVER , class FORMULATION &gt; </td></tr>
+<tr class="memitem:a989f0c24ab22d994247de015415f63f2"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_qp_gen_driver_8h.html#a989f0c24ab22d994247de015415f63f2">qpgen_solve</a> (int argc, char *argv[], SOLVER *, FORMULATION *)</td></tr>
+<tr class="separator:a989f0c24ab22d994247de015415f63f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a0e0861eea91e9cac1d00ad21ddd45c12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_qp_gen_driver_8h.html#a0e0861eea91e9cac1d00ad21ddd45c12">gOoqpPrintLevel</a></td></tr>
+<tr class="separator:a0e0861eea91e9cac1d00ad21ddd45c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418e7934b5363ecde8269070181b3cef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_qp_gen_driver_8h.html#a418e7934b5363ecde8269070181b3cef">scale</a> = 0</td></tr>
+<tr class="separator:a418e7934b5363ecde8269070181b3cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a989f0c24ab22d994247de015415f63f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989f0c24ab22d994247de015415f63f2">&#9670;&nbsp;</a></span>qpgen_solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SOLVER , class FORMULATION &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int qpgen_solve </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SOLVER *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FORMULATION *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_qp_gen_driver_8h_source.html">QpGenDriver.h</a> 第 <a class="el" href="_qp_gen_driver_8h_source.html#l00033">33</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_qp_gen_driver_8h_a989f0c24ab22d994247de015415f63f2_cgraph.png" border="0" usemap="#_qp_gen_driver_8h_a989f0c24ab22d994247de015415f63f2_cgraph" alt=""/></div>
+<map name="_qp_gen_driver_8h_a989f0c24ab22d994247de015415f63f2_cgraph" id="_qp_gen_driver_8h_a989f0c24ab22d994247de015415f63f2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,208,109,235"/>
+<area shape="rect" href="class_qp_gen_data.html#abd9d47c70c68a4ce18446d4b37459fb6" title=" " alt="" coords="189,5,356,32"/>
+<area shape="rect" href="class_mps_reader.html#ac0d081e467e616bf65a59b5cc57ad013" title=" " alt="" coords="193,56,352,83"/>
+<area shape="rect" href="class_mps_reader.html#a2f25ed5e792ecf6f7c2f54ea6bb7e7d1" title=" " alt="" coords="170,107,375,133"/>
+<area shape="rect" href="class_mps_reader.html#a424b6c5b46832eae229ed64fadd23eaa" title=" " alt="" coords="157,157,388,184"/>
+<area shape="rect" href="class_mps_reader.html#ac19037079be6d2014d86aff0f1b15b1d" title=" " alt="" coords="193,208,352,235"/>
+<area shape="rect" href="class_qp_gen_data.html#abb3b149475d3da200e6ef9ec87be8b17" title=" " alt="" coords="171,259,374,285"/>
+<area shape="rect" href="_ooqp_version_8h.html#acec257ba1e82d7f6a48c25c8e5746cc5" title=" " alt="" coords="186,309,359,336"/>
+<area shape="rect" href="class_qp_gen_vars.html#a0ee7be08bda1b35211bcc6cbe9b77e96" title=" " alt="" coords="179,360,366,387"/>
+<area shape="rect" href="class_mps_reader.html#adb57f6988212ccc32ea868bb9a3f5a2b" title=" " alt="" coords="186,411,359,437"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a0e0861eea91e9cac1d00ad21ddd45c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0861eea91e9cac1d00ad21ddd45c12">&#9670;&nbsp;</a></span>gOoqpPrintLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gOoqpPrintLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a418e7934b5363ecde8269070181b3cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418e7934b5363ecde8269070181b3cef">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int scale = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_qp_gen_driver_8h_source.html">QpGenDriver.h</a> 第 <a class="el" href="_qp_gen_driver_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

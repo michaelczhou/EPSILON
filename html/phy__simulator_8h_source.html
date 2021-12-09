@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/phy_simulator/inc/phy_simulator/phy_simulator.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_3a836b2375ce7292dbdd6ad203f82c2a.html">phy_simulator</a></li><li class="navelem"><a class="el" href="dir_b9389d25cc72c4b15245e222e6f23cef.html">inc</a></li><li class="navelem"><a class="el" href="dir_42c6245ecde1b4e5ef35d8e150ba415d.html">phy_simulator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">phy_simulator.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="phy__simulator_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_PHY_SIMULATOR_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_PHY_SIMULATOR_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="free__state_8h.html">common/state/free_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common__visualization__util_8h.html">common/visualization/common_visualization_util.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="arena__loader_8h.html">phy_simulator/arena_loader.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">phy_simulator/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vehicle__model_8h.html">vehicle_model/vehicle_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephy__simulator.html">phy_simulator</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphy__simulator_1_1_phy_simulation.html">PhySimulation</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">PhySimulation</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">PhySimulation</a>(<span class="keyword">const</span> std::string &amp;vehicle_set_path,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keyword">const</span> std::string &amp;map_path, <span class="keyword">const</span> std::string &amp;lane_net_path);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#ace6645b88735a4dbfa319d3df2c449c1">   37</a></span>&#160;  <a class="code" href="classphy__simulator_1_1_phy_simulation.html#ace6645b88735a4dbfa319d3df2c449c1">~PhySimulation</a>() {}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#ad33b8f354e0281ff5fa98493e1280246">   39</a></span>&#160;  <a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#ad33b8f354e0281ff5fa98493e1280246">lane_net</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lane_net_; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#a98980b84a0e2e0dba838bc33a5a9d09a">   40</a></span>&#160;  <a class="code" href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a98980b84a0e2e0dba838bc33a5a9d09a">obstacle_set</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> obstacle_set_; };</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#ad4d73c5fadbb44a18d8f4c296ad18fe3">   41</a></span>&#160;  <a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#ad4d73c5fadbb44a18d8f4c296ad18fe3">vehicle_set</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vehicle_set_; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classphy__simulator_1_1_phy_simulation.html#a52b32ca3cb3fd71ee150d1db2fcd0254">   42</a></span>&#160;  <span class="keyword">const</span> std::vector&lt;int&gt; <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a52b32ca3cb3fd71ee150d1db2fcd0254">vehicle_ids</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vehicle_ids_; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#acf572ca902b74697380da222964b59fc">AddTemporaryObstacleToMap</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_point.html">common::Point</a> &amp;pt, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;size);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a7cdfc61ba2326c1a447c9ce48b8a4519">RemoveTemporaryObstacle</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_point.html">common::Point</a> &amp;pt, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;s);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">UpdateSimulatorUsingSignalSet</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a> &amp;signal_set, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;dt);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">bool</span> GetDataFromArenaLoader();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> SetupVehicleModelForVehicleSet();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">bool</span> UpdateVehicleStates(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a> &amp;signal_set,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                           <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;dt);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classphy__simulator_1_1_arena_loader.html">ArenaLoader</a> *p_arena_loader_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a> vehicle_set_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::unordered_map&lt;int, simulator::VehicleModel&gt; vehicle_model_set_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  std::vector&lt;int&gt; vehicle_ids_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="structcommon_1_1_lane_net.html">common::LaneNet</a> lane_net_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a> obstacle_set_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">int</span> temp_obstacle_cnt_ = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> temp_obs_idx_offset_ = 10000;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::unordered_map&lt;int, common::PolygonObstacle&gt; temp_obstacle_set_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace phy_simulator</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif  // _CORE_SEMANTIC_MAP_INC_PHY_SIMULATOR_PHY_SIMULATOR_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="avehicle__model_8h_html"><div class="ttname"><a href="vehicle__model_8h.html">vehicle_model.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html">phy_simulator::PhySimulation</a></div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00032">phy_simulator.h:32</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_ace6645b88735a4dbfa319d3df2c449c1"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#ace6645b88735a4dbfa319d3df2c449c1">phy_simulator::PhySimulation::~PhySimulation</a></div><div class="ttdeci">~PhySimulation()</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00037">phy_simulator.h:37</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a861779e1b237611ea0a32ccafce09c3d"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a861779e1b237611ea0a32ccafce09c3d">phy_simulator::PhySimulation::UpdateSimulatorUsingSignalSet</a></div><div class="ttdeci">bool UpdateSimulatorUsingSignalSet(const common::VehicleControlSignalSet &amp;signal_set, const decimal_t &amp;dt)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00065">phy_simulator.cc:65</a></div></div>
+<div class="ttc" id="astructcommon_1_1_lane_net_html"><div class="ttname"><a href="structcommon_1_1_lane_net.html">common::LaneNet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00631">semantics.h:631</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aarena__loader_8h_html"><div class="ttname"><a href="arena__loader_8h.html">arena_loader.h</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_set.html">common::VehicleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00263">semantics.h:263</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html"><div class="ttname"><a href="structcommon_1_1_point.html">common::Point</a></div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00022">shapes.h:22</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_ad4d73c5fadbb44a18d8f4c296ad18fe3"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#ad4d73c5fadbb44a18d8f4c296ad18fe3">phy_simulator::PhySimulation::vehicle_set</a></div><div class="ttdeci">common::VehicleSet vehicle_set() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00041">phy_simulator.h:41</a></div></div>
+<div class="ttc" id="acommon__visualization__util_8h_html"><div class="ttname"><a href="common__visualization__util_8h.html">common_visualization_util.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_set_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal_set.html">common::VehicleControlSignalSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00312">semantics.h:312</a></div></div>
+<div class="ttc" id="afree__state_8h_html"><div class="ttname"><a href="free__state_8h.html">free_state.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_obstacle_set_html"><div class="ttname"><a href="structcommon_1_1_obstacle_set.html">common::ObstacleSet</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00706">semantics.h:706</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_acf572ca902b74697380da222964b59fc"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#acf572ca902b74697380da222964b59fc">phy_simulator::PhySimulation::AddTemporaryObstacleToMap</a></div><div class="ttdeci">bool AddTemporaryObstacleToMap(const common::Point &amp;pt, const double &amp;size)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00032">phy_simulator.cc:32</a></div></div>
+<div class="ttc" id="anamespacephy__simulator_html"><div class="ttname"><a href="namespacephy__simulator.html">phy_simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00029">arena_loader.h:29</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a7cdfc61ba2326c1a447c9ce48b8a4519"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a7cdfc61ba2326c1a447c9ce48b8a4519">phy_simulator::PhySimulation::RemoveTemporaryObstacle</a></div><div class="ttdeci">bool RemoveTemporaryObstacle(const common::Point &amp;pt, const double &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00103">phy_simulator.cc:103</a></div></div>
+<div class="ttc" id="aphy__simulator_2inc_2phy__simulator_2basics_8h_html"><div class="ttname"><a href="phy__simulator_2inc_2phy__simulator_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a98980b84a0e2e0dba838bc33a5a9d09a"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a98980b84a0e2e0dba838bc33a5a9d09a">phy_simulator::PhySimulation::obstacle_set</a></div><div class="ttdeci">common::ObstacleSet obstacle_set() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00040">phy_simulator.h:40</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a235cc5243485bf1281cf75ce8d22489e"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a235cc5243485bf1281cf75ce8d22489e">phy_simulator::PhySimulation::PhySimulation</a></div><div class="ttdeci">PhySimulation()</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8cc_source.html#l00005">phy_simulator.cc:5</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_a52b32ca3cb3fd71ee150d1db2fcd0254"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#a52b32ca3cb3fd71ee150d1db2fcd0254">phy_simulator::PhySimulation::vehicle_ids</a></div><div class="ttdeci">const std::vector&lt; int &gt; vehicle_ids() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00042">phy_simulator.h:42</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_arena_loader_html"><div class="ttname"><a href="classphy__simulator_1_1_arena_loader.html">phy_simulator::ArenaLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="arena__loader_8h_source.html#l00031">arena_loader.h:31</a></div></div>
+<div class="ttc" id="aclassphy__simulator_1_1_phy_simulation_html_ad33b8f354e0281ff5fa98493e1280246"><div class="ttname"><a href="classphy__simulator_1_1_phy_simulation.html#ad33b8f354e0281ff5fa98493e1280246">phy_simulator::PhySimulation::lane_net</a></div><div class="ttdeci">common::LaneNet lane_net() const</div><div class="ttdef"><b>Definition:</b> <a href="phy__simulator_8h_source.html#l00039">phy_simulator.h:39</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

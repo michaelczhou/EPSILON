@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/spline/spline.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_548191efa841f3f0830025becb9336a6.html">spline</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">spline.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="inc_2common_2spline_2spline_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_COMMON_INC_COMMON_SPLINE_SPLINE_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_COMMON_INC_COMMON_SPLINE_SPLINE_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="polynomial_8h.html">common/spline/polynomial.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N_DEG, <span class="keywordtype">int</span> N_DIM&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommon_1_1_spline.html">Spline</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a511b071a0a82230b9c0fd65372fc3ed2">   14</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classcommon_1_1_polynomial_n_d.html">PolynomialND&lt;N_DEG, N_DIM&gt;</a> <a class="code" href="classcommon_1_1_spline.html#a511b071a0a82230b9c0fd65372fc3ed2">PolynomialType</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a1759c05c9de96384323973f9fe7be732">   16</a></span>&#160;  <a class="code" href="classcommon_1_1_spline.html#a1759c05c9de96384323973f9fe7be732">Spline</a>() {}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5">   22</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5">set_vec_domain</a>(<span class="keyword">const</span> std::vector&lt;decimal_t&gt;&amp; <a class="code" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">vec_domain</a>) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    assert(<a class="code" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">vec_domain</a>.size() &gt; 1);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vec_domain_ = <a class="code" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">vec_domain</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    poly_.resize(vec_domain_.size() - 1);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a107ef9fee338983cb1307a94f81bb188">   32</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classcommon_1_1_spline.html#a107ef9fee338983cb1307a94f81bb188">num_segments</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(poly_.size()); }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">   38</a></span>&#160;  std::vector&lt;decimal_t&gt; <a class="code" href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">vec_domain</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vec_domain_; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46">   43</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46">begin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (vec_domain_.size() &lt; 1) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> vec_domain_.front();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4">   51</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4">end</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (vec_domain_.size() &lt; 1) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> vec_domain_.back();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a11e3668371dc058edfc352ed3a1b9671">   61</a></span>&#160;  <a class="code" href="classcommon_1_1_polynomial.html">Polynomial&lt;N_DEG&gt;</a>&amp; <a class="code" href="classcommon_1_1_spline.html#a11e3668371dc058edfc352ed3a1b9671">operator()</a>(<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>, <span class="keywordtype">int</span> j) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    assert(n &lt; this-&gt;<a class="code" href="classcommon_1_1_spline.html#a107ef9fee338983cb1307a94f81bb188">num_segments</a>());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    assert(j &lt; N_DIM);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> poly_[<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>][j];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d">   73</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d">evaluate</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s, <span class="keywordtype">int</span> d, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a>* ret)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> num_pts = vec_domain_.size();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (num_pts &lt; 1) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">auto</span> it = std::lower_bound(vec_domain_.begin(), vec_domain_.end(), s);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> idx = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it - vec_domain_.begin()) - 1, 0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> h = s - vec_domain_[idx];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (s &lt; vec_domain_[0]) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      poly_[0].evaluate(h, d, ret);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="comment">// return kIllegalInput;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s &gt; vec_domain_[num_pts - 1]) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      h = s - vec_domain_[idx - 1];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      poly_[num_pts - 2].evaluate(h, d, ret);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="comment">// return kIllegalInput;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      poly_[idx].evaluate(h, d, ret);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a30b78e9293fd972676ab5a4341d085eb">   94</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_spline.html#a30b78e9293fd972676ab5a4341d085eb">evaluate</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a>* ret)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> num_pts = vec_domain_.size();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (num_pts &lt; 1) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">auto</span> it = std::lower_bound(vec_domain_.begin(), vec_domain_.end(), s);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">int</span> idx = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it - vec_domain_.begin()) - 1, 0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> h = s - vec_domain_[idx];</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (s &lt; vec_domain_[0]) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      poly_[0].evaluate(h, ret);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="comment">// return kIllegalInput;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s &gt; vec_domain_[num_pts - 1]) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      h = s - vec_domain_[idx - 1];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      poly_[num_pts - 2].evaluate(h, ret);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="comment">// return kIllegalInput;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      poly_[idx].evaluate(h, ret);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classcommon_1_1_spline.html#a2b49d757d49e66bd33cf2a9dadc7a8fe">  115</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classcommon_1_1_spline.html#a2b49d757d49e66bd33cf2a9dadc7a8fe">print</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> num_polys = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(poly_.size());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_polys; i++) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      printf(<span class="stringliteral">&quot;vec domain (%lf, %lf).\n&quot;</span>, vec_domain_[i], vec_domain_[i + 1]);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      poly_[i].print();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> v;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      poly_[i].evaluate(vec_domain_[i + 1] - vec_domain_[i], 0, &amp;v);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      printf(<span class="stringliteral">&quot;end pos: (%lf, %lf).\n&quot;</span>, v[0], v[1]);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      poly_[i].evaluate(vec_domain_[i + 1] - vec_domain_[i], 1, &amp;v);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      printf(<span class="stringliteral">&quot;end vel: (%lf, %lf).\n&quot;</span>, v[0], v[1]);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      poly_[i].evaluate(vec_domain_[i + 1] - vec_domain_[i], 2, &amp;v);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      printf(<span class="stringliteral">&quot;end acc: (%lf, %lf).\n&quot;</span>, v[0], v[1]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      poly_[i].evaluate(vec_domain_[i + 1] - vec_domain_[i], 3, &amp;v);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      printf(<span class="stringliteral">&quot;end jerk: (%lf, %lf).\n&quot;</span>, v[0], v[1]);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;PolynomialType&gt;</a> poly_;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  std::vector&lt;decimal_t&gt; vec_domain_;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}  <span class="comment">// namespace common</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="apolynomial_8h_html"><div class="ttname"><a href="polynomial_8h.html">polynomial.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a1759c05c9de96384323973f9fe7be732"><div class="ttname"><a href="classcommon_1_1_spline.html#a1759c05c9de96384323973f9fe7be732">common::Spline::Spline</a></div><div class="ttdeci">Spline()</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00016">spline.h:16</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_polynomial_html"><div class="ttname"><a href="classcommon_1_1_polynomial.html">common::Polynomial</a></div><div class="ttdoc">Polynomial class, coeffs are stored in reversed order The parameterization is given by f(s) = coeff_(...</div><div class="ttdef"><b>Definition:</b> <a href="polynomial_8h_source.html#l00022">polynomial.h:22</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a11e3668371dc058edfc352ed3a1b9671"><div class="ttname"><a href="classcommon_1_1_spline.html#a11e3668371dc058edfc352ed3a1b9671">common::Spline::operator()</a></div><div class="ttdeci">Polynomial&lt; N_DEG &gt; &amp; operator()(int n, int j)</div><div class="ttdoc">Return a reference to a certain 1D polynomial</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00061">spline.h:61</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a107ef9fee338983cb1307a94f81bb188"><div class="ttname"><a href="classcommon_1_1_spline.html#a107ef9fee338983cb1307a94f81bb188">common::Spline::num_segments</a></div><div class="ttdeci">int num_segments() const</div><div class="ttdoc">Get the number of segments of the spline</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00032">spline.h:32</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a30b78e9293fd972676ab5a4341d085eb"><div class="ttname"><a href="classcommon_1_1_spline.html#a30b78e9293fd972676ab5a4341d085eb">common::Spline::evaluate</a></div><div class="ttdeci">ErrorType evaluate(const decimal_t s, Vecf&lt; N_DIM &gt; *ret) const</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00094">spline.h:94</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aa4a3b5288e1df96fcaff414ddeb60abe5">kIllegalInput</a></div><div class="ttdeci">@ kIllegalInput</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a2b49d757d49e66bd33cf2a9dadc7a8fe"><div class="ttname"><a href="classcommon_1_1_spline.html#a2b49d757d49e66bd33cf2a9dadc7a8fe">common::Spline::print</a></div><div class="ttdeci">void print() const</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00115">spline.h:115</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a956e4e2f5e3db31edb4ac1a0b26eb0e4"><div class="ttname"><a href="classcommon_1_1_spline.html#a956e4e2f5e3db31edb4ac1a0b26eb0e4">common::Spline::end</a></div><div class="ttdeci">decimal_t end() const</div><div class="ttdoc">Get the end of the parameterization</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00051">spline.h:51</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a06dea0291bfbf9227d26a26014287c46"><div class="ttname"><a href="classcommon_1_1_spline.html#a06dea0291bfbf9227d26a26014287c46">common::Spline::begin</a></div><div class="ttdeci">decimal_t begin() const</div><div class="ttdoc">Get the begin of the parameterization</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00043">spline.h:43</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a748025f3c736c2b3d119bafaa9da93a5"><div class="ttname"><a href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5">common::Spline::set_vec_domain</a></div><div class="ttdeci">void set_vec_domain(const std::vector&lt; decimal_t &gt; &amp;vec_domain)</div><div class="ttdoc">Set the vector domain</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00022">spline.h:22</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html"><div class="ttname"><a href="classcommon_1_1_spline.html">common::Spline</a></div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00012">spline.h:12</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a511b071a0a82230b9c0fd65372fc3ed2"><div class="ttname"><a href="classcommon_1_1_spline.html#a511b071a0a82230b9c0fd65372fc3ed2">common::Spline::PolynomialType</a></div><div class="ttdeci">PolynomialND&lt; N_DEG, N_DIM &gt; PolynomialType</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00014">spline.h:14</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_polynomial_n_d_html"><div class="ttname"><a href="classcommon_1_1_polynomial_n_d.html">common::PolynomialND</a></div><div class="ttdef"><b>Definition:</b> <a href="polynomial_8h_source.html#l00186">polynomial.h:186</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a9a8588f0fb454f8c23dc9daeef5c6628"><div class="ttname"><a href="classcommon_1_1_spline.html#a9a8588f0fb454f8c23dc9daeef5c6628">common::Spline::vec_domain</a></div><div class="ttdeci">std::vector&lt; decimal_t &gt; vec_domain() const</div><div class="ttdoc">Get the vec domain of the spline</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00038">spline.h:38</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html_a80b69936aba27aef52dffbdd9137d64d"><div class="ttname"><a href="classcommon_1_1_spline.html#a80b69936aba27aef52dffbdd9137d64d">common::Spline::evaluate</a></div><div class="ttdeci">ErrorType evaluate(const decimal_t s, int d, Vecf&lt; N_DIM &gt; *ret) const</div><div class="ttdoc">Return evaluation of spline at given parameterization</div><div class="ttdef"><b>Definition:</b> <a href="inc_2common_2spline_2spline_8h_source.html#l00073">spline.h:73</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

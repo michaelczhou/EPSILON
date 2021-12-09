@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/motion_predictor/inc/motion_predictor/onlane_fs_predictor.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_f5c6909a25b273d70d955733c44de4c5.html">motion_predictor</a></li><li class="navelem"><a class="el" href="dir_3252024499c2a74aaf7779bd05eac740.html">inc</a></li><li class="navelem"><a class="el" href="dir_f7ba6b79c17ba5f7c98f6a388bddd072.html">motion_predictor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">onlane_fs_predictor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="onlane__fs__predictor_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_MOTION_PREDICTOR_INC_ONLANE_FORWARD_SIMULATION_PREDICTOR_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_MOTION_PREDICTOR_INC_ONLANE_FORWARD_SIMULATION_PREDICTOR_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane_8h.html">common/lane/lane.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="onlane__forward__simulation_8h.html">forward_simulator/onlane_forward_simulation.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_on_lane_fs_predictor.html">OnLaneFsPredictor</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#a9c927b96c133fba46cdfb323dffe584a">   13</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classcommon_1_1_lane.html">Lane</a> = <a class="code" href="classcommon_1_1_lane.html">common::Lane</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#a342eac861f10fcc77001516b09f13c71">   14</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_state.html">State</a> = <a class="code" href="structcommon_1_1_state.html">common::State</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#a3c51853990496e0fbb76ed2bcf647f2f">   15</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_vehicle_control_signal.html">VehicleControlSignal</a> = <a class="code" href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#a5a92cf8d79f6d4b2d9683c8617946a5a">   16</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classcommon_1_1_vehicle.html">Vehicle</a> = <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#aed7e4209f0b3f96510164158b309ca2d">   18</a></span>&#160;  <a class="code" href="classplanning_1_1_on_lane_fs_predictor.html#aed7e4209f0b3f96510164158b309ca2d">OnLaneFsPredictor</a>() {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classplanning_1_1_on_lane_fs_predictor.html#a7b9735dd33b9e5bdd737b0db9a405269">~OnLaneFsPredictor</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classplanning_1_1_on_lane_fs_predictor.html#a488ae8ce5bce3f7e5649b333c9ce0b4c">   21</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_on_lane_fs_predictor.html#a488ae8ce5bce3f7e5649b333c9ce0b4c">GetPredictedTrajectory</a>(<span class="keyword">const</span> <a class="code" href="classcommon_1_1_lane.html">Lane</a>&amp; lane,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="classcommon_1_1_vehicle.html">Vehicle</a>&amp; vehicle,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; t_pred,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; t_step,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                          <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E&lt;State&gt;</a>* pred_states) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    pred_states-&gt;clear();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> num_step = std::round(t_pred / t_step);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="structcommon_1_1_state.html">State</a> <a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a> = vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>().<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a> <a class="code" href="onlane__ai__agent_8cc.html#ad1924ffa86ec0a936f47d7f827097cfb">sim_param</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="onlane__ai__agent_8cc.html#ad1924ffa86ec0a936f47d7f827097cfb">sim_param</a>.<a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">idm_param</a>.<a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html#addda93172e43006f36f76c48f434bbc6">kDesiredVelocity</a> = <a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    pred_states-&gt;push_back(vehicle.<a class="code" href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">state</a>());  <span class="comment">// insert the first state</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a> v_in = vehicle;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a> stf = <a class="code" href="classcommon_1_1_state_transformer.html">common::StateTransformer</a>(lane);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_step; ++i) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">if</span> (lane.<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10">planning::OnLaneForwardSimulation::PropagateOnce</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                stf, v_in, <a class="code" href="classcommon_1_1_vehicle.html">common::Vehicle</a>(), t_step, <a class="code" href="onlane__ai__agent_8cc.html#ad1924ffa86ec0a936f47d7f827097cfb">sim_param</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                &amp;<a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10">planning::OnLaneForwardSimulation::PropagateOnce</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>, v_in, t_step,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a>(),</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                &amp;<a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      pred_states-&gt;push_back(<a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      v_in.<a class="code" href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e">set_state</a>(<a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif  // _CORE_MOTION_PREDICTOR_INC_ONLANE_FORWARD_SIMULATION_PREDICTOR_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_on_lane_fs_predictor_html_a7b9735dd33b9e5bdd737b0db9a405269"><div class="ttname"><a href="classplanning_1_1_on_lane_fs_predictor.html#a7b9735dd33b9e5bdd737b0db9a405269">planning::OnLaneFsPredictor::~OnLaneFsPredictor</a></div><div class="ttdeci">~OnLaneFsPredictor()</div></div>
+<div class="ttc" id="aclassplanning_1_1_on_lane_fs_predictor_html"><div class="ttname"><a href="classplanning_1_1_on_lane_fs_predictor.html">planning::OnLaneFsPredictor</a></div><div class="ttdef"><b>Definition:</b> <a href="onlane__fs__predictor_8h_source.html#l00011">onlane_fs_predictor.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html_addda93172e43006f36f76c48f434bbc6"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html#addda93172e43006f36f76c48f434bbc6">common::IntelligentDriverModel::Param::kDesiredVelocity</a></div><div class="ttdeci">decimal_t kDesiredVelocity</div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00023">intelligent_driver_model.h:23</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="astructplanning_1_1_on_lane_forward_simulation_1_1_param_html_a9b7f5f76f0279143cbe8865315a74fb3"><div class="ttname"><a href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html#a9b7f5f76f0279143cbe8865315a74fb3">planning::OnLaneForwardSimulation::Param::idm_param</a></div><div class="ttdeci">simulator::IntelligentDriverModel::Param idm_param</div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00028">onlane_forward_simulation.h:28</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_ab477367137d1a6163a9b81a6af0055e9"><div class="ttname"><a href="classcommon_1_1_vehicle.html#ab477367137d1a6163a9b81a6af0055e9">common::Vehicle::state</a></div><div class="ttdeci">State state() const</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00090">semantics.h:90</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html_a6f7505e0e2dccbe6d41c28ab833c767e"><div class="ttname"><a href="classcommon_1_1_vehicle.html#a6f7505e0e2dccbe6d41c28ab833c767e">common::Vehicle::set_state</a></div><div class="ttdeci">void set_state(const State &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00099">semantics.h:99</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_state_transformer_html"><div class="ttname"><a href="classcommon_1_1_state_transformer.html">common::StateTransformer</a></div><div class="ttdef"><b>Definition:</b> <a href="state__transformer_8h_source.html#l00011">state_transformer.h:11</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a33bd78c60a9e0fe01a43d2dbc9bc3e48"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a></div><div class="ttdeci">common::State desired_state</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00031">onlane_ai_agent.cc:31</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a></div><div class="ttdeci">@ kWrongStatus</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a6b9210d48a0a541940af71827aad1b41"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a></div><div class="ttdeci">std::vector&lt; T, Eigen::aligned_allocator&lt; T &gt; &gt; vec_E</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00071">basics.h:71</a></div></div>
+<div class="ttc" id="alane_8h_html"><div class="ttname"><a href="lane_8h.html">lane.h</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_ad1924ffa86ec0a936f47d7f827097cfb"><div class="ttname"><a href="onlane__ai__agent_8cc.html#ad1924ffa86ec0a936f47d7f827097cfb">sim_param</a></div><div class="ttdeci">planning::OnLaneForwardSimulation::Param sim_param</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00037">onlane_ai_agent.cc:37</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_vehicle_html"><div class="ttname"><a href="classcommon_1_1_vehicle.html">common::Vehicle</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00079">semantics.h:79</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_on_lane_forward_simulation_html_a36b9b964af316a2eafc2cad2ef27dd10"><div class="ttname"><a href="classplanning_1_1_on_lane_forward_simulation.html#a36b9b964af316a2eafc2cad2ef27dd10">planning::OnLaneForwardSimulation::PropagateOnce</a></div><div class="ttdeci">static ErrorType PropagateOnce(const common::StateTransformer &amp;stf, const common::Vehicle &amp;ego_vehicle, const Vehicle &amp;leading_vehicle, const decimal_t &amp;dt, const Param &amp;param, State *desired_state)</div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00318">onlane_forward_simulation.h:318</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_ac8dd5e82e8c24ec5d4b0275c5e045a87"><div class="ttname"><a href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">common::Lane::IsValid</a></div><div class="ttdeci">bool IsValid() const</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00017">lane.h:17</a></div></div>
+<div class="ttc" id="aonlane__forward__simulation_8h_html"><div class="ttname"><a href="onlane__forward__simulation_8h.html">onlane_forward_simulation.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_on_lane_fs_predictor_html_a488ae8ce5bce3f7e5649b333c9ce0b4c"><div class="ttname"><a href="classplanning_1_1_on_lane_fs_predictor.html#a488ae8ce5bce3f7e5649b333c9ce0b4c">planning::OnLaneFsPredictor::GetPredictedTrajectory</a></div><div class="ttdeci">static ErrorType GetPredictedTrajectory(const Lane &amp;lane, const Vehicle &amp;vehicle, const decimal_t &amp;t_pred, const decimal_t &amp;t_step, vec_E&lt; State &gt; *pred_states)</div><div class="ttdef"><b>Definition:</b> <a href="onlane__fs__predictor_8h_source.html#l00021">onlane_fs_predictor.h:21</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_on_lane_fs_predictor_html_aed7e4209f0b3f96510164158b309ca2d"><div class="ttname"><a href="classplanning_1_1_on_lane_fs_predictor.html#aed7e4209f0b3f96510164158b309ca2d">planning::OnLaneFsPredictor::OnLaneFsPredictor</a></div><div class="ttdeci">OnLaneFsPredictor()</div><div class="ttdef"><b>Definition:</b> <a href="onlane__fs__predictor_8h_source.html#l00018">onlane_fs_predictor.h:18</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="astructcommon_1_1_vehicle_control_signal_html"><div class="ttname"><a href="structcommon_1_1_vehicle_control_signal.html">common::VehicleControlSignal</a></div><div class="ttdoc">Vehicle control signal, 2 modes embedded</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00285">semantics.h:285</a></div></div>
+<div class="ttc" id="astructplanning_1_1_on_lane_forward_simulation_1_1_param_html"><div class="ttname"><a href="structplanning_1_1_on_lane_forward_simulation_1_1_param.html">planning::OnLaneForwardSimulation::Param</a></div><div class="ttdef"><b>Definition:</b> <a href="onlane__forward__simulation_8h_source.html#l00027">onlane_forward_simulation.h:27</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a19b9154545b6d241b9611f734e4ed978"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a></div><div class="ttdeci">double desired_vel</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00033">onlane_ai_agent.cc:33</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

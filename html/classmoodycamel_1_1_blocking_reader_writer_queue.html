@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: moodycamel::BlockingReaderWriterQueue&lt; T, MAX_BLOCK_SIZE &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacemoodycamel.html">moodycamel</a></li><li class="navelem"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmoodycamel_1_1_blocking_reader_writer_queue-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">moodycamel::BlockingReaderWriterQueue&lt; T, MAX_BLOCK_SIZE &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5c97f63e9a01b186adb56bd0e2f42024"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a5c97f63e9a01b186adb56bd0e2f42024">BlockingReaderWriterQueue</a> (size_t maxSize=15) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a5c97f63e9a01b186adb56bd0e2f42024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9ac85749331b2d56bbeb3a49fdd739"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a9d9ac85749331b2d56bbeb3a49fdd739">BlockingReaderWriterQueue</a> (<a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a> &amp;&amp;other) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a9d9ac85749331b2d56bbeb3a49fdd739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7191e30ca327b008e150a9931ed16268"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a7191e30ca327b008e150a9931ed16268">operator=</a> (<a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a> &amp;&amp;other) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a7191e30ca327b008e150a9931ed16268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0c99f0f1f292b5e7c3a55c65c114a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#afb0c99f0f1f292b5e7c3a55c65c114a5">try_enqueue</a> (T const &amp;element) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:afb0c99f0f1f292b5e7c3a55c65c114a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fd9a057646a1354a4ad3362a837058"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a05fd9a057646a1354a4ad3362a837058">try_enqueue</a> (T &amp;&amp;element) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a05fd9a057646a1354a4ad3362a837058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382d8340e6e766d1d0d7573128e45cb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a382d8340e6e766d1d0d7573128e45cb3">enqueue</a> (T const &amp;element) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a382d8340e6e766d1d0d7573128e45cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7703623946b8c089f4ec5776557053cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a7703623946b8c089f4ec5776557053cf">enqueue</a> (T &amp;&amp;element) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a7703623946b8c089f4ec5776557053cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa22215269fbe7a8e4dd205775c1eff2c"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:aa22215269fbe7a8e4dd205775c1eff2c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#aa22215269fbe7a8e4dd205775c1eff2c">try_dequeue</a> (U &amp;<a class="el" href="runge__kutta__error__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a>) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:aa22215269fbe7a8e4dd205775c1eff2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933ea93957ef45f4a9f175a60f340914"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a933ea93957ef45f4a9f175a60f340914"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a933ea93957ef45f4a9f175a60f340914">wait_dequeue</a> (U &amp;<a class="el" href="runge__kutta__error__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a>) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a933ea93957ef45f4a9f175a60f340914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a3ebbed3fdb475d69f83db66ec670a"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a38a3ebbed3fdb475d69f83db66ec670a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a38a3ebbed3fdb475d69f83db66ec670a">wait_dequeue_timed</a> (U &amp;<a class="el" href="runge__kutta__error__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a>, std::int64_t timeout_usecs) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a38a3ebbed3fdb475d69f83db66ec670a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9344c795f11b6c67b7d78567085b9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#ac9344c795f11b6c67b7d78567085b9b1">peek</a> () <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:ac9344c795f11b6c67b7d78567085b9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd779b546f5bf9356488abcadd7f699"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#a9bd779b546f5bf9356488abcadd7f699">pop</a> () <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a9bd779b546f5bf9356488abcadd7f699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb0c491dbf0a48400367954b980d585"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html#afdb0c491dbf0a48400367954b980d585">size_approx</a> () const <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:afdb0c491dbf0a48400367954b980d585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;typename T, size_t MAX_BLOCK_SIZE = 512&gt;<br />
+class moodycamel::BlockingReaderWriterQueue&lt; T, MAX_BLOCK_SIZE &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00724">724</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5c97f63e9a01b186adb56bd0e2f42024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c97f63e9a01b186adb56bd0e2f42024">&#9670;&nbsp;</a></span>BlockingReaderWriterQueue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::<a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxSize</em> = <code>15</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00730">730</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9d9ac85749331b2d56bbeb3a49fdd739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9ac85749331b2d56bbeb3a49fdd739">&#9670;&nbsp;</a></span>BlockingReaderWriterQueue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::<a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00734">734</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7703623946b8c089f4ec5776557053cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7703623946b8c089f4ec5776557053cf">&#9670;&nbsp;</a></span>enqueue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00786">786</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a7703623946b8c089f4ec5776557053cf_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a7703623946b8c089f4ec5776557053cf_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a7703623946b8c089f4ec5776557053cf_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a7703623946b8c089f4ec5776557053cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a916e4d19af1692aa8cb5e3cab06974a1" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a382d8340e6e766d1d0d7573128e45cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382d8340e6e766d1d0d7573128e45cb3">&#9670;&nbsp;</a></span>enqueue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00774">774</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a382d8340e6e766d1d0d7573128e45cb3_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a382d8340e6e766d1d0d7573128e45cb3_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a382d8340e6e766d1d0d7573128e45cb3_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a382d8340e6e766d1d0d7573128e45cb3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a916e4d19af1692aa8cb5e3cab06974a1" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7191e30ca327b008e150a9931ed16268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7191e30ca327b008e150a9931ed16268">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a>&amp; <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00738">738</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac9344c795f11b6c67b7d78567085b9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9344c795f11b6c67b7d78567085b9b1">&#9670;&nbsp;</a></span>peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> T* <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::peek </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00865">865</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_ac9344c795f11b6c67b7d78567085b9b1_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_ac9344c795f11b6c67b7d78567085b9b1_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_ac9344c795f11b6c67b7d78567085b9b1_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_ac9344c795f11b6c67b7d78567085b9b1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a949ddae79a4ab4df2cbbc6f0338db049" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9bd779b546f5bf9356488abcadd7f699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd779b546f5bf9356488abcadd7f699">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::pop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00873">873</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a9bd779b546f5bf9356488abcadd7f699_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a9bd779b546f5bf9356488abcadd7f699_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a9bd779b546f5bf9356488abcadd7f699_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a9bd779b546f5bf9356488abcadd7f699_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#ab0705da9d31dcc086b747f40456ec451" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afdb0c491dbf0a48400367954b980d585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb0c491dbf0a48400367954b980d585">&#9670;&nbsp;</a></span>size_approx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> size_t <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::size_approx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00886">886</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa22215269fbe7a8e4dd205775c1eff2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22215269fbe7a8e4dd205775c1eff2c">&#9670;&nbsp;</a></span>try_dequeue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::try_dequeue </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00800">800</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_aa22215269fbe7a8e4dd205775c1eff2c_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_aa22215269fbe7a8e4dd205775c1eff2c_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_aa22215269fbe7a8e4dd205775c1eff2c_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_aa22215269fbe7a8e4dd205775c1eff2c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a77969aaf96e16d7df26ab47e45b4ea4b" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05fd9a057646a1354a4ad3362a837058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fd9a057646a1354a4ad3362a837058">&#9670;&nbsp;</a></span>try_enqueue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::try_enqueue </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00761">761</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a05fd9a057646a1354a4ad3362a837058_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a05fd9a057646a1354a4ad3362a837058_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a05fd9a057646a1354a4ad3362a837058_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a05fd9a057646a1354a4ad3362a837058_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#aeb3308da51543c0e1409b5886134fd47" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb0c99f0f1f292b5e7c3a55c65c114a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0c99f0f1f292b5e7c3a55c65c114a5">&#9670;&nbsp;</a></span>try_enqueue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::try_enqueue </td>
+          <td>(</td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00749">749</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_afb0c99f0f1f292b5e7c3a55c65c114a5_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_afb0c99f0f1f292b5e7c3a55c65c114a5_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_afb0c99f0f1f292b5e7c3a55c65c114a5_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_afb0c99f0f1f292b5e7c3a55c65c114a5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#aeb3308da51543c0e1409b5886134fd47" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a933ea93957ef45f4a9f175a60f340914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a933ea93957ef45f4a9f175a60f340914">&#9670;&nbsp;</a></span>wait_dequeue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::wait_dequeue </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00815">815</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a933ea93957ef45f4a9f175a60f340914_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a933ea93957ef45f4a9f175a60f340914_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a933ea93957ef45f4a9f175a60f340914_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a933ea93957ef45f4a9f175a60f340914_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a77969aaf96e16d7df26ab47e45b4ea4b" title=" " alt="" coords="271,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a38a3ebbed3fdb475d69f83db66ec670a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a3ebbed3fdb475d69f83db66ec670a">&#9670;&nbsp;</a></span>wait_dequeue_timed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t MAX_BLOCK_SIZE = 512&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classmoodycamel_1_1_blocking_reader_writer_queue.html">moodycamel::BlockingReaderWriterQueue</a>&lt; T, MAX_BLOCK_SIZE &gt;::wait_dequeue_timed </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::int64_t&#160;</td>
+          <td class="paramname"><em>timeout_usecs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a> 第 <a class="el" href="readerwriterqueue_8h_source.html#l00832">832</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmoodycamel_1_1_blocking_reader_writer_queue_a38a3ebbed3fdb475d69f83db66ec670a_cgraph.png" border="0" usemap="#classmoodycamel_1_1_blocking_reader_writer_queue_a38a3ebbed3fdb475d69f83db66ec670a_cgraph" alt=""/></div>
+<map name="classmoodycamel_1_1_blocking_reader_writer_queue_a38a3ebbed3fdb475d69f83db66ec670a_cgraph" id="classmoodycamel_1_1_blocking_reader_writer_queue_a38a3ebbed3fdb475d69f83db66ec670a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,253,47"/>
+<area shape="rect" href="classmoodycamel_1_1_reader_writer_queue.html#a77969aaf96e16d7df26ab47e45b4ea4b" title=" " alt="" coords="301,5,503,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/moodycamel/<a class="el" href="readerwriterqueue_8h_source.html">readerwriterqueue.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

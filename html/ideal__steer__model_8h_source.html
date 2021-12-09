@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/inc/vehicle_model/ideal_steer_model.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_59e02de5e9ae4c2a4b1de997eb2a14b2.html">inc</a></li><li class="navelem"><a class="el" href="dir_130ee179c2e1c25f0ce8c4812733a0d6.html">vehicle_model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ideal_steer_model.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ideal__steer__model_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _VEHICLE_MODEL_INC_VEHIDLE_MODEL_IDEAL_STEER_MODEL_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _VEHICLE_MODEL_INC_VEHIDLE_MODEL_IDEAL_STEER_MODEL_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesimulator.html">simulator</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classsimulator_1_1_ideal_steer_model.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsimulator_1_1_ideal_steer_model.html">IdealSteerModel</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classsimulator_1_1_ideal_steer_model.html#a66fc47f46076d9bbcb4d826db1a5d2a4">   15</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structcommon_1_1_state.html">State</a> = <a class="code" href="structcommon_1_1_state.html">common::State</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structsimulator_1_1_ideal_steer_model_1_1_control.html">   16</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html">Control</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a92c72e6d37330ce1317a44434ac79f67">   17</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a92c72e6d37330ce1317a44434ac79f67">steer</a>{0.0};     <span class="comment">// steer</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a4877034b9c07634e88e6227b9ce97108">   18</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a4877034b9c07634e88e6227b9ce97108">velocity</a>{0.0};  <span class="comment">// body velocity</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a404f3f6d9e016d962eb8aeb77353e032">   19</a></span>&#160;    <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a404f3f6d9e016d962eb8aeb77353e032">Control</a>() {}</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#ac8673a5f0ea52173d27903075ba54e7b">   20</a></span>&#160;    <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#ac8673a5f0ea52173d27903075ba54e7b">Control</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> s, <span class="keyword">const</span> <span class="keywordtype">double</span> v) : <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a92c72e6d37330ce1317a44434ac79f67">steer</a>(s), <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a4877034b9c07634e88e6227b9ce97108">velocity</a>(v) {}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classsimulator_1_1_ideal_steer_model.html#a153cfb535b3279a559786a0d67b1b7be">IdealSteerModel</a>(<span class="keywordtype">double</span> wheelbase_len, <span class="keywordtype">double</span> max_lon_acc, <span class="keywordtype">double</span> max_lon_dec,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                  <span class="keywordtype">double</span> max_lon_acc_jerk, <span class="keywordtype">double</span> max_lon_dec_jerk,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                  <span class="keywordtype">double</span> max_lat_acc, <span class="keywordtype">double</span> max_lat_jerk,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                  <span class="keywordtype">double</span> max_steering_angle, <span class="keywordtype">double</span> max_steer_rate,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                  <span class="keywordtype">double</span> max_curvature);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classsimulator_1_1_ideal_steer_model.html#a1f31744ea20ae72777ab25fbcff4013e">~IdealSteerModel</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#a66fc47f46076d9bbcb4d826db1a5d2a4">State</a> &amp;<a class="code" href="classsimulator_1_1_ideal_steer_model.html#ae94fb7786d921392c810096c7dbe2fee">state</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#a99ae44a5184f315fd3c3eab799947270">set_state</a>(<span class="keyword">const</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#a66fc47f46076d9bbcb4d826db1a5d2a4">State</a> &amp;<a class="code" href="classsimulator_1_1_ideal_steer_model.html#ae94fb7786d921392c810096c7dbe2fee">state</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#af425ba1fa786d6a09eabd302b0a158ac">set_control</a>(<span class="keyword">const</span> Control &amp;<a class="code" href="namespacecontrol.html">control</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#adcc7ace885d329261d3dcc5e52e3dfa7">Step</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#aad258fb2631d8b1ff11539b36091812e">TruncateControl</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; dt);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// For internal use, but needs to be public for odeint</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">   42</a></span>&#160;  <span class="keyword">typedef</span> boost::array&lt;double, 5&gt; <a class="code" href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">InternalState</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#ad4baeca39597e54665115e7299428053">operator()</a>(<span class="keyword">const</span> <a class="code" href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">InternalState</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <a class="code" href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">InternalState</a> &amp;dxdt,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">double</span> <span class="comment">/* t */</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> UpdateInternalState(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="structcommon_1_1_state.html">State</a> state_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="structsimulator_1_1_ideal_steer_model_1_1_control.html">Control</a> control_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> desired_steer_rate_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> desired_lon_acc_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> desired_lat_acc_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">InternalState</a> internal_state_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">double</span> wheelbase_len_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">double</span> max_lon_acc_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">double</span> max_lon_dec_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">double</span> max_lon_acc_jerk_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> max_lon_dec_jerk_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">double</span> max_lat_acc_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">double</span> max_lat_jerk_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> max_steering_angle_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">double</span> max_steer_rate_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">double</span> max_curvature_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}  <span class="comment">// namespace simulator</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructsimulator_1_1_ideal_steer_model_1_1_control_html_a404f3f6d9e016d962eb8aeb77353e032"><div class="ttname"><a href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a404f3f6d9e016d962eb8aeb77353e032">simulator::IdealSteerModel::Control::Control</a></div><div class="ttdeci">Control()</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00019">ideal_steer_model.h:19</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_ideal_steer_model_1_1_control_html"><div class="ttname"><a href="structsimulator_1_1_ideal_steer_model_1_1_control.html">simulator::IdealSteerModel::Control</a></div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00016">ideal_steer_model.h:16</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_ideal_steer_model_1_1_control_html_a4877034b9c07634e88e6227b9ce97108"><div class="ttname"><a href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a4877034b9c07634e88e6227b9ce97108">simulator::IdealSteerModel::Control::velocity</a></div><div class="ttdeci">double velocity</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00018">ideal_steer_model.h:18</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_a1f31744ea20ae72777ab25fbcff4013e"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#a1f31744ea20ae72777ab25fbcff4013e">simulator::IdealSteerModel::~IdealSteerModel</a></div><div class="ttdeci">~IdealSteerModel()</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00038">ideal_steer_model.cc:38</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_ideal_steer_model_1_1_control_html_a92c72e6d37330ce1317a44434ac79f67"><div class="ttname"><a href="structsimulator_1_1_ideal_steer_model_1_1_control.html#a92c72e6d37330ce1317a44434ac79f67">simulator::IdealSteerModel::Control::steer</a></div><div class="ttdeci">double steer</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00017">ideal_steer_model.h:17</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_af425ba1fa786d6a09eabd302b0a158ac"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#af425ba1fa786d6a09eabd302b0a158ac">simulator::IdealSteerModel::set_control</a></div><div class="ttdeci">void set_control(const Control &amp;control)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00106">ideal_steer_model.cc:106</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_ad4baeca39597e54665115e7299428053"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#ad4baeca39597e54665115e7299428053">simulator::IdealSteerModel::operator()</a></div><div class="ttdeci">void operator()(const InternalState &amp;x, InternalState &amp;dxdt, const double)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00090">ideal_steer_model.cc:90</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_a66fc47f46076d9bbcb4d826db1a5d2a4"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#a66fc47f46076d9bbcb4d826db1a5d2a4">simulator::IdealSteerModel::State</a></div><div class="ttdeci">common::State State</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00015">ideal_steer_model.h:15</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_a99ae44a5184f315fd3c3eab799947270"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#a99ae44a5184f315fd3c3eab799947270">simulator::IdealSteerModel::set_state</a></div><div class="ttdeci">void set_state(const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00114">ideal_steer_model.cc:114</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_ae94fb7786d921392c810096c7dbe2fee"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#ae94fb7786d921392c810096c7dbe2fee">simulator::IdealSteerModel::state</a></div><div class="ttdeci">const State &amp; state(void) const</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00110">ideal_steer_model.cc:110</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_a153cfb535b3279a559786a0d67b1b7be"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#a153cfb535b3279a559786a0d67b1b7be">simulator::IdealSteerModel::IdealSteerModel</a></div><div class="ttdeci">IdealSteerModel(double wheelbase_len, double max_lon_acc, double max_lon_dec, double max_lon_acc_jerk, double max_lon_dec_jerk, double max_lat_acc, double max_lat_jerk, double max_steering_angle, double max_steer_rate, double max_curvature)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00011">ideal_steer_model.cc:11</a></div></div>
+<div class="ttc" id="anamespacesimulator_html"><div class="ttname"><a href="namespacesimulator.html">simulator</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00014">ctx_idm_model.h:14</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_adcc7ace885d329261d3dcc5e52e3dfa7"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#adcc7ace885d329261d3dcc5e52e3dfa7">simulator::IdealSteerModel::Step</a></div><div class="ttdeci">void Step(double dt)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00069">ideal_steer_model.cc:69</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_ideal_steer_model_1_1_control_html_ac8673a5f0ea52173d27903075ba54e7b"><div class="ttname"><a href="structsimulator_1_1_ideal_steer_model_1_1_control.html#ac8673a5f0ea52173d27903075ba54e7b">simulator::IdealSteerModel::Control::Control</a></div><div class="ttdeci">Control(const double s, const double v)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00020">ideal_steer_model.h:20</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html">simulator::IdealSteerModel</a></div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00013">ideal_steer_model.h:13</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_aad258fb2631d8b1ff11539b36091812e"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#aad258fb2631d8b1ff11539b36091812e">simulator::IdealSteerModel::TruncateControl</a></div><div class="ttdeci">void TruncateControl(const decimal_t &amp;dt)</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8cc_source.html#l00040">ideal_steer_model.cc:40</a></div></div>
+<div class="ttc" id="anamespacecontrol_html"><div class="ttname"><a href="namespacecontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__velocity__controller_8h_source.html#l00007">ctx_idm_velocity_controller.h:7</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_ideal_steer_model_html_ac882ed574065ea0320c39659e30356a7"><div class="ttname"><a href="classsimulator_1_1_ideal_steer_model.html#ac882ed574065ea0320c39659e30356a7">simulator::IdealSteerModel::InternalState</a></div><div class="ttdeci">boost::array&lt; double, 5 &gt; InternalState</div><div class="ttdef"><b>Definition:</b> <a href="ideal__steer__model_8h_source.html#l00042">ideal_steer_model.h:42</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

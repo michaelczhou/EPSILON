@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/fusion_explicit_error_rk.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">fusion_explicit_error_rk.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="fusion__explicit__error__rk_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * fusion_explicit_error_rk.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef FUSION_EXPLICIT_ERROR_RK_HPP_</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define FUSION_EXPLICIT_ERROR_RK_HPP_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fusion__explicit__rk__new_8hpp.html">fusion_explicit_rk_new.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="libs_2numeric_2odeint_2performance_2fusion__algebra_8hpp.html">fusion_algebra.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>mpl = boost::mpl;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>fusion = boost::fusion;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> StateType , <span class="keywordtype">size_t</span> stage_count &gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classexplicit__error__rk.html">explicit_error_rk</a> : <span class="keyword">public</span> <a class="code" href="classexplicit__rk.html">explicit_rk</a>&lt; StateType , stage_count &gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a42d21dc96f488dee73691ff851a292c6">   30</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classexplicit__rk.html">explicit_rk&lt; StateType , stage_count &gt;</a> <a class="code" href="classexplicit__error__rk.html#a42d21dc96f488dee73691ff851a292c6">base</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a096a48909d75bd24c9e608d87fc7fd66">   32</a></span>&#160;    <span class="keyword">typedef</span> StateType <a class="code" href="classexplicit__error__rk.html#a096a48909d75bd24c9e608d87fc7fd66">state_type</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a7148f182e3520dabb96f3f7b55fb98f1">   34</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">base::stage_indices</a> <a class="code" href="classexplicit__error__rk.html#a7148f182e3520dabb96f3f7b55fb98f1">stage_indices</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a0effdaa37900403a7c07b8e4697d1466">   36</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">base::coef_a_type</a> <a class="code" href="classexplicit__error__rk.html#a0effdaa37900403a7c07b8e4697d1466">coef_a_type</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#acac73896d0cc8e81d9ee2f3ba3b2b845">   38</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">base::coef_b_type</a> <a class="code" href="classexplicit__error__rk.html#acac73896d0cc8e81d9ee2f3ba3b2b845">coef_b_type</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a464a1b140f15bb914729159ff77a782d">   39</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">base::coef_c_type</a> <a class="code" href="classexplicit__error__rk.html#a464a1b140f15bb914729159ff77a782d">coef_c_type</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a2abf227d7c57fe07d88be9ee2f9ae577">   43</a></span>&#160;    <a class="code" href="classexplicit__error__rk.html#a2abf227d7c57fe07d88be9ee2f9ae577">explicit_error_rk</a>( <span class="keyword">const</span> <a class="code" href="classexplicit__error__rk.html#a0effdaa37900403a7c07b8e4697d1466">coef_a_type</a> &amp;<a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> ,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classexplicit__error__rk.html#acac73896d0cc8e81d9ee2f3ba3b2b845">coef_b_type</a> &amp;<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> ,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classexplicit__error__rk.html#acac73896d0cc8e81d9ee2f3ba3b2b845">coef_b_type</a> &amp;<a class="code" href="generic__error__stepper_8cpp.html#ac93478ebfa609a491612b5659c968e42">b2</a> ,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classexplicit__error__rk.html#a464a1b140f15bb914729159ff77a782d">coef_c_type</a> &amp;<a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : <a class="code" href="classexplicit__rk.html">base</a>( <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> , <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> ) , m_b2( <a class="code" href="generic__error__stepper_8cpp.html#ac93478ebfa609a491612b5659c968e42">b2</a> )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    { }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System &gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classexplicit__error__rk.html#a292bbaa41c38106c627cad07f9256ebf">   51</a></span>&#160;    <span class="keywordtype">void</span> <span class="keyword">inline</span> <a class="code" href="classexplicit__error__rk.html#a292bbaa41c38106c627cad07f9256ebf">do_step</a>( System system , <a class="code" href="classexplicit__error__rk.html#a096a48909d75bd24c9e608d87fc7fd66">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> <span class="keywordtype">double</span> t , <span class="keyword">const</span> <span class="keywordtype">double</span> dt , <a class="code" href="classexplicit__error__rk.html#a096a48909d75bd24c9e608d87fc7fd66">state_type</a> &amp;x_err )</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        base::do_step( system , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// compute error estimate</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="structfusion__algebra.html#ade73bd10a7af3af29d2dc6bcba68502d">fusion_algebra&lt; stage_count &gt;::foreach</a>( x_err , m_b2 , base::m_F , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> coef_b_type m_b2;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUSION_EXPLICIT_ERROR_RK_HPP_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassexplicit__error__rk_html_a7148f182e3520dabb96f3f7b55fb98f1"><div class="ttname"><a href="classexplicit__error__rk.html#a7148f182e3520dabb96f3f7b55fb98f1">explicit_error_rk::stage_indices</a></div><div class="ttdeci">base::stage_indices stage_indices</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00034">fusion_explicit_error_rk.hpp:34</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a42d21dc96f488dee73691ff851a292c6"><div class="ttname"><a href="classexplicit__error__rk.html#a42d21dc96f488dee73691ff851a292c6">explicit_error_rk::base</a></div><div class="ttdeci">explicit_rk&lt; StateType, stage_count &gt; base</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00030">fusion_explicit_error_rk.hpp:30</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_ac93478ebfa609a491612b5659c968e42"><div class="ttname"><a href="generic__error__stepper_8cpp.html#ac93478ebfa609a491612b5659c968e42">b2</a></div><div class="ttdeci">const error_rk_generic_type::coef_b_type b2</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00061">generic_error_stepper.cpp:61</a></div></div>
+<div class="ttc" id="aclassexplicit__rk_html_a8aa9a36746b50a2ad36d9cfc697ed070"><div class="ttname"><a href="classexplicit__rk.html#a8aa9a36746b50a2ad36d9cfc697ed070">explicit_rk::coef_a_type</a></div><div class="ttdeci">fusion::result_of::as_vector&lt; typename mpl::copy&lt; stage_indices, mpl::inserter&lt; mpl::vector0&lt; &gt;, mpl::push_back&lt; mpl::_1, array_wrapper&lt; double, mpl::_2 &gt; &gt; &gt; &gt;::type &gt;::type coef_a_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00093">fusion_explicit_rk_new.hpp:93</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a2abf227d7c57fe07d88be9ee2f9ae577"><div class="ttname"><a href="classexplicit__error__rk.html#a2abf227d7c57fe07d88be9ee2f9ae577">explicit_error_rk::explicit_error_rk</a></div><div class="ttdeci">explicit_error_rk(const coef_a_type &amp;a, const coef_b_type &amp;b, const coef_b_type &amp;b2, const coef_c_type &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00043">fusion_explicit_error_rk.hpp:43</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a0effdaa37900403a7c07b8e4697d1466"><div class="ttname"><a href="classexplicit__error__rk.html#a0effdaa37900403a7c07b8e4697d1466">explicit_error_rk::coef_a_type</a></div><div class="ttdeci">base::coef_a_type coef_a_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00036">fusion_explicit_error_rk.hpp:36</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a292bbaa41c38106c627cad07f9256ebf"><div class="ttname"><a href="classexplicit__error__rk.html#a292bbaa41c38106c627cad07f9256ebf">explicit_error_rk::do_step</a></div><div class="ttdeci">void do_step(System system, state_type &amp;x, const double t, const double dt, state_type &amp;x_err)</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00051">fusion_explicit_error_rk.hpp:51</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html"><div class="ttname"><a href="classexplicit__error__rk.html">explicit_error_rk</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00025">fusion_explicit_error_rk.hpp:25</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a464a1b140f15bb914729159ff77a782d"><div class="ttname"><a href="classexplicit__error__rk.html#a464a1b140f15bb914729159ff77a782d">explicit_error_rk::coef_c_type</a></div><div class="ttdeci">base::coef_c_type coef_c_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00039">fusion_explicit_error_rk.hpp:39</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_acac73896d0cc8e81d9ee2f3ba3b2b845"><div class="ttname"><a href="classexplicit__error__rk.html#acac73896d0cc8e81d9ee2f3ba3b2b845">explicit_error_rk::coef_b_type</a></div><div class="ttdeci">base::coef_b_type coef_b_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00038">fusion_explicit_error_rk.hpp:38</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aclassexplicit__rk_html"><div class="ttname"><a href="classexplicit__rk.html">explicit_rk</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00073">fusion_explicit_rk_new.hpp:73</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="afusion__explicit__rk__new_8hpp_html"><div class="ttname"><a href="fusion__explicit__rk__new_8hpp.html">fusion_explicit_rk_new.hpp</a></div></div>
+<div class="ttc" id="alibs_2numeric_2odeint_2performance_2fusion__algebra_8hpp_html"><div class="ttname"><a href="libs_2numeric_2odeint_2performance_2fusion__algebra_8hpp.html">fusion_algebra.hpp</a></div></div>
+<div class="ttc" id="aclassexplicit__rk_html_a63f032394ed1af23ad76f77b059a8127"><div class="ttname"><a href="classexplicit__rk.html#a63f032394ed1af23ad76f77b059a8127">explicit_rk::coef_c_type</a></div><div class="ttdeci">boost::array&lt; double, stage_count &gt; coef_c_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00096">fusion_explicit_rk_new.hpp:96</a></div></div>
+<div class="ttc" id="aclassexplicit__error__rk_html_a096a48909d75bd24c9e608d87fc7fd66"><div class="ttname"><a href="classexplicit__error__rk.html#a096a48909d75bd24c9e608d87fc7fd66">explicit_error_rk::state_type</a></div><div class="ttdeci">StateType state_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__error__rk_8hpp_source.html#l00032">fusion_explicit_error_rk.hpp:32</a></div></div>
+<div class="ttc" id="aclassexplicit__rk_html_ad04117e75eed01d7b4d11184a11b23ee"><div class="ttname"><a href="classexplicit__rk.html#ad04117e75eed01d7b4d11184a11b23ee">explicit_rk::coef_b_type</a></div><div class="ttdeci">boost::array&lt; double, stage_count &gt; coef_b_type</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00095">fusion_explicit_rk_new.hpp:95</a></div></div>
+<div class="ttc" id="astructfusion__algebra_html_ade73bd10a7af3af29d2dc6bcba68502d"><div class="ttname"><a href="structfusion__algebra.html#ade73bd10a7af3af29d2dc6bcba68502d">fusion_algebra::foreach</a></div><div class="ttdeci">static void foreach(boost::array&lt; T, dim &gt; &amp;x_tmp, const boost::array&lt; T, dim &gt; &amp;x, const boost::array&lt; double, n &gt; &amp;a, const boost::array&lt; T, dim &gt; k_vector[n], const double dt)</div><div class="ttdef"><b>Definition:</b> <a href="libs_2numeric_2odeint_2performance_2fusion__algebra_8hpp_source.html#l00025">fusion_algebra.hpp:25</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<div class="ttc" id="aclassexplicit__rk_html_abfec233e00de1a96eab3ac66a08b2449"><div class="ttname"><a href="classexplicit__rk.html#abfec233e00de1a96eab3ac66a08b2449">explicit_rk::stage_indices</a></div><div class="ttdeci">mpl::range_c&lt; size_t, 1, stage_count &gt; stage_indices</div><div class="ttdef"><b>Definition:</b> <a href="fusion__explicit__rk__new_8hpp_source.html#l00080">fusion_explicit_rk_new.hpp:80</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

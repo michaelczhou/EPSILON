@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/performance.py 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">performance.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="performance_8py.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceperformance.html">    1</a></span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> os <span class="keyword">import</span> popen</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">from</span> os <span class="keyword">import</span> system</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> os.path <span class="keyword">import</span> isfile</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> numpy <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">#from pylab import *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">#toolset = &quot;gcc-4.5&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">#toolset = &quot;intel-11.1&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceperformance.html#ad3616877cca1b91177ff3d7a2417ae9a">   19</a></span>&#160;toolset = <span class="stringliteral">&quot;msvc&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">#toolset = &quot;msvc-10.0&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">#bin_path = &quot;bin/gcc-4.5/release/&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">#bin_path = &quot;bin/intel-linux-11.1/release/&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceperformance.html#aed3560358b47e79deda998a13034f23e">   24</a></span>&#160;bin_path = <span class="stringliteral">&quot;bin\\msvc-10.0\\release\\threading-multi\\&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceperformance.html#a94a6d5a1eb11c5875d00830cb968244d">   25</a></span>&#160;extension = <span class="stringliteral">&quot;.exe&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">#extension = &quot;&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceperformance.html#ac76562e2a2f3b21ce42f158fd8ba28c9">   28</a></span>&#160;bins = [ <span class="stringliteral">&quot;odeint_rk4_lorenz_array&quot;</span> , <span class="stringliteral">&quot;odeint_rk4_lorenz_range&quot;</span> , <span class="stringliteral">&quot;generic_odeint_rk4_lorenz&quot;</span> , <span class="stringliteral">&quot;nr_rk4_lorenz&quot;</span> ,  <span class="stringliteral">&quot;rt_generic_rk4_lorenz&quot;</span> , <span class="stringliteral">&quot;gsl_rk4_lorenz&quot;</span> ]</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceperformance.html#a2bbbaada75598a79d0e87c1fce9045c4">   30</a></span>&#160;results = []</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordflow">print</span> <span class="stringliteral">&quot;Performance tests for &quot;</span> , bin_path</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordflow">print</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordflow">for</span> bin <span class="keywordflow">in</span> bins:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">#system( &quot;bjam toolset=&quot; + toolset + &quot; -a &quot; + bin );</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> isfile( bin_path + bin + extension):</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">print</span> <span class="stringliteral">&quot;Running&quot;</span> , bin</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">   39</a></span>&#160;                res = popen( bin_path+bin+extension ).read()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">print</span> bin , res</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                results.append( res )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">print</span> <span class="stringliteral">&quot;no executable found:&quot;</span> , bin_path + bin + extension</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                results.append( 0 )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordflow">print</span> <span class="stringliteral">&quot;Results from&quot;</span> , bin_path</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordflow">print</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(bins)):</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">print</span> bins[i] , results[i]</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;res = array( results , dtype=<span class="stringliteral">&#39;float&#39;</span> )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;savetxt( bin_path + <span class="stringliteral">&quot;rk4_lorenz.dat&quot;</span> , res )</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;res = 100*res[0]/res</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespaceperformance.html#acb2f313874bdd139de31ec8afb1dbe8d">   57</a></span>&#160;bar_width = 0.6</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">figure(1)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral">title(&quot;Runge-Kutta 4 with &quot; + toolset , fontsize=20)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">bar( arange(6) , res , bar_width , color=&#39;blue&#39; , linewidth=4 , edgecolor=&#39;blue&#39; , ecolor=&#39;red&#39;) #, elinewidth=2, ecolor=&#39;red&#39; )</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="stringliteral">xlim( -0.5 , 5.5+bar_width )</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="stringliteral">xticks( arange(6)+bar_width/2 , (&#39;array&#39; , &#39;range&#39; , &#39;generic&#39; , &#39;NR&#39; , &#39;rt gen&#39; , &#39;gsl&#39; ) )</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral">ylabel(&#39;Performance in %&#39; , fontsize=20)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="stringliteral">savefig( bin_path + &quot;rk4_lorenz.png&quot; )</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="stringliteral">show()</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

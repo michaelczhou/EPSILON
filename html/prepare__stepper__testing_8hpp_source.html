@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/prepare_stepper_testing.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">prepare_stepper_testing.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="prepare__stepper__testing_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/prepare_stepper_testing.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file defines some helper functions for the stepper tests.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef PREPARE_STEPPER_TESTING_HPP_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define PREPARE_STEPPER_TESTING_HPP_</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;boost/fusion/sequence.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="vector__space__algebra_8hpp.html">boost/numeric/odeint/algebra/vector_space_algebra.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="array__algebra_8hpp.html">boost/numeric/odeint/algebra/array_algebra.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector__space__1d_8hpp.html">vector_space_1d.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>mpl = boost::mpl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>fusion = boost::fusion;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* the state types that will be tested */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="prepare__stepper__testing_8hpp.html#a632cefad0e5ae6f30a12a0a8a6be3eca">   37</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt; double &gt; <a class="code" href="prepare__stepper__testing_8hpp.html#a632cefad0e5ae6f30a12a0a8a6be3eca">vector_type</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="prepare__stepper__testing_8hpp.html#a7990921dd24931bc292a9921914cbfa1">   38</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="structvector__space__1d.html">vector_space_1d&lt; double &gt;</a> <a class="code" href="prepare__stepper__testing_8hpp.html#a7990921dd24931bc292a9921914cbfa1">vector_space_type</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">   39</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , 1 &gt; <a class="code" href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">   41</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">mpl::vector&lt; vector_type , vector_space_type , array_type &gt;::type</a> <a class="code" href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* choose the right algebra */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structalgebra__dispatcher.html#a89983c4c4968943fb424f8d4faaf6b5e">   44</a></span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> State &gt; <span class="keyword">struct </span><a class="code" href="structalgebra__dispatcher.html">algebra_dispatcher</a> { <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="structalgebra__dispatcher.html#a89983c4c4968943fb424f8d4faaf6b5e">type</a>; };</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structalgebra__dispatcher_3_01array__type_01_4.html#adcfc7377daded7cd486a90f26faa4fbd">   45</a></span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code" href="structalgebra__dispatcher.html">algebra_dispatcher</a>&lt; <a class="code" href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a> &gt; { <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">array_algebra</a> <a class="code" href="structalgebra__dispatcher_3_01array__type_01_4.html#adcfc7377daded7cd486a90f26faa4fbd">type</a>; };</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structalgebra__dispatcher_3_01vector__space__type_01_4.html#ab93a450df8e59b4361a8422cd82908ed">   46</a></span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code" href="structalgebra__dispatcher.html">algebra_dispatcher</a>&lt; <a class="code" href="structvector__space__1d.html">vector_space_type</a> &gt; { <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> <a class="code" href="structalgebra__dispatcher_3_01vector__space__type_01_4.html#ab93a450df8e59b4361a8422cd82908ed">type</a>; };</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structalgebra__dispatcher_3_01double_01_4.html#a976db92a886224730fc07e4d57ba16eb">   47</a></span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code" href="structalgebra__dispatcher.html">algebra_dispatcher</a>&lt; double &gt; { <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> <a class="code" href="structalgebra__dispatcher_3_01double_01_4.html#a976db92a886224730fc07e4d57ba16eb">type</a>; };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">typedef mpl::vector</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">&lt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    mpl::vector&lt; float , boost::array&lt; float , 1 &gt; , boost::array&lt; float , 1 &gt; , constant_system_standard , stepper_type &gt; ,</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    mpl::vector&lt; float , boost::array&lt; float , 1 &gt; , std::vector&lt; float &gt; , constant_system_standard , stepper_type &gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    &gt; types_and_systems_matrix;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">struct check_stepper</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    template&lt; class Vector &gt;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    void operator()( Vector )</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">        typedef typename mpl::at_c&lt; Vector , 0 &gt;::type value_type;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">        typedef typename mpl::at_c&lt; Vector , 1 &gt;::type deriv_type;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        typedef typename mpl::at_c&lt; Vector , 2 &gt;::type state_type;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        typedef typename mpl::at_c&lt; Vector , 3 &gt;::type system_type;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">};</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PREPARE_STEPPER_TESTING_HPP_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="avector__space__algebra_8hpp_html"><div class="ttname"><a href="vector__space__algebra_8hpp.html">vector_space_algebra.hpp</a></div></div>
+<div class="ttc" id="astructalgebra__dispatcher_3_01vector__space__type_01_4_html_ab93a450df8e59b4361a8422cd82908ed"><div class="ttname"><a href="structalgebra__dispatcher_3_01vector__space__type_01_4.html#ab93a450df8e59b4361a8422cd82908ed">algebra_dispatcher&lt; vector_space_type &gt;::type</a></div><div class="ttdeci">vector_space_algebra type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00046">prepare_stepper_testing.hpp:46</a></div></div>
+<div class="ttc" id="astructalgebra__dispatcher_html"><div class="ttname"><a href="structalgebra__dispatcher.html">algebra_dispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00044">prepare_stepper_testing.hpp:44</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_a7990921dd24931bc292a9921914cbfa1"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#a7990921dd24931bc292a9921914cbfa1">vector_space_type</a></div><div class="ttdeci">vector_space_1d&lt; double &gt; vector_space_type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00038">prepare_stepper_testing.hpp:38</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astructalgebra__dispatcher_3_01array__type_01_4_html_adcfc7377daded7cd486a90f26faa4fbd"><div class="ttname"><a href="structalgebra__dispatcher_3_01array__type_01_4.html#adcfc7377daded7cd486a90f26faa4fbd">algebra_dispatcher&lt; array_type &gt;::type</a></div><div class="ttdeci">array_algebra type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00045">prepare_stepper_testing.hpp:45</a></div></div>
+<div class="ttc" id="aarray__algebra_8hpp_html"><div class="ttname"><a href="array__algebra_8hpp.html">array_algebra.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1vector__space__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">boost::numeric::odeint::vector_space_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__space__algebra_8hpp_source.html#l00049">vector_space_algebra.hpp:49</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_a387a491511169449b42b665a034cf7e4"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#a387a491511169449b42b665a034cf7e4">container_types</a></div><div class="ttdeci">mpl::vector&lt; vector_type, vector_space_type, array_type &gt;::type container_types</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00041">prepare_stepper_testing.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1array__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">boost::numeric::odeint::array_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00027">array_algebra.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00033">range_algebra.hpp:33</a></div></div>
+<div class="ttc" id="astructvector__space__1d_html"><div class="ttname"><a href="structvector__space__1d.html">vector_space_1d</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__space__1d_8hpp_source.html#l00024">vector_space_1d.hpp:24</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="astructalgebra__dispatcher_html_a89983c4c4968943fb424f8d4faaf6b5e"><div class="ttname"><a href="structalgebra__dispatcher.html#a89983c4c4968943fb424f8d4faaf6b5e">algebra_dispatcher::type</a></div><div class="ttdeci">range_algebra type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00044">prepare_stepper_testing.hpp:44</a></div></div>
+<div class="ttc" id="avector__space__1d_8hpp_html"><div class="ttname"><a href="vector__space__1d_8hpp.html">vector_space_1d.hpp</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_aeaf6a3a5bd0e828c49f32f8556916e60"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#aeaf6a3a5bd0e828c49f32f8556916e60">array_type</a></div><div class="ttdeci">boost::array&lt; double, 1 &gt; array_type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00039">prepare_stepper_testing.hpp:39</a></div></div>
+<div class="ttc" id="aprepare__stepper__testing_8hpp_html_a632cefad0e5ae6f30a12a0a8a6be3eca"><div class="ttname"><a href="prepare__stepper__testing_8hpp.html#a632cefad0e5ae6f30a12a0a8a6be3eca">vector_type</a></div><div class="ttdeci">std::vector&lt; double &gt; vector_type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00037">prepare_stepper_testing.hpp:37</a></div></div>
+<div class="ttc" id="astructalgebra__dispatcher_3_01double_01_4_html_a976db92a886224730fc07e4d57ba16eb"><div class="ttname"><a href="structalgebra__dispatcher_3_01double_01_4.html#a976db92a886224730fc07e4d57ba16eb">algebra_dispatcher&lt; double &gt;::type</a></div><div class="ttdeci">vector_space_algebra type</div><div class="ttdef"><b>Definition:</b> <a href="prepare__stepper__testing_8hpp_source.html#l00047">prepare_stepper_testing.hpp:47</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

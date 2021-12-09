@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/moodycamel/atomicops.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_f13d2b1673304fd9c23091c3a0da5416.html">moodycamel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">atomicops.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;cerrno&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+atomicops.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="atomicops_8h__incl.png" border="0" usemap="#core_2common_2thirdparty_2moodycamel_2atomicops_8h" alt=""/></div>
+<map name="core_2common_2thirdparty_2moodycamel_2atomicops_8h" id="core_2common_2thirdparty_2moodycamel_2atomicops_8h">
+<area shape="rect" title=" " alt="" coords="239,5,433,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,75,121"/>
+<area shape="rect" title=" " alt="" coords="99,95,191,121"/>
+<area shape="rect" title=" " alt="" coords="215,95,278,121"/>
+<area shape="rect" title=" " alt="" coords="303,95,369,121"/>
+<area shape="rect" title=" " alt="" coords="393,95,452,121"/>
+<area shape="rect" title=" " alt="" coords="476,95,543,121"/>
+<area shape="rect" title=" " alt="" coords="567,95,627,121"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="atomicops_8h__dep__incl.png" border="0" usemap="#core_2common_2thirdparty_2moodycamel_2atomicops_8hdep" alt=""/></div>
+<map name="core_2common_2thirdparty_2moodycamel_2atomicops_8hdep" id="core_2common_2thirdparty_2moodycamel_2atomicops_8hdep">
+<area shape="rect" title=" " alt="" coords="688,5,883,47"/>
+<area shape="rect" href="behavior__server__ros_8h.html" title=" " alt="" coords="405,184,576,240"/>
+<area shape="rect" href="readerwriterqueue_8h.html" title=" " alt="" coords="582,95,829,136"/>
+<area shape="rect" href="eudm__server__ros_8h.html" title=" " alt="" coords="601,191,847,233"/>
+<area shape="rect" href="ssc__server__ros_8h.html" title="planner server" alt="" coords="871,191,1086,233"/>
+<area shape="rect" href="test__ssc__with__mpdm_8cc.html" title=" " alt="" coords="405,295,609,337"/>
+<area shape="rect" href="behavior__server__ros_8cc.html" title=" " alt="" coords="5,288,181,344"/>
+<area shape="rect" href="onlane__ai__agent_8cc.html" title=" " alt="" coords="206,295,381,337"/>
+<area shape="rect" href="test__ssc__with__eudm_8cc.html" title="test ssc planner with eudm behavior planner" alt="" coords="866,295,1065,337"/>
+<area shape="rect" href="eudm__server__ros_8cc.html" title=" " alt="" coords="633,288,841,344"/>
+<area shape="rect" href="ssc__server__ros_8cc.html" title=" " alt="" coords="1089,288,1265,344"/>
+</map>
+</div>
+</div>
+<p><a href="atomicops_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1weak__atomic.html">moodycamel::weak_atomic&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoodycamel_1_1spsc__sema_1_1_lightweight_semaphore.html">moodycamel::spsc_sema::LightweightSemaphore</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespacemoodycamel"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoodycamel.html">moodycamel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemoodycamel_1_1spsc__sema"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoodycamel_1_1spsc__sema.html">moodycamel::spsc_sema</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a00f9fbc55b384eb68ffd6dd74f92f0d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#a00f9fbc55b384eb68ffd6dd74f92f0d8">AE_ARCH_UNKNOWN</a></td></tr>
+<tr class="separator:a00f9fbc55b384eb68ffd6dd74f92f0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bad82b95eaedfff9d6a8d0deba1a076"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#a2bad82b95eaedfff9d6a8d0deba1a076">AE_UNUSED</a>(x)&#160;&#160;&#160;((void)x)</td></tr>
+<tr class="separator:a2bad82b95eaedfff9d6a8d0deba1a076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a039b7e87d99b4f0d0f65fad2980c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:ad8a039b7e87d99b4f0d0f65fad2980c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24f99758da6ec5dab70259e807a64f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a>&#160;&#160;&#160;inline</td></tr>
+<tr class="separator:ac24f99758da6ec5dab70259e807a64f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63e6ce30c0d2f9e38cf5f06602f6be3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#af63e6ce30c0d2f9e38cf5f06602f6be3">AE_ALIGN</a>(x)&#160;&#160;&#160;__attribute__((aligned(x)))</td></tr>
+<tr class="separator:af63e6ce30c0d2f9e38cf5f06602f6be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f281d51426c6f3db2bd8e981e63cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomicops_8h.html#a71f281d51426c6f3db2bd8e981e63cc0">AE_USE_STD_ATOMIC_FOR_WEAK_ATOMIC</a></td></tr>
+<tr class="separator:a71f281d51426c6f3db2bd8e981e63cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a63f736f3f420b59119dc7a883ae46ab4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4">moodycamel::memory_order</a> { <br />
+&#160;&#160;<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4abe717d02114c81e1c1ac90630f2d6c2e">moodycamel::memory_order_relaxed</a>, 
+<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4a9055bf7845dcb2a49462d5b927d00efd">moodycamel::memory_order_acquire</a>, 
+<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4aea1d8de8e7fe1ddedfaa152028c2c14f">moodycamel::memory_order_release</a>, 
+<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4a311904bec8be06ae1f3ede1d1149699e">moodycamel::memory_order_acq_rel</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4a5c944411244df89c625f11baeac23c98">moodycamel::memory_order_seq_cst</a>, 
+<a class="el" href="namespacemoodycamel.html#a63f736f3f420b59119dc7a883ae46ab4ae6ec223561035d97d356504029ac188c">moodycamel::memory_order_sync</a> = memory_order_seq_cst
+<br />
+ }</td></tr>
+<tr class="separator:a63f736f3f420b59119dc7a883ae46ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a555837a041dea3c552891ff81139b397"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoodycamel.html#a555837a041dea3c552891ff81139b397">moodycamel::compiler_fence</a> (memory_order order) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:a555837a041dea3c552891ff81139b397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa870de5edd62c5323b8ff5d411b41ecb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atomicops_8h.html#ac24f99758da6ec5dab70259e807a64f4">AE_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemoodycamel.html#aa870de5edd62c5323b8ff5d411b41ecb">moodycamel::fence</a> (memory_order order) <a class="el" href="atomicops_8h.html#ad8a039b7e87d99b4f0d0f65fad2980c4">AE_NO_TSAN</a></td></tr>
+<tr class="separator:aa870de5edd62c5323b8ff5d411b41ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="af63e6ce30c0d2f9e38cf5f06602f6be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af63e6ce30c0d2f9e38cf5f06602f6be3">&#9670;&nbsp;</a></span>AE_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_ALIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;__attribute__((aligned(x)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a00f9fbc55b384eb68ffd6dd74f92f0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f9fbc55b384eb68ffd6dd74f92f0d8">&#9670;&nbsp;</a></span>AE_ARCH_UNKNOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_ARCH_UNKNOWN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac24f99758da6ec5dab70259e807a64f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24f99758da6ec5dab70259e807a64f4">&#9670;&nbsp;</a></span>AE_FORCEINLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_FORCEINLINE&#160;&#160;&#160;inline</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad8a039b7e87d99b4f0d0f65fad2980c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a039b7e87d99b4f0d0f65fad2980c4">&#9670;&nbsp;</a></span>AE_NO_TSAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_NO_TSAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2bad82b95eaedfff9d6a8d0deba1a076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bad82b95eaedfff9d6a8d0deba1a076">&#9670;&nbsp;</a></span>AE_UNUSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_UNUSED</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((void)x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a71f281d51426c6f3db2bd8e981e63cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f281d51426c6f3db2bd8e981e63cc0">&#9670;&nbsp;</a></span>AE_USE_STD_ATOMIC_FOR_WEAK_ATOMIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AE_USE_STD_ATOMIC_FOR_WEAK_ATOMIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="atomicops_8h_source.html">atomicops.h</a> 第 <a class="el" href="atomicops_8h_source.html#l00224">224</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

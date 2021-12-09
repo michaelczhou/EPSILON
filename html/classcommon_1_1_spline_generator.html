@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: common::SplineGenerator&lt; N_DEG, N_DIM &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecommon.html">common</a></li><li class="navelem"><a class="el" href="classcommon_1_1_spline_generator.html">SplineGenerator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classcommon_1_1_spline_generator-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">common::SplineGenerator&lt; N_DEG, N_DIM &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="spline__generator_8h_source.html">spline_generator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a78e5d80933f071f31c82a2c4ed7e4c16"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcommon_1_1_spline.html">Spline</a>&lt; N_DEG, N_DIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a></td></tr>
+<tr class="separator:a78e5d80933f071f31c82a2c4ed7e4c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113a53196611d68ce249c93b16eb2272"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcommon_1_1_bezier_spline.html">BezierSpline</a>&lt; N_DEG, N_DIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a></td></tr>
+<tr class="separator:a113a53196611d68ce249c93b16eb2272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:abf42d9d26ecc35cde6287af5585d7ffe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#abf42d9d26ecc35cde6287af5585d7ffe">GetCubicSplineBySampleInterpolation</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;samples, const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;para, <a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *spline)</td></tr>
+<tr class="memdesc:abf42d9d26ecc35cde6287af5585d7ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return natural (cubic) spline fitting with respect to parameterization  <a href="classcommon_1_1_spline_generator.html#abf42d9d26ecc35cde6287af5585d7ffe">更多...</a><br /></td></tr>
+<tr class="separator:abf42d9d26ecc35cde6287af5585d7ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12236e534a3f183f980ccfdca9ea0ceb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb">GetQuinticSplineBySampleFitting</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;samples, const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;para, const Eigen::ArrayXf &amp;breaks, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> regulator, <a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *spline)</td></tr>
+<tr class="memdesc:a12236e534a3f183f980ccfdca9ea0ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return optimal spline fitting with continuity constraints  <a href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb">更多...</a><br /></td></tr>
+<tr class="separator:a12236e534a3f183f980ccfdca9ea0ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6711217ebaf8d5f294c5fd50db509c10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a6711217ebaf8d5f294c5fd50db509c10">GetWaypointsFromPositionSamples</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;samples, const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;para, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_waypoint.html">Waypoint</a>&lt; N_DIM &gt;&gt; *waypoints)</td></tr>
+<tr class="memdesc:a6711217ebaf8d5f294c5fd50db509c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return waypoints from position samples  <a href="classcommon_1_1_spline_generator.html#a6711217ebaf8d5f294c5fd50db509c10">更多...</a><br /></td></tr>
+<tr class="separator:a6711217ebaf8d5f294c5fd50db509c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae840c140e9fb40b198379c35c16bf21b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#ae840c140e9fb40b198379c35c16bf21b">GetSplineFromStateVec</a> (const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;para, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_state.html">State</a> &gt; &amp;state_vec, <a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *spline)</td></tr>
+<tr class="memdesc:ae840c140e9fb40b198379c35c16bf21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return spline from state vec  <a href="classcommon_1_1_spline_generator.html#ae840c140e9fb40b198379c35c16bf21b">更多...</a><br /></td></tr>
+<tr class="separator:ae840c140e9fb40b198379c35c16bf21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aecffcaf09350c86a92fdb051b1435"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a35aecffcaf09350c86a92fdb051b1435">GetSplineFromFreeStateVec</a> (const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;para, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_free_state.html">FreeState</a> &gt; &amp;free_state_vec, <a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *spline)</td></tr>
+<tr class="memdesc:a35aecffcaf09350c86a92fdb051b1435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return spline from state vec  <a href="classcommon_1_1_spline_generator.html#a35aecffcaf09350c86a92fdb051b1435">更多...</a><br /></td></tr>
+<tr class="separator:a35aecffcaf09350c86a92fdb051b1435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ccd277289e4bdff3b0faa92ad34b71"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71">GetBezierSplineUsingCorridor</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">SpatioTemporalSemanticCubeNd</a>&lt; N_DIM &gt;&gt; &amp;cubes, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;start_constraints, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;end_constraints, const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;ref_stamps, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;ref_points, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;weight_proximity, <a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a> *bezier_spline)</td></tr>
+<tr class="memdesc:a02ccd277289e4bdff3b0faa92ad34b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the optimal bezier curve in corridor  <a href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71">更多...</a><br /></td></tr>
+<tr class="separator:a02ccd277289e4bdff3b0faa92ad34b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a562c21b817714a7607125eee78f00915"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_spline_generator.html#a562c21b817714a7607125eee78f00915">GetBezierSplineUsingCorridor</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">SpatioTemporalSemanticCubeNd</a>&lt; N_DIM &gt;&gt; &amp;cubes, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;start_constraints, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;end_constraints, <a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a> *bezier_spline)</td></tr>
+<tr class="separator:a562c21b817714a7607125eee78f00915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;int N_DEG, int N_DIM&gt;<br />
+class common::SplineGenerator&lt; N_DEG, N_DIM &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8h_source.html">spline_generator.h</a> 第 <a class="el" href="spline__generator_8h_source.html#l00022">22</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a113a53196611d68ce249c93b16eb2272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113a53196611d68ce249c93b16eb2272">&#9670;&nbsp;</a></span>BezierSplineType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcommon_1_1_bezier_spline.html">BezierSpline</a>&lt;N_DEG, N_DIM&gt; <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::<a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8h_source.html">spline_generator.h</a> 第 <a class="el" href="spline__generator_8h_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a78e5d80933f071f31c82a2c4ed7e4c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e5d80933f071f31c82a2c4ed7e4c16">&#9670;&nbsp;</a></span>SplineType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcommon_1_1_spline.html">Spline</a>&lt;N_DEG, N_DIM&gt; <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::<a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8h_source.html">spline_generator.h</a> 第 <a class="el" href="spline__generator_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a562c21b817714a7607125eee78f00915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562c21b817714a7607125eee78f00915">&#9670;&nbsp;</a></span>GetBezierSplineUsingCorridor() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetBezierSplineUsingCorridor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">SpatioTemporalSemanticCubeNd</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>cubes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>start_constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>end_constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a> *&#160;</td>
+          <td class="paramname"><em>bezier_spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00749">749</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_a562c21b817714a7607125eee78f00915_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_a562c21b817714a7607125eee78f00915_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_a562c21b817714a7607125eee78f00915_cgraph" id="classcommon_1_1_spline_generator_a562c21b817714a7607125eee78f00915_cgraph">
+<area shape="rect" title=" " alt="" coords="5,144,228,185"/>
+<area shape="rect" href="classcommon_1_1_bezier_utils.html#a1254d7f08e5d9afebe8d58d0cb2f11df" title="compute the hessian matrix for non&#45;scaled Bezier basis" alt="" coords="280,5,451,47"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="340,71,391,98"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="327,122,404,149"/>
+<area shape="rect" href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340" title=" " alt="" coords="281,173,449,215"/>
+<area shape="rect" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9" title="Set the vector domain" alt="" coords="281,239,449,280"/>
+<area shape="rect" href="classcommon_1_1_oo_qp_itf.html#aa83d1c3d2c5f35884ed6de51162dcf0f" title=" " alt="" coords="276,305,455,331"/>
+<area shape="rect" href="class_ooqp_vector.html#aa85667b071b1812143c55c42511cb838" title=" " alt="" coords="509,178,706,205"/>
+<area shape="rect" href="class_qp_gen_sparse_seq.html#a59fdbcb319ed5055bf90e728e690a5fd" title=" " alt="" coords="503,229,712,255"/>
+<area shape="rect" href="class_qp_gen.html#a90d2b2ff924aeea00608156aa6bdb818" title=" " alt="" coords="521,279,694,306"/>
+<area shape="rect" href="class_qp_gen.html#a96f2bdeb8991d3ba27c423943084ea22" title=" " alt="" coords="522,330,693,357"/>
+<area shape="rect" href="group___qp_solvers.html#ga9d71470394f96a89275ac5e527d25244" title=" " alt="" coords="534,381,681,407"/>
+<area shape="rect" href="class_gondzio_solver.html#ab988f445c0ea8926fcdaa84316a53d57" title=" " alt="" coords="528,431,687,458"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02ccd277289e4bdff3b0faa92ad34b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ccd277289e4bdff3b0faa92ad34b71">&#9670;&nbsp;</a></span>GetBezierSplineUsingCorridor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetBezierSplineUsingCorridor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_spatio_temporal_semantic_cube_nd.html">SpatioTemporalSemanticCubeNd</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>cubes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>start_constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>end_constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref_stamps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref_points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>weight_proximity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a113a53196611d68ce249c93b16eb2272">BezierSplineType</a> *&#160;</td>
+          <td class="paramname"><em>bezier_spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the optimal bezier curve in corridor </p>
+<dl class="section note"><dt>注解</dt><dd>typical usage parameterization is 2D-t, the corridor is 3D (2D+t) </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_constraints,pos,vel,acc,etc</td><td>constraints at start point </td></tr>
+    <tr><td class="paramname">end_constraints,pos,vel,acc,etc</td><td>constrainst at end point </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00357">357</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_a02ccd277289e4bdff3b0faa92ad34b71_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_a02ccd277289e4bdff3b0faa92ad34b71_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_a02ccd277289e4bdff3b0faa92ad34b71_cgraph" id="classcommon_1_1_spline_generator_a02ccd277289e4bdff3b0faa92ad34b71_cgraph">
+<area shape="rect" title="Return the optimal bezier curve in corridor" alt="" coords="5,191,228,232"/>
+<area shape="rect" href="classcommon_1_1_bezier_utils.html#a1254d7f08e5d9afebe8d58d0cb2f11df" title="compute the hessian matrix for non&#45;scaled Bezier basis" alt="" coords="280,5,451,47"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="340,71,391,98"/>
+<area shape="rect" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997" title=" " alt="" coords="342,122,389,149"/>
+<area shape="rect" href="calculations_8h.html#af7cd29dfda09af6b55eff1cc0a4c341b" title="Calculate num of combinations" alt="" coords="323,173,407,199"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="327,223,404,250"/>
+<area shape="rect" href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340" title=" " alt="" coords="281,275,449,316"/>
+<area shape="rect" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9" title="Set the vector domain" alt="" coords="281,340,449,381"/>
+<area shape="rect" href="classcommon_1_1_oo_qp_itf.html#aa83d1c3d2c5f35884ed6de51162dcf0f" title=" " alt="" coords="276,406,455,433"/>
+<area shape="rect" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5" title="Calculate factorial" alt="" coords="586,173,629,199"/>
+<area shape="rect" href="class_ooqp_vector.html#aa85667b071b1812143c55c42511cb838" title=" " alt="" coords="509,279,706,306"/>
+<area shape="rect" href="class_qp_gen_sparse_seq.html#a59fdbcb319ed5055bf90e728e690a5fd" title=" " alt="" coords="503,330,712,357"/>
+<area shape="rect" href="class_qp_gen.html#a90d2b2ff924aeea00608156aa6bdb818" title=" " alt="" coords="521,381,694,407"/>
+<area shape="rect" href="class_qp_gen.html#a96f2bdeb8991d3ba27c423943084ea22" title=" " alt="" coords="522,431,693,458"/>
+<area shape="rect" href="group___qp_solvers.html#ga9d71470394f96a89275ac5e527d25244" title=" " alt="" coords="534,482,681,509"/>
+<area shape="rect" href="class_gondzio_solver.html#ab988f445c0ea8926fcdaa84316a53d57" title=" " alt="" coords="528,533,687,559"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf42d9d26ecc35cde6287af5585d7ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf42d9d26ecc35cde6287af5585d7ffe">&#9670;&nbsp;</a></span>GetCubicSplineBySampleInterpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetCubicSplineBySampleInterpolation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>para</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *&#160;</td>
+          <td class="paramname"><em>spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return natural (cubic) spline fitting with respect to parameterization </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">samples,the</td><td>points you want to interterpolate </td></tr>
+    <tr><td class="paramname">parameterization,the</td><td>parameterization used to evaluate the spline </td></tr>
+    <tr><td class="paramname">spline,the</td><td>spline returned (wrap in the general N_DEG spline) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00008">8</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_cgraph" id="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_cgraph">
+<area shape="rect" title="Return natural (cubic) spline fitting with respect to parameterization" alt="" coords="5,49,284,90"/>
+<area shape="rect" href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5" title="Calculate factorial" alt="" coords="402,5,445,32"/>
+<area shape="rect" href="namespacebackward_1_1details.html#ad24f2f88d54f9427acdf56cc736374b0" title=" " alt="" coords="332,56,515,83"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5" title="Set the vector domain" alt="" coords="346,107,501,149"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_icgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_icgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_icgraph" id="classcommon_1_1_spline_generator_abf42d9d26ecc35cde6287af5585d7ffe_icgraph">
+<area shape="rect" title="Return natural (cubic) spline fitting with respect to parameterization" alt="" coords="1388,13,1667,54"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#a302c9829f58afc1016c7964db002cc80" title=" " alt="" coords="1107,13,1340,54"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#a505ff1e2825229730354a9c05fceb744" title=" " alt="" coords="868,13,1059,54"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#a2b84c6949d69cf6eb54cb3740a2b6efd" title=" " alt="" coords="595,5,820,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#a173412efab01f116cf99c80ec3e7e77d" title=" " alt="" coords="312,5,547,61"/>
+<area shape="rect" href="classsemantic__map__manager_1_1_semantic_map_manager.html#ac2d7e1c82fd34bca13281afd630ed7dd" title=" " alt="" coords="5,5,264,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a12236e534a3f183f980ccfdca9ea0ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12236e534a3f183f980ccfdca9ea0ceb">&#9670;&nbsp;</a></span>GetQuinticSplineBySampleFitting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetQuinticSplineBySampleFitting </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>para</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::ArrayXf &amp;&#160;</td>
+          <td class="paramname"><em>breaks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>regulator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *&#160;</td>
+          <td class="paramname"><em>spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return optimal spline fitting with continuity constraints </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">samples,the</td><td>points you want to fit </td></tr>
+    <tr><td class="paramname">para,the</td><td>parameterization, typically arc length </td></tr>
+    <tr><td class="paramname">breaks,break</td><td>points (represent the segments of the spline) </td></tr>
+    <tr><td class="paramname">spline,the</td><td>spline returned (wrap in the general N_DEG spline) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>this may be an expensive function depending on the number of breaks </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00088">88</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_cgraph" id="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_cgraph">
+<area shape="rect" title="Return optimal spline fitting with continuity constraints" alt="" coords="5,23,251,65"/>
+<area shape="rect" href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5" title="Calculate factorial" alt="" coords="316,5,359,32"/>
+<area shape="rect" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b" title=" " alt="" coords="299,56,376,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_icgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_icgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_icgraph" id="classcommon_1_1_spline_generator_a12236e534a3f183f980ccfdca9ea0ceb_icgraph">
+<area shape="rect" title="Return optimal spline fitting with continuity constraints" alt="" coords="987,5,1232,47"/>
+<area shape="rect" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e" title="get lane by least square fitting with continuity constraints" alt="" coords="748,5,939,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a917feff72160eaa4ee9c946ec35cd173" title=" " alt="" coords="488,5,700,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#af15f19731cd0d899b547261b3e059ab6" title=" " alt="" coords="247,5,440,47"/>
+<area shape="rect" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35aecffcaf09350c86a92fdb051b1435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35aecffcaf09350c86a92fdb051b1435">&#9670;&nbsp;</a></span>GetSplineFromFreeStateVec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetSplineFromFreeStateVec </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>para</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_free_state.html">FreeState</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>free_state_vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *&#160;</td>
+          <td class="paramname"><em>spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return spline from state vec </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state_vec,the</td><td>vector of free states </td></tr>
+    <tr><td class="paramname">para,the</td><td>parameterization set </td></tr>
+    <tr><td class="paramname">spline,spline</td><td>returned </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00323">323</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_a35aecffcaf09350c86a92fdb051b1435_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_a35aecffcaf09350c86a92fdb051b1435_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_a35aecffcaf09350c86a92fdb051b1435_cgraph" id="classcommon_1_1_spline_generator_a35aecffcaf09350c86a92fdb051b1435_cgraph">
+<area shape="rect" title="Return spline from state vec" alt="" coords="5,5,217,47"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5" title="Set the vector domain" alt="" coords="265,5,420,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae840c140e9fb40b198379c35c16bf21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae840c140e9fb40b198379c35c16bf21b">&#9670;&nbsp;</a></span>GetSplineFromStateVec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetSplineFromStateVec </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>para</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_state.html">State</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>state_vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcommon_1_1_spline_generator.html#a78e5d80933f071f31c82a2c4ed7e4c16">SplineType</a> *&#160;</td>
+          <td class="paramname"><em>spline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return spline from state vec </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state_vec,the</td><td>vector of states </td></tr>
+    <tr><td class="paramname">para,the</td><td>parameterization set </td></tr>
+    <tr><td class="paramname">spline,spline</td><td>returned </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00288">288</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_spline_generator_ae840c140e9fb40b198379c35c16bf21b_cgraph.png" border="0" usemap="#classcommon_1_1_spline_generator_ae840c140e9fb40b198379c35c16bf21b_cgraph" alt=""/></div>
+<map name="classcommon_1_1_spline_generator_ae840c140e9fb40b198379c35c16bf21b_cgraph" id="classcommon_1_1_spline_generator_ae840c140e9fb40b198379c35c16bf21b_cgraph">
+<area shape="rect" title="Return spline from state vec" alt="" coords="5,39,197,80"/>
+<area shape="rect" href="namespacecommon.html#a5743791b0ad02da386e9b9ec09536ec6" title=" " alt="" coords="245,5,451,47"/>
+<area shape="rect" href="classcommon_1_1_spline.html#a748025f3c736c2b3d119bafaa9da93a5" title="Set the vector domain" alt="" coords="271,71,425,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6711217ebaf8d5f294c5fd50db509c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6711217ebaf8d5f294c5fd50db509c10">&#9670;&nbsp;</a></span>GetWaypointsFromPositionSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a>&lt; N_DEG, N_DIM &gt;::GetWaypointsFromPositionSamples </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a>&lt; N_DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>para</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="structcommon_1_1_waypoint.html">Waypoint</a>&lt; N_DIM &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>waypoints</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return waypoints from position samples </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">samples,the</td><td>points you want to interterpolate </td></tr>
+    <tr><td class="paramname">parameterization,the</td><td>parameterization used to evaluate the spline </td></tr>
+    <tr><td class="paramname">waypoints,output</td><td>the waypoints </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a> 第 <a class="el" href="spline__generator_8cc_source.html#l00264">264</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/inc/common/spline/<a class="el" href="spline__generator_8h_source.html">spline_generator.h</a></li>
+<li>core/common/src/common/spline/<a class="el" href="spline__generator_8cc_source.html">spline_generator.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

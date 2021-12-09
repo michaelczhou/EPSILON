@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/DeSymPSDSolver.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DeSymPSDSolver.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_de_sym_p_s_d_solver_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DESYMPSDSOLVER_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DESYMPSDSOLVER_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_double_linear_solver_8h.html">DoubleLinearSolver.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dense_storage_handle_8h.html">DenseStorageHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dense_sym_matrix_handle_8h.html">DenseSymMatrixHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_de_sym_p_s_d_solver.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_de_sym_p_s_d_solver.html">DeSymPSDSolver</a> : <span class="keyword">public</span> <a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_de_sym_p_s_d_solver.html#a4d9890b60ed52fcfa869dcc055319c48">   19</a></span>&#160;  <a class="code" href="class_smart_pointer.html">DenseStorageHandle</a> <a class="code" href="class_de_sym_p_s_d_solver.html#a4d9890b60ed52fcfa869dcc055319c48">mStorage</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="class_de_sym_p_s_d_solver.html#af54e8a24c21c0993024ccde6e86f2450">DeSymPSDSolver</a>( <a class="code" href="class_dense_sym_matrix.html">DenseSymMatrix</a> * dsm );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_de_sym_p_s_d_solver.html#ac6cd537d0cd55c792c3654f58fbd6769">diagonalChanged</a>( <span class="keywordtype">int</span> idiag, <span class="keywordtype">int</span> extent );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_de_sym_p_s_d_solver.html#a644f956b02988f62338224b7efacb205">matrixChanged</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_de_sym_p_s_d_solver.html#a290acbf1d6dc956b957bee719f6495db">solve</a> ( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_de_sym_p_s_d_solver.html#a59ddef3ec573c582c5a0abf283458372">~DeSymPSDSolver</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_dense_sym_matrix_html"><div class="ttname"><a href="class_dense_sym_matrix.html">DenseSymMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_dense_sym_matrix_8h_source.html#l00015">DenseSymMatrix.h:15</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_a290acbf1d6dc956b957bee719f6495db"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#a290acbf1d6dc956b957bee719f6495db">DeSymPSDSolver::solve</a></div><div class="ttdeci">virtual void solve(OoqpVector &amp;x)</div></div>
+<div class="ttc" id="a_dense_sym_matrix_handle_8h_html"><div class="ttname"><a href="_dense_sym_matrix_handle_8h.html">DenseSymMatrixHandle.h</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_a4d9890b60ed52fcfa869dcc055319c48"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#a4d9890b60ed52fcfa869dcc055319c48">DeSymPSDSolver::mStorage</a></div><div class="ttdeci">DenseStorageHandle mStorage</div><div class="ttdef"><b>Definition:</b> <a href="_de_sym_p_s_d_solver_8h_source.html#l00019">DeSymPSDSolver.h:19</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclass_smart_pointer_html"><div class="ttname"><a href="class_smart_pointer.html">SmartPointer&lt; DenseStorage &gt;</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html">DeSymPSDSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_de_sym_p_s_d_solver_8h_source.html#l00017">DeSymPSDSolver.h:17</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_a59ddef3ec573c582c5a0abf283458372"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#a59ddef3ec573c582c5a0abf283458372">DeSymPSDSolver::~DeSymPSDSolver</a></div><div class="ttdeci">virtual ~DeSymPSDSolver()</div></div>
+<div class="ttc" id="a_dense_storage_handle_8h_html"><div class="ttname"><a href="_dense_storage_handle_8h.html">DenseStorageHandle.h</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_a644f956b02988f62338224b7efacb205"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#a644f956b02988f62338224b7efacb205">DeSymPSDSolver::matrixChanged</a></div><div class="ttdeci">virtual void matrixChanged()</div></div>
+<div class="ttc" id="a_double_linear_solver_8h_html"><div class="ttname"><a href="_double_linear_solver_8h.html">DoubleLinearSolver.h</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_af54e8a24c21c0993024ccde6e86f2450"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#af54e8a24c21c0993024ccde6e86f2450">DeSymPSDSolver::DeSymPSDSolver</a></div><div class="ttdeci">DeSymPSDSolver(DenseSymMatrix *dsm)</div></div>
+<div class="ttc" id="a_ooqp_vector_handle_8h_html"><div class="ttname"><a href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_double_linear_solver_html"><div class="ttname"><a href="class_double_linear_solver.html">DoubleLinearSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_linear_solver_8h_source.html#l00020">DoubleLinearSolver.h:20</a></div></div>
+<div class="ttc" id="aclass_de_sym_p_s_d_solver_html_ac6cd537d0cd55c792c3654f58fbd6769"><div class="ttname"><a href="class_de_sym_p_s_d_solver.html#ac6cd537d0cd55c792c3654f58fbd6769">DeSymPSDSolver::diagonalChanged</a></div><div class="ttdeci">virtual void diagonalChanged(int idiag, int extent)</div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

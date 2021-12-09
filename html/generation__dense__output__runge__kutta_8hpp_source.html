@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/generation/generation_dense_output_runge_kutta.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li><li class="navelem"><a class="el" href="dir_ea7ac5ae7cd420f9788030d6b2773570.html">generation</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">generation_dense_output_runge_kutta.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generation__dense__output__runge__kutta_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/stepper/generation/generation_dense_output_runge_kutta.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Specialization of the controller factory for the dense_output_runge_kutta class.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_STEPPER_GENERATION_GENERATION_DENSE_OUTPUT_RUNGE_KUTTA_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_STEPPER_GENERATION_GENERATION_DENSE_OUTPUT_RUNGE_KUTTA_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="controlled__runge__kutta_8hpp.html">boost/numeric/odeint/stepper/controlled_runge_kutta.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dense__output__runge__kutta_8hpp.html">boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="make__dense__output_8hpp.html">boost/numeric/odeint/stepper/generation/make_dense_output.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// controller factory for controlled_runge_kutta</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory.html">dense_output_factory</a>&lt; Stepper , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta</a>&lt; Stepper &gt; &gt; &gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a95f35047571f3b207313cb503c8c1d64">   33</a></span>&#160;    <span class="keyword">typedef</span> Stepper <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a95f35047571f3b207313cb503c8c1d64">stepper_type</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#aa350570c91edd89c7bb8e97e7600f5d6">   34</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; stepper_type &gt;</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#aa350570c91edd89c7bb8e97e7600f5d6">controller_type</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a60afebc3e125cd1edfe96e74f509b8df">   35</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> controller_type::error_checker_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a60afebc3e125cd1edfe96e74f509b8df">error_checker_type</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#ad76bd693848cbb0f0cbb962b0dc46622">   36</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#ad76bd693848cbb0f0cbb962b0dc46622">value_type</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a1f4a0023b6e9c734b51b7d3b42fcc9bb">   37</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta&lt; controller_type &gt;</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a1f4a0023b6e9c734b51b7d3b42fcc9bb">dense_output_type</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a9604d3d867ecd155e0ceb56460c19e95">   39</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_type</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a9604d3d867ecd155e0ceb56460c19e95">operator()</a>( <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#ad76bd693848cbb0f0cbb962b0dc46622">value_type</a> abs_error , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#ad76bd693848cbb0f0cbb962b0dc46622">value_type</a> rel_error , <span class="keyword">const</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a95f35047571f3b207313cb503c8c1d64">stepper_type</a> &amp;stepper )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_type</a>( <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controller_type</a>( <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a60afebc3e125cd1edfe96e74f509b8df">error_checker_type</a>( abs_error , rel_error ) , stepper ) );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_STEPPER_GENERATION_GENERATION_DENSE_OUTPUT_RUNGE_KUTTA_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="controlled__runge__kutta_8hpp_source.html#l00115">controlled_runge_kutta.hpp:115</a></div></div>
+<div class="ttc" id="amake__dense__output_8hpp_html"><div class="ttname"><a href="make__dense__output_8hpp.html">make_dense_output.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory.html">boost::numeric::odeint::dense_output_factory</a></div><div class="ttdef"><b>Definition:</b> <a href="make__dense__output_8hpp_source.html#l00033">make_dense_output.hpp:33</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html_a855c765b59cb9eb32614c242358d8a39"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan::value_type</a></div><div class="ttdeci">stepper_base_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00112">symplectic_rkn_sb3a_mclachlan.hpp:112</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_aa350570c91edd89c7bb8e97e7600f5d6"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#aa350570c91edd89c7bb8e97e7600f5d6">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::controller_type</a></div><div class="ttdeci">controlled_runge_kutta&lt; stepper_type &gt; controller_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00034">generation_dense_output_runge_kutta.hpp:34</a></div></div>
+<div class="ttc" id="adense__output__runge__kutta_8hpp_html"><div class="ttname"><a href="dense__output__runge__kutta_8hpp.html">dense_output_runge_kutta.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_a60afebc3e125cd1edfe96e74f509b8df"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a60afebc3e125cd1edfe96e74f509b8df">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::error_checker_type</a></div><div class="ttdeci">controller_type::error_checker_type error_checker_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00035">generation_dense_output_runge_kutta.hpp:35</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="dense__output__runge__kutta_8hpp_source.html#l00042">dense_output_runge_kutta.hpp:42</a></div></div>
+<div class="ttc" id="acontrolled__runge__kutta_8hpp_html"><div class="ttname"><a href="controlled__runge__kutta_8hpp.html">controlled_runge_kutta.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_a95f35047571f3b207313cb503c8c1d64"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a95f35047571f3b207313cb503c8c1d64">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::stepper_type</a></div><div class="ttdeci">Stepper stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00033">generation_dense_output_runge_kutta.hpp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_a1f4a0023b6e9c734b51b7d3b42fcc9bb"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a1f4a0023b6e9c734b51b7d3b42fcc9bb">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::dense_output_type</a></div><div class="ttdeci">dense_output_runge_kutta&lt; controller_type &gt; dense_output_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00037">generation_dense_output_runge_kutta.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_a9604d3d867ecd155e0ceb56460c19e95"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#a9604d3d867ecd155e0ceb56460c19e95">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::operator()</a></div><div class="ttdeci">dense_output_type operator()(value_type abs_error, value_type rel_error, const stepper_type &amp;stepper)</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00039">generation_dense_output_runge_kutta.hpp:39</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27_html_ad76bd693848cbb0f0cbb962b0dc46622"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__factory_3_01_stepper_00_01dense__output__rung8ae4257a14fcd80bf7846ed56c66cc27.html#ad76bd693848cbb0f0cbb962b0dc46622">boost::numeric::odeint::dense_output_factory&lt; Stepper, dense_output_runge_kutta&lt; controlled_runge_kutta&lt; Stepper &gt; &gt; &gt;::value_type</a></div><div class="ttdeci">stepper_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> <a href="generation__dense__output__runge__kutta_8hpp_source.html#l00036">generation_dense_output_runge_kutta.hpp:36</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: common::BezierSpline&lt; N_DEG, N_DIM &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecommon.html">common</a></li><li class="navelem"><a class="el" href="classcommon_1_1_bezier_spline.html">BezierSpline</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classcommon_1_1_bezier_spline-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">common::BezierSpline&lt; N_DEG, N_DIM &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bezier spline class The the j-th segment evaluation is given by B_j(t) = s_j*\sum_{i=0}^{N_DEG} c_j^i * b_{N_DEG}^i(t-Tj/s_j) the s_j is the time scaling factor of the j-the segment  
+ <a href="classcommon_1_1_bezier_spline.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="bezier_8h_source.html">bezier.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0751fb798e92df16ab865875a79e6b5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#a0751fb798e92df16ab865875a79e6b5a">BezierSpline</a> ()</td></tr>
+<tr class="separator:a0751fb798e92df16ab865875a79e6b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec237ab54f9489c9b239f3a53ea2bc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9">set_vec_domain</a> (const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;<a class="el" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a>)</td></tr>
+<tr class="memdesc:adec237ab54f9489c9b239f3a53ea2bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the vector domain  <a href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9">更多...</a><br /></td></tr>
+<tr class="separator:adec237ab54f9489c9b239f3a53ea2bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f9b5c229de595e42d2c2000ac20340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#ad9f9b5c229de595e42d2c2000ac20340">set_coeff</a> (const int segment_idx, const int ctrl_pt_index, const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt; &amp;coeff)</td></tr>
+<tr class="separator:ad9f9b5c229de595e42d2c2000ac20340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb67ec217cf0e097fa142ad42eae96b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#abbb67ec217cf0e097fa142ad42eae96b">set_ctrl_pts</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf</a>&lt; N_DEG+1, N_DIM &gt;&gt; &amp;pts)</td></tr>
+<tr class="separator:abbb67ec217cf0e097fa142ad42eae96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52980ec1f2ee3eba84678367120f54c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#ae52980ec1f2ee3eba84678367120f54c">num_segments</a> () const</td></tr>
+<tr class="memdesc:ae52980ec1f2ee3eba84678367120f54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of segments of the spline  <a href="classcommon_1_1_bezier_spline.html#ae52980ec1f2ee3eba84678367120f54c">更多...</a><br /></td></tr>
+<tr class="separator:ae52980ec1f2ee3eba84678367120f54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a48700f53c38fa59d209861f0fe4fb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">vec_domain</a> () const</td></tr>
+<tr class="memdesc:af8a48700f53c38fa59d209861f0fe4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vec domain of the spline  <a href="classcommon_1_1_bezier_spline.html#af8a48700f53c38fa59d209861f0fe4fb">更多...</a><br /></td></tr>
+<tr class="separator:af8a48700f53c38fa59d209861f0fe4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53be5d482a9dd325cbe21e6d103b6552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf</a>&lt; N_DEG+1, N_DIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#a53be5d482a9dd325cbe21e6d103b6552">ctrl_pts</a> () const</td></tr>
+<tr class="separator:a53be5d482a9dd325cbe21e6d103b6552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73eecf8dc4d55d895b75913822eb2d6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#a73eecf8dc4d55d895b75913822eb2d6f">begin</a> () const</td></tr>
+<tr class="memdesc:a73eecf8dc4d55d895b75913822eb2d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the begin of the parameterization  <a href="classcommon_1_1_bezier_spline.html#a73eecf8dc4d55d895b75913822eb2d6f">更多...</a><br /></td></tr>
+<tr class="separator:a73eecf8dc4d55d895b75913822eb2d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e18533255e503678809a36d4af8187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187">end</a> () const</td></tr>
+<tr class="memdesc:ab4e18533255e503678809a36d4af8187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end of the parameterization  <a href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187">更多...</a><br /></td></tr>
+<tr class="separator:ab4e18533255e503678809a36d4af8187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583d1354c99f7d101b35b8eef71d9a70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#a583d1354c99f7d101b35b8eef71d9a70">evaluate</a> (const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s, const int d, <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt; *ret) const</td></tr>
+<tr class="memdesc:a583d1354c99f7d101b35b8eef71d9a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return evaluation of spline at given parameterization  <a href="classcommon_1_1_bezier_spline.html#a583d1354c99f7d101b35b8eef71d9a70">更多...</a><br /></td></tr>
+<tr class="separator:a583d1354c99f7d101b35b8eef71d9a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6a5e9fb355f3ac090cb4c343f396cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommon_1_1_bezier_spline.html#abb6a5e9fb355f3ac090cb4c343f396cf">print</a> () const</td></tr>
+<tr class="separator:abb6a5e9fb355f3ac090cb4c343f396cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;int N_DEG, int N_DIM&gt;<br />
+class common::BezierSpline&lt; N_DEG, N_DIM &gt;</h3>
+
+<p>Bezier spline class The the j-th segment evaluation is given by B_j(t) = s_j*\sum_{i=0}^{N_DEG} c_j^i * b_{N_DEG}^i(t-Tj/s_j) the s_j is the time scaling factor of the j-the segment </p>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00020">20</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0751fb798e92df16ab865875a79e6b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0751fb798e92df16ab865875a79e6b5a">&#9670;&nbsp;</a></span>BezierSpline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::<a class="el" href="classcommon_1_1_bezier_spline.html">BezierSpline</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a73eecf8dc4d55d895b75913822eb2d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73eecf8dc4d55d895b75913822eb2d6f">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the begin of the parameterization </p>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00067">67</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_a73eecf8dc4d55d895b75913822eb2d6f_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_a73eecf8dc4d55d895b75913822eb2d6f_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_a73eecf8dc4d55d895b75913822eb2d6f_icgraph" id="classcommon_1_1_bezier_spline_a73eecf8dc4d55d895b75913822eb2d6f_icgraph">
+<area shape="rect" title="Get the begin of the parameterization" alt="" coords="853,35,1021,76"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#ad740cd0f8d6c128ab803807c330f409d" title=" " alt="" coords="571,35,805,76"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a474cdc8089d9ad55b82c9b02d23b713a" title=" " alt="" coords="288,5,523,47"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a0e7f88cf2ed6431ba3942210bf87f54c" title=" " alt="" coords="5,35,240,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53be5d482a9dd325cbe21e6d103b6552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53be5d482a9dd325cbe21e6d103b6552">&#9670;&nbsp;</a></span>ctrl_pts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf</a>&lt;N_DEG + 1, N_DIM&gt; &gt; <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::ctrl_pts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>vec_E&lt;Matf&lt;N_DEG + 1, N_DIM&gt;&gt; </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab4e18533255e503678809a36d4af8187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e18533255e503678809a36d4af8187">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the end of the parameterization </p>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00075">75</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_ab4e18533255e503678809a36d4af8187_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_ab4e18533255e503678809a36d4af8187_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_ab4e18533255e503678809a36d4af8187_icgraph" id="classcommon_1_1_bezier_spline_ab4e18533255e503678809a36d4af8187_icgraph">
+<area shape="rect" title="Get the end of the parameterization" alt="" coords="884,42,1084,69"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a5273f879335f908b998b50c7dbf512c3" title=" " alt="" coords="571,42,836,69"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a474cdc8089d9ad55b82c9b02d23b713a" title=" " alt="" coords="288,5,523,47"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a0e7f88cf2ed6431ba3942210bf87f54c" title=" " alt="" coords="5,35,240,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a583d1354c99f7d101b35b8eef71d9a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583d1354c99f7d101b35b8eef71d9a70">&#9670;&nbsp;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt; *&#160;</td>
+          <td class="paramname"><em>ret</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return evaluation of spline at given parameterization </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>parameterization, s should be in the vector domain </td></tr>
+    <tr><td class="paramname">d</td><td>derivate to take </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>out of domain s will be rounded to the <a class="el" href="classcommon_1_1_bezier_spline.html#ab4e18533255e503678809a36d4af8187" title="Get the end of the parameterization">end()</a> </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00086">86</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_a583d1354c99f7d101b35b8eef71d9a70_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_a583d1354c99f7d101b35b8eef71d9a70_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_a583d1354c99f7d101b35b8eef71d9a70_icgraph" id="classcommon_1_1_bezier_spline_a583d1354c99f7d101b35b8eef71d9a70_icgraph">
+<area shape="rect" title="Return evaluation of spline at given parameterization" alt="" coords="571,5,739,47"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a474cdc8089d9ad55b82c9b02d23b713a" title=" " alt="" coords="288,5,523,47"/>
+<area shape="rect" href="classcommon_1_1_frenet_bezier_trajectory.html#a0e7f88cf2ed6431ba3942210bf87f54c" title=" " alt="" coords="5,5,240,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae52980ec1f2ee3eba84678367120f54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52980ec1f2ee3eba84678367120f54c">&#9670;&nbsp;</a></span>num_segments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::num_segments </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of segments of the spline </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>number of the segments </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abb6a5e9fb355f3ac090cb4c343f396cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb6a5e9fb355f3ac090cb4c343f396cf">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00111">111</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad9f9b5c229de595e42d2c2000ac20340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f9b5c229de595e42d2c2000ac20340">&#9670;&nbsp;</a></span>set_coeff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::set_coeff </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>segment_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ctrl_pt_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a>&lt; N_DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coeff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00036">36</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_ad9f9b5c229de595e42d2c2000ac20340_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_ad9f9b5c229de595e42d2c2000ac20340_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_ad9f9b5c229de595e42d2c2000ac20340_icgraph" id="classcommon_1_1_bezier_spline_ad9f9b5c229de595e42d2c2000ac20340_icgraph">
+<area shape="rect" title=" " alt="" coords="276,5,444,47"/>
+<area shape="rect" href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71" title="Return the optimal bezier curve in corridor" alt="" coords="5,5,228,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abbb67ec217cf0e097fa142ad42eae96b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb67ec217cf0e097fa142ad42eae96b">&#9670;&nbsp;</a></span>set_ctrl_pts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::set_ctrl_pts </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a6b9210d48a0a541940af71827aad1b41">vec_E</a>&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#a1eeda0bad4efd3be8cb2da1941982410">Matf</a>&lt; N_DEG+1, N_DIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>pts</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adec237ab54f9489c9b239f3a53ea2bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec237ab54f9489c9b239f3a53ea2bc9">&#9670;&nbsp;</a></span>set_vec_domain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::set_vec_domain </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec_domain</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the vector domain </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec_domain</td><td>input vec domain </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00027">27</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_adec237ab54f9489c9b239f3a53ea2bc9_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_adec237ab54f9489c9b239f3a53ea2bc9_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_adec237ab54f9489c9b239f3a53ea2bc9_icgraph" id="classcommon_1_1_bezier_spline_adec237ab54f9489c9b239f3a53ea2bc9_icgraph">
+<area shape="rect" title="Set the vector domain" alt="" coords="276,5,444,47"/>
+<area shape="rect" href="classcommon_1_1_spline_generator.html#a02ccd277289e4bdff3b0faa92ad34b71" title="Return the optimal bezier curve in corridor" alt="" coords="5,5,228,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8a48700f53c38fa59d209861f0fe4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a48700f53c38fa59d209861f0fe4fb">&#9670;&nbsp;</a></span>vec_domain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N_DEG, int N_DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&gt; <a class="el" href="classcommon_1_1_bezier_spline.html">common::BezierSpline</a>&lt; N_DEG, N_DIM &gt;::vec_domain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the vec domain of the spline </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>number of the segments </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="bezier_8h_source.html">bezier.h</a> 第 <a class="el" href="bezier_8h_source.html#l00055">55</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcommon_1_1_bezier_spline_af8a48700f53c38fa59d209861f0fe4fb_icgraph.png" border="0" usemap="#classcommon_1_1_bezier_spline_af8a48700f53c38fa59d209861f0fe4fb_icgraph" alt=""/></div>
+<map name="classcommon_1_1_bezier_spline_af8a48700f53c38fa59d209861f0fe4fb_icgraph" id="classcommon_1_1_bezier_spline_af8a48700f53c38fa59d209861f0fe4fb_icgraph">
+<area shape="rect" title="Get the vec domain of the spline" alt="" coords="276,13,444,54"/>
+<area shape="rect" href="classcommon_1_1_bezier_spline.html#adec237ab54f9489c9b239f3a53ea2bc9" title="Set the vector domain" alt="" coords="5,5,228,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/inc/common/spline/<a class="el" href="bezier_8h_source.html">bezier.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

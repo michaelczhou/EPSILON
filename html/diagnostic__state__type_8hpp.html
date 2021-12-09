@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/diagnostic_state_type.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle">
+<div class="title">diagnostic_state_type.hpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__resizeable_8hpp_source.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="same__size_8hpp_source.html">boost/numeric/odeint/util/same_size.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="resize_8hpp_source.html">boost/numeric/odeint/util/resize.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="state__wrapper_8hpp_source.html">boost/numeric/odeint/util/state_wrapper.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+diagnostic_state_type.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="diagnostic__state__type_8hpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hpp">
+<area shape="rect" title=" " alt="" coords="890,5,1087,76"/>
+<area shape="rect" title=" " alt="" coords="778,131,901,158"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="1319,303,1483,344"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="909,213,1069,255"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="639,213,799,255"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1027,124,1199,165"/>
+<area shape="rect" title=" " alt="" coords="1369,399,1432,426"/>
+<area shape="rect" title=" " alt="" coords="2029,392,2215,433"/>
+<area shape="rect" title=" " alt="" coords="1457,392,1643,433"/>
+<area shape="rect" title=" " alt="" coords="1668,392,1821,433"/>
+<area shape="rect" title=" " alt="" coords="475,392,628,433"/>
+<area shape="rect" title=" " alt="" coords="1845,399,2004,426"/>
+<area shape="rect" title=" " alt="" coords="652,399,795,426"/>
+<area shape="rect" title=" " alt="" coords="819,399,1022,426"/>
+<area shape="rect" title=" " alt="" coords="1047,399,1173,426"/>
+<area shape="rect" title=" " alt="" coords="1198,392,1345,433"/>
+<area shape="rect" title=" " alt="" coords="385,303,533,344"/>
+<area shape="rect" title=" " alt="" coords="557,303,711,344"/>
+<area shape="rect" title=" " alt="" coords="735,303,888,344"/>
+<area shape="rect" title=" " alt="" coords="912,303,1065,344"/>
+<area shape="rect" title=" " alt="" coords="1141,303,1295,344"/>
+<area shape="rect" title=" " alt="" coords="235,310,361,337"/>
+<area shape="rect" title=" " alt="" coords="5,303,159,344"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="diagnostic__state__type_8hpp__dep__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hppdep" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hppdep" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2diagnostic__state__type_8hppdep">
+<area shape="rect" title=" " alt="" coords="5,5,203,76"/>
+<area shape="rect" href="symplectic__steppers_8cpp.html" title=" " alt="" coords="11,124,197,195"/>
+</map>
+</div>
+</div>
+<p><a href="diagnostic__state__type_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcounter.html">counter&lt; N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdiagnostic__type.html">diagnostic_type&lt; N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01diagnostic__type_3_01_n_01_4_01_4.html">boost::numeric::odeint::is_resizeable&lt; diagnostic_type&lt; N &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01diagnostic__type_3_01_n_01_4_00_01diagnostic__type_3_01_m_01_4_01_4.html">boost::numeric::odeint::same_size_impl&lt; diagnostic_type&lt; N &gt;, diagnostic_type&lt; M &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01diagnostic__type_3_01_n_01_4_00_01_state1_01_4.html">boost::numeric::odeint::same_size_impl&lt; diagnostic_type&lt; N &gt;, State1 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01_state1_00_01diagnostic__type_3_01_n_01_4_01_4.html">boost::numeric::odeint::same_size_impl&lt; State1, diagnostic_type&lt; N &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01diagnostic__type_3_01_n_01_4_00_01_state_in_01_4.html">boost::numeric::odeint::resize_impl&lt; diagnostic_type&lt; N &gt;, StateIn &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01diagnostic__type_3_01_n_01_4_01_4.html">boost::numeric::odeint::state_wrapper&lt; diagnostic_type&lt; N &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric.html">boost::numeric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a0d54c652bdd3515822ba16d749c552a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a0d54c652bdd3515822ba16d749c552a5">TEST_COUNTERS</a>(<a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>,  s1,  s2,  s3, s4)</td></tr>
+<tr class="separator:a0d54c652bdd3515822ba16d749c552a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac980bc5c8aa2058a53c0aa266ce3755d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#ac980bc5c8aa2058a53c0aa266ce3755d">TEST_COUNTERS_MSG</a>(<a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>,  s1,  s2,  s3, s4,  msg)</td></tr>
+<tr class="separator:ac980bc5c8aa2058a53c0aa266ce3755d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a999b6c0fd85f68cd647a9fbf2f184412"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a999b6c0fd85f68cd647a9fbf2f184412">diagnostic_state_type</a></td></tr>
+<tr class="separator:a999b6c0fd85f68cd647a9fbf2f184412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b397944e2862a05fab2c4f0f9d683f1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a4b397944e2862a05fab2c4f0f9d683f1">diagnostic_deriv_type</a></td></tr>
+<tr class="separator:a4b397944e2862a05fab2c4f0f9d683f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15b687531a35f15797ce9f42e1dbb7c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#af15b687531a35f15797ce9f42e1dbb7c">diagnostic_state_type2</a></td></tr>
+<tr class="separator:af15b687531a35f15797ce9f42e1dbb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20b929ccc6a8f07fcc13d494ebdabbb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#af20b929ccc6a8f07fcc13d494ebdabbb">diagnostic_deriv_type2</a></td></tr>
+<tr class="separator:af20b929ccc6a8f07fcc13d494ebdabbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0627cad4d52cb1decacd7e1a797717b9"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structcounter.html">counter</a>&lt; 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a0627cad4d52cb1decacd7e1a797717b9">counter_state</a></td></tr>
+<tr class="separator:a0627cad4d52cb1decacd7e1a797717b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7768e136034de316aec234664cc906aa"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structcounter.html">counter</a>&lt; 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a7768e136034de316aec234664cc906aa">counter_deriv</a></td></tr>
+<tr class="separator:a7768e136034de316aec234664cc906aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa973af0f0aa1e20635c3c69a35219dbe"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structcounter.html">counter</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#aa973af0f0aa1e20635c3c69a35219dbe">counter_state2</a></td></tr>
+<tr class="separator:aa973af0f0aa1e20635c3c69a35219dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05aad4b6c503893fab49ca38c573b342"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structcounter.html">counter</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="diagnostic__state__type_8hpp.html#a05aad4b6c503893fab49ca38c573b342">counter_deriv2</a></td></tr>
+<tr class="separator:a05aad4b6c503893fab49ca38c573b342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a0d54c652bdd3515822ba16d749c552a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d54c652bdd3515822ba16d749c552a5">&#9670;&nbsp;</a></span>TEST_COUNTERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEST_COUNTERS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s3, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s4&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="resizing_8cpp.html#a0f66bd2f0c4238aee74d7164df910675">c::adjust_size_count</a>() , <span class="keywordtype">size_t</span>( s1 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="stepper__copying_8cpp.html#aa605c7dab2527f61cde07def1795ffbf">c::construct_count</a>() , <span class="keywordtype">size_t</span>( s2 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="stepper__copying_8cpp.html#a8f4af1afd70e7aa751502b66e31f965f">c::copy_count</a>() , <span class="keywordtype">size_t</span>( s3 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( c::destroy_count() , <span class="keywordtype">size_t</span>( s4 ) );</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00172">172</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac980bc5c8aa2058a53c0aa266ce3755d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac980bc5c8aa2058a53c0aa266ce3755d">&#9670;&nbsp;</a></span>TEST_COUNTERS_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEST_COUNTERS_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s3, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s4, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="resizing_8cpp.html#a0f66bd2f0c4238aee74d7164df910675">c::adjust_size_count</a>() , <span class="keywordtype">size_t</span>( s1 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="stepper__copying_8cpp.html#aa605c7dab2527f61cde07def1795ffbf">c::construct_count</a>() , <span class="keywordtype">size_t</span>( s2 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( <a class="code" href="stepper__copying_8cpp.html#a8f4af1afd70e7aa751502b66e31f965f">c::copy_count</a>() , <span class="keywordtype">size_t</span>( s3 ) ); \</div>
+<div class="line">    BOOST_CHECK_EQUAL( c::destroy_count() , <span class="keywordtype">size_t</span>( s4 ) );</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00178">178</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a7768e136034de316aec234664cc906aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7768e136034de316aec234664cc906aa">&#9670;&nbsp;</a></span>counter_deriv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structcounter.html">counter</a>&lt; 1 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#a7768e136034de316aec234664cc906aa">counter_deriv</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a05aad4b6c503893fab49ca38c573b342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05aad4b6c503893fab49ca38c573b342">&#9670;&nbsp;</a></span>counter_deriv2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structcounter.html">counter</a>&lt; 3 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#a05aad4b6c503893fab49ca38c573b342">counter_deriv2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0627cad4d52cb1decacd7e1a797717b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0627cad4d52cb1decacd7e1a797717b9">&#9670;&nbsp;</a></span>counter_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structcounter.html">counter</a>&lt; 0 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#a0627cad4d52cb1decacd7e1a797717b9">counter_state</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa973af0f0aa1e20635c3c69a35219dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa973af0f0aa1e20635c3c69a35219dbe">&#9670;&nbsp;</a></span>counter_state2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structcounter.html">counter</a>&lt; 2 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#aa973af0f0aa1e20635c3c69a35219dbe">counter_state2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b397944e2862a05fab2c4f0f9d683f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b397944e2862a05fab2c4f0f9d683f1">&#9670;&nbsp;</a></span>diagnostic_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 1 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#a4b397944e2862a05fab2c4f0f9d683f1">diagnostic_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af20b929ccc6a8f07fcc13d494ebdabbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20b929ccc6a8f07fcc13d494ebdabbb">&#9670;&nbsp;</a></span>diagnostic_deriv_type2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 3 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#af20b929ccc6a8f07fcc13d494ebdabbb">diagnostic_deriv_type2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a999b6c0fd85f68cd647a9fbf2f184412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999b6c0fd85f68cd647a9fbf2f184412">&#9670;&nbsp;</a></span>diagnostic_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 0 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#a999b6c0fd85f68cd647a9fbf2f184412">diagnostic_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af15b687531a35f15797ce9f42e1dbb7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15b687531a35f15797ce9f42e1dbb7c">&#9670;&nbsp;</a></span>diagnostic_state_type2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classdiagnostic__type.html">diagnostic_type</a>&lt; 2 &gt; <a class="el" href="diagnostic__state__type_8hpp.html#af15b687531a35f15797ce9f42e1dbb7c">diagnostic_state_type2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="diagnostic__state__type_8hpp_source.html">diagnostic_state_type.hpp</a> 第 <a class="el" href="diagnostic__state__type_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<div class="ttc" id="aresizing_8cpp_html_a0f66bd2f0c4238aee74d7164df910675"><div class="ttname"><a href="resizing_8cpp.html#a0f66bd2f0c4238aee74d7164df910675">adjust_size_count</a></div><div class="ttdeci">size_t adjust_size_count</div><div class="ttdef"><b>Definition:</b> <a href="resizing_8cpp_source.html#l00052">resizing.cpp:52</a></div></div>
+<div class="ttc" id="astepper__copying_8cpp_html_a8f4af1afd70e7aa751502b66e31f965f"><div class="ttname"><a href="stepper__copying_8cpp.html#a8f4af1afd70e7aa751502b66e31f965f">copy_count</a></div><div class="ttdeci">size_t copy_count</div><div class="ttdef"><b>Definition:</b> <a href="stepper__copying_8cpp_source.html#l00108">stepper_copying.cpp:108</a></div></div>
+<div class="ttc" id="astepper__copying_8cpp_html_aa605c7dab2527f61cde07def1795ffbf"><div class="ttname"><a href="stepper__copying_8cpp.html#aa605c7dab2527f61cde07def1795ffbf">construct_count</a></div><div class="ttdeci">size_t construct_count</div><div class="ttdef"><b>Definition:</b> <a href="stepper__copying_8cpp_source.html#l00104">stepper_copying.cpp:104</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

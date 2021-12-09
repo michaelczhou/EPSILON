@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/math/calculations.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_3a7a96a09b33c773409d2b94188cf321.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">calculations.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="calculations_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_COMMON_INC_COMMON_MATH_CALCULATIONS_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_COMMON_INC_COMMON_MATH_CALCULATIONS_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="calculations_8h.html#a7117daff76e4228246de689a0f25e853">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="calculations_8h.html#a7117daff76e4228246de689a0f25e853">sgn</a>(<span class="keyword">const</span> T val) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">return</span> (T(0) &lt; val) - (val &lt; T(0));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5">fac</a>(<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="calculations_8h.html#af7cd29dfda09af6b55eff1cc0a4c341b">nchoosek</a>(<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>, <span class="keywordtype">int</span> k);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; theta);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> <a class="code" href="calculations_8h.html#aa1fa76c7fd9631641f301386c1b08a79">rotate_vector_2d</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>&amp; v, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> angle);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d">vec2d_to_angle</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>&amp; v);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8h.html#a02e4da521362c2ef1c1a1adb3fa8e40a">truncate</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; lower,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; upper);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; lower,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; upper,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; new_lower,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; new_upper);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="calculations_8h.html#af8d2d8efae6b602b01955893d8ca539c">RemapUsingQuadraticFuncAroundSmallValue</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; th,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                  <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>* val_out);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif  // _CORE_COMMON_INC_COMMON_MATH_CALCULATIONS_H__</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a7117daff76e4228246de689a0f25e853"><div class="ttname"><a href="calculations_8h.html#a7117daff76e4228246de689a0f25e853">sgn</a></div><div class="ttdeci">int sgn(const T val)</div><div class="ttdoc">Sign function</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8h_source.html#l00014">calculations.h:14</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a03e30373b24292fd8e708ffcd6130981"><div class="ttname"><a href="calculations_8h.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a></div><div class="ttdeci">decimal_t normalize_with_bound(const decimal_t &amp;val_in, const decimal_t &amp;lower, const decimal_t &amp;upper, const decimal_t &amp;new_lower, const decimal_t &amp;new_upper)</div><div class="ttdoc">Return normalize value</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00044">calculations.cc:44</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a69bd9bd32d79da40494c17a8923118f0"><div class="ttname"><a href="calculations_8h.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a></div><div class="ttdeci">decimal_t normalize_angle(const decimal_t &amp;theta)</div><div class="ttdoc">Normalize angle to [-pi, pi)</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00018">calculations.cc:18</a></div></div>
+<div class="ttc" id="acalculations_8h_html_aa1fa76c7fd9631641f301386c1b08a79"><div class="ttname"><a href="calculations_8h.html#aa1fa76c7fd9631641f301386c1b08a79">rotate_vector_2d</a></div><div class="ttdeci">Vecf&lt; 2 &gt; rotate_vector_2d(const Vecf&lt; 2 &gt; &amp;v, const decimal_t angle)</div><div class="ttdoc">Shift the vector with anti-clock-wise degree</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00025">calculations.cc:25</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a02e4da521362c2ef1c1a1adb3fa8e40a"><div class="ttname"><a href="calculations_8h.html#a02e4da521362c2ef1c1a1adb3fa8e40a">truncate</a></div><div class="ttdeci">decimal_t truncate(const decimal_t &amp;val_in, const decimal_t &amp;lower, const decimal_t &amp;upper)</div><div class="ttdoc">Return truncated value</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00032">calculations.cc:32</a></div></div>
+<div class="ttc" id="acalculations_8h_html_af8d2d8efae6b602b01955893d8ca539c"><div class="ttname"><a href="calculations_8h.html#af8d2d8efae6b602b01955893d8ca539c">RemapUsingQuadraticFuncAroundSmallValue</a></div><div class="ttdeci">ErrorType RemapUsingQuadraticFuncAroundSmallValue(const decimal_t &amp;th, const decimal_t &amp;val_in, decimal_t *val_out)</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00058">calculations.cc:58</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a62b27828056fab4d32d2a776f63307e5"><div class="ttname"><a href="calculations_8h.html#a62b27828056fab4d32d2a776f63307e5">fac</a></div><div class="ttdeci">long long fac(int n)</div><div class="ttdoc">Calculate factorial</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00003">calculations.cc:3</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="acalculations_8h_html_af7cd29dfda09af6b55eff1cc0a4c341b"><div class="ttname"><a href="calculations_8h.html#af7cd29dfda09af6b55eff1cc0a4c341b">nchoosek</a></div><div class="ttdeci">long long nchoosek(int n, int k)</div><div class="ttdoc">Calculate num of combinations</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00016">calculations.cc:16</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a8354bd5192b8b9b84f6386f7537c6e6d"><div class="ttname"><a href="calculations_8h.html#a8354bd5192b8b9b84f6386f7537c6e6d">vec2d_to_angle</a></div><div class="ttdeci">decimal_t vec2d_to_angle(const Vecf&lt; 2 &gt; &amp;v)</div><div class="ttdoc">Return normalized angle by vec2d</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00030">calculations.cc:30</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

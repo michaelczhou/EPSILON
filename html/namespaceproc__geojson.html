@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: proc_geojson 命名空间参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">proc_geojson 命名空间参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a4cdbb961289725484144ce276465f9cf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> = '../../../toolchain/qgis_projects/highway/geojson/'</td></tr>
+<tr class="separator:a4cdbb961289725484144ce276465f9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6877013c48189f86a4a2c63043ba87b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a6877013c48189f86a4a2c63043ba87b4">pt_feat_name</a> = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;pt_feat&quot; + &quot;.geojson&quot;</td></tr>
+<tr class="separator:a6877013c48189f86a4a2c63043ba87b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc45f2bedb6d107561a722f4fcfd35d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#afdc45f2bedb6d107561a722f4fcfd35d">pt_feat_json_fs</a> = open(<a class="el" href="namespaceproc__geojson.html#a6877013c48189f86a4a2c63043ba87b4">pt_feat_name</a>).read()</td></tr>
+<tr class="separator:afdc45f2bedb6d107561a722f4fcfd35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a130ef68c7a837cc78770b0167573e442"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a130ef68c7a837cc78770b0167573e442">pt_feat_json</a> = json.loads(<a class="el" href="namespaceproc__geojson.html#afdc45f2bedb6d107561a722f4fcfd35d">pt_feat_json_fs</a>)</td></tr>
+<tr class="separator:a130ef68c7a837cc78770b0167573e442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf579e6fb02d24f417a0b764a2afeb46"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#aaf579e6fb02d24f417a0b764a2afeb46">lane_net_name</a> = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;lane_net&quot; + &quot;.geojson&quot;</td></tr>
+<tr class="separator:aaf579e6fb02d24f417a0b764a2afeb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7cff2be9b86a61b4d768d41c5732d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a0b7cff2be9b86a61b4d768d41c5732d8">lane_net_json_fs</a> = open(<a class="el" href="namespaceproc__geojson.html#aaf579e6fb02d24f417a0b764a2afeb46">lane_net_name</a>).read()</td></tr>
+<tr class="separator:a0b7cff2be9b86a61b4d768d41c5732d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75dac7e2925695916f182e0a538e94e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a75dac7e2925695916f182e0a538e94e9">lane_net_json</a> = json.loads(<a class="el" href="namespaceproc__geojson.html#a0b7cff2be9b86a61b4d768d41c5732d8">lane_net_json_fs</a>)</td></tr>
+<tr class="separator:a75dac7e2925695916f182e0a538e94e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d1f3e88a1268561e2be40d80449e11c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a6d1f3e88a1268561e2be40d80449e11c">obstacles_name</a> = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;obstacles&quot; + &quot;.geojson&quot;</td></tr>
+<tr class="separator:a6d1f3e88a1268561e2be40d80449e11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4728f60046c7b0074ea98471af00aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a7d4728f60046c7b0074ea98471af00aa">obstacles_json_fs</a> = open(<a class="el" href="namespaceproc__geojson.html#a6d1f3e88a1268561e2be40d80449e11c">obstacles_name</a>).read()</td></tr>
+<tr class="separator:a7d4728f60046c7b0074ea98471af00aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81eb8d0551d10ac175cbf87e318b989d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a81eb8d0551d10ac175cbf87e318b989d">obstacles_json</a> = json.loads(<a class="el" href="namespaceproc__geojson.html#a7d4728f60046c7b0074ea98471af00aa">obstacles_json_fs</a>)</td></tr>
+<tr class="separator:a81eb8d0551d10ac175cbf87e318b989d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54a5e19f7f6263a7594fd12ecd4629b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#ab54a5e19f7f6263a7594fd12ecd4629b">origin</a> = np.array(f[&quot;geometry&quot;][&quot;coordinates&quot;])</td></tr>
+<tr class="separator:ab54a5e19f7f6263a7594fd12ecd4629b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529173bffb41d4bfec691eb9b553b610"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a529173bffb41d4bfec691eb9b553b610">lane_net_norm_name</a> = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;lane_net_norm&quot; + &quot;.json&quot;</td></tr>
+<tr class="separator:a529173bffb41d4bfec691eb9b553b610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69dc33b49ac3827c766d21c25aa0632"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#aa69dc33b49ac3827c766d21c25aa0632">lane_net_norm_json_fs</a> = open(<a class="el" href="namespaceproc__geojson.html#a529173bffb41d4bfec691eb9b553b610">lane_net_norm_name</a>,'w')</td></tr>
+<tr class="separator:aa69dc33b49ac3827c766d21c25aa0632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99d4ec7f5a62649ba9c7753331e883b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#ae99d4ec7f5a62649ba9c7753331e883b">obstacles_norm_name</a> = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;obstacles_norm&quot; + &quot;.json&quot;</td></tr>
+<tr class="separator:ae99d4ec7f5a62649ba9c7753331e883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14def7324baa645c78d78f135648b5b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a14def7324baa645c78d78f135648b5b0">obstacles_norm_json_fs</a> = open(<a class="el" href="namespaceproc__geojson.html#ae99d4ec7f5a62649ba9c7753331e883b">obstacles_norm_name</a>,'w')</td></tr>
+<tr class="separator:a14def7324baa645c78d78f135648b5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d5292c008ee3d78d78edf02ca396c4"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#ab6d5292c008ee3d78d78edf02ca396c4">x_set</a> = []</td></tr>
+<tr class="separator:ab6d5292c008ee3d78d78edf02ca396c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3867c8fdbb0b9ed1e0086b810fe81a9c"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a3867c8fdbb0b9ed1e0086b810fe81a9c">y_set</a> = []</td></tr>
+<tr class="separator:a3867c8fdbb0b9ed1e0086b810fe81a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb82f7d18e4180e0d948ac39b7cc4a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a> = np.array(f[&quot;geometry&quot;][&quot;coordinates&quot;][0])</td></tr>
+<tr class="separator:afcb82f7d18e4180e0d948ac39b7cc4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed080fd8b6bd7666d7ea0d66648bd1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = <a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>[:,0]</td></tr>
+<tr class="separator:aeed080fd8b6bd7666d7ea0d66648bd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe982e77c3c2ca559df9953b8b415626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> = <a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>[:,1]</td></tr>
+<tr class="separator:afe982e77c3c2ca559df9953b8b415626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6657888dc21246df5d6444281b7930"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a2a6657888dc21246df5d6444281b7930">fig</a></td></tr>
+<tr class="separator:a2a6657888dc21246df5d6444281b7930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f3cc6a0ea65c4199702e1bd888181e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#af0f3cc6a0ea65c4199702e1bd888181e">ax</a></td></tr>
+<tr class="separator:af0f3cc6a0ea65c4199702e1bd888181e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80320965872e479115f6a7135e5580d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a80320965872e479115f6a7135e5580d1">marker</a></td></tr>
+<tr class="separator:a80320965872e479115f6a7135e5580d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489fdb4e5149ea44d7eeb726d0a4bd70"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">patches</a> = []</td></tr>
+<tr class="separator:a489fdb4e5149ea44d7eeb726d0a4bd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50cadc802c3cac52f3c8366f65481e95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a50cadc802c3cac52f3c8366f65481e95">polygon</a> = Polygon(np.array(<a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>), True)</td></tr>
+<tr class="separator:a50cadc802c3cac52f3c8366f65481e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab7a6eeb6981fc69beafe088ad240dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> = PatchCollection(<a class="el" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">patches</a>, cmap=matplotlib.cm.jet, alpha=0.4)</td></tr>
+<tr class="separator:a0ab7a6eeb6981fc69beafe088ad240dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f84f36991a14de6cc5c8ddbbb8bd63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceproc__geojson.html#ac3f84f36991a14de6cc5c8ddbbb8bd63">colors</a> = 100*np.random.rand(len(<a class="el" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">patches</a>))</td></tr>
+<tr class="separator:ac3f84f36991a14de6cc5c8ddbbb8bd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">变量说明</h2>
+<a id="af0f3cc6a0ea65c4199702e1bd888181e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f3cc6a0ea65c4199702e1bd888181e">&#9670;&nbsp;</a></span>ax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.ax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac3f84f36991a14de6cc5c8ddbbb8bd63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f84f36991a14de6cc5c8ddbbb8bd63">&#9670;&nbsp;</a></span>colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int proc_geojson.colors = 100*np.random.rand(len(<a class="el" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">patches</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afcb82f7d18e4180e0d948ac39b7cc4a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb82f7d18e4180e0d948ac39b7cc4a8">&#9670;&nbsp;</a></span>coord</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.coord = np.array(f[&quot;geometry&quot;][&quot;coordinates&quot;][0])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4cdbb961289725484144ce276465f9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cdbb961289725484144ce276465f9cf">&#9670;&nbsp;</a></span>data_folder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.data_folder = '../../../toolchain/qgis_projects/highway/geojson/'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a6657888dc21246df5d6444281b7930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6657888dc21246df5d6444281b7930">&#9670;&nbsp;</a></span>fig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.fig</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a75dac7e2925695916f182e0a538e94e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75dac7e2925695916f182e0a538e94e9">&#9670;&nbsp;</a></span>lane_net_json</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.lane_net_json = json.loads(<a class="el" href="namespaceproc__geojson.html#a0b7cff2be9b86a61b4d768d41c5732d8">lane_net_json_fs</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0b7cff2be9b86a61b4d768d41c5732d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7cff2be9b86a61b4d768d41c5732d8">&#9670;&nbsp;</a></span>lane_net_json_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.lane_net_json_fs = open(<a class="el" href="namespaceproc__geojson.html#aaf579e6fb02d24f417a0b764a2afeb46">lane_net_name</a>).read()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaf579e6fb02d24f417a0b764a2afeb46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf579e6fb02d24f417a0b764a2afeb46">&#9670;&nbsp;</a></span>lane_net_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.lane_net_name = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;lane_net&quot; + &quot;.geojson&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa69dc33b49ac3827c766d21c25aa0632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69dc33b49ac3827c766d21c25aa0632">&#9670;&nbsp;</a></span>lane_net_norm_json_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.lane_net_norm_json_fs = open(<a class="el" href="namespaceproc__geojson.html#a529173bffb41d4bfec691eb9b553b610">lane_net_norm_name</a>,'w')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a529173bffb41d4bfec691eb9b553b610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529173bffb41d4bfec691eb9b553b610">&#9670;&nbsp;</a></span>lane_net_norm_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.lane_net_norm_name = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;lane_net_norm&quot; + &quot;.json&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a80320965872e479115f6a7135e5580d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80320965872e479115f6a7135e5580d1">&#9670;&nbsp;</a></span>marker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.marker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a81eb8d0551d10ac175cbf87e318b989d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81eb8d0551d10ac175cbf87e318b989d">&#9670;&nbsp;</a></span>obstacles_json</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.obstacles_json = json.loads(<a class="el" href="namespaceproc__geojson.html#a7d4728f60046c7b0074ea98471af00aa">obstacles_json_fs</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7d4728f60046c7b0074ea98471af00aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4728f60046c7b0074ea98471af00aa">&#9670;&nbsp;</a></span>obstacles_json_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.obstacles_json_fs = open(<a class="el" href="namespaceproc__geojson.html#a6d1f3e88a1268561e2be40d80449e11c">obstacles_name</a>).read()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6d1f3e88a1268561e2be40d80449e11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d1f3e88a1268561e2be40d80449e11c">&#9670;&nbsp;</a></span>obstacles_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.obstacles_name = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;obstacles&quot; + &quot;.geojson&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a14def7324baa645c78d78f135648b5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14def7324baa645c78d78f135648b5b0">&#9670;&nbsp;</a></span>obstacles_norm_json_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.obstacles_norm_json_fs = open(<a class="el" href="namespaceproc__geojson.html#ae99d4ec7f5a62649ba9c7753331e883b">obstacles_norm_name</a>,'w')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae99d4ec7f5a62649ba9c7753331e883b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99d4ec7f5a62649ba9c7753331e883b">&#9670;&nbsp;</a></span>obstacles_norm_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.obstacles_norm_name = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;obstacles_norm&quot; + &quot;.json&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab54a5e19f7f6263a7594fd12ecd4629b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54a5e19f7f6263a7594fd12ecd4629b">&#9670;&nbsp;</a></span>origin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.origin = np.array(f[&quot;geometry&quot;][&quot;coordinates&quot;])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0ab7a6eeb6981fc69beafe088ad240dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab7a6eeb6981fc69beafe088ad240dc">&#9670;&nbsp;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.p = PatchCollection(<a class="el" href="namespaceproc__geojson.html#a489fdb4e5149ea44d7eeb726d0a4bd70">patches</a>, cmap=matplotlib.cm.jet, alpha=0.4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a489fdb4e5149ea44d7eeb726d0a4bd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489fdb4e5149ea44d7eeb726d0a4bd70">&#9670;&nbsp;</a></span>patches</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list proc_geojson.patches = []</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a50cadc802c3cac52f3c8366f65481e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50cadc802c3cac52f3c8366f65481e95">&#9670;&nbsp;</a></span>polygon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.polygon = Polygon(np.array(<a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>), True)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a130ef68c7a837cc78770b0167573e442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a130ef68c7a837cc78770b0167573e442">&#9670;&nbsp;</a></span>pt_feat_json</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.pt_feat_json = json.loads(<a class="el" href="namespaceproc__geojson.html#afdc45f2bedb6d107561a722f4fcfd35d">pt_feat_json_fs</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afdc45f2bedb6d107561a722f4fcfd35d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc45f2bedb6d107561a722f4fcfd35d">&#9670;&nbsp;</a></span>pt_feat_json_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.pt_feat_json_fs = open(<a class="el" href="namespaceproc__geojson.html#a6877013c48189f86a4a2c63043ba87b4">pt_feat_name</a>).read()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6877013c48189f86a4a2c63043ba87b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6877013c48189f86a4a2c63043ba87b4">&#9670;&nbsp;</a></span>pt_feat_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string proc_geojson.pt_feat_name = <a class="el" href="namespaceproc__geojson.html#a4cdbb961289725484144ce276465f9cf">data_folder</a> + &quot;pt_feat&quot; + &quot;.geojson&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aeed080fd8b6bd7666d7ea0d66648bd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed080fd8b6bd7666d7ea0d66648bd1d">&#9670;&nbsp;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.x = <a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>[:,0]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab6d5292c008ee3d78d78edf02ca396c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6d5292c008ee3d78d78edf02ca396c4">&#9670;&nbsp;</a></span>x_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list proc_geojson.x_set = []</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afe982e77c3c2ca559df9953b8b415626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe982e77c3c2ca559df9953b8b415626">&#9670;&nbsp;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">proc_geojson.y = <a class="el" href="namespaceproc__geojson.html#afcb82f7d18e4180e0d948ac39b7cc4a8">coord</a>[:,1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3867c8fdbb0b9ed1e0086b810fe81a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3867c8fdbb0b9ed1e0086b810fe81a9c">&#9670;&nbsp;</a></span>y_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list proc_geojson.y_set = []</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="proc__geojson_8py_source.html">proc_geojson.py</a> 第 <a class="el" href="proc__geojson_8py_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

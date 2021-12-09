@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/gmpxx/lorenz_gmpxx.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li><li class="navelem"><a class="el" href="dir_cca31de2289a381c8bc16cc7d65165e0.html">gmpxx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lorenz_gmpxx.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lorenz__gmpxx_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * lorenz_gmpxx.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This example demonstrates how odeint can be used with arbitrary precision types.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;gmpxx.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//[ gmpxx_lorenz</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">   27</a></span>&#160;<span class="keyword">typedef</span> mpf_class <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="lorenz__gmpxx_8cpp.html#a1ebee8fdec76cec868f8cf1f9a7c92d3">   28</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; value_type , 3 &gt; <a class="code" href="lorenz__gmpxx_8cpp.html#a1ebee8fdec76cec868f8cf1f9a7c92d3">state_type</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">struct </span><a class="code" href="structlorenz.html">lorenz</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structlorenz.html#a103438f82b5fa2f2a6c8212a2d86ef78">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structlorenz.html#a103438f82b5fa2f2a6c8212a2d86ef78">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a>( 10.0 );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a>( 28.0 );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>( <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 8.0 ) / <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 3.0 ) );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        dxdt[0] = <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        dxdt[1] = <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        dxdt[2] = -<a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2] + <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">struct </span><a class="code" href="structstreaming__observer.html">streaming_observer</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::ostream&amp; m_out;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">   52</a></span>&#160;    <a class="code" href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">streaming_observer</a>( std::ostream &amp;<a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> ) : m_out( <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> ) { }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Time &gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structstreaming__observer.html#a0e9b2c2b695264ee6bb37ed2da907582">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structstreaming__observer.html#a0e9b2c2b695264ee6bb37ed2da907582">operator()</a>( <span class="keyword">const</span> State &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , Time t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        m_out &lt;&lt; t;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.size() ; ++i ) m_out &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[i] ;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        m_out &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="lorenz__gmpxx_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   68</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="lorenz__gmpxx_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//[ gmpxx_integration</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="check__gmp_8cpp.html#af5d6cb985ffb3bfead1239c709e39804">precision</a> = 1024;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mpf_set_default_prec( <a class="code" href="check__gmp_8cpp.html#af5d6cb985ffb3bfead1239c709e39804">precision</a> );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 10.0 ) , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 10.0 ) , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 10.0 ) }};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    cout.precision( 1000 );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">integrate_const</a>( <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4&lt; state_type , value_type &gt;</a>() ,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 0.0 ) , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 10.0 ) , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 1.0 ) / <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>( 10.0 ) ) ,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="structstreaming__observer.html">streaming_observer</a>( cout ) );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructlorenz_html_a103438f82b5fa2f2a6c8212a2d86ef78"><div class="ttname"><a href="structlorenz.html#a103438f82b5fa2f2a6c8212a2d86ef78">lorenz::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, value_type t) const</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00032">lorenz_gmpxx.cpp:32</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html"><div class="ttname"><a href="structstreaming__observer.html">streaming_observer</a></div><div class="ttdef"><b>Definition:</b> <a href="fpu_8cpp_source.html#l00106">fpu.cpp:106</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_a1ebee8fdec76cec868f8cf1f9a7c92d3"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#a1ebee8fdec76cec868f8cf1f9a7c92d3">state_type</a></div><div class="ttdeci">boost::array&lt; value_type, 3 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00028">lorenz_gmpxx.cpp:28</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a12b08855d25ca7201ad3d12dc6212bbb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__const_8hpp_source.html#l00042">integrate_const.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html_a0e9b2c2b695264ee6bb37ed2da907582"><div class="ttname"><a href="structstreaming__observer.html#a0e9b2c2b695264ee6bb37ed2da907582">streaming_observer::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x, Time t) const</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00055">lorenz_gmpxx.cpp:55</a></div></div>
+<div class="ttc" id="alorenz__point_8cpp_html_a70d5147828a4853dda9ea916b4493bba"><div class="ttname"><a href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a></div><div class="ttdeci">void lorenz(const point3D &amp;x, point3D &amp;dxdt, const double t)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__point_8cpp_source.html#l00103">lorenz_point.cpp:103</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00068">lorenz_gmpxx.cpp:68</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html_a7c8eb117770fe856f62d9fabb4fb1865"><div class="ttname"><a href="structstreaming__observer.html#a7c8eb117770fe856f62d9fabb4fb1865">streaming_observer::streaming_observer</a></div><div class="ttdeci">streaming_observer(std::ostream &amp;out)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00052">lorenz_gmpxx.cpp:52</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4_8hpp_source.html#l00110">runge_kutta4.hpp:110</a></div></div>
+<div class="ttc" id="aexamples_2bulirsch__stoer_8cpp_html_a6b6d589c8106948670006f3e22b2c378"><div class="ttname"><a href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a></div><div class="ttdeci">ofstream out</div><div class="ttdef"><b>Definition:</b> <a href="examples_2bulirsch__stoer_8cpp_source.html#l00047">bulirsch_stoer.cpp:47</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_af5d6cb985ffb3bfead1239c709e39804"><div class="ttname"><a href="check__gmp_8cpp.html#af5d6cb985ffb3bfead1239c709e39804">precision</a></div><div class="ttdeci">const int precision</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00032">check_gmp.cpp:32</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="astructlorenz_html"><div class="ttname"><a href="structlorenz.html">lorenz</a></div><div class="ttdef"><b>Definition:</b> <a href="bind__member__functions_8cpp_source.html#l00077">bind_member_functions.cpp:77</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

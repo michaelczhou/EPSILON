@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/external/gsl/gsl_wrapper.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_fe1c5e4aa41cd872964ae7e484bdab9a.html">external</a></li><li class="navelem"><a class="el" href="dir_cd140716161b3e80e589891424c47dcf.html">gsl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">gsl_wrapper.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="gsl__wrapper_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/external/gsl/gsl_wrapper.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Wrapper for gsl_vector.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_EXTERNAL_GSL_GSL_WRAPPER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_EXTERNAL_GSL_GSL_WRAPPER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;new&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;gsl/gsl_vector.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;boost/type_traits/integral_constant.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/range.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;boost/iterator/iterator_facade.hpp&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="state__wrapper_8hpp.html">boost/numeric/odeint/util/state_wrapper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="is__resizeable_8hpp.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="copy_8hpp.html">boost/numeric/odeint/util/copy.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span><a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * defines an iterator for gsl_vector</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgsl__vector__iterator.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> : <span class="keyword">public</span> boost::iterator_facade&lt; gsl_vector_iterator , double , boost::random_access_traversal_tag &gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;public :</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classgsl__vector__iterator.html#a0edeb4cc164d353f1fd5021103c6e073">   43</a></span>&#160;    <a class="code" href="classgsl__vector__iterator.html#a0edeb4cc164d353f1fd5021103c6e073">gsl_vector_iterator</a>( <span class="keywordtype">void</span> ): m_p(0) , m_stride( 0 ) { }</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classgsl__vector__iterator.html#ad66ae62ea0f6d318dbdc6acd0a3fb986">   44</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classgsl__vector__iterator.html#ad66ae62ea0f6d318dbdc6acd0a3fb986">gsl_vector_iterator</a>( gsl_vector *<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) : m_p( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>-&gt;data ) , m_stride( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>-&gt;stride ) { }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> <a class="code" href="classgsl__vector__iterator.html#aca4766036e7f20aef0260175a8b1c95c">end_iterator</a>( gsl_vector * );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;private :</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classgsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">   49</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">boost::iterator_core_access</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classgsl__vector__iterator.html#a03e34599811aff7098df275b9818572e">   50</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> increment( <span class="keywordtype">void</span> ) { m_p += m_stride; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> decrement( <span class="keywordtype">void</span> ) { m_p -= m_stride; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> advance( ptrdiff_t <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ) { m_p += <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>*m_stride; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> equal( <span class="keyword">const</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> &amp;other )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;m_p == other.m_p; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> equal( <span class="keyword">const</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> &amp;other ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span>&amp; dereference( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *m_p; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">double</span> *m_p;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">size_t</span> m_stride;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> * defines an const iterator for gsl_vector</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> : <span class="keyword">public</span> boost::iterator_facade&lt; const_gsl_vector_iterator , const double , boost::random_access_traversal_tag &gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;public :</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html#a31f623581e1bc3ff90d1eae347294fcd">   72</a></span>&#160;    <a class="code" href="classconst__gsl__vector__iterator.html#a31f623581e1bc3ff90d1eae347294fcd">const_gsl_vector_iterator</a>( <span class="keywordtype">void</span> ): m_p(0) , m_stride( 0 ) { }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html#af3f4b73bdfc11beff1aced8f3ff89434">   73</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classconst__gsl__vector__iterator.html#af3f4b73bdfc11beff1aced8f3ff89434">const_gsl_vector_iterator</a>( <span class="keyword">const</span> gsl_vector *<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) : m_p( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>-&gt;data ) , m_stride( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>-&gt;stride ) { }</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html#a33fce7e764c98cb330dda2f19a0d7aa3">   74</a></span>&#160;    <a class="code" href="classconst__gsl__vector__iterator.html#a33fce7e764c98cb330dda2f19a0d7aa3">const_gsl_vector_iterator</a>( <span class="keyword">const</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> &amp;<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) : m_p( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.m_p ) , m_stride( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.m_stride ) { }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;private :</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">   78</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classconst__gsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">boost::iterator_core_access</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classconst__gsl__vector__iterator.html#a9ab66e78d9d55f97572395d906d4b9ce">   79</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> <a class="code" href="classconst__gsl__vector__iterator.html#a71c5af0d77a0261375890b9de1113bf4">end_iterator</a>( <span class="keyword">const</span> gsl_vector * );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> increment( <span class="keywordtype">void</span> ) { m_p += m_stride; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> decrement( <span class="keywordtype">void</span> ) { m_p -= m_stride; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> advance( ptrdiff_t <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ) { m_p += <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>*m_stride; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> equal( <span class="keyword">const</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> &amp;other )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;m_p == other.m_p; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> equal( <span class="keyword">const</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> &amp;other )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;m_p == other.m_p; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; dereference( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *m_p; }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *m_p;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">size_t</span> m_stride;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">bool</span> gsl_vector_iterator::equal( <span class="keyword">const</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> &amp;other )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;m_p == other.m_p; }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">   97</a></span>&#160;<a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">end_iterator</a>( gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> iter( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    iter.m_p += iter.m_stride * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>-&gt;size;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> iter;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#a9d9abae8b7035688c5ee39b1668b8830">  104</a></span>&#160;<a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">end_iterator</a>( <span class="keyword">const</span> gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> iter( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    iter.m_p += iter.m_stride * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>-&gt;size;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> iter;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structboost_1_1range__mutable__iterator_3_01gsl__vector_01_5_01_4.html">  117</a></span>&#160;<span class="keyword">struct </span>range_mutable_iterator&lt; gsl_vector* &gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structboost_1_1range__mutable__iterator_3_01gsl__vector_01_5_01_4.html#a4dbd3187cb285324e5ea8d5ff31ef2cd">  119</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> <a class="code" href="structboost_1_1range__mutable__iterator_3_01gsl__vector_01_5_01_4.html#a4dbd3187cb285324e5ea8d5ff31ef2cd">type</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structboost_1_1range__const__iterator_3_01gsl__vector_01_5_01_4.html">  123</a></span>&#160;<span class="keyword">struct </span>range_const_iterator&lt; gsl_vector* &gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structboost_1_1range__const__iterator_3_01gsl__vector_01_5_01_4.html#ab4d034f1e28ed01a9770a8652f546185">  125</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> <a class="code" href="structboost_1_1range__const__iterator_3_01gsl__vector_01_5_01_4.html#ab4d034f1e28ed01a9770a8652f546185">type</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <span class="comment">// namespace boost</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// template&lt;&gt;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#a92c6ca7d4b1d80346fb534a6fba09991">  133</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#a92c6ca7d4b1d80346fb534a6fba09991">range_begin</a>( gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">// template&lt;&gt;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#aa1a94512c725c84ccb67e51a133364a6">  139</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#a92c6ca7d4b1d80346fb534a6fba09991">range_begin</a>( <span class="keyword">const</span> gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">// template&lt;&gt;</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#ace2f785925181d35dfca8380472f1714">  145</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classgsl__vector__iterator.html">gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#ace2f785925181d35dfca8380472f1714">range_end</a>( gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">end_iterator</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">// template&lt;&gt;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="gsl__wrapper_8hpp.html#af89e4aa6bbddcea849de43f267b6e9ec">  151</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a> <a class="code" href="gsl__wrapper_8hpp.html#ace2f785925181d35dfca8380472f1714">range_end</a>( <span class="keyword">const</span> gsl_vector *<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">end_iterator</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4.html">  168</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; gsl_vector* &gt;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">//struct type : public boost::true_type { };</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4.html#ab49f5c9ca6b0cbe6e339a13448bbfc60">  171</a></span>&#160;    <span class="keyword">typedef</span> boost::true_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4.html#ab49f5c9ca6b0cbe6e339a13448bbfc60">type</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4.html#a513d8fcd4027b98d2b026c4e75a056cb">  172</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> value = type::value;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html">  176</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; gsl_vector* , gsl_vector* &gt;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#ab050c5bab8a9926239309cfe12768e36">  178</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#ab050c5bab8a9926239309cfe12768e36">same_size</a>( <span class="keyword">const</span> gsl_vector* <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> gsl_vector* <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>-&gt;size == <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>-&gt;size;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;};</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html">  185</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; gsl_vector* , gsl_vector* &gt;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#a899fd605b0009b959b9f91c910076c8a">  187</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#a899fd605b0009b959b9f91c910076c8a">resize</a>( gsl_vector* <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> gsl_vector* <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> )</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        gsl_vector_free( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = gsl_vector_alloc( <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>-&gt;size );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html">  195</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; gsl_vector* &gt;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a3d3337fc76d121f47cd34a5e520e1528">  197</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a3d3337fc76d121f47cd34a5e520e1528">value_type</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2fd73057f2bb985d0f49042119573bdb">  198</a></span>&#160;    <span class="keyword">typedef</span> gsl_vector* <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2fd73057f2bb985d0f49042119573bdb">state_type</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a44a7d1528447edf9a8afaff2d9747c7d">  199</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html">state_wrapper&lt; gsl_vector* &gt;</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a44a7d1528447edf9a8afaff2d9747c7d">state_wrapper_type</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#ada245c1bc39b25bbc40a36ac4c967157">  201</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2fd73057f2bb985d0f49042119573bdb">state_type</a> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#ada245c1bc39b25bbc40a36ac4c967157">m_v</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2032218c8cb381cc60b3f6c79237099f">  203</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2032218c8cb381cc60b3f6c79237099f">state_wrapper</a>( )</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        m_v = gsl_vector_alloc( 1 );</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a1afee20f166b556f0c1870f8942b2850">  208</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a1afee20f166b556f0c1870f8942b2850">state_wrapper</a>( <span class="keyword">const</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html">state_wrapper_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a90e18de708bd747ad0256127997322aa">resize</a>( m_v , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.m_v );</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        gsl_vector_memcpy( m_v , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.m_v );</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a81eb1a50ed5221d8dac643b6544a4740">  215</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a81eb1a50ed5221d8dac643b6544a4740">~state_wrapper</a>()</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        gsl_vector_free( m_v );</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_EXTERNAL_GSL_GSL_WRAPPER_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acopy_8hpp_html"><div class="ttname"><a href="copy_8hpp.html">copy.hpp</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html"><div class="ttname"><a href="classconst__gsl__vector__iterator.html">const_gsl_vector_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00068">gsl_wrapper.hpp:68</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">boost::numeric::odeint::is_resizeable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00044">is_resizeable.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a2032218c8cb381cc60b3f6c79237099f"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2032218c8cb381cc60b3f6c79237099f">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::state_wrapper</a></div><div class="ttdeci">state_wrapper()</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00203">gsl_wrapper.hpp:203</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_a0ab7a6eeb6981fc69beafe088ad240dc"><div class="ttname"><a href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">proc_geojson.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00076">proc_geojson.py:76</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a90e18de708bd747ad0256127997322aa"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a90e18de708bd747ad0256127997322aa">boost::numeric::odeint::resize</a></div><div class="ttdeci">void resize(StateOut &amp;x1, const StateIn &amp;x2)</div><div class="ttdef"><b>Definition:</b> <a href="resize_8hpp_source.html#l00051">resize.hpp:51</a></div></div>
+<div class="ttc" id="ais__resizeable_8hpp_html"><div class="ttname"><a href="is__resizeable_8hpp.html">is_resizeable.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;</a></div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00195">gsl_wrapper.hpp:195</a></div></div>
+<div class="ttc" id="agsl__wrapper_8hpp_html_a92c6ca7d4b1d80346fb534a6fba09991"><div class="ttname"><a href="gsl__wrapper_8hpp.html#a92c6ca7d4b1d80346fb534a6fba09991">range_begin</a></div><div class="ttdeci">gsl_vector_iterator range_begin(gsl_vector *x)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00133">gsl_wrapper.hpp:133</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html_a33fce7e764c98cb330dda2f19a0d7aa3"><div class="ttname"><a href="classconst__gsl__vector__iterator.html#a33fce7e764c98cb330dda2f19a0d7aa3">const_gsl_vector_iterator::const_gsl_vector_iterator</a></div><div class="ttdeci">const_gsl_vector_iterator(const gsl_vector_iterator &amp;p)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00074">gsl_wrapper.hpp:74</a></div></div>
+<div class="ttc" id="agsl__wrapper_8hpp_html_ae32438e962c01a881de311c726133ec3"><div class="ttname"><a href="gsl__wrapper_8hpp.html#ae32438e962c01a881de311c726133ec3">end_iterator</a></div><div class="ttdeci">gsl_vector_iterator end_iterator(gsl_vector *x)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00097">gsl_wrapper.hpp:97</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4_html_ab49f5c9ca6b0cbe6e339a13448bbfc60"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01gsl__vector_01_5_01_4.html#ab49f5c9ca6b0cbe6e339a13448bbfc60">boost::numeric::odeint::is_resizeable&lt; gsl_vector * &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00171">gsl_wrapper.hpp:171</a></div></div>
+<div class="ttc" id="aclassgsl__vector__iterator_html_ac09f73e325921cc50ebcd96bed0f8096"><div class="ttname"><a href="classgsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">gsl_vector_iterator::iterator_core_access</a></div><div class="ttdeci">friend class boost::iterator_core_access</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00049">gsl_wrapper.hpp:49</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4_html_ab050c5bab8a9926239309cfe12768e36"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#ab050c5bab8a9926239309cfe12768e36">boost::numeric::odeint::same_size_impl&lt; gsl_vector *, gsl_vector * &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const gsl_vector *x, const gsl_vector *y)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00178">gsl_wrapper.hpp:178</a></div></div>
+<div class="ttc" id="astate__wrapper_8hpp_html"><div class="ttname"><a href="state__wrapper_8hpp.html">state_wrapper.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a44a7d1528447edf9a8afaff2d9747c7d"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a44a7d1528447edf9a8afaff2d9747c7d">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::state_wrapper_type</a></div><div class="ttdeci">state_wrapper&lt; gsl_vector * &gt; state_wrapper_type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00199">gsl_wrapper.hpp:199</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a3d3337fc76d121f47cd34a5e520e1528"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a3d3337fc76d121f47cd34a5e520e1528">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00197">gsl_wrapper.hpp:197</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a1afee20f166b556f0c1870f8942b2850"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a1afee20f166b556f0c1870f8942b2850">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::state_wrapper</a></div><div class="ttdeci">state_wrapper(const state_wrapper_type &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00208">gsl_wrapper.hpp:208</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">boost::numeric::odeint::state_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="state__wrapper_8hpp_source.html#l00036">state_wrapper.hpp:36</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">boost::numeric::odeint::same_size_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="same__size_8hpp_source.html#l00041">same_size.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4_html_a899fd605b0009b959b9f91c910076c8a"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01gsl__vector_01_5_00_01gsl__vector_01_5_01_4.html#a899fd605b0009b959b9f91c910076c8a">boost::numeric::odeint::resize_impl&lt; gsl_vector *, gsl_vector * &gt;::resize</a></div><div class="ttdeci">static void resize(gsl_vector *x, const gsl_vector *y)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00187">gsl_wrapper.hpp:187</a></div></div>
+<div class="ttc" id="astructboost_1_1range__const__iterator_3_01gsl__vector_01_5_01_4_html_ab4d034f1e28ed01a9770a8652f546185"><div class="ttname"><a href="structboost_1_1range__const__iterator_3_01gsl__vector_01_5_01_4.html#ab4d034f1e28ed01a9770a8652f546185">boost::range_const_iterator&lt; gsl_vector * &gt;::type</a></div><div class="ttdeci">const_gsl_vector_iterator type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00125">gsl_wrapper.hpp:125</a></div></div>
+<div class="ttc" id="agsl__wrapper_8hpp_html_ace2f785925181d35dfca8380472f1714"><div class="ttname"><a href="gsl__wrapper_8hpp.html#ace2f785925181d35dfca8380472f1714">range_end</a></div><div class="ttdeci">gsl_vector_iterator range_end(gsl_vector *x)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00145">gsl_wrapper.hpp:145</a></div></div>
+<div class="ttc" id="aclassgsl__vector__iterator_html_ad66ae62ea0f6d318dbdc6acd0a3fb986"><div class="ttname"><a href="classgsl__vector__iterator.html#ad66ae62ea0f6d318dbdc6acd0a3fb986">gsl_vector_iterator::gsl_vector_iterator</a></div><div class="ttdeci">gsl_vector_iterator(gsl_vector *p)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00044">gsl_wrapper.hpp:44</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html_af3f4b73bdfc11beff1aced8f3ff89434"><div class="ttname"><a href="classconst__gsl__vector__iterator.html#af3f4b73bdfc11beff1aced8f3ff89434">const_gsl_vector_iterator::const_gsl_vector_iterator</a></div><div class="ttdeci">const_gsl_vector_iterator(const gsl_vector *p)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00073">gsl_wrapper.hpp:73</a></div></div>
+<div class="ttc" id="aclassgsl__vector__iterator_html"><div class="ttname"><a href="classgsl__vector__iterator.html">gsl_vector_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00039">gsl_wrapper.hpp:39</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html_ac09f73e325921cc50ebcd96bed0f8096"><div class="ttname"><a href="classconst__gsl__vector__iterator.html#ac09f73e325921cc50ebcd96bed0f8096">const_gsl_vector_iterator::iterator_core_access</a></div><div class="ttdeci">friend class boost::iterator_core_access</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00078">gsl_wrapper.hpp:78</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">boost::numeric::odeint::resize_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="resize_8hpp_source.html#l00040">resize.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a2fd73057f2bb985d0f49042119573bdb"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a2fd73057f2bb985d0f49042119573bdb">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::state_type</a></div><div class="ttdeci">gsl_vector * state_type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00198">gsl_wrapper.hpp:198</a></div></div>
+<div class="ttc" id="aclassgsl__vector__iterator_html_a0edeb4cc164d353f1fd5021103c6e073"><div class="ttname"><a href="classgsl__vector__iterator.html#a0edeb4cc164d353f1fd5021103c6e073">gsl_vector_iterator::gsl_vector_iterator</a></div><div class="ttdeci">gsl_vector_iterator(void)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00043">gsl_wrapper.hpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_ada245c1bc39b25bbc40a36ac4c967157"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#ada245c1bc39b25bbc40a36ac4c967157">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::m_v</a></div><div class="ttdeci">state_type m_v</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00201">gsl_wrapper.hpp:201</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html_a31f623581e1bc3ff90d1eae347294fcd"><div class="ttname"><a href="classconst__gsl__vector__iterator.html#a31f623581e1bc3ff90d1eae347294fcd">const_gsl_vector_iterator::const_gsl_vector_iterator</a></div><div class="ttdeci">const_gsl_vector_iterator(void)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00072">gsl_wrapper.hpp:72</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4_html_a81eb1a50ed5221d8dac643b6544a4740"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper_3_01gsl__vector_01_5_01_4.html#a81eb1a50ed5221d8dac643b6544a4740">boost::numeric::odeint::state_wrapper&lt; gsl_vector * &gt;::~state_wrapper</a></div><div class="ttdeci">~state_wrapper()</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00215">gsl_wrapper.hpp:215</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aclassconst__gsl__vector__iterator_html_a71c5af0d77a0261375890b9de1113bf4"><div class="ttname"><a href="classconst__gsl__vector__iterator.html#a71c5af0d77a0261375890b9de1113bf4">const_gsl_vector_iterator::end_iterator</a></div><div class="ttdeci">friend const_gsl_vector_iterator end_iterator(const gsl_vector *)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00104">gsl_wrapper.hpp:104</a></div></div>
+<div class="ttc" id="aclassgsl__vector__iterator_html_aca4766036e7f20aef0260175a8b1c95c"><div class="ttname"><a href="classgsl__vector__iterator.html#aca4766036e7f20aef0260175a8b1c95c">gsl_vector_iterator::end_iterator</a></div><div class="ttdeci">friend gsl_vector_iterator end_iterator(gsl_vector *)</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00097">gsl_wrapper.hpp:97</a></div></div>
+<div class="ttc" id="astructboost_1_1range__mutable__iterator_3_01gsl__vector_01_5_01_4_html_a4dbd3187cb285324e5ea8d5ff31ef2cd"><div class="ttname"><a href="structboost_1_1range__mutable__iterator_3_01gsl__vector_01_5_01_4.html#a4dbd3187cb285324e5ea8d5ff31ef2cd">boost::range_mutable_iterator&lt; gsl_vector * &gt;::type</a></div><div class="ttdeci">gsl_vector_iterator type</div><div class="ttdef"><b>Definition:</b> <a href="gsl__wrapper_8hpp_source.html#l00119">gsl_wrapper.hpp:119</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

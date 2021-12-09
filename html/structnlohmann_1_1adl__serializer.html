@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: nlohmann::adl_serializer&lt; typename, typename &gt; 模板结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacenlohmann.html">nlohmann</a></li><li class="navelem"><a class="el" href="structnlohmann_1_1adl__serializer.html">adl_serializer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="structnlohmann_1_1adl__serializer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">nlohmann::adl_serializer&lt; typename, typename &gt; 模板结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>default JSONSerializer template argument  
+ <a href="structnlohmann_1_1adl__serializer.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="json_8hpp_source.html">json.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplParams" colspan="2">template&lt;typename BasicJsonType , typename ValueType &gt; </td></tr>
+<tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">from_json</a> (BasicJsonType &amp;&amp;j, ValueType &amp;val) noexcept(noexcept(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val))) -&gt; decltype(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val), void())</td></tr>
+<tr class="memdesc:a2c544585b8b1828a0f1eecd831d0496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a JSON value to any value type  <a href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">更多...</a><br /></td></tr>
+<tr class="separator:a2c544585b8b1828a0f1eecd831d0496e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b867bd5dce5249d4f7433b8f27def6"><td class="memTemplParams" colspan="2">template&lt;typename BasicJsonType , typename ValueType &gt; </td></tr>
+<tr class="memitem:a01b867bd5dce5249d4f7433b8f27def6"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">to_json</a> (BasicJsonType &amp;j, ValueType &amp;&amp;val) noexcept(noexcept(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)))) -&gt; decltype(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)), void())</td></tr>
+<tr class="memdesc:a01b867bd5dce5249d4f7433b8f27def6"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert any value type to a JSON value  <a href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">更多...</a><br /></td></tr>
+<tr class="separator:a01b867bd5dce5249d4f7433b8f27def6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;typename, typename&gt;<br />
+struct nlohmann::adl_serializer&lt; typename, typename &gt;</h3>
+
+<p>default JSONSerializer template argument </p>
+<p>This serializer ignores the template arguments and uses ADL (<a href="https://en.cppreference.com/w/cpp/language/adl">argument-dependent lookup</a>) for serialization. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l02409">2409</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a2c544585b8b1828a0f1eecd831d0496e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c544585b8b1828a0f1eecd831d0496e">&#9670;&nbsp;</a></span>from_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename , typename &gt; </div>
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename ValueType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto <a class="el" href="structnlohmann_1_1adl__serializer.html">nlohmann::adl_serializer</a>&lt; typename, typename &gt;::from_json </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType &amp;&amp;&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueType &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(::nlohmann::from_json(std::forward&lt;BasicJsonType&gt;(j), val), void())
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert a JSON value to any value type </p>
+<p>This function is usually called by the <code><a class="el" href="namespacenlohmann_1_1detail.html#acc422c11342b31368f610b6f96fcedc6">get()</a></code> function of the <a class="el" href="classnlohmann_1_1basic__json.html">basic_json</a> class (either explicit or via conversion operators).</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>JSON value to read from </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">val</td><td>value to write to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l03810">3810</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph.png" border="0" usemap="#structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" alt=""/></div>
+<map name="structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" id="structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph">
+<area shape="rect" title="convert a JSON value to any value type" alt="" coords="5,5,188,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de" title=" " alt="" coords="236,13,441,39"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1type__error.html#aecc083aea4b698c33d042670ba50c10f" title=" " alt="" coords="489,5,659,47"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="707,5,911,47"/>
+<area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="959,13,1111,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01b867bd5dce5249d4f7433b8f27def6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b867bd5dce5249d4f7433b8f27def6">&#9670;&nbsp;</a></span>to_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename , typename &gt; </div>
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename ValueType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto <a class="el" href="structnlohmann_1_1adl__serializer.html">nlohmann::adl_serializer</a>&lt; typename, typename &gt;::to_json </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueType &amp;&amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(::nlohmann::to_json(j, std::forward&lt;ValueType&gt;(val)), void())
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert any value type to a JSON value </p>
+<p>This function is usually called by the constructors of the <a class="el" href="classnlohmann_1_1basic__json.html">basic_json</a> class.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">j</td><td>JSON value to write to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>value to read from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l03827">3827</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph.png" border="0" usemap="#structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" alt=""/></div>
+<map name="structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" id="structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph">
+<area shape="rect" title="convert any value type to a JSON value" alt="" coords="5,5,188,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec" title=" " alt="" coords="236,13,423,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/json/<a class="el" href="json_8hpp_source.html">json.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

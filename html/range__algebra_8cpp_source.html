@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/range_algebra.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">range_algebra.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="range__algebra_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/check_operations.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests interaction between the algebras and the operations.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   17</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_standard_algebra</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/test/floating_point_comparison.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;boost/units/systems/si/length.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;boost/units/systems/si/time.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;boost/units/systems/si/velocity.hpp&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;boost/units/systems/si/io.hpp&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="default__operations_8hpp.html">boost/numeric/odeint/algebra/default_operations.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="range__algebra_8hpp.html">boost/numeric/odeint/algebra/range_algebra.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="array__algebra_8hpp.html">boost/numeric/odeint/algebra/array_algebra.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/list.hpp&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>units = boost::units;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>si = boost::units::si;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">using</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">boost::numeric::odeint::array_algebra</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;BOOST_AUTO_TEST_SUITE( standard_algebra_test )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">   49</a></span>&#160;typedef <a class="code" href="namespaceboost.html">boost</a>::mpl::list&lt; <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">array_algebra</a> &gt; <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">   50</a></span>&#160;<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">   52</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a43ed521abcbd3a814428ed31ff05ea39">for_each2</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#aa490897b71a5c01fe163beb3096909a5">for_each2</a>( x1 , x2 , default_operations::scale_sum1&lt;&gt;( 1.0 ) );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 2.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 2.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a6e8c08082be283ce384e21d162508624">   63</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#afd00c714082a221c48f8ca207d127e94">for_each3</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#afbdfcce04a4b480c8c77374096208944">for_each3</a>( x1 , x2 , x3 , default_operations::scale_sum2&lt;&gt;( 1.0 , 2.0 ) );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 8.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 8.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a56be2603a96e121b3f421f80b50639dd">   73</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ad3cfc7f5a9599dbbf64233f04302acdb">for_each4</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }} , x4 = {{ 4.0 , 4.0 }};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a927840cfe2f5bb32157fe9b33fdb626b">for_each4</a>( x1 , x2 , x3 , x4 , default_operations::scale_sum3&lt;&gt;( 1.0 , 2.0 , 3.0 ) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 20.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 20.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a36b4b6b671e0dcac630abf43d96e5128">   82</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a310ffc0a7e26144712ed87a4955ba621">for_each5</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }} , x4 = {{ 4.0 , 4.0 }} , x5 = {{ 5.0 , 5.0 }};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a12ff6a83e2c486ba65cc3118da3a91f6">for_each5</a>( x1 , x2 , x3 , x4 , x5 , default_operations::scale_sum4&lt;&gt;( 1.0 , 2.0 , 3.0 , 4.0 ) );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 40.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 40.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a03abef0e4bbef68043af2aa5fb4c21f8">   91</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abe4be8932f4543268a005c14832d7d3c">for_each6</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }} , x4 = {{ 4.0 , 4.0 }} , x5 = {{ 5.0 , 5.0 }} , x6 = {{ 6.0 , 6.0 }};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a3b074ac4aff169fe01f0353224476f92">for_each6</a>( x1 , x2 , x3 , x4 , x5 , x6 ,default_operations::scale_sum5&lt;&gt;( 1.0 , 2.0 , 3.0 , 4.0 , 5.0 ) );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 70.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 70.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#add94921e1147038a62f27d46105c085e">  100</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#acf90985989268cce0342236eedfbcefc">for_each7</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }} , x4 = {{ 4.0 , 4.0 }} , x5 = {{ 5.0 , 5.0 }} , x6 = {{ 6.0 , 6.0 }} , x7 = {{ 7.0 , 7.0 }};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a4a830fb104fda5cd18bcf14c5e329c39">for_each7</a>( x1 , x2 , x3 , x4 , x5 , x6 , x7 , default_operations::scale_sum6&lt;&gt;( 1.0 , 2.0 , 3.0 , 4.0 , 5.0 , 6.0 ) );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 112.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 112.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a9b2e24ea758199da8ac9112359026441">  109</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a853a936a1e1b060b7bbb2dd9ec9ba332">for_each8</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.0 , 1.0 }} , x2 = {{ 2.0 , 2.0 }} , x3 = {{ 3.0 , 3.0 }} , x4 = {{ 4.0 , 4.0 }} , x5 = {{ 5.0 , 5.0 }} , x6 = {{ 6.0 , 6.0 }} , x7 = {{ 7.0 , 7.0 }} , x8 = {{ 8.0 , 8.0 }};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#ae41fa667b076ffded08ae4386dcabaf2">for_each8</a>( x1 , x2 , x3 , x4 , x5 , x6 , x7 , x8 , default_operations::scale_sum7&lt;&gt;( 1.0 , 2.0 , 3.0 , 4.0 , 5.0 , 6.0 , 7.0 ) );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    BOOST_CHECK_CLOSE( x1[0] , 168.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    BOOST_CHECK_CLOSE( x1[1] , 168.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a7b7e851d3034963bec1017cf693e5a92">  118</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ab587b2f46d2fbbb86667206a6ee74797">reduce</a> , algebra_type , <a class="code" href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a> )</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    algebra_type <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    boost::array&lt; double , 2 &gt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 1.25 , 2.25 }};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">double</span> sum = <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a5d94b4a7cf631988d1d72afdefdc71dd">reduce</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , std::plus&lt; double &gt;() , 0.0 );</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    BOOST_CHECK_CLOSE( sum , 3.5 , 1.0e-10 );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    BOOST_CHECK_CLOSE( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] , 1.25 , 1.0e-10 );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    BOOST_CHECK_CLOSE( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] , 2.25 , 1.0e-10 );</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structadder.html">  128</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structadder.html">adder</a></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Value , <span class="keyword">typename</span> T1 , <span class="keyword">typename</span> T2 &gt;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structadder.html#a5f72683f02e207b371d50d75e1504c48">  131</a></span>&#160;    Value <a class="code" href="structadder.html#a5f72683f02e207b371d50d75e1504c48">operator()</a>( Value val , T1 t1 , T2 t2 )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> val + t1 + t2;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Value , <span class="keyword">typename</span> T1 , <span class="keyword">typename</span> T2 , <span class="keyword">typename</span> T3 &gt;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structadder.html#a5d80ad45516a91311c4f20e84f1034d5">  137</a></span>&#160;    Value <a class="code" href="structadder.html#a5d80ad45516a91311c4f20e84f1034d5">operator()</a>( Value val , T1 t1 , T2 t2 , T3 t3 )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> val + t1 + t2 + t3 ;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Value , <span class="keyword">typename</span> T1 , <span class="keyword">typename</span> T2 , <span class="keyword">typename</span> T3 , <span class="keyword">typename</span> T4 &gt;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="structadder.html#a8f1ee9a66ab2b1b69cea7977b319d9ae">  143</a></span>&#160;    Value <a class="code" href="structadder.html#a8f1ee9a66ab2b1b69cea7977b319d9ae">operator()</a>( Value val , T1 t1 , T2 t2 , T3 t3 , T4 t4 )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> val + t1 + t2 + t3 + t4 ;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;};</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">  150</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">BOOST_AUTO_TEST_CASE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a6f7619dafcc44c72cd79475cdd9bdf9c">reduce2</a> )</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.25 , 2.25 }} , x2 = {{ 0.5 , -1.0 }};</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">double</span> sum = <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a1109ada90edfc245e30a4d9566a72a58">reduce2</a>( x1 , x2 , <a class="code" href="structadder.html">adder</a>() , 0.0 );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    BOOST_CHECK_CLOSE( sum , 3.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#ab12a7d5bba636c8abee70bed8d89875e">  159</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">BOOST_AUTO_TEST_CASE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ac2d3f720da0641db1430bf904edeae9e">reduce3</a> )</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.25 , 2.25 }} , x2 = {{ 0.5 , -1.0 }} , x3 = {{ 5.0 , 10.0 }};</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">double</span> sum = <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a0ae39c299ca0a2963fb39efd71abb0c9">reduce3</a>( x1 , x2 , x3 , <a class="code" href="structadder.html">adder</a>() , 0.0 );</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    BOOST_CHECK_CLOSE( sum , 18.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#a10f6c55386142a47c9a7b489069c7b38">  167</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">BOOST_AUTO_TEST_CASE</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ad825616d65d61ee32135be5ec1654ad3">reduce4</a> )</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    boost::array&lt; double , 2 &gt; x1 = {{ 1.25 , 2.25 }} , x2 = {{ 0.5 , -1.0 }} , x3 = {{ 5.0 , 10.0 }} , x4 = {{ 2.0 , -1.0 }};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">double</span> sum = <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a1c7fdcc5e94b5429caf3dcc2159738c0">reduce4</a>( x1 , x2 , x3 , x4 , <a class="code" href="structadder.html">adder</a>() , 0.0 );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    BOOST_CHECK_CLOSE( sum , 19.0 , 1.0e-10 );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="range__algebra_8cpp.html#aa50d78ec52784f02c5c01eda63ccf3af">  176</a></span>&#160;<a class="code" href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">BOOST_AUTO_TEST_CASE</a>( for_each2_with_units )</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">typedef</span> units::quantity&lt; si::time , double &gt; <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">typedef</span> units::quantity&lt; si::length , double &gt; <a class="code" href="harmonic__oscillator__units_8cpp.html#a0a88c51c041d1233ff760271fce7981d">length_type</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">typedef</span> units::quantity&lt; si::velocity , double &gt; <a class="code" href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    boost::array&lt; length_type , 2 &gt; x1 = {{ 1.0 * si::meter , 1.0 * si::meter }};</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    boost::array&lt; velocity_type , 2 &gt; x2 = {{ 2.0 * si::meter / si::seconds , 2.0 * si::meter / si::seconds }};</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#aa490897b71a5c01fe163beb3096909a5">for_each2</a>( x1 , x2 , default_operations::scale_sum1&lt; time_type &gt;( 0.1 * si::second ) );</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    BOOST_CHECK_CLOSE( x1[0].value() , 0.2 , 1.0e-10 );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    BOOST_CHECK_CLOSE( x1[1].value() , 0.2 , 1.0e-10 );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_ac2d3f720da0641db1430bf904edeae9e"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ac2d3f720da0641db1430bf904edeae9e">boost::numeric::odeint::detail::reduce3</a></div><div class="ttdeci">ValueType reduce3(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Reduction red, ValueType init)</div><div class="ttdef"><b>Definition:</b> <a href="reduce_8hpp_source.html#l00045">reduce.hpp:45</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a7614eca33b78edf267d03faaa56d9a05"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a7614eca33b78edf267d03faaa56d9a05">velocity_type</a></div><div class="ttdeci">units::quantity&lt; si::velocity, double &gt; velocity_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00044">harmonic_oscillator_units.cpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1default__operations_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="default__operations_8hpp_source.html#l00040">default_operations.hpp:40</a></div></div>
+<div class="ttc" id="astructadder_html_a8f1ee9a66ab2b1b69cea7977b319d9ae"><div class="ttname"><a href="structadder.html#a8f1ee9a66ab2b1b69cea7977b319d9ae">adder::operator()</a></div><div class="ttdeci">Value operator()(Value val, T1 t1, T2 t2, T3 t3, T4 t4) const</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00143">range_algebra.cpp:143</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a0a88c51c041d1233ff760271fce7981d"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a0a88c51c041d1233ff760271fce7981d">length_type</a></div><div class="ttdeci">units::quantity&lt; si::length, double &gt; length_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00043">harmonic_oscillator_units.cpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a1109ada90edfc245e30a4d9566a72a58"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a1109ada90edfc245e30a4d9566a72a58">boost::numeric::odeint::range_algebra::reduce2</a></div><div class="ttdeci">static Value reduce2(const S1 &amp;s1, const S2 &amp;s2, Red red, Value init)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00134">range_algebra.hpp:134</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_ad3cfc7f5a9599dbbf64233f04302acdb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ad3cfc7f5a9599dbbf64233f04302acdb">boost::numeric::odeint::detail::for_each4</a></div><div class="ttdeci">void for_each4(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00052">for_each.hpp:52</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_afd00c714082a221c48f8ca207d127e94"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#afd00c714082a221c48f8ca207d127e94">boost::numeric::odeint::detail::for_each3</a></div><div class="ttdeci">void for_each3(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00044">for_each.hpp:44</a></div></div>
+<div class="ttc" id="astructadder_html"><div class="ttname"><a href="structadder.html">adder</a></div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00128">range_algebra.cpp:128</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_ae41fa667b076ffded08ae4386dcabaf2"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#ae41fa667b076ffded08ae4386dcabaf2">boost::numeric::odeint::range_algebra::for_each8</a></div><div class="ttdeci">static void for_each8(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, S4 &amp;s4, S5 &amp;s5, S6 &amp;s6, S7 &amp;s7, S8 &amp;s8, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00080">range_algebra.hpp:80</a></div></div>
+<div class="ttc" id="arange__algebra_8cpp_html_a248fc203386e42e27570c6e53cc9b27d"><div class="ttname"><a href="range__algebra_8cpp.html#a248fc203386e42e27570c6e53cc9b27d">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(reduce2)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00150">range_algebra.cpp:150</a></div></div>
+<div class="ttc" id="arange__algebra_8cpp_html_a5fba2a9aabb36ed1565189f992dc6ffc"><div class="ttname"><a href="range__algebra_8cpp.html#a5fba2a9aabb36ed1565189f992dc6ffc">algebra_types</a></div><div class="ttdeci">boost::mpl::list&lt; range_algebra, array_algebra &gt; algebra_types</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00049">range_algebra.cpp:49</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_aa490897b71a5c01fe163beb3096909a5"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#aa490897b71a5c01fe163beb3096909a5">boost::numeric::odeint::range_algebra::for_each2</a></div><div class="ttdeci">static void for_each2(S1 &amp;s1, S2 &amp;s2, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00043">range_algebra.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aarray__algebra_8hpp_html"><div class="ttname"><a href="array__algebra_8hpp.html">array_algebra.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a1c7fdcc5e94b5429caf3dcc2159738c0"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a1c7fdcc5e94b5429caf3dcc2159738c0">boost::numeric::odeint::range_algebra::reduce4</a></div><div class="ttdeci">static Value reduce4(const S1 &amp;s1, const S2 &amp;s2, const S3 &amp;s3, const S4 &amp;s4, Red red, Value init)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00146">range_algebra.hpp:146</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_afbdfcce04a4b480c8c77374096208944"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#afbdfcce04a4b480c8c77374096208944">boost::numeric::odeint::range_algebra::for_each3</a></div><div class="ttdeci">static void for_each3(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00050">range_algebra.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1array__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1array__algebra.html">boost::numeric::odeint::array_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00027">array_algebra.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a5d94b4a7cf631988d1d72afdefdc71dd"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a5d94b4a7cf631988d1d72afdefdc71dd">boost::numeric::odeint::range_algebra::reduce</a></div><div class="ttdeci">static Value reduce(const S &amp;s, Red red, Value init)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00128">range_algebra.hpp:128</a></div></div>
+<div class="ttc" id="arange__algebra_8hpp_html"><div class="ttname"><a href="range__algebra_8hpp.html">range_algebra.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_abe4be8932f4543268a005c14832d7d3c"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abe4be8932f4543268a005c14832d7d3c">boost::numeric::odeint::detail::for_each6</a></div><div class="ttdeci">void for_each6(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Iterator5 first5, Iterator6 first6, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00069">for_each.hpp:69</a></div></div>
+<div class="ttc" id="astructadder_html_a5d80ad45516a91311c4f20e84f1034d5"><div class="ttname"><a href="structadder.html#a5d80ad45516a91311c4f20e84f1034d5">adder::operator()</a></div><div class="ttdeci">Value operator()(Value val, T1 t1, T2 t2, T3 t3) const</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00137">range_algebra.cpp:137</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a927840cfe2f5bb32157fe9b33fdb626b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a927840cfe2f5bb32157fe9b33fdb626b">boost::numeric::odeint::range_algebra::for_each4</a></div><div class="ttdeci">static void for_each4(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, S4 &amp;s4, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00056">range_algebra.hpp:56</a></div></div>
+<div class="ttc" id="arange__algebra_8cpp_html_a67002d35100b79d351616f976fee0dc1"><div class="ttname"><a href="range__algebra_8cpp.html#a67002d35100b79d351616f976fee0dc1">BOOST_AUTO_TEST_CASE_TEMPLATE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE_TEMPLATE(for_each2, algebra_type, algebra_types)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00052">range_algebra.cpp:52</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a12ff6a83e2c486ba65cc3118da3a91f6"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a12ff6a83e2c486ba65cc3118da3a91f6">boost::numeric::odeint::range_algebra::for_each5</a></div><div class="ttdeci">static void for_each5(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, S4 &amp;s4, S5 &amp;s5, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00062">range_algebra.hpp:62</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a6f7619dafcc44c72cd79475cdd9bdf9c"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a6f7619dafcc44c72cd79475cdd9bdf9c">boost::numeric::odeint::detail::reduce2</a></div><div class="ttdeci">ValueType reduce2(Iterator1 first1, Iterator1 last1, Iterator2 first2, Reduction red, ValueType init)</div><div class="ttdef"><b>Definition:</b> <a href="reduce_8hpp_source.html#l00037">reduce.hpp:37</a></div></div>
+<div class="ttc" id="arange__algebra_8cpp_html_a54411182e027189d2d5f3ccd703f3aa5"><div class="ttname"><a href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a></div><div class="ttdeci">range_algebra algebra</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00050">range_algebra.cpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a4a830fb104fda5cd18bcf14c5e329c39"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a4a830fb104fda5cd18bcf14c5e329c39">boost::numeric::odeint::range_algebra::for_each7</a></div><div class="ttdeci">static void for_each7(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, S4 &amp;s4, S5 &amp;s5, S6 &amp;s6, S7 &amp;s7, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00074">range_algebra.hpp:74</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_ab587b2f46d2fbbb86667206a6ee74797"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ab587b2f46d2fbbb86667206a6ee74797">boost::numeric::odeint::detail::reduce</a></div><div class="ttdeci">ValueType reduce(Iterator1 first1, Iterator1 last1, Reduction red, ValueType init)</div><div class="ttdef"><b>Definition:</b> <a href="reduce_8hpp_source.html#l00028">reduce.hpp:28</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a0ae39c299ca0a2963fb39efd71abb0c9"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a0ae39c299ca0a2963fb39efd71abb0c9">boost::numeric::odeint::range_algebra::reduce3</a></div><div class="ttdeci">static Value reduce3(const S1 &amp;s1, const S2 &amp;s2, const S3 &amp;s3, Red red, Value init)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00140">range_algebra.hpp:140</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_acf90985989268cce0342236eedfbcefc"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#acf90985989268cce0342236eedfbcefc">boost::numeric::odeint::detail::for_each7</a></div><div class="ttdeci">void for_each7(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Iterator5 first5, Iterator6 first6, Iterator7 first7, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00078">for_each.hpp:78</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00033">range_algebra.hpp:33</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a853a936a1e1b060b7bbb2dd9ec9ba332"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a853a936a1e1b060b7bbb2dd9ec9ba332">boost::numeric::odeint::detail::for_each8</a></div><div class="ttdeci">void for_each8(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Iterator5 first5, Iterator6 first6, Iterator7 first7, Iterator8 first8, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00086">for_each.hpp:86</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a22524f0bf8fa0712836f8142b0afa726"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></div><div class="ttdeci">units::quantity&lt; si::time, double &gt; time_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00042">harmonic_oscillator_units.cpp:42</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html_a3b074ac4aff169fe01f0353224476f92"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html#a3b074ac4aff169fe01f0353224476f92">boost::numeric::odeint::range_algebra::for_each6</a></div><div class="ttdeci">static void for_each6(S1 &amp;s1, S2 &amp;s2, S3 &amp;s3, S4 &amp;s4, S5 &amp;s5, S6 &amp;s6, Op op)</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00068">range_algebra.hpp:68</a></div></div>
+<div class="ttc" id="adefault__operations_8hpp_html"><div class="ttname"><a href="default__operations_8hpp.html">default_operations.hpp</a></div></div>
+<div class="ttc" id="astructadder_html_a5f72683f02e207b371d50d75e1504c48"><div class="ttname"><a href="structadder.html#a5f72683f02e207b371d50d75e1504c48">adder::operator()</a></div><div class="ttdeci">Value operator()(Value val, T1 t1, T2 t2) const</div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8cpp_source.html#l00131">range_algebra.cpp:131</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a43ed521abcbd3a814428ed31ff05ea39"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a43ed521abcbd3a814428ed31ff05ea39">boost::numeric::odeint::detail::for_each2</a></div><div class="ttdeci">void for_each2(Iterator1 first1, Iterator1 last1, Iterator2 first2, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00036">for_each.hpp:36</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a310ffc0a7e26144712ed87a4955ba621"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a310ffc0a7e26144712ed87a4955ba621">boost::numeric::odeint::detail::for_each5</a></div><div class="ttdeci">void for_each5(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Iterator5 first5, Operation op)</div><div class="ttdef"><b>Definition:</b> <a href="for__each_8hpp_source.html#l00060">for_each.hpp:60</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_ad825616d65d61ee32135be5ec1654ad3"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ad825616d65d61ee32135be5ec1654ad3">boost::numeric::odeint::detail::reduce4</a></div><div class="ttdeci">ValueType reduce4(Iterator1 first1, Iterator1 last1, Iterator2 first2, Iterator3 first3, Iterator4 first4, Reduction red, ValueType init)</div><div class="ttdef"><b>Definition:</b> <a href="reduce_8hpp_source.html#l00053">reduce.hpp:53</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

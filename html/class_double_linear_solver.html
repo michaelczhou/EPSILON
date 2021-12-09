@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: DoubleLinearSolver类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_double_linear_solver-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">DoubleLinearSolver类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___linear_solvers.html">LinearSolvers</a> &#124; <a class="el" href="group___abstract_linear_algebra.html">AbstractLinearAlgebra</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_double_linear_solver_8h_source.html">DoubleLinearSolver.h</a>&gt;</code></p>
+<div class="dynheader">
+类 DoubleLinearSolver 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_double_linear_solver__inherit__graph.png" border="0" usemap="#_double_linear_solver_inherit__map" alt="Inheritance graph"/></div>
+<map name="_double_linear_solver_inherit__map" id="_double_linear_solver_inherit__map">
+<area shape="rect" title=" " alt="" coords="245,5,394,32"/>
+<area shape="rect" href="class_de_sym_indef_solver.html" title=" " alt="" coords="5,80,148,107"/>
+<area shape="rect" href="class_de_sym_p_s_d_solver.html" title=" " alt="" coords="173,80,309,107"/>
+<area shape="rect" href="class_ma27_solver_base.html" title=" " alt="" coords="333,80,463,107"/>
+<area shape="rect" href="class_ma57_solver.html" title=" " alt="" coords="487,80,586,107"/>
+<area shape="rect" href="class_ma27_solver.html" title=" " alt="" coords="349,155,447,181"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae477a0fddd3a7580be0efba77d3afe6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_linear_solver.html#ae477a0fddd3a7580be0efba77d3afe6b">diagonalChanged</a> (int idiag, int extent)=0</td></tr>
+<tr class="separator:ae477a0fddd3a7580be0efba77d3afe6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43982afcc23f8a770765c034205f1848"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_linear_solver.html#a43982afcc23f8a770765c034205f1848">matrixChanged</a> ()=0</td></tr>
+<tr class="separator:a43982afcc23f8a770765c034205f1848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9905c6d7449e3e322e639243c2cf99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_linear_solver.html#a8f9905c6d7449e3e322e639243c2cf99">solve</a> (<a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;x)=0</td></tr>
+<tr class="separator:a8f9905c6d7449e3e322e639243c2cf99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fe7a44e9657df2dc23c663e6ba9c59"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_linear_solver.html#ab3fe7a44e9657df2dc23c663e6ba9c59">~DoubleLinearSolver</a> ()</td></tr>
+<tr class="separator:ab3fe7a44e9657df2dc23c663e6ba9c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Implements the main solver for linear systems that arise in primal-dual interior-point methods for QP. </p>
+
+<p class="definition">在文件 <a class="el" href="_double_linear_solver_8h_source.html">DoubleLinearSolver.h</a> 第 <a class="el" href="_double_linear_solver_8h_source.html#l00020">20</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab3fe7a44e9657df2dc23c663e6ba9c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fe7a44e9657df2dc23c663e6ba9c59">&#9670;&nbsp;</a></span>~DoubleLinearSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DoubleLinearSolver::~DoubleLinearSolver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Destructor <br  />
+ </p>
+
+<p class="definition">在文件 <a class="el" href="_double_linear_solver_8h_source.html">DoubleLinearSolver.h</a> 第 <a class="el" href="_double_linear_solver_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae477a0fddd3a7580be0efba77d3afe6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae477a0fddd3a7580be0efba77d3afe6b">&#9670;&nbsp;</a></span>diagonalChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleLinearSolver::diagonalChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idiag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>extent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>called if the diagonal elements of the matrix have changed. Triggers a refactorization of the matrix, if necessary.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idiag</td><td>index of the first diagonal element that changed </td></tr>
+    <tr><td class="paramname">extent</td><td>the number of diagonal element that changed. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ma27_solver_base.html#a61712b299ded9dbfbf10195af0831009">Ma27SolverBase</a>, <a class="el" href="class_ma57_solver.html#a90c9c212a154530a3d7cabb6875d7949">Ma57Solver</a>, <a class="el" href="class_de_sym_indef_solver.html#af257cc74bd9eab9c83dc21e70d4559b8">DeSymIndefSolver</a> , 以及 <a class="el" href="class_de_sym_p_s_d_solver.html#ac6cd537d0cd55c792c3654f58fbd6769">DeSymPSDSolver</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a43982afcc23f8a770765c034205f1848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43982afcc23f8a770765c034205f1848">&#9670;&nbsp;</a></span>matrixChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleLinearSolver::matrixChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>called if some elements of the matrix have changed. Triggers a refactorization of the matrix, if necessary. <br  />
+ </p>
+
+<p>在 <a class="el" href="class_ma27_solver_base.html#af4765de021d29c27a4741b990dc3e54b">Ma27SolverBase</a>, <a class="el" href="class_ma57_solver.html#a3c4b3242253361746a5f39a5a5e7d9e0">Ma57Solver</a>, <a class="el" href="class_de_sym_indef_solver.html#a2eff1c041906628436f9790a50eafe2a">DeSymIndefSolver</a> , 以及 <a class="el" href="class_de_sym_p_s_d_solver.html#a644f956b02988f62338224b7efacb205">DeSymPSDSolver</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a8f9905c6d7449e3e322e639243c2cf99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9905c6d7449e3e322e639243c2cf99">&#9670;&nbsp;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleLinearSolver::solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>solves a linear system.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>on entry the right hand side of the system to be solved. On exit, the solution. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_de_sym_p_s_d_solver.html#a290acbf1d6dc956b957bee719f6495db">DeSymPSDSolver</a>, <a class="el" href="class_de_sym_indef_solver.html#a1838636ac0cf97eca44db3ae3d35fb00">DeSymIndefSolver</a>, <a class="el" href="class_ma27_solver_base.html#a5256946dfc5da1133c0b90229db46d92">Ma27SolverBase</a>, <a class="el" href="class_ma27_solver.html#a1f1be2432dee03e400a41779f32a886c">Ma27Solver</a> , 以及 <a class="el" href="class_ma57_solver.html#aa4514ccfb82c0c9b429fbccb4322ca60">Ma57Solver</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/ooqp/include/ooqp/<a class="el" href="_double_linear_solver_8h_source.html">DoubleLinearSolver.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

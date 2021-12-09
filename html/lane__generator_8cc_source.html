@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/lane/lane_generator.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_4e024fb0d94a727e33abf0dd567ac960.html">lane</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lane_generator.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lane__generator_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lane__generator_8h.html">common/lane/lane_generator.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">common/basics/config.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="spline__generator_8h.html">common/spline/spline_generator.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classcommon_1_1_lane_generator.html#a302c9829f58afc1016c7964db002cc80">    7</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_lane_generator.html#a302c9829f58afc1016c7964db002cc80">LaneGenerator::GetLaneBySampleInterpolation</a>(</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf&lt;LaneDim&gt;</a>&amp; samples, <span class="keyword">const</span> std::vector&lt;decimal_t&gt;&amp; para,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="classcommon_1_1_spline.html">Spline&lt;LaneDegree, LaneDim&gt;</a> spline;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classcommon_1_1_spline_generator.html">SplineGenerator&lt;LaneDegree, LaneDim&gt;</a> spline_generator;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span> (spline_generator.<a class="code" href="classcommon_1_1_spline_generator.html#abf42d9d26ecc35cde6287af5585d7ffe">GetCubicSplineBySampleInterpolation</a>(</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;          samples, para, &amp;spline) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// printf(&quot;[LaneBySampleInterpolation]Cannot get lane by interpolation.\n&quot;);</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  lane-&gt;<a class="code" href="classcommon_1_1_lane.html#a46ae4d4030b2607bff00580e76516cd9">set_position_spline</a>(spline);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span> (!lane-&gt;<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classcommon_1_1_lane_generator.html#a505ff1e2825229730354a9c05fceb744">   23</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_lane_generator.html#a505ff1e2825229730354a9c05fceb744">LaneGenerator::GetLaneBySamplePoints</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf&lt;LaneDim&gt;</a>&amp; samples,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                               <a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::vector&lt;decimal_t&gt; para;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">double</span> d = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  para.push_back(d);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; (int)samples.size(); ++i) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span> dx = samples[i](0) - samples[i - 1](0);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">double</span> dy = samples[i](1) - samples[i - 1](1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    d += std::hypot(dx, dy);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    para.push_back(d);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classcommon_1_1_lane_generator.html#a302c9829f58afc1016c7964db002cc80">common::LaneGenerator::GetLaneBySampleInterpolation</a>(samples, para,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                          lane) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// printf(&quot;Cannot get lane.\n&quot;);</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e">   42</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e">LaneGenerator::GetLaneBySampleFitting</a>(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf&lt;LaneDim&gt;</a>&amp; samples, <span class="keyword">const</span> std::vector&lt;decimal_t&gt;&amp; para,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> Eigen::ArrayXf&amp; breaks, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> regulator, <a class="code" href="classcommon_1_1_lane.html">Lane</a>* lane) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classcommon_1_1_spline.html">Spline&lt;LaneDegree, LaneDim&gt;</a> spline;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classcommon_1_1_spline_generator.html">SplineGenerator&lt;LaneDegree, LaneDim&gt;</a> spline_generator;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">if</span> (spline_generator.<a class="code" href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb">GetQuinticSplineBySampleFitting</a>(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          samples, para, breaks, regulator, &amp;spline) != <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// printf(&quot;[LaneBySampleInterpolation]Cannot get lane by fitting.\n&quot;);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  lane-&gt;<a class="code" href="classcommon_1_1_lane.html#a46ae4d4030b2607bff00580e76516cd9">set_position_spline</a>(spline);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (!lane-&gt;<a class="code" href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">IsValid</a>()) <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}  <span class="comment">// namespace common</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasscommon_1_1_spline_generator_html_abf42d9d26ecc35cde6287af5585d7ffe"><div class="ttname"><a href="classcommon_1_1_spline_generator.html#abf42d9d26ecc35cde6287af5585d7ffe">common::SplineGenerator::GetCubicSplineBySampleInterpolation</a></div><div class="ttdeci">static ErrorType GetCubicSplineBySampleInterpolation(const vec_Vecf&lt; N_DIM &gt; &amp;samples, const std::vector&lt; decimal_t &gt; &amp;para, SplineType *spline)</div><div class="ttdoc">Return natural (cubic) spline fitting with respect to parameterization</div><div class="ttdef"><b>Definition:</b> <a href="spline__generator_8cc_source.html#l00008">spline_generator.cc:8</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_generator_html_af47f7949979c7e6219d90dc9f8cc053e"><div class="ttname"><a href="classcommon_1_1_lane_generator.html#af47f7949979c7e6219d90dc9f8cc053e">common::LaneGenerator::GetLaneBySampleFitting</a></div><div class="ttdeci">static ErrorType GetLaneBySampleFitting(const vec_Vecf&lt; LaneDim &gt; &amp;samples, const std::vector&lt; decimal_t &gt; &amp;para, const Eigen::ArrayXf &amp;breaks, const decimal_t regulator, Lane *lane)</div><div class="ttdoc">get lane by least square fitting with continuity constraints</div><div class="ttdef"><b>Definition:</b> <a href="lane__generator_8cc_source.html#l00042">lane_generator.cc:42</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a0a3b37beb40c06edc02cb4b7339f2b96"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a0a3b37beb40c06edc02cb4b7339f2b96">vec_Vecf</a></div><div class="ttdeci">vec_E&lt; Vecf&lt; N &gt; &gt; vec_Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00074">basics.h:74</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_a46ae4d4030b2607bff00580e76516cd9"><div class="ttname"><a href="classcommon_1_1_lane.html#a46ae4d4030b2607bff00580e76516cd9">common::Lane::set_position_spline</a></div><div class="ttdeci">void set_position_spline(const SplineType &amp;position_spline)</div><div class="ttdoc">Set the parameterization of the lane</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00023">lane.h:23</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_generator_html_a505ff1e2825229730354a9c05fceb744"><div class="ttname"><a href="classcommon_1_1_lane_generator.html#a505ff1e2825229730354a9c05fceb744">common::LaneGenerator::GetLaneBySamplePoints</a></div><div class="ttdeci">static ErrorType GetLaneBySamplePoints(const vec_Vecf&lt; LaneDim &gt; &amp;samples, Lane *lane)</div><div class="ttdef"><b>Definition:</b> <a href="lane__generator_8cc_source.html#l00023">lane_generator.cc:23</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_generator_html"><div class="ttname"><a href="classcommon_1_1_spline_generator.html">common::SplineGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="spline__generator_8h_source.html#l00022">spline_generator.h:22</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_generator_html_a302c9829f58afc1016c7964db002cc80"><div class="ttname"><a href="classcommon_1_1_lane_generator.html#a302c9829f58afc1016c7964db002cc80">common::LaneGenerator::GetLaneBySampleInterpolation</a></div><div class="ttdeci">static ErrorType GetLaneBySampleInterpolation(const vec_Vecf&lt; LaneDim &gt; &amp;samples, const std::vector&lt; decimal_t &gt; &amp;para, Lane *lane)</div><div class="ttdef"><b>Definition:</b> <a href="lane__generator_8cc_source.html#l00007">lane_generator.cc:7</a></div></div>
+<div class="ttc" id="aspline__generator_8h_html"><div class="ttname"><a href="spline__generator_8h.html">spline_generator.h</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaea29f29b0f655c329e020f0a24a9855b">kWrongStatus</a></div><div class="ttdeci">@ kWrongStatus</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html_ac8dd5e82e8c24ec5d4b0275c5e045a87"><div class="ttname"><a href="classcommon_1_1_lane.html#ac8dd5e82e8c24ec5d4b0275c5e045a87">common::Lane::IsValid</a></div><div class="ttdeci">bool IsValid() const</div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00017">lane.h:17</a></div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_html"><div class="ttname"><a href="classcommon_1_1_spline.html">common::Spline&lt; LaneDegree, LaneDim &gt;</a></div></div>
+<div class="ttc" id="alane__generator_8h_html"><div class="ttname"><a href="lane__generator_8h.html">lane_generator.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_spline_generator_html_a12236e534a3f183f980ccfdca9ea0ceb"><div class="ttname"><a href="classcommon_1_1_spline_generator.html#a12236e534a3f183f980ccfdca9ea0ceb">common::SplineGenerator::GetQuinticSplineBySampleFitting</a></div><div class="ttdeci">static ErrorType GetQuinticSplineBySampleFitting(const vec_Vecf&lt; N_DIM &gt; &amp;samples, const std::vector&lt; decimal_t &gt; &amp;para, const Eigen::ArrayXf &amp;breaks, const decimal_t regulator, SplineType *spline)</div><div class="ttdoc">Return optimal spline fitting with continuity constraints</div><div class="ttdef"><b>Definition:</b> <a href="spline__generator_8cc_source.html#l00088">spline_generator.cc:88</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_lane_html"><div class="ttname"><a href="classcommon_1_1_lane.html">common::Lane</a></div><div class="ttdef"><b>Definition:</b> <a href="lane_8h_source.html#l00009">lane.h:9</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

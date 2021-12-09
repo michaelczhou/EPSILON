@@ -1,0 +1,943 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::controlled_runge_kutta&lt; ErrorStepper, ErrorChecker, Resizer, explicit_error_stepper_tag &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html">controlled_runge_kutta&lt; ErrorStepper, ErrorChecker, Resizer, explicit_error_stepper_tag &gt;</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_checkdc004f807d6d5cfa2200109ff4ed18f3.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::controlled_runge_kutta&lt; ErrorStepper, ErrorChecker, Resizer, explicit_error_stepper_tag &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implements step size control for Runge-Kutta steppers with error estimation.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:acf0e7a295cb5f378a56d9933504a8f2f"><td class="memItemLeft" align="right" valign="top">typedef ErrorStepper&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a></td></tr>
+<tr class="separator:acf0e7a295cb5f378a56d9933504a8f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87362d782515c70994c2f8e7de27c905"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a87362d782515c70994c2f8e7de27c905">state_type</a></td></tr>
+<tr class="separator:a87362d782515c70994c2f8e7de27c905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980d79c5149a9864411063c081fa6bc5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a980d79c5149a9864411063c081fa6bc5">value_type</a></td></tr>
+<tr class="separator:a980d79c5149a9864411063c081fa6bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d162166283a8ccff94750374872a06e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a2d162166283a8ccff94750374872a06e">deriv_type</a></td></tr>
+<tr class="separator:a2d162166283a8ccff94750374872a06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf66aeb9efd45765cf6522d85ddfc74d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a></td></tr>
+<tr class="separator:adf66aeb9efd45765cf6522d85ddfc74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac37a7379579fe7121f4a62c6c70d05d4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a2f4c4523a7273466e87245d59d4c4f16">stepper_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ac37a7379579fe7121f4a62c6c70d05d4">algebra_type</a></td></tr>
+<tr class="separator:ac37a7379579fe7121f4a62c6c70d05d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add28a9d451972f860df0f8e771a45933"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_type::operations_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#add28a9d451972f860df0f8e771a45933">operations_type</a></td></tr>
+<tr class="separator:add28a9d451972f860df0f8e771a45933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc934d19caf292634151d6b2de7f63e"><td class="memItemLeft" align="right" valign="top">typedef Resizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1fc934d19caf292634151d6b2de7f63e">resizer_type</a></td></tr>
+<tr class="separator:a1fc934d19caf292634151d6b2de7f63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8207c866b0023f7a6a479ea23c600374"><td class="memItemLeft" align="right" valign="top">typedef ErrorChecker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a></td></tr>
+<tr class="separator:a8207c866b0023f7a6a479ea23c600374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1087c1b26f1557b567071b300d540292"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__controlled__stepper__tag.html">explicit_controlled_stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1087c1b26f1557b567071b300d540292">stepper_category</a></td></tr>
+<tr class="separator:a1087c1b26f1557b567071b300d540292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6265265f61df4d80b51d31b8dc2eb996"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_state_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a6265265f61df4d80b51d31b8dc2eb996">wrapped_state_type</a></td></tr>
+<tr class="separator:a6265265f61df4d80b51d31b8dc2eb996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88dbdb820b2100164d031e0a5053b7e"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_deriv_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ad88dbdb820b2100164d031e0a5053b7e">wrapped_deriv_type</a></td></tr>
+<tr class="separator:ad88dbdb820b2100164d031e0a5053b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce87d3f07164284c0be7c9248ba901f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1ce87d3f07164284c0be7c9248ba901f">controlled_stepper_type</a></td></tr>
+<tr class="separator:a1ce87d3f07164284c0be7c9248ba901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a05b8436a4c2cdefe0414b14e0da6d18b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a05b8436a4c2cdefe0414b14e0da6d18b">controlled_runge_kutta</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a> &amp;error_checker=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a>(), const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a> &amp;<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a47b51e2b73d9d6b49d02f02cae632d0a">stepper</a>=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a>())</td></tr>
+<tr class="memdesc:a05b8436a4c2cdefe0414b14e0da6d18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the controlled Runge-Kutta stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a05b8436a4c2cdefe0414b14e0da6d18b">更多...</a><br /></td></tr>
+<tr class="separator:a05b8436a4c2cdefe0414b14e0da6d18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23d46a2aecd23a3f5e9df1c0975a758"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut &gt; </td></tr>
+<tr class="memitem:ae23d46a2aecd23a3f5e9df1c0975a758"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ae23d46a2aecd23a3f5e9df1c0975a758">try_step</a> (System system, StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ae23d46a2aecd23a3f5e9df1c0975a758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ae23d46a2aecd23a3f5e9df1c0975a758">更多...</a><br /></td></tr>
+<tr class="separator:ae23d46a2aecd23a3f5e9df1c0975a758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e96ee368b5a1a8742f963544a7005f4"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut &gt; </td></tr>
+<tr class="memitem:a2e96ee368b5a1a8742f963544a7005f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a2e96ee368b5a1a8742f963544a7005f4">try_step</a> (System system, const StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a2e96ee368b5a1a8742f963544a7005f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step. Solves the forwarding problem and allows for using boost range as state_type.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a2e96ee368b5a1a8742f963544a7005f4">更多...</a><br /></td></tr>
+<tr class="separator:a2e96ee368b5a1a8742f963544a7005f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae560c71d807e7082fca619031b042c27"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut , class DerivIn &gt; </td></tr>
+<tr class="memitem:ae560c71d807e7082fca619031b042c27"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ae560c71d807e7082fca619031b042c27">try_step</a> (System system, StateInOut &amp;x, const DerivIn &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ae560c71d807e7082fca619031b042c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ae560c71d807e7082fca619031b042c27">更多...</a><br /></td></tr>
+<tr class="separator:ae560c71d807e7082fca619031b042c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8d19d733348be1c053d917287b225c"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class StateOut &gt; </td></tr>
+<tr class="memitem:a8c8d19d733348be1c053d917287b225c"><td class="memTemplItemLeft" align="right" valign="top">boost::disable_if&lt; boost::is_same&lt; StateIn, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &gt;, <a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8c8d19d733348be1c053d917287b225c">try_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a8c8d19d733348be1c053d917287b225c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8c8d19d733348be1c053d917287b225c">更多...</a><br /></td></tr>
+<tr class="separator:a8c8d19d733348be1c053d917287b225c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5525d6f13536cbc6ec2deb332783d7"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class DerivIn , class StateOut &gt; </td></tr>
+<tr class="memitem:ace5525d6f13536cbc6ec2deb332783d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ace5525d6f13536cbc6ec2deb332783d7">try_step</a> (System system, const StateIn &amp;in, const DerivIn &amp;dxdt, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;<a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:ace5525d6f13536cbc6ec2deb332783d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to perform one step.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ace5525d6f13536cbc6ec2deb332783d7">更多...</a><br /></td></tr>
+<tr class="separator:ace5525d6f13536cbc6ec2deb332783d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5b2485de92013b9957b8690feee344"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a980d79c5149a9864411063c081fa6bc5">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#aba5b2485de92013b9957b8690feee344">last_error</a> (void) const</td></tr>
+<tr class="memdesc:aba5b2485de92013b9957b8690feee344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the error of the last step.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#aba5b2485de92013b9957b8690feee344">更多...</a><br /></td></tr>
+<tr class="separator:aba5b2485de92013b9957b8690feee344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b36abec125abe86ed96cc7c761241e4"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:a5b36abec125abe86ed96cc7c761241e4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a5b36abec125abe86ed96cc7c761241e4">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="memdesc:a5b36abec125abe86ed96cc7c761241e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a5b36abec125abe86ed96cc7c761241e4">更多...</a><br /></td></tr>
+<tr class="separator:a5b36abec125abe86ed96cc7c761241e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47b51e2b73d9d6b49d02f02cae632d0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a47b51e2b73d9d6b49d02f02cae632d0a">stepper</a> (void)</td></tr>
+<tr class="memdesc:a47b51e2b73d9d6b49d02f02cae632d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of the underlying stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a47b51e2b73d9d6b49d02f02cae632d0a">更多...</a><br /></td></tr>
+<tr class="separator:a47b51e2b73d9d6b49d02f02cae632d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9d574c804b91ab67be49c1b9c42135"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a7f9d574c804b91ab67be49c1b9c42135">stepper</a> (void) const</td></tr>
+<tr class="memdesc:a7f9d574c804b91ab67be49c1b9c42135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of the underlying stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a7f9d574c804b91ab67be49c1b9c42135">更多...</a><br /></td></tr>
+<tr class="separator:a7f9d574c804b91ab67be49c1b9c42135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class ErrorStepper, class ErrorChecker, class Resizer&gt;<br />
+class boost::numeric::odeint::controlled_runge_kutta&lt; ErrorStepper, ErrorChecker, Resizer, explicit_error_stepper_tag &gt;</h3>
+
+<p>Implements step size control for Runge-Kutta steppers with error estimation. </p>
+<p>This class implements the step size control for standard Runge-Kutta steppers with error estimation.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ErrorStepper</td><td>The stepper type with error estimation, has to fulfill the ErrorStepper concept. </td></tr>
+    <tr><td class="paramname">ErrorChecker</td><td>The error checker </td></tr>
+    <tr><td class="paramname">Resizer</td><td>The resizer policy type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00144">144</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ac37a7379579fe7121f4a62c6c70d05d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37a7379579fe7121f4a62c6c70d05d4">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a2f4c4523a7273466e87245d59d4c4f16">stepper_type::algebra_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ac37a7379579fe7121f4a62c6c70d05d4">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00154">154</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1ce87d3f07164284c0be7c9248ba901f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce87d3f07164284c0be7c9248ba901f">&#9670;&nbsp;</a></span>controlled_stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta</a>&lt; ErrorStepper , ErrorChecker , Resizer , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1ce87d3f07164284c0be7c9248ba901f">controlled_stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2d162166283a8ccff94750374872a06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d162166283a8ccff94750374872a06e">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a2d162166283a8ccff94750374872a06e">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00152">152</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8207c866b0023f7a6a479ea23c600374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8207c866b0023f7a6a479ea23c600374">&#9670;&nbsp;</a></span>error_checker_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ErrorChecker <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00157">157</a> 行定义.</p>
+
+</div>
+</div>
+<a id="add28a9d451972f860df0f8e771a45933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add28a9d451972f860df0f8e771a45933">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_type::operations_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#add28a9d451972f860df0f8e771a45933">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00155">155</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1fc934d19caf292634151d6b2de7f63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc934d19caf292634151d6b2de7f63e">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Resizer <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1fc934d19caf292634151d6b2de7f63e">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00156">156</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a87362d782515c70994c2f8e7de27c905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87362d782515c70994c2f8e7de27c905">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a87362d782515c70994c2f8e7de27c905">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00150">150</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1087c1b26f1557b567071b300d540292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1087c1b26f1557b567071b300d540292">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__controlled__stepper__tag.html">explicit_controlled_stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a1087c1b26f1557b567071b300d540292">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00158">158</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acf0e7a295cb5f378a56d9933504a8f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0e7a295cb5f378a56d9933504a8f2f">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ErrorStepper <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adf66aeb9efd45765cf6522d85ddfc74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf66aeb9efd45765cf6522d85ddfc74d">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab3354d8f086286dedd7358305169a8d6">stepper_type::time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00153">153</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a980d79c5149a9864411063c081fa6bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980d79c5149a9864411063c081fa6bc5">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a980d79c5149a9864411063c081fa6bc5">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00151">151</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad88dbdb820b2100164d031e0a5053b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88dbdb820b2100164d031e0a5053b7e">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_deriv_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#ad88dbdb820b2100164d031e0a5053b7e">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00162">162</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6265265f61df4d80b51d31b8dc2eb996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6265265f61df4d80b51d31b8dc2eb996">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_state_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a6265265f61df4d80b51d31b8dc2eb996">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a05b8436a4c2cdefe0414b14e0da6d18b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b8436a4c2cdefe0414b14e0da6d18b">&#9670;&nbsp;</a></span>controlled_runge_kutta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>error_checker</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a8207c866b0023f7a6a479ea23c600374">error_checker_type</a>(&#160;)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a>(&#160;)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the controlled Runge-Kutta stepper. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error_checker</td><td>An instance of the error checker. </td></tr>
+    <tr><td class="paramname">stepper</td><td>An instance of the underlying stepper. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00173">173</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5b36abec125abe86ed96cc7c761241e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b36abec125abe86ed96cc7c761241e4">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjust the size of all temporaries in the stepper manually. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A state from which the size of the temporaries to be resized is deduced. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00394">394</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba5b2485de92013b9957b8690feee344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba5b2485de92013b9957b8690feee344">&#9670;&nbsp;</a></span>last_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#a980d79c5149a9864411063c081fa6bc5">value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::last_error </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the error of the last step. </p>
+<p>returns The last error of the step. </p>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00383">383</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a47b51e2b73d9d6b49d02f02cae632d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b51e2b73d9d6b49d02f02cae632d0a">&#9670;&nbsp;</a></span>stepper() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::stepper </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the instance of the underlying stepper. </p>
+<dl class="section return"><dt>返回</dt><dd>The instance of the underlying stepper. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00406">406</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7f9d574c804b91ab67be49c1b9c42135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9d574c804b91ab67be49c1b9c42135">&#9670;&nbsp;</a></span>stepper() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#acf0e7a295cb5f378a56d9933504a8f2f">stepper_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::stepper </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the instance of the underlying stepper. </p>
+<dl class="section return"><dt>返回</dt><dd>The instance of the underlying stepper. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00415">415</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ace5525d6f13536cbc6ec2deb332783d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5525d6f13536cbc6ec2deb332783d7">&#9670;&nbsp;</a></span>try_step() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class DerivIn , class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. </p>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. </td></tr>
+    <tr><td class="paramname">dxdt</td><td>The derivative of state. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">out</td><td>Used to store the result of the step. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00337">337</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8c8d19d733348be1c053d917287b225c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8d19d733348be1c053d917287b225c">&#9670;&nbsp;</a></span>try_step() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::disable_if&lt; boost::is_same&lt; StateIn , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &gt; , <a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> &gt;::type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. </p>
+<dl class="section note"><dt>注解</dt><dd>This method is disabled if state_type=time_type to avoid ambiguity.</dd></dl>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">out</td><td>Used to store the result of the step. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00303">303</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2e96ee368b5a1a8742f963544a7005f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e96ee368b5a1a8742f963544a7005f4">&#9670;&nbsp;</a></span>try_step() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. Solves the forwarding problem and allows for using boost range as state_type. </p>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The state of the ODE which should be solved. Overwritten if the step is successful. Can be a boost range. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00231">231</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae560c71d807e7082fca619031b042c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae560c71d807e7082fca619031b042c27">&#9670;&nbsp;</a></span>try_step() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut , class DerivIn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DerivIn &amp;&#160;</td>
+          <td class="paramname"><em>dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. </p>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The state of the ODE which should be solved. Overwritten if the step is successful. </td></tr>
+    <tr><td class="paramname">dxdt</td><td>The derivative of state. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00263">263</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae23d46a2aecd23a3f5e9df1c0975a758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae23d46a2aecd23a3f5e9df1c0975a758">&#9670;&nbsp;</a></span>try_step() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ErrorStepper , class ErrorChecker , class Resizer &gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html#ae001d7bcc6ae63bfe56ffae14d086d9d">controlled_step_result</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a>&lt; ErrorStepper, ErrorChecker, Resizer, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1explicit__error__stepper__tag.html">explicit_error_stepper_tag</a> &gt;::try_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_3_01_error_stepper_00_01_error_check65a63012552eb43957c2f8f928aa74dd.html#adf66aeb9efd45765cf6522d85ddfc74d">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to perform one step. </p>
+<p>This method tries to do one step with step size dt. If the error estimate is to large, the step is rejected and the method returns fail and the step size dt is reduced. If the error estimate is acceptably small, the step is performed, success is returned and dt might be increased to make the steps as large as possible. This method also updates t if a step is performed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The state of the ODE which should be solved. Overwritten if the step is successful. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time. Updated if the step is successful. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. Updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>success if the step was accepted, fail otherwise. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a> 第 <a class="el" href="controlled__runge__kutta_8hpp_source.html#l00206">206</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="controlled__runge__kutta_8hpp_source.html">controlled_runge_kutta.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

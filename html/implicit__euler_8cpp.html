@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/implicit_euler.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">implicit_euler.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;<a class="el" href="implicit__euler_8hpp_source.html">boost/numeric/odeint/stepper/implicit_euler.hpp</a>&gt;</code><br />
+<code>#include &lt;boost/numeric/ublas/vector.hpp&gt;</code><br />
+<code>#include &lt;boost/numeric/ublas/matrix.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+implicit_euler.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="implicit__euler_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2implicit__euler_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2implicit__euler_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2implicit__euler_8cpp">
+<area shape="rect" title=" " alt="" coords="1861,5,2041,76"/>
+<area shape="rect" title=" " alt="" coords="679,399,810,426"/>
+<area shape="rect" title=" " alt="" coords="2090,131,2266,158"/>
+<area shape="rect" title=" " alt="" coords="664,221,724,247"/>
+<area shape="rect" title=" " alt="" coords="2290,131,2370,158"/>
+<area shape="rect" href="implicit__euler_8hpp.html" title=" " alt="" coords="1323,124,1519,165"/>
+<area shape="rect" title=" " alt="" coords="1821,303,1975,344"/>
+<area shape="rect" title=" " alt="" coords="2050,303,2205,344"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="749,213,909,255"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="933,213,1129,255"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="2345,392,2576,433"/>
+<area shape="rect" href="ublas__wrapper_8hpp.html" title=" " alt="" coords="1572,213,1747,255"/>
+<area shape="rect" title=" " alt="" coords="1343,303,1498,344"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="741,481,905,523"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="1159,303,1319,344"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="794,303,954,344"/>
+<area shape="rect" title=" " alt="" coords="652,310,771,337"/>
+<area shape="rect" title=" " alt="" coords="978,310,1085,337"/>
+<area shape="rect" title=" " alt="" coords="2189,571,2375,612"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1573,303,1745,344"/>
+<area shape="rect" title=" " alt="" coords="1083,578,1145,605"/>
+<area shape="rect" title=" " alt="" coords="1170,571,1357,612"/>
+<area shape="rect" title=" " alt="" coords="5,571,159,612"/>
+<area shape="rect" title=" " alt="" coords="1381,571,1535,612"/>
+<area shape="rect" title=" " alt="" coords="183,578,341,605"/>
+<area shape="rect" title=" " alt="" coords="365,578,508,605"/>
+<area shape="rect" title=" " alt="" coords="533,578,735,605"/>
+<area shape="rect" title=" " alt="" coords="760,578,887,605"/>
+<area shape="rect" title=" " alt="" coords="911,571,1058,612"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="1579,392,1739,433"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="1395,392,1555,433"/>
+<area shape="rect" title=" " alt="" coords="1336,489,1463,515"/>
+<area shape="rect" title=" " alt="" coords="1487,481,1635,523"/>
+<area shape="rect" title=" " alt="" coords="1659,481,1812,523"/>
+<area shape="rect" title=" " alt="" coords="1836,481,1989,523"/>
+<area shape="rect" title=" " alt="" coords="1159,481,1312,523"/>
+<area shape="rect" title=" " alt="" coords="2065,481,2219,523"/>
+<area shape="rect" title=" " alt="" coords="929,481,1083,523"/>
+</map>
+</div>
+</div>
+<p><a href="implicit__euler_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsys.html">sys</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjacobi.html">jacobi</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="implicit__euler_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_implicit_euler</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="implicit__euler_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></td></tr>
+<tr class="separator:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75cfffa67fb3d002a7a89ba1a3f6121a"><td class="memItemLeft" align="right" valign="top">typedef boost::numeric::ublas::vector&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="implicit__euler_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a></td></tr>
+<tr class="separator:a75cfffa67fb3d002a7a89ba1a3f6121a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9018fe527287332f6438b7cf4bc832b2"><td class="memItemLeft" align="right" valign="top">typedef boost::numeric::ublas::matrix&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="implicit__euler_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a></td></tr>
+<tr class="separator:a9018fe527287332f6438b7cf4bc832b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a81cdb57df2a213adb896e6a894da95fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="implicit__euler_8cpp.html#a81cdb57df2a213adb896e6a894da95fe">BOOST_AUTO_TEST_CASE</a> (test_euler)</td></tr>
+<tr class="separator:a81cdb57df2a213adb896e6a894da95fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_implicit_euler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8cpp_source.html">implicit_euler.cpp</a> 第 <a class="el" href="implicit__euler_8cpp_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a9018fe527287332f6438b7cf4bc832b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9018fe527287332f6438b7cf4bc832b2">&#9670;&nbsp;</a></span>matrix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::numeric::ublas::matrix&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8cpp_source.html">implicit_euler.cpp</a> 第 <a class="el" href="implicit__euler_8cpp_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a75cfffa67fb3d002a7a89ba1a3f6121a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75cfffa67fb3d002a7a89ba1a3f6121a">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::numeric::ublas::vector&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8cpp_source.html">implicit_euler.cpp</a> 第 <a class="el" href="implicit__euler_8cpp_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba0996e183cdbebc61c5cbdcccf9da15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0996e183cdbebc61c5cbdcccf9da15">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8cpp_source.html">implicit_euler.cpp</a> 第 <a class="el" href="implicit__euler_8cpp_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a81cdb57df2a213adb896e6a894da95fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81cdb57df2a213adb896e6a894da95fe">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_euler&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="implicit__euler_8cpp_source.html">implicit_euler.cpp</a> 第 <a class="el" href="implicit__euler_8cpp_source.html#l00067">67</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="implicit__euler_8cpp_a81cdb57df2a213adb896e6a894da95fe_cgraph.png" border="0" usemap="#implicit__euler_8cpp_a81cdb57df2a213adb896e6a894da95fe_cgraph" alt=""/></div>
+<map name="implicit__euler_8cpp_a81cdb57df2a213adb896e6a894da95fe_cgraph" id="implicit__euler_8cpp_a81cdb57df2a213adb896e6a894da95fe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,60,196,87"/>
+<area shape="rect" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4" title=" " alt="" coords="471,5,544,32"/>
+<area shape="rect" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1" title=" " alt="" coords="311,31,356,57"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#abbc0a5a692b9214b3cf40f491053ca57" title=" " alt="" coords="244,82,423,123"/>
+<area shape="rect" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be" title=" " alt="" coords="311,148,355,175"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

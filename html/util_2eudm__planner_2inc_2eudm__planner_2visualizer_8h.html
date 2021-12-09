@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/eudm_planner/inc/eudm_planner/visualizer.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_97b678906f3da8d6067db4a1528c7316.html">eudm_planner</a></li><li class="navelem"><a class="el" href="dir_5f5e3410aa7bdc72df96c7288e231849.html">inc</a></li><li class="navelem"><a class="el" href="dir_05ce5a15289790230acca0e3cfa5d0d1.html">eudm_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">visualizer.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;tf/tf.h&gt;</code><br />
+<code>#include &lt;tf/transform_broadcaster.h&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="common_2inc_2common_2basics_2basics_8h_source.html">common/basics/basics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="semantics_8h_source.html">common/basics/semantics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="state_8h_source.html">common/state/state.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="eudm__manager_8h_source.html">eudm_planner/eudm_manager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="eudm__planner_8h_source.html">eudm_planner/eudm_planner.h</a>&quot;</code><br />
+<code>#include &quot;ros/ros.h&quot;</code><br />
+<code>#include &quot;visualization_msgs/MarkerArray.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+visualizer.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h__incl.png" border="0" usemap="#util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h" alt=""/></div>
+<map name="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h" id="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h">
+<area shape="rect" title=" " alt="" coords="775,5,974,47"/>
+<area shape="rect" title=" " alt="" coords="435,430,509,457"/>
+<area shape="rect" title=" " alt="" coords="46,102,103,129"/>
+<area shape="rect" title=" " alt="" coords="127,102,323,129"/>
+<area shape="rect" title=" " alt="" coords="347,102,434,129"/>
+<area shape="rect" title=" " alt="" coords="97,751,177,777"/>
+<area shape="rect" title=" " alt="" coords="1086,751,1149,777"/>
+<area shape="rect" href="common_2inc_2common_2basics_2basics_8h.html" title=" " alt="" coords="1328,601,1509,628"/>
+<area shape="rect" href="semantics_8h.html" title=" " alt="" coords="878,348,1085,375"/>
+<area shape="rect" href="state_8h.html" title=" " alt="" coords="1336,519,1501,546"/>
+<area shape="rect" href="eudm__manager_8h.html" title=" " alt="" coords="1345,102,1578,129"/>
+<area shape="rect" href="eudm__planner_8h.html" title=" " alt="" coords="1752,184,1976,211"/>
+<area shape="rect" title=" " alt="" coords="2681,102,2759,129"/>
+<area shape="rect" title=" " alt="" coords="2784,95,2931,136"/>
+<area shape="rect" href="macros_8h.html" title=" " alt="" coords="1641,676,1829,703"/>
+<area shape="rect" href="tic__toc_8h.html" title=" " alt="" coords="353,676,535,703"/>
+<area shape="rect" title=" " alt="" coords="1166,676,1234,703"/>
+<area shape="rect" title=" " alt="" coords="1549,676,1616,703"/>
+<area shape="rect" title=" " alt="" coords="865,676,991,703"/>
+<area shape="rect" title=" " alt="" coords="1016,676,1141,703"/>
+<area shape="rect" href="backward_8hpp.html" title=" " alt="" coords="1361,676,1474,703"/>
+<area shape="rect" title=" " alt="" coords="387,751,453,777"/>
+<area shape="rect" title=" " alt="" coords="541,751,606,777"/>
+<area shape="rect" title=" " alt="" coords="257,751,316,777"/>
+<area shape="rect" title=" " alt="" coords="2600,751,2685,777"/>
+<area shape="rect" title=" " alt="" coords="1209,751,1274,777"/>
+<area shape="rect" title=" " alt="" coords="1299,751,1360,777"/>
+<area shape="rect" title=" " alt="" coords="1384,751,1451,777"/>
+<area shape="rect" title=" " alt="" coords="1475,751,1549,777"/>
+<area shape="rect" title=" " alt="" coords="668,751,743,777"/>
+<area shape="rect" title=" " alt="" coords="1573,751,1622,777"/>
+<area shape="rect" title=" " alt="" coords="913,751,988,777"/>
+<area shape="rect" title=" " alt="" coords="2213,751,2272,777"/>
+<area shape="rect" title=" " alt="" coords="1675,430,1799,457"/>
+<area shape="rect" href="shapes_8h.html" title=" " alt="" coords="1075,519,1261,546"/>
+<area shape="rect" href="tool__func_8h.html" title=" " alt="" coords="457,512,610,553"/>
+<area shape="rect" href="lane_8h.html" title=" " alt="" coords="1496,430,1651,457"/>
+<area shape="rect" href="free__state_8h.html" title=" " alt="" coords="938,430,1137,457"/>
+<area shape="rect" href="frenet__state_8h.html" title=" " alt="" coords="1313,423,1471,464"/>
+<area shape="rect" href="eudm__itf_8h.html" title=" " alt="" coords="2214,348,2402,375"/>
+<area shape="rect" href="util_2eudm__planner_2inc_2eudm__planner_2map__adapter_8h.html" title=" " alt="" coords="939,184,1157,211"/>
+<area shape="rect" title=" " alt="" coords="2011,348,2088,375"/>
+<area shape="rect" title=" " alt="" coords="1712,266,1776,293"/>
+<area shape="rect" href="planner_8h.html" title=" " alt="" coords="2281,519,2487,546"/>
+<area shape="rect" href="lane__generator_8h.html" title=" " alt="" coords="1762,348,1987,375"/>
+<area shape="rect" href="mobil__model_8h.html" title=" " alt="" coords="1262,259,1423,300"/>
+<area shape="rect" title=" " alt="" coords="2213,266,2352,293"/>
+<area shape="rect" href="dcp__tree_8h.html" title=" " alt="" coords="1952,266,2139,293"/>
+<area shape="rect" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h.html" title=" " alt="" coords="962,266,1187,293"/>
+<area shape="rect" href="onlane__forward__simulation_8h.html" title=" " alt="" coords="1499,259,1688,300"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h__dep__incl.png" border="0" usemap="#util_2eudm__planner_2inc_2eudm__planner_2visualizer_8hdep" alt=""/></div>
+<map name="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8hdep" id="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8hdep">
+<area shape="rect" title=" " alt="" coords="119,5,317,47"/>
+<area shape="rect" href="eudm__server__ros_8h.html" title=" " alt="" coords="95,95,341,136"/>
+<area shape="rect" href="test__ssc__with__eudm_8cc.html" title="test ssc planner with eudm behavior planner" alt="" coords="5,191,204,233"/>
+<area shape="rect" href="eudm__server__ros_8cc.html" title=" " alt="" coords="229,184,437,240"/>
+</map>
+</div>
+</div>
+<p><a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplanning_1_1_eudm_planner_visualizer.html">planning::EudmPlannerVisualizer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceplanning"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplanning.html">planning</a></td></tr>
+<tr class="memdesc:namespaceplanning"><td class="mdescLeft">&#160;</td><td class="mdescRight">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm, to satisfy task level constraints. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

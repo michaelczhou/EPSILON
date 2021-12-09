@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/gram_schmidt.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">gram_schmidt.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="gram__schmidt_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> boost header: numeric/odeint/gram_schmitt.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_GRAM_SCHMITT_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_GRAM_SCHMITT_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Iterator , <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint.html#a132c55d4a2397ae3200930090b3c0916">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a132c55d4a2397ae3200930090b3c0916">normalize</a>( Iterator first , Iterator last , T <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a> )</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">while</span>( first != last ) *first++ /= <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Iterator , <span class="keyword">class</span> T &gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint.html#acf3ecc9780f98a8eb10b174b9eb0d2b7">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#acf3ecc9780f98a8eb10b174b9eb0d2b7">substract_vector</a>( Iterator first1 , Iterator last1 ,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Iterator first2 , T val )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">while</span>( first1 != last1 ) *first1++ -= val * ( *first2++ );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt; <span class="keywordtype">size_t</span> num_of_lyap , <span class="keyword">class</span> StateType , <span class="keyword">class</span> LyapType &gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint.html#a595cc2f4330afffdb7cd24bc34bd0b54">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a595cc2f4330afffdb7cd24bc34bd0b54">gram_schmidt</a>( StateType &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , LyapType &amp;lyap , <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span>( !<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>( ptrdiff_t( ( <a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> + 1 ) * <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ) != std::distance( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.end() ) )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">throw</span> std::domain_error( <span class="stringliteral">&quot;renormalization() : size of state does not match the number of lyapunov exponents.&quot;</span> );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">StateType::value_type</a> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> StateType::iterator iterator;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> tmp[<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a>];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    iterator first = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.begin() + <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    iterator beg1 = first , end1 = first + <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::fill( <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a> , <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>+<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> , 0.0 );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// normalize first vector</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[0] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( std::inner_product( beg1 , end1 , beg1 , 0.0 ) );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a132c55d4a2397ae3200930090b3c0916">normalize</a>( beg1 , end1 , <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[0] );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    beg1 += <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    end1 += <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> j=1 ; j&lt;<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ; ++j , beg1+=<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> , end1+=<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> k=0 ; k&lt;j ; ++k )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            tmp[k] = std::inner_product( beg1 , end1 , first + k*<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> , 0.0 );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">//  clog &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; k &lt;&lt; &quot; &quot; &lt;&lt; tmp[k] &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> k=0 ; k&lt;j ; ++k )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#acf3ecc9780f98a8eb10b174b9eb0d2b7">substract_vector</a>( beg1 , end1 , first + k*<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> , tmp[k] );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// normalize j-th vector</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[j] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( std::inner_product( beg1 , end1 , beg1 , 0.0 ) );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// clog &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; norm[j] &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a132c55d4a2397ae3200930090b3c0916">normalize</a>( beg1 , end1 , <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[j] );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> j=0 ; j&lt;<a class="code" href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a> ; j++ )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        lyap[j] += log( <a class="code" href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a>[j] );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">// namespace odeint</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace numeric</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace boost</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif //BOOST_NUMERIC_ODEINT_GRAM_SCHMITT_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a7782832b8bc4ddfcf466ac730c122aa5"><div class="ttname"><a href="chaotic__system_8cpp.html#a7782832b8bc4ddfcf466ac730c122aa5">num_of_lyap</a></div><div class="ttdeci">const size_t num_of_lyap</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00052">chaotic_system.cpp:52</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_acf3ecc9780f98a8eb10b174b9eb0d2b7"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#acf3ecc9780f98a8eb10b174b9eb0d2b7">boost::numeric::odeint::substract_vector</a></div><div class="ttdeci">void substract_vector(Iterator first1, Iterator last1, Iterator first2, T val)</div><div class="ttdef"><b>Definition:</b> <a href="gram__schmidt_8hpp_source.html#l00030">gram_schmidt.hpp:30</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a132c55d4a2397ae3200930090b3c0916"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a132c55d4a2397ae3200930090b3c0916">boost::numeric::odeint::normalize</a></div><div class="ttdeci">void normalize(Iterator first, Iterator last, T norm)</div><div class="ttdef"><b>Definition:</b> <a href="gram__schmidt_8hpp_source.html#l00024">gram_schmidt.hpp:24</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5969491e6e437adb343327d79538c679"><div class="ttname"><a href="namespacestd.html#a5969491e6e437adb343327d79538c679">std::sqrt</a></div><div class="ttdeci">__float128 sqrt(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00041">black_hole.cpp:41</a></div></div>
+<div class="ttc" id="apoint__type_8hpp_html_a05e87d568b6887a112d20241232da13f"><div class="ttname"><a href="point__type_8hpp.html#a05e87d568b6887a112d20241232da13f">norm</a></div><div class="ttdeci">T norm(const point&lt; T, Dim &gt; &amp;p1)</div><div class="ttdef"><b>Definition:</b> <a href="point__type_8hpp_source.html#l00144">point_type.hpp:144</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a595cc2f4330afffdb7cd24bc34bd0b54"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a595cc2f4330afffdb7cd24bc34bd0b54">boost::numeric::odeint::gram_schmidt</a></div><div class="ttdeci">void gram_schmidt(StateType &amp;x, LyapType &amp;lyap, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="gram__schmidt_8hpp_source.html#l00037">gram_schmidt.hpp:37</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

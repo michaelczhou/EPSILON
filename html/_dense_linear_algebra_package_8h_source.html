@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/DenseLinearAlgebraPackage.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DenseLinearAlgebraPackage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dense_linear_algebra_package_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DENSELINEARALGEBRA</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DENSELINEARALGEBRA</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_linear_algebra_package_8h.html">LinearAlgebraPackage.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_double_matrix_handle_8h.html">DoubleMatrixHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_dense_linear_algebra_package.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dense_linear_algebra_package.html">DenseLinearAlgebraPackage</a> : <span class="keyword">public</span> <a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_dense_linear_algebra_package.html#a5ccc4469182eedc5570c26293a78f091">   29</a></span>&#160;  <a class="code" href="class_dense_linear_algebra_package.html#a5ccc4469182eedc5570c26293a78f091">DenseLinearAlgebraPackage</a>() {};</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_dense_linear_algebra_package.html#acf2a514065698f4fd9643719265779ff">   30</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_dense_linear_algebra_package.html#acf2a514065698f4fd9643719265779ff">~DenseLinearAlgebraPackage</a>() {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_dense_linear_algebra_package.html">DenseLinearAlgebraPackage</a> * <a class="code" href="class_dense_linear_algebra_package.html#a38fea3eafb56c5e899e3b518bfc83f93">soleInstance</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_sym_matrix.html">SymMatrix</a> * <a class="code" href="class_dense_linear_algebra_package.html#ac3831b5f92457667df8929d8e5595861">newSymMatrix</a>( <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> nnz );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_gen_matrix.html">GenMatrix</a> * <a class="code" href="class_dense_linear_algebra_package.html#aef532ac673391618b55dd9b8247eb754">newGenMatrix</a>( <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>, <span class="keywordtype">int</span> nnz );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_ooqp_vector.html">OoqpVector</a> *  <a class="code" href="class_dense_linear_algebra_package.html#af850105494bfb2415aad129eea113259">newVector</a>( <span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_sym_matrix_html"><div class="ttname"><a href="class_sym_matrix.html">SymMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_8h_source.html#l00153">DoubleMatrix.h:153</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_acf2a514065698f4fd9643719265779ff"><div class="ttname"><a href="class_dense_linear_algebra_package.html#acf2a514065698f4fd9643719265779ff">DenseLinearAlgebraPackage::~DenseLinearAlgebraPackage</a></div><div class="ttdeci">virtual ~DenseLinearAlgebraPackage()</div><div class="ttdef"><b>Definition:</b> <a href="_dense_linear_algebra_package_8h_source.html#l00030">DenseLinearAlgebraPackage.h:30</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_a5ccc4469182eedc5570c26293a78f091"><div class="ttname"><a href="class_dense_linear_algebra_package.html#a5ccc4469182eedc5570c26293a78f091">DenseLinearAlgebraPackage::DenseLinearAlgebraPackage</a></div><div class="ttdeci">DenseLinearAlgebraPackage()</div><div class="ttdef"><b>Definition:</b> <a href="_dense_linear_algebra_package_8h_source.html#l00029">DenseLinearAlgebraPackage.h:29</a></div></div>
+<div class="ttc" id="aclass_gen_matrix_html"><div class="ttname"><a href="class_gen_matrix.html">GenMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_8h_source.html#l00200">DoubleMatrix.h:200</a></div></div>
+<div class="ttc" id="aclass_linear_algebra_package_html"><div class="ttname"><a href="class_linear_algebra_package.html">LinearAlgebraPackage</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_algebra_package_8h_source.html#l00021">LinearAlgebraPackage.h:21</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_af850105494bfb2415aad129eea113259"><div class="ttname"><a href="class_dense_linear_algebra_package.html#af850105494bfb2415aad129eea113259">DenseLinearAlgebraPackage::newVector</a></div><div class="ttdeci">virtual OoqpVector * newVector(int n)</div></div>
+<div class="ttc" id="a_double_matrix_handle_8h_html"><div class="ttname"><a href="_double_matrix_handle_8h.html">DoubleMatrixHandle.h</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_a38fea3eafb56c5e899e3b518bfc83f93"><div class="ttname"><a href="class_dense_linear_algebra_package.html#a38fea3eafb56c5e899e3b518bfc83f93">DenseLinearAlgebraPackage::soleInstance</a></div><div class="ttdeci">static DenseLinearAlgebraPackage * soleInstance()</div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_aef532ac673391618b55dd9b8247eb754"><div class="ttname"><a href="class_dense_linear_algebra_package.html#aef532ac673391618b55dd9b8247eb754">DenseLinearAlgebraPackage::newGenMatrix</a></div><div class="ttdeci">virtual GenMatrix * newGenMatrix(int m, int n, int nnz)</div></div>
+<div class="ttc" id="a_linear_algebra_package_8h_html"><div class="ttname"><a href="_linear_algebra_package_8h.html">LinearAlgebraPackage.h</a></div></div>
+<div class="ttc" id="a_ooqp_vector_handle_8h_html"><div class="ttname"><a href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_double_linear_solver_html"><div class="ttname"><a href="class_double_linear_solver.html">DoubleLinearSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_linear_solver_8h_source.html#l00020">DoubleLinearSolver.h:20</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html_ac3831b5f92457667df8929d8e5595861"><div class="ttname"><a href="class_dense_linear_algebra_package.html#ac3831b5f92457667df8929d8e5595861">DenseLinearAlgebraPackage::newSymMatrix</a></div><div class="ttdeci">virtual SymMatrix * newSymMatrix(int size, int nnz)</div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<div class="ttc" id="aclass_dense_linear_algebra_package_html"><div class="ttname"><a href="class_dense_linear_algebra_package.html">DenseLinearAlgebraPackage</a></div><div class="ttdef"><b>Definition:</b> <a href="_dense_linear_algebra_package_8h_source.html#l00027">DenseLinearAlgebraPackage.h:27</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

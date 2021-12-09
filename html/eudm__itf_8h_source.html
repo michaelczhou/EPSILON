@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/eudm_planner/inc/eudm_planner/eudm_itf.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_97b678906f3da8d6067db4a1528c7316.html">eudm_planner</a></li><li class="navelem"><a class="el" href="dir_5f5e3410aa7bdc72df96c7288e231849.html">inc</a></li><li class="navelem"><a class="el" href="dir_05ce5a15289790230acca0e3cfa5d0d1.html">eudm_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">eudm_itf.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="eudm__itf_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_EUDM_PLANNER_INC_EUDM_PLANNER_EUDM_ITF_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_EUDM_PLANNER_INC_EUDM_PLANNER_EUDM_ITF_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceplanning_1_1eudm.html">    9</a></span>&#160;<span class="keyword">namespace </span>eudm {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html">LaneChangeInfo</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#a8cce319ce0bc10b6157aade055892387">   12</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#a8cce319ce0bc10b6157aade055892387">forbid_lane_change_left</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#adf21ce806dab24de5d016a59ffbc192c">   13</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#adf21ce806dab24de5d016a59ffbc192c">forbid_lane_change_right</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#a53d8771770619ada1cc80b5ce83ccc4d">   14</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#a53d8771770619ada1cc80b5ce83ccc4d">lane_change_left_unsafe_by_occu</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#a7ada762beafce458d340d8beaf97d124">   15</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#a7ada762beafce458d340d8beaf97d124">lane_change_right_unsafe_by_occu</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#ad42433a56847ecc5342afd09b0f24c47">   16</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#ad42433a56847ecc5342afd09b0f24c47">left_solid_lane</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#a958923e782fd061497972e9a283b4048">   17</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#a958923e782fd061497972e9a283b4048">right_solid_lane</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#afc37f217abaf245258d0d45ed72936dc">   18</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#afc37f217abaf245258d0d45ed72936dc">recommend_lc_left</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_lane_change_info.html#a4ff7c5f5d32796b2b21f233506d82c12">   19</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html#a4ff7c5f5d32796b2b21f233506d82c12">recommend_lc_right</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_task.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structplanning_1_1eudm_1_1_task.html">Task</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_task.html#aea9ebf23549c8a446bc2b3af0d08b00f">   23</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structplanning_1_1eudm_1_1_task.html#aea9ebf23549c8a446bc2b3af0d08b00f">is_under_ctrl</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_task.html#ac972f522ff499af8b5b579f907391800">   24</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structplanning_1_1eudm_1_1_task.html#ac972f522ff499af8b5b579f907391800">user_desired_vel</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_task.html#ac4489f7476a5b6d9ec7c09cc78f53d49">   25</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structplanning_1_1eudm_1_1_task.html#ac4489f7476a5b6d9ec7c09cc78f53d49">user_perferred_behavior</a> = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structplanning_1_1eudm_1_1_task.html#a01da64f8ddf85c35b411ef47e97a19ab">   26</a></span>&#160;  <a class="code" href="structplanning_1_1eudm_1_1_lane_change_info.html">LaneChangeInfo</a> <a class="code" href="structplanning_1_1eudm_1_1_task.html#a01da64f8ddf85c35b411ef47e97a19ab">lc_info</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace eudm</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_a53d8771770619ada1cc80b5ce83ccc4d"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#a53d8771770619ada1cc80b5ce83ccc4d">planning::eudm::LaneChangeInfo::lane_change_left_unsafe_by_occu</a></div><div class="ttdeci">bool lane_change_left_unsafe_by_occu</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00014">eudm_itf.h:14</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_adf21ce806dab24de5d016a59ffbc192c"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#adf21ce806dab24de5d016a59ffbc192c">planning::eudm::LaneChangeInfo::forbid_lane_change_right</a></div><div class="ttdeci">bool forbid_lane_change_right</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00013">eudm_itf.h:13</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_a4ff7c5f5d32796b2b21f233506d82c12"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#a4ff7c5f5d32796b2b21f233506d82c12">planning::eudm::LaneChangeInfo::recommend_lc_right</a></div><div class="ttdeci">bool recommend_lc_right</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00019">eudm_itf.h:19</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_task_html_ac972f522ff499af8b5b579f907391800"><div class="ttname"><a href="structplanning_1_1eudm_1_1_task.html#ac972f522ff499af8b5b579f907391800">planning::eudm::Task::user_desired_vel</a></div><div class="ttdeci">double user_desired_vel</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00024">eudm_itf.h:24</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html">planning::eudm::LaneChangeInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00011">eudm_itf.h:11</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_a958923e782fd061497972e9a283b4048"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#a958923e782fd061497972e9a283b4048">planning::eudm::LaneChangeInfo::right_solid_lane</a></div><div class="ttdeci">bool right_solid_lane</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00017">eudm_itf.h:17</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_ad42433a56847ecc5342afd09b0f24c47"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#ad42433a56847ecc5342afd09b0f24c47">planning::eudm::LaneChangeInfo::left_solid_lane</a></div><div class="ttdeci">bool left_solid_lane</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00016">eudm_itf.h:16</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_a8cce319ce0bc10b6157aade055892387"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#a8cce319ce0bc10b6157aade055892387">planning::eudm::LaneChangeInfo::forbid_lane_change_left</a></div><div class="ttdeci">bool forbid_lane_change_left</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00012">eudm_itf.h:12</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_task_html_a01da64f8ddf85c35b411ef47e97a19ab"><div class="ttname"><a href="structplanning_1_1eudm_1_1_task.html#a01da64f8ddf85c35b411ef47e97a19ab">planning::eudm::Task::lc_info</a></div><div class="ttdeci">LaneChangeInfo lc_info</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00026">eudm_itf.h:26</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_task_html"><div class="ttname"><a href="structplanning_1_1eudm_1_1_task.html">planning::eudm::Task</a></div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00022">eudm_itf.h:22</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_task_html_ac4489f7476a5b6d9ec7c09cc78f53d49"><div class="ttname"><a href="structplanning_1_1eudm_1_1_task.html#ac4489f7476a5b6d9ec7c09cc78f53d49">planning::eudm::Task::user_perferred_behavior</a></div><div class="ttdeci">int user_perferred_behavior</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00025">eudm_itf.h:25</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_a7ada762beafce458d340d8beaf97d124"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#a7ada762beafce458d340d8beaf97d124">planning::eudm::LaneChangeInfo::lane_change_right_unsafe_by_occu</a></div><div class="ttdeci">bool lane_change_right_unsafe_by_occu</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00015">eudm_itf.h:15</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_lane_change_info_html_afc37f217abaf245258d0d45ed72936dc"><div class="ttname"><a href="structplanning_1_1eudm_1_1_lane_change_info.html#afc37f217abaf245258d0d45ed72936dc">planning::eudm::LaneChangeInfo::recommend_lc_left</a></div><div class="ttdeci">bool recommend_lc_left</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00018">eudm_itf.h:18</a></div></div>
+<div class="ttc" id="astructplanning_1_1eudm_1_1_task_html_aea9ebf23549c8a446bc2b3af0d08b00f"><div class="ttname"><a href="structplanning_1_1eudm_1_1_task.html#aea9ebf23549c8a446bc2b3af0d08b00f">planning::eudm::Task::is_under_ctrl</a></div><div class="ttdeci">bool is_under_ctrl</div><div class="ttdef"><b>Definition:</b> <a href="eudm__itf_8h_source.html#l00023">eudm_itf.h:23</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

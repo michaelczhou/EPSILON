@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/vexcl/lorenz_ensemble.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li><li class="navelem"><a class="el" href="dir_a2d6fc25538c8fd0d3d8b4a69ac2c3aa.html">vexcl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lorenz_ensemble.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lorenz__ensemble_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vexcl/vexcl.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//[ vexcl_includes</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="vexcl__resize_8hpp.html">boost/numeric/odeint/external/vexcl/vexcl_resize.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> = <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//[ vexcl_state_types</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="lorenz__ensemble_8cpp.html#a5a337914af4b4477b9960c93e26869c9">   23</a></span>&#160;<span class="keyword">typedef</span> vex::vector&lt; double &gt;    <a class="code" href="lorenz__ensemble_8cpp.html#a5a337914af4b4477b9960c93e26869c9">vector_type</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="lorenz__ensemble_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">   24</a></span>&#160;<span class="keyword">typedef</span> vex::multivector&lt; double, 3 &gt; <a class="code" href="lorenz__ensemble_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">state_type</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//[ vexcl_system</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="lorenz__ensemble_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">   29</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="lorenz__ensemble_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> = 10.0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="lorenz__ensemble_8cpp.html#a8f5a312161775190357a664a77a831a3">   30</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="lorenz__ensemble_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> = 8.0 / 3.0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structsys__func.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsys__func.html">sys_func</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structsys__func.html#a92f74a2d60325e622c764c6381f564b3">   34</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a> &amp;<a class="code" href="structsys__func.html#a92f74a2d60325e622c764c6381f564b3">R</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structsys__func.html#a91a38205386ce0e9859d4e300bacd7ec">   36</a></span>&#160;    <a class="code" href="structsys__func.html#a91a38205386ce0e9859d4e300bacd7ec">sys_func</a>( <span class="keyword">const</span> <a class="code" href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a> &amp;_R ) : <a class="code" href="structsys__func.html#a92f74a2d60325e622c764c6381f564b3">R</a>( _R ) { }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structsys__func.html#a737d7b516ffea6a732a0d39cc827edfd">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsys__func.html#a737d7b516ffea6a732a0d39cc827edfd">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keywordtype">double</span> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        dxdt(0) = -<a class="code" href="lorenz__ensemble_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        dxdt(1) = <a class="code" href="structsys__func.html#a92f74a2d60325e622c764c6381f564b3">R</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(2);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        dxdt(2) = - <a class="code" href="lorenz__ensemble_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(2) + <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="lorenz__ensemble_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   48</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="lorenz__ensemble_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//[ vexcl_main</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// setup the opencl context</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vex::Context ctx( vex::Filter::Type(CL_DEVICE_TYPE_GPU) );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::cout &lt;&lt; ctx &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// set up number of system, time step and integration time</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> = 1024 * 1024;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.01;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="lorenz_8cpp.html#ac1d42016d7b6acc455ba83abafeb1a0e">t_max</a> = 100.0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// initialize R</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">double</span> Rmin = 0.1 , Rmax = 50.0 , dR = ( Rmax - Rmin ) / <span class="keywordtype">double</span>( <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> - 1 );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;double&gt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> * 3 ) , r( <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ; ++i ) r[i] = Rmin + dR * <span class="keywordtype">double</span>( i );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a>( ctx.queue() , r );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// initialize the state of the lorenz ensemble</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> X(ctx.queue(), <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    X(0) = 10.0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    X(1) = 10.0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    X(2) = 10.0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// create a stepper</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    runge_kutta4&lt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="lorenz__ensemble_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">state_type</a> , double , <a class="code" href="lorenz__ensemble_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">state_type</a> , double ,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">odeint::vector_space_algebra</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">odeint::default_operations</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        &gt; stepper;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// solve the system</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">integrate_const</a>( stepper , <a class="code" href="structsys__func.html">sys_func</a>( <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> ) , X , 0.0 , <a class="code" href="lorenz_8cpp.html#ac1d42016d7b6acc455ba83abafeb1a0e">t_max</a> , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::vector&lt; double &gt; <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>( 3 * <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">vex::copy</a>( X(0) , <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a> );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> ; ++i )</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        cout &lt;&lt; r[i] &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>[i] &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceperformance_html_af2e6eea9da5cf3f396df76424a11061b"><div class="ttname"><a href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">performance.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="performance_8py_source.html#l00039">performance.py:39</a></div></div>
+<div class="ttc" id="alorenz__ensemble_8cpp_html_a0fe1114d1fd1887c1b907302444d35e7"><div class="ttname"><a href="lorenz__ensemble_8cpp.html#a0fe1114d1fd1887c1b907302444d35e7">state_type</a></div><div class="ttdeci">vex::multivector&lt; double, 3 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00024">lorenz_ensemble.cpp:24</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1default__operations_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="default__operations_8hpp_source.html#l00040">default_operations.hpp:40</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a12b08855d25ca7201ad3d12dc6212bbb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__const_8hpp_source.html#l00042">integrate_const.hpp:42</a></div></div>
+<div class="ttc" id="astructsys__func_html_a737d7b516ffea6a732a0d39cc827edfd"><div class="ttname"><a href="structsys__func.html#a737d7b516ffea6a732a0d39cc827edfd">sys_func::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, double t) const</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00038">lorenz_ensemble.cpp:38</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_af9a26559b4b8a923f2af35f7e3523d9a"><div class="ttname"><a href="stepper__details_8cpp.html#af9a26559b4b8a923f2af35f7e3523d9a">vector_type</a></div><div class="ttdeci">boost::array&lt; double, 1 &gt; vector_type</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00044">stepper_details.cpp:44</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1vector__space__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">boost::numeric::odeint::vector_space_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__space__algebra_8hpp_source.html#l00049">vector_space_algebra.hpp:49</a></div></div>
+<div class="ttc" id="alorenz__ensemble_8cpp_html_a5a337914af4b4477b9960c93e26869c9"><div class="ttname"><a href="lorenz__ensemble_8cpp.html#a5a337914af4b4477b9960c93e26869c9">vector_type</a></div><div class="ttdeci">vex::vector&lt; double &gt; vector_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00023">lorenz_ensemble.cpp:23</a></div></div>
+<div class="ttc" id="astructsys__func_html_a92f74a2d60325e622c764c6381f564b3"><div class="ttname"><a href="structsys__func.html#a92f74a2d60325e622c764c6381f564b3">sys_func::R</a></div><div class="ttdeci">const vector_type &amp; R</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00034">lorenz_ensemble.cpp:34</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="alorenz_8cpp_html_ac1d42016d7b6acc455ba83abafeb1a0e"><div class="ttname"><a href="lorenz_8cpp.html#ac1d42016d7b6acc455ba83abafeb1a0e">t_max</a></div><div class="ttdeci">const double t_max</div><div class="ttdef"><b>Definition:</b> <a href="lorenz_8cpp_source.html#l00055">lorenz.cpp:55</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="alorenz__ensemble_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="lorenz__ensemble_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00048">lorenz_ensemble.cpp:48</a></div></div>
+<div class="ttc" id="astructsys__func_html_a91a38205386ce0e9859d4e300bacd7ec"><div class="ttname"><a href="structsys__func.html#a91a38205386ce0e9859d4e300bacd7ec">sys_func::sys_func</a></div><div class="ttdeci">sys_func(const vector_type &amp;_R)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00036">lorenz_ensemble.cpp:36</a></div></div>
+<div class="ttc" id="avexcl__resize_8hpp_html"><div class="ttname"><a href="vexcl__resize_8hpp.html">vexcl_resize.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="alorenz__ensemble_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="lorenz__ensemble_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00029">lorenz_ensemble.cpp:29</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="alorenz__ensemble_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="lorenz__ensemble_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00030">lorenz_ensemble.cpp:30</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructsys__func_html"><div class="ttname"><a href="structsys__func.html">sys_func</a></div><div class="ttdef"><b>Definition:</b> <a href="lorenz__ensemble_8cpp_source.html#l00032">lorenz_ensemble.cpp:32</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a8f265541b3dda9a90fcb63b43bea0f11"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11">boost::numeric::odeint::copy</a></div><div class="ttdeci">void copy(const Container1 &amp;from, Container2 &amp;to)</div><div class="ttdef"><b>Definition:</b> <a href="copy_8hpp_source.html#l00064">copy.hpp:64</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

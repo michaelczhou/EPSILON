@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/QpGenResiduals.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QpGenResiduals.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_qp_gen_residuals_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef QPGENRESIDUALS</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define QPGENRESIDUALS</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_residuals_8h.html">Residuals.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_gen.html">QpGen</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_gen_data.html">QpGenData</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_qp_gen_residuals.html">QpGenResiduals</a> : <span class="keyword">public</span> <a class="code" href="class_residuals.html">Residuals</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#adcd46205a5b43dad83284e653106341d">   24</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_qp_gen_residuals.html#adcd46205a5b43dad83284e653106341d">nx</a>, <a class="code" href="class_qp_gen_residuals.html#ae76b8717decb47da696056a54b2470f5">my</a>, <a class="code" href="class_qp_gen_residuals.html#a8356789d4ce3a2f32421955659793cf5">mz</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a6e185209cb5e06fb700a36507dbc8a1d">   26</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_qp_gen_residuals.html#a6e185209cb5e06fb700a36507dbc8a1d">nxupp</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a6507bf4970e43ba5103c4d3d7cef8d64">   27</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a6507bf4970e43ba5103c4d3d7cef8d64">ixupp</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a561c8a10b38635a03df5d637947f3091">   29</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_qp_gen_residuals.html#a561c8a10b38635a03df5d637947f3091">nxlow</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a864c214f53fee34afd17a71fdec4d875">   30</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a864c214f53fee34afd17a71fdec4d875">ixlow</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a538210a457341ab7bf72a526cee1c3cb">   32</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_qp_gen_residuals.html#a538210a457341ab7bf72a526cee1c3cb">mcupp</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a3d325a7975229c8185bdd06da21db264">   33</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a3d325a7975229c8185bdd06da21db264">icupp</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a368a9ae84bd8cc6896e9cf40123f5252">   35</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_qp_gen_residuals.html#a368a9ae84bd8cc6896e9cf40123f5252">mclow</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#ada4be70463fa6ebf6580c47598d8d2c8">   36</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#ada4be70463fa6ebf6580c47598d8d2c8">iclow</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a768ff668630b298b0b461446a51ec4c4">   39</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a768ff668630b298b0b461446a51ec4c4">rQ</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#ac745111142553560ea58a7a8d5475a20">   40</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#ac745111142553560ea58a7a8d5475a20">rA</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a5580f11fd9f537ddae46c542e847c990">   41</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a5580f11fd9f537ddae46c542e847c990">rC</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a2b5b77194537a77014eb874a0d46db6f">   42</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a2b5b77194537a77014eb874a0d46db6f">rz</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#ae8fcee614c6776bdaa30eb3aa554b954">   43</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#ae8fcee614c6776bdaa30eb3aa554b954">rv</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#ac85c551bc91efdfdccf0c4f65ea8d8bc">   44</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#ac85c551bc91efdfdccf0c4f65ea8d8bc">rw</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a9e2c673c2e9413163691bc80654571f8">   45</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a9e2c673c2e9413163691bc80654571f8">rt</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#aef4de2dff17deeb2531da78a7fa51331">   46</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#aef4de2dff17deeb2531da78a7fa51331">ru</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a8c043d4332d959c91544e4ad591c8ecd">   47</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a8c043d4332d959c91544e4ad591c8ecd">rgamma</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#a8f34160f50fa4cf792d8e58192276198">   48</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#a8f34160f50fa4cf792d8e58192276198">rphi</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#af9211e9ddedb562e4ec002861937af6b">   49</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#af9211e9ddedb562e4ec002861937af6b">rlambda</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_qp_gen_residuals.html#aed5edffaa2b73fd5d6bcac8a6cdae9f1">   50</a></span>&#160;  <a class="code" href="class_smart_pointer.html">OoqpVectorHandle</a> <a class="code" href="class_qp_gen_residuals.html#aed5edffaa2b73fd5d6bcac8a6cdae9f1">rpi</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="class_qp_gen_residuals.html#a7b9d7ecef2993bab392908bf22b2786b">QpGenResiduals</a>( <a class="code" href="class_linear_algebra_package.html">LinearAlgebraPackage</a> * la,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <span class="keywordtype">int</span> <a class="code" href="class_qp_gen_residuals.html#adcd46205a5b43dad83284e653106341d">nx</a>, <span class="keywordtype">int</span> <a class="code" href="class_qp_gen_residuals.html#ae76b8717decb47da696056a54b2470f5">my</a>, <span class="keywordtype">int</span> <a class="code" href="class_qp_gen_residuals.html#a8356789d4ce3a2f32421955659793cf5">mz</a>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          <a class="code" href="class_ooqp_vector.html">OoqpVector</a> * <a class="code" href="class_qp_gen_residuals.html#a864c214f53fee34afd17a71fdec4d875">ixlow</a>, <a class="code" href="class_ooqp_vector.html">OoqpVector</a> * <a class="code" href="class_qp_gen_residuals.html#a6507bf4970e43ba5103c4d3d7cef8d64">ixupp</a>,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          <a class="code" href="class_ooqp_vector.html">OoqpVector</a> * <a class="code" href="class_qp_gen_residuals.html#ada4be70463fa6ebf6580c47598d8d2c8">iclow</a>, <a class="code" href="class_ooqp_vector.html">OoqpVector</a> * <a class="code" href="class_qp_gen_residuals.html#a3d325a7975229c8185bdd06da21db264">icupp</a> );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#a4dfd175cf2a385e113f17e5ec89d6d07">calcresids</a>(<a class="code" href="class_data.html">Data</a> *problem, <a class="code" href="class_variables.html">Variables</a> *vars);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#a5b8804ee92769677f73a60ff16a53d48">add_r3_xz_alpha</a>(<a class="code" href="class_variables.html">Variables</a> *vars, <span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#a92230bb20e9509a77134c60b46358d2d">set_r3_xz_alpha</a>(<a class="code" href="class_variables.html">Variables</a> *vars, <span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#ae24721145b9c48ea95979d2c4cfd5703">clear_r3</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#a76402efdffec01c7fb5a5f0ce9b4f130">clear_r1r2</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_qp_gen_residuals.html#ac75fd85ca1a20c187d3a4fdb17d95239">project_r3</a>(<span class="keywordtype">double</span> rmin, <span class="keywordtype">double</span> rmax);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span>  <a class="code" href="class_qp_gen_residuals.html#a3f26a9062372138617b842a3a8d5347f">validNonZeroPattern</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_qp_gen_residuals.html#a42e3acb87cacc59c55ae6b3d69c4a360">~QpGenResiduals</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_qp_gen_residuals_html_a5b8804ee92769677f73a60ff16a53d48"><div class="ttname"><a href="class_qp_gen_residuals.html#a5b8804ee92769677f73a60ff16a53d48">QpGenResiduals::add_r3_xz_alpha</a></div><div class="ttdeci">virtual void add_r3_xz_alpha(Variables *vars, double alpha)</div></div>
+<div class="ttc" id="aclass_qp_gen_html"><div class="ttname"><a href="class_qp_gen.html">QpGen</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_8h_source.html#l00034">QpGen.h:34</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a8f34160f50fa4cf792d8e58192276198"><div class="ttname"><a href="class_qp_gen_residuals.html#a8f34160f50fa4cf792d8e58192276198">QpGenResiduals::rphi</a></div><div class="ttdeci">OoqpVectorHandle rphi</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00048">QpGenResiduals.h:48</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a5580f11fd9f537ddae46c542e847c990"><div class="ttname"><a href="class_qp_gen_residuals.html#a5580f11fd9f537ddae46c542e847c990">QpGenResiduals::rC</a></div><div class="ttdeci">OoqpVectorHandle rC</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00041">QpGenResiduals.h:41</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_aef4de2dff17deeb2531da78a7fa51331"><div class="ttname"><a href="class_qp_gen_residuals.html#aef4de2dff17deeb2531da78a7fa51331">QpGenResiduals::ru</a></div><div class="ttdeci">OoqpVectorHandle ru</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00046">QpGenResiduals.h:46</a></div></div>
+<div class="ttc" id="aclass_qp_gen_data_html"><div class="ttname"><a href="class_qp_gen_data.html">QpGenData</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_data_8h_source.html#l00027">QpGenData.h:27</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ac85c551bc91efdfdccf0c4f65ea8d8bc"><div class="ttname"><a href="class_qp_gen_residuals.html#ac85c551bc91efdfdccf0c4f65ea8d8bc">QpGenResiduals::rw</a></div><div class="ttdeci">OoqpVectorHandle rw</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00044">QpGenResiduals.h:44</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a92230bb20e9509a77134c60b46358d2d"><div class="ttname"><a href="class_qp_gen_residuals.html#a92230bb20e9509a77134c60b46358d2d">QpGenResiduals::set_r3_xz_alpha</a></div><div class="ttdeci">virtual void set_r3_xz_alpha(Variables *vars, double alpha)</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a3d325a7975229c8185bdd06da21db264"><div class="ttname"><a href="class_qp_gen_residuals.html#a3d325a7975229c8185bdd06da21db264">QpGenResiduals::icupp</a></div><div class="ttdeci">OoqpVectorHandle icupp</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00033">QpGenResiduals.h:33</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a7b9d7ecef2993bab392908bf22b2786b"><div class="ttname"><a href="class_qp_gen_residuals.html#a7b9d7ecef2993bab392908bf22b2786b">QpGenResiduals::QpGenResiduals</a></div><div class="ttdeci">QpGenResiduals(LinearAlgebraPackage *la, int nx, int my, int mz, OoqpVector *ixlow, OoqpVector *ixupp, OoqpVector *iclow, OoqpVector *icupp)</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_adcd46205a5b43dad83284e653106341d"><div class="ttname"><a href="class_qp_gen_residuals.html#adcd46205a5b43dad83284e653106341d">QpGenResiduals::nx</a></div><div class="ttdeci">int nx</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00024">QpGenResiduals.h:24</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a3f26a9062372138617b842a3a8d5347f"><div class="ttname"><a href="class_qp_gen_residuals.html#a3f26a9062372138617b842a3a8d5347f">QpGenResiduals::validNonZeroPattern</a></div><div class="ttdeci">virtual int validNonZeroPattern()</div></div>
+<div class="ttc" id="a_residuals_8h_html"><div class="ttname"><a href="_residuals_8h.html">Residuals.h</a></div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a6507bf4970e43ba5103c4d3d7cef8d64"><div class="ttname"><a href="class_qp_gen_residuals.html#a6507bf4970e43ba5103c4d3d7cef8d64">QpGenResiduals::ixupp</a></div><div class="ttdeci">OoqpVectorHandle ixupp</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00027">QpGenResiduals.h:27</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ac75fd85ca1a20c187d3a4fdb17d95239"><div class="ttname"><a href="class_qp_gen_residuals.html#ac75fd85ca1a20c187d3a4fdb17d95239">QpGenResiduals::project_r3</a></div><div class="ttdeci">virtual void project_r3(double rmin, double rmax)</div></div>
+<div class="ttc" id="aclass_linear_algebra_package_html"><div class="ttname"><a href="class_linear_algebra_package.html">LinearAlgebraPackage</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_algebra_package_8h_source.html#l00021">LinearAlgebraPackage.h:21</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_af9211e9ddedb562e4ec002861937af6b"><div class="ttname"><a href="class_qp_gen_residuals.html#af9211e9ddedb562e4ec002861937af6b">QpGenResiduals::rlambda</a></div><div class="ttdeci">OoqpVectorHandle rlambda</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00049">QpGenResiduals.h:49</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a4dfd175cf2a385e113f17e5ec89d6d07"><div class="ttname"><a href="class_qp_gen_residuals.html#a4dfd175cf2a385e113f17e5ec89d6d07">QpGenResiduals::calcresids</a></div><div class="ttdeci">virtual void calcresids(Data *problem, Variables *vars)</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a561c8a10b38635a03df5d637947f3091"><div class="ttname"><a href="class_qp_gen_residuals.html#a561c8a10b38635a03df5d637947f3091">QpGenResiduals::nxlow</a></div><div class="ttdeci">double nxlow</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00029">QpGenResiduals.h:29</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a6e185209cb5e06fb700a36507dbc8a1d"><div class="ttname"><a href="class_qp_gen_residuals.html#a6e185209cb5e06fb700a36507dbc8a1d">QpGenResiduals::nxupp</a></div><div class="ttdeci">double nxupp</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00026">QpGenResiduals.h:26</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ae76b8717decb47da696056a54b2470f5"><div class="ttname"><a href="class_qp_gen_residuals.html#ae76b8717decb47da696056a54b2470f5">QpGenResiduals::my</a></div><div class="ttdeci">int my</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00024">QpGenResiduals.h:24</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a2b5b77194537a77014eb874a0d46db6f"><div class="ttname"><a href="class_qp_gen_residuals.html#a2b5b77194537a77014eb874a0d46db6f">QpGenResiduals::rz</a></div><div class="ttdeci">OoqpVectorHandle rz</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00042">QpGenResiduals.h:42</a></div></div>
+<div class="ttc" id="aclass_smart_pointer_html"><div class="ttname"><a href="class_smart_pointer.html">SmartPointer&lt; OoqpVector &gt;</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ae24721145b9c48ea95979d2c4cfd5703"><div class="ttname"><a href="class_qp_gen_residuals.html#ae24721145b9c48ea95979d2c4cfd5703">QpGenResiduals::clear_r3</a></div><div class="ttdeci">virtual void clear_r3()</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a9e2c673c2e9413163691bc80654571f8"><div class="ttname"><a href="class_qp_gen_residuals.html#a9e2c673c2e9413163691bc80654571f8">QpGenResiduals::rt</a></div><div class="ttdeci">OoqpVectorHandle rt</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00045">QpGenResiduals.h:45</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a864c214f53fee34afd17a71fdec4d875"><div class="ttname"><a href="class_qp_gen_residuals.html#a864c214f53fee34afd17a71fdec4d875">QpGenResiduals::ixlow</a></div><div class="ttdeci">OoqpVectorHandle ixlow</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00030">QpGenResiduals.h:30</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a76402efdffec01c7fb5a5f0ce9b4f130"><div class="ttname"><a href="class_qp_gen_residuals.html#a76402efdffec01c7fb5a5f0ce9b4f130">QpGenResiduals::clear_r1r2</a></div><div class="ttdeci">virtual void clear_r1r2()</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a768ff668630b298b0b461446a51ec4c4"><div class="ttname"><a href="class_qp_gen_residuals.html#a768ff668630b298b0b461446a51ec4c4">QpGenResiduals::rQ</a></div><div class="ttdeci">OoqpVectorHandle rQ</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00039">QpGenResiduals.h:39</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a368a9ae84bd8cc6896e9cf40123f5252"><div class="ttname"><a href="class_qp_gen_residuals.html#a368a9ae84bd8cc6896e9cf40123f5252">QpGenResiduals::mclow</a></div><div class="ttdeci">double mclow</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00035">QpGenResiduals.h:35</a></div></div>
+<div class="ttc" id="a_ooqp_vector_handle_8h_html"><div class="ttname"><a href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ac745111142553560ea58a7a8d5475a20"><div class="ttname"><a href="class_qp_gen_residuals.html#ac745111142553560ea58a7a8d5475a20">QpGenResiduals::rA</a></div><div class="ttdeci">OoqpVectorHandle rA</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00040">QpGenResiduals.h:40</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a8c043d4332d959c91544e4ad591c8ecd"><div class="ttname"><a href="class_qp_gen_residuals.html#a8c043d4332d959c91544e4ad591c8ecd">QpGenResiduals::rgamma</a></div><div class="ttdeci">OoqpVectorHandle rgamma</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00047">QpGenResiduals.h:47</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ae8fcee614c6776bdaa30eb3aa554b954"><div class="ttname"><a href="class_qp_gen_residuals.html#ae8fcee614c6776bdaa30eb3aa554b954">QpGenResiduals::rv</a></div><div class="ttdeci">OoqpVectorHandle rv</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00043">QpGenResiduals.h:43</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_aed5edffaa2b73fd5d6bcac8a6cdae9f1"><div class="ttname"><a href="class_qp_gen_residuals.html#aed5edffaa2b73fd5d6bcac8a6cdae9f1">QpGenResiduals::rpi</a></div><div class="ttdeci">OoqpVectorHandle rpi</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00050">QpGenResiduals.h:50</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html"><div class="ttname"><a href="class_qp_gen_residuals.html">QpGenResiduals</a></div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00022">QpGenResiduals.h:22</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a8356789d4ce3a2f32421955659793cf5"><div class="ttname"><a href="class_qp_gen_residuals.html#a8356789d4ce3a2f32421955659793cf5">QpGenResiduals::mz</a></div><div class="ttdeci">int mz</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00024">QpGenResiduals.h:24</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_ada4be70463fa6ebf6580c47598d8d2c8"><div class="ttname"><a href="class_qp_gen_residuals.html#ada4be70463fa6ebf6580c47598d8d2c8">QpGenResiduals::iclow</a></div><div class="ttdeci">OoqpVectorHandle iclow</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00036">QpGenResiduals.h:36</a></div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a42e3acb87cacc59c55ae6b3d69c4a360"><div class="ttname"><a href="class_qp_gen_residuals.html#a42e3acb87cacc59c55ae6b3d69c4a360">QpGenResiduals::~QpGenResiduals</a></div><div class="ttdeci">virtual ~QpGenResiduals()</div></div>
+<div class="ttc" id="aclass_qp_gen_residuals_html_a538210a457341ab7bf72a526cee1c3cb"><div class="ttname"><a href="class_qp_gen_residuals.html#a538210a457341ab7bf72a526cee1c3cb">QpGenResiduals::mcupp</a></div><div class="ttdeci">double mcupp</div><div class="ttdef"><b>Definition:</b> <a href="_qp_gen_residuals_8h_source.html#l00032">QpGenResiduals.h:32</a></div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

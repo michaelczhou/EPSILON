@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/odeint_rk4_phase_lattice_mkl.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">odeint_rk4_phase_lattice_mkl.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta4_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vector__space__algebra_8hpp_source.html">boost/numeric/odeint/algebra/vector_space_algebra.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mkl__operations_8hpp_source.html">boost/numeric/odeint/external/mkl/mkl_operations.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="rk__performance__test__case_8hpp_source.html">rk_performance_test_case.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="phase__lattice_8hpp_source.html">phase_lattice.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="phase__lattice__mkl_8hpp_source.html">phase_lattice_mkl.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+odeint_rk4_phase_lattice_mkl.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="odeint__rk4__phase__lattice__mkl_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__phase__lattice__mkl_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__phase__lattice__mkl_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2odeint__rk4__phase__lattice__mkl_8cpp">
+<area shape="rect" title=" " alt="" coords="3621,5,3869,76"/>
+<area shape="rect" title=" " alt="" coords="3256,533,3378,559"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="2024,124,2218,165"/>
+<area shape="rect" href="vector__space__algebra_8hpp.html" title=" " alt="" coords="4364,317,4529,373"/>
+<area shape="rect" href="mkl__operations_8hpp.html" title=" " alt="" coords="3350,124,3593,165"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html" title=" " alt="" coords="3666,124,3824,165"/>
+<area shape="rect" href="phase__lattice_8hpp.html" title=" " alt="" coords="3984,131,4122,158"/>
+<area shape="rect" href="phase__lattice__mkl_8hpp.html" title=" " alt="" coords="4146,131,4315,158"/>
+<area shape="rect" title=" " alt="" coords="1770,221,1936,262"/>
+<area shape="rect" title=" " alt="" coords="2304,221,2516,262"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="1422,213,1604,269"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="34,429,194,470"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="1413,429,1613,470"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="2974,429,3204,470"/>
+<area shape="rect" href="explicit__stepper__base_8hpp.html" title=" " alt="" coords="850,317,1013,373"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="219,429,391,470"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="848,615,1012,656"/>
+<area shape="rect" href="generic__rk__algorithm_8hpp.html" title=" " alt="" coords="2012,317,2180,373"/>
+<area shape="rect" title=" " alt="" coords="111,615,259,656"/>
+<area shape="rect" title=" " alt="" coords="997,704,1144,745"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="1229,429,1389,470"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="415,429,611,470"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="635,429,866,470"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="890,421,1053,477"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="289,525,449,567"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="105,525,265,567"/>
+<area shape="rect" title=" " alt="" coords="2749,704,2936,745"/>
+<area shape="rect" title=" " alt="" coords="306,622,432,649"/>
+<area shape="rect" title=" " alt="" coords="1981,533,2138,559"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="1675,525,1871,567"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="1230,525,1434,567"/>
+<area shape="rect" href="reduce_8hpp.html" title=" " alt="" coords="1458,525,1650,567"/>
+<area shape="rect" title=" " alt="" coords="1754,622,1928,649"/>
+<area shape="rect" title=" " alt="" coords="2808,533,2893,559"/>
+<area shape="rect" title=" " alt="" coords="2917,533,3048,559"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="3072,525,3232,567"/>
+<area shape="rect" title=" " alt="" coords="2133,436,2293,463"/>
+<area shape="rect" title=" " alt="" coords="2318,436,2506,463"/>
+<area shape="rect" title=" " alt="" coords="2530,436,2704,463"/>
+<area shape="rect" title=" " alt="" coords="2729,436,2900,463"/>
+<area shape="rect" title=" " alt="" coords="1688,436,1836,463"/>
+<area shape="rect" title=" " alt="" coords="1861,436,2058,463"/>
+<area shape="rect" title=" " alt="" coords="3453,228,3533,255"/>
+<area shape="rect" title=" " alt="" coords="3330,228,3430,255"/>
+<area shape="rect" title=" " alt="" coords="3883,221,4034,262"/>
+<area shape="rect" title=" " alt="" coords="3558,221,3708,262"/>
+<area shape="rect" title=" " alt="" coords="3733,228,3858,255"/>
+<area shape="rect" title=" " alt="" coords="4110,228,4172,255"/>
+<area shape="rect" title=" " alt="" coords="4248,228,4341,255"/>
+<area shape="rect" title=" " alt="" coords="4366,228,4524,255"/>
+</map>
+</div>
+</div>
+<p><a href="odeint__rk4__phase__lattice__mkl_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classodeint__wrapper.html">odeint_wrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:acd881fb03b3110536086c522b5a9e31f"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; double, <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a></td></tr>
+<tr class="separator:acd881fb03b3110536086c522b5a9e31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64dd6e29d060873fb6bcebb1f44bf68a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, double, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">boost::numeric::odeint::vector_space_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1mkl__operations.html">boost::numeric::odeint::mkl_operations</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp.html#a64dd6e29d060873fb6bcebb1f44bf68a">rk4_odeint_type</a></td></tr>
+<tr class="separator:a64dd6e29d060873fb6bcebb1f44bf68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:adf99ea743b5dadbe8dc48388c0d7fa94"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> = 1024</td></tr>
+<tr class="separator:adf99ea743b5dadbe8dc48388c0d7fa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a64dd6e29d060873fb6bcebb1f44bf68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64dd6e29d060873fb6bcebb1f44bf68a">&#9670;&nbsp;</a></span>rk4_odeint_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">boost::numeric::odeint::vector_space_algebra</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1mkl__operations.html">boost::numeric::odeint::mkl_operations</a> &gt; <a class="el" href="odeint__rk4__lorenz__array_8cpp.html#a701e59533beff960a8e0a0acbd1f975f">rk4_odeint_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html">odeint_rk4_phase_lattice_mkl.cpp</a> 第 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acd881fb03b3110536086c522b5a9e31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd881fb03b3110536086c522b5a9e31f">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; double , <a class="el" href="rt__generic__rk4__phase__lattice_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html">odeint_rk4_phase_lattice_mkl.cpp</a> 第 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html">odeint_rk4_phase_lattice_mkl.cpp</a> 第 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html#l00062">62</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="odeint__rk4__phase__lattice__mkl_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#odeint__rk4__phase__lattice__mkl_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="odeint__rk4__phase__lattice__mkl_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="odeint__rk4__phase__lattice__mkl_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e" title=" " alt="" coords="108,5,151,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="adf99ea743b5dadbe8dc48388c0d7fa94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf99ea743b5dadbe8dc48388c0d7fa94">&#9670;&nbsp;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t N = 1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html">odeint_rk4_phase_lattice_mkl.cpp</a> 第 <a class="el" href="odeint__rk4__phase__lattice__mkl_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

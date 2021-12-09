@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/integrate.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">integrate.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/numeric/odeint/config.hpp</a>&gt;</code><br />
+<code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &lt;boost/ref.hpp&gt;</code><br />
+<code>#include &lt;boost/iterator/counting_iterator.hpp&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/vector.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="integrate__const_8hpp_source.html">boost/numeric/odeint/integrate/integrate_const.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="integrate__adaptive_8hpp_source.html">boost/numeric/odeint/integrate/integrate_adaptive.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="integrate__times_8hpp_source.html">boost/numeric/odeint/integrate/integrate_times.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="integrate__n__steps_8hpp_source.html">boost/numeric/odeint/integrate/integrate_n_steps.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="euler_8hpp_source.html">boost/numeric/odeint/stepper/euler.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="modified__midpoint_8hpp_source.html">boost/numeric/odeint/stepper/modified_midpoint.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta4_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__cash__karp54_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__dopri5_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_dopri5.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__fehlberg78_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_fehlberg78.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controlled__runge__kutta_8hpp_source.html">boost/numeric/odeint/stepper/controlled_runge_kutta.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="bulirsch__stoer_8hpp_source.html">boost/numeric/odeint/stepper/bulirsch_stoer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="dense__output__runge__kutta_8hpp_source.html">boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="bulirsch__stoer__dense__out_8hpp_source.html">boost/numeric/odeint/stepper/bulirsch_stoer_dense_out.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="less__with__sign_8hpp_source.html">boost/numeric/odeint/util/detail/less_with_sign.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+integrate.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="integrate_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2integrate_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2integrate_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2integrate_8cpp">
+<area shape="rect" title=" " alt="" coords="1953,5,2133,76"/>
+<area shape="rect" title=" " alt="" coords="4745,637,4807,663"/>
+<area shape="rect" title=" " alt="" coords="1657,347,1719,373"/>
+<area shape="rect" title=" " alt="" coords="1520,451,1600,477"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="1516,540,1676,581"/>
+<area shape="rect" title=" " alt="" coords="5379,451,5501,477"/>
+<area shape="rect" title=" " alt="" coords="237,547,344,574"/>
+<area shape="rect" title=" " alt="" coords="941,131,1112,173"/>
+<area shape="rect" title=" " alt="" coords="1136,139,1312,165"/>
+<area shape="rect" title=" " alt="" coords="1336,139,1496,165"/>
+<area shape="rect" href="integrate__const_8hpp.html" title=" " alt="" coords="757,124,917,180"/>
+<area shape="rect" href="less__with__sign_8hpp.html" title=" " alt="" coords="479,436,639,492"/>
+<area shape="rect" href="integrate__adaptive_8hpp.html" title=" " alt="" coords="264,228,424,284"/>
+<area shape="rect" href="integrate__times_8hpp.html" title=" " alt="" coords="640,228,800,284"/>
+<area shape="rect" href="integrate__n__steps_8hpp.html" title=" " alt="" coords="523,124,683,180"/>
+<area shape="rect" href="euler_8hpp.html" title=" " alt="" coords="3501,235,3661,277"/>
+<area shape="rect" href="modified__midpoint_8hpp.html" title=" " alt="" coords="3849,235,4079,277"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="5073,131,5266,173"/>
+<area shape="rect" href="runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="4460,124,4620,180"/>
+<area shape="rect" href="runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="3021,228,3181,284"/>
+<area shape="rect" href="runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="4723,124,4883,180"/>
+<area shape="rect" href="controlled__runge__kutta_8hpp.html" title=" " alt="" coords="2458,228,2646,284"/>
+<area shape="rect" href="bulirsch__stoer_8hpp.html" title=" " alt="" coords="2453,131,2651,173"/>
+<area shape="rect" href="dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="3457,332,3623,388"/>
+<area shape="rect" href="bulirsch__stoer__dense__out_8hpp.html" title=" " alt="" coords="3767,124,3937,180"/>
+<area shape="rect" title=" " alt="" coords="2177,637,2308,663"/>
+<area shape="rect" title=" " alt="" coords="915,629,1061,671"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="986,443,1217,485"/>
+<area shape="rect" href="null__observer_8hpp.html" title=" " alt="" coords="88,339,293,381"/>
+<area shape="rect" href="detail_2integrate__const_8hpp.html" title=" " alt="" coords="1088,228,1277,284"/>
+<area shape="rect" href="detail_2integrate__adaptive_8hpp.html" title=" " alt="" coords="1139,332,1328,388"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="1241,443,1437,485"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="1997,443,2157,485"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="2405,443,2565,485"/>
+<area shape="rect" title=" " alt="" coords="2327,540,2475,581"/>
+<area shape="rect" title=" " alt="" coords="1795,451,1922,477"/>
+<area shape="rect" href="detail_2integrate__times_8hpp.html" title=" " alt="" coords="621,332,811,388"/>
+<area shape="rect" href="detail_2integrate__n__steps_8hpp.html" title=" " alt="" coords="824,228,1013,284"/>
+<area shape="rect" href="explicit__stepper__base_8hpp.html" title=" " alt="" coords="3219,332,3381,388"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="3745,443,3905,485"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="2741,339,2941,381"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="4864,339,5093,381"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="3930,443,4102,485"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="3838,540,4002,581"/>
+<area shape="rect" title=" " alt="" coords="4649,235,4815,277"/>
+<area shape="rect" title=" " alt="" coords="5299,235,5511,277"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="4839,228,5022,284"/>
+<area shape="rect" href="explicit__error__generic__rk_8hpp.html" title=" " alt="" coords="4307,228,4472,284"/>
+<area shape="rect" href="explicit__error__stepper__fsal__base_8hpp.html" title=" " alt="" coords="2301,332,2515,388"/>
+<area shape="rect" href="same__instance_8hpp.html" title=" " alt="" coords="2966,339,3143,381"/>
+</map>
+</div>
+</div>
+<p><a href="integrate_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpush__back__time.html">push_back_time</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__integrate__const__test.html">perform_integrate_const_test&lt; Stepper &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__integrate__adaptive__test.html">perform_integrate_adaptive_test&lt; Stepper &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__integrate__times__test.html">perform_integrate_times_test&lt; Stepper &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structperform__integrate__n__steps__test.html">perform_integrate_n_steps_test&lt; Stepper &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstepper__methods.html">stepper_methods&lt; State &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_integrate_functions</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></td></tr>
+<tr class="separator:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263170724a9562de8d65f9e63c81ed74"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#a263170724a9562de8d65f9e63c81ed74">state_type</a></td></tr>
+<tr class="separator:a263170724a9562de8d65f9e63c81ed74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa3c5064256d82d79e15d0a112e11ebcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#aa3c5064256d82d79e15d0a112e11ebcf">lorenz</a> (const <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;x, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt, const <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t)</td></tr>
+<tr class="separator:aa3c5064256d82d79e15d0a112e11ebcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48767bb03341a0d56624614e294a55ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#a48767bb03341a0d56624614e294a55ac">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (integrate_const_test_case, Stepper, <a class="el" href="classstepper__methods.html">stepper_methods</a>)</td></tr>
+<tr class="separator:a48767bb03341a0d56624614e294a55ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f010fc7ba9cd63b38ecc39599cd83cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#a2f010fc7ba9cd63b38ecc39599cd83cb">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (integrate_adaptive_test_case, Stepper, <a class="el" href="classstepper__methods.html">stepper_methods</a>)</td></tr>
+<tr class="separator:a2f010fc7ba9cd63b38ecc39599cd83cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ca11a5ccd3cb69352d7f90cf22c0c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#a73ca11a5ccd3cb69352d7f90cf22c0c0">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (integrate_times_test_case, Stepper, <a class="el" href="classstepper__methods.html">stepper_methods</a>)</td></tr>
+<tr class="separator:a73ca11a5ccd3cb69352d7f90cf22c0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b60bfc922ab85c22db4ee033e4636c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="integrate_8cpp.html#af2b60bfc922ab85c22db4ee033e4636c">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (integrate_n_steps_test_case, Stepper, <a class="el" href="classstepper__methods.html">stepper_methods</a>)</td></tr>
+<tr class="separator:af2b60bfc922ab85c22db4ee033e4636c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_integrate_functions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a263170724a9562de8d65f9e63c81ed74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263170724a9562de8d65f9e63c81ed74">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba0996e183cdbebc61c5cbdcccf9da15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0996e183cdbebc61c5cbdcccf9da15">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a2f010fc7ba9cd63b38ecc39599cd83cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f010fc7ba9cd63b38ecc39599cd83cb">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">integrate_adaptive_test_case&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Stepper&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstepper__methods.html">stepper_methods</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00248">248</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a48767bb03341a0d56624614e294a55ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48767bb03341a0d56624614e294a55ac">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">integrate_const_test_case&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Stepper&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstepper__methods.html">stepper_methods</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00238">238</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af2b60bfc922ab85c22db4ee033e4636c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b60bfc922ab85c22db4ee033e4636c">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">integrate_n_steps_test_case&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Stepper&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstepper__methods.html">stepper_methods</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00265">265</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a73ca11a5ccd3cb69352d7f90cf22c0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ca11a5ccd3cb69352d7f90cf22c0c0">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">integrate_times_test_case&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Stepper&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstepper__methods.html">stepper_methods</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00258">258</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa3c5064256d82d79e15d0a112e11ebcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c5064256d82d79e15d0a112e11ebcf">&#9670;&nbsp;</a></span>lorenz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structlorenz.html">lorenz</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="integrate_8cpp_source.html">integrate.cpp</a> 第 <a class="el" href="integrate_8cpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

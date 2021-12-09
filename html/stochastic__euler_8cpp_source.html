@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/stochastic_euler.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stochastic_euler.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stochastic__euler_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> libs/numeric/odeint/examples/stochastic_euler.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> Stochastic euler stepper example and Ornstein-Uhlenbeck process</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">(See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;boost/random.hpp&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="odeint_8hpp.html">boost/numeric/odeint.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//[ stochastic_euler_class_definition</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">template&lt; size_t N &gt; class stochastic_euler</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">public:</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    typedef boost::array&lt; double , N &gt; state_type;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    typedef boost::array&lt; double , N &gt; deriv_type;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">    typedef double value_type;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">    typedef double time_type;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    typedef unsigned short order_type;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    typedef boost::numeric::odeint::stepper_tag stepper_category;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">    static order_type order( void ) { return 1; }</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">    // ...</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">};</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//[ stochastic_euler_do_step</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">template&lt; size_t N &gt; class stochastic_euler</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">public:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    // ...</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    template&lt; class System &gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    void do_step( System system , state_type &amp;x , time_type t , time_type dt ) const</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">        deriv_type det , stoch ;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">        system.first( x , det );</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">        system.second( x , stoch );</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">        for( size_t i=0 ; i&lt;x.size() ; ++i )</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">            x[i] += dt * det[i] + sqrt( dt ) * stoch[i];</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">};</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//[ stochastic_euler_class</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span>&lt; <span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classstochastic__euler.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstochastic__euler.html">stochastic_euler</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#ad8ec0843c5c221b22835c76d6dc7fa65">   74</a></span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , N &gt; <a class="code" href="classstochastic__euler.html#ad8ec0843c5c221b22835c76d6dc7fa65">state_type</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#a6d36716be427ae3857ef8915e22ec672">   75</a></span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , N &gt; <a class="code" href="classstochastic__euler.html#a6d36716be427ae3857ef8915e22ec672">deriv_type</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#a59b6da7f512cdd403b5323739be831b3">   76</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="classstochastic__euler.html#a59b6da7f512cdd403b5323739be831b3">value_type</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#a374610104ecb1362df4fbd7775465719">   77</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="classstochastic__euler.html#a374610104ecb1362df4fbd7775465719">time_type</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#aae404a9f6a096444e397dd11c6968936">   78</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classstochastic__euler.html#aae404a9f6a096444e397dd11c6968936">order_type</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#ade0ebf12b3b9fd2b89bf3f6ad71b8f60">   80</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">boost::numeric::odeint::stepper_tag</a> <a class="code" href="classstochastic__euler.html#ade0ebf12b3b9fd2b89bf3f6ad71b8f60">stepper_category</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#ad336980ac023c2862e7e380834e99a1e">   82</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classstochastic__euler.html#aae404a9f6a096444e397dd11c6968936">order_type</a> <a class="code" href="classstochastic__euler.html#ad336980ac023c2862e7e380834e99a1e">order</a>( <span class="keywordtype">void</span> ) { <span class="keywordflow">return</span> 1; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System &gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classstochastic__euler.html#a64d703c4fca47cf1a536bb811e7c48dd">   85</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classstochastic__euler.html#a64d703c4fca47cf1a536bb811e7c48dd">do_step</a>( System system , <a class="code" href="classstochastic__euler.html#ad8ec0843c5c221b22835c76d6dc7fa65">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="classstochastic__euler.html#a374610104ecb1362df4fbd7775465719">time_type</a> t , <a class="code" href="classstochastic__euler.html#a374610104ecb1362df4fbd7775465719">time_type</a> dt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classstochastic__euler.html#a6d36716be427ae3857ef8915e22ec672">deriv_type</a> det , stoch ;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        system.first( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , det );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        system.second( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , stoch );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>.size() ; ++i )</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[i] += <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> * det[i] + <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> ) * stoch[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//[ stochastic_euler_ornstein_uhlenbeck_def</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> = 1;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="stochastic__euler_8cpp.html#acd881fb03b3110536086c522b5a9e31f">  100</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; double , N &gt; <a class="code" href="stochastic__euler_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structornstein__det.html">  102</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structornstein__det.html">ornstein_det</a></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structornstein__det.html#a778c8355cefdd27d418951538e82d09c">  104</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structornstein__det.html#a778c8355cefdd27d418951538e82d09c">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        dxdt[0] = -<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structornstein__stoch.html">  110</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structornstein__stoch.html">ornstein_stoch</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structornstein__stoch.html#ab03275b310177212fc6b6da86fc87728">  112</a></span>&#160;    boost::mt19937 <a class="code" href="structornstein__stoch.html#ab03275b310177212fc6b6da86fc87728">m_rng</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structornstein__stoch.html#aeca8ddf6efbcd01ef9e885d8d85fa20a">  113</a></span>&#160;    boost::normal_distribution&lt;&gt; <a class="code" href="structornstein__stoch.html#aeca8ddf6efbcd01ef9e885d8d85fa20a">m_dist</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structornstein__stoch.html#a4efe63ee849fdeb5b93c90cbb88408cf">  115</a></span>&#160;    <a class="code" href="structornstein__stoch.html#a4efe63ee849fdeb5b93c90cbb88408cf">ornstein_stoch</a>( <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> ) : <a class="code" href="structornstein__stoch.html#ab03275b310177212fc6b6da86fc87728">m_rng</a>() , <a class="code" href="structornstein__stoch.html#aeca8ddf6efbcd01ef9e885d8d85fa20a">m_dist</a>( 0.0 , <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> ) { }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structornstein__stoch.html#a9d68189a5aad4399bcbfe5c735f9d986">  117</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structornstein__stoch.html#a9d68189a5aad4399bcbfe5c735f9d986">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt )</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        dxdt[0] = <a class="code" href="structornstein__stoch.html#aeca8ddf6efbcd01ef9e885d8d85fa20a">m_dist</a>( <a class="code" href="structornstein__stoch.html#ab03275b310177212fc6b6da86fc87728">m_rng</a> );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">//]</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">struct </span><a class="code" href="structstreaming__observer.html">streaming_observer</a></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State &gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">  127</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">operator()</a>( <span class="keyword">const</span> State &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keywordtype">double</span> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::cout &lt;&lt; t &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="stochastic__euler_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  134</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="stochastic__euler_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc , <span class="keywordtype">char</span> **argv )</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">//[ ornstein_uhlenbeck_main</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 1.0 }};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">integrate_const</a>( <a class="code" href="classstochastic__euler.html">stochastic_euler&lt; N &gt;</a>() , make_pair( <a class="code" href="structornstein__det.html">ornstein_det</a>() , <a class="code" href="structornstein__stoch.html">ornstein_stoch</a>( 1.0 ) ) ,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 10.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , <a class="code" href="structstreaming__observer.html">streaming_observer</a>() );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//]</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructstreaming__observer_html"><div class="ttname"><a href="structstreaming__observer.html">streaming_observer</a></div><div class="ttdef"><b>Definition:</b> <a href="fpu_8cpp_source.html#l00106">fpu.cpp:106</a></div></div>
+<div class="ttc" id="astructstreaming__observer_html_a72a4b8f614dcd3d82832ebd37cdc2756"><div class="ttname"><a href="structstreaming__observer.html#a72a4b8f614dcd3d82832ebd37cdc2756">streaming_observer::operator()</a></div><div class="ttdeci">void operator()(const State &amp;x, double t) const</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00127">stochastic_euler.cpp:127</a></div></div>
+<div class="ttc" id="astructornstein__stoch_html"><div class="ttname"><a href="structornstein__stoch.html">ornstein_stoch</a></div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00110">stochastic_euler.cpp:110</a></div></div>
+<div class="ttc" id="astructornstein__stoch_html_a4efe63ee849fdeb5b93c90cbb88408cf"><div class="ttname"><a href="structornstein__stoch.html#a4efe63ee849fdeb5b93c90cbb88408cf">ornstein_stoch::ornstein_stoch</a></div><div class="ttdeci">ornstein_stoch(double sigma)</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00115">stochastic_euler.cpp:115</a></div></div>
+<div class="ttc" id="astructornstein__stoch_html_ab03275b310177212fc6b6da86fc87728"><div class="ttname"><a href="structornstein__stoch.html#ab03275b310177212fc6b6da86fc87728">ornstein_stoch::m_rng</a></div><div class="ttdeci">boost::mt19937 m_rng</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00112">stochastic_euler.cpp:112</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_a6d36716be427ae3857ef8915e22ec672"><div class="ttname"><a href="classstochastic__euler.html#a6d36716be427ae3857ef8915e22ec672">stochastic_euler::deriv_type</a></div><div class="ttdeci">boost::array&lt; double, N &gt; deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00075">stochastic_euler.cpp:75</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_ad336980ac023c2862e7e380834e99a1e"><div class="ttname"><a href="classstochastic__euler.html#ad336980ac023c2862e7e380834e99a1e">stochastic_euler::order</a></div><div class="ttdeci">static order_type order(void)</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00082">stochastic_euler.cpp:82</a></div></div>
+<div class="ttc" id="astochastic__euler_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="stochastic__euler_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00134">stochastic_euler.cpp:134</a></div></div>
+<div class="ttc" id="astructornstein__det_html"><div class="ttname"><a href="structornstein__det.html">ornstein_det</a></div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00102">stochastic_euler.cpp:102</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a12b08855d25ca7201ad3d12dc6212bbb"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a12b08855d25ca7201ad3d12dc6212bbb">boost::numeric::odeint::detail::integrate_const</a></div><div class="ttdeci">size_t integrate_const(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__const_8hpp_source.html#l00042">integrate_const.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astructornstein__stoch_html_a9d68189a5aad4399bcbfe5c735f9d986"><div class="ttname"><a href="structornstein__stoch.html#a9d68189a5aad4399bcbfe5c735f9d986">ornstein_stoch::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt)</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00117">stochastic_euler.cpp:117</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_ade0ebf12b3b9fd2b89bf3f6ad71b8f60"><div class="ttname"><a href="classstochastic__euler.html#ade0ebf12b3b9fd2b89bf3f6ad71b8f60">stochastic_euler::stepper_category</a></div><div class="ttdeci">boost::numeric::odeint::stepper_tag stepper_category</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00080">stochastic_euler.cpp:80</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_a374610104ecb1362df4fbd7775465719"><div class="ttname"><a href="classstochastic__euler.html#a374610104ecb1362df4fbd7775465719">stochastic_euler::time_type</a></div><div class="ttdeci">double time_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00077">stochastic_euler.cpp:77</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_ad8ec0843c5c221b22835c76d6dc7fa65"><div class="ttname"><a href="classstochastic__euler.html#ad8ec0843c5c221b22835c76d6dc7fa65">stochastic_euler::state_type</a></div><div class="ttdeci">boost::array&lt; double, N &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00074">stochastic_euler.cpp:74</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1stepper__tag_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">boost::numeric::odeint::stepper_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__categories_8hpp_source.html#l00034">stepper_categories.hpp:34</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_a64d703c4fca47cf1a536bb811e7c48dd"><div class="ttname"><a href="classstochastic__euler.html#a64d703c4fca47cf1a536bb811e7c48dd">stochastic_euler::do_step</a></div><div class="ttdeci">void do_step(System system, state_type &amp;x, time_type t, time_type dt) const</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00085">stochastic_euler.cpp:85</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5969491e6e437adb343327d79538c679"><div class="ttname"><a href="namespacestd.html#a5969491e6e437adb343327d79538c679">std::sqrt</a></div><div class="ttdeci">__float128 sqrt(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00041">black_hole.cpp:41</a></div></div>
+<div class="ttc" id="astructornstein__stoch_html_aeca8ddf6efbcd01ef9e885d8d85fa20a"><div class="ttname"><a href="structornstein__stoch.html#aeca8ddf6efbcd01ef9e885d8d85fa20a">ornstein_stoch::m_dist</a></div><div class="ttdeci">boost::normal_distribution m_dist</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00113">stochastic_euler.cpp:113</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_aae404a9f6a096444e397dd11c6968936"><div class="ttname"><a href="classstochastic__euler.html#aae404a9f6a096444e397dd11c6968936">stochastic_euler::order_type</a></div><div class="ttdeci">unsigned short order_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00078">stochastic_euler.cpp:78</a></div></div>
+<div class="ttc" id="astochastic__euler_8cpp_html_acd881fb03b3110536086c522b5a9e31f"><div class="ttname"><a href="stochastic__euler_8cpp.html#acd881fb03b3110536086c522b5a9e31f">state_type</a></div><div class="ttdeci">boost::array&lt; double, N &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00100">stochastic_euler.cpp:100</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="astructornstein__det_html_a778c8355cefdd27d418951538e82d09c"><div class="ttname"><a href="structornstein__det.html#a778c8355cefdd27d418951538e82d09c">ornstein_det::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt) const</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00104">stochastic_euler.cpp:104</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html_a59b6da7f512cdd403b5323739be831b3"><div class="ttname"><a href="classstochastic__euler.html#a59b6da7f512cdd403b5323739be831b3">stochastic_euler::value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00076">stochastic_euler.cpp:76</a></div></div>
+<div class="ttc" id="aodeint_8hpp_html"><div class="ttname"><a href="odeint_8hpp.html">odeint.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="aclassstochastic__euler_html"><div class="ttname"><a href="classstochastic__euler.html">stochastic_euler</a></div><div class="ttdef"><b>Definition:</b> <a href="stochastic__euler_8cpp_source.html#l00070">stochastic_euler.cpp:70</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

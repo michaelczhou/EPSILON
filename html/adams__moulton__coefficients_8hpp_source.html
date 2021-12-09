@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/detail/adams_moulton_coefficients.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li><li class="navelem"><a class="el" href="dir_0819929eb866b117f91d4cb10b0592a9.html">detail</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">adams_moulton_coefficients.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="adams__moulton__coefficients_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/stepper/detail/adams_moulton_coefficients.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Coefficients for the Adams Moulton method.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ADAMS_MOULTON_COEFFICIENTS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ADAMS_MOULTON_COEFFICIENTS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keywordtype">size_t</span> Steps &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a> ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_011_01_4.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 1 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 1 &gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_011_01_4.html#aedf7f00b01a0677986815ab3fec4a8fc">   37</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_011_01_4.html#aedf7f00b01a0677986815ab3fec4a8fc">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 1 &gt;()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_012_01_4.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 2 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 2 &gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_012_01_4.html#a2ea8f221d9b3d781753dbfb8fb9b91a8">   49</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_012_01_4.html#a2ea8f221d9b3d781753dbfb8fb9b91a8">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 2 &gt;()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2 );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2 );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_013_01_4.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 3 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 3 &gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_013_01_4.html#abcad13fe9813d4af198f9d9c8922726b">   62</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_013_01_4.html#abcad13fe9813d4af198f9d9c8922726b">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 3 &gt;()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 5 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 12 );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 3 );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 12 );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_014_01_4.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 4 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 4 &gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_014_01_4.html#a81b72c60f4d61bf25fc80568cc8efd32">   76</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_014_01_4.html#a81b72c60f4d61bf25fc80568cc8efd32">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 4 &gt;()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 3 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 8 );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 19 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 24 );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 5 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 24 );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        (*this)[3] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 24 );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_015_01_4.html">   88</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 5 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 5 &gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_015_01_4.html#a9a5a67b82377263122c7c80c8759205d">   91</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_015_01_4.html#a9a5a67b82377263122c7c80c8759205d">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 5 &gt;()</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 251 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 720 );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 323 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 360 );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 11 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 30 );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        (*this)[3] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 53 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 360 );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        (*this)[4] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 19 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 720 );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_016_01_4.html">  104</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 6 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 6 &gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_016_01_4.html#a346e9795406f0c0cfe2ae470b2fa1bd3">  107</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_016_01_4.html#a346e9795406f0c0cfe2ae470b2fa1bd3">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 6 &gt;()</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 95 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 288 );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1427 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1440 );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 133 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 240 );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        (*this)[3] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 241 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 720 );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        (*this)[4] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 173 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1440 );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        (*this)[5] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 3 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 160 );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_017_01_4.html">  120</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 7 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 7 &gt;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_017_01_4.html#afdd9c10384dcf2bae79f7f742bc6455b">  123</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_017_01_4.html#afdd9c10384dcf2bae79f7f742bc6455b">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 7 &gt;()</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 19087 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 60480 );</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2713 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2520 );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 15487 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 20160 );</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        (*this)[3] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 586 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 945 );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        (*this)[4] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 6737 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 20160 );</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        (*this)[5] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 263 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 2520 );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        (*this)[6] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 863 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 60480 );</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_018_01_4.html">  138</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">adams_moulton_coefficients</a>&lt; Value , 8 &gt; : <span class="keyword">public</span> boost::array&lt; Value , 8 &gt;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_018_01_4.html#a494984dd58499513c085a8cb59635e67">  141</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_018_01_4.html#a494984dd58499513c085a8cb59635e67">adams_moulton_coefficients</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    : <a class="code" href="namespaceboost.html">boost</a>::array&lt; Value , 8 &gt;()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 5257 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 17280 );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        (*this)[1] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 139849 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 120960 );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        (*this)[2] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 4511 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 4480 );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        (*this)[3] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 123133 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 120960 );</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        (*this)[4] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 88547 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 120960 );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        (*this)[5] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1537 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 4480 );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        (*this)[6] = -<span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 11351 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 120960 );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        (*this)[7] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 275 ) / <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 24192 );</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;} <span class="comment">// detail</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_STEPPER_DETAIL_ADAMS_MOULTON_COEFFICIENTS_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients.html">boost::numeric::odeint::detail::adams_moulton_coefficients</a></div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00031">adams_moulton_coefficients.hpp:31</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00016">nested_range_algebra.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_011_01_4_html_aedf7f00b01a0677986815ab3fec4a8fc"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_011_01_4.html#aedf7f00b01a0677986815ab3fec4a8fc">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 1 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00037">adams_moulton_coefficients.hpp:37</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_012_01_4_html_a2ea8f221d9b3d781753dbfb8fb9b91a8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_012_01_4.html#a2ea8f221d9b3d781753dbfb8fb9b91a8">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 2 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00049">adams_moulton_coefficients.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_016_01_4_html_a346e9795406f0c0cfe2ae470b2fa1bd3"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_016_01_4.html#a346e9795406f0c0cfe2ae470b2fa1bd3">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 6 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00107">adams_moulton_coefficients.hpp:107</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_014_01_4_html_a81b72c60f4d61bf25fc80568cc8efd32"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_014_01_4.html#a81b72c60f4d61bf25fc80568cc8efd32">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 4 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00076">adams_moulton_coefficients.hpp:76</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_017_01_4_html_afdd9c10384dcf2bae79f7f742bc6455b"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_017_01_4.html#afdd9c10384dcf2bae79f7f742bc6455b">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 7 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00123">adams_moulton_coefficients.hpp:123</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_018_01_4_html_a494984dd58499513c085a8cb59635e67"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_018_01_4.html#a494984dd58499513c085a8cb59635e67">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 8 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00141">adams_moulton_coefficients.hpp:141</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_015_01_4_html_a9a5a67b82377263122c7c80c8759205d"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_015_01_4.html#a9a5a67b82377263122c7c80c8759205d">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 5 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00091">adams_moulton_coefficients.hpp:91</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_013_01_4_html_abcad13fe9813d4af198f9d9c8922726b"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1detail_1_1adams__moulton__coefficients_3_01_value_00_013_01_4.html#abcad13fe9813d4af198f9d9c8922726b">boost::numeric::odeint::detail::adams_moulton_coefficients&lt; Value, 3 &gt;::adams_moulton_coefficients</a></div><div class="ttdeci">adams_moulton_coefficients(void)</div><div class="ttdef"><b>Definition:</b> <a href="adams__moulton__coefficients_8hpp_source.html#l00062">adams_moulton_coefficients.hpp:62</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

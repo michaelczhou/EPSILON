@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: aux_tools/src/terminal_server.py 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b5b05072f5c4b7a0cdd160663a7e05b5.html">aux_tools</a></li><li class="navelem"><a class="el" href="dir_4abee09a717517f1a64e7f3ecfeb159d.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">terminal_server.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="terminal__server_8py.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html">    1</a></span>&#160;<span class="comment"># @file terminal_server.py</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># @author HKUST Aerial Robotics Group</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># @brief terminal server for testing</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># @version 0.1</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># @date 2019-02</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># @copyright Copyright (c) 2019</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># sys</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> time</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> rospy</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> shutil</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> random</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> math <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># pygame</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> pygame <span class="keyword">as</span> pg</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacepygame_1_1locals.html">pygame.locals</a> <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> pygame.math <span class="keyword">import</span> Vector2</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"># msg</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> geometry_msgs.msg <span class="keyword">import</span> Twist</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> sensor_msgs.msg <span class="keyword">import</span> Joy</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> vehicle_msgs.msg <span class="keyword">import</span> ArenaInfoDynamic</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> vehicle_msgs.msg <span class="keyword">import</span> ArenaInfoStatic</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> vehicle_msgs.msg <span class="keyword">import</span> State</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> vehicle_msgs.msg <span class="keyword">import</span> ControlSignal</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a146e08400ffa57f97750e93327e8c3d7">   28</a></span>&#160;ego_id = 0</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a13390b2a7297af5c36c21b5812eef5d9">   29</a></span>&#160;agent_id = 0</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a451d2d16ad8165ad593e888d416c92db">   30</a></span>&#160;width = 800</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a3655ec4b5b351cc2aac3ab9f6d63798c">   31</a></span>&#160;height = 600</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a44d096afc210dd594ce194ad5a7ddb5b">   32</a></span>&#160;scale = 4.0</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#aba9008b6ca89e7fdd1a800133b32a8c4">   33</a></span>&#160;screen = pg.display.set_mode((width, height))</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#adbcb535b0f5ec0665f0c454faf781764">   34</a></span>&#160;all_sprites = pg.sprite.Group()</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a9f41cad8c3a3df5b1a23c295da466f84">   35</a></span>&#160;joy_pub = rospy.Publisher(<span class="stringliteral">&#39;/joy&#39;</span>, Joy, queue_size=10)</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a65e86a70f20d546086d75616b8ffcd04">   36</a></span>&#160;vehicles = {}</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a0ac23886eca718cc91a9c2b24f34be51">   37</a></span>&#160;recorded_ids = []</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a21150e436b32053d46c64819db8a5ee9">   38</a></span>&#160;lane_pts = []</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a402bd750a079e97275ea33332855c124">   39</a></span>&#160;center_3dof = (0.0, 0.0, 0.0)</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a4eee86077343ac997994fb90d1feb389">   40</a></span>&#160;state_seq = []</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#aa771e6c169ff9bfce88ddf22ce894db6">   41</a></span>&#160;has_arena_info_dynamic = <span class="keyword">False</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">   44</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(point_3dof):</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    x = point_3dof[0] - center_3dof[0]</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    y = point_3dof[1] - center_3dof[1]</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    angle = center_3dof[2]</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    u = width/2 + scale * (x*sin(angle) - y * cos(angle))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    v = height/2 - scale * (x*cos(angle) + y * sin(angle))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (u, v)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="classterminal__server_1_1_wheel.html">Wheel</a>(pg.sprite.Sprite):</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html#afa2894d1f1e8aabab3022e9e28904a80">   54</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classterminal__server_1_1_wheel.html#afa2894d1f1e8aabab3022e9e28904a80">__init__</a>(self, screen_rect):</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        pg.sprite.Sprite.__init__(self)</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">   56</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">original_image</a> = pg.image.load(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="stringliteral">&quot;steer_wheel.png&quot;</span>).convert_alpha()</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">original_image</a> = pg.transform.rotozoom(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            self.<a class="code" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">original_image</a>, 0.0, 0.2)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment"># self.original_image.set_colorkey((255, 255, 255))</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment"># self.original_image.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">   62</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">image</a> = self.<a class="code" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">original_image</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">   63</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">rect</a> = self.<a class="code" href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">image</a>.get_rect()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">rect</a>.center = (100, 100)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_wheel.html#a15d8b61c9755675bdcdf72809be17774">   66</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classterminal__server_1_1_wheel.html#a15d8b61c9755675bdcdf72809be17774">update</a>(self):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        angle, acc = <a class="code" href="namespaceterminal__server.html#ac49fcf0e005d2a24618b191dc3e4a4d8">calc_current_steer_acc</a>()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        angle = angle * 180 / pi</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">image</a> = pg.transform.rotate(self.<a class="code" href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">original_image</a>, angle)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        x, y = self.<a class="code" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">rect</a>.center</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">rect</a> = self.<a class="code" href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">image</a>.get_rect()  <span class="comment"># Replace old rect with new rect.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        self.<a class="code" href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">rect</a>.center = (x, y)  <span class="comment"># Put the new rect&#39;s center at old center.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html">   75</a></span>&#160;<span class="keyword">class </span><a class="code" href="classterminal__server_1_1_vehicle.html">Vehicle</a>(pg.sprite.Sprite):</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a1dec014a83aa8afdcc4ceada85710d63">   76</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classterminal__server_1_1_vehicle.html#a1dec014a83aa8afdcc4ceada85710d63">__init__</a>(self, screen_rect, id, state_3dof):</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        pg.sprite.Sprite.__init__(self)</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">   78</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">id</a> = id</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#aa4aaeda0aacc446d747e3122a0c31ffb">   79</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#aa4aaeda0aacc446d747e3122a0c31ffb">state_3dof</a> = state_3dof</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">   80</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a> = 10</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">   81</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">image</a> = pg.Surface((self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>*2, self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>*2), pg.SRCALPHA)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> id == ego_id:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            pg.draw.circle(self.<a class="code" href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">image</a>, pg.Color(</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="stringliteral">&#39;darkolivegreen1&#39;</span>), (self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>, self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>), self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            pg.draw.circle(self.<a class="code" href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">image</a>, pg.Color(</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="stringliteral">&#39;dodgerblue1&#39;</span>), (self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>, self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>), self.<a class="code" href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">radius</a>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a625ea488c430a0916e3781c288072566">   89</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#a625ea488c430a0916e3781c288072566">rect</a> = self.<a class="code" href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">image</a>.get_rect(</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            center=<a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(state_3dof))</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a809a364e9191fbab88aef80fecb9892f">   91</a></span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#a809a364e9191fbab88aef80fecb9892f">screen_rect</a> = screen_rect</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classterminal__server_1_1_vehicle.html#a85409930b3f91e3bcd278266d7919b59">   93</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classterminal__server_1_1_vehicle.html#a85409930b3f91e3bcd278266d7919b59">update</a>(self):</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        latest_state_3dof = (vehicles[self.<a class="code" href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">id</a>].vec_position.x,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                             vehicles[self.<a class="code" href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">id</a>].vec_position.y, vehicles[self.<a class="code" href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">id</a>].angle)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        self.<a class="code" href="classterminal__server_1_1_vehicle.html#a625ea488c430a0916e3781c288072566">rect</a>.center = <a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(latest_state_3dof)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#ac49fcf0e005d2a24618b191dc3e4a4d8">   99</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#ac49fcf0e005d2a24618b191dc3e4a4d8">calc_current_steer_acc</a>():</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> len(state_seq) &lt; 2:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> 0.0, 0.0</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    steer_list = []</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(state_seq)-1):</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        state1 = state_seq[i]</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        steer = atan(state1.curvature * 2.85)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        steer_list.append(steer)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ave_steer = <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ab587b2f46d2fbbb86667206a6ee74797">reduce</a>(<span class="keyword">lambda</span> x, y: x + y, steer_list) / len(steer_list)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    rotated_angle = ave_steer * 1.25 * (360.0/45.0)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> rotated_angle, state_seq[-1].acceleration</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a05b3a73c670681514f52f7d4db6ab3a7">  112</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a05b3a73c670681514f52f7d4db6ab3a7">plot_lanes_on_screen</a>():</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    lanepts_plot = list(lane_pts)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(lanepts_plot)):</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        pg.draw.lines(screen, pg.Color(<span class="stringliteral">&#39;deeppink&#39;</span>), <span class="keyword">False</span>, lanepts_plot[i])</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#ac735c0765c6d6da9f056f443856179dd">  118</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#ac735c0765c6d6da9f056f443856179dd">plot_speed_on_screen</a>():</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    speed = 0.0</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    acc = 0.0</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> len(state_seq) &gt; 1:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        speed = state_seq[-1].velocity * 3.6</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        acc = state_seq[-1].acceleration</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    font_obj = pg.font.Font(<span class="stringliteral">&#39;freesansbold.ttf&#39;</span>, 20)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    text_surface_obj = font_obj.render(</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="stringliteral">&#39;vel: {:.2f} km/h &#39;</span>.format(speed), <span class="keyword">True</span>, (0, 0, 0))</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    text_rect_obj = text_surface_obj.get_rect()</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    text_rect_obj.center = (110, 180)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    screen.blit(text_surface_obj, text_rect_obj)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    text_surface_obj = font_obj.render(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="stringliteral">&#39;acc: {:.2f} m/s^2&#39;</span>.format(acc), <span class="keyword">True</span>, (0, 0, 0))</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    text_rect_obj = text_surface_obj.get_rect()</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    text_rect_obj.center = (110, 200)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    screen.blit(text_surface_obj, text_rect_obj)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a046ad53305e645ac72b1d9532506634b">  137</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a046ad53305e645ac72b1d9532506634b">plot_ids_on_screen</a>():</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">for</span> idx <span class="keywordflow">in</span> recorded_ids:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        state_3dof = (vehicles[idx].vec_position.x,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                      vehicles[idx].vec_position.y, vehicles[idx].angle)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        font_obj = pg.font.Font(<span class="stringliteral">&#39;freesansbold.ttf&#39;</span>, 16)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        text_surface_obj = font_obj.render(</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="stringliteral">&#39;{}&#39;</span>.format(idx), <span class="keyword">True</span>, (0, 255, 0))</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        text_rect_obj = text_surface_obj.get_rect()</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        u, v = <a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(state_3dof)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        text_rect_obj.center = (u-20, v)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        screen.blit(text_surface_obj, text_rect_obj)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a481e61b1c9e779ea382e33a95927eff1">  150</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a481e61b1c9e779ea382e33a95927eff1">plot_orientations_on_screen</a>():</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> idx <span class="keywordflow">in</span> recorded_ids:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        state_3dof = (vehicles[idx].vec_position.x,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                      vehicles[idx].vec_position.y, vehicles[idx].angle)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        u, v = <a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(state_3dof)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        angle_diff = vehicles[idx].angle - center_3dof[2]</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        pt1 = (u, v)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        pt2 = (u - 10 * sin(angle_diff), v - 10 * cos(angle_diff))</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        pg.draw.line(screen, pg.Color(<span class="stringliteral">&#39;black&#39;</span>), pt1, pt2, 3)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a3344d5b6c4c47af8af8c9e11c86b7b32">  161</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a3344d5b6c4c47af8af8c9e11c86b7b32">plot_selected_rect_on_screen</a>():</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> agent_id <span class="keywordflow">in</span> recorded_ids:</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        agent_state = (vehicles[agent_id].vec_position.x,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                       vehicles[agent_id].vec_position.y, vehicles[agent_id].angle)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        u, v = <a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>(agent_state)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        pg.draw.rect(screen, pg.Color(<span class="stringliteral">&#39;aquamarine3&#39;</span>), (u-10, v-10, 20, 20), 3)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#ab77aae9d4b425d1f7a864a45137d10ee">  169</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#ab77aae9d4b425d1f7a864a45137d10ee">process_arena_info_dynamic</a>(data):</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">for</span> v <span class="keywordflow">in</span> data.vehicle_set.vehicles:</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        vehicles[v.id.data] = v.state</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> v.id.data <span class="keywordflow">not</span> <span class="keywordflow">in</span> recorded_ids:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            recorded_ids.append(v.id.data)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            screen_rect = screen.get_rect()</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            all_sprites.add(<a class="code" href="classterminal__server_1_1_vehicle.html">Vehicle</a>(screen_rect, v.id.data, (v.state.vec_position.x,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                                             v.state.vec_position.y, v.state.angle)))</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">global</span> center_3dof, has_arena_info_dynamic</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    center_3dof = (vehicles[ego_id].vec_position.x,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                   vehicles[ego_id].vec_position.y, vehicles[ego_id].angle)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    has_arena_info_dynamic = <span class="keyword">True</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a07ad057511fe14270c22e3110fad0e5e">  183</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a07ad057511fe14270c22e3110fad0e5e">process_arena_info_static</a>(data):</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">global</span> lane_pts</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> has_arena_info_dynamic:</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        visible_range = 150.0</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        del lane_pts[:]</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">for</span> lane <span class="keywordflow">in</span> data.lane_net.lanes:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            points = []</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment"># has_first_pt = False</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">for</span> pt <span class="keywordflow">in</span> lane.points:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">if</span> <a class="code" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a>(pt.x - center_3dof[0]) &lt; visible_range <span class="keywordflow">and</span> <a class="code" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a>(pt.y - center_3dof[1]) &lt; visible_range:</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="comment"># has_first_pt = True</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    points.append(<a class="code" href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">project_world_to_image</a>((pt.x, pt.y, 0.0)))</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="comment"># else:</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="comment">#     if has_first_pt:</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="comment">#         break</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">if</span> len(points) &gt; 2:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                lane_pts.append(points)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a4bbfc7866c84b44a32ce4df8d900b21f">  202</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a4bbfc7866c84b44a32ce4df8d900b21f">process_control_signal</a>(data):</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">global</span> state_seq</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    state_seq.append(data.state)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> len(state_seq) &gt; 10:</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        state_seq.pop(0)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a78ef86dd8aef723b5c2c753b724bb3f0">  209</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a78ef86dd8aef723b5c2c753b724bb3f0">update_visualization</a>():</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> has_arena_info_dynamic:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        all_sprites.update()</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        screen.fill(pg.Color(<span class="stringliteral">&#39;cornsilk2&#39;</span>))</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        all_sprites.draw(screen)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="namespaceterminal__server.html#a05b3a73c670681514f52f7d4db6ab3a7">plot_lanes_on_screen</a>()</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="namespaceterminal__server.html#a046ad53305e645ac72b1d9532506634b">plot_ids_on_screen</a>()</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <a class="code" href="namespaceterminal__server.html#a3344d5b6c4c47af8af8c9e11c86b7b32">plot_selected_rect_on_screen</a>()</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="namespaceterminal__server.html#ac735c0765c6d6da9f056f443856179dd">plot_speed_on_screen</a>()</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="namespaceterminal__server.html#a481e61b1c9e779ea382e33a95927eff1">plot_orientations_on_screen</a>()</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a0abc3b5bddc965dba4817886fe610d56">  221</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a0abc3b5bddc965dba4817886fe610d56">print_over_same_line</a>(text):</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    terminal_width = shutil.get_terminal_size((80, 20)).columns</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    empty_space = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a>(0, terminal_width - len(text))</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    sys.stdout.write(<span class="stringliteral">&#39;\r&#39;</span> + text + empty_space * <span class="stringliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    sys.stdout.flush()</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a21d2d78879239e3f7d3c64b1e0026e1f">  228</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a21d2d78879239e3f7d3c64b1e0026e1f">init_joy</a>(frame_id):</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    joy = Joy()</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    joy.header.frame_id = frame_id</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    joy.header.stamp = rospy.Time.now()</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(8):</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        joy.axes.append(0.0)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(11):</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        joy.buttons.append(0)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">return</span> joy</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a9ec96b43b073853c4b9492f698b42636">  239</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a9ec96b43b073853c4b9492f698b42636">handle_keyboard_event</a>():</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">global</span> agent_id</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> event <span class="keywordflow">in</span> pg.event.get():</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">if</span> event.type == pg.MOUSEBUTTONUP:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            pos = pg.mouse.get_pos()</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            clicked_sprites = [</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                s <span class="keywordflow">for</span> s <span class="keywordflow">in</span> all_sprites <span class="keywordflow">if</span> s.rect.collidepoint(pos)]</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">if</span> len(clicked_sprites) &gt; 0:</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">if</span> hasattr(clicked_sprites[0], <span class="stringliteral">&#39;id&#39;</span>):</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    agent_id = clicked_sprites[0].id</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    print(<span class="stringliteral">&#39;update agent id to &#39;</span>, agent_id)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">if</span> event.type == KEYDOWN:</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            joy = <a class="code" href="namespaceterminal__server.html#a21d2d78879239e3f7d3c64b1e0026e1f">init_joy</a>(<span class="stringliteral">&quot;{}&quot;</span>.format(agent_id))</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> event.key == pg.K_w:</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Speed up&#39;</span>.format(agent_id)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                joy.buttons[3] = 1</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_s:</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Brake&#39;</span>.format(agent_id)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                joy.buttons[0] = 1</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_a:</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Lane change left&#39;</span>.format(agent_id)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                joy.buttons[2] = 1</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_d:</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Lane change right&#39;</span>.format(agent_id)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                joy.buttons[1] = 1</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_q:</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Toggle left lc feasible state&#39;</span>.format(</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    agent_id)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                joy.buttons[4] = 1</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_e:</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Toggle right lc feasible state&#39;</span>.format(</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    agent_id)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                joy.buttons[5] = 1</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">elif</span> event.key == pg.K_r:</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                msg = <span class="stringliteral">&#39;Agent {}: Toggle autonomous mode&#39;</span>.format(agent_id)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                print(msg)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                joy.buttons[6] = 1</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                joy_pub.publish(joy)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="namespaceterminal__server.html#a23c9504f4de7ca4572294c630b56e849">  292</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceterminal__server.html#a23c9504f4de7ca4572294c630b56e849">main</a>():</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment"># initialize pygame to get keyboard event</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    pg.init()</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    screen.fill(pg.Color(<span class="stringliteral">&#39;cornsilk3&#39;</span>))</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    screen_rect = screen.get_rect()</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    all_sprites.add(<a class="code" href="classterminal__server_1_1_wheel.html">Wheel</a>(screen_rect))</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    all_sprites.draw(screen)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    pg.display.set_caption(<span class="stringliteral">&#39;Ultimate Vehicle Planning&#39;</span>)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    pg.display.update()</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="comment"># initialize ros publisher</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    rospy.Subscriber(<span class="stringliteral">&quot;/arena_info_dynamic&quot;</span>, ArenaInfoDynamic,</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                     process_arena_info_dynamic)</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    rospy.Subscriber(<span class="stringliteral">&quot;/arena_info_static&quot;</span>, ArenaInfoStatic,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                     process_arena_info_static)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    rospy.Subscriber(<span class="stringliteral">&quot;/ctrl/agent_0&quot;</span>, ControlSignal, process_control_signal)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    rospy.init_node(<span class="stringliteral">&#39;key2joy&#39;</span>)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    rate = rospy.Rate(50)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    print(<span class="stringliteral">&#39;Terminal server initialized.&#39;</span>)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">while</span> <span class="keywordflow">not</span> rospy.is_shutdown():</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="namespaceterminal__server.html#a9ec96b43b073853c4b9492f698b42636">handle_keyboard_event</a>()</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="namespaceterminal__server.html#a78ef86dd8aef723b5c2c753b724bb3f0">update_visualization</a>()</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        pg.display.update()</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        rate.sleep()</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <a class="code" href="namespaceterminal__server.html#a23c9504f4de7ca4572294c630b56e849">main</a>()</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">except</span> rospy.ROSInterruptException:</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">pass</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html">terminal_server.Vehicle</a></div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00075">terminal_server.py:75</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_ac49fcf0e005d2a24618b191dc3e4a4d8"><div class="ttname"><a href="namespaceterminal__server.html#ac49fcf0e005d2a24618b191dc3e4a4d8">terminal_server.calc_current_steer_acc</a></div><div class="ttdeci">def calc_current_steer_acc()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00099">terminal_server.py:99</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html_aa4f82383e0459b9aca87ecfc8290a511"><div class="ttname"><a href="classterminal__server_1_1_wheel.html#aa4f82383e0459b9aca87ecfc8290a511">terminal_server.Wheel.original_image</a></div><div class="ttdeci">original_image</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00056">terminal_server.py:56</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html_afa2894d1f1e8aabab3022e9e28904a80"><div class="ttname"><a href="classterminal__server_1_1_wheel.html#afa2894d1f1e8aabab3022e9e28904a80">terminal_server.Wheel.__init__</a></div><div class="ttdeci">def __init__(self, screen_rect)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00054">terminal_server.py:54</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_aa4aaeda0aacc446d747e3122a0c31ffb"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#aa4aaeda0aacc446d747e3122a0c31ffb">terminal_server.Vehicle.state_3dof</a></div><div class="ttdeci">state_3dof</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00079">terminal_server.py:79</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a85409930b3f91e3bcd278266d7919b59"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a85409930b3f91e3bcd278266d7919b59">terminal_server.Vehicle.update</a></div><div class="ttdeci">def update(self)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00093">terminal_server.py:93</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a9ec96b43b073853c4b9492f698b42636"><div class="ttname"><a href="namespaceterminal__server.html#a9ec96b43b073853c4b9492f698b42636">terminal_server.handle_keyboard_event</a></div><div class="ttdeci">def handle_keyboard_event()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00239">terminal_server.py:239</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a3344d5b6c4c47af8af8c9e11c86b7b32"><div class="ttname"><a href="namespaceterminal__server.html#a3344d5b6c4c47af8af8c9e11c86b7b32">terminal_server.plot_selected_rect_on_screen</a></div><div class="ttdeci">def plot_selected_rect_on_screen()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00161">terminal_server.py:161</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a23c9504f4de7ca4572294c630b56e849"><div class="ttname"><a href="namespaceterminal__server.html#a23c9504f4de7ca4572294c630b56e849">terminal_server.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00292">terminal_server.py:292</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a5b569875e4278bde0223bafd1fdb508c"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a5b569875e4278bde0223bafd1fdb508c">terminal_server.Vehicle.radius</a></div><div class="ttdeci">radius</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00080">terminal_server.py:80</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a29da265ab5f0c674b1f83ac5e5a228d6"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a29da265ab5f0c674b1f83ac5e5a228d6">terminal_server.Vehicle.id</a></div><div class="ttdeci">id</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00078">terminal_server.py:78</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html_a5b69620a3caf0412ee380cbc7a2d3e67"><div class="ttname"><a href="classterminal__server_1_1_wheel.html#a5b69620a3caf0412ee380cbc7a2d3e67">terminal_server.Wheel.image</a></div><div class="ttdeci">image</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00062">terminal_server.py:62</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a0abc3b5bddc965dba4817886fe610d56"><div class="ttname"><a href="namespaceterminal__server.html#a0abc3b5bddc965dba4817886fe610d56">terminal_server.print_over_same_line</a></div><div class="ttdeci">def print_over_same_line(text)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00221">terminal_server.py:221</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html_ae0e12db75bf02fda8907e2010df932e3"><div class="ttname"><a href="classterminal__server_1_1_wheel.html#ae0e12db75bf02fda8907e2010df932e3">terminal_server.Wheel.rect</a></div><div class="ttdeci">rect</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00063">terminal_server.py:63</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a78ef86dd8aef723b5c2c753b724bb3f0"><div class="ttname"><a href="namespaceterminal__server.html#a78ef86dd8aef723b5c2c753b724bb3f0">terminal_server.update_visualization</a></div><div class="ttdeci">def update_visualization()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00209">terminal_server.py:209</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html"><div class="ttname"><a href="classterminal__server_1_1_wheel.html">terminal_server.Wheel</a></div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00053">terminal_server.py:53</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a625ea488c430a0916e3781c288072566"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a625ea488c430a0916e3781c288072566">terminal_server.Vehicle.rect</a></div><div class="ttdeci">rect</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00089">terminal_server.py:89</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a07ad057511fe14270c22e3110fad0e5e"><div class="ttname"><a href="namespaceterminal__server.html#a07ad057511fe14270c22e3110fad0e5e">terminal_server.process_arena_info_static</a></div><div class="ttdeci">def process_arena_info_static(data)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00183">terminal_server.py:183</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_wheel_html_a15d8b61c9755675bdcdf72809be17774"><div class="ttname"><a href="classterminal__server_1_1_wheel.html#a15d8b61c9755675bdcdf72809be17774">terminal_server.Wheel.update</a></div><div class="ttdeci">def update(self)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00066">terminal_server.py:66</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a21d2d78879239e3f7d3c64b1e0026e1f"><div class="ttname"><a href="namespaceterminal__server.html#a21d2d78879239e3f7d3c64b1e0026e1f">terminal_server.init_joy</a></div><div class="ttdeci">def init_joy(frame_id)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00228">terminal_server.py:228</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a481e61b1c9e779ea382e33a95927eff1"><div class="ttname"><a href="namespaceterminal__server.html#a481e61b1c9e779ea382e33a95927eff1">terminal_server.plot_orientations_on_screen</a></div><div class="ttdeci">def plot_orientations_on_screen()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00150">terminal_server.py:150</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a05b3a73c670681514f52f7d4db6ab3a7"><div class="ttname"><a href="namespaceterminal__server.html#a05b3a73c670681514f52f7d4db6ab3a7">terminal_server.plot_lanes_on_screen</a></div><div class="ttdeci">def plot_lanes_on_screen()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00112">terminal_server.py:112</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a4bbfc7866c84b44a32ce4df8d900b21f"><div class="ttname"><a href="namespaceterminal__server.html#a4bbfc7866c84b44a32ce4df8d900b21f">terminal_server.process_control_signal</a></div><div class="ttdeci">def process_control_signal(data)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00202">terminal_server.py:202</a></div></div>
+<div class="ttc" id="alorenz__point_8cpp_html_a3c77d469ec49a839969cf1be22e389f1"><div class="ttname"><a href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a></div><div class="ttdeci">point3D abs(const point3D &amp;p)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__point_8cpp_source.html#l00064">lorenz_point.cpp:64</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_ac735c0765c6d6da9f056f443856179dd"><div class="ttname"><a href="namespaceterminal__server.html#ac735c0765c6d6da9f056f443856179dd">terminal_server.plot_speed_on_screen</a></div><div class="ttdeci">def plot_speed_on_screen()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00118">terminal_server.py:118</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_af3c4823f17e2e0e80150372b15d75eea"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#af3c4823f17e2e0e80150372b15d75eea">terminal_server.Vehicle.image</a></div><div class="ttdeci">image</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00081">terminal_server.py:81</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a046ad53305e645ac72b1d9532506634b"><div class="ttname"><a href="namespaceterminal__server.html#a046ad53305e645ac72b1d9532506634b">terminal_server.plot_ids_on_screen</a></div><div class="ttdeci">def plot_ids_on_screen()</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00137">terminal_server.py:137</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_ab587b2f46d2fbbb86667206a6ee74797"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#ab587b2f46d2fbbb86667206a6ee74797">boost::numeric::odeint::detail::reduce</a></div><div class="ttdeci">ValueType reduce(Iterator1 first1, Iterator1 last1, Reduction red, ValueType init)</div><div class="ttdef"><b>Definition:</b> <a href="reduce_8hpp_source.html#l00028">reduce.hpp:28</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_a90eda5cbd4912b86304ec6b4b0c15fa1"><div class="ttname"><a href="namespaceterminal__server.html#a90eda5cbd4912b86304ec6b4b0c15fa1">terminal_server.project_world_to_image</a></div><div class="ttdeci">def project_world_to_image(point_3dof)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00044">terminal_server.py:44</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a1dec014a83aa8afdcc4ceada85710d63"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a1dec014a83aa8afdcc4ceada85710d63">terminal_server.Vehicle.__init__</a></div><div class="ttdeci">def __init__(self, screen_rect, id, state_3dof)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00076">terminal_server.py:76</a></div></div>
+<div class="ttc" id="anamespaceterminal__server_html_ab77aae9d4b425d1f7a864a45137d10ee"><div class="ttname"><a href="namespaceterminal__server.html#ab77aae9d4b425d1f7a864a45137d10ee">terminal_server.process_arena_info_dynamic</a></div><div class="ttdeci">def process_arena_info_dynamic(data)</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00169">terminal_server.py:169</a></div></div>
+<div class="ttc" id="anamespacepygame_1_1locals_html"><div class="ttname"><a href="namespacepygame_1_1locals.html">locals</a></div></div>
+<div class="ttc" id="aclassterminal__server_1_1_vehicle_html_a809a364e9191fbab88aef80fecb9892f"><div class="ttname"><a href="classterminal__server_1_1_vehicle.html#a809a364e9191fbab88aef80fecb9892f">terminal_server.Vehicle.screen_rect</a></div><div class="ttdeci">screen_rect</div><div class="ttdef"><b>Definition:</b> <a href="terminal__server_8py_source.html#l00091">terminal_server.py:91</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

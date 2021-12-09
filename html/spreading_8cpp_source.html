@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/examples/2d_lattice/spreading.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_23a42c0afddcfbb86e45b7cf2ae9eeba.html">examples</a></li><li class="navelem"><a class="el" href="dir_074fe8fde5b3d3be3bbedbc2248028ab.html">2d_lattice</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">spreading.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="spreading_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Example of a 2D simulation of nonlinearly coupled oscillators.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Program just prints final energy which should be close to the initial energy (1.0).</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * No parallelization is employed here.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * Run time on a 2.3GHz Intel Core-i5: about 10 seconds for 100 steps.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Compile simply via bjam or directly:</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * g++ -O3 -I${BOOST_ROOT} -I../../../../.. spreading.cpp</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="symplectic__rkn__sb3a__mclachlan_8hpp.html">boost/numeric/odeint/stepper/symplectic_rkn_sb3a_mclachlan.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// we use a vector&lt; vector&lt; double &gt; &gt; as state type,</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// for that some functionality has to be added for odeint to work</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nested__range__algebra_8hpp.html">nested_range_algebra.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector__vector__resize_8hpp.html">vector_vector_resize.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// defines the rhs of our dynamical equation</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lattice2d_8hpp.html">lattice2d.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* dynamical equations (Hamiltonian structure):</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">dqdt_{i,j} = p_{i,j}</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">dpdt_{i,j} = - omega_{i,j}*q_{i,j} - \beta*[ (q_{i,j} - q_{i,j-1})^3</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">                                            +(q_{i,j} - q_{i,j+1})^3</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">                                            +(q_{i,j} - q_{i-1,j})^3</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">                                            +(q_{i,j} - q_{i+1,j})^3 ]</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_N = 1024;<span class="comment">//2048;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> KAPPA = 2;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> LAMBDA = 4;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> W = 1.0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> gap = 0.0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> steps = 100;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> dt = 0.1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">   57</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> = 1.0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#a9424343761f8c4f4c1afe8f5b6bf471b">   58</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="spreading_8cpp.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a> = 1.0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#ac2521abf0ae47d8077b64c81e89d7c1e">   59</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="spreading_8cpp.html#ac2521abf0ae47d8077b64c81e89d7c1e">realization_index</a> = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//the state type</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">   62</a></span>&#160;<span class="keyword">typedef</span> vector&lt; vector&lt; double &gt; &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//the stepper, choose a symplectic one to account for hamiltonian structure</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//use nested_range_algebra for calculations on vector&lt; vector&lt; ... &gt; &gt;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a>&lt; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , double , </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="structnested__range__algebra.html">nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;</a> ,</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">   69</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a> &gt; <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#a7bce399a9d7e786f67d082cfff260f69">   71</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="spreading_8cpp.html#a7bce399a9d7e786f67d082cfff260f69">time_diff_in_ms</a>( timeval &amp;t1 , timeval &amp;t2 )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{ <span class="keywordflow">return</span> (t2.tv_sec - t1.tv_sec)*1000.0 + (t2.tv_usec - t1.tv_usec)/1000.0 + 0.5; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="spreading_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">   75</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="spreading_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a>( <span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>* argv[] ) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    srand( time(NULL) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="structlattice2d.html">lattice2d&lt; KAPPA , LAMBDA &gt;</a> <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a>( <a class="code" href="spreading_8cpp.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a> );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a>.generate_pot( W , gap , MAX_N );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> q( MAX_N , vector&lt; double &gt;( MAX_N , 0.0 ) );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>( q );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a>( q );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>[MAX_N/2][MAX_N/2] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( 0.5*<a class="code" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>[MAX_N/2+1][MAX_N/2] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( 0.5*<a class="code" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>[MAX_N/2][MAX_N/2+1] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( 0.5*<a class="code" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>[MAX_N/2+1][MAX_N/2+1] = <a class="code" href="namespacestd.html#a5969491e6e437adb343327d79538c679">sqrt</a>( 0.5*<a class="code" href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a> );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    cout.precision(10);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a>.local_energy( q , <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> , <a class="code" href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a> );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">double</span> e=0.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a>.size() ; ++i )</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> j=0 ; j&lt;<a class="code" href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a>[i].size() ; ++j )</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            e += <a class="code" href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a>[i][j];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;initial energy: &quot;</span> &lt;&lt; <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a>.energy( q , <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) &lt;&lt; endl;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    timeval elapsed_time_start , elapsed_time_end;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    gettimeofday(&amp;elapsed_time_start , NULL);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> stepper;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> step=0 ; step&lt;=steps ; ++step )</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">do_step</a>( boost::ref( <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a> ) , </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                         make_pair( boost::ref( q ) , boost::ref( <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) ) , </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                         0.0 , 0.1 );</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    gettimeofday(&amp;elapsed_time_end , NULL);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">double</span> elapsed_time = <a class="code" href="spreading_8cpp.html#a7bce399a9d7e786f67d082cfff260f69">time_diff_in_ms</a>( elapsed_time_start , elapsed_time_end );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    cout &lt;&lt; steps &lt;&lt; <span class="stringliteral">&quot; steps in &quot;</span> &lt;&lt; elapsed_time/1000 &lt;&lt; <span class="stringliteral">&quot; s (energy: &quot;</span> &lt;&lt; <a class="code" href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a>.energy( q , <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> ) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a></div><div class="ttdoc">Implement of the symmetric B3A method of Runge-Kutta-Nystroem method of sixth order.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00093">symplectic_rkn_sb3a_mclachlan.hpp:93</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1default__operations_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="default__operations_8hpp_source.html#l00040">default_operations.hpp:40</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_ad2bc690617b9b8894f1a3313ba4cb210"><div class="ttname"><a href="spreading_8cpp.html#ad2bc690617b9b8894f1a3313ba4cb210">initial_e</a></div><div class="ttdeci">double initial_e</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00057">spreading.cpp:57</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_a0ab7a6eeb6981fc69beafe088ad240dc"><div class="ttname"><a href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">proc_geojson.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00076">proc_geojson.py:76</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_ac0f2228420376f4db7e1274f2b41667c"><div class="ttname"><a href="spreading_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a></div><div class="ttdeci">int main(int argc, const char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00075">spreading.cpp:75</a></div></div>
+<div class="ttc" id="anested__range__algebra_8hpp_html"><div class="ttname"><a href="nested__range__algebra_8hpp.html">nested_range_algebra.hpp</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="alattice2d_8hpp_html"><div class="ttname"><a href="lattice2d_8hpp.html">lattice2d.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a76f77d159f14a4e01aaf592a1e88e592"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a76f77d159f14a4e01aaf592a1e88e592">boost::numeric::odeint::symplectic_nystroem_stepper_base::do_step</a></div><div class="ttdeci">void do_step(System system, const StateInOut &amp;state, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. The system can be either a pair of two function object describing the ...</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00107">symplectic_rkn_stepper_base.hpp:107</a></div></div>
+<div class="ttc" id="astructnested__range__algebra_html"><div class="ttname"><a href="structnested__range__algebra.html">nested_range_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00028">nested_range_algebra.hpp:28</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a9424343761f8c4f4c1afe8f5b6bf471b"><div class="ttname"><a href="spreading_8cpp.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a></div><div class="ttdeci">double beta</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00058">spreading.cpp:58</a></div></div>
+<div class="ttc" id="astructlattice2d_html"><div class="ttname"><a href="structlattice2d.html">lattice2d</a></div><div class="ttdef"><b>Definition:</b> <a href="lattice2d_8hpp_source.html#l00023">lattice2d.hpp:23</a></div></div>
+<div class="ttc" id="alist__lattice_8cpp_html_a0c7a3d505d72d9f8d82c03d205a9e33c"><div class="ttname"><a href="list__lattice_8cpp.html#a0c7a3d505d72d9f8d82c03d205a9e33c">lattice</a></div><div class="ttdeci">void lattice(const state_type &amp;x, state_type &amp;dxdt, const double)</div><div class="ttdef"><b>Definition:</b> <a href="list__lattice_8cpp_source.html#l00054">list_lattice.cpp:54</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="avector__vector__resize_8hpp_html"><div class="ttname"><a href="vector__vector__resize_8hpp.html">vector_vector_resize.hpp</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5969491e6e437adb343327d79538c679"><div class="ttname"><a href="namespacestd.html#a5969491e6e437adb343327d79538c679">std::sqrt</a></div><div class="ttdeci">__float128 sqrt(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00041">black_hole.cpp:41</a></div></div>
+<div class="ttc" id="asymplectic__rkn__sb3a__mclachlan_8hpp_html"><div class="ttname"><a href="symplectic__rkn__sb3a__mclachlan_8hpp.html">symplectic_rkn_sb3a_mclachlan.hpp</a></div></div>
+<div class="ttc" id="asolar__system_8cpp_html_ae94a33e15dfcaf3a2e071208f2fb7a84"><div class="ttname"><a href="solar__system_8cpp.html#ae94a33e15dfcaf3a2e071208f2fb7a84">energy</a></div><div class="ttdeci">double energy(const container_type &amp;q, const container_type &amp;p, const mass_type &amp;masses)</div><div class="ttdef"><b>Definition:</b> <a href="solar__system_8cpp_source.html#l00102">solar_system.cpp:102</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_ac2521abf0ae47d8077b64c81e89d7c1e"><div class="ttname"><a href="spreading_8cpp.html#ac2521abf0ae47d8077b64c81e89d7c1e">realization_index</a></div><div class="ttdeci">int realization_index</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00059">spreading.cpp:59</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7bce399a9d7e786f67d082cfff260f69"><div class="ttname"><a href="spreading_8cpp.html#a7bce399a9d7e786f67d082cfff260f69">time_diff_in_ms</a></div><div class="ttdeci">double time_diff_in_ms(timeval &amp;t1, timeval &amp;t2)</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00071">spreading.cpp:71</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

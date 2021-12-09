@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/math/calculations.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_05c5fa1f75b71109628cf54da48ffca5.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">calculations.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="calculations_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calculations_8h.html">common/math/calculations.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">    3</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">fac</a>(<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>) {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 0) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 1) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 2) <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 3) <span class="keywordflow">return</span> 6;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 4) <span class="keywordflow">return</span> 24;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> == 5) <span class="keywordflow">return</span> 120;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">long</span> <span class="keywordtype">long</span> ans = 1;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>; i++) ans *= i;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="calculations_8cc.html#af7cd29dfda09af6b55eff1cc0a4c341b">   16</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="calculations_8cc.html#af7cd29dfda09af6b55eff1cc0a4c341b">nchoosek</a>(<span class="keywordtype">int</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>, <span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> <a class="code" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">fac</a>(<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>) / <a class="code" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">fac</a>(k) / <a class="code" href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">fac</a>(<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> - k); }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="calculations_8cc.html#a69bd9bd32d79da40494c17a8923118f0">   18</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8cc.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; theta) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> theta_tmp = theta;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  theta_tmp -= (theta &gt;= <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ac2245211bc95e1afb01e27f7c667806d">kPi</a>) * 2 * <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ac2245211bc95e1afb01e27f7c667806d">kPi</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  theta_tmp += (theta &lt; -<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ac2245211bc95e1afb01e27f7c667806d">kPi</a>) * 2 * <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ac2245211bc95e1afb01e27f7c667806d">kPi</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">return</span> theta_tmp;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="calculations_8cc.html#aa1fa76c7fd9631641f301386c1b08a79">   25</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> <a class="code" href="calculations_8cc.html#aa1fa76c7fd9631641f301386c1b08a79">rotate_vector_2d</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>&amp; v, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> angle) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(v[0] * cos(angle) - v[1] * sin(angle),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                 v[0] * sin(angle) + v[1] * cos(angle));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="calculations_8cc.html#a8354bd5192b8b9b84f6386f7537c6e6d">   30</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8cc.html#a8354bd5192b8b9b84f6386f7537c6e6d">vec2d_to_angle</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>&amp; v) { <span class="keywordflow">return</span> atan2(v[1], v[0]); }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="calculations_8cc.html#a02e4da521362c2ef1c1a1adb3fa8e40a">   32</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8cc.html#a02e4da521362c2ef1c1a1adb3fa8e40a">truncate</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; lower,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                   <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; upper) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (lower &gt; upper) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    printf(<span class="stringliteral">&quot;[Calculations]Invalid input!\n&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a> = val_in;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a> = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(<a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>, lower);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a> = <a class="code" href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997">std::min</a>(<a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>, upper);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="calculations_8cc.html#a03e30373b24292fd8e708ffcd6130981">   44</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="calculations_8cc.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; lower,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; upper,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; new_lower,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                               <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; new_upper) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">if</span> (new_lower &gt; new_upper) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    printf(<span class="stringliteral">&quot;[Calculations]Invalid input!\n&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    assert(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> val_bounded = <a class="code" href="calculations_8cc.html#a02e4da521362c2ef1c1a1adb3fa8e40a">truncate</a>(val_in, lower, upper);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> ratio = (val_bounded - lower) / (upper - lower);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a> = new_lower + (new_upper - new_lower) * ratio;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="calculations_8cc.html#af8d2d8efae6b602b01955893d8ca539c">   58</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="calculations_8cc.html#af8d2d8efae6b602b01955893d8ca539c">RemapUsingQuadraticFuncAroundSmallValue</a>(<span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; th,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                  <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; val_in,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>* val_out) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> = 1.0 / th;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (fabs(val_in) &lt;= fabs(th)) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// quadratic, y = c * x ^ 2</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    *val_out = <a class="code" href="calculations_8h.html#a7117daff76e4228246de689a0f25e853">sgn</a>(val_in) * <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a> * val_in * val_in;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// linear, y = x</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    *val_out = val_in;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_a36bf617b1fc2ff1ecadc234231c9e997"><div class="ttname"><a href="check__gmp_8cpp.html#a36bf617b1fc2ff1ecadc234231c9e997">min</a></div><div class="ttdeci">value_type min(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00038">check_gmp.cpp:38</a></div></div>
+<div class="ttc" id="acalculations_8h_html_a7117daff76e4228246de689a0f25e853"><div class="ttname"><a href="calculations_8h.html#a7117daff76e4228246de689a0f25e853">sgn</a></div><div class="ttdeci">int sgn(const T val)</div><div class="ttdoc">Sign function</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8h_source.html#l00014">calculations.h:14</a></div></div>
+<div class="ttc" id="anamespaceperformance_html_af2e6eea9da5cf3f396df76424a11061b"><div class="ttname"><a href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">performance.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="performance_8py_source.html#l00039">performance.py:39</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_af7cd29dfda09af6b55eff1cc0a4c341b"><div class="ttname"><a href="calculations_8cc.html#af7cd29dfda09af6b55eff1cc0a4c341b">nchoosek</a></div><div class="ttdeci">long long nchoosek(int n, int k)</div><div class="ttdoc">Calculate num of combinations</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00016">calculations.cc:16</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_aa1fa76c7fd9631641f301386c1b08a79"><div class="ttname"><a href="calculations_8cc.html#aa1fa76c7fd9631641f301386c1b08a79">rotate_vector_2d</a></div><div class="ttdeci">Vecf&lt; 2 &gt; rotate_vector_2d(const Vecf&lt; 2 &gt; &amp;v, const decimal_t angle)</div><div class="ttdoc">Shift the vector with anti-clock-wise degree</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00025">calculations.cc:25</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_a62b27828056fab4d32d2a776f63307e5"><div class="ttname"><a href="calculations_8cc.html#a62b27828056fab4d32d2a776f63307e5">fac</a></div><div class="ttdeci">long long fac(int n)</div><div class="ttdoc">Calculate factorial</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00003">calculations.cc:3</a></div></div>
+<div class="ttc" id="acalculations_8h_html"><div class="ttname"><a href="calculations_8h.html">calculations.h</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_a69bd9bd32d79da40494c17a8923118f0"><div class="ttname"><a href="calculations_8cc.html#a69bd9bd32d79da40494c17a8923118f0">normalize_angle</a></div><div class="ttdeci">decimal_t normalize_angle(const decimal_t &amp;theta)</div><div class="ttdoc">Normalize angle to [-pi, pi)</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00018">calculations.cc:18</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ac2245211bc95e1afb01e27f7c667806d"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ac2245211bc95e1afb01e27f7c667806d">kPi</a></div><div class="ttdeci">const decimal_t kPi</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00082">basics.h:82</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_a03e30373b24292fd8e708ffcd6130981"><div class="ttname"><a href="calculations_8cc.html#a03e30373b24292fd8e708ffcd6130981">normalize_with_bound</a></div><div class="ttdeci">decimal_t normalize_with_bound(const decimal_t &amp;val_in, const decimal_t &amp;lower, const decimal_t &amp;upper, const decimal_t &amp;new_lower, const decimal_t &amp;new_upper)</div><div class="ttdoc">Return normalize value</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00044">calculations.cc:44</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_a8354bd5192b8b9b84f6386f7537c6e6d"><div class="ttname"><a href="calculations_8cc.html#a8354bd5192b8b9b84f6386f7537c6e6d">vec2d_to_angle</a></div><div class="ttdeci">decimal_t vec2d_to_angle(const Vecf&lt; 2 &gt; &amp;v)</div><div class="ttdoc">Return normalized angle by vec2d</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00030">calculations.cc:30</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_a02e4da521362c2ef1c1a1adb3fa8e40a"><div class="ttname"><a href="calculations_8cc.html#a02e4da521362c2ef1c1a1adb3fa8e40a">truncate</a></div><div class="ttdeci">decimal_t truncate(const decimal_t &amp;val_in, const decimal_t &amp;lower, const decimal_t &amp;upper)</div><div class="ttdoc">Return truncated value</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00032">calculations.cc:32</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="acalculations_8cc_html_af8d2d8efae6b602b01955893d8ca539c"><div class="ttname"><a href="calculations_8cc.html#af8d2d8efae6b602b01955893d8ca539c">RemapUsingQuadraticFuncAroundSmallValue</a></div><div class="ttdeci">ErrorType RemapUsingQuadraticFuncAroundSmallValue(const decimal_t &amp;th, const decimal_t &amp;val_in, decimal_t *val_out)</div><div class="ttdef"><b>Definition:</b> <a href="calculations_8cc_source.html#l00058">calculations.cc:58</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

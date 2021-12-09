@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/symplectic_euler.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">symplectic_euler.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="symplectic__euler_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/stepper/symplectic_euler.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> Implementation of the symplectic Euler for separable Hamiltonian systems.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_STEPPER_SYMPLECTIC_EULER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_STEPPER_SYMPLECTIC_EULER_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="symplectic__rkn__stepper__base_8hpp.html">boost/numeric/odeint/stepper/base/symplectic_rkn_stepper_base.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="range__algebra_8hpp.html">boost/numeric/odeint/algebra/range_algebra.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="default__operations_8hpp.html">boost/numeric/odeint/algebra/default_operations.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SKIP</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef.html">   36</a></span>&#160;<span class="keyword">namespace </span>symplectic_euler_coef {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html">   39</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html">coef_a_type</a> : <span class="keyword">public</span> boost::array&lt; Value , 1 &gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html#af245ec73b1ee63dd11c167519ce571d4">   41</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html#af245ec73b1ee63dd11c167519ce571d4">coef_a_type</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html">coef_b_type</a> : <span class="keyword">public</span> boost::array&lt; Value , 1 &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html#af9862c44e04185752e48b767b3fdc3e0">   50</a></span>&#160;    <a class="code" href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html#af9862c44e04185752e48b767b3fdc3e0">coef_b_type</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        (*this)[0] = <span class="keyword">static_cast&lt;</span> Value <span class="keyword">&gt;</span>( 1 );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// namespace symplectic_euler_coef</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">template</span>&lt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">class </span>Coor ,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">class </span>Momentum = Coor ,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">class </span>Value = double ,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">class </span>CoorDeriv = Coor ,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">class </span>MomentumDeriv = Coor ,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">class </span>Time = Value ,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">class </span>Algebra = range_algebra ,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">class </span>Operations = default_operations ,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">class </span>Resizer = initially_resizer</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SKIP</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">   74</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">symplectic_euler</a> :</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html">symplectic_nystroem_stepper_base</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;&lt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;1 , 1 ,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;Coor , Momentum , Value , CoorDeriv , MomentumDeriv , Time , Algebra , Operations , Resizer</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;class <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">symplectic_euler</a> : <span class="keyword">public</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html">symplectic_nystroem_stepper_base</a></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SKIP</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html">symplectic_nystroem_stepper_base</a>&lt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#ad43f7cd16b2680f94938ac01a4132607">   88</a></span>&#160;    1 , 1 , Coor , Momentum , Value , CoorDeriv , MomentumDeriv , Time , Algebra , Operations , Resizer &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#ad43f7cd16b2680f94938ac01a4132607">stepper_base_type</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a1f4545b6ad1529a689e7bcd11ac304ff">   90</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#adfec25ddeb7a4454b80ed89b81b68fba">stepper_base_type::algebra_type</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a1f4545b6ad1529a689e7bcd11ac304ff">algebra_type</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#af613fbbfd365fddbb547b87e3071e08a">   91</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a7cfadc7ff6dde3df8517195b727cee7f">stepper_base_type::value_type</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#af613fbbfd365fddbb547b87e3071e08a">value_type</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a6093429c048ca400ede540a7543ec7b8">   94</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a6093429c048ca400ede540a7543ec7b8">symplectic_euler</a>( <span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a1f4545b6ad1529a689e7bcd11ac304ff">algebra_type</a> &amp;<a class="code" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a> = <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a1f4545b6ad1529a689e7bcd11ac304ff">algebra_type</a>() )</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    : <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html">stepper_base_type</a>( <a class="code" href="namespacedetail.html">detail</a>::symplectic_euler_coef::coef_a_type&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#af613fbbfd365fddbb547b87e3071e08a">value_type</a> &gt;() ,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="namespacedetail.html">detail</a>::symplectic_euler_coef::coef_b_type&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#af613fbbfd365fddbb547b87e3071e08a">value_type</a> &gt;() ,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">algebra</a> )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    { }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/*************** DOXYGEN ***************/</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace odeint</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} <span class="comment">// namespace numeric</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;} <span class="comment">// namespace boost</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_STEPPER_SYMPLECTIC_EULER_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html">boost::numeric::odeint::detail::symplectic_euler_coef::coef_a_type</a></div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00039">symplectic_euler.hpp:39</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html_a6093429c048ca400ede540a7543ec7b8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a6093429c048ca400ede540a7543ec7b8">boost::numeric::odeint::symplectic_euler::symplectic_euler</a></div><div class="ttdeci">symplectic_euler(const algebra_type &amp;algebra=algebra_type())</div><div class="ttdoc">Constructs the symplectic_euler. This constructor can be used as a default constructor if the algebra...</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00094">symplectic_euler.hpp:94</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1algebra__stepper__base_html_a4ddfcb848b440684bb1777113f3d5b9f"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a4ddfcb848b440684bb1777113f3d5b9f">boost::numeric::odeint::algebra_stepper_base&lt; range_algebra, default_operations &gt;::algebra</a></div><div class="ttdeci">algebra_type &amp; algebra()</div><div class="ttdef"><b>Definition:</b> <a href="algebra__stepper__base_8hpp_source.html#l00037">algebra_stepper_base.hpp:37</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00016">nested_range_algebra.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html_a1f4545b6ad1529a689e7bcd11ac304ff"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#a1f4545b6ad1529a689e7bcd11ac304ff">boost::numeric::odeint::symplectic_euler::algebra_type</a></div><div class="ttdeci">stepper_base_type::algebra_type algebra_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00090">symplectic_euler.hpp:90</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html">boost::numeric::odeint::symplectic_euler</a></div><div class="ttdoc">Implementation of the symplectic Euler method.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00074">symplectic_euler.hpp:74</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type_html_af9862c44e04185752e48b767b3fdc3e0"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html#af9862c44e04185752e48b767b3fdc3e0">boost::numeric::odeint::detail::symplectic_euler_coef::coef_b_type::coef_b_type</a></div><div class="ttdeci">coef_b_type(void)</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00050">symplectic_euler.hpp:50</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_a7cfadc7ff6dde3df8517195b727cee7f"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a7cfadc7ff6dde3df8517195b727cee7f">boost::numeric::odeint::symplectic_nystroem_stepper_base::value_type</a></div><div class="ttdeci">Value value_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00075">symplectic_rkn_stepper_base.hpp:75</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html_adfec25ddeb7a4454b80ed89b81b68fba"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#adfec25ddeb7a4454b80ed89b81b68fba">boost::numeric::odeint::symplectic_nystroem_stepper_base::algebra_type</a></div><div class="ttdeci">algebra_stepper_base_type::algebra_type algebra_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00063">symplectic_rkn_stepper_base.hpp:63</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html">boost::numeric::odeint::symplectic_nystroem_stepper_base</a></div><div class="ttdoc">Base class for all symplectic steppers of Nystroem type.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__stepper__base_8hpp_source.html#l00057">symplectic_rkn_stepper_base.hpp:57</a></div></div>
+<div class="ttc" id="arange__algebra_8hpp_html"><div class="ttname"><a href="range__algebra_8hpp.html">range_algebra.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type_html_af245ec73b1ee63dd11c167519ce571d4"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__a__type.html#af245ec73b1ee63dd11c167519ce571d4">boost::numeric::odeint::detail::symplectic_euler_coef::coef_a_type::coef_a_type</a></div><div class="ttdeci">coef_a_type(void)</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00041">symplectic_euler.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1detail_1_1symplectic__euler__coef_1_1coef__b__type.html">boost::numeric::odeint::detail::symplectic_euler_coef::coef_b_type</a></div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00048">symplectic_euler.hpp:48</a></div></div>
+<div class="ttc" id="asymplectic__rkn__stepper__base_8hpp_html"><div class="ttname"><a href="symplectic__rkn__stepper__base_8hpp.html">symplectic_rkn_stepper_base.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html_af613fbbfd365fddbb547b87e3071e08a"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#af613fbbfd365fddbb547b87e3071e08a">boost::numeric::odeint::symplectic_euler::value_type</a></div><div class="ttdeci">stepper_base_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00091">symplectic_euler.hpp:91</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__euler_html_ad43f7cd16b2680f94938ac01a4132607"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__euler.html#ad43f7cd16b2680f94938ac01a4132607">boost::numeric::odeint::symplectic_euler::stepper_base_type</a></div><div class="ttdeci">symplectic_nystroem_stepper_base&lt; 1, 1, Coor, Momentum, Value, CoorDeriv, MomentumDeriv, Time, Algebra, Operations, Resizer &gt; stepper_base_type</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__euler_8hpp_source.html#l00088">symplectic_euler.hpp:88</a></div></div>
+<div class="ttc" id="adefault__operations_8hpp_html"><div class="ttname"><a href="default__operations_8hpp.html">default_operations.hpp</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/inc/common/state/waypoint.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_a58db1021ccfc957fc7895e8073fc930.html">inc</a></li><li class="navelem"><a class="el" href="dir_e88e66ee15d37d0a97e6a6dc7a759ed6.html">common</a></li><li class="navelem"><a class="el" href="dir_d36fe7413731c3be7f0c80f568540705.html">state</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">waypoint.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="waypoint_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _COMMON_INC_COMMON_STATE_WAYPOINT_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _COMMON_INC_COMMON_STATE_WAYPOINT_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N_DIM&gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html">    8</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcommon_1_1_waypoint.html">Waypoint</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a442ccbf75fe65e77d83d006d5a80adc0">    9</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a> <a class="code" href="structcommon_1_1_waypoint.html#a442ccbf75fe65e77d83d006d5a80adc0">pos</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a320f1776967046772952bddb98ca5e27">   10</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a> <a class="code" href="structcommon_1_1_waypoint.html#a320f1776967046772952bddb98ca5e27">vel</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#ac55a84615c87e0ca9f1d0470623156b2">   11</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a> <a class="code" href="structcommon_1_1_waypoint.html#ac55a84615c87e0ca9f1d0470623156b2">acc</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#addfbe3f40cb2b943d78ea2ca579546bf">   12</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;N_DIM&gt;</a> <a class="code" href="structcommon_1_1_waypoint.html#addfbe3f40cb2b943d78ea2ca579546bf">jrk</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a9a04de1e0a41c292173fe3a2e6bc769b">   13</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structcommon_1_1_waypoint.html#a9a04de1e0a41c292173fe3a2e6bc769b">t</a>{0.0};</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a52d55a4912c27a747183802f6ddc61f8">   14</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structcommon_1_1_waypoint.html#a52d55a4912c27a747183802f6ddc61f8">fix_pos</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#acb49d6b19a6acd3a57b0bb5788cfde07">   15</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structcommon_1_1_waypoint.html#acb49d6b19a6acd3a57b0bb5788cfde07">fix_vel</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a3b13f678d0504782c734f2df29ee080f">   16</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structcommon_1_1_waypoint.html#a3b13f678d0504782c734f2df29ee080f">fix_acc</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#adcac8a422b8d78a34e460aeb179ce82d">   17</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structcommon_1_1_waypoint.html#adcac8a422b8d78a34e460aeb179ce82d">fix_jrk</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structcommon_1_1_waypoint.html#a1d7f920e22e32a04c22ef90d79f72da3">   18</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structcommon_1_1_waypoint.html#a1d7f920e22e32a04c22ef90d79f72da3">stamped</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacecommon.html#ae14d534c682760f9757be072d27067fc">   21</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="structcommon_1_1_waypoint.html">Waypoint&lt;2&gt;</a> <a class="code" href="namespacecommon.html#ae14d534c682760f9757be072d27067fc">Waypoint2D</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacecommon.html#a2240e050bb5ab3a0f670b028cfcb76d7">   22</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="structcommon_1_1_waypoint.html">Waypoint&lt;3&gt;</a> <a class="code" href="namespacecommon.html#a2240e050bb5ab3a0f670b028cfcb76d7">Waypoint3D</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}  <span class="comment">// namespace common</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_adcac8a422b8d78a34e460aeb179ce82d"><div class="ttname"><a href="structcommon_1_1_waypoint.html#adcac8a422b8d78a34e460aeb179ce82d">common::Waypoint::fix_jrk</a></div><div class="ttdeci">bool fix_jrk</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00017">waypoint.h:17</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_addfbe3f40cb2b943d78ea2ca579546bf"><div class="ttname"><a href="structcommon_1_1_waypoint.html#addfbe3f40cb2b943d78ea2ca579546bf">common::Waypoint::jrk</a></div><div class="ttdeci">Vecf&lt; N_DIM &gt; jrk</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00012">waypoint.h:12</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="anamespacecommon_html_a2240e050bb5ab3a0f670b028cfcb76d7"><div class="ttname"><a href="namespacecommon.html#a2240e050bb5ab3a0f670b028cfcb76d7">common::Waypoint3D</a></div><div class="ttdeci">Waypoint&lt; 3 &gt; Waypoint3D</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00022">waypoint.h:22</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a442ccbf75fe65e77d83d006d5a80adc0"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a442ccbf75fe65e77d83d006d5a80adc0">common::Waypoint::pos</a></div><div class="ttdeci">Vecf&lt; N_DIM &gt; pos</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00009">waypoint.h:9</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae14d534c682760f9757be072d27067fc"><div class="ttname"><a href="namespacecommon.html#ae14d534c682760f9757be072d27067fc">common::Waypoint2D</a></div><div class="ttdeci">Waypoint&lt; 2 &gt; Waypoint2D</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00021">waypoint.h:21</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html"><div class="ttname"><a href="structcommon_1_1_waypoint.html">common::Waypoint</a></div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00008">waypoint.h:8</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a320f1776967046772952bddb98ca5e27"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a320f1776967046772952bddb98ca5e27">common::Waypoint::vel</a></div><div class="ttdeci">Vecf&lt; N_DIM &gt; vel</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00010">waypoint.h:10</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a9a04de1e0a41c292173fe3a2e6bc769b"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a9a04de1e0a41c292173fe3a2e6bc769b">common::Waypoint::t</a></div><div class="ttdeci">decimal_t t</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00013">waypoint.h:13</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a3b13f678d0504782c734f2df29ee080f"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a3b13f678d0504782c734f2df29ee080f">common::Waypoint::fix_acc</a></div><div class="ttdeci">bool fix_acc</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00016">waypoint.h:16</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_ac55a84615c87e0ca9f1d0470623156b2"><div class="ttname"><a href="structcommon_1_1_waypoint.html#ac55a84615c87e0ca9f1d0470623156b2">common::Waypoint::acc</a></div><div class="ttdeci">Vecf&lt; N_DIM &gt; acc</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00011">waypoint.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a1d7f920e22e32a04c22ef90d79f72da3"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a1d7f920e22e32a04c22ef90d79f72da3">common::Waypoint::stamped</a></div><div class="ttdeci">bool stamped</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00018">waypoint.h:18</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_a52d55a4912c27a747183802f6ddc61f8"><div class="ttname"><a href="structcommon_1_1_waypoint.html#a52d55a4912c27a747183802f6ddc61f8">common::Waypoint::fix_pos</a></div><div class="ttdeci">bool fix_pos</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00014">waypoint.h:14</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<div class="ttc" id="astructcommon_1_1_waypoint_html_acb49d6b19a6acd3a57b0bb5788cfde07"><div class="ttname"><a href="structcommon_1_1_waypoint.html#acb49d6b19a6acd3a57b0bb5788cfde07">common::Waypoint::fix_vel</a></div><div class="ttdeci">bool fix_vel</div><div class="ttdef"><b>Definition:</b> <a href="waypoint_8h_source.html#l00015">waypoint.h:15</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

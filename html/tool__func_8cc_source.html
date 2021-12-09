@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/basics/tool_func.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_f2dacb692e93db238fce389bb32a39b6.html">basics</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">tool_func.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tool__func_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tool__func_8h.html">common/basics/tool_func.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacecommon.html#acdc9affb77c96a5c26edf29ec818acc3">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecommon.html#acdc9affb77c96a5c26edf29ec818acc3">SplitString</a>(<span class="keyword">const</span> std::string&amp; s, <span class="keyword">const</span> std::string&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                 std::vector&lt;std::string&gt;* v) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  std::string::size_type pos1, pos2;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  pos2 = s.find(<a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  pos1 = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">while</span> (std::string::npos != pos2) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    v-&gt;push_back(s.substr(pos1, pos2 - pos1));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    pos1 = pos2 + <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>.size();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    pos2 = s.find(<a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>, pos1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (pos1 != s.length()) v-&gt;push_back(s.substr(pos1));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacecommon.html#afb7d0b25760cd99fec66d930c570c3cc">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecommon.html#afb7d0b25760cd99fec66d930c570c3cc">GetResultInVector</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vec, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                       std::vector&lt;int&gt;* tmp,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                       std::vector&lt;std::vector&lt;int&gt;&gt;* tmp_result) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vec[<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>].size(); ++i) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    tmp-&gt;push_back(vec[<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>][i]);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> &lt; vec.size() - 1) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="namespacecommon.html#afb7d0b25760cd99fec66d930c570c3cc">GetResultInVector</a>(vec, <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> + 1, tmp, tmp_result);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      std::vector&lt;int&gt; one_result;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; tmp-&gt;size(); ++i) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        one_result.push_back(tmp-&gt;at(i));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      tmp_result-&gt;push_back(one_result);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    tmp-&gt;pop_back();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespacecommon.html#a306c09abd0a6f2e9ef4da710dc75ed97">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecommon.html#a306c09abd0a6f2e9ef4da710dc75ed97">GetAllCombinations</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vec_in,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        std::vector&lt;std::vector&lt;int&gt;&gt;* <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  std::vector&lt;int&gt; tmp_vec;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="namespacecommon.html#afb7d0b25760cd99fec66d930c570c3cc">GetResultInVector</a>(vec_in, 0, &amp;tmp_vec, <a class="code" href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">res</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace common</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceperformance_html_af2e6eea9da5cf3f396df76424a11061b"><div class="ttname"><a href="namespaceperformance.html#af2e6eea9da5cf3f396df76424a11061b">performance.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="performance_8py_source.html#l00039">performance.py:39</a></div></div>
+<div class="ttc" id="anamespacecommon_html_acdc9affb77c96a5c26edf29ec818acc3"><div class="ttname"><a href="namespacecommon.html#acdc9affb77c96a5c26edf29ec818acc3">common::SplitString</a></div><div class="ttdeci">void SplitString(const std::string &amp;s, const std::string &amp;c, std::vector&lt; std::string &gt; *v)</div><div class="ttdoc">Split string</div><div class="ttdef"><b>Definition:</b> <a href="tool__func_8cc_source.html#l00013">tool_func.cc:13</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="atool__func_8h_html"><div class="ttname"><a href="tool__func_8h.html">tool_func.h</a></div></div>
+<div class="ttc" id="anamespacecommon_html_afb7d0b25760cd99fec66d930c570c3cc"><div class="ttname"><a href="namespacecommon.html#afb7d0b25760cd99fec66d930c570c3cc">common::GetResultInVector</a></div><div class="ttdeci">void GetResultInVector(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;vec, const int &amp;N, std::vector&lt; int &gt; *tmp, std::vector&lt; std::vector&lt; int &gt;&gt; *tmp_result)</div><div class="ttdoc">Get the Result In Vector object</div><div class="ttdef"><b>Definition:</b> <a href="tool__func_8cc_source.html#l00027">tool_func.cc:27</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="anamespacecommon_html_a306c09abd0a6f2e9ef4da710dc75ed97"><div class="ttname"><a href="namespacecommon.html#a306c09abd0a6f2e9ef4da710dc75ed97">common::GetAllCombinations</a></div><div class="ttdeci">void GetAllCombinations(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;vec_in, std::vector&lt; std::vector&lt; int &gt;&gt; *res)</div><div class="ttdoc">Get the all combinations among input vectors</div><div class="ttdef"><b>Definition:</b> <a href="tool__func_8cc_source.html#l00045">tool_func.cc:45</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

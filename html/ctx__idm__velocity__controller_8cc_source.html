@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/src/vehicle_model/controllers/ctx_idm_velocity_controller.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_60f5ef0e2b4621f3ff1c461a32b4fdc2.html">src</a></li><li class="navelem"><a class="el" href="dir_b399d751824403670cf209f94e3f2e46.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_bc0138f5c99829c1432479253c9bc745.html">controllers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ctx_idm_velocity_controller.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ctx__idm__velocity__controller_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ctx__idm__velocity__controller_8h.html">vehicle_model/controllers/ctx_idm_velocity_controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecontrol.html">control</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classcontrol_1_1_context_intelligent_velocity_control.html#ac8823f98291ad96692d44611cf9dd5f4">    5</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classcontrol_1_1_context_intelligent_velocity_control.html#ac8823f98291ad96692d44611cf9dd5f4">ContextIntelligentVelocityControl::CalculateDesiredVelocity</a>(</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcommon_1_1_intelligent_driver_model_1_1_param.html">simulator::ContextIntelligentDriverModel::IdmParam</a>&amp; idm_param,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">const</span> <a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_param.html">simulator::ContextIntelligentDriverModel::CtxParam</a>&amp; ctx_param,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s_front, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> s_target,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> v, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> v_front, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> v_target,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> dt, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>* velocity_at_dt) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classsimulator_1_1_context_intelligent_driver_model.html">simulator::ContextIntelligentDriverModel</a> model(idm_param, ctx_param);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html">simulator::ContextIntelligentDriverModel::CtxIdmState</a> state;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#aa4090a7c9f4b0069b013a5767e8687c5">s</a> = s;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a2a605c977c427d922324aa882d9a7ad6">s_front</a> = s_front;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a1d62560ec081f0ad946bfd8b79bea664">s_target</a> = s_target;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a88c63d0de9c2c77a617550bc559b1238">v</a> = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(0.0, v);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#ac69403eab20ba262793bccfbb475bd0a">v_front</a> = v_front;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  state.<a class="code" href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a8b16c07a501358dc81a3e6d87b565d42">v_target</a> = v_target;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  model.<a class="code" href="classsimulator_1_1_context_intelligent_driver_model.html#a2a4cd355e63e56590ab05e7685b0e372">set_state</a>(state);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  model.<a class="code" href="classsimulator_1_1_context_intelligent_driver_model.html#a7913c736e6853b8d1c7a4a5dcf3703ef">Step</a>(<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">auto</span> <a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a> = model.<a class="code" href="classsimulator_1_1_context_intelligent_driver_model.html#a79f49cf64d90aa962ced99e31ac4f063">state</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  *velocity_at_dt = <a class="code" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">std::max</a>(0.0, <a class="code" href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a>.v);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace control</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_param_html"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_param.html">simulator::ContextIntelligentDriverModel::CtxParam</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00021">ctx_idm_model.h:21</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_a1d62560ec081f0ad946bfd8b79bea664"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a1d62560ec081f0ad946bfd8b79bea664">simulator::ContextIntelligentDriverModel::CtxIdmState::s_target</a></div><div class="ttdeci">decimal_t s_target</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00035">ctx_idm_model.h:35</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a33bd78c60a9e0fe01a43d2dbc9bc3e48"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a33bd78c60a9e0fe01a43d2dbc9bc3e48">desired_state</a></div><div class="ttdeci">common::State desired_state</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00031">onlane_ai_agent.cc:31</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_context_intelligent_driver_model_html"><div class="ttname"><a href="classsimulator_1_1_context_intelligent_driver_model.html">simulator::ContextIntelligentDriverModel</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00016">ctx_idm_model.h:16</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_context_intelligent_driver_model_html_a79f49cf64d90aa962ced99e31ac4f063"><div class="ttname"><a href="classsimulator_1_1_context_intelligent_driver_model.html#a79f49cf64d90aa962ced99e31ac4f063">simulator::ContextIntelligentDriverModel::state</a></div><div class="ttdeci">const CtxIdmState &amp; state(void) const</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8cc_source.html#l00069">ctx_idm_model.cc:69</a></div></div>
+<div class="ttc" id="acheck__gmp_8cpp_html_aef6b349ea60ff86ce60e7e387b1d913a"><div class="ttname"><a href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a">max</a></div><div class="ttdeci">value_type max(const value_type a, const value_type b)</div><div class="ttdef"><b>Definition:</b> <a href="check__gmp_8cpp_source.html#l00043">check_gmp.cpp:43</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_ac69403eab20ba262793bccfbb475bd0a"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#ac69403eab20ba262793bccfbb475bd0a">simulator::ContextIntelligentDriverModel::CtxIdmState::v_front</a></div><div class="ttdeci">decimal_t v_front</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00034">ctx_idm_model.h:34</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_context_intelligent_driver_model_html_a7913c736e6853b8d1c7a4a5dcf3703ef"><div class="ttname"><a href="classsimulator_1_1_context_intelligent_driver_model.html#a7913c736e6853b8d1c7a4a5dcf3703ef">simulator::ContextIntelligentDriverModel::Step</a></div><div class="ttdeci">void Step(double dt)</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8cc_source.html#l00022">ctx_idm_model.cc:22</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_a8b16c07a501358dc81a3e6d87b565d42"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a8b16c07a501358dc81a3e6d87b565d42">simulator::ContextIntelligentDriverModel::CtxIdmState::v_target</a></div><div class="ttdeci">decimal_t v_target</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00036">ctx_idm_model.h:36</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_a88c63d0de9c2c77a617550bc559b1238"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a88c63d0de9c2c77a617550bc559b1238">simulator::ContextIntelligentDriverModel::CtxIdmState::v</a></div><div class="ttdeci">decimal_t v</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00032">ctx_idm_model.h:32</a></div></div>
+<div class="ttc" id="aclasssimulator_1_1_context_intelligent_driver_model_html_a2a4cd355e63e56590ab05e7685b0e372"><div class="ttname"><a href="classsimulator_1_1_context_intelligent_driver_model.html#a2a4cd355e63e56590ab05e7685b0e372">simulator::ContextIntelligentDriverModel::set_state</a></div><div class="ttdeci">void set_state(const CtxIdmState &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8cc_source.html#l00073">ctx_idm_model.cc:73</a></div></div>
+<div class="ttc" id="actx__idm__velocity__controller_8h_html"><div class="ttname"><a href="ctx__idm__velocity__controller_8h.html">ctx_idm_velocity_controller.h</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_a2a605c977c427d922324aa882d9a7ad6"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#a2a605c977c427d922324aa882d9a7ad6">simulator::ContextIntelligentDriverModel::CtxIdmState::s_front</a></div><div class="ttdeci">decimal_t s_front</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00033">ctx_idm_model.h:33</a></div></div>
+<div class="ttc" id="aclasscontrol_1_1_context_intelligent_velocity_control_html_ac8823f98291ad96692d44611cf9dd5f4"><div class="ttname"><a href="classcontrol_1_1_context_intelligent_velocity_control.html#ac8823f98291ad96692d44611cf9dd5f4">control::ContextIntelligentVelocityControl::CalculateDesiredVelocity</a></div><div class="ttdeci">static ErrorType CalculateDesiredVelocity(const common::IntelligentDriverModel::Param &amp;idm_param, const simulator::ContextIntelligentDriverModel::CtxParam &amp;ctx_param, const decimal_t s, const decimal_t s_front, const decimal_t s_target, const decimal_t v, const decimal_t v_front, const decimal_t v_target, const decimal_t dt, decimal_t *velocity_at_dt)</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__velocity__controller_8cc_source.html#l00005">ctx_idm_velocity_controller.cc:5</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html_aa4090a7c9f4b0069b013a5767e8687c5"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html#aa4090a7c9f4b0069b013a5767e8687c5">simulator::ContextIntelligentDriverModel::CtxIdmState::s</a></div><div class="ttdeci">decimal_t s</div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00031">ctx_idm_model.h:31</a></div></div>
+<div class="ttc" id="anamespacecontrol_html"><div class="ttname"><a href="namespacecontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__velocity__controller_8h_source.html#l00007">ctx_idm_velocity_controller.h:7</a></div></div>
+<div class="ttc" id="astructcommon_1_1_intelligent_driver_model_1_1_param_html"><div class="ttname"><a href="structcommon_1_1_intelligent_driver_model_1_1_param.html">common::IntelligentDriverModel::Param</a></div><div class="ttdef"><b>Definition:</b> <a href="intelligent__driver__model_8h_source.html#l00022">intelligent_driver_model.h:22</a></div></div>
+<div class="ttc" id="astructsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state_html"><div class="ttname"><a href="structsimulator_1_1_context_intelligent_driver_model_1_1_ctx_idm_state.html">simulator::ContextIntelligentDriverModel::CtxIdmState</a></div><div class="ttdef"><b>Definition:</b> <a href="ctx__idm__model_8h_source.html#l00030">ctx_idm_model.h:30</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

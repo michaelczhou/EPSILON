@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/lorenz_gsl.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">lorenz_gsl.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lorenz__gsl_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * lorenz_gsl.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef LORENZ_GSL_HPP_</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define LORENZ_GSL_HPP_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;gsl/gsl_matrix.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="lorenz__gsl_8hpp.html#abde4c4db6243730f12271f89d851705a">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="lorenz__gsl_8hpp.html#abde4c4db6243730f12271f89d851705a">lorenz_gsl</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> t , <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[] , <span class="keywordtype">double</span> f[] , <span class="keywordtype">void</span> *params)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> = 10.0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> = 28.0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> = 8.0 / 3.0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    f[0] = <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[1] - <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[0] );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    f[1] = <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[0] - <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[1] - <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[0] * <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[2];</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    f[2] = <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[0]*<a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[1] - <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[2];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> GSL_SUCCESS;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="alorenz__gsl_8hpp_html_abde4c4db6243730f12271f89d851705a"><div class="ttname"><a href="lorenz__gsl_8hpp.html#abde4c4db6243730f12271f89d851705a">lorenz_gsl</a></div><div class="ttdeci">int lorenz_gsl(const double t, const double y[], double f[], void *params)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gsl_8hpp_source.html#l00018">lorenz_gsl.hpp:18</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

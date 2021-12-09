@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/semantic_map_manager/inc/semantic_map_manager/basics.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_aa50a5b1b751f2f86c2d52666faadafd.html">semantic_map_manager</a></li><li class="navelem"><a class="el" href="dir_d2e13eafc94f222018afce71cf664b2f.html">inc</a></li><li class="navelem"><a class="el" href="dir_0f2a7adb775d9b7978e98c42c8ab4d0e.html">semantic_map_manager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">basics.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _CORE_SEMANTIC_MAP_INC_SEMANTIC_MAP_MANAGER_BASICS_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _CORE_SEMANTIC_MAP_INC_SEMANTIC_MAP_MANAGER_BASICS_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="free__state_8h.html">common/state/free_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacesemantic__map__manager.html">   26</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesemantic__map__manager.html">semantic_map_manager</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html">AgentConfigInfo</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#ac8837520280d22004602bad49ef01aee">   29</a></span>&#160;  <a class="code" href="structcommon_1_1_grid_map_meta_info.html">common::GridMapMetaInfo</a> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ac8837520280d22004602bad49ef01aee">obstacle_map_meta_info</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#a5a863dca583201e975770d84a49e664a">   30</a></span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a5a863dca583201e975770d84a49e664a">surrounding_search_radius</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#a0b6e334f6979aeb30e8301d1d7fb5ad5">   31</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a0b6e334f6979aeb30e8301d1d7fb5ad5">enable_openloop_prediction</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#a95709546e67a8a9029a85c5667459ecf">   32</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a95709546e67a8a9029a85c5667459ecf">enable_tracking_noise</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#ae8eb86ea0d07610a805b9838db3fc66d">   33</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ae8eb86ea0d07610a805b9838db3fc66d">enable_log</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#a0896ee3583f22b31e875d8807c1cec22">   34</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a0896ee3583f22b31e875d8807c1cec22">enable_fast_lane_lut</a>{<span class="keyword">true</span>};</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#ab89deb5bb41652324083fcc58bfae0de">   35</a></span>&#160;  std::string <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ab89deb5bb41652324083fcc58bfae0de">log_file</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structsemantic__map__manager_1_1_agent_config_info.html#a8bc2bd8a044dbddcaee718a87a6c8a7c">   37</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a8bc2bd8a044dbddcaee718a87a6c8a7c">PrintInfo</a>() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ac8837520280d22004602bad49ef01aee">obstacle_map_meta_info</a>.<a class="code" href="structcommon_1_1_grid_map_meta_info.html#ac34453c36924e6dc26ffb21418280d23">print</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    printf(<span class="stringliteral">&quot;surrounding_search_radius: %f\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a5a863dca583201e975770d84a49e664a">surrounding_search_radius</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    printf(<span class="stringliteral">&quot;enable_openloop_prediction: %d\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a0b6e334f6979aeb30e8301d1d7fb5ad5">enable_openloop_prediction</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    printf(<span class="stringliteral">&quot;enable_tracking_noise: %d\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a95709546e67a8a9029a85c5667459ecf">enable_tracking_noise</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    printf(<span class="stringliteral">&quot;enable_log: %d\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ae8eb86ea0d07610a805b9838db3fc66d">enable_log</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    printf(<span class="stringliteral">&quot;enable_fast_lane_lut: %d\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#a0896ee3583f22b31e875d8807c1cec22">enable_fast_lane_lut</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    printf(<span class="stringliteral">&quot;log_file: %s\n&quot;</span>, <a class="code" href="structsemantic__map__manager_1_1_agent_config_info.html#ab89deb5bb41652324083fcc58bfae0de">log_file</a>.c_str());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace semantic_map_manager</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif  // _CORE_SEMANTIC_MAP_INC_SEMANTIC_MAP_MANAGER_BASICS_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html">semantic_map_manager::AgentConfigInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00028">basics.h:28</a></div></div>
+<div class="ttc" id="astructcommon_1_1_grid_map_meta_info_html"><div class="ttname"><a href="structcommon_1_1_grid_map_meta_info.html">common::GridMapMetaInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="semantics_8h_source.html#l00316">semantics.h:316</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_a95709546e67a8a9029a85c5667459ecf"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#a95709546e67a8a9029a85c5667459ecf">semantic_map_manager::AgentConfigInfo::enable_tracking_noise</a></div><div class="ttdeci">bool enable_tracking_noise</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00032">basics.h:32</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_ae8eb86ea0d07610a805b9838db3fc66d"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#ae8eb86ea0d07610a805b9838db3fc66d">semantic_map_manager::AgentConfigInfo::enable_log</a></div><div class="ttdeci">bool enable_log</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_a5a863dca583201e975770d84a49e664a"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#a5a863dca583201e975770d84a49e664a">semantic_map_manager::AgentConfigInfo::surrounding_search_radius</a></div><div class="ttdeci">decimal_t surrounding_search_radius</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00030">basics.h:30</a></div></div>
+<div class="ttc" id="astructcommon_1_1_grid_map_meta_info_html_ac34453c36924e6dc26ffb21418280d23"><div class="ttname"><a href="structcommon_1_1_grid_map_meta_info.html#ac34453c36924e6dc26ffb21418280d23">common::GridMapMetaInfo::print</a></div><div class="ttdeci">void print() const</div><div class="ttdoc">Print info</div><div class="ttdef"><b>Definition:</b> <a href="semantics_8cc_source.html#l00120">semantics.cc:120</a></div></div>
+<div class="ttc" id="afree__state_8h_html"><div class="ttname"><a href="free__state_8h.html">free_state.h</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_a8bc2bd8a044dbddcaee718a87a6c8a7c"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#a8bc2bd8a044dbddcaee718a87a6c8a7c">semantic_map_manager::AgentConfigInfo::PrintInfo</a></div><div class="ttdeci">void PrintInfo()</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00037">basics.h:37</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_ab89deb5bb41652324083fcc58bfae0de"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#ab89deb5bb41652324083fcc58bfae0de">semantic_map_manager::AgentConfigInfo::log_file</a></div><div class="ttdeci">std::string log_file</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00035">basics.h:35</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_a0b6e334f6979aeb30e8301d1d7fb5ad5"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#a0b6e334f6979aeb30e8301d1d7fb5ad5">semantic_map_manager::AgentConfigInfo::enable_openloop_prediction</a></div><div class="ttdeci">bool enable_openloop_prediction</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00031">basics.h:31</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_ac8837520280d22004602bad49ef01aee"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#ac8837520280d22004602bad49ef01aee">semantic_map_manager::AgentConfigInfo::obstacle_map_meta_info</a></div><div class="ttdeci">common::GridMapMetaInfo obstacle_map_meta_info</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="anamespacesemantic__map__manager_html"><div class="ttname"><a href="namespacesemantic__map__manager.html">semantic_map_manager</a></div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00026">basics.h:26</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="astructsemantic__map__manager_1_1_agent_config_info_html_a0896ee3583f22b31e875d8807c1cec22"><div class="ttname"><a href="structsemantic__map__manager_1_1_agent_config_info.html#a0896ee3583f22b31e875d8807c1cec22">semantic_map_manager::AgentConfigInfo::enable_fast_lane_lut</a></div><div class="ttdeci">bool enable_fast_lane_lut</div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_2inc_2semantic__map__manager_2basics_8h_source.html#l00034">basics.h:34</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

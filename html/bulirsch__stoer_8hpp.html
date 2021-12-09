@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/bulirsch_stoer.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">bulirsch_stoer.hpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="bind_8hpp_source.html">boost/numeric/odeint/util/bind.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="unwrap__reference_8hpp_source.html">boost/numeric/odeint/util/unwrap_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controlled__runge__kutta_8hpp_source.html">boost/numeric/odeint/stepper/controlled_runge_kutta.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="modified__midpoint_8hpp_source.html">boost/numeric/odeint/stepper/modified_midpoint.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controlled__step__result_8hpp_source.html">boost/numeric/odeint/stepper/controlled_step_result.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="range__algebra_8hpp_source.html">boost/numeric/odeint/algebra/range_algebra.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="default__operations_8hpp_source.html">boost/numeric/odeint/algebra/default_operations.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="state__wrapper_8hpp_source.html">boost/numeric/odeint/util/state_wrapper.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__resizeable_8hpp_source.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="resizer_8hpp_source.html">boost/numeric/odeint/util/resizer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="unit__helper_8hpp_source.html">boost/numeric/odeint/util/unit_helper.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="less__with__sign_8hpp_source.html">boost/numeric/odeint/util/detail/less_with_sign.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+bulirsch_stoer.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="bulirsch__stoer_8hpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hpp">
+<area shape="rect" title=" " alt="" coords="1599,5,1798,76"/>
+<area shape="rect" title=" " alt="" coords="5,131,85,158"/>
+<area shape="rect" title=" " alt="" coords="693,429,779,455"/>
+<area shape="rect" title=" " alt="" coords="264,518,395,545"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="677,325,837,366"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="862,325,1058,366"/>
+<area shape="rect" href="controlled__runge__kutta_8hpp.html" title=" " alt="" coords="1605,213,1793,269"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="2730,325,2902,366"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="2969,511,3133,552"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="2927,325,3087,366"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="1387,325,1587,366"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="1133,325,1363,366"/>
+<area shape="rect" href="unit__helper_8hpp.html" title=" " alt="" coords="3341,421,3501,463"/>
+<area shape="rect" href="controlled__step__result_8hpp.html" title=" " alt="" coords="1748,317,1927,373"/>
+<area shape="rect" href="modified__midpoint_8hpp.html" title=" " alt="" coords="2299,124,2530,165"/>
+<area shape="rect" href="less__with__sign_8hpp.html" title=" " alt="" coords="3367,213,3527,269"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="379,421,539,463"/>
+<area shape="rect" title=" " alt="" coords="237,429,355,455"/>
+<area shape="rect" title=" " alt="" coords="563,429,669,455"/>
+<area shape="rect" title=" " alt="" coords="1610,332,1673,359"/>
+<area shape="rect" title=" " alt="" coords="2370,511,2518,552"/>
+<area shape="rect" title=" " alt="" coords="1940,600,2087,641"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="2257,325,2417,366"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="1951,325,2182,366"/>
+<area shape="rect" title=" " alt="" coords="2301,421,2467,463"/>
+<area shape="rect" href="is__range_8hpp.html" title=" " alt="" coords="2102,421,2277,463"/>
+<area shape="rect" title=" " alt="" coords="2268,600,2455,641"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="2593,421,2753,463"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="2777,421,2937,463"/>
+<area shape="rect" title=" " alt="" coords="3774,607,3837,634"/>
+<area shape="rect" title=" " alt="" coords="2657,600,2844,641"/>
+<area shape="rect" title=" " alt="" coords="2869,600,3022,641"/>
+<area shape="rect" title=" " alt="" coords="2479,600,2633,641"/>
+<area shape="rect" title=" " alt="" coords="3046,607,3205,634"/>
+<area shape="rect" title=" " alt="" coords="3229,607,3371,634"/>
+<area shape="rect" title=" " alt="" coords="3396,607,3599,634"/>
+<area shape="rect" title=" " alt="" coords="3623,607,3750,634"/>
+<area shape="rect" title=" " alt="" coords="2645,518,2771,545"/>
+<area shape="rect" title=" " alt="" coords="1221,429,1379,455"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="1001,421,1197,463"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="1403,421,1607,463"/>
+<area shape="rect" href="reduce_8hpp.html" title=" " alt="" coords="1632,421,1824,463"/>
+<area shape="rect" title=" " alt="" coords="1115,518,1275,545"/>
+<area shape="rect" title=" " alt="" coords="917,518,1091,545"/>
+<area shape="rect" title=" " alt="" coords="853,429,976,455"/>
+<area shape="rect" title=" " alt="" coords="3739,518,3917,545"/>
+<area shape="rect" title=" " alt="" coords="3265,518,3487,545"/>
+<area shape="rect" title=" " alt="" coords="3512,518,3715,545"/>
+<area shape="rect" href="explicit__stepper__base_8hpp.html" title=" " alt="" coords="2400,213,2563,269"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="2543,317,2705,373"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="bulirsch__stoer_8hpp__dep__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hppdep" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hppdep" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2bulirsch__stoer_8hppdep">
+<area shape="rect" title=" " alt="" coords="4469,5,4667,76"/>
+<area shape="rect" href="odeint_8hpp.html" title=" " alt="" coords="4160,131,4352,187"/>
+<area shape="rect" href="examples_2bulirsch__stoer_8cpp.html" title=" " alt="" coords="5,243,224,313"/>
+<area shape="rect" href="elliptic__functions_8cpp.html" title=" " alt="" coords="248,243,467,313"/>
+<area shape="rect" href="test_2bulirsch__stoer_8cpp.html" title=" " alt="" coords="4377,124,4557,195"/>
+<area shape="rect" href="integrate_8cpp.html" title=" " alt="" coords="4581,124,4761,195"/>
+<area shape="rect" href="integrate__times_8cpp.html" title=" " alt="" coords="4785,124,4965,195"/>
+<area shape="rect" href="runge__kutta__controlled__concepts_8cpp.html" title=" " alt="" coords="4989,124,5257,195"/>
+<area shape="rect" href="stepper__with__units_8cpp.html" title=" " alt="" coords="5281,124,5461,195"/>
+<area shape="rect" href="ctx__idm__model_8cc.html" title=" " alt="" coords="7544,250,7712,306"/>
+<area shape="rect" href="ideal__steer__model_8cc.html" title=" " alt="" coords="7737,250,7917,306"/>
+<area shape="rect" href="idm__model_8cc.html" title=" " alt="" coords="7941,250,8115,306"/>
+<area shape="rect" href="vehicle__model_8cc.html" title=" " alt="" coords="8139,250,8333,306"/>
+<area shape="rect" href="bind__member__functions_8cpp.html" title=" " alt="" coords="8357,243,8576,313"/>
+<area shape="rect" href="bind__member__functions__cpp11_8cpp.html" title=" " alt="" coords="8600,243,8856,313"/>
+<area shape="rect" href="chaotic__system_8cpp.html" title=" " alt="" coords="491,243,709,313"/>
+<area shape="rect" href="fpu_8cpp.html" title=" " alt="" coords="733,243,952,313"/>
+<area shape="rect" href="generation__functions_8cpp.html" title=" " alt="" coords="976,243,1195,313"/>
+<area shape="rect" href="lorenz__gmpxx_8cpp.html" title=" " alt="" coords="1219,243,1437,313"/>
+<area shape="rect" href="harmonic__oscillator_8cpp.html" title=" " alt="" coords="1461,243,1680,313"/>
+<area shape="rect" href="harmonic__oscillator__units_8cpp.html" title=" " alt="" coords="1705,243,1925,313"/>
+<area shape="rect" href="heun_8cpp.html" title=" " alt="" coords="1949,243,2168,313"/>
+<area shape="rect" href="list__lattice_8cpp.html" title=" " alt="" coords="2192,243,2411,313"/>
+<area shape="rect" href="lorenz__point_8cpp.html" title=" " alt="" coords="2435,243,2653,313"/>
+<area shape="rect" href="gauss__packet_8cpp.html" title=" " alt="" coords="2677,243,2896,313"/>
+<area shape="rect" href="implicit__euler__mtl_8cpp.html" title=" " alt="" coords="2920,243,3139,313"/>
+<area shape="rect" href="my__vector_8cpp.html" title=" " alt="" coords="3163,243,3381,313"/>
+<area shape="rect" href="phase__oscillator__ensemble_8cpp.html" title=" " alt="" coords="3406,243,3637,313"/>
+<area shape="rect" href="black__hole_8cpp.html" title=" " alt="" coords="3661,243,3880,313"/>
+<area shape="rect" href="resizing__lattice_8cpp.html" title=" " alt="" coords="3904,243,4123,313"/>
+<area shape="rect" href="simple1d_8cpp.html" title=" " alt="" coords="4147,243,4365,313"/>
+<area shape="rect" href="solar__system_8cpp.html" title=" " alt="" coords="4389,243,4608,313"/>
+<area shape="rect" href="stepper__details_8cpp.html" title=" " alt="" coords="4632,243,4851,313"/>
+<area shape="rect" href="stiff__system_8cpp.html" title=" " alt="" coords="4875,243,5093,313"/>
+<area shape="rect" href="stochastic__euler_8cpp.html" title=" " alt="" coords="5117,243,5336,313"/>
+<area shape="rect" href="stuart__landau_8cpp.html" title=" " alt="" coords="5360,243,5579,313"/>
+<area shape="rect" href="two__dimensional__phase__lattice_8cpp.html" title=" " alt="" coords="5603,243,5861,313"/>
+<area shape="rect" href="lorenz__ublas_8cpp.html" title=" " alt="" coords="5885,243,6104,313"/>
+<area shape="rect" href="van__der__pol__stiff_8cpp.html" title=" " alt="" coords="6128,243,6347,313"/>
+<area shape="rect" href="lorenz__ensemble_8cpp.html" title=" " alt="" coords="6371,243,6589,313"/>
+<area shape="rect" href="runge__kutta_8cpp.html" title=" " alt="" coords="6614,243,6802,313"/>
+<area shape="rect" href="symplectic_8cpp.html" title=" " alt="" coords="6827,243,7008,313"/>
+<area shape="rect" href="check__gmp_8cpp.html" title=" " alt="" coords="7032,243,7253,313"/>
+<area shape="rect" href="gmp__integrate_8cpp.html" title=" " alt="" coords="7277,243,7520,313"/>
+</map>
+</div>
+</div>
+<p><a href="bulirsch__stoer_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer.html">boost::numeric::odeint::bulirsch_stoer&lt; State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Bulirsch-Stoer algorithm.  <a href="classboost_1_1numeric_1_1odeint_1_1bulirsch__stoer.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric.html">boost::numeric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

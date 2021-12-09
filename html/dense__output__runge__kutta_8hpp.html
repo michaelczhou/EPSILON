@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_11239131d8755120811e9abf3bfaf1ba.html">stepper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">dense_output_runge_kutta.hpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;<a class="el" href="bind_8hpp_source.html">boost/numeric/odeint/util/bind.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="copy_8hpp_source.html">boost/numeric/odeint/util/copy.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="state__wrapper_8hpp_source.html">boost/numeric/odeint/util/state_wrapper.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__resizeable_8hpp_source.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="resizer_8hpp_source.html">boost/numeric/odeint/util/resizer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="controlled__step__result_8hpp_source.html">boost/numeric/odeint/stepper/controlled_step_result.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="stepper__categories_8hpp_source.html">boost/numeric/odeint/stepper/stepper_categories.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+dense_output_runge_kutta.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="dense__output__runge__kutta_8hpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hpp">
+<area shape="rect" title=" " alt="" coords="765,5,976,91"/>
+<area shape="rect" title=" " alt="" coords="361,153,421,180"/>
+<area shape="rect" title=" " alt="" coords="445,153,531,180"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="556,146,716,187"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="791,146,951,187"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1059,146,1231,187"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="1117,332,1281,373"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="1256,146,1416,187"/>
+<area shape="rect" href="controlled__step__result_8hpp.html" title=" " alt="" coords="1440,139,1619,195"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="333,243,563,284"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="5,243,165,284"/>
+<area shape="rect" title=" " alt="" coords="190,250,309,277"/>
+<area shape="rect" title=" " alt="" coords="20,339,151,366"/>
+<area shape="rect" title=" " alt="" coords="786,243,953,284"/>
+<area shape="rect" title=" " alt="" coords="1305,332,1453,373"/>
+<area shape="rect" href="is__range_8hpp.html" title=" " alt="" coords="587,243,762,284"/>
+<area shape="rect" title=" " alt="" coords="239,339,310,366"/>
+<area shape="rect" title=" " alt="" coords="335,339,505,366"/>
+<area shape="rect" title=" " alt="" coords="529,339,703,366"/>
+<area shape="rect" title=" " alt="" coords="727,339,873,366"/>
+<area shape="rect" title=" " alt="" coords="898,339,1041,366"/>
+<area shape="rect" title=" " alt="" coords="387,421,573,463"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="1464,243,1624,284"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="1784,243,1944,284"/>
+<area shape="rect" title=" " alt="" coords="921,429,983,455"/>
+<area shape="rect" title=" " alt="" coords="1008,421,1195,463"/>
+<area shape="rect" title=" " alt="" coords="1219,421,1373,463"/>
+<area shape="rect" title=" " alt="" coords="1974,421,2127,463"/>
+<area shape="rect" title=" " alt="" coords="1397,429,1555,455"/>
+<area shape="rect" title=" " alt="" coords="1579,429,1722,455"/>
+<area shape="rect" title=" " alt="" coords="1747,429,1949,455"/>
+<area shape="rect" title=" " alt="" coords="598,429,725,455"/>
+<area shape="rect" title=" " alt="" coords="749,421,896,463"/>
+<area shape="rect" title=" " alt="" coords="1883,339,2010,366"/>
+<area shape="rect" title=" " alt="" coords="2034,332,2187,373"/>
+<area shape="rect" title=" " alt="" coords="2211,332,2365,373"/>
+<area shape="rect" title=" " alt="" coords="1706,332,1859,373"/>
+<area shape="rect" title=" " alt="" coords="1529,332,1682,373"/>
+<area shape="rect" title=" " alt="" coords="2389,332,2542,373"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="dense__output__runge__kutta_8hpp__dep__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hppdep" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hppdep" id="core_2vehicle__model_2thirdparty_2odeint-v2_2boost_2numeric_2odeint_2stepper_2dense__output__runge__kutta_8hppdep">
+<area shape="rect" title=" " alt="" coords="4489,5,4700,91"/>
+<area shape="rect" href="generation__dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="3851,139,4082,224"/>
+<area shape="rect" href="odeint_8hpp.html" title=" " alt="" coords="4269,398,4461,454"/>
+<area shape="rect" href="generation__runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="4106,139,4329,224"/>
+<area shape="rect" href="integrate_8cpp.html" title=" " alt="" coords="4403,146,4583,217"/>
+<area shape="rect" href="integrate__times_8cpp.html" title=" " alt="" coords="4607,146,4787,217"/>
+<area shape="rect" href="stepper__copying_8cpp.html" title=" " alt="" coords="4811,146,4991,217"/>
+<area shape="rect" href="stepper__with__ranges_8cpp.html" title=" " alt="" coords="5015,146,5203,217"/>
+<area shape="rect" href="stepper__with__units_8cpp.html" title=" " alt="" coords="5227,146,5407,217"/>
+<area shape="rect" href="generation_8hpp.html" title=" " alt="" coords="4066,272,4243,343"/>
+<area shape="rect" href="generation_8cpp.html" title=" " alt="" coords="3861,391,4041,461"/>
+<area shape="rect" href="trivial__state_8cpp.html" title=" " alt="" coords="4065,391,4245,461"/>
+<area shape="rect" href="ctx__idm__model_8cc.html" title=" " alt="" coords="5,517,173,573"/>
+<area shape="rect" href="ideal__steer__model_8cc.html" title=" " alt="" coords="198,517,378,573"/>
+<area shape="rect" href="idm__model_8cc.html" title=" " alt="" coords="403,517,576,573"/>
+<area shape="rect" href="vehicle__model_8cc.html" title=" " alt="" coords="600,517,795,573"/>
+<area shape="rect" href="bind__member__functions_8cpp.html" title=" " alt="" coords="819,509,1037,580"/>
+<area shape="rect" href="bind__member__functions__cpp11_8cpp.html" title=" " alt="" coords="1061,509,1317,580"/>
+<area shape="rect" href="examples_2bulirsch__stoer_8cpp.html" title=" " alt="" coords="1341,509,1560,580"/>
+<area shape="rect" href="chaotic__system_8cpp.html" title=" " alt="" coords="1584,509,1803,580"/>
+<area shape="rect" href="elliptic__functions_8cpp.html" title=" " alt="" coords="1827,509,2045,580"/>
+<area shape="rect" href="fpu_8cpp.html" title=" " alt="" coords="2069,509,2288,580"/>
+<area shape="rect" href="generation__functions_8cpp.html" title=" " alt="" coords="2312,509,2531,580"/>
+<area shape="rect" href="lorenz__gmpxx_8cpp.html" title=" " alt="" coords="2555,509,2773,580"/>
+<area shape="rect" href="harmonic__oscillator_8cpp.html" title=" " alt="" coords="2797,509,3016,580"/>
+<area shape="rect" href="harmonic__oscillator__units_8cpp.html" title=" " alt="" coords="3041,509,3261,580"/>
+<area shape="rect" href="heun_8cpp.html" title=" " alt="" coords="3285,509,3504,580"/>
+<area shape="rect" href="list__lattice_8cpp.html" title=" " alt="" coords="3528,509,3747,580"/>
+<area shape="rect" href="lorenz__point_8cpp.html" title=" " alt="" coords="3771,509,3989,580"/>
+<area shape="rect" href="gauss__packet_8cpp.html" title=" " alt="" coords="4013,509,4232,580"/>
+<area shape="rect" href="implicit__euler__mtl_8cpp.html" title=" " alt="" coords="4256,509,4475,580"/>
+<area shape="rect" href="my__vector_8cpp.html" title=" " alt="" coords="4499,509,4717,580"/>
+<area shape="rect" href="phase__oscillator__ensemble_8cpp.html" title=" " alt="" coords="4742,509,4973,580"/>
+<area shape="rect" href="black__hole_8cpp.html" title=" " alt="" coords="4997,509,5216,580"/>
+<area shape="rect" href="resizing__lattice_8cpp.html" title=" " alt="" coords="5240,509,5459,580"/>
+<area shape="rect" href="simple1d_8cpp.html" title=" " alt="" coords="5483,509,5701,580"/>
+<area shape="rect" href="solar__system_8cpp.html" title=" " alt="" coords="5725,509,5944,580"/>
+<area shape="rect" href="stepper__details_8cpp.html" title=" " alt="" coords="5968,509,6187,580"/>
+<area shape="rect" href="stiff__system_8cpp.html" title=" " alt="" coords="6211,509,6429,580"/>
+<area shape="rect" href="stochastic__euler_8cpp.html" title=" " alt="" coords="6453,509,6672,580"/>
+<area shape="rect" href="stuart__landau_8cpp.html" title=" " alt="" coords="6696,509,6915,580"/>
+<area shape="rect" href="two__dimensional__phase__lattice_8cpp.html" title=" " alt="" coords="6939,509,7197,580"/>
+<area shape="rect" href="lorenz__ublas_8cpp.html" title=" " alt="" coords="7221,509,7440,580"/>
+<area shape="rect" href="van__der__pol__stiff_8cpp.html" title=" " alt="" coords="7464,509,7683,580"/>
+<area shape="rect" href="lorenz__ensemble_8cpp.html" title=" " alt="" coords="7707,509,7925,580"/>
+<area shape="rect" href="runge__kutta_8cpp.html" title=" " alt="" coords="7950,509,8138,580"/>
+<area shape="rect" href="symplectic_8cpp.html" title=" " alt="" coords="8163,509,8344,580"/>
+<area shape="rect" href="check__gmp_8cpp.html" title=" " alt="" coords="8368,509,8589,580"/>
+<area shape="rect" href="gmp__integrate_8cpp.html" title=" " alt="" coords="8613,509,8856,580"/>
+</map>
+</div>
+</div>
+<p><a href="dense__output__runge__kutta_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, StepperCategory &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html">boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, stepper_tag &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class representing dense-output Runge-Kutta steppers.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01explicit__controlled__stepper__fsal__tag_01_4.html">boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, explicit_controlled_stepper_fsal_tag &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class representing dense-output Runge-Kutta steppers with FSAL property.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01explicit__controlled__stepper__fsal__tag_01_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric.html">boost::numeric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

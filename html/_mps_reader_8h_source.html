@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/MpsReader.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MpsReader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mps_reader_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef MPSREADER</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define MPSREADER</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_double_matrix_handle_8h.html">DoubleMatrixHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_simple_vector_handle_8h.html">SimpleVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hash_8h.html">hash.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">struct </span>MpsRowInfo;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">struct </span>MpsColInfo;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef TESTING</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>MpsReaderTester;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_mps_reader.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mps_reader.html">MpsReader</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef TESTING</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">friend</span> MpsReaderTester;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">enum</span> { bufsz = 256, word_max = 31 };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">   46</a></span>&#160;  <span class="keyword">typedef</span> <span class="keywordtype">char</span> <a class="code" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">Word</a>[word_max + 1];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> insertElt( <span class="keywordtype">int</span> irow[], <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> jcol[],</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          <span class="keywordtype">double</span> dval[], <span class="keywordtype">int</span>&amp; ne,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">double</span> val, <span class="keywordtype">int</span>&amp; ier );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> stuffMatrix( <a class="code" href="class_gen_matrix.html">GenMatrix</a>&amp; A,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">int</span> irow[], <span class="keywordtype">int</span> nnz, <span class="keywordtype">int</span> jcol[], <span class="keywordtype">double</span> dA[] );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> stuffMatrix( <a class="code" href="class_sym_matrix.html">SymMatrix</a>&amp; A,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">int</span> irow[], <span class="keywordtype">int</span> nnz, <span class="keywordtype">int</span> jcol[], <span class="keywordtype">double</span> dA[] );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">char</span> * infilename;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">int</span> iline;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">int</span> nnzA, nnzC, nnzQ; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">int</span> my, mz;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  FILE * file;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  MpsRowInfo * rowInfo;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> * rowRemap;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> totalRows;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  MpsColInfo * colInfo;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> totalCols;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> firstColumnLine;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">int</span> columnFilePosition;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">Word</a> problemName;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">Word</a> objectiveName;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">Word</a> RHSName;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="class_mps_reader.html#afde56050667b5790071a648c15887e34">Word</a> boundName;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="struct_hash_table.html">HashTable</a> *rowTable;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="struct_hash_table.html">HashTable</a> *colTable;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">double</span> objminus;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="class_mps_reader.html">MpsReader</a>( FILE * file );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> scanFile( <span class="keywordtype">int</span>&amp; iErr );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> GetLine(<span class="keywordtype">char</span> * line );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> ParseBoundsLine2( <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; code, <span class="keywordtype">char</span> name1[],</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                   <span class="keywordtype">char</span> name2[], <span class="keywordtype">double</span> * val );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> ParseRowsLine2( <span class="keywordtype">char</span> line[], <span class="keywordtype">char</span> code[], <span class="keywordtype">char</span> name1[] );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> expectHeader2( <span class="keywordtype">int</span> kindOfLine, <span class="keyword">const</span> <span class="keywordtype">char</span> expectName[],</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> remapRows();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> acceptHeader2( <span class="keywordtype">int</span> kindOfLine, <span class="keyword">const</span> <span class="keywordtype">char</span> expectName[],</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> ParseDataLine2( <span class="keywordtype">char</span> line[], <span class="keywordtype">char</span> code[], <span class="keywordtype">char</span> name1[], </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                             <span class="keywordtype">char</span> name2[], <span class="keywordtype">double</span> * val1, <span class="keywordtype">int</span>&amp; hasSecondValue,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                             <span class="keywordtype">char</span> name3[], <span class="keywordtype">double</span> * val2);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> word_copy( <span class="keywordtype">char</span> dest[], <span class="keywordtype">char</span> <span class="keywordtype">string</span>[]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> parse_double(<span class="keyword">const</span> <span class="keywordtype">char</span> * token, <span class="keywordtype">double</span> &amp; value);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readProblemName2( <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span> kindOfLine );</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readObjectiveSense( <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span> kindOfLine );</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readRowsSection( <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> scanColsSection( <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> scanRangesSection( <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                  <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> rowHasRange( <span class="keywordtype">int</span> rownum, <span class="keywordtype">double</span> val, <span class="keywordtype">int</span>&amp; iErr );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> scanHessSection( <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readColsSection( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <a class="code" href="class_gen_matrix.html">GenMatrix</a>&amp; A, <a class="code" href="class_gen_matrix.html">GenMatrix</a>&amp; C,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readColsSection( <span class="keywordtype">double</span>  <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[],</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    <span class="keywordtype">int</span> irowA[], <span class="keywordtype">int</span> jcolA[], <span class="keywordtype">double</span> dA[],</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordtype">int</span> irowC[], <span class="keywordtype">int</span> jcolC[], <span class="keywordtype">double</span> dC[],</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordtype">char</span> line[], </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordtype">int</span>&amp; iErr, <span class="keywordtype">int</span>&amp; return_getline );</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readRHSSection( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp;  <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                   <a class="code" href="class_simple_vector.html">SimpleVector</a>&amp; clow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; iclow,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                   <a class="code" href="class_simple_vector.html">SimpleVector</a>&amp; cupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; icupp,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                   <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readRHSSection( <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[],</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                   <span class="keywordtype">double</span> clow[], <span class="keywordtype">char</span> iclow[],</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                   <span class="keywordtype">double</span> cupp[], <span class="keywordtype">char</span> icupp[],</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                   <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readRangesSection( <a class="code" href="class_simple_vector.html">SimpleVector</a>&amp; clow, <a class="code" href="class_simple_vector.html">SimpleVector</a>&amp; cupp,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                  <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readRangesSection( <span class="keywordtype">double</span> clow[], <span class="keywordtype">double</span> cupp[],</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                  <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readBoundsSection( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xlow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixlow,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                  <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixupp,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                  <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> defaultBounds( <span class="keywordtype">double</span> xlow[], <span class="keywordtype">char</span> ixlow[],</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                  <span class="keywordtype">double</span> xupp[], <span class="keywordtype">char</span> ixupp[] );</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> defaultBounds( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xlow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixlow,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                  <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixupp );</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readBoundsSection( <span class="keywordtype">double</span> xlow[], <span class="keywordtype">char</span> ixlow[],</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                  <span class="keywordtype">double</span> xupp[], <span class="keywordtype">char</span> ixupp[],</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                  <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readHessSection( <a class="code" href="class_sym_matrix.html">SymMatrix</a>&amp; Q,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> readHessSection( <span class="keywordtype">int</span> irowQ[], <span class="keywordtype">int</span> jcolQ[], <span class="keywordtype">double</span> dQ[],</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordtype">char</span> line[], <span class="keywordtype">int</span>&amp; ierr, <span class="keywordtype">int</span>&amp; kindOfLine );</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keyword">enum</span> { kMinimize = 0, kMaximize };</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">int</span> objectiveSense; <span class="comment">/* MAX or MIN */</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="class_mps_reader.html#a4d52bb11b8e7581da9e17f7bc4c0db88">  187</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_mps_reader.html#a4d52bb11b8e7581da9e17f7bc4c0db88">doMinimize</a>() { <span class="keywordflow">return</span> objectiveSense == kMinimize; }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;   </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keyword">static</span> <a class="code" href="class_mps_reader.html">MpsReader</a> * <a class="code" href="class_mps_reader.html#a2f25ed5e792ecf6f7c2f54ea6bb7e7d1">newReadingFile</a>( <span class="keywordtype">char</span> filename[], <span class="keywordtype">int</span>&amp; iErr );</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keyword">static</span>  <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#a36c13b4a6371ea095f5622d16b2adb4b">findFile</a>( FILE*&amp; file, <span class="keywordtype">char</span> *&amp; resolvedName,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                         <span class="keywordtype">char</span> filename[] );</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#a424b6c5b46832eae229ed64fadd23eaa">numberOfNonZeros</a>( <span class="keywordtype">int</span>&amp; nnzQ, <span class="keywordtype">int</span>&amp; nnzA, <span class="keywordtype">int</span>&amp; nnzC );</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#ae9aad089b977209c6be6525aaec83599">readQpBound</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>, <a class="code" href="class_sym_matrix.html">SymMatrix</a>&amp; Q,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xlow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixlow,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixupp,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordtype">int</span> &amp;ierr );</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#aeeaa83964507a08f154042d35fe8bb6f">readQpGen</a>( <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>, <a class="code" href="class_sym_matrix.html">SymMatrix</a>&amp; Q,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;              <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xlow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixlow,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;              <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; xupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; ixupp,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;              <a class="code" href="class_gen_matrix.html">GenMatrix</a>&amp; A, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;              <a class="code" href="class_gen_matrix.html">GenMatrix</a>&amp; C, </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;              <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; clow, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; iclow,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;              <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; cupp, <a class="code" href="class_ooqp_vector.html">OoqpVector</a>&amp; icupp,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;              <span class="keywordtype">int</span>&amp; ierr );</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#aeeaa83964507a08f154042d35fe8bb6f">readQpGen</a>( <span class="keywordtype">double</span>     <a class="code" href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a>[],  </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;              <span class="keywordtype">int</span>    irowQ[],  <span class="keywordtype">int</span>  jcolQ[],  <span class="keywordtype">double</span> dQ[],</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;              <span class="keywordtype">double</span>  xlow[],  <span class="keywordtype">char</span> ixlow[],</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;              <span class="keywordtype">double</span>  xupp[],  <span class="keywordtype">char</span> ixupp[],</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;              <span class="keywordtype">int</span>    irowA[],  <span class="keywordtype">int</span>  jcolA[],  <span class="keywordtype">double</span> dA[],</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;              <span class="keywordtype">double</span>     <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>[],</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;              <span class="keywordtype">int</span>    irowC[],  <span class="keywordtype">int</span>  jcolC[],  <span class="keywordtype">double</span> dC[],</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;              <span class="keywordtype">double</span>  clow[],  <span class="keywordtype">char</span>  iclow[],</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;              <span class="keywordtype">double</span>  cupp[],  <span class="keywordtype">char</span>  icupp[],</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;              <span class="keywordtype">int</span>&amp;    ierr );</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#ac0d081e467e616bf65a59b5cc57ad013">getSizes</a>( <span class="keywordtype">int</span>&amp; nx, <span class="keywordtype">int</span>&amp; my, <span class="keywordtype">int</span>&amp; mz );</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#adb57f6988212ccc32ea868bb9a3f5a2b">releaseFile</a>( <span class="keywordtype">int</span>&amp; ierr );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_mps_reader.html#a6cd10932f5e740df3054376402cafa6e">~MpsReader</a>();</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="comment">// Output section</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="class_mps_reader.html#ac19037079be6d2014d86aff0f1b15b1d">  286</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_mps_reader.html#ac19037079be6d2014d86aff0f1b15b1d">objconst</a>() { <span class="keywordflow">return</span> -objminus; }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_mps_reader.html#a96dae64c5682ed992af0de8ca113c098">printSolution</a>( <span class="keywordtype">double</span> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[],      <span class="keywordtype">int</span>     nx,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;              <span class="keywordtype">double</span> xlow[],   <span class="keywordtype">char</span>    ixlow[],</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;              <span class="keywordtype">double</span> xupp[],   <span class="keywordtype">char</span>    ixupp[],</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;              <span class="keywordtype">double</span> gamma[],  <span class="keywordtype">double</span>  phi[],</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;              <span class="keywordtype">double</span> <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[],      <span class="keywordtype">int</span>     my,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;              <span class="keywordtype">double</span> s[],      <span class="keywordtype">int</span>     mz,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;              <span class="keywordtype">double</span> clow[],   <span class="keywordtype">char</span>    iclow[],</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;              <span class="keywordtype">double</span> cupp[],   <span class="keywordtype">char</span>    icupp[],</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;              <span class="keywordtype">double</span> lambda[], <span class="keywordtype">double</span>  pi[],</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;              <span class="keywordtype">double</span> z[],      <span class="keywordtype">double</span>  objectiveValue,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;              <span class="keywordtype">int</span>&amp; iErr );</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">char</span> * <a class="code" href="class_mps_reader.html#a58828d367fe1dc951dbc8a7353a5212e">defaultOutputFilename</a>( <span class="keywordtype">int</span>&amp; iErr );</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;};</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2d8768020e9d623bf18e7231a0e25f97">  307</a></span>&#160;<span class="keyword">enum</span> { <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2d8768020e9d623bf18e7231a0e25f97">mpsok</a> = 0,</div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4ac96233e8e87b8632cdeb5423865e39">  308</a></span>&#160;       <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4ac96233e8e87b8632cdeb5423865e39">mpsunknownerr</a>    = -1, <span class="comment">// Someone didn&#39;t set the error code properly.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a07884ca7515d36f84a0ba1df08b16e18">  309</a></span>&#160;       <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a07884ca7515d36f84a0ba1df08b16e18">mpsfileopenerr</a>   = -2, <span class="comment">// Couldn&#39;t open the given file</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a5cca5f1fe2d4ff36ff8107705a8339f5">  310</a></span>&#160;       <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a5cca5f1fe2d4ff36ff8107705a8339f5">mpsioerr</a>         = -3, <span class="comment">// There was an i/o error.</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4305fbe7060784ee2d5593c25359f599">  311</a></span>&#160;       <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4305fbe7060784ee2d5593c25359f599">mpssyntaxerr</a>     = -4, <span class="comment">// There was a mps syntax error.</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2ea25988d7503c7d280eda56419c049c">  312</a></span>&#160;       <a class="code" href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2ea25988d7503c7d280eda56419c049c">mpsmemoryerr</a>     = -5  <span class="comment">// We couldn&#39;t allocate the necessary memory</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_mps_reader_html_a6cd10932f5e740df3054376402cafa6e"><div class="ttname"><a href="class_mps_reader.html#a6cd10932f5e740df3054376402cafa6e">MpsReader::~MpsReader</a></div><div class="ttdeci">virtual ~MpsReader()</div></div>
+<div class="ttc" id="aclass_sym_matrix_html"><div class="ttname"><a href="class_sym_matrix.html">SymMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_8h_source.html#l00153">DoubleMatrix.h:153</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_a4d52bb11b8e7581da9e17f7bc4c0db88"><div class="ttname"><a href="class_mps_reader.html#a4d52bb11b8e7581da9e17f7bc4c0db88">MpsReader::doMinimize</a></div><div class="ttdeci">int doMinimize()</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00187">MpsReader.h:187</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a4ac96233e8e87b8632cdeb5423865e39"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4ac96233e8e87b8632cdeb5423865e39">mpsunknownerr</a></div><div class="ttdeci">@ mpsunknownerr</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00308">MpsReader.h:308</a></div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a2d8768020e9d623bf18e7231a0e25f97"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2d8768020e9d623bf18e7231a0e25f97">mpsok</a></div><div class="ttdeci">@ mpsok</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00307">MpsReader.h:307</a></div></div>
+<div class="ttc" id="aclass_gen_matrix_html"><div class="ttname"><a href="class_gen_matrix.html">GenMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_matrix_8h_source.html#l00200">DoubleMatrix.h:200</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_a96dae64c5682ed992af0de8ca113c098"><div class="ttname"><a href="class_mps_reader.html#a96dae64c5682ed992af0de8ca113c098">MpsReader::printSolution</a></div><div class="ttdeci">void printSolution(double x[], int nx, double xlow[], char ixlow[], double xupp[], char ixupp[], double gamma[], double phi[], double y[], int my, double s[], int mz, double clow[], char iclow[], double cupp[], char icupp[], double lambda[], double pi[], double z[], double objectiveValue, int &amp;iErr)</div></div>
+<div class="ttc" id="aclass_mps_reader_html_a424b6c5b46832eae229ed64fadd23eaa"><div class="ttname"><a href="class_mps_reader.html#a424b6c5b46832eae229ed64fadd23eaa">MpsReader::numberOfNonZeros</a></div><div class="ttdeci">void numberOfNonZeros(int &amp;nnzQ, int &amp;nnzA, int &amp;nnzC)</div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a85917c898d91c5abc96536192334f061"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a85917c898d91c5abc96536192334f061">c</a></div><div class="ttdeci">const error_rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00062">generic_error_stepper.cpp:62</a></div></div>
+<div class="ttc" id="aclass_simple_vector_html"><div class="ttname"><a href="class_simple_vector.html">SimpleVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_simple_vector_8h_source.html#l00016">SimpleVector.h:16</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_a36c13b4a6371ea095f5622d16b2adb4b"><div class="ttname"><a href="class_mps_reader.html#a36c13b4a6371ea095f5622d16b2adb4b">MpsReader::findFile</a></div><div class="ttdeci">static void findFile(FILE *&amp;file, char *&amp;resolvedName, char filename[])</div></div>
+<div class="ttc" id="a_double_matrix_handle_8h_html"><div class="ttname"><a href="_double_matrix_handle_8h.html">DoubleMatrixHandle.h</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_a2f25ed5e792ecf6f7c2f54ea6bb7e7d1"><div class="ttname"><a href="class_mps_reader.html#a2f25ed5e792ecf6f7c2f54ea6bb7e7d1">MpsReader::newReadingFile</a></div><div class="ttdeci">static MpsReader * newReadingFile(char filename[], int &amp;iErr)</div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a4305fbe7060784ee2d5593c25359f599"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a4305fbe7060784ee2d5593c25359f599">mpssyntaxerr</a></div><div class="ttdeci">@ mpssyntaxerr</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00311">MpsReader.h:311</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_adb57f6988212ccc32ea868bb9a3f5a2b"><div class="ttname"><a href="class_mps_reader.html#adb57f6988212ccc32ea868bb9a3f5a2b">MpsReader::releaseFile</a></div><div class="ttdeci">virtual void releaseFile(int &amp;ierr)</div></div>
+<div class="ttc" id="a_simple_vector_handle_8h_html"><div class="ttname"><a href="_simple_vector_handle_8h.html">SimpleVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html"><div class="ttname"><a href="class_mps_reader.html">MpsReader</a></div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00038">MpsReader.h:38</a></div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a07884ca7515d36f84a0ba1df08b16e18"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a07884ca7515d36f84a0ba1df08b16e18">mpsfileopenerr</a></div><div class="ttdeci">@ mpsfileopenerr</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00309">MpsReader.h:309</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_a58828d367fe1dc951dbc8a7353a5212e"><div class="ttname"><a href="class_mps_reader.html#a58828d367fe1dc951dbc8a7353a5212e">MpsReader::defaultOutputFilename</a></div><div class="ttdeci">char * defaultOutputFilename(int &amp;iErr)</div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_ae9aad089b977209c6be6525aaec83599"><div class="ttname"><a href="class_mps_reader.html#ae9aad089b977209c6be6525aaec83599">MpsReader::readQpBound</a></div><div class="ttdeci">virtual void readQpBound(OoqpVector &amp;c, SymMatrix &amp;Q, OoqpVector &amp;xlow, OoqpVector &amp;ixlow, OoqpVector &amp;xupp, OoqpVector &amp;ixupp, int &amp;ierr)</div></div>
+<div class="ttc" id="a_ooqp_vector_handle_8h_html"><div class="ttname"><a href="_ooqp_vector_handle_8h.html">OoqpVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_ac19037079be6d2014d86aff0f1b15b1d"><div class="ttname"><a href="class_mps_reader.html#ac19037079be6d2014d86aff0f1b15b1d">MpsReader::objconst</a></div><div class="ttdeci">double objconst()</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00286">MpsReader.h:286</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_afde56050667b5790071a648c15887e34"><div class="ttname"><a href="class_mps_reader.html#afde56050667b5790071a648c15887e34">MpsReader::Word</a></div><div class="ttdeci">char Word[word_max+1]</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00046">MpsReader.h:46</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_ac0d081e467e616bf65a59b5cc57ad013"><div class="ttname"><a href="class_mps_reader.html#ac0d081e467e616bf65a59b5cc57ad013">MpsReader::getSizes</a></div><div class="ttdeci">virtual void getSizes(int &amp;nx, int &amp;my, int &amp;mz)</div></div>
+<div class="ttc" id="ahash_8h_html"><div class="ttname"><a href="hash_8h.html">hash.h</a></div></div>
+<div class="ttc" id="aclass_mps_reader_html_aeeaa83964507a08f154042d35fe8bb6f"><div class="ttname"><a href="class_mps_reader.html#aeeaa83964507a08f154042d35fe8bb6f">MpsReader::readQpGen</a></div><div class="ttdeci">virtual void readQpGen(OoqpVector &amp;c, SymMatrix &amp;Q, OoqpVector &amp;xlow, OoqpVector &amp;ixlow, OoqpVector &amp;xupp, OoqpVector &amp;ixupp, GenMatrix &amp;A, OoqpVector &amp;b, GenMatrix &amp;C, OoqpVector &amp;clow, OoqpVector &amp;iclow, OoqpVector &amp;cupp, OoqpVector &amp;icupp, int &amp;ierr)</div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a2ea25988d7503c7d280eda56419c049c"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a2ea25988d7503c7d280eda56419c049c">mpsmemoryerr</a></div><div class="ttdeci">@ mpsmemoryerr</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00312">MpsReader.h:312</a></div></div>
+<div class="ttc" id="astruct_hash_table_html"><div class="ttname"><a href="struct_hash_table.html">HashTable</a></div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00025">hash.h:25</a></div></div>
+<div class="ttc" id="a_mps_reader_8h_html_abc6126af1d45847bc59afa0aa3216b04a5cca5f1fe2d4ff36ff8107705a8339f5"><div class="ttname"><a href="_mps_reader_8h.html#abc6126af1d45847bc59afa0aa3216b04a5cca5f1fe2d4ff36ff8107705a8339f5">mpsioerr</a></div><div class="ttdeci">@ mpsioerr</div><div class="ttdef"><b>Definition:</b> <a href="_mps_reader_8h_source.html#l00310">MpsReader.h:310</a></div></div>
+<div class="ttc" id="aclass_ooqp_vector_html"><div class="ttname"><a href="class_ooqp_vector.html">OoqpVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_vector_8h_source.html#l00022">OoqpVector.h:22</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

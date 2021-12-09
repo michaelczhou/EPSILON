@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/trivial_state.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">trivial_state.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/vector.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/int.hpp&gt;</code><br />
+<code>#include &lt;boost/mpl/at.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="euler_8hpp_source.html">boost/numeric/odeint/stepper/euler.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta4_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__cash__karp54_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="runge__kutta__dopri5_8hpp_source.html">boost/numeric/odeint/stepper/runge_kutta_dopri5.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="generation_8hpp_source.html">boost/numeric/odeint/stepper/generation.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="integrate__adaptive_8hpp_source.html">boost/numeric/odeint/integrate/integrate_adaptive.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="vector__space__algebra_8hpp_source.html">boost/numeric/odeint/algebra/vector_space_algebra.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+trivial_state.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="trivial__state_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2trivial__state_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2trivial__state_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2trivial__state_8cpp">
+<area shape="rect" title=" " alt="" coords="946,5,1126,76"/>
+<area shape="rect" title=" " alt="" coords="149,637,280,663"/>
+<area shape="rect" title=" " alt="" coords="296,131,472,158"/>
+<area shape="rect" title=" " alt="" coords="496,131,656,158"/>
+<area shape="rect" title=" " alt="" coords="680,131,816,158"/>
+<area shape="rect" title=" " alt="" coords="841,131,973,158"/>
+<area shape="rect" href="euler_8hpp.html" title=" " alt="" coords="1141,325,1301,366"/>
+<area shape="rect" href="runge__kutta4_8hpp.html" title=" " alt="" coords="323,221,517,262"/>
+<area shape="rect" href="runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="957,317,1117,373"/>
+<area shape="rect" href="runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1672,317,1832,373"/>
+<area shape="rect" href="generation_8hpp.html" title=" " alt="" coords="1891,124,2069,165"/>
+<area shape="rect" href="integrate__adaptive_8hpp.html" title=" " alt="" coords="2816,317,2976,373"/>
+<area shape="rect" href="vector__space__algebra_8hpp.html" title=" " alt="" coords="3013,719,3179,775"/>
+<area shape="rect" href="explicit__stepper__base_8hpp.html" title=" " alt="" coords="1773,421,1936,477"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="923,533,1083,574"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="1355,533,1555,574"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="540,533,769,574"/>
+<area shape="rect" title=" " alt="" coords="1399,726,1547,767"/>
+<area shape="rect" title=" " alt="" coords="2132,823,2279,864"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="2341,533,2501,574"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="1969,533,2165,574"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="1158,533,1330,574"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="1959,726,2123,767"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="2577,533,2807,574"/>
+<area shape="rect" href="algebra__stepper__base_8hpp.html" title=" " alt="" coords="1781,525,1944,581"/>
+<area shape="rect" href="resize_8hpp.html" title=" " alt="" coords="700,629,860,671"/>
+<area shape="rect" href="same__size_8hpp.html" title=" " alt="" coords="935,629,1095,671"/>
+<area shape="rect" title=" " alt="" coords="2660,823,2847,864"/>
+<area shape="rect" title=" " alt="" coords="834,733,961,760"/>
+<area shape="rect" title=" " alt="" coords="1720,637,1877,663"/>
+<area shape="rect" href="macros_8hpp.html" title=" " alt="" coords="1271,629,1467,671"/>
+<area shape="rect" href="for__each_8hpp.html" title=" " alt="" coords="1491,629,1695,671"/>
+<area shape="rect" title=" " alt="" coords="399,637,521,663"/>
+<area shape="rect" title=" " alt="" coords="398,429,565,470"/>
+<area shape="rect" title=" " alt="" coords="589,429,801,470"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="265,317,447,373"/>
+<area shape="rect" href="explicit__error__generic__rk_8hpp.html" title=" " alt="" coords="1179,421,1344,477"/>
+<area shape="rect" href="explicit__error__stepper__fsal__base_8hpp.html" title=" " alt="" coords="1960,421,2173,477"/>
+<area shape="rect" href="same__instance_8hpp.html" title=" " alt="" coords="2249,429,2426,470"/>
+<area shape="rect" href="make__controlled_8hpp.html" title=" " alt="" coords="2239,317,2428,373"/>
+<area shape="rect" href="make__dense__output_8hpp.html" title=" " alt="" coords="1856,317,2045,373"/>
+<area shape="rect" href="generation__controlled__runge__kutta_8hpp.html" title=" " alt="" coords="2295,213,2518,269"/>
+<area shape="rect" href="generation__dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="1990,213,2221,269"/>
+<area shape="rect" href="generation__runge__kutta__cash__karp54__classic_8hpp.html" title=" " alt="" coords="2543,213,2817,269"/>
+<area shape="rect" href="generation__runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="1200,213,1424,269"/>
+<area shape="rect" href="generation__runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1447,213,1670,269"/>
+<area shape="rect" href="generation__runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="2842,213,3065,269"/>
+<area shape="rect" href="generation__rosenbrock4_8hpp.html" title=" " alt="" coords="1743,213,1966,269"/>
+<area shape="rect" href="null__observer_8hpp.html" title=" " alt="" coords="2933,429,3139,470"/>
+<area shape="rect" href="detail_2integrate__adaptive_8hpp.html" title=" " alt="" coords="2501,421,2691,477"/>
+</map>
+</div>
+</div>
+<p><a href="trivial__state_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_trivial_state</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a1dd0982678624bbbd901ad64ec15a63f"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a1dd0982678624bbbd901ad64ec15a63f">state_type</a></td></tr>
+<tr class="separator:a1dd0982678624bbbd901ad64ec15a63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></td></tr>
+<tr class="separator:aba0996e183cdbebc61c5cbdcccf9da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13444a84835f6960c8a229e0610ea39b"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a13444a84835f6960c8a229e0610ea39b">deriv_type</a></td></tr>
+<tr class="separator:a13444a84835f6960c8a229e0610ea39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af491ab51280266be0843533cfa452c67"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#af491ab51280266be0843533cfa452c67">time_type</a></td></tr>
+<tr class="separator:af491ab51280266be0843533cfa452c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31714133407bb8f61c5b7bd1cad0d1fa"><td class="memItemLeft" align="right" valign="top">typedef mpl::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1euler.html">euler</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt;, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a31714133407bb8f61c5b7bd1cad0d1fa">stepper_types</a></td></tr>
+<tr class="separator:a31714133407bb8f61c5b7bd1cad0d1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b84510f782b9902fae6c200978392e"><td class="memItemLeft" align="right" valign="top">typedef mpl::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">runge_kutta_cash_karp54</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt;, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>, <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>, <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a>, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#af2b84510f782b9902fae6c200978392e">error_stepper_types</a></td></tr>
+<tr class="separator:af2b84510f782b9902fae6c200978392e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a1b713530fd8549dd84518a9b33a8e726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a1b713530fd8549dd84518a9b33a8e726">constant_system</a> (const <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;x, <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt, const <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> t)</td></tr>
+<tr class="separator:a1b713530fd8549dd84518a9b33a8e726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2c75d2679379597fd10e5fa7726d28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#aff2c75d2679379597fd10e5fa7726d28">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (test_do_step, T, <a class="el" href="classstepper__types.html">stepper_types</a>)</td></tr>
+<tr class="separator:aff2c75d2679379597fd10e5fa7726d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48739ce3fa5a723caa8effa492449c72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trivial__state_8cpp.html#a48739ce3fa5a723caa8effa492449c72">BOOST_AUTO_TEST_CASE_TEMPLATE</a> (test_integrate, T, <a class="el" href="classerror__stepper__types.html">error_stepper_types</a>)</td></tr>
+<tr class="separator:a48739ce3fa5a723caa8effa492449c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_trivial_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a13444a84835f6960c8a229e0610ea39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13444a84835f6960c8a229e0610ea39b">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af2b84510f782b9902fae6c200978392e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b84510f782b9902fae6c200978392e">&#9670;&nbsp;</a></span>error_stepper_types</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef mpl::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">runge_kutta_cash_karp54</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; &gt; <a class="el" href="classerror__stepper__types.html">error_stepper_types</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00092">92</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1dd0982678624bbbd901ad64ec15a63f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd0982678624bbbd901ad64ec15a63f">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a31714133407bb8f61c5b7bd1cad0d1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31714133407bb8f61c5b7bd1cad0d1fa">&#9670;&nbsp;</a></span>stepper_types</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef mpl::vector&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1euler.html">euler</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a> , <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1vector__space__algebra.html">vector_space_algebra</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> , <a class="el" href="structboost_1_1numeric_1_1odeint_1_1never__resizer.html">never_resizer</a> &gt; &gt;::type <a class="el" href="classstepper__types.html">stepper_types</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af491ab51280266be0843533cfa452c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af491ab51280266be0843533cfa452c67">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba0996e183cdbebc61c5cbdcccf9da15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0996e183cdbebc61c5cbdcccf9da15">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aff2c75d2679379597fd10e5fa7726d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2c75d2679379597fd10e5fa7726d28">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">test_do_step&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstepper__types.html">stepper_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a48739ce3fa5a723caa8effa492449c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48739ce3fa5a723caa8effa492449c72">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE_TEMPLATE() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">test_integrate&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classerror__stepper__types.html">error_stepper_types</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00094">94</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1b713530fd8549dd84518a9b33a8e726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b713530fd8549dd84518a9b33a8e726">&#9670;&nbsp;</a></span>constant_system()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void constant_system </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dxdt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="trivial__state_8cpp_source.html">trivial_state.cpp</a> 第 <a class="el" href="trivial__state_8cpp_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

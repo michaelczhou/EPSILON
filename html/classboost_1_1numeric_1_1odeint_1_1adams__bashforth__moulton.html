@@ -1,0 +1,1006 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::adams_bashforth_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">adams_bashforth_moulton</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::adams_bashforth_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The Adams-Bashforth-Moulton multistep algorithm.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a48e04cd21eed3589f6babf52d2fae37a"><td class="memItemLeft" align="right" valign="top">typedef State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a></td></tr>
+<tr class="separator:a48e04cd21eed3589f6babf52d2fae37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7b5bb0b57b308a00e0f3b2fce14b4c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a0b7b5bb0b57b308a00e0f3b2fce14b4c">wrapped_state_type</a></td></tr>
+<tr class="separator:a0b7b5bb0b57b308a00e0f3b2fce14b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b2ce9ce40db15ea4a2d97b95c902e4"><td class="memItemLeft" align="right" valign="top">typedef Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a></td></tr>
+<tr class="separator:af2b2ce9ce40db15ea4a2d97b95c902e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e243efb86d8d83ea50530741926c170"><td class="memItemLeft" align="right" valign="top">typedef Deriv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a></td></tr>
+<tr class="separator:a1e243efb86d8d83ea50530741926c170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fd86a703cdcd8cca53279a618dfa36"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a67fd86a703cdcd8cca53279a618dfa36">wrapped_deriv_type</a></td></tr>
+<tr class="separator:a67fd86a703cdcd8cca53279a618dfa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa7506b8bf135526a7cab92d952c598"><td class="memItemLeft" align="right" valign="top">typedef Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a></td></tr>
+<tr class="separator:a3fa7506b8bf135526a7cab92d952c598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07324b34ae549775b726315b24fc6a71"><td class="memItemLeft" align="right" valign="top">typedef Algebra&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a></td></tr>
+<tr class="separator:a07324b34ae549775b726315b24fc6a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61ba5295c23e56f7b907501ac03d968"><td class="memItemLeft" align="right" valign="top">typedef Operations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a></td></tr>
+<tr class="separator:af61ba5295c23e56f7b907501ac03d968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f476c4e1ef9fd8e911a948da2cfbee6"><td class="memItemLeft" align="right" valign="top">typedef Resizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a></td></tr>
+<tr class="separator:a2f476c4e1ef9fd8e911a948da2cfbee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59bb84632da03120e60fbf8ed605adc2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a59bb84632da03120e60fbf8ed605adc2">stepper_category</a></td></tr>
+<tr class="separator:a59bb84632da03120e60fbf8ed605adc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dda71fa270a57702068566e2f51e818"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a5dda71fa270a57702068566e2f51e818">adams_bashforth_type</a></td></tr>
+<tr class="separator:a5dda71fa270a57702068566e2f51e818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f280d0142e14cb05b007ed17e24741"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ae3f280d0142e14cb05b007ed17e24741">adams_moulton_type</a></td></tr>
+<tr class="separator:ae3f280d0142e14cb05b007ed17e24741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bb3214a3d2c250f90c192ea8604141"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a45bb3214a3d2c250f90c192ea8604141">order_type</a></td></tr>
+<tr class="separator:a45bb3214a3d2c250f90c192ea8604141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ad79c03c99ce3bad7ae49e1e16fd3c270"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ad79c03c99ce3bad7ae49e1e16fd3c270">adams_bashforth_moulton</a> (void)</td></tr>
+<tr class="memdesc:ad79c03c99ce3bad7ae49e1e16fd3c270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> class.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ad79c03c99ce3bad7ae49e1e16fd3c270">更多...</a><br /></td></tr>
+<tr class="separator:ad79c03c99ce3bad7ae49e1e16fd3c270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022c31b7bc05dbc260dfd77577593071"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a022c31b7bc05dbc260dfd77577593071">adams_bashforth_moulton</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a> &amp;<a class="el" href="range__algebra_8cpp.html#a54411182e027189d2d5f3ccd703f3aa5">algebra</a>)</td></tr>
+<tr class="memdesc:a022c31b7bc05dbc260dfd77577593071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> class. This constructor can be used as a default constructor if the algebra has a default constructor.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a022c31b7bc05dbc260dfd77577593071">更多...</a><br /></td></tr>
+<tr class="separator:a022c31b7bc05dbc260dfd77577593071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac256795d1709406640331a32b6df5b3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a45bb3214a3d2c250f90c192ea8604141">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ac256795d1709406640331a32b6df5b3a">order</a> (void) const</td></tr>
+<tr class="memdesc:ac256795d1709406640331a32b6df5b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the order of the algorithm, which is equal to the number of steps+1.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ac256795d1709406640331a32b6df5b3a">更多...</a><br /></td></tr>
+<tr class="separator:ac256795d1709406640331a32b6df5b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43079aa24b27059a3ac0dcc5749fd6ff"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut &gt; </td></tr>
+<tr class="memitem:a43079aa24b27059a3ac0dcc5749fd6ff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a43079aa24b27059a3ac0dcc5749fd6ff">do_step</a> (System system, StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a43079aa24b27059a3ac0dcc5749fd6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method performs one step. It transforms the result in-place.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a43079aa24b27059a3ac0dcc5749fd6ff">更多...</a><br /></td></tr>
+<tr class="separator:a43079aa24b27059a3ac0dcc5749fd6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f4938fec07ab3efd1283a13bb3d3fd"><td class="memTemplParams" colspan="2">template&lt;class System , class StateInOut &gt; </td></tr>
+<tr class="memitem:af4f4938fec07ab3efd1283a13bb3d3fd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af4f4938fec07ab3efd1283a13bb3d3fd">do_step</a> (System system, const StateInOut &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:af4f4938fec07ab3efd1283a13bb3d3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second version to solve the forwarding problem, can be called with Boost.Range as StateInOut.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af4f4938fec07ab3efd1283a13bb3d3fd">更多...</a><br /></td></tr>
+<tr class="separator:af4f4938fec07ab3efd1283a13bb3d3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5778f6c33b52ab397c30df654807c1"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class StateOut &gt; </td></tr>
+<tr class="memitem:a1e5778f6c33b52ab397c30df654807c1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e5778f6c33b52ab397c30df654807c1">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> t, const StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a1e5778f6c33b52ab397c30df654807c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e5778f6c33b52ab397c30df654807c1">更多...</a><br /></td></tr>
+<tr class="separator:a1e5778f6c33b52ab397c30df654807c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622438f4a755a8d1893c5ea2c905bed4"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn , class StateOut &gt; </td></tr>
+<tr class="memitem:a622438f4a755a8d1893c5ea2c905bed4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a622438f4a755a8d1893c5ea2c905bed4">do_step</a> (System system, const StateIn &amp;in, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> t, StateOut &amp;<a class="el" href="elliptic__functions_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a622438f4a755a8d1893c5ea2c905bed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second version to solve the forwarding problem, can be called with Boost.Range as StateOut.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a622438f4a755a8d1893c5ea2c905bed4">更多...</a><br /></td></tr>
+<tr class="separator:a622438f4a755a8d1893c5ea2c905bed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fda6e5b64514475d8da3f2f6179979"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:a21fda6e5b64514475d8da3f2f6179979"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a21fda6e5b64514475d8da3f2f6179979">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="memdesc:a21fda6e5b64514475d8da3f2f6179979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a21fda6e5b64514475d8da3f2f6179979">更多...</a><br /></td></tr>
+<tr class="separator:a21fda6e5b64514475d8da3f2f6179979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e991bdce6c79e2d661b8855f0f6d2cb"><td class="memTemplParams" colspan="2">template&lt;class ExplicitStepper , class System , class StateIn &gt; </td></tr>
+<tr class="memitem:a9e991bdce6c79e2d661b8855f0f6d2cb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a9e991bdce6c79e2d661b8855f0f6d2cb">initialize</a> (ExplicitStepper explicit_stepper, System system, StateIn &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:a9e991bdce6c79e2d661b8855f0f6d2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialized the stepper. Does Steps-1 steps with the explicit_stepper to fill the buffer.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a9e991bdce6c79e2d661b8855f0f6d2cb">更多...</a><br /></td></tr>
+<tr class="separator:a9e991bdce6c79e2d661b8855f0f6d2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7e2b463a472b66fff82e7b88dd2c8c"><td class="memTemplParams" colspan="2">template&lt;class System , class StateIn &gt; </td></tr>
+<tr class="memitem:aff7e2b463a472b66fff82e7b88dd2c8c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#aff7e2b463a472b66fff82e7b88dd2c8c">initialize</a> (System system, StateIn &amp;x, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> &amp;t, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> <a class="el" href="lorenz_8cpp.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>)</td></tr>
+<tr class="memdesc:aff7e2b463a472b66fff82e7b88dd2c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialized the stepper. Does Steps-1 steps using the standard initializing stepper of the underlying <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> stepper.  <a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#aff7e2b463a472b66fff82e7b88dd2c8c">更多...</a><br /></td></tr>
+<tr class="separator:aff7e2b463a472b66fff82e7b88dd2c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:a195ca7bd0004649872b17f70cbaed98d"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a> = Steps</td></tr>
+<tr class="separator:a195ca7bd0004649872b17f70cbaed98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9f74002e9376351afc8d8cd850bc38"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a45bb3214a3d2c250f90c192ea8604141">order_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a8b9f74002e9376351afc8d8cd850bc38">order_value</a> = <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a> + 1</td></tr>
+<tr class="separator:a8b9f74002e9376351afc8d8cd850bc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;size_t Steps, class State, class Value = double, class Deriv = State, class Time = Value, class Algebra = range_algebra, class Operations = default_operations, class Resizer = initially_resizer&gt;<br />
+class boost::numeric::odeint::adams_bashforth_moulton&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;</h3>
+
+<p>The Adams-Bashforth-Moulton multistep algorithm. </p>
+<p>The Adams-Bashforth method is a multi-step predictor-corrector algorithm with configurable step number. The step number is specified as template parameter Steps and it then uses the result from the previous Steps steps. See also <a href="http://en.wikipedia.org/wiki/Linear_multistep_method">en.wikipedia.org/wiki/Linear_multistep_method</a>. Currently, a maximum of Steps=8 is supported. The method is explicit and fulfills the Stepper concept. Step size control or continuous output are not provided.</p>
+<p>This class derives from algebra_base and inherits its interface via CRTP (current recurring template pattern). For more details see <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html" title="Base class for all steppers with algebra and operations.">algebra_stepper_base</a>.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Steps</td><td>The number of steps (maximal 8). </td></tr>
+    <tr><td class="paramname">State</td><td>The state type. </td></tr>
+    <tr><td class="paramname">Value</td><td>The value type. </td></tr>
+    <tr><td class="paramname">Deriv</td><td>The type representing the time derivative of the state. </td></tr>
+    <tr><td class="paramname">Time</td><td>The time representing the independent variable - the time. </td></tr>
+    <tr><td class="paramname">Algebra</td><td>The algebra type. </td></tr>
+    <tr><td class="paramname">Operations</td><td>The operations type. </td></tr>
+    <tr><td class="paramname">Resizer</td><td>The resizer policy type. </td></tr>
+    <tr><td class="paramname">InitializingStepper</td><td>The stepper for the first two steps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00050">50</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a5dda71fa270a57702068566e2f51e818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dda71fa270a57702068566e2f51e818">&#9670;&nbsp;</a></span>adams_bashforth_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a5dda71fa270a57702068566e2f51e818">adams_bashforth_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae3f280d0142e14cb05b007ed17e24741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f280d0142e14cb05b007ed17e24741">&#9670;&nbsp;</a></span>adams_moulton_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html">adams_moulton</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#ae3f280d0142e14cb05b007ed17e24741">adams_moulton_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a07324b34ae549775b726315b24fc6a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07324b34ae549775b726315b24fc6a71">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Algebra <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00066">66</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1e243efb86d8d83ea50530741926c170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e243efb86d8d83ea50530741926c170">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Deriv <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af61ba5295c23e56f7b907501ac03d968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61ba5295c23e56f7b907501ac03d968">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Operations <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af61ba5295c23e56f7b907501ac03d968">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a45bb3214a3d2c250f90c192ea8604141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bb3214a3d2c250f90c192ea8604141">&#9670;&nbsp;</a></span>order_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a45bb3214a3d2c250f90c192ea8604141">order_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2f476c4e1ef9fd8e911a948da2cfbee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f476c4e1ef9fd8e911a948da2cfbee6">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Resizer <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a2f476c4e1ef9fd8e911a948da2cfbee6">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a48e04cd21eed3589f6babf52d2fae37a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e04cd21eed3589f6babf52d2fae37a">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef State <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a59bb84632da03120e60fbf8ed605adc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59bb84632da03120e60fbf8ed605adc2">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a59bb84632da03120e60fbf8ed605adc2">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3fa7506b8bf135526a7cab92d952c598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa7506b8bf135526a7cab92d952c598">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Time <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af2b2ce9ce40db15ea4a2d97b95c902e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b2ce9ce40db15ea4a2d97b95c902e4">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Value <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#af2b2ce9ce40db15ea4a2d97b95c902e4">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a67fd86a703cdcd8cca53279a618dfa36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fd86a703cdcd8cca53279a618dfa36">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a1e243efb86d8d83ea50530741926c170">deriv_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a67fd86a703cdcd8cca53279a618dfa36">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0b7b5bb0b57b308a00e0f3b2fce14b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7b5bb0b57b308a00e0f3b2fce14b4c">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper</a>&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a48e04cd21eed3589f6babf52d2fae37a">state_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a0b7b5bb0b57b308a00e0f3b2fce14b4c">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ad79c03c99ce3bad7ae49e1e16fd3c270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad79c03c99ce3bad7ae49e1e16fd3c270">&#9670;&nbsp;</a></span>adams_bashforth_moulton() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">adams_bashforth_moulton</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> class. </p>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a022c31b7bc05dbc260dfd77577593071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022c31b7bc05dbc260dfd77577593071">&#9670;&nbsp;</a></span>adams_bashforth_moulton() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">adams_bashforth_moulton</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a07324b34ae549775b726315b24fc6a71">algebra_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>algebra</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> class. This constructor can be used as a default constructor if the algebra has a default constructor. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algebra</td><td>A copy of algebra is made and stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a21fda6e5b64514475d8da3f2f6179979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fda6e5b64514475d8da3f2f6179979">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjust the size of all temporaries in the stepper manually. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A state from which the size of the temporaries to be resized is deduced. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00126">126</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton_a21fda6e5b64514475d8da3f2f6179979_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton_a21fda6e5b64514475d8da3f2f6179979_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton_a21fda6e5b64514475d8da3f2f6179979_cgraph" id="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton_a21fda6e5b64514475d8da3f2f6179979_cgraph">
+<area shape="rect" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="5,31,209,87"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1adams__moulton.html#a28aab1ae62684d2c4c213b0086bc3353" title=" " alt="" coords="261,5,477,47"/>
+<area shape="rect" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7c836238b894fa397a5b2908412be64e" title="Adjust the size of all temporaries in the stepper manually." alt="" coords="257,71,481,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e5778f6c33b52ab397c30df654807c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5778f6c33b52ab397c30df654807c1">&#9670;&nbsp;</a></span>do_step() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The method performs one step with the stepper passed by Stepper. The state of the ODE is updated out-of-place. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ODE. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">in</td><td>The state of the ODE which should be solved. in is not modified in this method </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">out</td><td>The result of the step is written in out. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00108">108</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a622438f4a755a8d1893c5ea2c905bed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622438f4a755a8d1893c5ea2c905bed4">&#9670;&nbsp;</a></span>do_step() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn , class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateIn &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Second version to solve the forwarding problem, can be called with Boost.Range as StateOut. </p>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af4f4938fec07ab3efd1283a13bb3d3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f4938fec07ab3efd1283a13bb3d3fd">&#9670;&nbsp;</a></span>do_step() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Second version to solve the forwarding problem, can be called with Boost.Range as StateInOut. </p>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a43079aa24b27059a3ac0dcc5749fd6ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43079aa24b27059a3ac0dcc5749fd6ff">&#9670;&nbsp;</a></span>do_step() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateInOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateInOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method performs one step. It transforms the result in-place. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ordinary differential equation. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The state of the ODE which should be solved. After calling do_step the result is updated in x. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9e991bdce6c79e2d661b8855f0f6d2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e991bdce6c79e2d661b8855f0f6d2cb">&#9670;&nbsp;</a></span>initialize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class ExplicitStepper , class System , class StateIn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">ExplicitStepper&#160;</td>
+          <td class="paramname"><em>explicit_stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateIn &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialized the stepper. Does Steps-1 steps with the explicit_stepper to fill the buffer. </p>
+<dl class="section note"><dt>注解</dt><dd>The state x and time t are updated to the values after Steps-1 initial steps. </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">explicit_stepper</td><td>the stepper used to fill the buffer of previous step results </td></tr>
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ordinary differential equation. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The initial state of the ODE which should be solved, updated after in this method. </td></tr>
+    <tr><td class="paramname">t</td><td>The initial time, updated in this method. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00134">134</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aff7e2b463a472b66fff82e7b88dd2c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff7e2b463a472b66fff82e7b88dd2c8c">&#9670;&nbsp;</a></span>initialize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<div class="memtemplate">
+template&lt;class System , class StateIn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateIn &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a3fa7506b8bf135526a7cab92d952c598">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialized the stepper. Does Steps-1 steps using the standard initializing stepper of the underlying <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html" title="The Adams-Bashforth multistep algorithm.">adams_bashforth</a> stepper. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ordinary differential equation. It must fulfill the Simple System concept. </td></tr>
+    <tr><td class="paramname">x</td><td>The state of the ODE which should be solved. After calling do_step the result is updated in x. </td></tr>
+    <tr><td class="paramname">t</td><td>The value of the time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">dt</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00141">141</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac256795d1709406640331a32b6df5b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac256795d1709406640331a32b6df5b3a">&#9670;&nbsp;</a></span>order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::order </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the order of the algorithm, which is equal to the number of steps+1. </p>
+<dl class="section return"><dt>返回</dt><dd>order of the method. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a8b9f74002e9376351afc8d8cd850bc38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9f74002e9376351afc8d8cd850bc38">&#9670;&nbsp;</a></span>order_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a45bb3214a3d2c250f90c192ea8604141">order_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::order_value = <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html#a195ca7bd0004649872b17f70cbaed98d">steps</a> + 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a195ca7bd0004649872b17f70cbaed98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a195ca7bd0004649872b17f70cbaed98d">&#9670;&nbsp;</a></span>steps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Steps, class State , class Value  = double, class Deriv  = State, class Time  = Value, class Algebra  = range_algebra, class Operations  = default_operations, class Resizer  = initially_resizer&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t <a class="el" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth__moulton.html">boost::numeric::odeint::adams_bashforth_moulton</a>&lt; Steps, State, Value, Deriv, Time, Algebra, Operations, Resizer &gt;::steps = Steps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a> 第 <a class="el" href="adams__bashforth__moulton_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="adams__bashforth__moulton_8hpp_source.html">adams_bashforth_moulton.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

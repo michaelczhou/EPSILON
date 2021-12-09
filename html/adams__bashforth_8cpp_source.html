@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/adams_bashforth.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">adams_bashforth.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="adams__bashforth_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/adams_bashforth.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the use of the adams bashforth stepper.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   25</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_adams_bashforth</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/list.hpp&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/size_t.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;boost/mpl/range_c.hpp&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="adams__bashforth_8hpp.html">boost/numeric/odeint/stepper/adams_bashforth.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta4_8hpp.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   44</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">struct </span><a class="code" href="structlorenz.html">lorenz</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> State , <span class="keyword">class</span> Deriv , <span class="keyword">class</span> Value &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structlorenz.html#afd8ba63687d1243574e255ea40a0844f">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structlorenz.html#afd8ba63687d1243574e255ea40a0844f">operator()</a>( <span class="keyword">const</span> State &amp;_x , Deriv &amp;_dxdt , <span class="keyword">const</span> Value &amp;dt )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> = 10.0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> = 28.0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> = 8.0 / 3.0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; const State &gt;::type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = boost::begin( _x );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">boost::range_iterator&lt; Deriv &gt;::type</a> dxdt = boost::begin( _dxdt );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        dxdt[0] = <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a> * ( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        dxdt[1] = <a class="code" href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        dxdt[2] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0]*<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] - <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[2];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> State &gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classrk4__decorator.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrk4__decorator.html">rk4_decorator</a></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classrk4__decorator.html#a11033c7b60c1ead47a34264b28e69a96">   69</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classrk4__decorator.html#a11033c7b60c1ead47a34264b28e69a96">do_count</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System , <span class="keyword">class</span> StateIn , <span class="keyword">class</span> DerivIn , <span class="keyword">class</span> StateOut &gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classrk4__decorator.html#a3e093c34ddde5938a6c76875cbbe2f44">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrk4__decorator.html#a3e093c34ddde5938a6c76875cbbe2f44">do_step</a>( System system , <span class="keyword">const</span> StateIn &amp;in , <span class="keyword">const</span> DerivIn &amp;dxdt , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t , StateOut &amp;<a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> dt )</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_stepper.do_step( system , in , dxdt , t , <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ++do_count;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System , <span class="keyword">class</span> StateInOut , <span class="keyword">class</span> DerivIn &gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classrk4__decorator.html#a6770586307362d5b0397ec7fdd7bd6e1">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrk4__decorator.html#a6770586307362d5b0397ec7fdd7bd6e1">do_step</a>( System system , StateInOut &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">const</span> DerivIn &amp;dxdt , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t , <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> dt )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        m_stepper.do_step( system , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , dxdt , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ++do_count;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classrk4__decorator.html#adf8938dcd5361ec11ee1c51c3f2306ca">   86</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4&lt; State &gt;</a> <a class="code" href="classrk4__decorator.html#adf8938dcd5361ec11ee1c51c3f2306ca">m_stepper</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;BOOST_AUTO_TEST_SUITE( adams_bashforth_test )</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">   96</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_adams_bashforth_coefficients )</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 1 &gt; c1;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 2 &gt; c2;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 3 &gt; c3;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 4 &gt; c4;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 5 &gt; c5;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 6 &gt; c6;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 7 &gt; c7;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    detail::adams_bashforth_coefficients&lt; value_type , 8 &gt; c8;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#ae8a8ca81765a230c08bc20687edeea9d">  108</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_rotating_buffer )</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> = 5;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    detail::rotating_buffer&lt; size_t , N &gt; buffer;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> ; ++i ) buffer[i] = i;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=0 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> ; ++i )</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        BOOST_CHECK_EQUAL( buffer[i] , i );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    buffer.rotate();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i=1 ; i&lt;<a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a> ; ++i )</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        BOOST_CHECK_EQUAL( buffer[i] , i - 1 );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    BOOST_CHECK_EQUAL( buffer[0] , <span class="keywordtype">size_t</span>( <a class="code" href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a>-1 ) );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#af5a2c479874b4bdc1426bc67f03fd29f">  124</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_copying )</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , 1 &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 2 , state_type &gt;</a> <a class="code" href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> s1;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    s1.step_storage()[0].m_v[0] = 1.5;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    s1.step_storage()[1].m_v[0] = 2.25;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> s2( s1 );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    BOOST_CHECK_CLOSE( s1.step_storage()[0].m_v[0] , s2.step_storage()[0].m_v[0] , 1.0e-14 );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    BOOST_CHECK_CLOSE( s1.step_storage()[1].m_v[0] , s2.step_storage()[1].m_v[0] , 1.0e-14 );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    BOOST_CHECK( ( &amp;(s1.step_storage()[0]) ) != ( &amp;(s2.step_storage()[0]) ) );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">stepper_type</a> s3;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> *p1 = &amp;( s3.step_storage()[0].m_v ) , *p2 = &amp;( s3.step_storage()[1].m_v );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    s3 = s1;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    BOOST_CHECK( p1 == ( &amp;( s3.step_storage()[0].m_v ) ) );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    BOOST_CHECK( p2 == ( &amp;( s3.step_storage()[1].m_v ) ) );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    BOOST_CHECK_CLOSE( s1.step_storage()[0].m_v[0] , s3.step_storage()[0].m_v[0] , 1.0e-14 );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    BOOST_CHECK_CLOSE( s1.step_storage()[1].m_v[0] , s3.step_storage()[1].m_v[0] , 1.0e-14 );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">  148</a></span>&#160;<span class="keyword">typedef</span> boost::mpl::range_c&lt; size_t , 1 , 6 &gt; <a class="code" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#a5f4cb23dd8c11eb45aac852345ca85fd">  150</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a5f4cb23dd8c11eb45aac852345ca85fd">BOOST_AUTO_TEST_CASE_TEMPLATE</a>( test_init_and_steps , step_type , <a class="code" href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a> )</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> steps = step_type::value;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">typedef</span> boost::array&lt; value_type , 3 &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; steps , state_type &gt;</a> stepper;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 10.0 , 10.0 , 10.0 }};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.01;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t = 0.0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#ac1c3ca57238ddc053a8fb87ad652db24">initialize</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    BOOST_CHECK_CLOSE( t , <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>( steps - 1 ) * <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> , 1.0e-14 );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#a104f26b2028e51852918c78313cbf3b8">  166</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_instantiation )</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , 3 &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 1 , state_type &gt;</a> s1;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 2 , state_type &gt;</a> s2;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 3 , state_type &gt;</a> s3;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 4 , state_type &gt;</a> s4;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 5 , state_type &gt;</a> s5;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 6 , state_type &gt;</a> s6;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 7 , state_type &gt;</a> s7;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth&lt; 8 , state_type &gt;</a> s8;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 10.0 , 10.0 , 10.0 }};</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.01;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    s1.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    s2.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    s3.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    s4.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    s5.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    s6.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">do_step</a>( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">//    s7.do_step( lorenz() , x , t , dt );</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">//    s8.do_step( lorenz() , x , t , dt );</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#abaf0302c1d124a093aef654f3b62ee4b">  190</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_auto_initialization )</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , 3 &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 10.0 , 10.0 , 10.0 }};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth</a>&lt; 3 , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> ,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                     <a class="code" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a> , <a class="code" href="classrk4__decorator.html">rk4_decorator&lt; state_type &gt;</a> &gt; adams;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    adams.initializing_stepper().<a class="code" href="classrk4__decorator.html#a11033c7b60c1ead47a34264b28e69a96">do_count</a> = 0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 1 ) );</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="adams__bashforth_8cpp.html#af6941a0f77efd785b055b3140e49e271">  215</a></span>&#160;<a class="code" href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a>( test_manual_initialization )</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">typedef</span> boost::array&lt; double , 3 &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 10.0 , 10.0 , 10.0 }};</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">adams_bashforth</a>&lt; 3 , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> , <a class="code" href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">range_algebra</a> , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">default_operations</a> ,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">initially_resizer</a> , <a class="code" href="classrk4__decorator.html">rk4_decorator&lt; state_type &gt;</a> &gt; adams;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    adams.initializing_stepper().<a class="code" href="classrk4__decorator.html#a11033c7b60c1ead47a34264b28e69a96">do_count</a> = 0;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">double</span> t = 0.0 , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> = 0.1;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    adams.initialize( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , t , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    adams.do_step( <a class="code" href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a>() , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.1 );</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    BOOST_CHECK_EQUAL( adams.initializing_stepper().do_count , <span class="keywordtype">size_t</span>( 2 ) );</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan</a></div><div class="ttdoc">Implement of the symmetric B3A method of Runge-Kutta-Nystroem method of sixth order.</div><div class="ttdef"><b>Definition:</b> <a href="symplectic__rkn__sb3a__mclachlan_8hpp_source.html#l00093">symplectic_rkn_sb3a_mclachlan.hpp:93</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="astructlorenz_html_afd8ba63687d1243574e255ea40a0844f"><div class="ttname"><a href="structlorenz.html#afd8ba63687d1243574e255ea40a0844f">lorenz::operator()</a></div><div class="ttdeci">void operator()(const State &amp;_x, Deriv &amp;_dxdt, const Value &amp;dt) const</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00049">adams_bashforth.cpp:49</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1default__operations_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1default__operations.html">boost::numeric::odeint::default_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="default__operations_8hpp_source.html#l00040">default_operations.hpp:40</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1adams__bashforth_html_a7cd9a9057a7cf04d85bf6f1940b3eb0d"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#a7cd9a9057a7cf04d85bf6f1940b3eb0d">boost::numeric::odeint::adams_bashforth::do_step</a></div><div class="ttdeci">void do_step(System system, StateInOut &amp;x, time_type t, time_type dt)</div><div class="ttdoc">This method performs one step. It transforms the result in-place.</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8hpp_source.html#l00127">adams_bashforth.hpp:127</a></div></div>
+<div class="ttc" id="aadams__bashforth_8cpp_html_a5f4cb23dd8c11eb45aac852345ca85fd"><div class="ttname"><a href="adams__bashforth_8cpp.html#a5f4cb23dd8c11eb45aac852345ca85fd">BOOST_AUTO_TEST_CASE_TEMPLATE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE_TEMPLATE(test_init_and_steps, step_type, vector_of_steps)</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00150">adams_bashforth.cpp:150</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1adams__bashforth_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html">boost::numeric::odeint::adams_bashforth</a></div><div class="ttdoc">The Adams-Bashforth multistep algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8hpp_source.html#l00061">adams_bashforth.hpp:61</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a60c997d919d79af61f9c73be868d170a"><div class="ttname"><a href="spreading_8cpp.html#a60c997d919d79af61f9c73be868d170a">stepper_type</a></div><div class="ttdeci">boost::numeric::odeint::symplectic_rkn_sb3a_mclachlan&lt; state_type, state_type, double, state_type, state_type, double, nested_range_algebra&lt; boost::numeric::odeint::range_algebra &gt;, boost::numeric::odeint::default_operations &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00069">spreading.cpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1initially__resizer_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1initially__resizer.html">boost::numeric::odeint::initially_resizer</a></div><div class="ttdef"><b>Definition:</b> <a href="resizer_8hpp_source.html#l00058">resizer.hpp:58</a></div></div>
+<div class="ttc" id="alorenz__point_8cpp_html_a70d5147828a4853dda9ea916b4493bba"><div class="ttname"><a href="lorenz__point_8cpp.html#a70d5147828a4853dda9ea916b4493bba">lorenz</a></div><div class="ttdeci">void lorenz(const point3D &amp;x, point3D &amp;dxdt, const double t)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__point_8cpp_source.html#l00103">lorenz_point.cpp:103</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="aclassrk4__decorator_html_a3e093c34ddde5938a6c76875cbbe2f44"><div class="ttname"><a href="classrk4__decorator.html#a3e093c34ddde5938a6c76875cbbe2f44">rk4_decorator::do_step</a></div><div class="ttdeci">void do_step(System system, const StateIn &amp;in, const DerivIn &amp;dxdt, value_type t, StateOut &amp;out, value_type dt)</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00072">adams_bashforth.cpp:72</a></div></div>
+<div class="ttc" id="aclassrk4__decorator_html_adf8938dcd5361ec11ee1c51c3f2306ca"><div class="ttname"><a href="classrk4__decorator.html#adf8938dcd5361ec11ee1c51c3f2306ca">rk4_decorator::m_stepper</a></div><div class="ttdeci">runge_kutta4&lt; State &gt; m_stepper</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00086">adams_bashforth.cpp:86</a></div></div>
+<div class="ttc" id="aadams__bashforth_8cpp_html_a493d367f67fbbce206f858e7d3b5ba8d"><div class="ttname"><a href="adams__bashforth_8cpp.html#a493d367f67fbbce206f858e7d3b5ba8d">vector_of_steps</a></div><div class="ttdeci">boost::mpl::range_c&lt; size_t, 1, 6 &gt; vector_of_steps</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00148">adams_bashforth.cpp:148</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4&lt; State &gt;</a></div></div>
+<div class="ttc" id="aadams__bashforth_8hpp_html"><div class="ttname"><a href="adams__bashforth_8hpp.html">adams_bashforth.hpp</a></div></div>
+<div class="ttc" id="aclassrk4__decorator_html_a11033c7b60c1ead47a34264b28e69a96"><div class="ttname"><a href="classrk4__decorator.html#a11033c7b60c1ead47a34264b28e69a96">rk4_decorator::do_count</a></div><div class="ttdeci">size_t do_count</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00069">adams_bashforth.cpp:69</a></div></div>
+<div class="ttc" id="aclassrk4__decorator_html"><div class="ttname"><a href="classrk4__decorator.html">rk4_decorator</a></div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00065">adams_bashforth.cpp:65</a></div></div>
+<div class="ttc" id="aadams__bashforth_8cpp_html_a24ad29d69448dda378bd6f1fe4e9a90e"><div class="ttname"><a href="adams__bashforth_8cpp.html#a24ad29d69448dda378bd6f1fe4e9a90e">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(test_adams_bashforth_coefficients)</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00096">adams_bashforth.cpp:96</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1adams__bashforth_html_ac1c3ca57238ddc053a8fb87ad652db24"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1adams__bashforth.html#ac1c3ca57238ddc053a8fb87ad652db24">boost::numeric::odeint::adams_bashforth::initialize</a></div><div class="ttdeci">void initialize(ExplicitStepper explicit_stepper, System system, StateIn &amp;x, time_type &amp;t, time_type dt)</div><div class="ttdoc">Initialized the stepper. Does Steps-1 steps with the explicit_stepper to fill the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8hpp_source.html#l00182">adams_bashforth.hpp:182</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aexamples_2bulirsch__stoer_8cpp_html_a6b6d589c8106948670006f3e22b2c378"><div class="ttname"><a href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a></div><div class="ttdeci">ofstream out</div><div class="ttdef"><b>Definition:</b> <a href="examples_2bulirsch__stoer_8cpp_source.html#l00047">bulirsch_stoer.cpp:47</a></div></div>
+<div class="ttc" id="arunge__kutta4_8hpp_html"><div class="ttname"><a href="runge__kutta4_8hpp.html">runge_kutta4.hpp</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_adf99ea743b5dadbe8dc48388c0d7fa94"><div class="ttname"><a href="chaotic__system_8cpp.html#adf99ea743b5dadbe8dc48388c0d7fa94">N</a></div><div class="ttdeci">const size_t N</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00053">chaotic_system.cpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1range__algebra_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1range__algebra.html">boost::numeric::odeint::range_algebra</a></div><div class="ttdef"><b>Definition:</b> <a href="range__algebra_8hpp_source.html#l00033">range_algebra.hpp:33</a></div></div>
+<div class="ttc" id="aclassrk4__decorator_html_a6770586307362d5b0397ec7fdd7bd6e1"><div class="ttname"><a href="classrk4__decorator.html#a6770586307362d5b0397ec7fdd7bd6e1">rk4_decorator::do_step</a></div><div class="ttdeci">void do_step(System system, StateInOut &amp;x, const DerivIn &amp;dxdt, value_type t, value_type dt)</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00079">adams_bashforth.cpp:79</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="chaotic__system_8cpp.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00029">chaotic_system.cpp:29</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="astructlorenz_html"><div class="ttname"><a href="structlorenz.html">lorenz</a></div><div class="ttdef"><b>Definition:</b> <a href="bind__member__functions_8cpp_source.html#l00077">bind_member_functions.cpp:77</a></div></div>
+<div class="ttc" id="aadams__bashforth_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="adams__bashforth_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="adams__bashforth_8cpp_source.html#l00044">adams_bashforth.cpp:44</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/external/mtl4/mtl4_resize.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_fe1c5e4aa41cd872964ae7e484bdab9a.html">external</a></li><li class="navelem"><a class="el" href="dir_e3f8d883f365c23a0e3f9f5ab258562b.html">mtl4</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mtl4_resize.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mtl4__resize_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">[begin_description]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Modification of the implicit Euler method, works with the MTL4 matrix library only. </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">[end_description]</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">Copyright 2012 Andreas Angelopoulos</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">(See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_EXTERNAL_MTL4_RESIZE_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_EXTERNAL_MTL4_RESIZE_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="is__resizeable_8hpp.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="resize_8hpp.html">boost/numeric/odeint/util/resize.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="same__size_8hpp.html">boost/numeric/odeint/util/same_size.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/mtl/vector/dense_vector.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/mtl/matrix/dense2D.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/mtl/matrix/compressed2D.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Parameters &gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; mtl::dense_vector&lt; Value , Parameters &gt; &gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4.html#af47f78d2a18672a0ebaae86fcdea6122">   36</a></span>&#160;    <span class="keyword">typedef</span> boost::true_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4.html#af47f78d2a18672a0ebaae86fcdea6122">type</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4.html#aa0b36073a9a4ede0ab7dd9afe9d66045">   37</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Parameters &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4.html">   41</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; mtl::dense2D&lt; Value , Parameters &gt; &gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4.html#aa3b17cda5dc441112e7e08d11bf14238">   43</a></span>&#160;    <span class="keyword">typedef</span> boost::true_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4.html#aa3b17cda5dc441112e7e08d11bf14238">type</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4.html#a626e79e2936efaa0a06be2139406526e">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Parameters &gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">is_resizeable</a>&lt; mtl::compressed2D&lt; Value , Parameters &gt; &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4.html#a00d4af70fac5af5f38d020ae045b617a">   50</a></span>&#160;    <span class="keyword">typedef</span> boost::true_type <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4.html#a00d4af70fac5af5f38d020ae045b617a">type</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4.html#a58b386a6c788f4acbfd844274b1a5bcc">   51</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">value</a> = type::value;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Parameters &gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_pc9013567d78d1ff85fed1844693f0b21.html">   58</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; mtl::dense_vector&lt; Value , Parameters &gt; , mtl::dense_vector&lt; Value , Parameters &gt; &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_pc9013567d78d1ff85fed1844693f0b21.html#a2bbe23e2cf348edb7655b58d96378717">   60</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_pc9013567d78d1ff85fed1844693f0b21.html#a2bbe23e2cf348edb7655b58d96378717">same_size</a>( <span class="keyword">const</span> mtl::dense_vector&lt; Value , Parameters &gt; &amp;v1 ,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                           <span class="keyword">const</span> mtl::dense_vector&lt; Value , Parameters &gt; &amp;v2 )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> mtl::size( v1 ) == mtl::size( v2 );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> Parameters &gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_param721d79b29664405f8c261709d0308734.html">   68</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; mtl::dense_vector&lt; Value , Parameters &gt; , mtl::dense_vector&lt; Value , Parameters &gt; &gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_param721d79b29664405f8c261709d0308734.html#a5e54d9c039785e25b0211f195fe2cc47">   70</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_param721d79b29664405f8c261709d0308734.html#a5e54d9c039785e25b0211f195fe2cc47">resize</a>( mtl::dense_vector&lt; Value , Parameters &gt; &amp;v1 ,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keyword">const</span> mtl::dense_vector&lt; Value , Parameters &gt; &amp;v2 )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        v1.change_dim( mtl::size( v2 ) );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> MatrixParameters , <span class="keyword">class</span> VectorParameters &gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrixcf35b8c1ab492507a1691fb99adb5efa.html">   80</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; mtl::dense2D&lt; Value , MatrixParameters &gt; , mtl::dense_vector&lt; Value , VectorParameters &gt; &gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrixcf35b8c1ab492507a1691fb99adb5efa.html#abb74b2fceb54d8768973b653a111ef9f">   82</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrixcf35b8c1ab492507a1691fb99adb5efa.html#abb74b2fceb54d8768973b653a111ef9f">same_size</a>( <span class="keyword">const</span> mtl::dense2D&lt; Value , MatrixParameters &gt; &amp;m , </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                           <span class="keyword">const</span> mtl::dense_vector&lt; Value , VectorParameters &gt; &amp;v )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> ( ( mtl::size( v ) == m.num_cols() ) &amp;&amp; ( mtl::size( v ) == m.num_rows() ) );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> MatrixParameters , <span class="keyword">class</span> VectorParameters &gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrix_par9463246a897be0754625f6c3aa53aad9.html">   90</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; mtl::dense2D&lt; Value , MatrixParameters &gt; , mtl::dense_vector&lt; Value , VectorParameters &gt; &gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrix_par9463246a897be0754625f6c3aa53aad9.html#a96f466645fb8c64a80b68eb0f3b1c12b">   92</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrix_par9463246a897be0754625f6c3aa53aad9.html#a96f466645fb8c64a80b68eb0f3b1c12b">resize</a>( mtl::dense2D&lt; Value , MatrixParameters &gt; &amp;m , </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        <span class="keyword">const</span> mtl::dense_vector&lt; Value , VectorParameters &gt; &amp;v )</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        m.change_dim( mtl::size( v ) , mtl::size( v ) , <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> MatrixParameters , <span class="keyword">class</span> VectorParameters &gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_mb849237ea87b1a29eb6429633da2f157.html">  103</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">same_size_impl</a>&lt; mtl::compressed2D&lt; Value , MatrixParameters &gt; , mtl::dense_vector&lt; Value , VectorParameters &gt; &gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_mb849237ea87b1a29eb6429633da2f157.html#aa5d625996fd7f7203aa298783446478b">  105</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_mb849237ea87b1a29eb6429633da2f157.html#aa5d625996fd7f7203aa298783446478b">same_size</a>( <span class="keyword">const</span> mtl::compressed2D&lt; Value , MatrixParameters &gt; &amp;m , </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                           <span class="keyword">const</span> mtl::dense_vector&lt; Value , VectorParameters &gt; &amp;v )</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> ( ( mtl::size( v ) == m.num_cols() ) &amp;&amp; ( mtl::size( v ) == m.num_rows() ) );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Value , <span class="keyword">class</span> MatrixParameters , <span class="keyword">class</span> VectorParameters &gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_matria78fbc83a0495e3b503156fc61c97086.html">  113</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>&lt; mtl::compressed2D&lt; Value , MatrixParameters &gt; , mtl::dense_vector&lt; Value , VectorParameters &gt; &gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_matria78fbc83a0495e3b503156fc61c97086.html#a8866f72b4bffa608e2728a927fc75831">  115</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_matria78fbc83a0495e3b503156fc61c97086.html#a8866f72b4bffa608e2728a927fc75831">resize</a>( mtl::compressed2D&lt; Value , MatrixParameters &gt; &amp;m , </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <span class="keyword">const</span> mtl::dense_vector&lt; Value , VectorParameters &gt; &amp;v )</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        m.change_dim( mtl::size( v ) , mtl::size( v ) );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace odeint</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} <span class="comment">// namespace numeric</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;} <span class="comment">// namespace boost</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_EXTERNAL_MTL4_RESIZE_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aresize_8hpp_html"><div class="ttname"><a href="resize_8hpp.html">resize.hpp</a></div></div>
+<div class="ttc" id="asame__size_8hpp_html"><div class="ttname"><a href="same__size_8hpp.html">same_size.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_matria78fbc83a0495e3b503156fc61c97086_html_a8866f72b4bffa608e2728a927fc75831"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_matria78fbc83a0495e3b503156fc61c97086.html#a8866f72b4bffa608e2728a927fc75831">boost::numeric::odeint::resize_impl&lt; mtl::compressed2D&lt; Value, MatrixParameters &gt;, mtl::dense_vector&lt; Value, VectorParameters &gt; &gt;::resize</a></div><div class="ttdeci">static void resize(mtl::compressed2D&lt; Value, MatrixParameters &gt; &amp;m, const mtl::dense_vector&lt; Value, VectorParameters &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00115">mtl4_resize.hpp:115</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html">boost::numeric::odeint::is_resizeable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00044">is_resizeable.hpp:44</a></div></div>
+<div class="ttc" id="ais__resizeable_8hpp_html"><div class="ttname"><a href="is__resizeable_8hpp.html">is_resizeable.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4_html_aa3b17cda5dc441112e7e08d11bf14238"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense2_d_3_01_value_00_01_parameters_01_4_01_4.html#aa3b17cda5dc441112e7e08d11bf14238">boost::numeric::odeint::is_resizeable&lt; mtl::dense2D&lt; Value, Parameters &gt; &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00043">mtl4_resize.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html_aeafd2e3101712b4bedb251024b78b58b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#aeafd2e3101712b4bedb251024b78b58b">boost::numeric::odeint::is_resizeable::value</a></div><div class="ttdeci">const static bool value</div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00048">is_resizeable.hpp:48</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrixcf35b8c1ab492507a1691fb99adb5efa_html_abb74b2fceb54d8768973b653a111ef9f"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrixcf35b8c1ab492507a1691fb99adb5efa.html#abb74b2fceb54d8768973b653a111ef9f">boost::numeric::odeint::same_size_impl&lt; mtl::dense2D&lt; Value, MatrixParameters &gt;, mtl::dense_vector&lt; Value, VectorParameters &gt; &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const mtl::dense2D&lt; Value, MatrixParameters &gt; &amp;m, const mtl::dense_vector&lt; Value, VectorParameters &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00082">mtl4_resize.hpp:82</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_pc9013567d78d1ff85fed1844693f0b21_html_a2bbe23e2cf348edb7655b58d96378717"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_pc9013567d78d1ff85fed1844693f0b21.html#a2bbe23e2cf348edb7655b58d96378717">boost::numeric::odeint::same_size_impl&lt; mtl::dense_vector&lt; Value, Parameters &gt;, mtl::dense_vector&lt; Value, Parameters &gt; &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const mtl::dense_vector&lt; Value, Parameters &gt; &amp;v1, const mtl::dense_vector&lt; Value, Parameters &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00060">mtl4_resize.hpp:60</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4_html_a00d4af70fac5af5f38d020ae045b617a"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1compressed2_d_3_01_value_00_01_parameters_01_4_01_4.html#a00d4af70fac5af5f38d020ae045b617a">boost::numeric::odeint::is_resizeable&lt; mtl::compressed2D&lt; Value, Parameters &gt; &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00050">mtl4_resize.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl.html">boost::numeric::odeint::same_size_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="same__size_8hpp_source.html#l00041">same_size.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrix_par9463246a897be0754625f6c3aa53aad9_html_a96f466645fb8c64a80b68eb0f3b1c12b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense2_d_3_01_value_00_01_matrix_par9463246a897be0754625f6c3aa53aad9.html#a96f466645fb8c64a80b68eb0f3b1c12b">boost::numeric::odeint::resize_impl&lt; mtl::dense2D&lt; Value, MatrixParameters &gt;, mtl::dense_vector&lt; Value, VectorParameters &gt; &gt;::resize</a></div><div class="ttdeci">static void resize(mtl::dense2D&lt; Value, MatrixParameters &gt; &amp;m, const mtl::dense_vector&lt; Value, VectorParameters &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00092">mtl4_resize.hpp:92</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_param721d79b29664405f8c261709d0308734_html_a5e54d9c039785e25b0211f195fe2cc47"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl_3_01mtl_1_1dense__vector_3_01_value_00_01_param721d79b29664405f8c261709d0308734.html#a5e54d9c039785e25b0211f195fe2cc47">boost::numeric::odeint::resize_impl&lt; mtl::dense_vector&lt; Value, Parameters &gt;, mtl::dense_vector&lt; Value, Parameters &gt; &gt;::resize</a></div><div class="ttdeci">static void resize(mtl::dense_vector&lt; Value, Parameters &gt; &amp;v1, const mtl::dense_vector&lt; Value, Parameters &gt; &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00070">mtl4_resize.hpp:70</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">boost::numeric::odeint::resize_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="resize_8hpp_source.html#l00040">resize.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4_html_af47f78d2a18672a0ebaae86fcdea6122"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01mtl_1_1dense__vector_3_01_value_00_01_parameters_01_4_01_4.html#af47f78d2a18672a0ebaae86fcdea6122">boost::numeric::odeint::is_resizeable&lt; mtl::dense_vector&lt; Value, Parameters &gt; &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00036">mtl4_resize.hpp:36</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_mb849237ea87b1a29eb6429633da2f157_html_aa5d625996fd7f7203aa298783446478b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1same__size__impl_3_01mtl_1_1compressed2_d_3_01_value_00_01_mb849237ea87b1a29eb6429633da2f157.html#aa5d625996fd7f7203aa298783446478b">boost::numeric::odeint::same_size_impl&lt; mtl::compressed2D&lt; Value, MatrixParameters &gt;, mtl::dense_vector&lt; Value, VectorParameters &gt; &gt;::same_size</a></div><div class="ttdeci">static bool same_size(const mtl::compressed2D&lt; Value, MatrixParameters &gt; &amp;m, const mtl::dense_vector&lt; Value, VectorParameters &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="mtl4__resize_8hpp_source.html#l00105">mtl4_resize.hpp:105</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

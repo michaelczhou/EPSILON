@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/eudm_planner/src/eudm_planner/eudm_planner.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_97b678906f3da8d6067db4a1528c7316.html">eudm_planner</a></li><li class="navelem"><a class="el" href="dir_0493240e22c6a99ef352406ed051855d.html">src</a></li><li class="navelem"><a class="el" href="dir_662d36d4141da5e0e1376be0ddec8664.html">eudm_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle">
+<div class="title">eudm_planner.cc 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="eudm__planner_8h_source.html">eudm_planner/eudm_planner.h</a>&quot;</code><br />
+<code>#include &lt;glog/logging.h&gt;</code><br />
+<code>#include &lt;google/protobuf/io/zero_copy_stream_impl.h&gt;</code><br />
+<code>#include &lt;google/protobuf/text_format.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="rss__checker_8h_source.html">common/rss/rss_checker.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+eudm_planner.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="eudm__planner_8cc__incl.png" border="0" usemap="#util_2eudm__planner_2src_2eudm__planner_2eudm__planner_8cc" alt=""/></div>
+<map name="util_2eudm__planner_2src_2eudm__planner_2eudm__planner_8cc" id="util_2eudm__planner_2src_2eudm__planner_2eudm__planner_8cc">
+<area shape="rect" title=" " alt="" coords="2963,5,3197,47"/>
+<area shape="rect" href="eudm__planner_8h.html" title=" " alt="" coords="1556,102,1780,129"/>
+<area shape="rect" href="rss__checker_8h.html" title=" " alt="" coords="1900,281,2095,307"/>
+<area shape="rect" title=" " alt="" coords="3023,102,3137,129"/>
+<area shape="rect" title=" " alt="" coords="3162,95,3355,136"/>
+<area shape="rect" title=" " alt="" coords="3380,95,3535,136"/>
+<area shape="rect" title=" " alt="" coords="3191,780,3276,807"/>
+<area shape="rect" title=" " alt="" coords="144,370,221,397"/>
+<area shape="rect" title=" " alt="" coords="188,780,247,807"/>
+<area shape="rect" title=" " alt="" coords="289,191,353,218"/>
+<area shape="rect" href="common_2inc_2common_2basics_2basics_8h.html" title=" " alt="" coords="1435,631,1616,657"/>
+<area shape="rect" href="planner_8h.html" title=" " alt="" coords="145,549,351,575"/>
+<area shape="rect" href="lane_8h.html" title=" " alt="" coords="2865,459,3020,486"/>
+<area shape="rect" href="state_8h.html" title=" " alt="" coords="1551,549,1716,575"/>
+<area shape="rect" href="lane__generator_8h.html" title=" " alt="" coords="2971,370,3197,397"/>
+<area shape="rect" href="mobil__model_8h.html" title=" " alt="" coords="1393,184,1554,225"/>
+<area shape="rect" title=" " alt="" coords="1652,191,1791,218"/>
+<area shape="rect" href="dcp__tree_8h.html" title=" " alt="" coords="428,281,615,307"/>
+<area shape="rect" href="eudm__itf_8h.html" title=" " alt="" coords="559,370,747,397"/>
+<area shape="rect" href="util_2eudm__planner_2inc_2eudm__planner_2map__interface_8h.html" title=" " alt="" coords="2603,281,2829,307"/>
+<area shape="rect" href="onlane__forward__simulation_8h.html" title=" " alt="" coords="1687,273,1876,315"/>
+<area shape="rect" href="macros_8h.html" title=" " alt="" coords="1431,705,1619,732"/>
+<area shape="rect" href="tic__toc_8h.html" title=" " alt="" coords="458,705,641,732"/>
+<area shape="rect" title=" " alt="" coords="1099,705,1167,732"/>
+<area shape="rect" title=" " alt="" coords="1644,705,1711,732"/>
+<area shape="rect" title=" " alt="" coords="1123,780,1186,807"/>
+<area shape="rect" title=" " alt="" coords="1735,705,1862,732"/>
+<area shape="rect" title=" " alt="" coords="1887,705,2012,732"/>
+<area shape="rect" href="backward_8hpp.html" title=" " alt="" coords="1191,705,1305,732"/>
+<area shape="rect" title=" " alt="" coords="383,780,449,807"/>
+<area shape="rect" title=" " alt="" coords="646,780,711,807"/>
+<area shape="rect" title=" " alt="" coords="497,780,556,807"/>
+<area shape="rect" title=" " alt="" coords="2060,780,2140,807"/>
+<area shape="rect" title=" " alt="" coords="805,780,856,807"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="2711,549,2891,575"/>
+<area shape="rect" href="inc_2common_2spline_2spline_8h.html" title=" " alt="" coords="3018,549,3195,575"/>
+<area shape="rect" title=" " alt="" coords="2188,631,2263,657"/>
+<area shape="rect" href="semantics_8h.html" title=" " alt="" coords="1370,370,1577,397"/>
+<area shape="rect" href="intelligent__driver__model_8h.html" title=" " alt="" coords="1084,273,1263,315"/>
+<area shape="rect" title=" " alt="" coords="559,459,683,486"/>
+<area shape="rect" href="shapes_8h.html" title=" " alt="" coords="707,549,893,575"/>
+<area shape="rect" href="tool__func_8h.html" title=" " alt="" coords="478,541,631,583"/>
+<area shape="rect" href="free__state_8h.html" title=" " alt="" coords="1278,459,1477,486"/>
+<area shape="rect" href="frenet__state_8h.html" title=" " alt="" coords="2479,452,2638,493"/>
+<area shape="rect" href="state__transformer_8h.html" title=" " alt="" coords="2474,363,2627,404"/>
+<area shape="rect" title=" " alt="" coords="2804,370,2847,397"/>
+<area shape="rect" href="ctx__idm__velocity__controller_8h.html" title=" " alt="" coords="2236,452,2455,493"/>
+<area shape="rect" href="idm__velocity__controller_8h.html" title=" " alt="" coords="962,452,1153,493"/>
+<area shape="rect" href="pure__pursuit__controller_8h.html" title=" " alt="" coords="1171,541,1362,583"/>
+<area shape="rect" href="ideal__steer__model_8h.html" title=" " alt="" coords="1957,452,2110,493"/>
+</map>
+</div>
+</div>
+<p><a href="eudm__planner_8cc_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespaceplanning"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplanning.html">planning</a></td></tr>
+<tr class="memdesc:namespaceplanning"><td class="mdescLeft">&#160;</td><td class="mdescRight">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm, to satisfy task level constraints. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

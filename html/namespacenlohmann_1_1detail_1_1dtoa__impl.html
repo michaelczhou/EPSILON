@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: nlohmann::detail::dtoa_impl 命名空间参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacenlohmann.html">nlohmann</a></li><li class="navelem"><a class="el" href="namespacenlohmann_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html">dtoa_impl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">nlohmann::detail::dtoa_impl 命名空间参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>implements the Grisu2 algorithm for binary to decimal floating-point conversion.  
+<a href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1boundaries.html">boundaries</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1cached__power.html">cached_power</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a1c5d30eb51e5e994a3f48bde104d2ce8"><td class="memTemplParams" colspan="2">template&lt;typename Target , typename Source &gt; </td></tr>
+<tr class="memitem:a1c5d30eb51e5e994a3f48bde104d2ce8"><td class="memTemplItemLeft" align="right" valign="top">Target&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a1c5d30eb51e5e994a3f48bde104d2ce8">reinterpret_bits</a> (const Source source)</td></tr>
+<tr class="separator:a1c5d30eb51e5e994a3f48bde104d2ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b6e37654ac93c6d0d9c06ec1bf5ded"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a22b6e37654ac93c6d0d9c06ec1bf5ded"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1boundaries.html">boundaries</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a22b6e37654ac93c6d0d9c06ec1bf5ded">compute_boundaries</a> (FloatType value)</td></tr>
+<tr class="separator:a22b6e37654ac93c6d0d9c06ec1bf5ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf329a18c5cf854a3477327afd2200b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1cached__power.html">cached_power</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#adbf329a18c5cf854a3477327afd2200b">get_cached_power_for_binary_exponent</a> (int e)</td></tr>
+<tr class="separator:adbf329a18c5cf854a3477327afd2200b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ded358763b5dbcea9867660fbe4e28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a36ded358763b5dbcea9867660fbe4e28">find_largest_pow10</a> (const std::uint32_t <a class="el" href="lorenz_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>, std::uint32_t &amp;pow10)</td></tr>
+<tr class="separator:a36ded358763b5dbcea9867660fbe4e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc841e0bee12fd6489d49cf7bd07bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a5bc841e0bee12fd6489d49cf7bd07bb4">grisu2_round</a> (char *buf, int len, std::uint64_t dist, std::uint64_t delta, std::uint64_t rest, std::uint64_t ten_k)</td></tr>
+<tr class="separator:a5bc841e0bee12fd6489d49cf7bd07bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b899c72b0e1e3dd46d75c2b4e6bcdfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a9b899c72b0e1e3dd46d75c2b4e6bcdfb">grisu2_digit_gen</a> (char *buffer, int &amp;length, int &amp;decimal_exponent, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_minus, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> w, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_plus)</td></tr>
+<tr class="separator:a9b899c72b0e1e3dd46d75c2b4e6bcdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b681dcb8569b9784c6dccfadb01633"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633">grisu2</a> (char *buf, int &amp;len, int &amp;decimal_exponent, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> m_minus, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> v, <a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> m_plus)</td></tr>
+<tr class="separator:a05b681dcb8569b9784c6dccfadb01633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7a9670a4f4704a5d0347ad7588576b"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:aab7a9670a4f4704a5d0347ad7588576b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b">grisu2</a> (char *buf, int &amp;len, int &amp;decimal_exponent, FloatType value)</td></tr>
+<tr class="separator:aab7a9670a4f4704a5d0347ad7588576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90f19ed10d8133b727df4b9bc5ddf5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="json_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ad90f19ed10d8133b727df4b9bc5ddf5c">append_exponent</a> (char *buf, int e)</td></tr>
+<tr class="memdesc:ad90f19ed10d8133b727df4b9bc5ddf5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">appends a decimal representation of e to buf  <a href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ad90f19ed10d8133b727df4b9bc5ddf5c">更多...</a><br /></td></tr>
+<tr class="separator:ad90f19ed10d8133b727df4b9bc5ddf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab441f2761e33839ca48bc2225e14a2a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="json_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ab441f2761e33839ca48bc2225e14a2a9">format_buffer</a> (char *buf, int len, int decimal_exponent, int min_exp, int max_exp)</td></tr>
+<tr class="memdesc:ab441f2761e33839ca48bc2225e14a2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">prettify v = buf * 10^decimal_exponent  <a href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ab441f2761e33839ca48bc2225e14a2a9">更多...</a><br /></td></tr>
+<tr class="separator:ab441f2761e33839ca48bc2225e14a2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ac1ea1316de0b4a219f707c76b1db1966"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ac1ea1316de0b4a219f707c76b1db1966">kAlpha</a> = -60</td></tr>
+<tr class="separator:ac1ea1316de0b4a219f707c76b1db1966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a750fcc38da1ce68b7e25ab3a230e20"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a4a750fcc38da1ce68b7e25ab3a230e20">kGamma</a> = -32</td></tr>
+<tr class="separator:a4a750fcc38da1ce68b7e25ab3a230e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>implements the Grisu2 algorithm for binary to decimal floating-point conversion. </p>
+<p>This implementation is a slightly modified version of the reference implementation which may be obtained from <a href="http://florian.loitsch.com/publications">http://florian.loitsch.com/publications</a> (bench.tar.gz).</p>
+<p>The code is distributed under the MIT license, Copyright (c) 2009 Florian Loitsch.</p>
+<p>For a detailed description of the algorithm see:</p>
+<p>[1] Loitsch, "Printing Floating-Point Numbers Quickly and Accurately with
+    Integers", Proceedings of the ACM SIGPLAN 2010 Conference on Programming Language Design and Implementation, PLDI 2010 [2] Burger, Dybvig, "Printing Floating-Point Numbers Quickly and Accurately", Proceedings of the ACM SIGPLAN 1996 Conference on Programming Language Design and Implementation, PLDI 1996 </p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="ad90f19ed10d8133b727df4b9bc5ddf5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90f19ed10d8133b727df4b9bc5ddf5c">&#9670;&nbsp;</a></span>append_exponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="json_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char* nlohmann::detail::dtoa_impl::append_exponent </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>appends a decimal representation of e to buf </p>
+<dl class="section return"><dt>返回</dt><dd>a pointer to the element following the exponent. </dd></dl>
+<dl class="section pre"><dt>前置条件</dt><dd>-1000 &lt; e &lt; 1000 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13572">13572</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_ad90f19ed10d8133b727df4b9bc5ddf5c_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_ad90f19ed10d8133b727df4b9bc5ddf5c_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_ad90f19ed10d8133b727df4b9bc5ddf5c_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_ad90f19ed10d8133b727df4b9bc5ddf5c_icgraph">
+<area shape="rect" title="appends a decimal representation of e to buf" alt="" coords="424,5,607,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ab441f2761e33839ca48bc2225e14a2a9" title="prettify v = buf * 10^decimal_exponent" alt="" coords="207,5,376,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="5,5,159,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22b6e37654ac93c6d0d9c06ec1bf5ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b6e37654ac93c6d0d9c06ec1bf5ded">&#9670;&nbsp;</a></span>compute_boundaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1boundaries.html">boundaries</a> nlohmann::detail::dtoa_impl::compute_boundaries </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the (normalized) diyfp representing the input number 'value' and its boundaries.</p>
+<dl class="section pre"><dt>前置条件</dt><dd>value must be finite and positive </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l12831">12831</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_cgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_cgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_cgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,208,80"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a2246b5b40c7c6992153ef174063d6aa6" title="normalize x such that the significand is &gt;= 2^(q&#45;1)" alt="" coords="266,5,438,47"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a6b6665e467ebabe0c0f7418d3fe4b118" title="normalize x such that the result has the exponent E" alt="" coords="256,71,448,112"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a22b6e37654ac93c6d0d9c06ec1bf5ded_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,425,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36ded358763b5dbcea9867660fbe4e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ded358763b5dbcea9867660fbe4e28">&#9670;&nbsp;</a></span>find_largest_pow10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nlohmann::detail::dtoa_impl::find_largest_pow10 </td>
+          <td>(</td>
+          <td class="paramtype">const std::uint32_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>pow10</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For n != 0, returns k, such that pow10 := 10^(k-1) &lt;= n &lt; 10^k. For n == 0, returns 1 and sets pow10 := 1. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13134">13134</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a36ded358763b5dbcea9867660fbe4e28_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a36ded358763b5dbcea9867660fbe4e28_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a36ded358763b5dbcea9867660fbe4e28_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a36ded358763b5dbcea9867660fbe4e28_icgraph">
+<area shape="rect" title=" " alt="" coords="661,39,855,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a9b899c72b0e1e3dd46d75c2b4e6bcdfb" title=" " alt="" coords="440,39,613,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633" title=" " alt="" coords="223,39,392,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="13,71,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab441f2761e33839ca48bc2225e14a2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab441f2761e33839ca48bc2225e14a2a9">&#9670;&nbsp;</a></span>format_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="json_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char* nlohmann::detail::dtoa_impl::format_buffer </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_exp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>prettify v = buf * 10^decimal_exponent </p>
+<p>If v is in the range [10^min_exp, 10^max_exp) it will be printed in fixed-point notation. Otherwise it will be printed in exponential notation.</p>
+<dl class="section pre"><dt>前置条件</dt><dd>min_exp &lt; 0 </dd>
+<dd>
+max_exp &gt; 0 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13624">13624</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_cgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_cgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_cgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_cgraph">
+<area shape="rect" title="prettify v = buf * 10^decimal_exponent" alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#ad90f19ed10d8133b727df4b9bc5ddf5c" title="appends a decimal representation of e to buf" alt="" coords="223,5,405,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_ab441f2761e33839ca48bc2225e14a2a9_icgraph">
+<area shape="rect" title="prettify v = buf * 10^decimal_exponent" alt="" coords="207,5,376,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="5,5,159,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adbf329a18c5cf854a3477327afd2200b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf329a18c5cf854a3477327afd2200b">&#9670;&nbsp;</a></span>get_cached_power_for_binary_exponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1cached__power.html">cached_power</a> nlohmann::detail::dtoa_impl::get_cached_power_for_binary_exponent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For a normalized diyfp w = f * 2^e, this function returns a (normalized) cached power-of-ten c = f_c * 2^e_c, such that the exponent of the product w * c satisfies (Definition 3.2 from [1]) </p><pre class="fragment"> alpha &lt;= e_c + e + q &lt;= gamma.
+</pre> 
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l12970">12970</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_adbf329a18c5cf854a3477327afd2200b_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_adbf329a18c5cf854a3477327afd2200b_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_adbf329a18c5cf854a3477327afd2200b_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_adbf329a18c5cf854a3477327afd2200b_icgraph">
+<area shape="rect" title=" " alt="" coords="440,31,627,87"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633" title=" " alt="" coords="223,39,392,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="13,71,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05b681dcb8569b9784c6dccfadb01633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b681dcb8569b9784c6dccfadb01633">&#9670;&nbsp;</a></span>grisu2() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a> nlohmann::detail::dtoa_impl::grisu2 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>m_minus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>m_plus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>v = buf * 10^decimal_exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.e. &gt;= max_digits10. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13472">13472</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_cgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_cgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_cgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_cgraph">
+<area shape="rect" title=" " alt="" coords="5,100,175,141"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#adbf329a18c5cf854a3477327afd2200b" title=" " alt="" coords="223,19,409,75"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a9b899c72b0e1e3dd46d75c2b4e6bcdfb" title=" " alt="" coords="229,100,403,141"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aa5f250d12ce89c81fdb08900c6a823e8" title="returns x * y" alt="" coords="231,165,401,207"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a36ded358763b5dbcea9867660fbe4e28" title=" " alt="" coords="457,5,651,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a5bc841e0bee12fd6489d49cf7bd07bb4" title=" " alt="" coords="469,71,639,112"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="529,137,579,163"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aeb26771af54ad73598c1a0430d65d884" title="returns x &#45; y" alt="" coords="469,188,639,229"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a05b681dcb8569b9784c6dccfadb01633_icgraph">
+<area shape="rect" title=" " alt="" coords="223,39,392,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="13,71,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab7a9670a4f4704a5d0347ad7588576b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7a9670a4f4704a5d0347ad7588576b">&#9670;&nbsp;</a></span>grisu2() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a> nlohmann::detail::dtoa_impl::grisu2 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>v = buf * 10^decimal_exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.e. &gt;= max_digits10. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13532">13532</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_aab7a9670a4f4704a5d0347ad7588576b_cgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_aab7a9670a4f4704a5d0347ad7588576b_cgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_aab7a9670a4f4704a5d0347ad7588576b_cgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_aab7a9670a4f4704a5d0347ad7588576b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,144,175,185"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a22b6e37654ac93c6d0d9c06ec1bf5ded" title=" " alt="" coords="223,71,425,112"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633" title=" " alt="" coords="239,180,409,221"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a2246b5b40c7c6992153ef174063d6aa6" title="normalize x such that the significand is &gt;= 2^(q&#45;1)" alt="" coords="483,5,655,47"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a6b6665e467ebabe0c0f7418d3fe4b118" title="normalize x such that the result has the exponent E" alt="" coords="473,71,665,112"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#adbf329a18c5cf854a3477327afd2200b" title=" " alt="" coords="476,137,663,193"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a9b899c72b0e1e3dd46d75c2b4e6bcdfb" title=" " alt="" coords="483,217,656,259"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aa5f250d12ce89c81fdb08900c6a823e8" title="returns x * y" alt="" coords="485,283,654,324"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a36ded358763b5dbcea9867660fbe4e28" title=" " alt="" coords="713,123,907,164"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a5bc841e0bee12fd6489d49cf7bd07bb4" title=" " alt="" coords="725,188,895,229"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="785,254,835,281"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aeb26771af54ad73598c1a0430d65d884" title="returns x &#45; y" alt="" coords="725,305,895,347"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b899c72b0e1e3dd46d75c2b4e6bcdfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b899c72b0e1e3dd46d75c2b4e6bcdfb">&#9670;&nbsp;</a></span>grisu2_digit_gen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a> nlohmann::detail::dtoa_impl::grisu2_digit_gen </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>M_minus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>M_plus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generates V = buffer * 10^decimal_exponent, such that M- &lt;= V &lt;= M+. M- and M+ must be normalized and share the same exponent -60 &lt;= e &lt;= -32. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13231">13231</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_cgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_cgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_cgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,100,179,141"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a36ded358763b5dbcea9867660fbe4e28" title=" " alt="" coords="227,5,420,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a5bc841e0bee12fd6489d49cf7bd07bb4" title=" " alt="" coords="239,71,408,112"/>
+<area shape="rect" href="check__gmp_8cpp.html#aef6b349ea60ff86ce60e7e387b1d913a" title=" " alt="" coords="298,137,349,163"/>
+<area shape="rect" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aeb26771af54ad73598c1a0430d65d884" title="returns x &#45; y" alt="" coords="239,188,408,229"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a9b899c72b0e1e3dd46d75c2b4e6bcdfb_icgraph">
+<area shape="rect" title=" " alt="" coords="440,39,613,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633" title=" " alt="" coords="223,39,392,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="13,71,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5bc841e0bee12fd6489d49cf7bd07bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc841e0bee12fd6489d49cf7bd07bb4">&#9670;&nbsp;</a></span>grisu2_round()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a> nlohmann::detail::dtoa_impl::grisu2_round </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>delta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>rest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>ten_k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l13190">13190</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacenlohmann_1_1detail_1_1dtoa__impl_a5bc841e0bee12fd6489d49cf7bd07bb4_icgraph.png" border="0" usemap="#namespacenlohmann_1_1detail_1_1dtoa__impl_a5bc841e0bee12fd6489d49cf7bd07bb4_icgraph" alt=""/></div>
+<map name="namespacenlohmann_1_1detail_1_1dtoa__impl_a5bc841e0bee12fd6489d49cf7bd07bb4_icgraph" id="namespacenlohmann_1_1detail_1_1dtoa__impl_a5bc841e0bee12fd6489d49cf7bd07bb4_icgraph">
+<area shape="rect" title=" " alt="" coords="661,39,831,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a9b899c72b0e1e3dd46d75c2b4e6bcdfb" title=" " alt="" coords="440,39,613,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#a05b681dcb8569b9784c6dccfadb01633" title=" " alt="" coords="223,39,392,80"/>
+<area shape="rect" href="namespacenlohmann_1_1detail_1_1dtoa__impl.html#aab7a9670a4f4704a5d0347ad7588576b" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a6cca370ac6c99294dbe4fe24716a57dd" title="generates a decimal representation of the floating&#45;point number value in [first, last)." alt="" coords="13,71,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c5d30eb51e5e994a3f48bde104d2ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5d30eb51e5e994a3f48bde104d2ce8">&#9670;&nbsp;</a></span>reinterpret_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Target , typename Source &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Target nlohmann::detail::dtoa_impl::reinterpret_bits </td>
+          <td>(</td>
+          <td class="paramtype">const Source&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l12690">12690</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ac1ea1316de0b4a219f707c76b1db1966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ea1316de0b4a219f707c76b1db1966">&#9670;&nbsp;</a></span>kAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int nlohmann::detail::dtoa_impl::kAlpha = -60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l12953">12953</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4a750fcc38da1ce68b7e25ab3a230e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a750fcc38da1ce68b7e25ab3a230e20">&#9670;&nbsp;</a></span>kGamma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int nlohmann::detail::dtoa_impl::kGamma = -32</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l12954">12954</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

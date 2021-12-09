@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/external/mtl4/implicit_euler_mtl4.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_fe1c5e4aa41cd872964ae7e484bdab9a.html">external</a></li><li class="navelem"><a class="el" href="dir_e3f8d883f365c23a0e3f9f5ab258562b.html">mtl4</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">implicit_euler_mtl4.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="implicit__euler__mtl4_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">[begin_description]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Modification of the implicit Euler method, works with the MTL4 matrix library only. </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">[end_description]</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Copyright 2009-2011 Karsten Ahnert</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">Copyright 2009-2011 Mario Mulansky</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">Copyright 2012 Andreas Angelopoulos</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">(See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_EXTERNAL_IMPLICIT_EULER_MTL4_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_EXTERNAL_IMPLICIT_EULER_MTL4_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="bind_8hpp.html">boost/numeric/odeint/util/bind.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="unwrap__reference_8hpp.html">boost/numeric/odeint/util/unwrap_reference.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stepper__categories_8hpp.html">boost/numeric/odeint/stepper/stepper_categories.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mtl4__resize_8hpp.html">boost/numeric/odeint/external/mtl4/mtl4_resize.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/mtl/mtl.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/itl/itl.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> ValueType , <span class="keyword">class</span> Resizer = initially_resizer &gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html">implicit_euler_mtl4</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a65cd0dbb67ac7ddfb1952842a5f98dd8">   45</a></span>&#160;    <span class="keyword">typedef</span> ValueType <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a65cd0dbb67ac7ddfb1952842a5f98dd8">value_type</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a5b2040ad1312d6d6699f2e145e3d0f65">   46</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a65cd0dbb67ac7ddfb1952842a5f98dd8">value_type</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a5b2040ad1312d6d6699f2e145e3d0f65">time_type</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a8a327bbc1425020822a4b342212bf7e0">   47</a></span>&#160;    <span class="keyword">typedef</span> mtl::dense_vector&lt;value_type&gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a8a327bbc1425020822a4b342212bf7e0">state_type</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a45b4884910193e7e282016024c67bc3e">   49</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper&lt; state_type &gt;</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a45b4884910193e7e282016024c67bc3e">wrapped_state_type</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a96013cd9dd60786d47fafb0a8cad702a">   50</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a8a327bbc1425020822a4b342212bf7e0">state_type</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a96013cd9dd60786d47fafb0a8cad702a">deriv_type</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ab11cdb85b43774acebf988a9eae85e7a">   51</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper&lt; deriv_type &gt;</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ab11cdb85b43774acebf988a9eae85e7a">wrapped_deriv_type</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#abe7c2468b43fa38da5b02f9b4992931b">   52</a></span>&#160;    <span class="keyword">typedef</span> mtl::compressed2D&lt; value_type &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#abe7c2468b43fa38da5b02f9b4992931b">matrix_type</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ae91f15c62518ef602df6a912de38c7ce">   53</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">state_wrapper&lt; matrix_type &gt;</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ae91f15c62518ef602df6a912de38c7ce">wrapped_matrix_type</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a16d83223f7087576f8c147a5174c030c">   55</a></span>&#160;    <span class="keyword">typedef</span> Resizer <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a16d83223f7087576f8c147a5174c030c">resizer_type</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a31a88f7c9b262016fe84f44caa16dce2">   56</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a31a88f7c9b262016fe84f44caa16dce2">stepper_category</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ace39cb35102f3cc23bb6c05e549669f1">   58</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html">implicit_euler_mtl4&lt; ValueType , Resizer &gt;</a> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ace39cb35102f3cc23bb6c05e549669f1">stepper_type</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a7d8abb521b68c2c0764ae1eb12069275">   61</a></span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a7d8abb521b68c2c0764ae1eb12069275">implicit_euler_mtl4</a>( <span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a65cd0dbb67ac7ddfb1952842a5f98dd8">value_type</a> epsilon = 1E-6 )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        : m_epsilon( epsilon ) , m_resizer() ,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          m_dxdt() , m_x() ,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          m_identity() , m_jacobi()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    { }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> System &gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#afe88453c8293e02804776c6eaf116e84">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#afe88453c8293e02804776c6eaf116e84">do_step</a>( System system , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a8a327bbc1425020822a4b342212bf7e0">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a5b2040ad1312d6d6699f2e145e3d0f65">time_type</a> t , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a5b2040ad1312d6d6699f2e145e3d0f65">time_type</a> dt )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; System &gt;::type</a> system_type;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; typename system_type::first_type &gt;::type</a> deriv_func_type;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; typename system_type::second_type &gt;::type</a> jacobi_func_type;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        system_type &amp;<a class="code" href="structsys.html">sys</a> = system;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        deriv_func_type &amp;deriv_func = <a class="code" href="structsys.html">sys</a>.first;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        jacobi_func_type &amp;jacobi_func = <a class="code" href="structsys.html">sys</a>.second;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_resizer.adjust_size( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , detail::bind(</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                   &amp;stepper_type::template <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl&lt; state_type &gt;</a> , detail::ref( *<span class="keyword">this</span> ) , detail::_1 ) );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        m_identity.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> = 1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        t += <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_x.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        deriv_func( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , m_dxdt.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> , t );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        jacobi_func( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , m_jacobi.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> , t );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        m_dxdt.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> *= -<a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        m_jacobi.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> *= <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        m_jacobi.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> -= m_identity.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> ;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// using ilu_0 preconditioning -incomplete LU factorisation</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// itl::pc::diagonal&lt;matrix_type,double&gt; L(m_jacobi.m_v);</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        itl::pc::ilu_0&lt;matrix_type&gt; L( m_jacobi.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        solve( m_jacobi.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> , m_x.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> , m_dxdt.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a> , L );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>+= m_x.<a class="code" href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">m_v</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> StateType &gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a42882057a36f9e9120cf5e7def42ff0f">  109</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a42882057a36f9e9120cf5e7def42ff0f">adjust_size</a>( <span class="keyword">const</span> StateType &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">resize_impl</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">      Applying approximate iterative linear solvers</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">      default solver is Biconjugate gradient stabilized method</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">      itl::bicgstab(A, x, b, L, iter);</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> LinearOperator, <span class="keyword">class</span> HilbertSpaceX, <span class="keyword">class</span> HilbertSpaceB, <span class="keyword">class</span> Preconditioner&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> solve(<span class="keyword">const</span> LinearOperator&amp; A, HilbertSpaceX&amp; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>, <span class="keyword">const</span> HilbertSpaceB&amp; <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a>,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;               <span class="keyword">const</span> Preconditioner&amp; L, <span class="keywordtype">int</span> max_iteractions =500)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// Termination criterion: r &lt; 1e-6 * b or N iterations</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        itl::basic_iteration&lt; double &gt; iter( <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , max_iteractions , 1e-6 );</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        itl::bicgstab( A , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a> , L , iter );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">template</span>&lt; <span class="keyword">class</span> StateIn &gt;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">bool</span> resize_impl( <span class="keyword">const</span> StateIn &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> )</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">bool</span> resized = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        resized |= <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0fe86ae90d3313558204eaadc2bb19df">adjust_size_by_resizeability</a>( m_dxdt , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">typename</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">is_resizeable&lt;deriv_type&gt;::type</a>() );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        resized |= <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0fe86ae90d3313558204eaadc2bb19df">adjust_size_by_resizeability</a>( m_x , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">typename</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01state__type_01_4.html#a7b3ad25cd7726ee6ebd4503779dda77b">is_resizeable&lt;state_type&gt;::type</a>() );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        resized |= <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0fe86ae90d3313558204eaadc2bb19df">adjust_size_by_resizeability</a>( m_identity , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">typename</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">is_resizeable&lt;matrix_type&gt;::type</a>() );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        resized |= <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a0fe86ae90d3313558204eaadc2bb19df">adjust_size_by_resizeability</a>( m_jacobi , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <span class="keyword">typename</span> <a class="code" href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">is_resizeable&lt;matrix_type&gt;::type</a>() );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> resized;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> m_epsilon;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a16d83223f7087576f8c147a5174c030c">resizer_type</a> m_resizer;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ab11cdb85b43774acebf988a9eae85e7a">wrapped_deriv_type</a> m_dxdt;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a45b4884910193e7e282016024c67bc3e">wrapped_state_type</a> m_x;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ae91f15c62518ef602df6a912de38c7ce">wrapped_matrix_type</a> m_identity;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ae91f15c62518ef602df6a912de38c7ce">wrapped_matrix_type</a> m_jacobi;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;} <span class="comment">// odeint</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;} <span class="comment">// numeric</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;} <span class="comment">// boost</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif // BOOST_NUMERIC_ODEINT_EXTERNAL_IMPLICIT_EULER_MTL4_HPP_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a0fe86ae90d3313558204eaadc2bb19df"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a0fe86ae90d3313558204eaadc2bb19df">boost::numeric::odeint::adjust_size_by_resizeability</a></div><div class="ttdeci">bool adjust_size_by_resizeability(ResizeWrappedState &amp;x, const State &amp;y, boost::true_type)</div><div class="ttdef"><b>Definition:</b> <a href="resizer_8hpp_source.html#l00031">resizer.hpp:31</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a65cd0dbb67ac7ddfb1952842a5f98dd8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a65cd0dbb67ac7ddfb1952842a5f98dd8">boost::numeric::odeint::implicit_euler_mtl4::value_type</a></div><div class="ttdeci">ValueType value_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00045">implicit_euler_mtl4.hpp:45</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a8f5a312161775190357a664a77a831a3"><div class="ttname"><a href="chaotic__system_8cpp.html#a8f5a312161775190357a664a77a831a3">b</a></div><div class="ttdeci">const double b</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00030">chaotic_system.cpp:30</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_ace39cb35102f3cc23bb6c05e549669f1"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ace39cb35102f3cc23bb6c05e549669f1">boost::numeric::odeint::implicit_euler_mtl4::stepper_type</a></div><div class="ttdeci">implicit_euler_mtl4&lt; ValueType, Resizer &gt; stepper_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00058">implicit_euler_mtl4.hpp:58</a></div></div>
+<div class="ttc" id="aunwrap__reference_8hpp_html"><div class="ttname"><a href="unwrap__reference_8hpp.html">unwrap_reference.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01state__type_01_4_html_a7b3ad25cd7726ee6ebd4503779dda77b"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01state__type_01_4.html#a7b3ad25cd7726ee6ebd4503779dda77b">boost::numeric::odeint::is_resizeable&lt; state_type &gt;::type</a></div><div class="ttdeci">boost::true_type type</div><div class="ttdef"><b>Definition:</b> <a href="list__lattice_8cpp_source.html#l00027">list_lattice.cpp:27</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="abind_8hpp_html"><div class="ttname"><a href="bind_8hpp.html">bind.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html">boost::numeric::odeint::implicit_euler_mtl4</a></div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00040">implicit_euler_mtl4.hpp:40</a></div></div>
+<div class="ttc" id="astepper__categories_8hpp_html"><div class="ttname"><a href="stepper__categories_8hpp.html">stepper_categories.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a96013cd9dd60786d47fafb0a8cad702a"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a96013cd9dd60786d47fafb0a8cad702a">boost::numeric::odeint::implicit_euler_mtl4::deriv_type</a></div><div class="ttdeci">state_type deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00050">implicit_euler_mtl4.hpp:50</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a42882057a36f9e9120cf5e7def42ff0f"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a42882057a36f9e9120cf5e7def42ff0f">boost::numeric::odeint::implicit_euler_mtl4::adjust_size</a></div><div class="ttdeci">void adjust_size(const StateType &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00109">implicit_euler_mtl4.hpp:109</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a8a327bbc1425020822a4b342212bf7e0"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a8a327bbc1425020822a4b342212bf7e0">boost::numeric::odeint::implicit_euler_mtl4::state_type</a></div><div class="ttdeci">mtl::dense_vector&lt; value_type &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00047">implicit_euler_mtl4.hpp:47</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html">boost::numeric::odeint::state_wrapper&lt; state_type &gt;</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1state__wrapper_html_a305d2ec9b0258646f1f9bf0b73b702fc"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1state__wrapper.html#a305d2ec9b0258646f1f9bf0b73b702fc">boost::numeric::odeint::state_wrapper::m_v</a></div><div class="ttdeci">V m_v</div><div class="ttdef"><b>Definition:</b> <a href="state__wrapper_8hpp_source.html#l00040">state_wrapper.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1stepper__tag_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">boost::numeric::odeint::stepper_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__categories_8hpp_source.html#l00034">stepper_categories.hpp:34</a></div></div>
+<div class="ttc" id="amtl4__resize_8hpp_html"><div class="ttname"><a href="mtl4__resize_8hpp.html">mtl4_resize.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_ae91f15c62518ef602df6a912de38c7ce"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ae91f15c62518ef602df6a912de38c7ce">boost::numeric::odeint::implicit_euler_mtl4::wrapped_matrix_type</a></div><div class="ttdeci">state_wrapper&lt; matrix_type &gt; wrapped_matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00053">implicit_euler_mtl4.hpp:53</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a7d8abb521b68c2c0764ae1eb12069275"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a7d8abb521b68c2c0764ae1eb12069275">boost::numeric::odeint::implicit_euler_mtl4::implicit_euler_mtl4</a></div><div class="ttdeci">implicit_euler_mtl4(const value_type epsilon=1E-6)</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00061">implicit_euler_mtl4.hpp:61</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a5b2040ad1312d6d6699f2e145e3d0f65"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a5b2040ad1312d6d6699f2e145e3d0f65">boost::numeric::odeint::implicit_euler_mtl4::time_type</a></div><div class="ttdeci">value_type time_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00046">implicit_euler_mtl4.hpp:46</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_ab11cdb85b43774acebf988a9eae85e7a"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#ab11cdb85b43774acebf988a9eae85e7a">boost::numeric::odeint::implicit_euler_mtl4::wrapped_deriv_type</a></div><div class="ttdeci">state_wrapper&lt; deriv_type &gt; wrapped_deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00051">implicit_euler_mtl4.hpp:51</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1is__resizeable_html_a18f88ea53250c74989de11db172f88d0"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1is__resizeable.html#a18f88ea53250c74989de11db172f88d0">boost::numeric::odeint::is_resizeable::type</a></div><div class="ttdeci">boost::false_type type</div><div class="ttdef"><b>Definition:</b> <a href="is__resizeable_8hpp_source.html#l00047">is_resizeable.hpp:47</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1resize__impl_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1resize__impl.html">boost::numeric::odeint::resize_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="resize_8hpp_source.html#l00040">resize.hpp:40</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_afe88453c8293e02804776c6eaf116e84"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#afe88453c8293e02804776c6eaf116e84">boost::numeric::odeint::implicit_euler_mtl4::do_step</a></div><div class="ttdeci">void do_step(System system, state_type &amp;x, time_type t, time_type dt)</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00069">implicit_euler_mtl4.hpp:69</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a31a88f7c9b262016fe84f44caa16dce2"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a31a88f7c9b262016fe84f44caa16dce2">boost::numeric::odeint::implicit_euler_mtl4::stepper_category</a></div><div class="ttdeci">stepper_tag stepper_category</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00056">implicit_euler_mtl4.hpp:56</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_abe7c2468b43fa38da5b02f9b4992931b"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#abe7c2468b43fa38da5b02f9b4992931b">boost::numeric::odeint::implicit_euler_mtl4::matrix_type</a></div><div class="ttdeci">mtl::compressed2D&lt; value_type &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00052">implicit_euler_mtl4.hpp:52</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a45b4884910193e7e282016024c67bc3e"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a45b4884910193e7e282016024c67bc3e">boost::numeric::odeint::implicit_euler_mtl4::wrapped_state_type</a></div><div class="ttdeci">state_wrapper&lt; state_type &gt; wrapped_state_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00049">implicit_euler_mtl4.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4_html_a16d83223f7087576f8c147a5174c030c"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler__mtl4.html#a16d83223f7087576f8c147a5174c030c">boost::numeric::odeint::implicit_euler_mtl4::resizer_type</a></div><div class="ttdeci">Resizer resizer_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler__mtl4_8hpp_source.html#l00055">implicit_euler_mtl4.hpp:55</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

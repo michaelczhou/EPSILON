@@ -1,0 +1,1263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: README</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">README </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a href="https://github.com/nlohmann/json/releases"><img src="https://raw.githubusercontent.com/nlohmann/json/master/doc/json.gif" alt="JSON for Modern C++" class="inline"/></a></p>
+<p><a href="https://travis-ci.org/nlohmann/json"><object type="image/svg+xml" data="https://travis-ci.org/nlohmann/json.svg?branch=master" style="pointer-events: none;">Build Status</object></a> <a href="https://ci.appveyor.com/project/nlohmann/json"><img src="https://ci.appveyor.com/api/projects/status/1acb366xfyg3qybk/branch/develop?svg=true" alt="Build Status" class="inline"/></a> <a href="https://circleci.com/gh/nlohmann/json"><object type="image/svg+xml" data="https://circleci.com/gh/nlohmann/json.svg?style=svg" style="pointer-events: none;">Build Status</object></a> <a href="https://coveralls.io/r/nlohmann/json"><object type="image/svg+xml" data="https://img.shields.io/coveralls/nlohmann/json.svg" style="pointer-events: none;">Coverage Status</object></a> <a href="https://scan.coverity.com/projects/nlohmann-json"><object type="image/svg+xml" data="https://scan.coverity.com/projects/5550/badge.svg" style="pointer-events: none;">Coverity Scan Build Status</object></a> <a href="https://www.codacy.com/app/nlohmann/json?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nlohmann/json&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f3732b3327e34358a0e9d1fe9f661f08" alt="Codacy Badge" class="inline"/></a> <a href="https://lgtm.com/projects/g/nlohmann/json/context:cpp"><object type="image/svg+xml" data="https://img.shields.io/lgtm/grade/cpp/g/nlohmann/json.svg?logo=lgtm&amp;logoWidth=18" style="pointer-events: none;">Language grade: C/C++</object></a> <a href="https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&amp;can=1&amp;q=proj:json"><object type="image/svg+xml" data="https://oss-fuzz-build-logs.storage.googleapis.com/badges/json.svg" style="pointer-events: none;">Fuzzing Status</object></a> <a href="https://wandbox.org/permlink/TarF5pPn9NtHQjhf"><object type="image/svg+xml" data="https://img.shields.io/badge/try-online-blue.svg" style="pointer-events: none;">Try online</object></a> <a href="http://nlohmann.github.io/json"><object type="image/svg+xml" data="https://img.shields.io/badge/docs-doxygen-blue.svg" style="pointer-events: none;">Documentation</object></a> <a href="https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT"><object type="image/svg+xml" data="https://img.shields.io/badge/license-MIT-blue.svg" style="pointer-events: none;">GitHub license</object></a> <a href="https://github.com/nlohmann/json/releases"><object type="image/svg+xml" data="https://img.shields.io/github/release/nlohmann/json.svg" style="pointer-events: none;">GitHub Releases</object></a> <a href="http://github.com/nlohmann/json/issues"><object type="image/svg+xml" data="https://img.shields.io/github/issues/nlohmann/json.svg" style="pointer-events: none;">GitHub Issues</object></a> <a href="http://isitmaintained.com/project/nlohmann/json" title="Average time to resolve an issue"><object type="image/svg+xml" data="http://isitmaintained.com/badge/resolution/nlohmann/json.svg" style="pointer-events: none;">Average time to resolve an issue</object></a> <a href="https://bestpractices.coreinfrastructure.org/projects/289"><img src="https://bestpractices.coreinfrastructure.org/projects/289/badge" alt="CII Best Practices" class="inline"/></a></p>
+<ul>
+<li><a href="#design-goals">Design goals</a></li>
+<li><a href="#integration">Integration</a><ul>
+<li><a href="#cmake">CMake</a></li>
+<li><a href="#package-managers">Package Managers</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#json-as-first-class-data-type">JSON as first-class data type</a></li>
+<li><a href="#serialization--deserialization">Serialization / Deserialization</a></li>
+<li><a href="#stl-like-access">STL-like access</a></li>
+<li><a href="#conversion-from-stl-containers">Conversion from STL containers</a></li>
+<li><a href="#json-pointer-and-json-patch">JSON Pointer and JSON Patch</a></li>
+<li><a href="#json-merge-patch">JSON Merge Patch</a></li>
+<li><a href="#implicit-conversions">Implicit conversions</a></li>
+<li><a href="#arbitrary-types-conversions">Conversions to/from arbitrary types</a></li>
+<li><a href="#specializing-enum-conversion">Specializing enum conversion</a></li>
+<li><a href="#binary-formats-bson-cbor-messagepack-and-ubjson">Binary formats (BSON, CBOR, MessagePack, and UBJSON)</a></li>
+</ul>
+</li>
+<li><a href="#supported-compilers">Supported compilers</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#thanks">Thanks</a></li>
+<li><a href="#used-third-party-tools">Used third-party tools</a></li>
+<li><a href="#projects-using-json-for-modern-c">Projects using JSON for Modern C++</a></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#execute-unit-tests">Execute unit tests</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Design goals</h2>
+<p>There are myriads of <a href="http://json.org">JSON</a> libraries out there, and each may even have its reason to exist. Our class had these design goals:</p>
+<ul>
+<li><b>Intuitive syntax</b>. In languages such as Python, JSON feels like a first class data type. We used all the operator magic of modern C++ to achieve the same feeling in your code. Check out the <a href="#examples">examples below</a> and you'll know what I mean.</li>
+<li><b>Trivial integration</b>. Our whole code consists of a single header file <a href="https://github.com/nlohmann/json/blob/develop/single_include/nlohmann/json.hpp"><code>json.hpp</code></a>. That's it. No library, no subproject, no dependencies, no complex build system. The class is written in vanilla C++11. All in all, everything should require no adjustment of your compiler flags or project settings.</li>
+<li><b>Serious testing</b>. Our class is heavily <a href="https://github.com/nlohmann/json/tree/develop/test/src">unit-tested</a> and covers <a href="https://coveralls.io/r/nlohmann/json">100%</a> of the code, including all exceptional behavior. Furthermore, we checked with <a href="http://valgrind.org">Valgrind</a> and the <a href="https://clang.llvm.org/docs/index.html">Clang Sanitizers</a> that there are no memory leaks. <a href="https://github.com/google/oss-fuzz/tree/master/projects/json">Google OSS-Fuzz</a> additionally runs fuzz tests against all parsers 24/7, effectively executing billions of tests so far. To maintain high quality, the project is following the <a href="https://bestpractices.coreinfrastructure.org/projects/289">Core Infrastructure Initiative (CII) best practices</a>.</li>
+</ul>
+<p>Other aspects were not so important to us:</p>
+<ul>
+<li><b>Memory efficiency</b>. Each JSON object has an overhead of one pointer (the maximal size of a union) and one enumeration element (1 byte). The default generalization uses the following C++ data types: <code>std::string</code> for strings, <code>int64_t</code>, <code>uint64_t</code> or <code>double</code> for numbers, <code>std::map</code> for objects, <code>std::vector</code> for arrays, and <code>bool</code> for Booleans. However, you can template the generalized class <code>basic_json</code> to your needs.</li>
+<li><b>Speed</b>. There are certainly <a href="https://github.com/miloyip/nativejson-benchmark#parsing-time">faster JSON libraries</a> out there. However, if your goal is to speed up your development by adding JSON support with a single header, then this library is the way to go. If you know how to use a <code>std::vector</code> or <code>std::map</code>, you are already set.</li>
+</ul>
+<p>See the <a href="https://github.com/nlohmann/json/blob/master/.github/CONTRIBUTING.md#please-dont">contribution guidelines</a> for more information.</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Integration</h2>
+<p><a href="https://github.com/nlohmann/json/blob/develop/single_include/nlohmann/json.hpp"><code>json.hpp</code></a> is the single required file in <code>single_include/nlohmann</code> or <a href="https://github.com/nlohmann/json/releases">released here</a>. You need to add</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// for convenience</span></div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> = <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">nlohmann::json</a>;</div>
+</div><!-- fragment --><p>to the files you want to process JSON and set the necessary switches to enable C++11 (e.g., <code>-std=c++11</code> for GCC and Clang).</p>
+<p>You can further use file <a href="https://github.com/nlohmann/json/blob/develop/include/nlohmann/json_fwd.hpp"><code>include/nlohmann/json_fwd.hpp</code></a> for forward-declarations. The installation of json_fwd.hpp (as part of cmake's install step), can be achieved by setting <code>-DJSON_MultipleHeaders=ON</code>.</p>
+<h3><a class="anchor" id="autotoc_md27"></a>
+CMake</h3>
+<p>You can also use the <code>nlohmann_json::nlohmann_json</code> interface target in CMake. This target populates the appropriate usage requirements for <code>INTERFACE_INCLUDE_DIRECTORIES</code> to point to the appropriate include directories and <code>INTERFACE_COMPILE_FEATURES</code> for the necessary C++11 flags.</p>
+<h4><a class="anchor" id="autotoc_md28"></a>
+External</h4>
+<p>To use this library from a CMake project, you can locate it directly with <code>find_package()</code> and use the namespaced imported target from the generated package configuration:</p>
+<div class="fragment"><div class="line"># CMakeLists.txt</div>
+<div class="line">find_package(nlohmann_json 3.2.0 REQUIRED)</div>
+<div class="line">...</div>
+<div class="line">add_library(foo ...)</div>
+<div class="line">...</div>
+<div class="line">target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)</div>
+</div><!-- fragment --><p>The package configuration file, <code>nlohmann_jsonConfig.cmake</code>, can be used either from an install tree or directly out of the build tree.</p>
+<h4><a class="anchor" id="autotoc_md29"></a>
+Embedded</h4>
+<p>To embed the library directly into an existing CMake project, place the entire source tree in a subdirectory and call <code>add_subdirectory()</code> in your <code>CMakeLists.txt</code> file:</p>
+<div class="fragment"><div class="line"># Typically you don&#39;t care so much for a third party library&#39;s tests to be</div>
+<div class="line"># run from your own project&#39;s code.</div>
+<div class="line">set(JSON_BuildTests OFF CACHE INTERNAL &quot;&quot;)</div>
+<div class="line"> </div>
+<div class="line"># If you only include this third party in PRIVATE source files, you do not</div>
+<div class="line"># need to install it when your main project gets installed.</div>
+<div class="line"># set(JSON_Install OFF CACHE INTERNAL &quot;&quot;)</div>
+<div class="line"> </div>
+<div class="line"># Don&#39;t use include(nlohmann_json/CMakeLists.txt) since that carries with it</div>
+<div class="line"># unintended consequences that will break the build.  It&#39;s generally</div>
+<div class="line"># discouraged (although not necessarily well documented as such) to use</div>
+<div class="line"># include(...) for pulling in other CMake projects anyways.</div>
+<div class="line">add_subdirectory(nlohmann_json)</div>
+<div class="line">...</div>
+<div class="line">add_library(foo ...)</div>
+<div class="line">...</div>
+<div class="line">target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md30"></a>
+Supporting Both</h4>
+<p>To allow your project to support either an externally supplied or an embedded JSON library, you can use a pattern akin to the following:</p>
+<div class="fragment"><div class="line"># Top level CMakeLists.txt</div>
+<div class="line">project(FOO)</div>
+<div class="line">...</div>
+<div class="line">option(FOO_USE_EXTERNAL_JSON &quot;Use an external JSON library&quot; OFF)</div>
+<div class="line">...</div>
+<div class="line">add_subdirectory(thirdparty)</div>
+<div class="line">...</div>
+<div class="line">add_library(foo ...)</div>
+<div class="line">...</div>
+<div class="line"># Note that the namespaced target will always be available regardless of the</div>
+<div class="line"># import method</div>
+<div class="line">target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)</div>
+</div><!-- fragment --><div class="fragment"><div class="line"># thirdparty/CMakeLists.txt</div>
+<div class="line">...</div>
+<div class="line">if(FOO_USE_EXTERNAL_JSON)</div>
+<div class="line">  find_package(nlohmann_json 3.2.0 REQUIRED)</div>
+<div class="line">else()</div>
+<div class="line">  set(JSON_BuildTests OFF CACHE INTERNAL &quot;&quot;)</div>
+<div class="line">  add_subdirectory(nlohmann_json)</div>
+<div class="line">endif()</div>
+<div class="line">...</div>
+</div><!-- fragment --><p><code>thirdparty/nlohmann_json</code> is then a complete copy of this source tree.</p>
+<h3><a class="anchor" id="autotoc_md31"></a>
+Package Managers</h3>
+<p>:beer: If you are using OS X and <a href="http://brew.sh">Homebrew</a>, just type <code>brew tap nlohmann/json</code> and <code>brew install nlohmann-json</code> and you're set. If you want the bleeding edge rather than the latest release, use <code>brew install nlohmann-json --HEAD</code>.</p>
+<p>If you are using the <a href="http://mesonbuild.com">Meson Build System</a>, add this source tree as a <a href="https://mesonbuild.com/Subprojects.html#using-a-subproject">meson subproject</a>. You may also use the <code>include.zip</code> published in this project's <a href="https://github.com/nlohmann/json/releases">Releases</a> to reduce the size of the vendored source tree. Alternatively, you can get a wrap file by downloading it from <a href="https://wrapdb.mesonbuild.com/nlohmann_json">Meson WrapDB</a>, or simply use <code>meson wrap install nlohmann_json</code>. Please see the meson project for any issues regarding the packaging.</p>
+<p>The provided meson.build can also be used as an alternative to cmake for installing <code>nlohmann_json</code> system-wide in which case a pkg-config file is installed. To use it, simply have your build system require the <code>nlohmann_json</code> pkg-config dependency. In Meson, it is preferred to use the <a href="https://mesonbuild.com/Reference-manual.html#dependency"><code>dependency()</code></a> object with a subproject fallback, rather than using the subproject directly.</p>
+<p>If you are using <a href="https://www.conan.io/">Conan</a> to manage your dependencies, merely add <code>jsonformoderncpp/x.y.z@vthiery/stable</code> to your <code>conanfile.py</code>'s requires, where <code>x.y.z</code> is the release version you want to use. Please file issues <a href="https://github.com/vthiery/conan-jsonformoderncpp/issues">here</a> if you experience problems with the packages.</p>
+<p>If you are using <a href="https://www.spack.io/">Spack</a> to manage your dependencies, you can use the <a href="https://spack.readthedocs.io/en/latest/package_list.html#nlohmann-json"><code>nlohmann-json</code> package</a>. Please see the <a href="https://github.com/spack/spack">spack project</a> for any issues regarding the packaging.</p>
+<p>If you are using <a href="https://github.com/ruslo/hunter/">hunter</a> on your project for external dependencies, then you can use the <a href="https://docs.hunter.sh/en/latest/packages/pkg/nlohmann_json.html">nlohmann_json package</a>. Please see the hunter project for any issues regarding the packaging.</p>
+<p>If you are using <a href="https://buckaroo.pm">Buckaroo</a>, you can install this library's module with <code>buckaroo add github.com/buckaroo-pm/nlohmann-json</code>. Please file issues <a href="https://github.com/buckaroo-pm/nlohmann-json">here</a>. There is a demo repo <a href="https://github.com/njlr/buckaroo-nholmann-json-example">here</a>.</p>
+<p>If you are using <a href="https://github.com/Microsoft/vcpkg/">vcpkg</a> on your project for external dependencies, then you can use the <a href="https://github.com/Microsoft/vcpkg/tree/master/ports/nlohmann-json">nlohmann-json package</a>. Please see the vcpkg project for any issues regarding the packaging.</p>
+<p>If you are using <a href="http://cget.readthedocs.io/en/latest/">cget</a>, you can install the latest development version with <code>cget install nlohmann/json</code>. A specific version can be installed with <code>cget install nlohmann/json@v3.1.0</code>. Also, the multiple header version can be installed by adding the <code>-DJSON_MultipleHeaders=ON</code> flag (i.e., <code>cget install nlohmann/json -DJSON_MultipleHeaders=ON</code>).</p>
+<p>If you are using <a href="https://cocoapods.org">CocoaPods</a>, you can use the library by adding pod &lsquo;"nlohmann_json", &rsquo;~&gt;3.1.2'` to your podfile (see <a href="https://bitbucket.org/benman/nlohmann_json-cocoapod/src/master/">an example</a>). Please file issues <a href="https://bitbucket.org/benman/nlohmann_json-cocoapod/issues?status=new&amp;status=open">here</a>.</p>
+<p>If you are using <a href="https://www.nuget.org">NuGet</a>, you can use the package <a href="https://www.nuget.org/packages/nlohmann.json/">nlohmann.json</a>. Please check <a href="https://github.com/nlohmann/json/issues/1132#issuecomment-452250255">this extensive description</a> on how to use the package. Please files issues <a href="https://github.com/hnkb/nlohmann-json-nuget/issues">here</a>.</p>
+<p>If you are using <a href="https://conda.io/">conda</a>, you can use the package <a href="https://github.com/conda-forge/nlohmann_json-feedstock">nlohmann_json</a> from <a href="https://conda-forge.org">conda-forge</a> executing <code>conda install -c conda-forge nlohmann_json</code>. Please file issues <a href="https://github.com/conda-forge/nlohmann_json-feedstock/issues">here</a>.</p>
+<p>If you are using <a href="http://www.msys2.org/">MSYS2</a>, your can use the <a href="https://packages.msys2.org/base/mingw-w64-nlohmann_json">mingw-w64-nlohmann_json</a> package, just type <code>pacman -S mingw-w64-i686-nlohmann_json</code> or <code>pacman -S mingw-w64-x86_64-nlohmann_json</code> for installation. Please file issues <a href="https://github.com/msys2/MINGW-packages/issues/new?title=%5Bnlohmann_json%5D">here</a> if you experience problems with the packages.</p>
+<h2><a class="anchor" id="autotoc_md32"></a>
+Examples</h2>
+<p>Beside the examples below, you may want to check the <a href="https://nlohmann.github.io/json/">documentation</a> where each function contains a separate code example (e.g., check out <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a5338e282d1d02bed389d852dd670d98d.html#a5338e282d1d02bed389d852dd670d98d"><code>emplace()</code></a>). All <a href="https://github.com/nlohmann/json/tree/develop/doc/examples">example files</a> can be compiled and executed on their own (e.g., file <a href="https://github.com/nlohmann/json/blob/develop/doc/examples/emplace.cpp">emplace.cpp</a>).</p>
+<h3><a class="anchor" id="autotoc_md33"></a>
+JSON as first-class data type</h3>
+<p>Here are some examples to give you an idea how to use the class.</p>
+<p>Assume you want to create the JSON object</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;pi&quot;: 3.141,</div>
+<div class="line">  &quot;happy&quot;: true,</div>
+<div class="line">  &quot;name&quot;: &quot;Niels&quot;,</div>
+<div class="line">  &quot;nothing&quot;: null,</div>
+<div class="line">  &quot;answer&quot;: {</div>
+<div class="line">    &quot;everything&quot;: 42</div>
+<div class="line">  },</div>
+<div class="line">  &quot;list&quot;: [1, 0, 2],</div>
+<div class="line">  &quot;object&quot;: {</div>
+<div class="line">    &quot;currency&quot;: &quot;USD&quot;,</div>
+<div class="line">    &quot;value&quot;: 42.99</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>With this library, you could write:</p>
+<div class="fragment"><div class="line"><span class="comment">// create an empty structure (null)</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add a number that is stored as double (note the implicit conversion of j to an object)</span></div>
+<div class="line">j[<span class="stringliteral">&quot;pi&quot;</span>] = 3.141;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add a Boolean that is stored as bool</span></div>
+<div class="line">j[<span class="stringliteral">&quot;happy&quot;</span>] = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add a string that is stored as std::string</span></div>
+<div class="line">j[<span class="stringliteral">&quot;name&quot;</span>] = <span class="stringliteral">&quot;Niels&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add another null object by passing nullptr</span></div>
+<div class="line">j[<span class="stringliteral">&quot;nothing&quot;</span>] = <span class="keyword">nullptr</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add an object inside the object</span></div>
+<div class="line">j[<span class="stringliteral">&quot;answer&quot;</span>][<span class="stringliteral">&quot;everything&quot;</span>] = 42;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add an array that is stored as std::vector (using an initializer list)</span></div>
+<div class="line">j[<span class="stringliteral">&quot;list&quot;</span>] = { 1, 0, 2 };</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// add another object (using an initializer list of pairs)</span></div>
+<div class="line">j[<span class="stringliteral">&quot;object&quot;</span>] = { {<span class="stringliteral">&quot;currency&quot;</span>, <span class="stringliteral">&quot;USD&quot;</span>}, {<span class="stringliteral">&quot;value&quot;</span>, 42.99} };</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// instead, you could also write (which looks very similar to the JSON above)</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j2 = {</div>
+<div class="line">  {<span class="stringliteral">&quot;pi&quot;</span>, 3.141},</div>
+<div class="line">  {<span class="stringliteral">&quot;happy&quot;</span>, <span class="keyword">true</span>},</div>
+<div class="line">  {<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;Niels&quot;</span>},</div>
+<div class="line">  {<span class="stringliteral">&quot;nothing&quot;</span>, <span class="keyword">nullptr</span>},</div>
+<div class="line">  {<span class="stringliteral">&quot;answer&quot;</span>, {</div>
+<div class="line">    {<span class="stringliteral">&quot;everything&quot;</span>, 42}</div>
+<div class="line">  }},</div>
+<div class="line">  {<span class="stringliteral">&quot;list&quot;</span>, {1, 0, 2}},</div>
+<div class="line">  {<span class="stringliteral">&quot;object&quot;</span>, {</div>
+<div class="line">    {<span class="stringliteral">&quot;currency&quot;</span>, <span class="stringliteral">&quot;USD&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;value&quot;</span>, 42.99}</div>
+<div class="line">  }}</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>Note that in all these cases, you never need to "tell" the compiler which JSON value type you want to use. If you want to be explicit or express some edge cases, the functions <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a9ad7ec0bc1082ed09d10900fbb20a21f.html#a9ad7ec0bc1082ed09d10900fbb20a21f"><code>json::array()</code></a> and <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_aaf509a7c029100d292187068f61c99b8.html#aaf509a7c029100d292187068f61c99b8"><code>json::object()</code></a> will help:</p>
+<div class="fragment"><div class="line"><span class="comment">// a way to express the empty array []</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> empty_array_explicit = json::array();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ways to express the empty object {}</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> empty_object_implicit = <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>({});</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> empty_object_explicit = json::object();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// a way to express an _array_ of key/value pairs [[&quot;currency&quot;, &quot;USD&quot;], [&quot;value&quot;, 42.99]]</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> array_not_object = json::array({ {<span class="stringliteral">&quot;currency&quot;</span>, <span class="stringliteral">&quot;USD&quot;</span>}, {<span class="stringliteral">&quot;value&quot;</span>, 42.99} });</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md34"></a>
+Serialization / Deserialization</h3>
+<h4><a class="anchor" id="autotoc_md35"></a>
+To/from strings</h4>
+<p>You can create a JSON value (deserialization) by appending <code>_json</code> to a string literal:</p>
+<div class="fragment"><div class="line"><span class="comment">// create object from string literal</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = <span class="stringliteral">&quot;{ \&quot;happy\&quot;: true, \&quot;pi\&quot;: 3.141 }&quot;</span>_json;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// or even nicer with a raw string literal</span></div>
+<div class="line"><span class="keyword">auto</span> j2 = R<span class="stringliteral">&quot;(</span></div>
+<div class="line"><span class="stringliteral">  {</span></div>
+<div class="line"><span class="stringliteral">    &quot;happy&quot;: true,</span></div>
+<div class="line"><span class="stringliteral">    &quot;pi&quot;: 3.141</span></div>
+<div class="line"><span class="stringliteral">  }</span></div>
+<div class="line"><span class="stringliteral">)&quot;_json;</span></div>
+</div><!-- fragment --><p>Note that without appending the <code>_json</code> suffix, the passed string literal is not parsed, but just used as JSON string value. That is, <code>json j = "{ \"happy": true, "pi": 3.141 }"&lt;/tt&gt; would just store the string &lt;tt&gt;"{ "happy": true, "pi": 3.141 }"</code> rather than parsing the actual object.</p>
+<p>The above example can also be expressed explicitly using <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_afd4ef1ac8ad50a5894a9afebca69140a.html#afd4ef1ac8ad50a5894a9afebca69140a"><code>json::parse()</code></a>:</p>
+<div class="fragment"><div class="line"><span class="comment">// parse explicitly</span></div>
+<div class="line"><span class="keyword">auto</span> j3 = json::parse(<span class="stringliteral">&quot;{ \&quot;happy\&quot;: true, \&quot;pi\&quot;: 3.141 }&quot;</span>);</div>
+</div><!-- fragment --><p>You can also get a string representation of a JSON value (serialize):</p>
+<div class="fragment"><div class="line"><span class="comment">// explicit conversion to string</span></div>
+<div class="line">std::string s = j.dump();    <span class="comment">// {\&quot;happy\&quot;:true,\&quot;pi\&quot;:3.141}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// serialization with pretty printing</span></div>
+<div class="line"><span class="comment">// pass in the amount of spaces to indent</span></div>
+<div class="line">std::cout &lt;&lt; j.dump(4) &lt;&lt; std::endl;</div>
+<div class="line"><span class="comment">// {</span></div>
+<div class="line"><span class="comment">//     &quot;happy&quot;: true,</span></div>
+<div class="line"><span class="comment">//     &quot;pi&quot;: 3.141</span></div>
+<div class="line"><span class="comment">// }</span></div>
+</div><!-- fragment --><p>Note the difference between serialization and assignment:</p>
+<div class="fragment"><div class="line"><span class="comment">// store a string in a JSON value</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_string = <span class="stringliteral">&quot;this is a string&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// retrieve the string value</span></div>
+<div class="line"><span class="keyword">auto</span> cpp_string = j_string.get&lt;std::string&gt;();</div>
+<div class="line"><span class="comment">// retrieve the string value (alternative when an variable already exists)</span></div>
+<div class="line">std::string cpp_string2;</div>
+<div class="line">j_string.get_to(cpp_string2);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// retrieve the serialized value (explicit JSON serialization)</span></div>
+<div class="line">std::string serialized_string = j_string.dump();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// output of original string</span></div>
+<div class="line">std::cout &lt;&lt; cpp_string &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; cpp_string2 &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; j_string.get&lt;std::string&gt;() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><span class="comment">// output of serialized value</span></div>
+<div class="line">std::cout &lt;&lt; j_string &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; serialized_string &lt;&lt; std::endl;</div>
+</div><!-- fragment --><p><a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a50ec80b02d0f3f51130d4abb5d1cfdc5.html#a50ec80b02d0f3f51130d4abb5d1cfdc5"><code>.dump()</code></a> always returns the serialized value, and <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_aa6602bb24022183ab989439e19345d08.html#aa6602bb24022183ab989439e19345d08"><code>.get&lt;std::string&gt;()</code></a> returns the originally stored string value.</p>
+<p>Note the library only supports UTF-8. When you store strings with different encodings in the library, calling <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a50ec80b02d0f3f51130d4abb5d1cfdc5.html#a50ec80b02d0f3f51130d4abb5d1cfdc5"><code>dump()</code></a> may throw an exception unless <code>json::error_handler_t::replace</code> or <code>json::error_handler_t::ignore</code> are used as error handlers.</p>
+<h4><a class="anchor" id="autotoc_md36"></a>
+To/from streams (e.g. files, string streams)</h4>
+<p>You can also use streams to serialize and deserialize:</p>
+<div class="fragment"><div class="line"><span class="comment">// deserialize from standard input</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j;</div>
+<div class="line">std::cin &gt;&gt; j;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// serialize to standard output</span></div>
+<div class="line">std::cout &lt;&lt; j;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// the setw manipulator was overloaded to set the indentation for pretty printing</span></div>
+<div class="line">std::cout &lt;&lt; std::setw(4) &lt;&lt; j &lt;&lt; std::endl;</div>
+</div><!-- fragment --><p>These operators work for any subclasses of <code>std::istream</code> or <code>std::ostream</code>. Here is the same example with files:</p>
+<div class="fragment"><div class="line"><span class="comment">// read a JSON file</span></div>
+<div class="line">std::ifstream i(<span class="stringliteral">&quot;file.json&quot;</span>);</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j;</div>
+<div class="line">i &gt;&gt; j;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// write prettified JSON to another file</span></div>
+<div class="line">std::ofstream o(<span class="stringliteral">&quot;pretty.json&quot;</span>);</div>
+<div class="line">o &lt;&lt; std::setw(4) &lt;&lt; j &lt;&lt; std::endl;</div>
+</div><!-- fragment --><p>Please note that setting the exception bit for <code>failbit</code> is inappropriate for this use case. It will result in program termination due to the <code>noexcept</code> specifier in use.</p>
+<h4><a class="anchor" id="autotoc_md37"></a>
+Read from iterator range</h4>
+<p>You can also parse JSON from an iterator range; that is, from any container accessible by iterators whose content is stored as contiguous byte sequence, for instance a <code>std::vector&lt;std::uint8_t&gt;</code>:</p>
+<div class="fragment"><div class="line">std::vector&lt;std::uint8_t&gt; v = {<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;e&#39;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = json::parse(v.begin(), v.end());</div>
+</div><!-- fragment --><p>You may leave the iterators for the range [begin, end):</p>
+<div class="fragment"><div class="line">std::vector&lt;std::uint8_t&gt; v = {<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;e&#39;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = json::parse(v);</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md38"></a>
+SAX interface</h4>
+<p>The library uses a SAX-like interface with the following functions:</p>
+<div class="fragment"><div class="line"><span class="comment">// called when null is parsed</span></div>
+<div class="line"><span class="keywordtype">bool</span> <span class="keyword">null</span>();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when a boolean is parsed; value is passed</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27">boolean</a>(<span class="keywordtype">bool</span> val);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when a signed or unsigned integer number is parsed; value is passed</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc">number_integer</a>(number_integer_t val);</div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e">number_unsigned</a>(number_unsigned_t val);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when a floating-point number is parsed; value and original string is passed</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef">number_float</a>(number_float_t val, <span class="keyword">const</span> string_t&amp; s);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when a string is parsed; value is passed and can be safely moved away</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21">string</a>(string_t&amp; val);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when an object or array begins or ends, resp. The number of elements is passed (or -1 if not known)</span></div>
+<div class="line"><span class="keywordtype">bool</span> start_object(std::size_t elements);</div>
+<div class="line"><span class="keywordtype">bool</span> end_object();</div>
+<div class="line"><span class="keywordtype">bool</span> start_array(std::size_t elements);</div>
+<div class="line"><span class="keywordtype">bool</span> end_array();</div>
+<div class="line"><span class="comment">// called when an object key is parsed; value is passed and can be safely moved away</span></div>
+<div class="line"><span class="keywordtype">bool</span> key(string_t&amp; val);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// called when a parse error occurs; byte position, the last token, and an exception is passed</span></div>
+<div class="line"><span class="keywordtype">bool</span> parse_error(std::size_t position, <span class="keyword">const</span> std::string&amp; last_token, <span class="keyword">const</span> detail::exception&amp; ex);</div>
+</div><!-- fragment --><p>The return value of each function determines whether parsing should proceed.</p>
+<p>To implement your own SAX handler, proceed as follows:</p>
+<ol type="1">
+<li>Implement the SAX interface in a class. You can use class <code><a class="el" href="structnlohmann_1_1json__sax.html" title="SAX interface">nlohmann::json_sax</a>&lt;json&gt;</code> as base class, but you can also use any class where the functions described above are implemented and public.</li>
+<li>Create an object of your SAX interface class, e.g. <code>my_sax</code>.</li>
+<li>Call <code>bool json::sax_parse(input, &amp;my_sax)</code>; where the first parameter can be any input like a string or an input stream and the second parameter is a pointer to your SAX interface.</li>
+</ol>
+<p>Note the <code>sax_parse</code> function only returns a <code>bool</code> indicating the result of the last executed SAX event. It does not return a <code>json</code> value - it is up to you to decide what to do with the SAX events. Furthermore, no exceptions are thrown in case of a parse error - it is up to you what to do with the exception object passed to your <code>parse_error</code> implementation. Internally, the SAX interface is used for the DOM parser (class <code>json_sax_dom_parser</code>) as well as the acceptor (<code>json_sax_acceptor</code>), see file <a href="https://github.com/nlohmann/json/blob/develop/include/nlohmann/detail/input/json_sax.hpp"><code>json_sax.hpp</code></a>.</p>
+<h3><a class="anchor" id="autotoc_md39"></a>
+STL-like access</h3>
+<p>We designed the JSON class to behave just like an STL container. In fact, it satisfies the <a href="https://en.cppreference.com/w/cpp/named_req/ReversibleContainer"><b>ReversibleContainer</b></a> requirement.</p>
+<div class="fragment"><div class="line"><span class="comment">// create an array using push_back</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j;</div>
+<div class="line">j.push_back(<span class="stringliteral">&quot;foo&quot;</span>);</div>
+<div class="line">j.push_back(1);</div>
+<div class="line">j.push_back(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// also use emplace_back</span></div>
+<div class="line">j.emplace_back(1.78);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// iterate the array</span></div>
+<div class="line"><span class="keywordflow">for</span> (json::iterator it = j.begin(); it != j.end(); ++it) {</div>
+<div class="line">  std::cout &lt;&lt; *it &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// range-based for</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; element : j) {</div>
+<div class="line">  std::cout &lt;&lt; element &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// getter/setter</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> tmp = j[0].get&lt;std::string&gt;();</div>
+<div class="line">j[1] = 42;</div>
+<div class="line"><span class="keywordtype">bool</span> foo = j.at(2);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// comparison</span></div>
+<div class="line">j == <span class="stringliteral">&quot;[\&quot;foo\&quot;, 1, true]&quot;</span>_json;  <span class="comment">// true</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// other stuff</span></div>
+<div class="line">j.size();     <span class="comment">// 3 entries</span></div>
+<div class="line">j.empty();    <span class="comment">// false</span></div>
+<div class="line">j.type();     <span class="comment">// json::value_t::array</span></div>
+<div class="line">j.clear();    <span class="comment">// the array is empty again</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// convenience type checkers</span></div>
+<div class="line">j.is_null();</div>
+<div class="line">j.is_boolean();</div>
+<div class="line">j.is_number();</div>
+<div class="line">j.is_object();</div>
+<div class="line">j.is_array();</div>
+<div class="line">j.is_string();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// create an object</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> o;</div>
+<div class="line">o[<span class="stringliteral">&quot;foo&quot;</span>] = 23;</div>
+<div class="line">o[<span class="stringliteral">&quot;bar&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line">o[<span class="stringliteral">&quot;baz&quot;</span>] = 3.141;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// also use emplace</span></div>
+<div class="line">o.emplace(<span class="stringliteral">&quot;weather&quot;</span>, <span class="stringliteral">&quot;sunny&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// special iterator member functions for objects</span></div>
+<div class="line"><span class="keywordflow">for</span> (json::iterator it = o.begin(); it != o.end(); ++it) {</div>
+<div class="line">  std::cout &lt;&lt; it.key() &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it.value() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// the same code as range for</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; el : o.items()) {</div>
+<div class="line">  std::cout &lt;&lt; el.key() &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; el.value() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// even easier with structured bindings (C++17)</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [key, value] : o.items()) {</div>
+<div class="line">  std::cout &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// find an entry</span></div>
+<div class="line"><span class="keywordflow">if</span> (o.find(<span class="stringliteral">&quot;foo&quot;</span>) != o.end()) {</div>
+<div class="line">  <span class="comment">// there is an entry with key &quot;foo&quot;</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// or simpler using count()</span></div>
+<div class="line"><span class="keywordtype">int</span> foo_present = o.count(<span class="stringliteral">&quot;foo&quot;</span>); <span class="comment">// 1</span></div>
+<div class="line"><span class="keywordtype">int</span> fob_present = o.count(<span class="stringliteral">&quot;fob&quot;</span>); <span class="comment">// 0</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// delete an entry</span></div>
+<div class="line">o.erase(<span class="stringliteral">&quot;foo&quot;</span>);</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md40"></a>
+Conversion from STL containers</h3>
+<p>Any sequence container (<code>std::array</code>, <code>std::vector</code>, <code>std::deque</code>, <code>std::forward_list</code>, <code>std::list</code>) whose values can be used to construct JSON values (e.g., integers, floating point numbers, Booleans, string types, or again STL containers described in this section) can be used to create a JSON array. The same holds for similar associative containers (<code>std::set</code>, <code>std::multiset</code>, <code>std::unordered_set</code>, <code>std::unordered_multiset</code>), but in these cases the order of the elements of the array depends on how the elements are ordered in the respective STL container.</p>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; c_vector {1, 2, 3, 4};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_vec(c_vector);</div>
+<div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"> </div>
+<div class="line">std::deque&lt;double&gt; c_deque {1.2, 2.3, 3.4, 5.6};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_deque(c_deque);</div>
+<div class="line"><span class="comment">// [1.2, 2.3, 3.4, 5.6]</span></div>
+<div class="line"> </div>
+<div class="line">std::list&lt;bool&gt; c_list {<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_list(c_list);</div>
+<div class="line"><span class="comment">// [true, true, false, true]</span></div>
+<div class="line"> </div>
+<div class="line">std::forward_list&lt;int64_t&gt; c_flist {12345678909876, 23456789098765, 34567890987654, 45678909876543};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_flist(c_flist);</div>
+<div class="line"><span class="comment">// [12345678909876, 23456789098765, 34567890987654, 45678909876543]</span></div>
+<div class="line"> </div>
+<div class="line">std::array&lt;unsigned long, 4&gt; c_array {{1, 2, 3, 4}};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_array(c_array);</div>
+<div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"> </div>
+<div class="line">std::set&lt;std::string&gt; c_set {<span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;two&quot;</span>, <span class="stringliteral">&quot;three&quot;</span>, <span class="stringliteral">&quot;four&quot;</span>, <span class="stringliteral">&quot;one&quot;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_set(c_set); <span class="comment">// only one entry for &quot;one&quot; is used</span></div>
+<div class="line"><span class="comment">// [&quot;four&quot;, &quot;one&quot;, &quot;three&quot;, &quot;two&quot;]</span></div>
+<div class="line"> </div>
+<div class="line">std::unordered_set&lt;std::string&gt; c_uset {<span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;two&quot;</span>, <span class="stringliteral">&quot;three&quot;</span>, <span class="stringliteral">&quot;four&quot;</span>, <span class="stringliteral">&quot;one&quot;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_uset(c_uset); <span class="comment">// only one entry for &quot;one&quot; is used</span></div>
+<div class="line"><span class="comment">// maybe [&quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;one&quot;]</span></div>
+<div class="line"> </div>
+<div class="line">std::multiset&lt;std::string&gt; c_mset {<span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;two&quot;</span>, <span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;four&quot;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_mset(c_mset); <span class="comment">// both entries for &quot;one&quot; are used</span></div>
+<div class="line"><span class="comment">// maybe [&quot;one&quot;, &quot;two&quot;, &quot;one&quot;, &quot;four&quot;]</span></div>
+<div class="line"> </div>
+<div class="line">std::unordered_multiset&lt;std::string&gt; c_umset {<span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;two&quot;</span>, <span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;four&quot;</span>};</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_umset(c_umset); <span class="comment">// both entries for &quot;one&quot; are used</span></div>
+<div class="line"><span class="comment">// maybe [&quot;one&quot;, &quot;two&quot;, &quot;one&quot;, &quot;four&quot;]</span></div>
+</div><!-- fragment --><p>Likewise, any associative key-value containers (<code>std::map</code>, <code>std::multimap</code>, <code>std::unordered_map</code>, <code>std::unordered_multimap</code>) whose keys can construct an <code>std::string</code> and whose values can be used to construct JSON values (see examples above) can be used to create a JSON object. Note that in case of multimaps only one key is used in the JSON object and the value depends on the internal order of the STL container.</p>
+<div class="fragment"><div class="line">std::map&lt;std::string, int&gt; c_map { {<span class="stringliteral">&quot;one&quot;</span>, 1}, {<span class="stringliteral">&quot;two&quot;</span>, 2}, {<span class="stringliteral">&quot;three&quot;</span>, 3} };</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_map(c_map);</div>
+<div class="line"><span class="comment">// {&quot;one&quot;: 1, &quot;three&quot;: 3, &quot;two&quot;: 2 }</span></div>
+<div class="line"> </div>
+<div class="line">std::unordered_map&lt;const char*, double&gt; c_umap { {<span class="stringliteral">&quot;one&quot;</span>, 1.2}, {<span class="stringliteral">&quot;two&quot;</span>, 2.3}, {<span class="stringliteral">&quot;three&quot;</span>, 3.4} };</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_umap(c_umap);</div>
+<div class="line"><span class="comment">// {&quot;one&quot;: 1.2, &quot;two&quot;: 2.3, &quot;three&quot;: 3.4}</span></div>
+<div class="line"> </div>
+<div class="line">std::multimap&lt;std::string, bool&gt; c_mmap { {<span class="stringliteral">&quot;one&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;two&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;three&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;three&quot;</span>, <span class="keyword">true</span>} };</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_mmap(c_mmap); <span class="comment">// only one entry for key &quot;three&quot; is used</span></div>
+<div class="line"><span class="comment">// maybe {&quot;one&quot;: true, &quot;two&quot;: true, &quot;three&quot;: true}</span></div>
+<div class="line"> </div>
+<div class="line">std::unordered_multimap&lt;std::string, bool&gt; c_ummap { {<span class="stringliteral">&quot;one&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;two&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;three&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;three&quot;</span>, <span class="keyword">true</span>} };</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_ummap(c_ummap); <span class="comment">// only one entry for key &quot;three&quot; is used</span></div>
+<div class="line"><span class="comment">// maybe {&quot;one&quot;: true, &quot;two&quot;: true, &quot;three&quot;: true}</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md41"></a>
+JSON Pointer and JSON Patch</h3>
+<p>The library supports <b>JSON Pointer</b> (<a href="https://tools.ietf.org/html/rfc6901">RFC 6901</a>) as alternative means to address structured values. On top of this, <b>JSON Patch</b> (<a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>) allows to describe differences between two JSON values - effectively allowing patch and diff operations known from Unix.</p>
+<div class="fragment"><div class="line"><span class="comment">// a JSON value</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_original = R<span class="stringliteral">&quot;({</span></div>
+<div class="line"><span class="stringliteral">  &quot;baz&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],</span></div>
+<div class="line"><span class="stringliteral">  &quot;foo&quot;: &quot;bar&quot;</span></div>
+<div class="line"><span class="stringliteral">})&quot;_json;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// access members with a JSON pointer (RFC 6901)</span></div>
+<div class="line">j_original[<span class="stringliteral">&quot;/baz/1&quot;</span>_json_pointer];</div>
+<div class="line"><span class="comment">// &quot;two&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// a JSON patch (RFC 6902)</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_patch = R<span class="stringliteral">&quot;([</span></div>
+<div class="line"><span class="stringliteral">  { &quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/baz&quot;, &quot;value&quot;: &quot;boo&quot; },</span></div>
+<div class="line"><span class="stringliteral">  { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/hello&quot;, &quot;value&quot;: [&quot;world&quot;] },</span></div>
+<div class="line"><span class="stringliteral">  { &quot;op&quot;: &quot;remove&quot;, &quot;path&quot;: &quot;/foo&quot;}</span></div>
+<div class="line"><span class="stringliteral">])&quot;_json;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// apply the patch</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_result = j_original.patch(j_patch);</div>
+<div class="line"><span class="comment">// {</span></div>
+<div class="line"><span class="comment">//    &quot;baz&quot;: &quot;boo&quot;,</span></div>
+<div class="line"><span class="comment">//    &quot;hello&quot;: [&quot;world&quot;]</span></div>
+<div class="line"><span class="comment">// }</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// calculate a JSON patch from two JSON values</span></div>
+<div class="line">json::diff(j_result, j_original);</div>
+<div class="line"><span class="comment">// [</span></div>
+<div class="line"><span class="comment">//   { &quot;op&quot;:&quot; replace&quot;, &quot;path&quot;: &quot;/baz&quot;, &quot;value&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;] },</span></div>
+<div class="line"><span class="comment">//   { &quot;op&quot;: &quot;remove&quot;,&quot;path&quot;: &quot;/hello&quot; },</span></div>
+<div class="line"><span class="comment">//   { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/foo&quot;, &quot;value&quot;: &quot;bar&quot; }</span></div>
+<div class="line"><span class="comment">// ]</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md42"></a>
+JSON Merge Patch</h3>
+<p>The library supports <b>JSON Merge Patch</b> (<a href="https://tools.ietf.org/html/rfc7386">RFC 7386</a>) as a patch format. Instead of using JSON Pointer (see above) to specify values to be manipulated, it describes the changes using a syntax that closely mimics the document being modified.</p>
+<div class="fragment"><div class="line"><span class="comment">// a JSON value</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_document = R<span class="stringliteral">&quot;({</span></div>
+<div class="line"><span class="stringliteral">  &quot;a&quot;: &quot;b&quot;,</span></div>
+<div class="line"><span class="stringliteral">  &quot;c&quot;: {</span></div>
+<div class="line"><span class="stringliteral">    &quot;d&quot;: &quot;e&quot;,</span></div>
+<div class="line"><span class="stringliteral">    &quot;f&quot;: &quot;g&quot;</span></div>
+<div class="line"><span class="stringliteral">  }</span></div>
+<div class="line"><span class="stringliteral">})&quot;_json;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// a patch</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_patch = R<span class="stringliteral">&quot;({</span></div>
+<div class="line"><span class="stringliteral">  &quot;a&quot;:&quot;z&quot;,</span></div>
+<div class="line"><span class="stringliteral">  &quot;c&quot;: {</span></div>
+<div class="line"><span class="stringliteral">    &quot;f&quot;: null</span></div>
+<div class="line"><span class="stringliteral">  }</span></div>
+<div class="line"><span class="stringliteral">})&quot;_json;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// apply the patch</span></div>
+<div class="line">j_document.merge_patch(j_patch);</div>
+<div class="line"><span class="comment">// {</span></div>
+<div class="line"><span class="comment">//  &quot;a&quot;: &quot;z&quot;,</span></div>
+<div class="line"><span class="comment">//  &quot;c&quot;: {</span></div>
+<div class="line"><span class="comment">//    &quot;d&quot;: &quot;e&quot;</span></div>
+<div class="line"><span class="comment">//  }</span></div>
+<div class="line"><span class="comment">// }</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md43"></a>
+Implicit conversions</h3>
+<p>Supported types can be implicitly converted to JSON values.</p>
+<p>It is recommended to <b>NOT USE</b> implicit conversions <b>FROM</b> a JSON value. You can find more details about this recommendation <a href="https://www.github.com/nlohmann/json/issues/958">here</a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// strings</span></div>
+<div class="line">std::string s1 = <span class="stringliteral">&quot;Hello, world!&quot;</span>;</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> js = s1;</div>
+<div class="line"><span class="keyword">auto</span> s2 = js.get&lt;std::string&gt;();</div>
+<div class="line"><span class="comment">// NOT RECOMMENDED</span></div>
+<div class="line">std::string s3 = js;</div>
+<div class="line">std::string s4;</div>
+<div class="line">s4 = js;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Booleans</span></div>
+<div class="line"><span class="keywordtype">bool</span> b1 = <span class="keyword">true</span>;</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> jb = b1;</div>
+<div class="line"><span class="keyword">auto</span> <a class="code" href="generic__error__stepper_8cpp.html#ac93478ebfa609a491612b5659c968e42">b2</a> = jb.get&lt;<span class="keywordtype">bool</span>&gt;();</div>
+<div class="line"><span class="comment">// NOT RECOMMENDED</span></div>
+<div class="line"><span class="keywordtype">bool</span> b3 = jb;</div>
+<div class="line"><span class="keywordtype">bool</span> b4;</div>
+<div class="line">b4 = jb;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// numbers</span></div>
+<div class="line"><span class="keywordtype">int</span> i = 42;</div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> jn = i;</div>
+<div class="line"><span class="keyword">auto</span> f = jn.get&lt;<span class="keywordtype">double</span>&gt;();</div>
+<div class="line"><span class="comment">// NOT RECOMMENDED</span></div>
+<div class="line"><span class="keywordtype">double</span> f2 = jb;</div>
+<div class="line"><span class="keywordtype">double</span> f3;</div>
+<div class="line">f3 = jb;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// etc.</span></div>
+</div><!-- fragment --><p>Note that <code>char</code> types are not automatically converted to JSON strings, but to integer numbers. A conversion to a string must be specified explicitly:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">char</span> ch = <span class="charliteral">&#39;A&#39;</span>;                       <span class="comment">// ASCII value 65</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_default = ch;                 <span class="comment">// stores integer number 65</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_string = std::string(1, ch);  <span class="comment">// stores string &quot;A&quot;</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md44"></a>
+Arbitrary types conversions</h3>
+<p>Every type can be serialized in JSON, not just STL containers and scalar types. Usually, you would do something along those lines:</p>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>ns {</div>
+<div class="line">    <span class="comment">// a simple struct to model a person</span></div>
+<div class="line">    <span class="keyword">struct </span>person {</div>
+<div class="line">        std::string name;</div>
+<div class="line">        std::string address;</div>
+<div class="line">        <span class="keywordtype">int</span> age;</div>
+<div class="line">    };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">ns::person <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> = {<span class="stringliteral">&quot;Ned Flanders&quot;</span>, <span class="stringliteral">&quot;744 Evergreen Terrace&quot;</span>, 60};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// convert to JSON: copy each value into the JSON object</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j;</div>
+<div class="line">j[<span class="stringliteral">&quot;name&quot;</span>] = <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.name;</div>
+<div class="line">j[<span class="stringliteral">&quot;address&quot;</span>] = <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.address;</div>
+<div class="line">j[<span class="stringliteral">&quot;age&quot;</span>] = <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.age;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// convert from JSON: copy each value from the JSON object</span></div>
+<div class="line">ns::person <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> {</div>
+<div class="line">    j[<span class="stringliteral">&quot;name&quot;</span>].get&lt;std::string&gt;(),</div>
+<div class="line">    j[<span class="stringliteral">&quot;address&quot;</span>].get&lt;std::string&gt;(),</div>
+<div class="line">    j[<span class="stringliteral">&quot;age&quot;</span>].get&lt;<span class="keywordtype">int</span>&gt;()</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>It works, but that's quite a lot of boilerplate... Fortunately, there's a better way:</p>
+<div class="fragment"><div class="line"><span class="comment">// create a person</span></div>
+<div class="line">ns::person <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> {<span class="stringliteral">&quot;Ned Flanders&quot;</span>, <span class="stringliteral">&quot;744 Evergreen Terrace&quot;</span>, 60};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// conversion: person -&gt; json</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>;</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; j &lt;&lt; std::endl;</div>
+<div class="line"><span class="comment">// {&quot;address&quot;:&quot;744 Evergreen Terrace&quot;,&quot;age&quot;:60,&quot;name&quot;:&quot;Ned Flanders&quot;}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// conversion: json -&gt; person</span></div>
+<div class="line"><span class="keyword">auto</span> p2 = j.get&lt;ns::person&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// that&#39;s it</span></div>
+<div class="line">assert(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a> == p2);</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md45"></a>
+Basic usage</h4>
+<p>To make this work with one of your types, you only need to provide two functions:</p>
+<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">nlohmann::json</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>ns {</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(<a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, <span class="keyword">const</span> person&amp; <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>) {</div>
+<div class="line">        j = <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>{{<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.name}, {<span class="stringliteral">&quot;address&quot;</span>, <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.address}, {<span class="stringliteral">&quot;age&quot;</span>, <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.age}};</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">from_json</a>(<span class="keyword">const</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, person&amp; <a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>) {</div>
+<div class="line">        j.at(<span class="stringliteral">&quot;name&quot;</span>).get_to(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.name);</div>
+<div class="line">        j.at(<span class="stringliteral">&quot;address&quot;</span>).get_to(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.address);</div>
+<div class="line">        j.at(<span class="stringliteral">&quot;age&quot;</span>).get_to(<a class="code" href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">p</a>.age);</div>
+<div class="line">    }</div>
+<div class="line">} <span class="comment">// namespace ns</span></div>
+</div><!-- fragment --><p>That's all! When calling the <code>json</code> constructor with your type, your custom <code>to_json</code> method will be automatically called. Likewise, when calling <code>get&lt;your_type&gt;()</code> or <code>get_to(your_type&amp;)</code>, the <code>from_json</code> method will be called.</p>
+<p>Some important things:</p>
+<ul>
+<li>Those methods <b>MUST</b> be in your type's namespace (which can be the global namespace), or the library will not be able to locate them (in this example, they are in namespace <code>ns</code>, where <code>person</code> is defined).</li>
+<li>Those methods <b>MUST</b> be available (e.g., proper headers must be included) everywhere you use these conversions. Look at <a href="https://github.com/nlohmann/json/issues/1108">issue 1108</a> for errors that may occur otherwise.</li>
+<li>When using <code>get&lt;your_type&gt;()</code>, <code>your_type</code> <b>MUST</b> be <a href="https://en.cppreference.com/w/cpp/named_req/DefaultConstructible">DefaultConstructible</a>. (There is a way to bypass this requirement described later.)</li>
+<li>In function <code>from_json</code>, use function <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a93403e803947b86f4da2d1fb3345cf2c.html#a93403e803947b86f4da2d1fb3345cf2c"><code>at()</code></a> to access the object values rather than <code>operator[]</code>. In case a key does not exist, <code>at</code> throws an exception that you can handle, whereas <code>operator[]</code> exhibits undefined behavior.</li>
+<li>You do not need to add serializers or deserializers for STL types like <code>std::vector</code>: the library already implements these.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md46"></a>
+How do I convert third-party types?</h4>
+<p>This requires a bit more advanced technique. But first, let's see how this conversion mechanism works:</p>
+<p>The library uses <b>JSON Serializers</b> to convert types to json. The default serializer for <code><a class="el" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474" title="default JSON class">nlohmann::json</a></code> is <code><a class="el" href="structnlohmann_1_1adl__serializer.html" title="default JSONSerializer template argument">nlohmann::adl_serializer</a></code> (ADL means <a href="https://en.cppreference.com/w/cpp/language/adl">Argument-Dependent Lookup</a>).</p>
+<p>It is implemented like this (simplified):</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">struct </span>adl_serializer {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(<a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, <span class="keyword">const</span> T&amp; value) {</div>
+<div class="line">        <span class="comment">// calls the &quot;to_json&quot; method in T&#39;s namespace</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">from_json</a>(<span class="keyword">const</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, T&amp; value) {</div>
+<div class="line">        <span class="comment">// same thing, but with the &quot;from_json&quot; method</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>This serializer works fine when you have control over the type's namespace. However, what about <code>boost::optional</code> or <code>std::filesystem::path</code> (C++17)? Hijacking the <code>boost</code> namespace is pretty bad, and it's illegal to add something other than template specializations to <code>std</code>...</p>
+<p>To solve this, you need to add a specialization of <code>adl_serializer</code> to the <code>nlohmann</code> namespace, here's an example:</p>
+<div class="fragment"><div class="line"><span class="comment">// partial specialization (full specialization works too)</span></div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacenlohmann.html">nlohmann</a> {</div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line">    <span class="keyword">struct </span>adl_serializer&lt;<a class="code" href="namespaceboost.html">boost</a>::optional&lt;T&gt;&gt; {</div>
+<div class="line">        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">to_json</a>(<a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, <span class="keyword">const</span> boost::optional&lt;T&gt;&amp; opt) {</div>
+<div class="line">            <span class="keywordflow">if</span> (opt == boost::none) {</div>
+<div class="line">                j = <span class="keyword">nullptr</span>;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">              j = *opt; <span class="comment">// this will call adl_serializer&lt;T&gt;::to_json which will</span></div>
+<div class="line">                        <span class="comment">// find the free function to_json in T&#39;s namespace!</span></div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">from_json</a>(<span class="keyword">const</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, boost::optional&lt;T&gt;&amp; opt) {</div>
+<div class="line">            <span class="keywordflow">if</span> (j.is_null()) {</div>
+<div class="line">                opt = boost::none;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                opt = j.get&lt;T&gt;(); <span class="comment">// same as above, but with</span></div>
+<div class="line">                                  <span class="comment">// adl_serializer&lt;T&gt;::from_json</span></div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    };</div>
+<div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md47"></a>
+How can I use &lt;tt&gt;get()&lt;/tt&gt; for non-default constructible/non-copyable types?</h4>
+<p>There is a way, if your type is <a href="https://en.cppreference.com/w/cpp/named_req/MoveConstructible">MoveConstructible</a>. You will need to specialize the <code>adl_serializer</code> as well, but with a special <code>from_json</code> overload:</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>move_only_type {</div>
+<div class="line">    move_only_type() = <span class="keyword">delete</span>;</div>
+<div class="line">    move_only_type(<span class="keywordtype">int</span> ii): i(ii) {}</div>
+<div class="line">    move_only_type(<span class="keyword">const</span> move_only_type&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">    move_only_type(move_only_type&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> i;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacenlohmann.html">nlohmann</a> {</div>
+<div class="line">    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line">    <span class="keyword">struct </span>adl_serializer&lt;move_only_type&gt; {</div>
+<div class="line">        <span class="comment">// note: the return type is no longer &#39;void&#39;, and the method only takes</span></div>
+<div class="line">        <span class="comment">// one argument</span></div>
+<div class="line">        <span class="keyword">static</span> move_only_type <a class="code" href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">from_json</a>(<span class="keyword">const</span> <a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j) {</div>
+<div class="line">            <span class="keywordflow">return</span> {j.get&lt;<span class="keywordtype">int</span>&gt;()};</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Here&#39;s the catch! You must provide a to_json method! Otherwise you</span></div>
+<div class="line">        <span class="comment">// will not be able to convert move_only_type to json, since you fully</span></div>
+<div class="line">        <span class="comment">// specialized adl_serializer on that type</span></div>
+<div class="line">        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">to_json</a>(<a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a>&amp; j, move_only_type t) {</div>
+<div class="line">            j = t.i;</div>
+<div class="line">        }</div>
+<div class="line">    };</div>
+<div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md48"></a>
+Can I write my own serializer? (Advanced use)</h4>
+<p>Yes. You might want to take a look at <a href="https://github.com/nlohmann/json/blob/develop/test/src/unit-udt.cpp"><code>unit-udt.cpp</code></a> in the test suite, to see a few examples.</p>
+<p>If you write your own serializer, you'll need to do a few things:</p>
+<ul>
+<li>use a different <code>basic_json</code> alias than <code><a class="el" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474" title="default JSON class">nlohmann::json</a></code> (the last template parameter of <code>basic_json</code> is the <code>JSONSerializer</code>)</li>
+<li>use your <code>basic_json</code> alias (or a template parameter) in all your <code>to_json</code>/<code>from_json</code> methods</li>
+<li>use <code>nlohmann::to_json</code> and <code>nlohmann::from_json</code> when you need ADL</li>
+</ul>
+<p>Here is an example, without simplifications, that only accepts types with a size &lt;= 32, and uses ADL.</p>
+<div class="fragment"><div class="line"><span class="comment">// You should use void as a second template argument</span></div>
+<div class="line"><span class="comment">// if you don&#39;t need compile-time checks on T</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> SFINAE = <span class="keyword">typename</span> std::enable_if&lt;sizeof(T) &lt;= 32&gt;::type&gt;</div>
+<div class="line">struct less_than_32_serializer {</div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> BasicJsonType&gt;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(BasicJsonType&amp; j, T value) {</div>
+<div class="line">        <span class="comment">// we want to use ADL, and call the correct to_json overload</span></div>
+<div class="line">        <span class="keyword">using</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">nlohmann::to_json</a>; <span class="comment">// this method is called by adl_serializer,</span></div>
+<div class="line">                                 <span class="comment">// this is where the magic happens</span></div>
+<div class="line">        <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(j, value);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> BasicJsonType&gt;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">from_json</a>(<span class="keyword">const</span> BasicJsonType&amp; j, T&amp; value) {</div>
+<div class="line">        <span class="comment">// same thing here</span></div>
+<div class="line">        <span class="keyword">using</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">nlohmann::from_json</a>;</div>
+<div class="line">        <a class="code" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">from_json</a>(j, value);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>Be <b>very</b> careful when reimplementing your serializer, you can stack overflow if you don't pay attention:</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><span class="keyword">struct </span>bad_serializer</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> BasicJsonType&gt;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(BasicJsonType&amp; j, <span class="keyword">const</span> T&amp; value) {</div>
+<div class="line">      <span class="comment">// this calls BasicJsonType::json_serializer&lt;T&gt;::to_json(j, value);</span></div>
+<div class="line">      <span class="comment">// if BasicJsonType::json_serializer == bad_serializer ... oops!</span></div>
+<div class="line">      j = value;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> BasicJsonType&gt;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json</a>(<span class="keyword">const</span> BasicJsonType&amp; j, T&amp; value) {</div>
+<div class="line">      <span class="comment">// this calls BasicJsonType::json_serializer&lt;T&gt;::from_json(j, value);</span></div>
+<div class="line">      <span class="comment">// if BasicJsonType::json_serializer == bad_serializer ... oops!</span></div>
+<div class="line">      value = j.template get&lt;T&gt;(); <span class="comment">// oops!</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md49"></a>
+Specializing enum conversion</h3>
+<p>By default, enum values are serialized to JSON as integers. In some cases this could result in undesired behavior. If an enum is modified or re-ordered after data has been serialized to JSON, the later de-serialized JSON data may be undefined or a different enum value than was originally intended.</p>
+<p>It is possible to more precisely specify how a given enum is mapped to and from JSON as shown below:</p>
+<div class="fragment"><div class="line"><span class="comment">// example enum type declaration</span></div>
+<div class="line"><span class="keyword">enum</span> TaskState {</div>
+<div class="line">    TS_STOPPED,</div>
+<div class="line">    TS_RUNNING,</div>
+<div class="line">    TS_COMPLETED,</div>
+<div class="line">    TS_INVALID=-1,</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// map TaskState values to JSON as strings</span></div>
+<div class="line"><a class="code" href="json_8hpp.html#a4c5d399dfa9252e70f876756f3f49084">NLOHMANN_JSON_SERIALIZE_ENUM</a>( TaskState, {</div>
+<div class="line">    {TS_INVALID, <span class="keyword">nullptr</span>},</div>
+<div class="line">    {TS_STOPPED, <span class="stringliteral">&quot;stopped&quot;</span>},</div>
+<div class="line">    {TS_RUNNING, <span class="stringliteral">&quot;running&quot;</span>},</div>
+<div class="line">    {TS_COMPLETED, <span class="stringliteral">&quot;completed&quot;</span>},</div>
+<div class="line">})</div>
+</div><!-- fragment --><p>The <code><a class="el" href="json_8hpp.html#a4c5d399dfa9252e70f876756f3f49084" title="macro to briefly define a mapping between an enum and JSON">NLOHMANN_JSON_SERIALIZE_ENUM()</a></code> macro declares a set of <code><a class="el" href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">to_json()</a></code> / <code><a class="el" href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">from_json()</a></code> functions for type <code>TaskState</code> while avoiding repetition and boilerplate serialization code.</p>
+<p><b>Usage:</b></p>
+<div class="fragment"><div class="line"><span class="comment">// enum to JSON as string</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = TS_STOPPED;</div>
+<div class="line">assert(j == <span class="stringliteral">&quot;stopped&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// json string to enum</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j3 = <span class="stringliteral">&quot;running&quot;</span>;</div>
+<div class="line">assert(j3.get&lt;TaskState&gt;() == TS_RUNNING);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// undefined json value to enum (where the first map entry above is the default)</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> jPi = 3.14;</div>
+<div class="line">assert(jPi.get&lt;TaskState&gt;() == TS_INVALID );</div>
+</div><!-- fragment --><p>Just as in <a href="#arbitrary-types-conversions">Arbitrary Type Conversions</a> above,</p><ul>
+<li><code><a class="el" href="json_8hpp.html#a4c5d399dfa9252e70f876756f3f49084" title="macro to briefly define a mapping between an enum and JSON">NLOHMANN_JSON_SERIALIZE_ENUM()</a></code> MUST be declared in your enum type's namespace (which can be the global namespace), or the library will not be able to locate it and it will default to integer serialization.</li>
+<li>It MUST be available (e.g., proper headers must be included) everywhere you use the conversions.</li>
+</ul>
+<p>Other Important points:</p><ul>
+<li>When using <code>get&lt;ENUM_TYPE&gt;()</code>, undefined JSON values will default to the first pair specified in your map. Select this default pair carefully.</li>
+<li>If an enum or JSON value is specified more than once in your map, the first matching occurrence from the top of the map will be returned when converting to or from JSON.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md50"></a>
+Binary formats (BSON, CBOR, MessagePack, and UBJSON)</h3>
+<p>Though JSON is a ubiquitous data format, it is not a very compact format suitable for data exchange, for instance over a network. Hence, the library supports&#160;<a href="http://bsonspec.org">BSON</a> (Binary JSON), <a href="http://cbor.io">CBOR</a> (Concise Binary Object Representation), <a href="http://msgpack.org">MessagePack</a>, and <a href="http://ubjson.org">UBJSON</a> (Universal Binary JSON Specification) to efficiently encode JSON values to byte vectors and to decode such vectors.</p>
+<div class="fragment"><div class="line"><span class="comment">// create a JSON value</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j = R<span class="stringliteral">&quot;({&quot;compact&quot;: true, &quot;schema&quot;: 0})&quot;_json;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// serialize to BSON</span></div>
+<div class="line">std::vector&lt;std::uint8_t&gt; v_bson = json::to_bson(j);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 0x1B, 0x00, 0x00, 0x00, 0x08, 0x63, 0x6F, 0x6D, 0x70, 0x61, 0x63, 0x74, 0x00, 0x01, 0x10, 0x73, 0x63, 0x68, 0x65, 0x6D, 0x61, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// roundtrip</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_from_bson = json::from_bson(v_bson);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// serialize to CBOR</span></div>
+<div class="line">std::vector&lt;std::uint8_t&gt; v_cbor = json::to_cbor(j);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 0xA2, 0x67, 0x63, 0x6F, 0x6D, 0x70, 0x61, 0x63, 0x74, 0xF5, 0x66, 0x73, 0x63, 0x68, 0x65, 0x6D, 0x61, 0x00</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// roundtrip</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_from_cbor = json::from_cbor(v_cbor);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// serialize to MessagePack</span></div>
+<div class="line">std::vector&lt;std::uint8_t&gt; v_msgpack = json::to_msgpack(j);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 0x82, 0xA7, 0x63, 0x6F, 0x6D, 0x70, 0x61, 0x63, 0x74, 0xC3, 0xA6, 0x73, 0x63, 0x68, 0x65, 0x6D, 0x61, 0x00</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// roundtrip</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_from_msgpack = json::from_msgpack(v_msgpack);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// serialize to UBJSON</span></div>
+<div class="line">std::vector&lt;std::uint8_t&gt; v_ubjson = json::to_ubjson(j);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 0x7B, 0x69, 0x07, 0x63, 0x6F, 0x6D, 0x70, 0x61, 0x63, 0x74, 0x54, 0x69, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6D, 0x61, 0x69, 0x00, 0x7D</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// roundtrip</span></div>
+<div class="line"><a class="code" href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">json</a> j_from_ubjson = json::from_ubjson(v_ubjson);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md51"></a>
+Supported compilers</h2>
+<p>Though it's 2019 already, the support for C++11 is still a bit sparse. Currently, the following compilers are known to work:</p>
+<ul>
+<li>GCC 4.8 - 9.2 (and possibly later)</li>
+<li>Clang 3.4 - 9.0 (and possibly later)</li>
+<li>Intel C++ Compiler 17.0.2 (and possibly later)</li>
+<li>Microsoft Visual C++ 2015 / Build Tools 14.0.25123.0 (and possibly later)</li>
+<li>Microsoft Visual C++ 2017 / Build Tools 15.5.180.51428 (and possibly later)</li>
+<li>Microsoft Visual C++ 2019 / Build Tools 16.3.1+1def00d3d (and possibly later)</li>
+</ul>
+<p>I would be happy to learn about other compilers/versions.</p>
+<p>Please note:</p>
+<ul>
+<li>GCC 4.8 has a bug <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=57824">57824</a>): multiline raw strings cannot be the arguments to macros. Don't use multiline raw strings directly in macros with this compiler.</li>
+<li><p class="startli">Android defaults to using very old compilers and C++ libraries. To fix this, add the following to your <code>Application.mk</code>. This will switch to the LLVM C++ library, the Clang compiler, and enable C++11 and other features disabled by default.</p>
+<p class="startli">``` APP_STL := c++_shared NDK_TOOLCHAIN_VERSION := clang3.6 APP_CPPFLAGS += -frtti -fexceptions ```</p>
+<p class="startli">The code compiles successfully with <a href="https://developer.android.com/ndk/index.html?hl=ml">Android NDK</a>, Revision 9 - 11 (and possibly later) and <a href="https://www.crystax.net/en/android/ndk">CrystaX's Android NDK</a> version 10.</p>
+</li>
+<li>For GCC running on MinGW or Android SDK, the error &lsquo;'to_string&rsquo; is not a member of 'std'<code>(or similarly, for</code>strtod<code>) may occur. Note this is not an issue with the code, but rather with the compiler itself. On Android, see above to build with a newer environment. For MinGW, please refer to [this site](<a href="http://tehsausage.com/mingw-to-string">http://tehsausage.com/mingw-to-string</a>) and [this discussion](<a href="https://github.com/nlohmann/json/issues/136">https://github.com/nlohmann/json/issues/136</a>) for information on how to fix this bug. For Android NDK using</code>APP_STL := gnustl_static`, please refer to <a href="https://github.com/nlohmann/json/issues/219">this discussion</a>.</li>
+<li>Unsupported versions of GCC and Clang are rejected by <code>#error</code> directives. This can be switched off by defining <code>JSON_SKIP_UNSUPPORTED_COMPILER_CHECK</code>. Note that you can expect no support in this case.</li>
+</ul>
+<p>The following compilers are currently used in continuous integration at <a href="https://travis-ci.org/nlohmann/json">Travis</a>, <a href="https://ci.appveyor.com/project/nlohmann/json">AppVeyor</a>, <a href="https://circleci.com/gh/nlohmann/json">CircleCI</a>, and <a href="https://doozer.io">Doozer</a>:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Compiler </th><th class="markdownTableHeadNone">Operating System </th><th class="markdownTableHeadNone">Version String  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 4.8.5 </td><td class="markdownTableBodyNone">Ubuntu 14.04.5 LTS </td><td class="markdownTableBodyNone">g++-4.8 (Ubuntu 4.8.5-2ubuntu1~14.04.2) 4.8.5  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 4.8.5 </td><td class="markdownTableBodyNone">CentOS Release-7-6.1810.2.el7.centos.x86_64 </td><td class="markdownTableBodyNone">g++ (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 4.9.2 (armv7l) </td><td class="markdownTableBodyNone">Raspbian GNU/Linux 8 (jessie) </td><td class="markdownTableBodyNone">g++ (Raspbian 4.9.2-10+deb8u2) 4.9.2  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 4.9.4 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">g++-4.9 (Ubuntu 4.9.4-2ubuntu1~14.04.1) 4.9.4  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 5.3.1 (armv7l) </td><td class="markdownTableBodyNone">&#160;Ubuntu 16.04 LTS </td><td class="markdownTableBodyNone">g++ (Ubuntu/Linaro 5.3.1-14ubuntu2) 5.3.1 20160413  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 5.5.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">g++-5 (Ubuntu 5.5.0-12ubuntu1~14.04) 5.5.0 20171010  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 6.3.0 </td><td class="markdownTableBodyNone">Debian 9 (stretch) </td><td class="markdownTableBodyNone">g++ (Debian 6.3.0-18+deb9u1) 6.3.0 20170516  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 6.3.1 </td><td class="markdownTableBodyNone">Fedora release 24 (Twenty Four) </td><td class="markdownTableBodyNone">g++ (GCC) 6.3.1 20161221 (Red Hat 6.3.1-1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 6.4.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">g++-6 (Ubuntu 6.4.0-17ubuntu1~14.04) 6.4.0 20180424  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 7.3.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">g++-7 (Ubuntu 7.3.0-21ubuntu1~14.04) 7.3.0  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GCC 7.3.0 </td><td class="markdownTableBodyNone">Windows Server 2012 R2 (x64) </td><td class="markdownTableBodyNone">g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 7.3.0  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GCC 8.1.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">g++-8 (Ubuntu 8.1.0-5ubuntu1~14.04) 8.1.0  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">&#160;GCC 9.2.1 </td><td class="markdownTableBodyNone">Ubuntu 14.05.1 LTS </td><td class="markdownTableBodyNone">&#160;g++-9 (Ubuntu 9.2.1-16ubuntu1~14.04.1) 9.2.1 20191030  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang 3.5.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 3.5.0-4ubuntu2~trusty2 (tags/RELEASE_350/final) (based on LLVM 3.5.0)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang 3.6.2 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 3.6.2-svn240577-1~exp1 (branches/release_36) (based on LLVM 3.6.2)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang 3.7.1 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 3.7.1-svn253571-1~exp1 (branches/release_37) (based on LLVM 3.7.1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang 3.8.0 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 3.8.0-2ubuntu3~trusty5 (tags/RELEASE_380/final)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang 3.9.1 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 3.9.1-4ubuntu3~14.04.3 (tags/RELEASE_391/rc2)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang 4.0.1 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 4.0.1-svn305264-1~exp1 (branches/release_40)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang 5.0.2 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 5.0.2-svn328729-1~exp1~20180509123505.100 (branches/release_50)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang 6.0.1 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 6.0.1-svn334776-1~exp1~20180726133705.85 (branches/release_60)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang 7.0.1 </td><td class="markdownTableBodyNone">Ubuntu 14.04.1 LTS </td><td class="markdownTableBodyNone">clang version 7.0.1-svn348686-1~exp1~20181213084532.54 (branches/release_70)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang Xcode 8.3 </td><td class="markdownTableBodyNone">OSX 10.11.6 </td><td class="markdownTableBodyNone">Apple LLVM version 8.1.0 (clang-802.0.38)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang Xcode 9.0 </td><td class="markdownTableBodyNone">OSX 10.12.6 </td><td class="markdownTableBodyNone">Apple LLVM version 9.0.0 (clang-900.0.37)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang Xcode 9.1 </td><td class="markdownTableBodyNone">OSX 10.12.6 </td><td class="markdownTableBodyNone">Apple LLVM version 9.0.0 (clang-900.0.38)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang Xcode 9.2 </td><td class="markdownTableBodyNone">OSX 10.13.3 </td><td class="markdownTableBodyNone">Apple LLVM version 9.1.0 (clang-902.0.39.1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang Xcode 9.3 </td><td class="markdownTableBodyNone">OSX 10.13.3 </td><td class="markdownTableBodyNone">Apple LLVM version 9.1.0 (clang-902.0.39.2)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang Xcode 10.0 </td><td class="markdownTableBodyNone">OSX 10.13.3 </td><td class="markdownTableBodyNone">Apple LLVM version 10.0.0 (clang-1000.11.45.2)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Clang Xcode 10.1 </td><td class="markdownTableBodyNone">OSX 10.13.3 </td><td class="markdownTableBodyNone">Apple LLVM version 10.0.0 (clang-1000.11.45.5)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Clang Xcode 10.2 </td><td class="markdownTableBodyNone">OSX 10.14.4 </td><td class="markdownTableBodyNone">Apple LLVM version 10.0.1 (clang-1001.0.46.4)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Visual Studio 14 2015 </td><td class="markdownTableBodyNone">Windows Server 2012 R2 (x64) </td><td class="markdownTableBodyNone">Microsoft (R) Build Engine version 14.0.25420.1, MSVC 19.0.24215.1  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Visual Studio 15 2017 </td><td class="markdownTableBodyNone">Windows Server 2012 R2 (x64) </td><td class="markdownTableBodyNone">Microsoft (R) Build Engine version 15.9.21+g9802d43bc3, MSVC 19.16.27032.1  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Visual Studio 16 2019 </td><td class="markdownTableBodyNone">Windows Server 2012 R2 (x64) </td><td class="markdownTableBodyNone">Microsoft (R) Build Engine version 16.3.1+1def00d3d, MSVC 19.23.28106.4  </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md52"></a>
+License</h2>
+<p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
+<p>The class is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
+<p>Copyright &copy; 2013-2019 <a href="http://nlohmann.me">Niels Lohmann</a></p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<hr  />
+<p>The class contains the UTF-8 Decoder from Bjoern Hoehrmann which is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a> (see above). Copyright &copy; 2008-2009 <a href="http://bjoern.hoehrmann.de/">Björn Hoehrmann</a> <a href="#" onclick="location.href='mai'+'lto:'+'bjo'+'er'+'n@h'+'oe'+'hrm'+'an'+'n.d'+'e'; return false;">bjoer<span style="display: none;">.nosp@m.</span>n@ho<span style="display: none;">.nosp@m.</span>ehrma<span style="display: none;">.nosp@m.</span>nn.d<span style="display: none;">.nosp@m.</span>e</a></p>
+<p>The class contains a slightly modified version of the Grisu2 algorithm from Florian Loitsch which is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a> (see above). Copyright &copy; 2009 <a href="http://florian.loitsch.com/">Florian Loitsch</a></p>
+<p>The class contains a copy of <a href="https://nemequ.github.io/hedley/">Hedley</a> from Evan Nemerson which is licensed as <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0-1.0</a>.</p>
+<h2><a class="anchor" id="autotoc_md53"></a>
+Contact</h2>
+<p>If you have questions regarding the library, I would like to invite you to <a href="https://github.com/nlohmann/json/issues/new/choose">open an issue at GitHub</a>. Please describe your request, problem, or question as detailed as possible, and also mention the version of the library you are using as well as the version of your compiler and operating system. Opening an issue at GitHub allows other users and contributors to this library to collaborate. For instance, I have little experience with MSVC, and most issues in this regard have been solved by a growing community. If you have a look at the <a href="https://github.com/nlohmann/json/issues?q=is%3Aissue+is%3Aclosed">closed issues</a>, you will see that we react quite timely in most cases.</p>
+<p>Only if your request would contain confidential information, please <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'nlo'+'hm'+'ann'+'.m'+'e'; return false;">send me an email</a>. For encrypted messages, please use <a href="https://keybase.io/nlohmann/pgp_keys.asc">this key</a>.</p>
+<h2><a class="anchor" id="autotoc_md54"></a>
+Security</h2>
+<p><a href="https://github.com/nlohmann/json/commits">Commits by Niels Lohmann</a> and <a href="https://github.com/nlohmann/json/releases">releases</a> are signed with this <a href="https://keybase.io/nlohmann/pgp_keys.asc?fingerprint=797167ae41c0a6d9232e48457f3cea63ae251b69">PGP Key</a>.</p>
+<h2><a class="anchor" id="autotoc_md55"></a>
+Thanks</h2>
+<p>I deeply appreciate the help of the following people.</p>
+<p><img src="https://raw.githubusercontent.com/nlohmann/json/develop/doc/avatars.png" alt="" align="right" class="inline"/></p>
+<ul>
+<li><a href="https://github.com/Teemperor">Teemperor</a> implemented CMake support and lcov integration, realized escape and Unicode handling in the string parser, and fixed the JSON serialization.</li>
+<li><a href="https://github.com/elliotgoodrich">elliotgoodrich</a> fixed an issue with double deletion in the iterator classes.</li>
+<li><a href="https://github.com/kirkshoop">kirkshoop</a> made the iterators of the class composable to other libraries.</li>
+<li><a href="https://github.com/wanwc">wancw</a> fixed a bug that hindered the class to compile with Clang.</li>
+<li>Tomas Åblad found a bug in the iterator implementation.</li>
+<li><a href="https://github.com/jrandall">Joshua C. Randall</a> fixed a bug in the floating-point serialization.</li>
+<li><a href="https://github.com/aburgh">Aaron Burghardt</a> implemented code to parse streams incrementally. Furthermore, he greatly improved the parser class by allowing the definition of a filter function to discard undesired elements while parsing.</li>
+<li><a href="https://github.com/dkopecek">Daniel Kopeček</a> fixed a bug in the compilation with GCC 5.0.</li>
+<li><a href="https://github.com/Florianjw">Florian Weber</a> fixed a bug in and improved the performance of the comparison operators.</li>
+<li><a href="https://github.com/EricMCornelius">Eric Cornelius</a> pointed out a bug in the handling with NaN and infinity values. He also improved the performance of the string escaping.</li>
+<li><a href="https://github.com/likebeta">易思龙</a> implemented a conversion from anonymous enums.</li>
+<li><a href="https://github.com/kepkin">kepkin</a> patiently pushed forward the support for Microsoft Visual studio.</li>
+<li><a href="https://github.com/gregmarr">gregmarr</a> simplified the implementation of reverse iterators and helped with numerous hints and improvements. In particular, he pushed forward the implementation of user-defined types.</li>
+<li><a href="https://github.com/caiovlp">Caio Luppi</a> fixed a bug in the Unicode handling.</li>
+<li><a href="https://github.com/dariomt">dariomt</a> fixed some typos in the examples.</li>
+<li><a href="https://github.com/d-frey">Daniel Frey</a> cleaned up some pointers and implemented exception-safe memory allocation.</li>
+<li><a href="https://github.com/ColinH">Colin Hirsch</a> took care of a small namespace issue.</li>
+<li><a href="https://github.com/whoshuu">Huu Nguyen</a> correct a variable name in the documentation.</li>
+<li><a href="https://github.com/silverweed">Silverweed</a> overloaded <code>parse()</code> to accept an rvalue reference.</li>
+<li><a href="https://github.com/dariomt">dariomt</a> fixed a subtlety in MSVC type support and implemented the <code>get_ref()</code> function to get a reference to stored values.</li>
+<li><a href="https://github.com/ZahlGraf">ZahlGraf</a> added a workaround that allows compilation using Android NDK.</li>
+<li><a href="https://github.com/whackashoe">whackashoe</a> replaced a function that was marked as unsafe by Visual Studio.</li>
+<li><a href="https://github.com/406345">406345</a> fixed two small warnings.</li>
+<li><a href="https://github.com/glenfe">Glen Fernandes</a> noted a potential portability problem in the <code>has_mapped_type</code> function.</li>
+<li><a href="https://github.com/nibroc">Corbin Hughes</a> fixed some typos in the contribution guidelines.</li>
+<li><a href="https://github.com/twelsby">twelsby</a> fixed the array subscript operator, an issue that failed the MSVC build, and floating-point parsing/dumping. He further added support for unsigned integer numbers and implemented better roundtrip support for parsed numbers.</li>
+<li><a href="https://github.com/vog">Volker Diels-Grabsch</a> fixed a link in the README file.</li>
+<li><a href="https://github.com/msm-">msm-</a> added support for American Fuzzy Lop.</li>
+<li><a href="https://github.com/Annihil">Annihil</a> fixed an example in the README file.</li>
+<li><a href="https://github.com/Themercee">Themercee</a> noted a wrong URL in the README file.</li>
+<li><a href="https://github.com/lv-zheng">Lv Zheng</a> fixed a namespace issue with <code>int64_t</code> and <code>uint64_t</code>.</li>
+<li><a href="https://github.com/abc100m">abc100m</a> analyzed the issues with GCC 4.8 and proposed a <a href="https://github.com/nlohmann/json/pull/212">partial solution</a>.</li>
+<li><a href="https://github.com/zewt">zewt</a> added useful notes to the README file about Android.</li>
+<li><a href="https://github.com/robertmrk">Róbert Márki</a> added a fix to use move iterators and improved the integration via CMake.</li>
+<li><a href="https://github.com/ChrisKitching">Chris Kitching</a> cleaned up the CMake files.</li>
+<li><a href="https://github.com/06needhamt">Tom Needham</a> fixed a subtle bug with MSVC 2015 which was also proposed by <a href="https://github.com/Epidal">Michael K.</a>.</li>
+<li><a href="https://github.com/thelostt">Mário Feroldi</a> fixed a small typo.</li>
+<li><a href="https://github.com/duncanwerner">duncanwerner</a> found a really embarrassing performance regression in the 2.0.0 release.</li>
+<li><a href="https://github.com/dtoma">Damien</a> fixed one of the last conversion warnings.</li>
+<li><a href="https://github.com/t-b">Thomas Braun</a> fixed a warning in a test case.</li>
+<li><a href="https://github.com/theodelrieu">Théo DELRIEU</a> patiently and constructively oversaw the long way toward <a href="https://github.com/nlohmann/json/issues/290">iterator-range parsing</a>. He also implemented the magic behind the serialization/deserialization of user-defined types and split the single header file into smaller chunks.</li>
+<li><a href="https://github.com/5tefan">Stefan</a> fixed a minor issue in the documentation.</li>
+<li><a href="https://github.com/vasild">Vasil Dimov</a> fixed the documentation regarding conversions from <code>std::multiset</code>.</li>
+<li><a href="https://github.com/ChristophJud">ChristophJud</a> overworked the CMake files to ease project inclusion.</li>
+<li><a href="https://github.com/vpetrigo">Vladimir Petrigo</a> made a SFINAE hack more readable and added Visual Studio 17 to the build matrix.</li>
+<li><a href="https://github.com/seeekr">Denis Andrejew</a> fixed a grammar issue in the README file.</li>
+<li><a href="https://github.com/palacaze">Pierre-Antoine Lacaze</a> found a subtle bug in the <code>dump()</code> function.</li>
+<li><a href="https://github.com/TurpentineDistillery">TurpentineDistillery</a> pointed to <a href="https://en.cppreference.com/w/cpp/locale/locale/classic"><code>std::locale::classic()</code></a> to avoid too much locale joggling, found some nice performance improvements in the parser, improved the benchmarking code, and realized locale-independent number parsing and printing.</li>
+<li><a href="https://github.com/cgzones">cgzones</a> had an idea how to fix the Coverity scan.</li>
+<li><a href="https://github.com/jaredgrubb">Jared Grubb</a> silenced a nasty documentation warning.</li>
+<li><a href="https://github.com/qwename">Yixin Zhang</a> fixed an integer overflow check.</li>
+<li><a href="https://github.com/Bosswestfalen">Bosswestfalen</a> merged two iterator classes into a smaller one.</li>
+<li><a href="https://github.com/Daniel599">Daniel599</a> helped to get Travis execute the tests with Clang's sanitizers.</li>
+<li><a href="https://github.com/vjon">Jonathan Lee</a> fixed an example in the README file.</li>
+<li><a href="https://github.com/gnzlbg">gnzlbg</a> supported the implementation of user-defined types.</li>
+<li><a href="https://github.com/qis">Alexej Harm</a> helped to get the user-defined types working with Visual Studio.</li>
+<li><a href="https://github.com/jaredgrubb">Jared Grubb</a> supported the implementation of user-defined types.</li>
+<li><a href="https://github.com/EnricoBilla">EnricoBilla</a> noted a typo in an example.</li>
+<li><a href="https://github.com/horenmar">Martin Hořeňovský</a> found a way for a 2x speedup for the compilation time of the test suite.</li>
+<li><a href="https://github.com/ukhegg">ukhegg</a> found proposed an improvement for the examples section.</li>
+<li><a href="https://github.com/rswanson-ihi">rswanson-ihi</a> noted a typo in the README.</li>
+<li><a href="https://github.com/stanmihai4">Mihai Stan</a> fixed a bug in the comparison with <code>nullptr</code>s.</li>
+<li><a href="https://github.com/tusharpm">Tushar Maheshwari</a> added <a href="https://github.com/sakra/cotire">cotire</a> support to speed up the compilation.</li>
+<li><a href="https://github.com/TedLyngmo">TedLyngmo</a> noted a typo in the README, removed unnecessary bit arithmetic, and fixed some <code>-Weffc++</code> warnings.</li>
+<li><a href="https://github.com/krzysztofwos">Krzysztof Woś</a> made exceptions more visible.</li>
+<li><a href="https://github.com/ftillier">ftillier</a> fixed a compiler warning.</li>
+<li><a href="https://github.com/tinloaf">tinloaf</a> made sure all pushed warnings are properly popped.</li>
+<li><a href="https://github.com/Fytch">Fytch</a> found a bug in the documentation.</li>
+<li><a href="https://github.com/Type1J">Jay Sistar</a> implemented a Meson build description.</li>
+<li><a href="https://github.com/HenryRLee">Henry Lee</a> fixed a warning in ICC and improved the iterator implementation.</li>
+<li><a href="https://github.com/vthiery">Vincent Thiery</a> maintains a package for the Conan package manager.</li>
+<li><a href="https://github.com/koemeet">Steffen</a> fixed a potential issue with MSVC and <code>std::min</code>.</li>
+<li><a href="https://github.com/Chocobo1">Mike Tzou</a> fixed some typos.</li>
+<li><a href="https://github.com/amrcode">amrcode</a> noted a misleading documentation about comparison of floats.</li>
+<li><a href="https://github.com/olegendo">Oleg Endo</a> reduced the memory consumption by replacing <code>&lt;iostream&gt;</code> with <code>&lt;iosfwd&gt;</code>.</li>
+<li><a href="https://github.com/dan-42">dan-42</a> cleaned up the CMake files to simplify including/reusing of the library.</li>
+<li><a href="https://github.com/himikof">Nikita Ofitserov</a> allowed for moving values from initializer lists.</li>
+<li><a href="https://github.com/wincent">Greg Hurrell</a> fixed a typo.</li>
+<li><a href="https://github.com/DmitryKuk">Dmitry Kukovinets</a> fixed a typo.</li>
+<li><a href="https://github.com/kbthomp1">kbthomp1</a> fixed an issue related to the Intel OSX compiler.</li>
+<li><a href="https://github.com/daixtrose">Markus Werle</a> fixed a typo.</li>
+<li><a href="https://github.com/WebProdPP">WebProdPP</a> fixed a subtle error in a precondition check.</li>
+<li><a href="https://github.com/leha-bot">Alex</a> noted an error in a code sample.</li>
+<li><a href="https://github.com/tdegeus">Tom de Geus</a> reported some warnings with ICC and helped fixing them.</li>
+<li><a href="https://github.com/pjkundert">Perry Kundert</a> simplified reading from input streams.</li>
+<li><a href="https://github.com/sonulohani">Sonu Lohani</a> fixed a small compilation error.</li>
+<li><a href="https://github.com/jseward">Jamie Seward</a> fixed all MSVC warnings.</li>
+<li><a href="https://github.com/eld00d">Nate Vargas</a> added a Doxygen tag file.</li>
+<li><a href="https://github.com/pvleuven">pvleuven</a> helped fixing a warning in ICC.</li>
+<li><a href="https://github.com/crea7or">Pavel</a> helped fixing some warnings in MSVC.</li>
+<li><a href="https://github.com/jseward">Jamie Seward</a> avoided unnecessary string copies in <code>find()</code> and <code>count()</code>.</li>
+<li><a href="https://github.com/Itja">Mitja</a> fixed some typos.</li>
+<li><a href="https://github.com/jowr">Jorrit Wronski</a> updated the Hunter package links.</li>
+<li><a href="https://github.com/TinyTinni">Matthias Möller</a> added a <code>.natvis</code> for the MSVC debug view.</li>
+<li><a href="https://github.com/bogemic">bogemic</a> fixed some C++17 deprecation warnings.</li>
+<li><a href="https://github.com/erengy">Eren Okka</a> fixed some MSVC warnings.</li>
+<li><a href="https://github.com/abolz">abolz</a> integrated the Grisu2 algorithm for proper floating-point formatting, allowing more roundtrip checks to succeed.</li>
+<li><a href="https://github.com/Pipeliner">Vadim Evard</a> fixed a Markdown issue in the README.</li>
+<li><a href="https://github.com/zerodefect">zerodefect</a> fixed a compiler warning.</li>
+<li><a href="https://github.com/kaidokert">Kert</a> allowed to template the string type in the serialization and added the possibility to override the exceptional behavior.</li>
+<li><a href="https://github.com/mark-99">mark-99</a> helped fixing an ICC error.</li>
+<li><a href="https://github.com/patrikhuber">Patrik Huber</a> fixed links in the README file.</li>
+<li><a href="https://github.com/johnfb">johnfb</a> found a bug in the implementation of CBOR's indefinite length strings.</li>
+<li><a href="https://github.com/pfultz2">Paul Fultz II</a> added a note on the cget package manager.</li>
+<li><a href="https://github.com/wla80">Wilson Lin</a> made the integration section of the README more concise.</li>
+<li><a href="https://github.com/ralfbielig">RalfBielig</a> detected and fixed a memory leak in the parser callback.</li>
+<li><a href="https://github.com/agrianius">agrianius</a> allowed to dump JSON to an alternative string type.</li>
+<li><a href="https://github.com/ktonon">Kevin Tonon</a> overworked the C++11 compiler checks in CMake.</li>
+<li><a href="https://github.com/ax3l">Axel Huebl</a> simplified a CMake check and added support for the <a href="https://spack.io">Spack package manager</a>.</li>
+<li><a href="https://github.com/coryan">Carlos O'Ryan</a> fixed a typo.</li>
+<li><a href="https://github.com/jammehcow">James Upjohn</a> fixed a version number in the compilers section.</li>
+<li><a href="https://github.com/chuckatkins">Chuck Atkins</a> adjusted the CMake files to the CMake packaging guidelines and provided documentation for the CMake integration.</li>
+<li><a href="https://github.com/dns13">Jan Schöppach</a> fixed a typo.</li>
+<li><a href="https://github.com/martin-mfg">martin-mfg</a> fixed a typo.</li>
+<li><a href="https://github.com/TinyTinni">Matthias Möller</a> removed the dependency from <code>std::stringstream</code>.</li>
+<li><a href="https://github.com/agrianius">agrianius</a> added code to use alternative string implementations.</li>
+<li><a href="https://github.com/Daniel599">Daniel599</a> allowed to use more algorithms with the <code>items()</code> function.</li>
+<li><a href="https://github.com/jrakow">Julius Rakow</a> fixed the Meson include directory and fixed the links to <a href="cppreference.com">cppreference.com</a>.</li>
+<li><a href="https://github.com/sonulohani">Sonu Lohani</a> fixed the compilation with MSVC 2015 in debug mode.</li>
+<li><a href="https://github.com/grembo">grembo</a> fixed the test suite and re-enabled several test cases.</li>
+<li><a href="https://github.com/simnalamburt">Hyeon Kim</a> introduced the macro <code>JSON_INTERNAL_CATCH</code> to control the exception handling inside the library.</li>
+<li><a href="https://github.com/thyu">thyu</a> fixed a compiler warning.</li>
+<li><a href="https://github.com/LEgregius">David Guthrie</a> fixed a subtle compilation error with Clang 3.4.2.</li>
+<li><a href="https://github.com/dennisfischer">Dennis Fischer</a> allowed to call <code>find_package</code> without installing the library.</li>
+<li><a href="https://github.com/simnalamburt">Hyeon Kim</a> fixed an issue with a double macro definition.</li>
+<li><a href="https://github.com/rivertam">Ben Berman</a> made some error messages more understandable.</li>
+<li><a href="https://github.com/zakalibit">zakalibit</a> fixed a compilation problem with the Intel C++ compiler.</li>
+<li><a href="https://github.com/mandreyel">mandreyel</a> fixed a compilation problem.</li>
+<li><a href="https://github.com/koponomarenko">Kostiantyn Ponomarenko</a> added version and license information to the Meson build file.</li>
+<li><a href="https://github.com/henryiii">Henry Schreiner</a> added support for GCC 4.8.</li>
+<li><a href="https://github.com/knilch0r">knilch</a> made sure the test suite does not stall when run in the wrong directory.</li>
+<li><a href="https://github.com/antonioborondo">Antonio Borondo</a> fixed an MSVC 2017 warning.</li>
+<li><a href="https://github.com/dgendreau">Dan Gendreau</a> implemented the <code>NLOHMANN_JSON_SERIALIZE_ENUM</code> macro to quickly define a enum/JSON mapping.</li>
+<li><a href="https://github.com/efp">efp</a> added line and column information to parse errors.</li>
+<li><a href="https://github.com/julian-becker">julian-becker</a> added BSON support.</li>
+<li><a href="https://github.com/pratikpc">Pratik Chowdhury</a> added support for structured bindings.</li>
+<li><a href="https://github.com/davedissian">David Avedissian</a> added support for Clang 5.0.1 (PS4 version).</li>
+<li><a href="https://github.com/dumarjo">Jonathan Dumaresq</a> implemented an input adapter to read from <code>FILE*</code>.</li>
+<li><a href="https://github.com/kjpus">kjpus</a> fixed a link in the documentation.</li>
+<li><a href="https://github.com/manu-chroma">Manvendra Singh</a> fixed a typo in the documentation.</li>
+<li><a href="https://github.com/ziggurat29">ziggurat29</a> fixed an MSVC warning.</li>
+<li><a href="https://github.com/SylvainCorlay">Sylvain Corlay</a> added code to avoid an issue with MSVC.</li>
+<li><a href="https://github.com/mefyl">mefyl</a> fixed a bug when JSON was parsed from an input stream.</li>
+<li><a href="https://github.com/mpoquet">Millian Poquet</a> allowed to install the library via Meson.</li>
+<li><a href="https://github.com/moodboom">Michael Behrns-Miller</a> found an issue with a missing namespace.</li>
+<li><a href="https://github.com/naszta">Nasztanovics Ferenc</a> fixed a compilation issue with libc 2.12.</li>
+<li><a href="https://github.com/andreas-schwab">Andreas Schwab</a> fixed the endian conversion.</li>
+<li><a href="https://github.com/Mark-Dunning">Mark-Dunning</a> fixed a warning in MSVC.</li>
+<li><a href="https://github.com/garethsb-sony">Gareth Sylvester-Bradley</a> added <code>operator/</code> for JSON Pointers.</li>
+<li><a href="https://github.com/johnmarkwayve">John-Mark</a> noted a missing header.</li>
+<li><a href="https://github.com/xvitaly">Vitaly Zaitsev</a> fixed compilation with GCC 9.0.</li>
+<li><a href="https://github.com/stac47">Laurent Stacul</a> fixed compilation with GCC 9.0.</li>
+<li><a href="https://github.com/iwanders">Ivor Wanders</a> helped reducing the CMake requirement to version 3.1.</li>
+<li><a href="https://github.com/njlr">njlr</a> updated the Buckaroo instructions.</li>
+<li><a href="https://github.com/lieff">Lion</a> fixed a compilation issue with GCC 7 on CentOS.</li>
+<li><a href="https://github.com/nickaein">Isaac Nickaein</a> improved the integer serialization performance and implemented the <code>contains()</code> function.</li>
+<li><a href="https://github.com/past-due">past-due</a> suppressed an unfixable warning.</li>
+<li><a href="https://github.com/elvisoric">Elvis Oric</a> improved Meson support.</li>
+<li><a href="https://github.com/Afforix">Matěj Plch</a> fixed an example in the README.</li>
+<li><a href="https://github.com/wythe">Mark Beckwith</a> fixed a typo.</li>
+<li><a href="https://github.com/scinart">scinart</a> fixed bug in the serializer.</li>
+<li><a href="https://github.com/pboettch">Patrick Boettcher</a> implemented <code>push_back()</code> and <code>pop_back()</code> for JSON Pointers.</li>
+<li><a href="https://github.com/nicoddemus">Bruno Oliveira</a> added support for Conda.</li>
+<li><a href="https://github.com/skypjack">Michele Caini</a> fixed links in the README.</li>
+<li><a href="https://github.com/hnkb">Hani</a> documented how to install the library with NuGet.</li>
+<li><a href="https://github.com/wythe">Mark Beckwith</a> fixed a typo.</li>
+<li><a href="https://github.com/yann-morin-1998">yann-morin-1998</a> helped reducing the CMake requirement to version 3.1.</li>
+<li><a href="https://github.com/podsvirov">Konstantin Podsvirov</a> maintains a package for the MSYS2 software distro.</li>
+<li><a href="https://github.com/remyabel">remyabel</a> added GNUInstallDirs to the CMake files.</li>
+<li><a href="https://github.com/taylorhoward92">Taylor Howard</a> fixed a unit test.</li>
+<li><a href="https://github.com/Macr0Nerd">Gabe Ron</a> implemented the <code>to_string</code> method.</li>
+<li><a href="https://github.com/heavywatal">Watal M. Iwasaki</a> fixed a Clang warning.</li>
+<li><a href="https://github.com/onqtam">Viktor Kirilov</a> switched the unit tests from <a href="https://github.com/philsquared/Catch">Catch</a> to <a href="https://github.com/onqtam/doctest">doctest</a></li>
+<li><a href="https://github.com/ejcjason">Juncheng E</a> fixed a typo.</li>
+<li><a href="https://github.com/tete17">tete17</a> fixed a bug in the <code>contains</code> function.</li>
+<li><a href="https://github.com/Xav83">Xav83</a> fixed some cppcheck warnings.</li>
+<li><a href="https://github.com/0xflotus">0xflotus</a> fixed some typos.</li>
+<li><a href="https://github.com/chris0x44">Christian Deneke</a> added a const version of <code>json_pointer::back</code>.</li>
+<li><a href="https://github.com/crazyjul">Julien Hamaide</a> made the <code>items()</code> function work with custom string types.</li>
+<li><a href="https://github.com/nemequ">Evan Nemerson</a> updated fixed a bug in Hedley and updated this library accordingly.</li>
+<li><a href="https://github.com/flopp">Florian Pigorsch</a> fixed a lot of typos.</li>
+<li><a href="https://github.com/cbegue">Camille Bégué</a> fixed an issue in the conversion from <code>std::pair</code> and <code>std::tuple</code> to <code>json</code>.</li>
+<li><a href="https://github.com/AnthonyVH">Anthony VH</a> fixed a compile error in an enum deserialization.</li>
+</ul>
+<p>Thanks a lot for helping out! Please <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'nlo'+'hm'+'ann'+'.m'+'e'; return false;">let me know</a> if I forgot someone.</p>
+<h2><a class="anchor" id="autotoc_md56"></a>
+Used third-party tools</h2>
+<p>The library itself consists of a single header file licensed under the MIT license. However, it is built, tested, documented, and whatnot using a lot of third-party tools and services. Thanks a lot!</p>
+<ul>
+<li><a href="https://github.com/edlund/amalgamate"><b>amalgamate.py - Amalgamate C source and header files</b></a> to create a single header file</li>
+<li><a href="http://lcamtuf.coredump.cx/afl/"><b>American fuzzy lop</b></a> for fuzz testing</li>
+<li><a href="https://www.appveyor.com"><b>AppVeyor</b></a> for <a href="https://ci.appveyor.com/project/nlohmann/json">continuous integration</a> on Windows</li>
+<li><a href="http://astyle.sourceforge.net"><b>Artistic Style</b></a> for automatic source code indentation</li>
+<li><a href="http://circleci.com"><b>CircleCI</b></a> for <a href="https://circleci.com/gh/nlohmann/json">continuous integration</a>.</li>
+<li><a href="http://clang.llvm.org"><b>Clang</b></a> for compilation with code sanitizers</li>
+<li><a href="https://cmake.org"><b>CMake</b></a> for build automation</li>
+<li><a href="https://www.codacy.com"><b>Codacity</b></a> for further <a href="https://www.codacy.com/app/nlohmann/json">code analysis</a></li>
+<li><a href="https://coveralls.io"><b>Coveralls</b></a> to measure <a href="https://coveralls.io/github/nlohmann/json">code coverage</a></li>
+<li><a href="https://scan.coverity.com"><b>Coverity Scan</b></a> for <a href="https://scan.coverity.com/projects/nlohmann-json">static analysis</a></li>
+<li><a href="http://cppcheck.sourceforge.net"><b>cppcheck</b></a> for static analysis</li>
+<li><a href="https://github.com/onqtam/doctest"><b>doctest</b></a> for the unit tests</li>
+<li><a href="https://doozer.io"><b>Doozer</b></a> for <a href="https://doozer.io/nlohmann/json">continuous integration</a> on Linux (CentOS, Raspbian, Fedora)</li>
+<li><a href="http://www.stack.nl/~dimitri/doxygen/"><b>Doxygen</b></a> to generate <a href="https://nlohmann.github.io/json/">documentation</a></li>
+<li><a href="https://github.com/RPGillespie6/fastcov"><b>fastcov</b></a> to process coverage information</li>
+<li><a href="https://github.com/rstacruz/git-update-ghpages"><b>git-update-ghpages</b></a> to upload the documentation to gh-pages</li>
+<li><a href="https://github.com/skywinder/github-changelog-generator"><b>GitHub Changelog Generator</b></a> to generate the <a href="https://github.com/nlohmann/json/blob/develop/ChangeLog.md">ChangeLog</a></li>
+<li><a href="https://github.com/google/benchmark"><b>Google Benchmark</b></a> to implement the benchmarks</li>
+<li><a href="https://nemequ.github.io/hedley/"><b>Hedley</b></a> to avoid re-inventing several compiler-agnostic feature macros</li>
+<li><a href="http://ltp.sourceforge.net/coverage/lcov.php"><b>lcov</b></a> to process coverage information and create a HTML view</li>
+<li><a href="http://llvm.org/docs/LibFuzzer.html"><b>libFuzzer</b></a> to implement fuzz testing for OSS-Fuzz</li>
+<li><a href="https://github.com/google/oss-fuzz"><b>OSS-Fuzz</b></a> for continuous fuzz testing of the library (<a href="https://github.com/google/oss-fuzz/tree/master/projects/json">project repository</a>)</li>
+<li><a href="https://probot.github.io"><b>Probot</b></a> for automating maintainer tasks such as closing stale issues, requesting missing information, or detecting toxic comments.</li>
+<li><a href="https://github.com/nlohmann/json/blob/develop/doc/scripts/send_to_wandbox.py"><b>send_to_wandbox</b></a> to send code examples to <a href="http://melpon.org/wandbox">Wandbox</a></li>
+<li><a href="https://travis-ci.org"><b>Travis</b></a> for <a href="https://travis-ci.org/nlohmann/json">continuous integration</a> on Linux and macOS</li>
+<li><a href="http://valgrind.org"><b>Valgrind</b></a> to check for correct memory management</li>
+<li><a href="http://melpon.org/wandbox"><b>Wandbox</b></a> for <a href="https://wandbox.org/permlink/TarF5pPn9NtHQjhf">online examples</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md57"></a>
+Projects using JSON for Modern C++</h2>
+<p>The library is currently used in Apple macOS Sierra and iOS 10. I am not sure what they are using the library for, but I am happy that it runs on so many devices.</p>
+<h2><a class="anchor" id="autotoc_md58"></a>
+Notes</h2>
+<h3><a class="anchor" id="autotoc_md59"></a>
+Character encoding</h3>
+<p>The library supports <b>Unicode input</b> as follows:</p>
+<ul>
+<li>Only <b>UTF-8</b> encoded input is supported which is the default encoding for JSON according to <a href="https://tools.ietf.org/html/rfc8259.html#section-8.1">RFC 8259</a>.</li>
+<li><code>std::u16string</code> and <code>std::u32string</code> can be parsed, assuming UTF-16 and UTF-32 encoding, respectively. These encodings are not supported when reading from files or other input containers.</li>
+<li>Other encodings such as Latin-1 or ISO 8859-1 are <b>not</b> supported and will yield parse or serialization errors.</li>
+<li><a href="http://www.unicode.org/faq/private_use.html#nonchar1">Unicode noncharacters</a> will not be replaced by the library.</li>
+<li>Invalid surrogates (e.g., incomplete pairs such as <code>\uDEAD</code>) will yield parse errors.</li>
+<li>The strings stored in the library are UTF-8 encoded. When using the default string type (<code>std::string</code>), note that its length/size functions return the number of stored bytes rather than the number of characters or glyphs.</li>
+<li>When you store strings with different encodings in the library, calling <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a50ec80b02d0f3f51130d4abb5d1cfdc5.html#a50ec80b02d0f3f51130d4abb5d1cfdc5"><code>dump()</code></a> may throw an exception unless <code>json::error_handler_t::replace</code> or <code>json::error_handler_t::ignore</code> are used as error handlers.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md60"></a>
+Comments in JSON</h3>
+<p>This library does not support comments. It does so for three reasons:</p>
+<ol type="1">
+<li>Comments are not part of the <a href="https://tools.ietf.org/html/rfc8259">JSON specification</a>. You may argue that <code>//</code> or <code>/* */</code> are allowed in JavaScript, but JSON is not JavaScript.</li>
+<li><p class="startli">This was not an oversight: Douglas Crockford <a href="https://plus.google.com/118095276221607585885/posts/RK8qyGVaGSr">wrote on this</a> in May 2012:</p>
+<p class="startli">&gt; I removed comments from JSON because I saw people were using them to hold parsing directives, a practice which would have destroyed interoperability. I know that the lack of comments makes some people sad, but it shouldn't.</p>
+<p class="startli">&gt; Suppose you are using JSON to keep configuration files, which you would like to annotate. Go ahead and insert all the comments you like. Then pipe it through JSMin before handing it to your JSON parser.</p>
+</li>
+<li>It is dangerous for interoperability if some libraries would add comment support while others don't. Please check <a href="https://tools.ietf.org/html/draft-iab-protocol-maintenance-01">The Harmful Consequences of the Robustness Principle</a> on this.</li>
+</ol>
+<p>This library will not support comments in the future. If you wish to use comments, I see three options:</p>
+<ol type="1">
+<li>Strip comments before using this library.</li>
+<li>Use a different JSON library with comment support.</li>
+<li>Use a format that natively supports comments (e.g., YAML or JSON5).</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md61"></a>
+Order of object keys</h3>
+<p>By default, the library does not preserve the <b>insertion order of object elements</b>. This is standards-compliant, as the <a href="https://tools.ietf.org/html/rfc8259.html">JSON standard</a> defines objects as "an unordered collection of zero or more name/value pairs". If you do want to preserve the insertion order, you can specialize the object type with containers like <a href="https://github.com/Tessil/ordered-map"><code>tsl::ordered_map</code></a> (<a href="https://github.com/nlohmann/json/issues/546#issuecomment-304447518">integration</a>) or <a href="https://github.com/nlohmann/fifo_map"><code>nlohmann::fifo_map</code></a> (<a href="https://github.com/nlohmann/json/issues/485#issuecomment-333652309">integration</a>).</p>
+<h3><a class="anchor" id="autotoc_md62"></a>
+Further notes</h3>
+<ul>
+<li>The code contains numerous debug <b>assertions</b> which can be switched off by defining the preprocessor macro <code>NDEBUG</code>, see the <a href="https://en.cppreference.com/w/cpp/error/assert">documentation of <code>assert</code></a>. In particular, note <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a233b02b0839ef798942dd46157cc0fe6.html#a233b02b0839ef798942dd46157cc0fe6"><code>operator[]</code></a> implements <b>unchecked access</b> for const objects: If the given key is not present, the behavior is undefined (think of a dereferenced null pointer) and yields an <a href="https://github.com/nlohmann/json/issues/289">assertion failure</a> if assertions are switched on. If you are not sure whether an element in an object exists, use checked access with the <a href="https://nlohmann.github.io/json/classnlohmann_1_1basic__json_a73ae333487310e3302135189ce8ff5d8.html#a73ae333487310e3302135189ce8ff5d8"><code>at()</code> function</a>.</li>
+<li>As the exact type of a number is not defined in the <a href="https://tools.ietf.org/html/rfc8259.html">JSON specification</a>, this library tries to choose the best fitting C++ number type automatically. As a result, the type <code>double</code> may be used to store numbers which may yield <a href="https://github.com/nlohmann/json/issues/181"><b>floating-point exceptions</b></a> in certain rare situations if floating-point exceptions have been unmasked in the calling code. These exceptions are not caused by the library and need to be fixed in the calling code, such as by re-masking the exceptions prior to calling library functions.</li>
+<li>The code can be compiled without C++ <b>runtime type identification</b> features; that is, you can use the <code>-fno-rtti</code> compiler flag.</li>
+<li><b>Exceptions</b> are used widely within the library. They can, however, be switched off with either using the compiler flag <code>-fno-exceptions</code> or by defining the symbol <code>JSON_NOEXCEPTION</code>. In this case, exceptions are replaced by <code>abort()</code> calls. You can further control this behavior by defining <code>JSON_THROW_USER´</code> (overriding <code>throw</code>), <code>JSON_TRY_USER</code> (overriding <code>try</code>), and <code>JSON_CATCH_USER</code> (overriding <code>catch</code>). Note that <code>JSON_THROW_USER</code> should leave the current scope (e.g., by throwing or aborting), as continuing after it may yield undefined behavior.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md63"></a>
+Execute unit tests</h2>
+<p>To compile and run the tests, you need to execute</p>
+<div class="fragment"><div class="line">$ mkdir build</div>
+<div class="line">$ cd build</div>
+<div class="line">$ cmake ..</div>
+<div class="line">$ cmake --build .</div>
+<div class="line">$ ctest --output-on-failure</div>
+</div><!-- fragment --><p>For more information, have a look at the file <a href="https://github.com/nlohmann/json/blob/master/.travis.yml">.travis.yml</a>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<div class="ttc" id="astructnlohmann_1_1adl__serializer_html_a01b867bd5dce5249d4f7433b8f27def6"><div class="ttname"><a href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">nlohmann::adl_serializer::to_json</a></div><div class="ttdeci">static auto to_json(BasicJsonType &amp;j, ValueType &amp;&amp;val) noexcept(noexcept(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)))) -&gt; decltype(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)), void())</div><div class="ttdoc">convert any value type to a JSON value</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03827">json.hpp:3827</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1adl__serializer_html_a2c544585b8b1828a0f1eecd831d0496e"><div class="ttname"><a href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">nlohmann::adl_serializer::from_json</a></div><div class="ttdeci">static auto from_json(BasicJsonType &amp;&amp;j, ValueType &amp;val) noexcept(noexcept(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val))) -&gt; decltype(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val), void())</div><div class="ttdoc">convert a JSON value to any value type</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03810">json.hpp:3810</a></div></div>
+<div class="ttc" id="anamespacenlohmann_html_a2bfd99e845a2e5cd90aeaf1b1431f474"><div class="ttname"><a href="namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474">nlohmann::json</a></div><div class="ttdeci">basic_json&lt;&gt; json</div><div class="ttdoc">default JSON class</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02445">json.hpp:2445</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_ac93478ebfa609a491612b5659c968e42"><div class="ttname"><a href="generic__error__stepper_8cpp.html#ac93478ebfa609a491612b5659c968e42">b2</a></div><div class="ttdeci">const error_rk_generic_type::coef_b_type b2</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00061">generic_error_stepper.cpp:61</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_a0ab7a6eeb6981fc69beafe088ad240dc"><div class="ttname"><a href="namespaceproc__geojson.html#a0ab7a6eeb6981fc69beafe088ad240dc">proc_geojson.p</a></div><div class="ttdeci">p</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00076">proc_geojson.py:76</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a4c5d399dfa9252e70f876756f3f49084"><div class="ttname"><a href="json_8hpp.html#a4c5d399dfa9252e70f876756f3f49084">NLOHMANN_JSON_SERIALIZE_ENUM</a></div><div class="ttdeci">#define NLOHMANN_JSON_SERIALIZE_ENUM(ENUM_TYPE,...)</div><div class="ttdoc">macro to briefly define a mapping between an enum and JSON</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01785">json.hpp:1785</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1f0395aad0fe853a4539288749d3a603"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1f0395aad0fe853a4539288749d3a603">nlohmann::detail::from_json</a></div><div class="ttdeci">void from_json(const BasicJsonType &amp;j, typename std::nullptr_t &amp;n)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02898">json.hpp:2898</a></div></div>
+<div class="ttc" id="anamespacenlohmann_html"><div class="ttname"><a href="namespacenlohmann.html">nlohmann</a></div><div class="ttdoc">namespace for Niels Lohmann</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00084">json.hpp:84</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef">nlohmann::detail::value_t::number_float</a></div><div class="ttdeci">@ number_float</div><div class="ttdoc">number value (floating-point)</div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc">nlohmann::detail::value_t::number_integer</a></div><div class="ttdeci">@ number_integer</div><div class="ttdoc">number value (signed integer)</div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21">nlohmann::detail::value_t::string</a></div><div class="ttdeci">@ string</div><div class="ttdoc">string value</div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e">nlohmann::detail::value_t::number_unsigned</a></div><div class="ttdeci">@ number_unsigned</div><div class="ttdoc">number value (unsigned integer)</div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27">nlohmann::detail::value_t::boolean</a></div><div class="ttdeci">@ boolean</div><div class="ttdoc">boolean value</div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1a804b98cbe89b7e44b698f2ca860490"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1a804b98cbe89b7e44b698f2ca860490">nlohmann::detail::to_json</a></div><div class="ttdeci">void to_json(BasicJsonType &amp;j, T b) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03647">json.hpp:3647</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

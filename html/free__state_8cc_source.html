@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/src/common/state/free_state.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4b233463939c5816c69ae8a4951b9857.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8faa45ea15da546a85b1c47d7bbb36.html">common</a></li><li class="navelem"><a class="el" href="dir_1db57993599758284c9b7da17bb454bf.html">state</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">free_state.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="free__state_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="free__state_8h.html">common/state/free_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecommon.html">common</a> {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacecommon.html#a5743791b0ad02da386e9b9ec09536ec6">    6</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecommon.html#a5743791b0ad02da386e9b9ec09536ec6">GetFreeStateFromState</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_state.html">State</a>&amp; state, <a class="code" href="structcommon_1_1_free_state.html">FreeState</a>* free_state) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a8b2fadb7d8db31d09ad7e92d24b56a8b">position</a> = state.<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> cn = cos(state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> sn = sin(state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a00a3f5498cbdcd76ef2aef876a51caae">velocity</a>[0] = state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> * cn;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a00a3f5498cbdcd76ef2aef876a51caae">velocity</a>[1] = state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> * sn;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> normal_acc = state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> * state.<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> * state.<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a75ae7a9326c820d79197d240ee450a0a">acceleration</a>[0] = state.<a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a> * cn - normal_acc * sn;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a75ae7a9326c820d79197d240ee450a0a">acceleration</a>[1] = state.<a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a> * sn + normal_acc * cn;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a26b2e5d8d9d472e25189199219284e03">angle</a> = state.<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  free_state-&gt;<a class="code" href="structcommon_1_1_free_state.html#a96849218ab63ada116edd386c7f9d010">time_stamp</a> = state.<a class="code" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">time_stamp</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacecommon.html#aaec3fbf4c45d5aa383aaf861973a2ea3">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecommon.html#aaec3fbf4c45d5aa383aaf861973a2ea3">GetStateFromFreeState</a>(<span class="keyword">const</span> <a class="code" href="structcommon_1_1_free_state.html">FreeState</a>&amp; free_state, <a class="code" href="structcommon_1_1_state.html">State</a>* state) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  state-&gt;<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a> = free_state.<a class="code" href="structcommon_1_1_free_state.html#a26b2e5d8d9d472e25189199219284e03">angle</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  state-&gt;<a class="code" href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">vec_position</a> = free_state.<a class="code" href="structcommon_1_1_free_state.html#a8b2fadb7d8db31d09ad7e92d24b56a8b">position</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  state-&gt;<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a> = free_state.<a class="code" href="structcommon_1_1_free_state.html#a00a3f5498cbdcd76ef2aef876a51caae">velocity</a>.norm();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> cn = cos(state-&gt;<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> sn = sin(state-&gt;<a class="code" href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">angle</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> tangent_vec{<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(cn, sn)};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a> normal_vec{<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf&lt;2&gt;</a>(-sn, cn)};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">auto</span> a_tangent = free_state.<a class="code" href="structcommon_1_1_free_state.html#a75ae7a9326c820d79197d240ee450a0a">acceleration</a>.dot(tangent_vec);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">auto</span> a_normal = free_state.<a class="code" href="structcommon_1_1_free_state.html#a75ae7a9326c820d79197d240ee450a0a">acceleration</a>.dot(normal_vec);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  state-&gt;<a class="code" href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">acceleration</a> = a_tangent;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (fabs(state-&gt;<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>) &gt; <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a2b330070a7f9ff0cf1b5f4a0dc198d85">kBigEPS</a>) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    state-&gt;<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a> = a_normal / <a class="code" href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">pow</a>(state-&gt;<a class="code" href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">velocity</a>, 2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    state-&gt;<a class="code" href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">curvature</a> = 0.0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  state-&gt;<a class="code" href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">time_stamp</a> = free_state.<a class="code" href="structcommon_1_1_free_state.html#a96849218ab63ada116edd386c7f9d010">time_stamp</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace common</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructcommon_1_1_state_html_a28778949e1440ae3d4794bd57118ae78"><div class="ttname"><a href="structcommon_1_1_state.html#a28778949e1440ae3d4794bd57118ae78">common::State::velocity</a></div><div class="ttdeci">decimal_t velocity</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a3a0c45655a5e009e56634ccde0c5c575"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a3a0c45655a5e009e56634ccde0c5c575">Vecf</a></div><div class="ttdeci">Eigen::Matrix&lt; decimal_t, N, 1 &gt; Vecf</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00033">basics.h:33</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a8eebe7f110a4478fd15e791150c21ea9"><div class="ttname"><a href="structcommon_1_1_state.html#a8eebe7f110a4478fd15e791150c21ea9">common::State::vec_position</a></div><div class="ttdeci">Vecf&lt; 2 &gt; vec_position</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00009">state.h:9</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a4de935b8f4301b2b44fa9484f1950367"><div class="ttname"><a href="structcommon_1_1_state.html#a4de935b8f4301b2b44fa9484f1950367">common::State::curvature</a></div><div class="ttdeci">decimal_t curvature</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00011">state.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a52e4c3baf521a43d459fa41bb93b5ebb"><div class="ttname"><a href="structcommon_1_1_state.html#a52e4c3baf521a43d459fa41bb93b5ebb">common::State::acceleration</a></div><div class="ttdeci">decimal_t acceleration</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00013">state.h:13</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a0b47430c47a2f8171adccbfd9fccfdce"><div class="ttname"><a href="structcommon_1_1_state.html#a0b47430c47a2f8171adccbfd9fccfdce">common::State::time_stamp</a></div><div class="ttdeci">decimal_t time_stamp</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00008">state.h:8</a></div></div>
+<div class="ttc" id="anamespacestd_html_ac08a71c2d905847e8fb4640dd396f60b"><div class="ttname"><a href="namespacestd.html#ac08a71c2d905847e8fb4640dd396f60b">std::pow</a></div><div class="ttdeci">__float128 pow(__float128 x, __float128 y)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00046">black_hole.cpp:46</a></div></div>
+<div class="ttc" id="anamespacecommon_html_aaec3fbf4c45d5aa383aaf861973a2ea3"><div class="ttname"><a href="namespacecommon.html#aaec3fbf4c45d5aa383aaf861973a2ea3">common::GetStateFromFreeState</a></div><div class="ttdeci">void GetStateFromFreeState(const FreeState &amp;free_state, State *state)</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8cc_source.html#l00019">free_state.cc:19</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a2b330070a7f9ff0cf1b5f4a0dc198d85"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a2b330070a7f9ff0cf1b5f4a0dc198d85">kBigEPS</a></div><div class="ttdeci">const decimal_t kBigEPS</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00076">basics.h:76</a></div></div>
+<div class="ttc" id="afree__state_8h_html"><div class="ttname"><a href="free__state_8h.html">free_state.h</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html_a96849218ab63ada116edd386c7f9d010"><div class="ttname"><a href="structcommon_1_1_free_state.html#a96849218ab63ada116edd386c7f9d010">common::FreeState::time_stamp</a></div><div class="ttdeci">decimal_t time_stamp</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00010">free_state.h:10</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html"><div class="ttname"><a href="structcommon_1_1_free_state.html">common::FreeState</a></div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00009">free_state.h:9</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html"><div class="ttname"><a href="structcommon_1_1_state.html">common::State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00007">state.h:7</a></div></div>
+<div class="ttc" id="astructcommon_1_1_state_html_a65b4aea2471a5a6a9e6c429f7d862339"><div class="ttname"><a href="structcommon_1_1_state.html#a65b4aea2471a5a6a9e6c429f7d862339">common::State::angle</a></div><div class="ttdeci">decimal_t angle</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00010">state.h:10</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html_a26b2e5d8d9d472e25189199219284e03"><div class="ttname"><a href="structcommon_1_1_free_state.html#a26b2e5d8d9d472e25189199219284e03">common::FreeState::angle</a></div><div class="ttdeci">decimal_t angle</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00014">free_state.h:14</a></div></div>
+<div class="ttc" id="anamespacecommon_html_a5743791b0ad02da386e9b9ec09536ec6"><div class="ttname"><a href="namespacecommon.html#a5743791b0ad02da386e9b9ec09536ec6">common::GetFreeStateFromState</a></div><div class="ttdeci">void GetFreeStateFromState(const State &amp;state, FreeState *free_state)</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8cc_source.html#l00006">free_state.cc:6</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html_a8b2fadb7d8db31d09ad7e92d24b56a8b"><div class="ttname"><a href="structcommon_1_1_free_state.html#a8b2fadb7d8db31d09ad7e92d24b56a8b">common::FreeState::position</a></div><div class="ttdeci">Vecf&lt; 2 &gt; position</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00011">free_state.h:11</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html_a75ae7a9326c820d79197d240ee450a0a"><div class="ttname"><a href="structcommon_1_1_free_state.html#a75ae7a9326c820d79197d240ee450a0a">common::FreeState::acceleration</a></div><div class="ttdeci">Vecf&lt; 2 &gt; acceleration</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00013">free_state.h:13</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="anamespacecommon_html"><div class="ttname"><a href="namespacecommon.html">common</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00017">colormap.h:17</a></div></div>
+<div class="ttc" id="astructcommon_1_1_free_state_html_a00a3f5498cbdcd76ef2aef876a51caae"><div class="ttname"><a href="structcommon_1_1_free_state.html#a00a3f5498cbdcd76ef2aef876a51caae">common::FreeState::velocity</a></div><div class="ttdeci">Vecf&lt; 2 &gt; velocity</div><div class="ttdef"><b>Definition:</b> <a href="free__state_8h_source.html#l00012">free_state.h:12</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

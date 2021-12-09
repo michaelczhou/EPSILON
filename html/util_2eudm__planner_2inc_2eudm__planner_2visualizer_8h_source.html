@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/eudm_planner/inc/eudm_planner/visualizer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_97b678906f3da8d6067db4a1528c7316.html">eudm_planner</a></li><li class="navelem"><a class="el" href="dir_5f5e3410aa7bdc72df96c7288e231849.html">inc</a></li><li class="navelem"><a class="el" href="dir_05ce5a15289790230acca0e3cfa5d0d1.html">eudm_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">visualizer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CORE_EUDM_PLANNER_INC_EUDM_PLANNER_ROS_ADAPTER_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CORE_EUDM_PLANNER_INC_EUDM_PLANNER_ROS_ADAPTER_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;tf/tf.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;tf/transform_broadcaster.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html">common/basics/basics.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="semantics_8h.html">common/basics/semantics.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">common/state/state.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="eudm__manager_8h.html">eudm_planner/eudm_manager.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="eudm__planner_8h.html">eudm_planner/eudm_planner.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;ros/ros.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;visualization_msgs/MarkerArray.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classplanning_1_1_eudm_planner_visualizer.html">EudmPlannerVisualizer</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html#a21cd665469a484e2d64c121aa396a28c">   24</a></span>&#160;  <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#a21cd665469a484e2d64c121aa396a28c">EudmPlannerVisualizer</a>(ros::NodeHandle nh, <a class="code" href="classplanning_1_1_eudm_manager.html">EudmManager</a>* p_bp_manager,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <span class="keywordtype">int</span> <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      : nh_(nh), ego_id_(<a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    assert(p_bp_manager != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    p_bp_manager_ = p_bp_manager;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html#aec6e0f68f008f639f645ef5602730b67">   31</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#aec6e0f68f008f639f645ef5602730b67">Init</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string forward_traj_topic = std::string(<span class="stringliteral">&quot;/vis/agent_&quot;</span>) +</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                     <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(ego_id_) +</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                     std::string(<span class="stringliteral">&quot;/forward_trajs&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    forward_traj_vis_pub_ =</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        nh_.advertise&lt;visualization_msgs::MarkerArray&gt;(forward_traj_topic, 1);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html#a5a904b1ff044ad0184bdeb768965886e">   40</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#a5a904b1ff044ad0184bdeb768965886e">PublishDataWithStamp</a>(<span class="keyword">const</span> ros::Time&amp; stamp) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#adf26ea10644595c86f2d837feee5604b">VisualizeForwardTrajectories</a>(stamp);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html#adf26ea10644595c86f2d837feee5604b">   44</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#adf26ea10644595c86f2d837feee5604b">VisualizeForwardTrajectories</a>(<span class="keyword">const</span> ros::Time&amp; stamp) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">auto</span> forward_trajs = p_bp_manager_-&gt;<a class="code" href="classplanning_1_1_eudm_manager.html#adb7187f046a86f503534a3ef3dc3db19">planner</a>().<a class="code" href="classplanning_1_1_eudm_planner.html#a12e16604b6e7ef7ad55b3f12037e24e6">forward_trajs</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> processed_winner_id = p_bp_manager_-&gt;<a class="code" href="classplanning_1_1_eudm_manager.html#ab380c774d67f05b9c254e9fdb0bd28d5">processed_winner_id</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> original_winner_id = p_bp_manager_-&gt;<a class="code" href="classplanning_1_1_eudm_manager.html#a74e5ee8a8c7771be7e2e920cf9fd6d0c">original_winner_id</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    visualization_msgs::MarkerArray traj_list_marker;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a> traj_color(0.5, 0.5, 0.5, 0.5);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span> traj_z = 0.3;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; static_cast&lt;int&gt;(forward_trajs.size()); ++i) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">if</span> (i == processed_winner_id) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        traj_color = <a class="code" href="namespacecommon.html#a62bc68d7c53680254c33593e665a4b3b">common::cmap</a>.at(<span class="stringliteral">&quot;gold&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        traj_z = 0.4;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == original_winner_id) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        traj_color = <a class="code" href="namespacecommon.html#a62bc68d7c53680254c33593e665a4b3b">common::cmap</a>.at(<span class="stringliteral">&quot;spring green&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        traj_z = 0.4;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        traj_color = <a class="code" href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a>(0.5, 0.5, 0.5, 0.5);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        traj_z = 0.3;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      std::vector&lt;common::Point&gt; points;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; v : forward_trajs[i]) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="structcommon_1_1_point.html">common::Point</a> pt(v.state().vec_position(0), v.state().vec_position(1));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// pt.z = v.state().time_stamp -</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// forward_trajs[i].front().state().time_stamp;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        pt.<a class="code" href="structcommon_1_1_point.html#acf41c07b8a483f4759fecae0c934e629">z</a> = traj_z;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        points.push_back(pt);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        visualization_msgs::Marker point_marker;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// point_marker.ns = &quot;point&quot;;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classcommon_1_1_visualization_util.html#acb70cac1b4bad9ef8c98c15a5f737554">common::VisualizationUtil::GetRosMarkerCylinderUsingPoint</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="structcommon_1_1_point.html">common::Point</a>(pt), <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.5, 0.5, 0.1), traj_color, 0,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            &amp;point_marker);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        traj_list_marker.markers.push_back(point_marker);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      visualization_msgs::Marker line_marker;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">// line_marker.ns = &quot;line&quot;;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="classcommon_1_1_visualization_util.html#adbd8c00bb4058afb134fbfee3056475c">common::VisualizationUtil::GetRosMarkerLineStripUsingPoints</a>(</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          points, <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a>(0.1, 0.1, 0.1), traj_color, 0, &amp;line_marker);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      traj_list_marker.markers.push_back(line_marker);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> num_markers = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(traj_list_marker.markers.size());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classcommon_1_1_visualization_util.html#acc85bdbe4c15939b30c5733daec2ba21">common::VisualizationUtil::FillHeaderIdInMarkerArray</a>(</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        stamp, std::string(<span class="stringliteral">&quot;/map&quot;</span>), last_forward_trajs_marker_cnt_,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        &amp;traj_list_marker);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    last_forward_trajs_marker_cnt_ = num_markers;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    forward_traj_vis_pub_.publish(traj_list_marker);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classplanning_1_1_eudm_planner_visualizer.html#aa6532e36f5297bc6c28ec43a8939282e">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_eudm_planner_visualizer.html#aa6532e36f5297bc6c28ec43a8939282e">set_use_sim_state</a>(<span class="keywordtype">bool</span> use_sim_state) { use_sim_state_ = use_sim_state; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  ros::NodeHandle nh_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">int</span> ego_id_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">bool</span> use_sim_state_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">int</span> last_forward_trajs_marker_cnt_ = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  ros::Publisher forward_traj_vis_pub_;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classplanning_1_1_eudm_manager.html">EudmManager</a>* p_bp_manager_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}  <span class="comment">// namespace planning</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif  // _CORE_EUDM_PLANNER_INC_EUDM_PLANNER_ROS_ADAPTER_H_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l22620">json.hpp:22620</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html_aa6532e36f5297bc6c28ec43a8939282e"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html#aa6532e36f5297bc6c28ec43a8939282e">planning::EudmPlannerVisualizer::set_use_sim_state</a></div><div class="ttdeci">void set_use_sim_state(bool use_sim_state)</div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00090">visualizer.h:90</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_adbd8c00bb4058afb134fbfee3056475c"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#adbd8c00bb4058afb134fbfee3056475c">common::VisualizationUtil::GetRosMarkerLineStripUsingPoints</a></div><div class="ttdeci">static ErrorType GetRosMarkerLineStripUsingPoints(const std::vector&lt; Point &gt; points, const Vec3f &amp;scale, const ColorARGB &amp;color, const int &amp;id, visualization_msgs::Marker *p_marker)</div><div class="ttdoc">Get the Ros Marker Line Strip Using Points object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l01009">common_visualization_util.h:1009</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_html_a12e16604b6e7ef7ad55b3f12037e24e6"><div class="ttname"><a href="classplanning_1_1_eudm_planner.html#a12e16604b6e7ef7ad55b3f12037e24e6">planning::EudmPlanner::forward_trajs</a></div><div class="ttdeci">vec_E&lt; vec_E&lt; common::Vehicle &gt; &gt; forward_trajs() const</div><div class="ttdef"><b>Definition:</b> <a href="eudm__planner_8h_source.html#l00169">eudm_planner.h:169</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html_a5a904b1ff044ad0184bdeb768965886e"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html#a5a904b1ff044ad0184bdeb768965886e">planning::EudmPlannerVisualizer::PublishDataWithStamp</a></div><div class="ttdeci">void PublishDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00040">visualizer.h:40</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html">basics.h</a></div></div>
+<div class="ttc" id="asemantics_8h_html"><div class="ttname"><a href="semantics_8h.html">semantics.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html_aec6e0f68f008f639f645ef5602730b67"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html#aec6e0f68f008f639f645ef5602730b67">planning::EudmPlannerVisualizer::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00031">visualizer.h:31</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html_adf26ea10644595c86f2d837feee5604b"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html#adf26ea10644595c86f2d837feee5604b">planning::EudmPlannerVisualizer::VisualizeForwardTrajectories</a></div><div class="ttdeci">void VisualizeForwardTrajectories(const ros::Time &amp;stamp)</div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00044">visualizer.h:44</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_manager_html_ab380c774d67f05b9c254e9fdb0bd28d5"><div class="ttname"><a href="classplanning_1_1_eudm_manager.html#ab380c774d67f05b9c254e9fdb0bd28d5">planning::EudmManager::processed_winner_id</a></div><div class="ttdeci">int processed_winner_id() const</div><div class="ttdef"><b>Definition:</b> <a href="eudm__manager_8h_source.html#l00093">eudm_manager.h:93</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html"><div class="ttname"><a href="structcommon_1_1_point.html">common::Point</a></div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00022">shapes.h:22</a></div></div>
+<div class="ttc" id="astructcommon_1_1_color_a_r_g_b_html"><div class="ttname"><a href="structcommon_1_1_color_a_r_g_b.html">common::ColorARGB</a></div><div class="ttdef"><b>Definition:</b> <a href="colormap_8h_source.html#l00018">colormap.h:18</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html">planning::EudmPlannerVisualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00022">visualizer.h:22</a></div></div>
+<div class="ttc" id="aeudm__planner_8h_html"><div class="ttname"><a href="eudm__planner_8h.html">eudm_planner.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_manager_html_a74e5ee8a8c7771be7e2e920cf9fd6d0c"><div class="ttname"><a href="classplanning_1_1_eudm_manager.html#a74e5ee8a8c7771be7e2e920cf9fd6d0c">planning::EudmManager::original_winner_id</a></div><div class="ttdeci">int original_winner_id() const</div><div class="ttdef"><b>Definition:</b> <a href="eudm__manager_8h_source.html#l00092">eudm_manager.h:92</a></div></div>
+<div class="ttc" id="astructcommon_1_1_point_html_acf41c07b8a483f4759fecae0c934e629"><div class="ttname"><a href="structcommon_1_1_point.html#acf41c07b8a483f4759fecae0c934e629">common::Point::z</a></div><div class="ttdeci">decimal_t z</div><div class="ttdef"><b>Definition:</b> <a href="shapes_8h_source.html#l00025">shapes.h:25</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_manager_html_adb7187f046a86f503534a3ef3dc3db19"><div class="ttname"><a href="classplanning_1_1_eudm_manager.html#adb7187f046a86f503534a3ef3dc3db19">planning::EudmManager::planner</a></div><div class="ttdeci">EudmPlanner &amp; planner()</div><div class="ttdef"><b>Definition:</b> <a href="eudm__manager_8cc_source.html#l00906">eudm_manager.cc:906</a></div></div>
+<div class="ttc" id="aeudm__manager_8h_html"><div class="ttname"><a href="eudm__manager_8h.html">eudm_manager.h</a></div></div>
+<div class="ttc" id="anamespacecommon_html_a62bc68d7c53680254c33593e665a4b3b"><div class="ttname"><a href="namespacecommon.html#a62bc68d7c53680254c33593e665a4b3b">common::cmap</a></div><div class="ttdeci">std::map&lt; std::string, ColorARGB &gt; cmap</div><div class="ttdef"><b>Definition:</b> <a href="colormap_8cc_source.html#l00013">colormap.cc:13</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_a131a743ea2c866aeadfcdf143b8c7f56"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#a131a743ea2c866aeadfcdf143b8c7f56">Vec3f</a></div><div class="ttdeci">Vecf&lt; 3 &gt; Vec3f</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00062">basics.h:62</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_manager_html"><div class="ttname"><a href="classplanning_1_1_eudm_manager.html">planning::EudmManager</a></div><div class="ttdef"><b>Definition:</b> <a href="eudm__manager_8h_source.html#l00013">eudm_manager.h:13</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_acc85bdbe4c15939b30c5733daec2ba21"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#acc85bdbe4c15939b30c5733daec2ba21">common::VisualizationUtil::FillHeaderIdInMarkerArray</a></div><div class="ttdeci">static ErrorType FillHeaderIdInMarkerArray(const ros::Time time_stamp, const std::string frame_id, const int last_array_size, visualization_msgs::MarkerArray *marker_arr)</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00337">common_visualization_util.h:337</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_ae74ea9c9013053f81b7f7ada745fc89e"><div class="ttname"><a href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a></div><div class="ttdeci">int ego_id</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00023">onlane_ai_agent.cc:23</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_eudm_planner_visualizer_html_a21cd665469a484e2d64c121aa396a28c"><div class="ttname"><a href="classplanning_1_1_eudm_planner_visualizer.html#a21cd665469a484e2d64c121aa396a28c">planning::EudmPlannerVisualizer::EudmPlannerVisualizer</a></div><div class="ttdeci">EudmPlannerVisualizer(ros::NodeHandle nh, EudmManager *p_bp_manager, int ego_id)</div><div class="ttdef"><b>Definition:</b> <a href="util_2eudm__planner_2inc_2eudm__planner_2visualizer_8h_source.html#l00024">visualizer.h:24</a></div></div>
+<div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
+<div class="ttc" id="aclasscommon_1_1_visualization_util_html_acb70cac1b4bad9ef8c98c15a5f737554"><div class="ttname"><a href="classcommon_1_1_visualization_util.html#acb70cac1b4bad9ef8c98c15a5f737554">common::VisualizationUtil::GetRosMarkerCylinderUsingPoint</a></div><div class="ttdeci">static ErrorType GetRosMarkerCylinderUsingPoint(const Point &amp;pt, const Vec3f &amp;scale, const ColorARGB &amp;color, const int &amp;id, visualization_msgs::Marker *p_marker)</div><div class="ttdoc">Get the Ros Marker Cylinder Using Point object</div><div class="ttdef"><b>Definition:</b> <a href="common__visualization__util_8h_source.html#l00587">common_visualization_util.h:587</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

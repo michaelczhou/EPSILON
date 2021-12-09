@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/integrate/detail/integrate_n_steps.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_4e3bd8fb2df74e98c02d353c104aa3a8.html">boost</a></li><li class="navelem"><a class="el" href="dir_8910070cfbe574482e920af26024c5a4.html">numeric</a></li><li class="navelem"><a class="el" href="dir_7bd25b2aadea490812a949b26c8ba1f0.html">odeint</a></li><li class="navelem"><a class="el" href="dir_50840dcb10be723b7334bf54ab1a8e31.html">integrate</a></li><li class="navelem"><a class="el" href="dir_19be3db3dc9def5e63f7731659bf8e49.html">detail</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">integrate_n_steps.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="detail_2integrate__n__steps_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> boost/numeric/odeint/integrate/detail/integrate_n_steps.hpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> integrate steps implementation</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef BOOST_NUMERIC_ODEINT_INTEGRATE_DETAIL_INTEGRATE_N_STEPS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define BOOST_NUMERIC_ODEINT_INTEGRATE_DETAIL_INTEGRATE_N_STEPS_HPP_INCLUDED</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="unwrap__reference_8hpp.html">boost/numeric/odeint/util/unwrap_reference.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stepper__categories_8hpp.html">boost/numeric/odeint/stepper/stepper_categories.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="detail_2integrate__adaptive_8hpp.html">boost/numeric/odeint/integrate/detail/integrate_adaptive.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="unit__helper_8hpp.html">boost/numeric/odeint/util/unit_helper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="less__with__sign_8hpp.html">boost/numeric/odeint/util/detail/less_with_sign.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>numeric {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// forward declaration</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper , <span class="keyword">class</span> System , <span class="keyword">class</span> State , <span class="keyword">class</span> Time , <span class="keyword">class</span> Observer &gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">integrate_adaptive</a>(</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Stepper stepper , System system , State &amp;start_state ,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Time &amp;start_time , Time end_time , Time &amp;dt ,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Observer observer , controlled_stepper_tag</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* basic version */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper , <span class="keyword">class</span> System , <span class="keyword">class</span> State , <span class="keyword">class</span> Time , <span class="keyword">class</span> Observer&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">   43</a></span>&#160;Time <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Stepper stepper , System system , State &amp;start_state ,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Time start_time , Time dt , <span class="keywordtype">size_t</span> num_of_steps ,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Observer observer , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; Observer &gt;::type</a> &amp;obs = observer;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Time time = start_time;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> step = 0; step &lt; num_of_steps ; ++step )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        obs( start_state , time );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        stepper.do_step( system , start_state , time , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// direct computation of the time avoids error propagation happening when using time += dt</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// we need clumsy type analysis to get boost units working here</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        time = start_time + <span class="keyword">static_cast&lt;</span> typename <a class="code" href="structboost_1_1numeric_1_1odeint_1_1unit__value__type.html#ab36e8cb6529920d9ac9b04abf239e220">unit_value_type&lt;Time&gt;::type</a> <span class="keyword">&gt;</span>( step+1 ) * <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    obs( start_state , time );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> time;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* controlled version */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper , <span class="keyword">class</span> System , <span class="keyword">class</span> State , <span class="keyword">class</span> Time , <span class="keyword">class</span> Observer&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a674b10f103e0b0ce99e4be6bce1d27ca">   68</a></span>&#160;Time <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        Stepper stepper , System system , State &amp;start_state ,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Time start_time , Time dt , <span class="keywordtype">size_t</span> num_of_steps ,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Observer observer , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag.html">controlled_stepper_tag</a> )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; Observer &gt;::type</a> &amp;obs = observer;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Time time = start_time;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Time time_step = <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> step = 0; step &lt; num_of_steps ; ++step )</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        obs( start_state , time );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">detail::integrate_adaptive</a>( stepper , system , start_state , time , time+time_step , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> ,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="structboost_1_1numeric_1_1odeint_1_1null__observer.html">null_observer</a>() , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag.html">controlled_stepper_tag</a>() );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// direct computation of the time avoids error propagation happening when using time += dt</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// we need clumsy type analysis to get boost units working here</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        time = start_time + <span class="keyword">static_cast&lt;</span> typename <a class="code" href="structboost_1_1numeric_1_1odeint_1_1unit__value__type.html#ab36e8cb6529920d9ac9b04abf239e220">unit_value_type&lt;Time&gt;::type</a> <span class="keyword">&gt;</span>(step+1) * time_step;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    obs( start_state , time );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> time;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/* dense output version */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper , <span class="keyword">class</span> System , <span class="keyword">class</span> State , <span class="keyword">class</span> Time , <span class="keyword">class</span> Observer&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7faf82d47e8fb9955a9659fbe4f8243c">   95</a></span>&#160;Time <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">integrate_n_steps</a>(</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Stepper stepper , System system , State &amp;start_state ,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Time start_time , Time dt , <span class="keywordtype">size_t</span> num_of_steps ,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        Observer observer , <a class="code" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a> )</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">typename</span> <a class="code" href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">odeint::unwrap_reference&lt; Observer &gt;::type</a> &amp;obs = observer;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    Time time = start_time;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> Time end_time = start_time + <span class="keyword">static_cast&lt;</span> typename <a class="code" href="structboost_1_1numeric_1_1odeint_1_1unit__value__type.html#ab36e8cb6529920d9ac9b04abf239e220">unit_value_type&lt;Time&gt;::type</a> <span class="keyword">&gt;</span>(num_of_steps) * <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    stepper.initialize( start_state , time , <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">size_t</span> step = 0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">while</span>( step &lt; num_of_steps )</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">less_with_sign</a>( time , stepper.current_time() , stepper.current_time_step() ) )</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            stepper.calc_state( time , start_state );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            obs( start_state , time );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            ++step;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// direct computation of the time avoids error propagation happening when using time += dt</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// we need clumsy type analysis to get boost units working here</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            time = start_time + <span class="keyword">static_cast&lt;</span> typename <a class="code" href="structboost_1_1numeric_1_1odeint_1_1unit__value__type.html#ab36e8cb6529920d9ac9b04abf239e220">unit_value_type&lt;Time&gt;::type</a> <span class="keyword">&gt;</span>(step) * <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// we have not reached the end, do another real step</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">less_with_sign</a>( stepper.current_time()+stepper.current_time_step() ,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                            end_time ,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                            stepper.current_time_step() ) )</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            stepper.do_step( system );</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">less_with_sign</a>( stepper.current_time() , end_time , stepper.current_time_step() ) )</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        { <span class="comment">// do the last step ending exactly on the end point</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            stepper.initialize( stepper.current_state() , stepper.current_time() , end_time - stepper.current_time() );</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            stepper.do_step( system );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">while</span>( stepper.current_time() &lt; end_time )</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">less_with_sign</a>( end_time ,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                            stepper.current_time()+stepper.current_time_step() ,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                            stepper.current_time_step() ) )</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            stepper.initialize( stepper.current_state() , stepper.current_time() , end_time - stepper.current_time() );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        stepper.do_step( system );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// observation at end point, only if we ended exactly on the end-point (or above due to finite precision)</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    obs( stepper.current_state() , end_time );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> time;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BOOST_NUMERIC_ODEINT_INTEGRATE_DETAIL_INTEGRATE_N_STEPS_HPP_INCLUDED */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aless__with__sign_8hpp_html"><div class="ttname"><a href="less__with__sign_8hpp.html">less_with_sign.hpp</a></div></div>
+<div class="ttc" id="aunwrap__reference_8hpp_html"><div class="ttname"><a href="unwrap__reference_8hpp.html">unwrap_reference.hpp</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> <a href="nested__range__algebra_8hpp_source.html#l00016">nested_range_algebra.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00023">array_algebra.hpp:23</a></div></div>
+<div class="ttc" id="astepper__categories_8hpp_html"><div class="ttname"><a href="stepper__categories_8hpp.html">stepper_categories.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_abff395699fa8a3126412297d53caef62"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#abff395699fa8a3126412297d53caef62">boost::numeric::odeint::detail::integrate_n_steps</a></div><div class="ttdeci">Time integrate_n_steps(Stepper stepper, System system, State &amp;start_state, Time start_time, Time dt, size_t num_of_steps, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__n__steps_8hpp_source.html#l00043">integrate_n_steps.hpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1null__observer_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1null__observer.html">boost::numeric::odeint::null_observer</a></div><div class="ttdef"><b>Definition:</b> <a href="null__observer_8hpp_source.html#l00025">null_observer.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">boost::numeric::odeint::dense_output_stepper_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__categories_8hpp_source.html#l00047">stepper_categories.hpp:47</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1stepper__tag_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">boost::numeric::odeint::stepper_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__categories_8hpp_source.html#l00034">stepper_categories.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1unit__value__type_html_ab36e8cb6529920d9ac9b04abf239e220"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1unit__value__type.html#ab36e8cb6529920d9ac9b04abf239e220">boost::numeric::odeint::unit_value_type::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="unit__helper_8hpp_source.html#l00107">unit_helper.hpp:107</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a7be05bba33c9e8fe42544410c6b7d2d1"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a7be05bba33c9e8fe42544410c6b7d2d1">boost::numeric::odeint::detail::less_with_sign</a></div><div class="ttdeci">bool less_with_sign(T1 t1, T2 t2, T3 dt)</div><div class="ttdef"><b>Definition:</b> <a href="less__with__sign_8hpp_source.html#l00031">less_with_sign.hpp:31</a></div></div>
+<div class="ttc" id="adetail_2integrate__adaptive_8hpp_html"><div class="ttname"><a href="detail_2integrate__adaptive_8hpp.html">integrate_adaptive.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag_html"><div class="ttname"><a href="structboost_1_1numeric_1_1odeint_1_1controlled__stepper__tag.html">boost::numeric::odeint::controlled_stepper_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="stepper__categories_8hpp_source.html#l00043">stepper_categories.hpp:43</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aunit__helper_8hpp_html"><div class="ttname"><a href="unit__helper_8hpp.html">unit_helper.hpp</a></div></div>
+<div class="ttc" id="anamespacebackward_1_1_color_mode_html_aec82452ed7333b210e205aaf6da2d090"><div class="ttname"><a href="namespacebackward_1_1_color_mode.html#aec82452ed7333b210e205aaf6da2d090">backward::ColorMode::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="backward_8hpp_source.html#l03373">backward.hpp:3373</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_1_1detail_html_a52ebbdc4d88092abf455348c6d3ac708"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a52ebbdc4d88092abf455348c6d3ac708">boost::numeric::odeint::detail::integrate_adaptive</a></div><div class="ttdeci">size_t integrate_adaptive(Stepper stepper, System system, State &amp;start_state, Time start_time, Time end_time, Time dt, Observer observer, stepper_tag)</div><div class="ttdef"><b>Definition:</b> <a href="detail_2integrate__adaptive_8hpp_source.html#l00051">integrate_adaptive.hpp:51</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: util/eudm_planner/src/eudm_planner/dcp_tree.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_97b678906f3da8d6067db4a1528c7316.html">eudm_planner</a></li><li class="navelem"><a class="el" href="dir_0493240e22c6a99ef352406ed051855d.html">src</a></li><li class="navelem"><a class="el" href="dir_662d36d4141da5e0e1376be0ddec8664.html">eudm_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dcp_tree.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dcp__tree_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dcp__tree_8h.html">eudm_planner/dcp_tree.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classplanning_1_1_dcp_tree.html#ae789693e3cda6a9dc250efd047c21fbd">   15</a></span>&#160;<a class="code" href="classplanning_1_1_dcp_tree.html#ae789693e3cda6a9dc250efd047c21fbd">DcpTree::DcpTree</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; tree_height, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; layer_time)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    : tree_height_(tree_height), layer_time_(layer_time) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  last_layer_time_ = layer_time_;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  GenerateActionScript();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classplanning_1_1_dcp_tree.html#aa2397721b552376e5237885aac4fae3f">   21</a></span>&#160;<a class="code" href="classplanning_1_1_dcp_tree.html#ae789693e3cda6a9dc250efd047c21fbd">DcpTree::DcpTree</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; tree_height, <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; layer_time,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a>&amp; last_layer_time)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    : tree_height_(tree_height),</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      layer_time_(layer_time),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      last_layer_time_(last_layer_time) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  GenerateActionScript();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classplanning_1_1_dcp_tree.html#abf6a566fa969a8724b82b451053f14e8">   29</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> <a class="code" href="classplanning_1_1_dcp_tree.html#abf6a566fa969a8724b82b451053f14e8">DcpTree::UpdateScript</a>() { GenerateActionScript(); }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;std::vector&lt;DcpTree::DcpAction&gt; DcpTree::AppendActionSequence(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> std::vector&lt;DcpAction&gt;&amp; seq_in, <span class="keyword">const</span> DcpAction&amp; <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  std::vector&lt;DcpAction&gt; seq = seq_in;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>; ++i) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    seq.push_back(<a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> seq;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a> DcpTree::GenerateActionScript() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  action_script_.clear();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::vector&lt;DcpAction&gt; ongoing_action_seq;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lon = 0; lon &lt; static_cast&lt;int&gt;(<a class="code" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaafd4487453885e6013ddea8e02030afb0">DcpLonAction::MAX_COUNT</a>); lon++) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ongoing_action_seq.clear();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ongoing_action_seq.push_back(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        DcpAction(<a class="code" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a>(lon), ongoing_action_.<a class="code" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a746eba82866b4b53c82d87e29501066f">lat</a>, ongoing_action_.<a class="code" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a514322d1b7449ee98e2df27aa672cba6">t</a>));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 1; h &lt; tree_height_; ++h) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lat = 0; lat &lt; static_cast&lt;int&gt;(<a class="code" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aafd4487453885e6013ddea8e02030afb0">DcpLatAction::MAX_COUNT</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;           lat++) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (lat != <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ongoing_action_.<a class="code" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a746eba82866b4b53c82d87e29501066f">lat</a>)) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <span class="keyword">auto</span> actions = AppendActionSequence(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              ongoing_action_seq,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              DcpAction(<a class="code" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a>(lon), <a class="code" href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">DcpLatAction</a>(lat), layer_time_),</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;              tree_height_ - h);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          action_script_.push_back(actions);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      ongoing_action_seq.push_back(</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          DcpAction(<a class="code" href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">DcpLonAction</a>(lon), ongoing_action_.<a class="code" href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a746eba82866b4b53c82d87e29501066f">lat</a>, layer_time_));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    action_script_.push_back(ongoing_action_seq);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// override the last layer time</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; action_seq : action_script_) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    action_seq.back().t = last_layer_time_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">   72</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">DcpTree::planning_horizon</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (action_script_.empty()) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">planning_horizon</a> = 0.0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a> : action_script_[0]) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">planning_horizon</a> += <a class="code" href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a>.t;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">planning_horizon</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace planning</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_acbdde36f2adaebd85781c460878a3edaafd4487453885e6013ddea8e02030afb0"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3edaafd4487453885e6013ddea8e02030afb0">planning::DcpTree::DcpLonAction::MAX_COUNT</a></div><div class="ttdeci">@ MAX_COUNT</div></div>
+<div class="ttc" id="adcp__tree_8h_html"><div class="ttname"><a href="dcp__tree_8h.html">dcp_tree.h</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_ae789693e3cda6a9dc250efd047c21fbd"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#ae789693e3cda6a9dc250efd047c21fbd">planning::DcpTree::DcpTree</a></div><div class="ttdeci">DcpTree(const int &amp;tree_height, const decimal_t &amp;layer_time)</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8cc_source.html#l00015">dcp_tree.cc:15</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_a8f5eba12ce03bf07f2d7807f4ed0d5a9"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#a8f5eba12ce03bf07f2d7807f4ed0d5a9">planning::DcpTree::planning_horizon</a></div><div class="ttdeci">decimal_t planning_horizon() const</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8cc_source.html#l00072">dcp_tree.cc:72</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_abf6a566fa969a8724b82b451053f14e8"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#abf6a566fa969a8724b82b451053f14e8">planning::DcpTree::UpdateScript</a></div><div class="ttdeci">ErrorType UpdateScript()</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8cc_source.html#l00029">dcp_tree.cc:29</a></div></div>
+<div class="ttc" id="astructplanning_1_1_dcp_tree_1_1_dcp_action_html_a746eba82866b4b53c82d87e29501066f"><div class="ttname"><a href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a746eba82866b4b53c82d87e29501066f">planning::DcpTree::DcpAction::lat</a></div><div class="ttdeci">DcpLatAction lat</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8h_source.html#l00044">dcp_tree.h:44</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45a"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45a">ErrorType</a></div><div class="ttdeci">ErrorType</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_ab81a00998a739d34582c169c465beb2aafd4487453885e6013ddea8e02030afb0"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2aafd4487453885e6013ddea8e02030afb0">planning::DcpTree::DcpLatAction::MAX_COUNT</a></div><div class="ttdeci">@ MAX_COUNT</div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_ab81a00998a739d34582c169c465beb2a"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#ab81a00998a739d34582c169c465beb2a">planning::DcpTree::DcpLatAction</a></div><div class="ttdeci">DcpLatAction</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8h_source.html#l00035">dcp_tree.h:35</a></div></div>
+<div class="ttc" id="astructplanning_1_1_dcp_tree_1_1_dcp_action_html_a514322d1b7449ee98e2df27aa672cba6"><div class="ttname"><a href="structplanning_1_1_dcp_tree_1_1_dcp_action.html#a514322d1b7449ee98e2df27aa672cba6">planning::DcpTree::DcpAction::t</a></div><div class="ttdeci">decimal_t t</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8h_source.html#l00046">dcp_tree.h:46</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<div class="ttc" id="ageneric__error__stepper_8cpp_html_a4af643b880fb338323bac5bc54b8d88b"><div class="ttname"><a href="generic__error__stepper_8cpp.html#a4af643b880fb338323bac5bc54b8d88b">a</a></div><div class="ttdeci">const error_rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__error__stepper_8cpp_source.html#l00059">generic_error_stepper.cpp:59</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_dcp_tree_html_acbdde36f2adaebd85781c460878a3eda"><div class="ttname"><a href="classplanning_1_1_dcp_tree.html#acbdde36f2adaebd85781c460878a3eda">planning::DcpTree::DcpLonAction</a></div><div class="ttdeci">DcpLonAction</div><div class="ttdef"><b>Definition:</b> <a href="dcp__tree_8h_source.html#l00028">dcp_tree.h:28</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

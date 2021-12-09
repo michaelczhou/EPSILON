@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: DoubleStorage类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_double_storage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">DoubleStorage类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___abstract_linear_algebra.html">AbstractLinearAlgebra</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_double_matrix_8h_source.html">DoubleMatrix.h</a>&gt;</code></p>
+<div class="dynheader">
+类 DoubleStorage 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_double_storage__inherit__graph.png" border="0" usemap="#_double_storage_inherit__map" alt="Inheritance graph"/></div>
+<map name="_double_storage_inherit__map" id="_double_storage_inherit__map">
+<area shape="rect" title=" " alt="" coords="72,80,191,107"/>
+<area shape="rect" href="class_dense_storage.html" title=" " alt="" coords="5,155,119,181"/>
+<area shape="rect" href="class_sparse_storage.html" title=" " alt="" coords="143,155,259,181"/>
+<area shape="rect" href="class_iotr_ref_count.html" title=" " alt="" coords="79,5,183,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+DoubleStorage 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_double_storage__coll__graph.png" border="0" usemap="#_double_storage_coll__map" alt="Collaboration graph"/></div>
+<map name="_double_storage_coll__map" id="_double_storage_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,124,107"/>
+<area shape="rect" href="class_iotr_ref_count.html" title=" " alt="" coords="13,5,117,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adbcf5fa7514e1bcb45db66904d572204"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#adbcf5fa7514e1bcb45db66904d572204">DoubleStorage</a> ()</td></tr>
+<tr class="separator:adbcf5fa7514e1bcb45db66904d572204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed46c36356ca55664e7f4a2735120022"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#aed46c36356ca55664e7f4a2735120022">atPutDense</a> (int row, int col, double *A, int lda, int rowExtent, int colExtent)=0</td></tr>
+<tr class="separator:aed46c36356ca55664e7f4a2735120022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47890032d67ec4b05e6fe8973e850ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#ae47890032d67ec4b05e6fe8973e850ba">fromGetDense</a> (int row, int col, double *A, int lda, int rowExtent, int colExtent)=0</td></tr>
+<tr class="separator:ae47890032d67ec4b05e6fe8973e850ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b145a6de53a5bc1ccf449e13cd5fb5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a14b145a6de53a5bc1ccf449e13cd5fb5">atPutSpRow</a> (int row, double A[], int lenA, int jcolA[], int &amp;info)=0</td></tr>
+<tr class="separator:a14b145a6de53a5bc1ccf449e13cd5fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7421e9479500f071418b89d9bb2656f9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a7421e9479500f071418b89d9bb2656f9">fromGetSpRow</a> (int row, int col, double A[], int lenA, int jcolA[], int &amp;nnz, int colExtent, int &amp;info)=0</td></tr>
+<tr class="separator:a7421e9479500f071418b89d9bb2656f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec326084ed31d7923bb9e96afd46084"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a6ec326084ed31d7923bb9e96afd46084">getSize</a> (int &amp;m, int &amp;<a class="el" href="lorenz_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>)=0</td></tr>
+<tr class="separator:a6ec326084ed31d7923bb9e96afd46084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdef7ccbb6d6edf2262bcaf9e104125"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a1bdef7ccbb6d6edf2262bcaf9e104125">getDiagonal</a> (<a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;vec)=0</td></tr>
+<tr class="separator:a1bdef7ccbb6d6edf2262bcaf9e104125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad969d5c4716e995a96a4e859b21b58e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#ad969d5c4716e995a96a4e859b21b58e0">setToDiagonal</a> (<a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;vec)=0</td></tr>
+<tr class="separator:ad969d5c4716e995a96a4e859b21b58e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fdf2ae833acc7a00ac58e87f5597291"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a4fdf2ae833acc7a00ac58e87f5597291">atPutDiagonal</a> (int idiag, <a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;x)=0</td></tr>
+<tr class="separator:a4fdf2ae833acc7a00ac58e87f5597291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11a6e8781e6ffec00617fb87a6a9cfe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#aa11a6e8781e6ffec00617fb87a6a9cfe">fromGetDiagonal</a> (int idiag, <a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;x)=0</td></tr>
+<tr class="separator:aa11a6e8781e6ffec00617fb87a6a9cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bae34de4e119c89dd353c94f132dcc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a13bae34de4e119c89dd353c94f132dcc">scalarMult</a> (double num)=0</td></tr>
+<tr class="separator:a13bae34de4e119c89dd353c94f132dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1053ee812ff2e01d694a43e531fb2dc1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_storage.html#a1053ee812ff2e01d694a43e531fb2dc1">~DoubleStorage</a> ()</td></tr>
+<tr class="separator:a1053ee812ff2e01d694a43e531fb2dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_iotr_ref_count"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_iotr_ref_count')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_iotr_ref_count.html">IotrRefCount</a></td></tr>
+<tr class="memitem:ade695240cda4178701f8cf3d19d4c375 inherit pub_methods_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_iotr_ref_count.html#ade695240cda4178701f8cf3d19d4c375">refs</a> ()</td></tr>
+<tr class="separator:ade695240cda4178701f8cf3d19d4c375 inherit pub_methods_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a9ec01cf80248e41622717aa0dff6b inherit pub_methods_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_iotr_ref_count.html#a76a9ec01cf80248e41622717aa0dff6b">IotrRefCount</a> ()</td></tr>
+<tr class="separator:a76a9ec01cf80248e41622717aa0dff6b inherit pub_methods_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_iotr_ref_count"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_iotr_ref_count')"><img src="closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="class_iotr_ref_count.html">IotrRefCount</a></td></tr>
+<tr class="memitem:ga49dd4ca6a4552d91bb2c574731570188 inherit pub_static_methods_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___reference_counting.html#ga49dd4ca6a4552d91bb2c574731570188">release</a> (<a class="el" href="class_iotr_ref_count.html">IotrRefCount</a> **obj)</td></tr>
+<tr class="separator:ga49dd4ca6a4552d91bb2c574731570188 inherit pub_static_methods_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41c38683850c1b301b9301fdb6464a4e inherit pub_static_methods_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___reference_counting.html#ga41c38683850c1b301b9301fdb6464a4e">addRef</a> (<a class="el" href="class_iotr_ref_count.html">IotrRefCount</a> *const *obj)</td></tr>
+<tr class="separator:ga41c38683850c1b301b9301fdb6464a4e inherit pub_static_methods_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_class_iotr_ref_count"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_iotr_ref_count')"><img src="closed.png" alt="-"/>&#160;静态 Public 属性 继承自 <a class="el" href="class_iotr_ref_count.html">IotrRefCount</a></td></tr>
+<tr class="memitem:a5068ce3896591168ffcc6fccae0edda1 inherit pub_static_attribs_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_iotr_ref_count.html#a5068ce3896591168ffcc6fccae0edda1">instances</a></td></tr>
+<tr class="separator:a5068ce3896591168ffcc6fccae0edda1 inherit pub_static_attribs_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_iotr_ref_count"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_iotr_ref_count')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="class_iotr_ref_count.html">IotrRefCount</a></td></tr>
+<tr class="memitem:aede4b4fbedd0cc41c4557cfadb0dae2b inherit pro_methods_class_iotr_ref_count"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_iotr_ref_count.html#aede4b4fbedd0cc41c4557cfadb0dae2b">~IotrRefCount</a> ()</td></tr>
+<tr class="separator:aede4b4fbedd0cc41c4557cfadb0dae2b inherit pro_methods_class_iotr_ref_count"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Handle the manupulation of matrix elements </p>
+
+<p class="definition">在文件 <a class="el" href="_double_matrix_8h_source.html">DoubleMatrix.h</a> 第 <a class="el" href="_double_matrix_8h_source.html#l00024">24</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="adbcf5fa7514e1bcb45db66904d572204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbcf5fa7514e1bcb45db66904d572204">&#9670;&nbsp;</a></span>DoubleStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DoubleStorage::DoubleStorage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_double_matrix_8h_source.html">DoubleMatrix.h</a> 第 <a class="el" href="_double_matrix_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1053ee812ff2e01d694a43e531fb2dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1053ee812ff2e01d694a43e531fb2dc1">&#9670;&nbsp;</a></span>~DoubleStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DoubleStorage::~DoubleStorage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_double_matrix_8h_source.html">DoubleMatrix.h</a> 第 <a class="el" href="_double_matrix_8h_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aed46c36356ca55664e7f4a2735120022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed46c36356ca55664e7f4a2735120022">&#9670;&nbsp;</a></span>atPutDense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::atPutDense </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rowExtent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colExtent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#afa9630da53f15b4c5c7bfb44a9a5ffde">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a382d57b0671529e66038a877fae11a2e">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a4fdf2ae833acc7a00ac58e87f5597291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fdf2ae833acc7a00ac58e87f5597291">&#9670;&nbsp;</a></span>atPutDiagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::atPutDiagonal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idiag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a38f18a7f5e4745218809764b037dc7e8">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a6fae3135ae190222981ce81285bea917">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a14b145a6de53a5bc1ccf449e13cd5fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b145a6de53a5bc1ccf449e13cd5fb5">&#9670;&nbsp;</a></span>atPutSpRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::atPutSpRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>A</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lenA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jcolA</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#aede684aad6acdd101ef2e312c6d2341c">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a9e6459cc09cf7d2673ea3a5652397932">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ae47890032d67ec4b05e6fe8973e850ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47890032d67ec4b05e6fe8973e850ba">&#9670;&nbsp;</a></span>fromGetDense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::fromGetDense </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rowExtent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colExtent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a8fd6131c85e9792d1249f7f1baffb869">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a48550a0466572f0595a30ce14e0f3a4f">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa11a6e8781e6ffec00617fb87a6a9cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11a6e8781e6ffec00617fb87a6a9cfe">&#9670;&nbsp;</a></span>fromGetDiagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::fromGetDiagonal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idiag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#aaa6b5af67016806d0e13514c5a7fafe9">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a5e93e03ce4d44c156c6b8260414e4730">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a7421e9479500f071418b89d9bb2656f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7421e9479500f071418b89d9bb2656f9">&#9670;&nbsp;</a></span>fromGetSpRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::fromGetSpRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>A</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lenA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jcolA</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>nnz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colExtent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a704fe99878f673080563d6bc2d565c7a">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a624958d5b2204368daf8ae39da7e377c">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a1bdef7ccbb6d6edf2262bcaf9e104125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bdef7ccbb6d6edf2262bcaf9e104125">&#9670;&nbsp;</a></span>getDiagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::getDiagonal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a89b5b5a3c1e9835b2eac525a95bc29e0">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a67706d7c0321cc2a3c2e90b0a8456d88">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a6ec326084ed31d7923bb9e96afd46084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec326084ed31d7923bb9e96afd46084">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::getSize </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a59d36dfc52eaa0e9d1b6d03e0817032f">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#a682e5d68b3a1ab321515fb6827a12832">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a13bae34de4e119c89dd353c94f132dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bae34de4e119c89dd353c94f132dcc">&#9670;&nbsp;</a></span>scalarMult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::scalarMult </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#a3c324d7eb7276b86ca5512b076c61f4f">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#ac00255ce15a3eb8af6b25b6da33acfba">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad969d5c4716e995a96a4e859b21b58e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad969d5c4716e995a96a4e859b21b58e0">&#9670;&nbsp;</a></span>setToDiagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DoubleStorage::setToDiagonal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ooqp_vector.html">OoqpVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_sparse_storage.html#afb94be67ed05bbc2f40fe3953e39a27e">SparseStorage</a> , 以及 <a class="el" href="class_dense_storage.html#ad049709c93fe89750b8c8dd7ef75eb4c">DenseStorage</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/ooqp/include/ooqp/<a class="el" href="_double_matrix_8h_source.html">DoubleMatrix.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

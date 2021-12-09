@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/behavior_planner/src/behavior_planner/behavior_server_ros.cc 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_c15f9ba9191b74ec7281d89987e91294.html">behavior_planner</a></li><li class="navelem"><a class="el" href="dir_9d6f88fbb26dee5b256b6da571421a35.html">src</a></li><li class="navelem"><a class="el" href="dir_e671c6b8512f971fcfaa0047defc5044.html">behavior_planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">behavior_server_ros.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="behavior__server__ros_8cc.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="behavior__server__ros_8h.html">behavior_planner/behavior_server_ros.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplanning.html">planning</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a1ff78d5442376fc5c45bbfbb915a6873">    5</a></span>&#160;<a class="code" href="classplanning_1_1_behavior_planner_server.html#a1ff78d5442376fc5c45bbfbb915a6873">BehaviorPlannerServer::BehaviorPlannerServer</a>(ros::NodeHandle nh, <span class="keywordtype">int</span> <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>)</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    : nh_(nh), work_rate_(20.0), ego_id_(<a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  p_visualizer_ = <span class="keyword">new</span> <a class="code" href="classplanning_1_1_behavior_planner_visualizer.html">BehaviorPlannerVisualizer</a>(nh, &amp;bp_, <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  p_input_smm_buff_ = <span class="keyword">new</span> <a class="code" href="classmoodycamel_1_1_reader_writer_queue.html">moodycamel::ReaderWriterQueue&lt;SemanticMapManager&gt;</a>(</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;      config_.<a class="code" href="structplanning_1_1_behavior_planner_server_1_1_config.html#a439e0b0682c42dd15b657a52e4be8c3e">kInputBufferSize</a>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a7f81ff6e1d2874a2c7866c782c3d2b55">   12</a></span>&#160;<a class="code" href="classplanning_1_1_behavior_planner_server.html#a1ff78d5442376fc5c45bbfbb915a6873">BehaviorPlannerServer::BehaviorPlannerServer</a>(ros::NodeHandle nh,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                             <span class="keywordtype">double</span> work_rate, <span class="keywordtype">int</span> <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : nh_(nh), work_rate_(work_rate), ego_id_(<a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  p_visualizer_ = <span class="keyword">new</span> <a class="code" href="classplanning_1_1_behavior_planner_visualizer.html">BehaviorPlannerVisualizer</a>(nh, &amp;bp_, <a class="code" href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  p_input_smm_buff_ = <span class="keyword">new</span> <a class="code" href="classmoodycamel_1_1_reader_writer_queue.html">moodycamel::ReaderWriterQueue&lt;SemanticMapManager&gt;</a>(</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      config_.<a class="code" href="structplanning_1_1_behavior_planner_server_1_1_config.html#a439e0b0682c42dd15b657a52e4be8c3e">kInputBufferSize</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a489b930ff689f478f5bd084518083dae">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#a489b930ff689f478f5bd084518083dae">BehaviorPlannerServer::PushSemanticMap</a>(<span class="keyword">const</span> <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">SemanticMapManager</a>&amp; smm) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">if</span> (p_input_smm_buff_) p_input_smm_buff_-&gt;try_enqueue(smm);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> BehaviorPlannerServer::PublishData() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  p_visualizer_-&gt;<a class="code" href="classplanning_1_1_behavior_planner_visualizer.html#a65ca9c7eee2a1b678ee330e55a9e5f2f">PublishDataWithStamp</a>(ros::Time::now());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0">BehaviorPlannerServer::Init</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a3078789762251f63deadf37482480d84">Init</a>(<span class="stringliteral">&quot;bp&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#ab2d135830f3be47b42bbe998deb43d50">autonomous_level</a>() &gt;= 2) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    joy_sub_ =</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        nh_.subscribe(<span class="stringliteral">&quot;/joy&quot;</span>, 10, &amp;BehaviorPlannerServer::JoyCallback, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">bool</span> use_sim_state = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  nh_.param(<span class="stringliteral">&quot;use_sim_state&quot;</span>, use_sim_state, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a4b9663c89556c43ca2b95b0d9063d91f">set_use_sim_state</a>(use_sim_state);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  p_visualizer_-&gt;<a class="code" href="classplanning_1_1_behavior_planner_visualizer.html#a9615dd8cbc47ee2a0e3ad61f00584c7c">Init</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> BehaviorPlannerServer::JoyCallback(<span class="keyword">const</span> sensor_msgs::Joy::ConstPtr&amp; msg) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#ab2d135830f3be47b42bbe998deb43d50">autonomous_level</a>() &lt; 2) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (!is_hmi_enabled_) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> msg_id;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (std::string(<span class="stringliteral">&quot;&quot;</span>).compare(msg-&gt;header.frame_id) == 0) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    msg_id = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    msg_id = std::stoi(msg-&gt;header.frame_id);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span> (msg_id != ego_id_) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// ~ buttons[2] --&gt; 1 --&gt;  lcl</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// ~ buttons[1] --&gt; 1 --&gt;  lcr</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// ~ buttons[3] --&gt; 1 --&gt;  +1m/s</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// ~ buttons[0] --&gt; 1 --&gt;  -1m/s</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (msg-&gt;buttons[0] == 0 &amp;&amp; msg-&gt;buttons[1] == 0 &amp;&amp; msg-&gt;buttons[2] == 0 &amp;&amp;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      msg-&gt;buttons[3] == 0)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (msg-&gt;buttons[2] == 1) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#aab142f32b3f26efc19491c89ba3cd26f">set_hmi_behavior</a>(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;buttons[1] == 1) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#aab142f32b3f26efc19491c89ba3cd26f">set_hmi_behavior</a>(<a class="code" href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;buttons[3] == 1) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">set_user_desired_velocity</a>(bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">user_desired_velocity</a>() + 1.0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;buttons[0] == 1) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">set_user_desired_velocity</a>(bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">user_desired_velocity</a>() - 1.0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a8ab4a5899950065d190ce5630cdb425e">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#a8ab4a5899950065d190ce5630cdb425e">BehaviorPlannerServer::Start</a>() {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a095a66a0479ed61cc4adea195cfeb809">set_map_interface</a>(&amp;map_adapter_);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::thread(&amp;BehaviorPlannerServer::MainThread, <span class="keyword">this</span>).detach();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> BehaviorPlannerServer::MainThread() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  system_clock::time_point current_start_time{system_clock::now()};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  system_clock::time_point next_start_time{current_start_time};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> milliseconds interval{<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(1000.0 / work_rate_)};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    current_start_time = system_clock::now();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    next_start_time = current_start_time + interval;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    PlanCycleCallback();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::this_thread::sleep_until(next_start_time);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> BehaviorPlannerServer::PlanCycleCallback() {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span> (p_input_smm_buff_ == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="classplanning_1_1_behavior_planner_server.html#ab6cc56428567dd5669680c87724a2202">SemanticMapManager</a> smm;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">bool</span> has_updated_map = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">while</span> (p_input_smm_buff_-&gt;try_dequeue(smm)) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    has_updated_map = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> (has_updated_map) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">auto</span> map_ptr =</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::make_shared&lt;semantic_map_manager::SemanticMapManager&gt;(smm);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    map_adapter_.<a class="code" href="classplanning_1_1_behavior_planner_map_adapter.html#aaf14f83ac0cc67b16a0325605d795127">set_map</a>(map_ptr);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="class_tic_toc.html">TicToc</a> timer;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387">RunOnce</a>() == <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a>) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      smm.set_ego_behavior(bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c">behavior</a>());</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (has_callback_binded_) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      private_callback_fn_(smm);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    PublishData();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#ae8aa129f50d90d4685b66e57c9106bbc">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#ae8aa129f50d90d4685b66e57c9106bbc">BehaviorPlannerServer::BindBehaviorUpdateCallback</a>(</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> <a class="code" href="classsemantic__map__manager_1_1_semantic_map_manager.html">SemanticMapManager</a>&amp;)&gt; fn) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  private_callback_fn_ = std::bind(fn, std::placeholders::_1);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  has_callback_binded_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> BehaviorPlannerServer::Replan() {}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a4e6d1caa42f0705a5e89e7c973e83fe5">  122</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#a4e6d1caa42f0705a5e89e7c973e83fe5">BehaviorPlannerServer::set_autonomous_level</a>(<span class="keywordtype">int</span> level) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a5b71e910ff6750799bd77fa437b23693">set_autonomous_level</a>(level);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#aab7c1f7695d3bbcb2fd8f68bc78be380">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#aab7c1f7695d3bbcb2fd8f68bc78be380">BehaviorPlannerServer::set_aggressive_level</a>(<span class="keywordtype">int</span> level) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#aef442b03c0fad77906d00460801488e0">set_aggressive_level</a>(level);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a0a819e55e97cf6561c3f900a9f67d62e">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#a0a819e55e97cf6561c3f900a9f67d62e">BehaviorPlannerServer::set_user_desired_velocity</a>(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> <a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">set_user_desired_velocity</a>(<a class="code" href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#abecb3018e8e158a34330e36fa476e7a6">  135</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_behavior_planner_server.html#abecb3018e8e158a34330e36fa476e7a6">BehaviorPlannerServer::user_desired_velocity</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">return</span> bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">user_desired_velocity</a>();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#a0bb8ed8164bc73bcc8deada6b7262c02">  139</a></span>&#160;<a class="code" href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a> <a class="code" href="classplanning_1_1_behavior_planner_server.html#a0bb8ed8164bc73bcc8deada6b7262c02">BehaviorPlannerServer::reference_desired_velocity</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">return</span> bp_.<a class="code" href="classplanning_1_1_behavior_planner.html#aaf70a8a531abc9092328b7838de0748a">reference_desired_velocity</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classplanning_1_1_behavior_planner_server.html#aef7f0e375f72a13c8b4ae32bddc2e5ef">  143</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplanning_1_1_behavior_planner_server.html#aef7f0e375f72a13c8b4ae32bddc2e5ef">BehaviorPlannerServer::enable_hmi_interface</a>() { is_hmi_enabled_ = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}  <span class="comment">// namespace planning</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_aee7668bcbf498b7426f98d864f913ba0"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#aee7668bcbf498b7426f98d864f913ba0">planning::BehaviorPlannerServer::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00028">behavior_server_ros.cc:28</a></div></div>
+<div class="ttc" id="abehavior__server__ros_8h_html"><div class="ttname"><a href="behavior__server__ros_8h.html">behavior_server_ros.h</a></div></div>
+<div class="ttc" id="anamespaceplanning_html"><div class="ttname"><a href="namespaceplanning.html">planning</a></div><div class="ttdoc">since eudm itself is completely stateless, we use a manager to track the input and output of the eudm...</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8h_source.html#l00017">behavior_planner.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_aef442b03c0fad77906d00460801488e0"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#aef442b03c0fad77906d00460801488e0">planning::BehaviorPlanner::set_aggressive_level</a></div><div class="ttdeci">void set_aggressive_level(int level)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00869">behavior_planner.cc:869</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_aab142f32b3f26efc19491c89ba3cd26f"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#aab142f32b3f26efc19491c89ba3cd26f">planning::BehaviorPlanner::set_hmi_behavior</a></div><div class="ttdeci">void set_hmi_behavior(const LateralBehavior &amp;hmi_behavior)</div><div class="ttdoc">L2-level human-commanded lane changes</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00853">behavior_planner.cc:853</a></div></div>
+<div class="ttc" id="aclasssemantic__map__manager_1_1_semantic_map_manager_html"><div class="ttname"><a href="classsemantic__map__manager_1_1_semantic_map_manager.html">semantic_map_manager::SemanticMapManager</a></div><div class="ttdef"><b>Definition:</b> <a href="semantic__map__manager_8h_source.html#l00029">semantic_map_manager.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_ab2d135830f3be47b42bbe998deb43d50"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#ab2d135830f3be47b42bbe998deb43d50">planning::BehaviorPlanner::autonomous_level</a></div><div class="ttdeci">int autonomous_level() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00912">behavior_planner.cc:912</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a1ff78d5442376fc5c45bbfbb915a6873"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a1ff78d5442376fc5c45bbfbb915a6873">planning::BehaviorPlannerServer::BehaviorPlannerServer</a></div><div class="ttdeci">BehaviorPlannerServer(ros::NodeHandle nh, int ego_id)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00005">behavior_server_ros.cc:5</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a489b930ff689f478f5bd084518083dae"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a489b930ff689f478f5bd084518083dae">planning::BehaviorPlannerServer::PushSemanticMap</a></div><div class="ttdeci">void PushSemanticMap(const SemanticMapManager &amp;smm)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00020">behavior_server_ros.cc:20</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_aaf70a8a531abc9092328b7838de0748a"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#aaf70a8a531abc9092328b7838de0748a">planning::BehaviorPlanner::reference_desired_velocity</a></div><div class="ttdeci">decimal_t reference_desired_velocity() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00895">behavior_planner.cc:895</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a0a819e55e97cf6561c3f900a9f67d62e"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a0a819e55e97cf6561c3f900a9f67d62e">planning::BehaviorPlannerServer::set_user_desired_velocity</a></div><div class="ttdeci">void set_user_desired_velocity(const decimal_t desired_vel)</div><div class="ttdoc">set desired velocity</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00130">behavior_server_ros.cc:130</a></div></div>
+<div class="ttc" id="aclassmoodycamel_1_1_reader_writer_queue_html"><div class="ttname"><a href="classmoodycamel_1_1_reader_writer_queue.html">moodycamel::ReaderWriterQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="readerwriterqueue_8h_source.html#l00060">readerwriterqueue.h:60</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aa36f68877e150ae170ea576b1402bf525">common::LateralBehavior::kLaneChangeRight</a></div><div class="ttdeci">@ kLaneChangeRight</div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a0bb8ed8164bc73bcc8deada6b7262c02"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a0bb8ed8164bc73bcc8deada6b7262c02">planning::BehaviorPlannerServer::reference_desired_velocity</a></div><div class="ttdeci">decimal_t reference_desired_velocity() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00139">behavior_server_ros.cc:139</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_aab7c1f7695d3bbcb2fd8f68bc78be380"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#aab7c1f7695d3bbcb2fd8f68bc78be380">planning::BehaviorPlannerServer::set_aggressive_level</a></div><div class="ttdeci">void set_aggressive_level(int level)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00126">behavior_server_ros.cc:126</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_ae8aa129f50d90d4685b66e57c9106bbc"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#ae8aa129f50d90d4685b66e57c9106bbc">planning::BehaviorPlannerServer::BindBehaviorUpdateCallback</a></div><div class="ttdeci">void BindBehaviorUpdateCallback(std::function&lt; int(const SemanticMapManager &amp;)&gt; fn)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00114">behavior_server_ros.cc:114</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_visualizer_html_a9615dd8cbc47ee2a0e3ad61f00584c7c"><div class="ttname"><a href="classplanning_1_1_behavior_planner_visualizer.html#a9615dd8cbc47ee2a0e3ad61f00584c7c">planning::BehaviorPlannerVisualizer::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> <a href="core_2behavior__planner_2inc_2behavior__planner_2visualizer_8h_source.html#l00030">visualizer.h:30</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_visualizer_html_a65ca9c7eee2a1b678ee330e55a9e5f2f"><div class="ttname"><a href="classplanning_1_1_behavior_planner_visualizer.html#a65ca9c7eee2a1b678ee330e55a9e5f2f">planning::BehaviorPlannerVisualizer::PublishDataWithStamp</a></div><div class="ttdeci">void PublishDataWithStamp(const ros::Time &amp;stamp)</div><div class="ttdef"><b>Definition:</b> <a href="core_2behavior__planner_2inc_2behavior__planner_2visualizer_8h_source.html#l00038">visualizer.h:38</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_abecb3018e8e158a34330e36fa476e7a6"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#abecb3018e8e158a34330e36fa476e7a6">planning::BehaviorPlannerServer::user_desired_velocity</a></div><div class="ttdeci">decimal_t user_desired_velocity() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00135">behavior_server_ros.cc:135</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_aef7f0e375f72a13c8b4ae32bddc2e5ef"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#aef7f0e375f72a13c8b4ae32bddc2e5ef">planning::BehaviorPlannerServer::enable_hmi_interface</a></div><div class="ttdeci">void enable_hmi_interface()</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00143">behavior_server_ros.cc:143</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_map_adapter_html_aaf14f83ac0cc67b16a0325605d795127"><div class="ttname"><a href="classplanning_1_1_behavior_planner_map_adapter.html#aaf14f83ac0cc67b16a0325605d795127">planning::BehaviorPlannerMapAdapter::set_map</a></div><div class="ttdeci">void set_map(std::shared_ptr&lt; IntegratedMap &gt; map_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_2behavior__planner_2src_2behavior__planner_2map__adapter_8cc_source.html#l00265">map_adapter.cc:265</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_visualizer_html"><div class="ttname"><a href="classplanning_1_1_behavior_planner_visualizer.html">planning::BehaviorPlannerVisualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2behavior__planner_2inc_2behavior__planner_2visualizer_8h_source.html#l00022">visualizer.h:22</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_ab6cc56428567dd5669680c87724a2202"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#ab6cc56428567dd5669680c87724a2202">planning::BehaviorPlannerServer::SemanticMapManager</a></div><div class="ttdeci">semantic_map_manager::SemanticMapManager SemanticMapManager</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8h_source.html#l00030">behavior_server_ros.h:30</a></div></div>
+<div class="ttc" id="aclass_tic_toc_html"><div class="ttname"><a href="class_tic_toc.html">TicToc</a></div><div class="ttdef"><b>Definition:</b> <a href="tic__toc_8h_source.html#l00017">tic_toc.h:17</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a7ff9ca81f3233625cd560b4f402b4387"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a7ff9ca81f3233625cd560b4f402b4387">planning::BehaviorPlanner::RunOnce</a></div><div class="ttdeci">ErrorType RunOnce() override</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00057">behavior_planner.cc:57</a></div></div>
+<div class="ttc" id="astructplanning_1_1_behavior_planner_server_1_1_config_html_a439e0b0682c42dd15b657a52e4be8c3e"><div class="ttname"><a href="structplanning_1_1_behavior_planner_server_1_1_config.html#a439e0b0682c42dd15b657a52e4be8c3e">planning::BehaviorPlannerServer::Config::kInputBufferSize</a></div><div class="ttdeci">int kInputBufferSize</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8h_source.html#l00033">behavior_server_ros.h:33</a></div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ab0df38968e4f03a3f1f6d6df0f31f45aaf0536797208144380691e2b376ffc1d1">kSuccess</a></div><div class="ttdeci">@ kSuccess</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00027">basics.h:27</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a3078789762251f63deadf37482480d84"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a3078789762251f63deadf37482480d84">planning::BehaviorPlanner::Init</a></div><div class="ttdeci">ErrorType Init(const std::string config) override</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00009">behavior_planner.cc:9</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a095a66a0479ed61cc4adea195cfeb809"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a095a66a0479ed61cc4adea195cfeb809">planning::BehaviorPlanner::set_map_interface</a></div><div class="ttdeci">void set_map_interface(BehaviorPlannerMapItf *itf)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00849">behavior_planner.cc:849</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a4e6d1caa42f0705a5e89e7c973e83fe5"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a4e6d1caa42f0705a5e89e7c973e83fe5">planning::BehaviorPlannerServer::set_autonomous_level</a></div><div class="ttdeci">void set_autonomous_level(int level)</div><div class="ttdoc">set the level of autonomous driving</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00122">behavior_server_ros.cc:122</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a113a89f85dda49e822faf5fcb8cda08d"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a113a89f85dda49e822faf5fcb8cda08d">planning::BehaviorPlanner::set_user_desired_velocity</a></div><div class="ttdeci">void set_user_desired_velocity(const decimal_t desired_vel)</div><div class="ttdoc">set desired velocity</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00873">behavior_planner.cc:873</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_ae74ea9c9013053f81b7f7ada745fc89e"><div class="ttname"><a href="onlane__ai__agent_8cc.html#ae74ea9c9013053f81b7f7ada745fc89e">ego_id</a></div><div class="ttdeci">int ego_id</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00023">onlane_ai_agent.cc:23</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a4b9663c89556c43ca2b95b0d9063d91f"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a4b9663c89556c43ca2b95b0d9063d91f">planning::BehaviorPlanner::set_use_sim_state</a></div><div class="ttdeci">void set_use_sim_state(bool use_sim_state)</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00879">behavior_planner.cc:879</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_server_html_a8ab4a5899950065d190ce5630cdb425e"><div class="ttname"><a href="classplanning_1_1_behavior_planner_server.html#a8ab4a5899950065d190ce5630cdb425e">planning::BehaviorPlannerServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="behavior__server__ros_8cc_source.html#l00069">behavior_server_ros.cc:69</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a1410d4110b53dfe5b79fc09e7670694c"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a1410d4110b53dfe5b79fc09e7670694c">planning::BehaviorPlanner::behavior</a></div><div class="ttdeci">Behavior behavior() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00899">behavior_planner.cc:899</a></div></div>
+<div class="ttc" id="anamespacecommon_html_ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9"><div class="ttname"><a href="namespacecommon.html#ae0288cd23a8185610559bed85f4aca4aaec45f9b3f1023908b0fe488f060051b9">common::LateralBehavior::kLaneChangeLeft</a></div><div class="ttdeci">@ kLaneChangeLeft</div></div>
+<div class="ttc" id="acommon_2inc_2common_2basics_2basics_8h_html_ae82f4a5b4a14ee17becc366ae34cc058"><div class="ttname"><a href="common_2inc_2common_2basics_2basics_8h.html#ae82f4a5b4a14ee17becc366ae34cc058">decimal_t</a></div><div class="ttdeci">double decimal_t</div><div class="ttdef"><b>Definition:</b> <a href="common_2inc_2common_2basics_2basics_8h_source.html#l00029">basics.h:29</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a1a56fc9d2c41fd09ba2b4b8f3d02a25c"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a1a56fc9d2c41fd09ba2b4b8f3d02a25c">planning::BehaviorPlanner::user_desired_velocity</a></div><div class="ttdeci">decimal_t user_desired_velocity() const</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00891">behavior_planner.cc:891</a></div></div>
+<div class="ttc" id="aclassplanning_1_1_behavior_planner_html_a5b71e910ff6750799bd77fa437b23693"><div class="ttname"><a href="classplanning_1_1_behavior_planner.html#a5b71e910ff6750799bd77fa437b23693">planning::BehaviorPlanner::set_autonomous_level</a></div><div class="ttdeci">void set_autonomous_level(int level)</div><div class="ttdoc">set the level of autonomous driving</div><div class="ttdef"><b>Definition:</b> <a href="behavior__planner_8cc_source.html#l00865">behavior_planner.cc:865</a></div></div>
+<div class="ttc" id="aonlane__ai__agent_8cc_html_a19b9154545b6d241b9611f734e4ed978"><div class="ttname"><a href="onlane__ai__agent_8cc.html#a19b9154545b6d241b9611f734e4ed978">desired_vel</a></div><div class="ttdeci">double desired_vel</div><div class="ttdef"><b>Definition:</b> <a href="onlane__ai__agent_8cc_source.html#l00033">onlane_ai_agent.cc:33</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/generation.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">generation.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generation_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/generation.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the generation functions.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   18</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_generation</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;boost/static_assert.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;boost/type_traits/is_same.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/numeric/odeint/config.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="generation_8hpp.html">boost/numeric/odeint/stepper/generation.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper1 , <span class="keyword">class</span> Stepper2 &gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <span class="keyword">const</span> Stepper1 &amp;s1 , <span class="keyword">const</span> Stepper2 &amp;s2 )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    BOOST_STATIC_ASSERT(( boost::is_same&lt; Stepper1 , Stepper2 &gt;::value ));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;BOOST_AUTO_TEST_SUITE( generation_test )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="generation_8cpp.html#ac81efbc71a13babc87c8b2fb5546dd4c">   39</a></span>&#160;typedef <a class="code" href="namespacestd.html">std</a>::vector&lt; <span class="keywordtype">double</span> &gt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a484f30ad3fc22227098510cbbc89133e">   41</a></span>&#160;typedef <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">runge_kutta_cash_karp54</a>&lt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">rk54_type</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a94100efd324e9631e711fa2e94087b69">   42</a></span>&#160;typedef <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">runge_kutta_cash_karp54_classic</a>&lt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">rk54_classic_type</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">   43</a></span>&#160;typedef <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">dopri5_type</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a619380985ac533c76c6478bb7e09aa5d">   44</a></span>&#160;typedef <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78.html">runge_kutta_fehlberg78</a>&lt; <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78.html">fehlberg78_type</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">   45</a></span>&#160;typedef <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">rosenbrock4</a>&lt; <span class="keywordtype">double</span> &gt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">rosenbrock4_type</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">   48</a></span>&#160;<a class="code" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a>( test_generation_dopri5 )</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">dopri5_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; dopri5_type &gt;</a>() );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_controlled&lt; dopri5_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; dopri5_type &gt;</a>() );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede">make_dense_output</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">dopri5_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; dopri5_type &gt;</a> &gt;() );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_dense_output&lt; dopri5_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; dopri5_type &gt;</a> &gt;() );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a512ff4f5d00a8e1d568c110068d706fd">   57</a></span>&#160;<a class="code" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a>( test_generation_cash_karp54 )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#a484f30ad3fc22227098510cbbc89133e">rk54_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; rk54_type &gt;</a>() );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_controlled&lt; rk54_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; rk54_type &gt;</a>() );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a01c2c980d83fb32be83c5d93284394de">   63</a></span>&#160;<a class="code" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a>( test_generation_cash_karp54_classic )</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#a94100efd324e9631e711fa2e94087b69">rk54_classic_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; rk54_classic_type &gt;</a>() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_controlled&lt; rk54_classic_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; rk54_classic_type &gt;</a>() );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a97c7f378a8135639e1dcabdef8c27696">   70</a></span>&#160;<a class="code" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a>( test_generation_fehlberg78 )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#a619380985ac533c76c6478bb7e09aa5d">fehlberg78_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; fehlberg78_type &gt;</a>() );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_controlled&lt; fehlberg78_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">controlled_runge_kutta&lt; fehlberg78_type &gt;</a>() );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="generation_8cpp.html#a60e4c696032e7341f109b2fbe996582a">   77</a></span>&#160;<a class="code" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a>( test_generation_rosenbrock4 )</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">make_controlled</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">rosenbrock4_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4_type &gt;</a>() );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_controlled&lt; rosenbrock4_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4_type &gt;</a>() );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( <a class="code" href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede">make_dense_output</a>( 1.0e-6 , 1.0e-10 , <a class="code" href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">rosenbrock4_type</a>() ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">rosenbrock4_dense_output</a>&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4_type &gt;</a> &gt;() );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a>( make_dense_output&lt; rosenbrock4_type &gt;( 1.0e-6 , 1.0e-10 ) , <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">rosenbrock4_dense_output</a>&lt; <a class="code" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">rosenbrock4_controller&lt; rosenbrock4_type &gt;</a> &gt;() );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1controlled__runge__kutta.html">boost::numeric::odeint::controlled_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="controlled__runge__kutta_8hpp_source.html#l00115">controlled_runge_kutta.hpp:115</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_a2f844b0944c6a820d9f52b3ad779014f"><div class="ttname"><a href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a></div><div class="ttdeci">void check_stepper_type(const Stepper1 &amp;s1, const Stepper2 &amp;s2)</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00032">generation.cpp:32</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">boost::numeric::odeint::rosenbrock4</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4_8hpp_source.html#l00128">rosenbrock4.hpp:128</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">boost::numeric::odeint::runge_kutta_dopri5</a></div><div class="ttdoc">The Runge-Kutta Dormand-Prince 5 method.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__dopri5_8hpp_source.html#l00049">runge_kutta_dopri5.hpp:49</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_afb57cba65e5a6f32e4ba03ed5d24fa9f"><div class="ttname"><a href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">dopri5_type</a></div><div class="ttdeci">runge_kutta_dopri5&lt; state_type &gt; dopri5_type</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00043">generation.cpp:43</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__dense__output.html">boost::numeric::odeint::rosenbrock4_dense_output</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4__dense__output_8hpp_source.html#l00035">rosenbrock4_dense_output.hpp:35</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_a7205e00733a7318d0c14e529cea7325b"><div class="ttname"><a href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">rosenbrock4_type</a></div><div class="ttdeci">rosenbrock4&lt; double &gt; rosenbrock4_type</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00045">generation.cpp:45</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_a94100efd324e9631e711fa2e94087b69"><div class="ttname"><a href="generation_8cpp.html#a94100efd324e9631e711fa2e94087b69">rk54_classic_type</a></div><div class="ttdeci">runge_kutta_cash_karp54_classic&lt; state_type &gt; rk54_classic_type</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00042">generation.cpp:42</a></div></div>
+<div class="ttc" id="ageneration_8hpp_html"><div class="ttname"><a href="generation_8hpp.html">generation.hpp</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_a619380985ac533c76c6478bb7e09aa5d"><div class="ttname"><a href="generation_8cpp.html#a619380985ac533c76c6478bb7e09aa5d">fehlberg78_type</a></div><div class="ttdeci">runge_kutta_fehlberg78&lt; state_type &gt; fehlberg78_type</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00044">generation.cpp:44</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">boost::numeric::odeint::runge_kutta_cash_karp54_classic</a></div><div class="ttdoc">The Runge-Kutta Cash-Karp method implemented without the generic Runge-Kutta algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__cash__karp54__classic_8hpp_source.html#l00049">runge_kutta_cash_karp54_classic.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a></div><div class="ttdef"><b>Definition:</b> <a href="dense__output__runge__kutta_8hpp_source.html#l00042">dense_output_runge_kutta.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_adae55091b4f3878ef956b7adea641dd1"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1">boost::numeric::odeint::make_controlled</a></div><div class="ttdeci">result_of::make_controlled&lt; Stepper &gt;::type make_controlled(typename Stepper::value_type abs_error, typename Stepper::value_type rel_error, const Stepper &amp;stepper=Stepper())</div><div class="ttdef"><b>Definition:</b> <a href="make__controlled_8hpp_source.html#l00062">make_controlled.hpp:62</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78.html">boost::numeric::odeint::runge_kutta_fehlberg78</a></div><div class="ttdoc">The Runge-Kutta Fehlberg 78 method.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__fehlberg78_8hpp_source.html#l00299">runge_kutta_fehlberg78.hpp:299</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_ad1e4cf7bacddd00c38c42e6ba9eae5cf"><div class="ttname"><a href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(test_generation_dopri5)</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00048">generation.cpp:48</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">boost::numeric::odeint::runge_kutta_cash_karp54</a></div><div class="ttdoc">The Runge-Kutta Cash-Karp method.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__cash__karp54_8hpp_source.html#l00154">runge_kutta_cash_karp54.hpp:154</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4__controller.html">boost::numeric::odeint::rosenbrock4_controller</a></div><div class="ttdef"><b>Definition:</b> <a href="rosenbrock4__controller_8hpp_source.html#l00037">rosenbrock4_controller.hpp:37</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="ageneration_8cpp_html_a484f30ad3fc22227098510cbbc89133e"><div class="ttname"><a href="generation_8cpp.html#a484f30ad3fc22227098510cbbc89133e">rk54_type</a></div><div class="ttdeci">runge_kutta_cash_karp54&lt; state_type &gt; rk54_type</div><div class="ttdef"><b>Definition:</b> <a href="generation_8cpp_source.html#l00041">generation.cpp:41</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html_a648d58d4ae3311b67b5ad87d2c1b5ede"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede">boost::numeric::odeint::make_dense_output</a></div><div class="ttdeci">result_of::make_dense_output&lt; Stepper &gt;::type make_dense_output(typename Stepper::value_type abs_error, typename Stepper::value_type rel_error, const Stepper &amp;stepper=Stepper())</div><div class="ttdef"><b>Definition:</b> <a href="make__dense__output_8hpp_source.html#l00058">make_dense_output.hpp:58</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/MehrotraSolver.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MehrotraSolver.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mehrotra_solver_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef MEHALGORITHM_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define MEHALGORITHM_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_solver_8h.html">Solver.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ooqp_monitor_8h.html">OoqpMonitor.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_data.html">Data</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_problem_formulation.html">ProblemFormulation</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_mehrotra_solver.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mehrotra_solver.html">MehrotraSolver</a> : <span class="keyword">public</span> <a class="code" href="class_solver.html">Solver</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">protected</span>: </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_mehrotra_solver.html#ae3ca531092168fe9baeb90145e4d3e2f">   22</a></span>&#160;  <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * <a class="code" href="class_mehrotra_solver.html#ae3ca531092168fe9baeb90145e4d3e2f">factory</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_mehrotra_solver.html#ae8f5a5f4744242bcf7241c6741d62b88">   27</a></span>&#160;  <span class="keywordtype">int</span>        <a class="code" href="class_mehrotra_solver.html#ae8f5a5f4744242bcf7241c6741d62b88">printlevel</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_mehrotra_solver.html#a5259a82e0adcf3ce36b59689aa1762a3">   33</a></span>&#160;  <span class="keywordtype">double</span>     <a class="code" href="class_mehrotra_solver.html#a5259a82e0adcf3ce36b59689aa1762a3">tsig</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_mehrotra_solver.html#a3950da20a3b8efcdea896ef5102b4820">   36</a></span>&#160;  <a class="code" href="class_variables.html">Variables</a> * <a class="code" href="class_mehrotra_solver.html#a3950da20a3b8efcdea896ef5102b4820">step</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="class_mehrotra_solver.html#ab11d1f595e1cc3962355d840cb34fa1b">MehrotraSolver</a>( <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * opt, <a class="code" href="class_data.html">Data</a> * prob );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="class_mehrotra_solver.html#a22813fabcff65e524086ca937bb1cb52">~MehrotraSolver</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_mehrotra_solver.html#a82de756c229e112f76d9f2463d799612">solve</a>( <a class="code" href="class_data.html">Data</a> *prob, <a class="code" href="class_variables.html">Variables</a> *iterate, <a class="code" href="class_residuals.html">Residuals</a> * resids );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_mehrotra_solver.html#a9a596290b0ebd52bd98ffc71a4a7c258">defaultMonitor</a>( <a class="code" href="class_data.html">Data</a> * data, <a class="code" href="class_variables.html">Variables</a> * vars,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                               <a class="code" href="class_residuals.html">Residuals</a> * resids,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                               <span class="keywordtype">double</span> alpha, <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                               <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> <a class="code" href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                               <span class="keywordtype">int</span> status_code,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                               <span class="keywordtype">int</span> level );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_mehrotra_solver_html_ab11d1f595e1cc3962355d840cb34fa1b"><div class="ttname"><a href="class_mehrotra_solver.html#ab11d1f595e1cc3962355d840cb34fa1b">MehrotraSolver::MehrotraSolver</a></div><div class="ttdeci">MehrotraSolver(ProblemFormulation *opt, Data *prob)</div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_a82de756c229e112f76d9f2463d799612"><div class="ttname"><a href="class_mehrotra_solver.html#a82de756c229e112f76d9f2463d799612">MehrotraSolver::solve</a></div><div class="ttdeci">virtual int solve(Data *prob, Variables *iterate, Residuals *resids)</div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="a_solver_8h_html"><div class="ttname"><a href="_solver_8h.html">Solver.h</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_a22813fabcff65e524086ca937bb1cb52"><div class="ttname"><a href="class_mehrotra_solver.html#a22813fabcff65e524086ca937bb1cb52">MehrotraSolver::~MehrotraSolver</a></div><div class="ttdeci">~MehrotraSolver()</div></div>
+<div class="ttc" id="aclass_problem_formulation_html"><div class="ttname"><a href="class_problem_formulation.html">ProblemFormulation</a></div><div class="ttdef"><b>Definition:</b> <a href="_problem_formulation_8h_source.html#l00049">ProblemFormulation.h:49</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_ae8f5a5f4744242bcf7241c6741d62b88"><div class="ttname"><a href="class_mehrotra_solver.html#ae8f5a5f4744242bcf7241c6741d62b88">MehrotraSolver::printlevel</a></div><div class="ttdeci">int printlevel</div><div class="ttdef"><b>Definition:</b> <a href="_mehrotra_solver_8h_source.html#l00027">MehrotraSolver.h:27</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_a9a596290b0ebd52bd98ffc71a4a7c258"><div class="ttname"><a href="class_mehrotra_solver.html#a9a596290b0ebd52bd98ffc71a4a7c258">MehrotraSolver::defaultMonitor</a></div><div class="ttdeci">virtual void defaultMonitor(Data *data, Variables *vars, Residuals *resids, double alpha, double sigma, int i, double mu, int status_code, int level)</div></div>
+<div class="ttc" id="aclass_solver_html"><div class="ttname"><a href="class_solver.html">Solver</a></div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00026">Solver.h:26</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html"><div class="ttname"><a href="class_mehrotra_solver.html">MehrotraSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_mehrotra_solver_8h_source.html#l00019">MehrotraSolver.h:19</a></div></div>
+<div class="ttc" id="a_ooqp_monitor_8h_html"><div class="ttname"><a href="_ooqp_monitor_8h.html">OoqpMonitor.h</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_a5259a82e0adcf3ce36b59689aa1762a3"><div class="ttname"><a href="class_mehrotra_solver.html#a5259a82e0adcf3ce36b59689aa1762a3">MehrotraSolver::tsig</a></div><div class="ttdeci">double tsig</div><div class="ttdef"><b>Definition:</b> <a href="_mehrotra_solver_8h_source.html#l00033">MehrotraSolver.h:33</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="avan__der__pol__stiff_8cpp_html_a413e66b677dd5359952f8b5e6ec4dc5f"><div class="ttname"><a href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a></div><div class="ttdeci">const double mu</div><div class="ttdef"><b>Definition:</b> <a href="van__der__pol__stiff_8cpp_source.html#l00026">van_der_pol_stiff.cpp:26</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_ae3ca531092168fe9baeb90145e4d3e2f"><div class="ttname"><a href="class_mehrotra_solver.html#ae3ca531092168fe9baeb90145e4d3e2f">MehrotraSolver::factory</a></div><div class="ttdeci">ProblemFormulation * factory</div><div class="ttdef"><b>Definition:</b> <a href="_mehrotra_solver_8h_source.html#l00022">MehrotraSolver.h:22</a></div></div>
+<div class="ttc" id="aclass_mehrotra_solver_html_a3950da20a3b8efcdea896ef5102b4820"><div class="ttname"><a href="class_mehrotra_solver.html#a3950da20a3b8efcdea896ef5102b4820">MehrotraSolver::step</a></div><div class="ttdeci">Variables * step</div><div class="ttdef"><b>Definition:</b> <a href="_mehrotra_solver_8h_source.html#l00036">MehrotraSolver.h:36</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

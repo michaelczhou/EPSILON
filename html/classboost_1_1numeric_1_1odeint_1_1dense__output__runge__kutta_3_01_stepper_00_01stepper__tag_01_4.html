@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, stepper_tag &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric.html">numeric</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">odeint</a></li><li class="navelem"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html">dense_output_runge_kutta&lt; Stepper, stepper_tag &gt;</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, stepper_tag &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The class representing dense-output Runge-Kutta steppers.  
+ <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a4772b2c7e7522581c51d648acf7dfae2"><td class="memItemLeft" align="right" valign="top">typedef Stepper&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a></td></tr>
+<tr class="separator:a4772b2c7e7522581c51d648acf7dfae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e32927af665204afd8c84e770b84a1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a></td></tr>
+<tr class="separator:a11e32927af665204afd8c84e770b84a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b01a4474400e77a91c667923bc372b"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_state_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa3b01a4474400e77a91c667923bc372b">wrapped_state_type</a></td></tr>
+<tr class="separator:aa3b01a4474400e77a91c667923bc372b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824897a44decf4d1680751cd637fac94"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a824897a44decf4d1680751cd637fac94">value_type</a></td></tr>
+<tr class="separator:a824897a44decf4d1680751cd637fac94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb213a60c3dc12a5b9912e8c2bf62d7b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#afb213a60c3dc12a5b9912e8c2bf62d7b">deriv_type</a></td></tr>
+<tr class="separator:afb213a60c3dc12a5b9912e8c2bf62d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74aeba88e1ea353d283a07bfbd81e4a"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::wrapped_deriv_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa74aeba88e1ea353d283a07bfbd81e4a">wrapped_deriv_type</a></td></tr>
+<tr class="separator:aa74aeba88e1ea353d283a07bfbd81e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c44cf53e325e951093c05c1c5db0cb9"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::time_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a></td></tr>
+<tr class="separator:a8c44cf53e325e951093c05c1c5db0cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139c83844e5539e0f157eed4a60b0728"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a2f4c4523a7273466e87245d59d4c4f16">stepper_type::algebra_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a139c83844e5539e0f157eed4a60b0728">algebra_type</a></td></tr>
+<tr class="separator:a139c83844e5539e0f157eed4a60b0728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa26845971f9b773e81c212f3502a0c2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_type::operations_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#afa26845971f9b773e81c212f3502a0c2">operations_type</a></td></tr>
+<tr class="separator:afa26845971f9b773e81c212f3502a0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907c045210f864759605b0f984b81434"><td class="memItemLeft" align="right" valign="top">typedef stepper_type::resizer_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a907c045210f864759605b0f984b81434">resizer_type</a></td></tr>
+<tr class="separator:a907c045210f864759605b0f984b81434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511166111b81ad59e7a70cba1f613546"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a511166111b81ad59e7a70cba1f613546">stepper_category</a></td></tr>
+<tr class="separator:a511166111b81ad59e7a70cba1f613546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c7420ba0160387607b2fbd165d153d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt; Stepper &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#ab7c7420ba0160387607b2fbd165d153d">dense_output_stepper_type</a></td></tr>
+<tr class="separator:ab7c7420ba0160387607b2fbd165d153d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0b833c205648c7b4cfedcaee9dfab4cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a0b833c205648c7b4cfedcaee9dfab4cf">dense_output_runge_kutta</a> (const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a> &amp;stepper=<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a>())</td></tr>
+<tr class="memdesc:a0b833c205648c7b4cfedcaee9dfab4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a> class. An instance of the underlying stepper can be provided.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a0b833c205648c7b4cfedcaee9dfab4cf">更多...</a><br /></td></tr>
+<tr class="separator:a0b833c205648c7b4cfedcaee9dfab4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9464d647c5eb0790ecd81f5b3b8369f"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:aa9464d647c5eb0790ecd81f5b3b8369f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa9464d647c5eb0790ecd81f5b3b8369f">initialize</a> (const StateType &amp;x0, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> t0, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> dt0)</td></tr>
+<tr class="memdesc:aa9464d647c5eb0790ecd81f5b3b8369f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the stepper. Has to be called before do_step can be used to set the initial conditions and the step size.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa9464d647c5eb0790ecd81f5b3b8369f">更多...</a><br /></td></tr>
+<tr class="separator:aa9464d647c5eb0790ecd81f5b3b8369f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584bc41c5fbadcd9d180f05962fa82f0"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a584bc41c5fbadcd9d180f05962fa82f0"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>, <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a584bc41c5fbadcd9d180f05962fa82f0">do_step</a> (System system)</td></tr>
+<tr class="memdesc:a584bc41c5fbadcd9d180f05962fa82f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does one time step.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a584bc41c5fbadcd9d180f05962fa82f0">更多...</a><br /></td></tr>
+<tr class="separator:a584bc41c5fbadcd9d180f05962fa82f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6b267cd8fb46d259a5c5d8f31e37f1"><td class="memTemplParams" colspan="2">template&lt;class StateOut &gt; </td></tr>
+<tr class="memitem:a6c6b267cd8fb46d259a5c5d8f31e37f1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a6c6b267cd8fb46d259a5c5d8f31e37f1">calc_state</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> t, StateOut &amp;x) const</td></tr>
+<tr class="memdesc:a6c6b267cd8fb46d259a5c5d8f31e37f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at an intermediate point.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a6c6b267cd8fb46d259a5c5d8f31e37f1">更多...</a><br /></td></tr>
+<tr class="separator:a6c6b267cd8fb46d259a5c5d8f31e37f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5401fd1194cf1ef829a996b1ac05259b"><td class="memTemplParams" colspan="2">template&lt;class StateOut &gt; </td></tr>
+<tr class="memitem:a5401fd1194cf1ef829a996b1ac05259b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a5401fd1194cf1ef829a996b1ac05259b">calc_state</a> (<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> t, const StateOut &amp;x) const</td></tr>
+<tr class="memdesc:a5401fd1194cf1ef829a996b1ac05259b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the solution at an intermediate point. Solves the forwarding problem  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a5401fd1194cf1ef829a996b1ac05259b">更多...</a><br /></td></tr>
+<tr class="separator:a5401fd1194cf1ef829a996b1ac05259b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553a02be6b1a45a062249b0b0fb8ffd6"><td class="memTemplParams" colspan="2">template&lt;class StateType &gt; </td></tr>
+<tr class="memitem:a553a02be6b1a45a062249b0b0fb8ffd6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a553a02be6b1a45a062249b0b0fb8ffd6">adjust_size</a> (const StateType &amp;x)</td></tr>
+<tr class="memdesc:a553a02be6b1a45a062249b0b0fb8ffd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the size of all temporaries in the stepper manually.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a553a02be6b1a45a062249b0b0fb8ffd6">更多...</a><br /></td></tr>
+<tr class="separator:a553a02be6b1a45a062249b0b0fb8ffd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f9cf36a1571f8ab58c8d0e623f5357"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a42f9cf36a1571f8ab58c8d0e623f5357">current_state</a> (void) const</td></tr>
+<tr class="memdesc:a42f9cf36a1571f8ab58c8d0e623f5357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current state of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a42f9cf36a1571f8ab58c8d0e623f5357">更多...</a><br /></td></tr>
+<tr class="separator:a42f9cf36a1571f8ab58c8d0e623f5357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb784541816d81806d7f01e40b54b00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4eb784541816d81806d7f01e40b54b00">current_time</a> (void) const</td></tr>
+<tr class="memdesc:a4eb784541816d81806d7f01e40b54b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4eb784541816d81806d7f01e40b54b00">更多...</a><br /></td></tr>
+<tr class="separator:a4eb784541816d81806d7f01e40b54b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbaa267c47d1f08379ff71b8262767d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a2fbaa267c47d1f08379ff71b8262767d">previous_state</a> (void) const</td></tr>
+<tr class="memdesc:a2fbaa267c47d1f08379ff71b8262767d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last state of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a2fbaa267c47d1f08379ff71b8262767d">更多...</a><br /></td></tr>
+<tr class="separator:a2fbaa267c47d1f08379ff71b8262767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64c828c4ee6add71918ede8d549d352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#ab64c828c4ee6add71918ede8d549d352">previous_time</a> (void) const</td></tr>
+<tr class="memdesc:ab64c828c4ee6add71918ede8d549d352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last time of the solution.  <a href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#ab64c828c4ee6add71918ede8d549d352">更多...</a><br /></td></tr>
+<tr class="separator:ab64c828c4ee6add71918ede8d549d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class Stepper&gt;<br />
+class boost::numeric::odeint::dense_output_runge_kutta&lt; Stepper, stepper_tag &gt;</h3>
+
+<p>The class representing dense-output Runge-Kutta steppers. </p>
+<dl class="section note"><dt>注解</dt><dd>In this stepper, the initialize method has to be called before using the do_step method.</dd></dl>
+<p>The dense-output functionality allows to interpolate the solution between subsequent integration points using intermediate results obtained during the computation. This version works based on a normal stepper without step-size control.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Stepper</td><td>The stepper type of the underlying algorithm. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00059">59</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a139c83844e5539e0f157eed4a60b0728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139c83844e5539e0f157eed4a60b0728">&#9670;&nbsp;</a></span>algebra_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a2f4c4523a7273466e87245d59d4c4f16">stepper_type::algebra_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a139c83844e5539e0f157eed4a60b0728">algebra_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab7c7420ba0160387607b2fbd165d153d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c7420ba0160387607b2fbd165d153d">&#9670;&nbsp;</a></span>dense_output_stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a>&lt; Stepper &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#ab7c7420ba0160387607b2fbd165d153d">dense_output_stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afb213a60c3dc12a5b9912e8c2bf62d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb213a60c3dc12a5b9912e8c2bf62d7b">&#9670;&nbsp;</a></span>deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#a3b77b7883d7f12ac3457092dbf37a9a8">stepper_type::deriv_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#afb213a60c3dc12a5b9912e8c2bf62d7b">deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afa26845971f9b773e81c212f3502a0c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa26845971f9b773e81c212f3502a0c2">&#9670;&nbsp;</a></span>operations_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1algebra__stepper__base.html#a6fd9c674059728aa619828f44d913367">stepper_type::operations_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#afa26845971f9b773e81c212f3502a0c2">operations_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a907c045210f864759605b0f984b81434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a907c045210f864759605b0f984b81434">&#9670;&nbsp;</a></span>resizer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::resizer_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a907c045210f864759605b0f984b81434">resizer_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a11e32927af665204afd8c84e770b84a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e32927af665204afd8c84e770b84a1">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__nystroem__stepper__base.html#ab79c329d9a4e8fb1b7e24480478b1b95">stepper_type::state_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a511166111b81ad59e7a70cba1f613546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511166111b81ad59e7a70cba1f613546">&#9670;&nbsp;</a></span>stepper_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1numeric_1_1odeint_1_1dense__output__stepper__tag.html">dense_output_stepper_tag</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a511166111b81ad59e7a70cba1f613546">stepper_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4772b2c7e7522581c51d648acf7dfae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4772b2c7e7522581c51d648acf7dfae2">&#9670;&nbsp;</a></span>stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Stepper <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8c44cf53e325e951093c05c1c5db0cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c44cf53e325e951093c05c1c5db0cb9">&#9670;&nbsp;</a></span>time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::time_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a824897a44decf4d1680751cd637fac94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824897a44decf4d1680751cd637fac94">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1symplectic__rkn__sb3a__mclachlan.html#a855c765b59cb9eb32614c242358d8a39">stepper_type::value_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a824897a44decf4d1680751cd637fac94">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa74aeba88e1ea353d283a07bfbd81e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74aeba88e1ea353d283a07bfbd81e4a">&#9670;&nbsp;</a></span>wrapped_deriv_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_deriv_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa74aeba88e1ea353d283a07bfbd81e4a">wrapped_deriv_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa3b01a4474400e77a91c667923bc372b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b01a4474400e77a91c667923bc372b">&#9670;&nbsp;</a></span>wrapped_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef stepper_type::wrapped_state_type <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#aa3b01a4474400e77a91c667923bc372b">wrapped_state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0b833c205648c7b4cfedcaee9dfab4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b833c205648c7b4cfedcaee9dfab4cf">&#9670;&nbsp;</a></span>dense_output_runge_kutta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::<a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em> = <code><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a4772b2c7e7522581c51d648acf7dfae2">stepper_type</a>()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">dense_output_runge_kutta</a> class. An instance of the underlying stepper can be provided. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stepper</td><td>An instance of the underlying stepper. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a553a02be6b1a45a062249b0b0fb8ffd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553a02be6b1a45a062249b0b0fb8ffd6">&#9670;&nbsp;</a></span>adjust_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::adjust_size </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjust the size of all temporaries in the stepper manually. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>A state from which the size of the temporaries to be resized is deduced. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5401fd1194cf1ef829a996b1ac05259b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5401fd1194cf1ef829a996b1ac05259b">&#9670;&nbsp;</a></span>calc_state() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::calc_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const StateOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the solution at an intermediate point. Solves the forwarding problem </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The time at which the solution should be calculated, has to be in the current time interval. </td></tr>
+    <tr><td class="paramname">x</td><td>The output variable where the result is written into, can be a boost range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00150">150</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6c6b267cd8fb46d259a5c5d8f31e37f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6b267cd8fb46d259a5c5d8f31e37f1">&#9670;&nbsp;</a></span>calc_state() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class StateOut &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::calc_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StateOut &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the solution at an intermediate point. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The time at which the solution should be calculated, has to be in the current time interval. </td></tr>
+    <tr><td class="paramname">x</td><td>The output variable where the result is written into. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00138">138</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a42f9cf36a1571f8ab58c8d0e623f5357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f9cf36a1571f8ab58c8d0e623f5357">&#9670;&nbsp;</a></span>current_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::current_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current state of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The current state of the solution x(t). </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00170">170</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4eb784541816d81806d7f01e40b54b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb784541816d81806d7f01e40b54b00">&#9670;&nbsp;</a></span>current_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::current_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current time of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The current time of the solution t. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00179">179</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a584bc41c5fbadcd9d180f05962fa82f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584bc41c5fbadcd9d180f05962fa82f0">&#9670;&nbsp;</a></span>do_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> , <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> &gt; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::do_step </td>
+          <td>(</td>
+          <td class="paramtype">System&#160;</td>
+          <td class="paramname"><em>system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does one time step. </p>
+<dl class="section note"><dt>注解</dt><dd>initialize has to be called before using this method to set the initial conditions x,t and the stepsize. </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">system</td><td>The system function to solve, hence the r.h.s. of the ordinary differential equation. It must fulfill the Simple System concept. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Pair with start and end time of the integration step. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa9464d647c5eb0790ecd81f5b3b8369f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9464d647c5eb0790ecd81f5b3b8369f">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<div class="memtemplate">
+template&lt;class StateType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const StateType &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a>&#160;</td>
+          <td class="paramname"><em>dt0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the stepper. Has to be called before do_step can be used to set the initial conditions and the step size. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>The initial state of the ODE which should be solved. </td></tr>
+    <tr><td class="paramname">t0</td><td>The initial time, at which the step should be performed. </td></tr>
+    <tr><td class="paramname">dt0</td><td>The step size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00101">101</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4_aa9464d647c5eb0790ecd81f5b3b8369f_cgraph.png" border="0" usemap="#classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4_aa9464d647c5eb0790ecd81f5b3b8369f_cgraph" alt=""/></div>
+<map name="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4_aa9464d647c5eb0790ecd81f5b3b8369f_cgraph" id="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4_aa9464d647c5eb0790ecd81f5b3b8369f_cgraph">
+<area shape="rect" title="Initializes the stepper. Has to be called before do_step can be used to set the initial conditions an..." alt="" coords="5,20,208,91"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#a8f265541b3dda9a90fcb63b43bea0f11" title=" " alt="" coords="256,35,424,76"/>
+<area shape="rect" href="structboost_1_1numeric_1_1odeint_1_1copy__impl.html#a1c130657a62a80adcfbc15120c953f71" title=" " alt="" coords="472,5,640,47"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint_1_1detail.html#a06af14032a833158d3360580a28d55de" title=" " alt="" coords="688,35,856,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2fbaa267c47d1f08379ff71b8262767d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbaa267c47d1f08379ff71b8262767d">&#9670;&nbsp;</a></span>previous_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a11e32927af665204afd8c84e770b84a1">state_type</a>&amp; <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::previous_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last state of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The last state of the solution x(t-dt). </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00188">188</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab64c828c4ee6add71918ede8d549d352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64c828c4ee6add71918ede8d549d352">&#9670;&nbsp;</a></span>previous_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta_3_01_stepper_00_01stepper__tag_01_4.html#a8c44cf53e325e951093c05c1c5db0cb9">time_type</a> <a class="el" href="classboost_1_1numeric_1_1odeint_1_1dense__output__runge__kutta.html">boost::numeric::odeint::dense_output_runge_kutta</a>&lt; Stepper, <a class="el" href="structboost_1_1numeric_1_1odeint_1_1stepper__tag.html">stepper_tag</a> &gt;::previous_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last time of the solution. </p>
+<dl class="section return"><dt>返回</dt><dd>The last time of the solution t-dt. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a> 第 <a class="el" href="dense__output__runge__kutta_8hpp_source.html#l00197">197</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/vehicle_model/thirdparty/odeint-v2/boost/numeric/odeint/stepper/<a class="el" href="dense__output__runge__kutta_8hpp_source.html">dense_output_runge_kutta.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

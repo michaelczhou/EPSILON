@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: nlohmann::detail::parser&lt; BasicJsonType &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacenlohmann.html">nlohmann</a></li><li class="navelem"><a class="el" href="namespacenlohmann_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classnlohmann_1_1detail_1_1parser.html">parser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classnlohmann_1_1detail_1_1parser-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">nlohmann::detail::parser&lt; BasicJsonType &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>syntax analysis  
+ <a href="classnlohmann_1_1detail_1_1parser.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="json_8hpp_source.html">json.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a37ac88c864dda495f72cb62776b0bebe"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebe">parse_event_t</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26">parse_event_t::object_start</a>, 
+<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c">parse_event_t::object_end</a>, 
+<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3">parse_event_t::array_start</a>, 
+<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f">parse_event_t::array_end</a>, 
+<br />
+&#160;&#160;<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d">parse_event_t::key</a>, 
+<a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804">parse_event_t::value</a>
+<br />
+ }</td></tr>
+<tr class="separator:a37ac88c864dda495f72cb62776b0bebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad250ad4f2b4af4a497e727c963162ff1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#ad250ad4f2b4af4a497e727c963162ff1">parser_callback_t</a> = std::function&lt; bool(int depth, <a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebe">parse_event_t</a> event, BasicJsonType &amp;parsed)&gt;</td></tr>
+<tr class="separator:ad250ad4f2b4af4a497e727c963162ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1a2bd258b7e99f86b7e6a3c41373ba55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#a1a2bd258b7e99f86b7e6a3c41373ba55">parser</a> (<a class="el" href="namespacenlohmann_1_1detail.html#ae132f8cd5bb24c5e9b40ad0eafedf1c2">detail::input_adapter_t</a> &amp;&amp;adapter, const <a class="el" href="classnlohmann_1_1detail_1_1parser.html#ad250ad4f2b4af4a497e727c963162ff1">parser_callback_t</a> cb=<a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a>, const bool allow_exceptions_=true)</td></tr>
+<tr class="memdesc:a1a2bd258b7e99f86b7e6a3c41373ba55"><td class="mdescLeft">&#160;</td><td class="mdescRight">a parser reading from an input adapter  <a href="classnlohmann_1_1detail_1_1parser.html#a1a2bd258b7e99f86b7e6a3c41373ba55">更多...</a><br /></td></tr>
+<tr class="separator:a1a2bd258b7e99f86b7e6a3c41373ba55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14338d8f3174601c0b2b7ef28752ab17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#a14338d8f3174601c0b2b7ef28752ab17">parse</a> (const bool strict, BasicJsonType &amp;<a class="el" href="runge__kutta__error__concepts_8cpp.html#a994f4223bf54775b30127f1a5930dede">result</a>)</td></tr>
+<tr class="memdesc:a14338d8f3174601c0b2b7ef28752ab17"><td class="mdescLeft">&#160;</td><td class="mdescRight">public parser interface  <a href="classnlohmann_1_1detail_1_1parser.html#a14338d8f3174601c0b2b7ef28752ab17">更多...</a><br /></td></tr>
+<tr class="separator:a14338d8f3174601c0b2b7ef28752ab17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20997b42262856935b60fc91bf05bf3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#a20997b42262856935b60fc91bf05bf3f">accept</a> (const bool strict=true)</td></tr>
+<tr class="memdesc:a20997b42262856935b60fc91bf05bf3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">public accept interface  <a href="classnlohmann_1_1detail_1_1parser.html#a20997b42262856935b60fc91bf05bf3f">更多...</a><br /></td></tr>
+<tr class="separator:a20997b42262856935b60fc91bf05bf3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e34931965064b26e118eb72cbd5e25"><td class="memTemplParams" colspan="2">template&lt;typename SAX &gt; </td></tr>
+<tr class="memitem:a14e34931965064b26e118eb72cbd5e25"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1parser.html#a14e34931965064b26e118eb72cbd5e25">sax_parse</a> (SAX *sax, const bool strict=true)</td></tr>
+<tr class="separator:a14e34931965064b26e118eb72cbd5e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;typename BasicJsonType&gt;<br />
+class nlohmann::detail::parser&lt; BasicJsonType &gt;</h3>
+
+<p>syntax analysis </p>
+<p>This class implements a recursive decent parser. </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08684">8684</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ad250ad4f2b4af4a497e727c963162ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad250ad4f2b4af4a497e727c963162ff1">&#9670;&nbsp;</a></span>parser_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classnlohmann_1_1detail_1_1parser.html">nlohmann::detail::parser</a>&lt; BasicJsonType &gt;::<a class="el" href="classnlohmann_1_1detail_1_1parser.html#ad250ad4f2b4af4a497e727c963162ff1">parser_callback_t</a> =  std::function&lt;bool(int depth, <a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebe">parse_event_t</a> event, BasicJsonType&amp; parsed)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08711">8711</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a37ac88c864dda495f72cb62776b0bebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ac88c864dda495f72cb62776b0bebe">&#9670;&nbsp;</a></span>parse_event_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebe">nlohmann::detail::parser::parse_event_t</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26"></a>object_start&#160;</td><td class="fielddoc"><p>the parser read <code>{</code> and started to process a JSON object </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c"></a>object_end&#160;</td><td class="fielddoc"><p>the parser read <code>}</code> and finished processing a JSON object </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3"></a>array_start&#160;</td><td class="fielddoc"><p>the parser read <code>[</code> and started to process a JSON array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f"></a>array_end&#160;</td><td class="fielddoc"><p>the parser read <code>]</code> and finished processing a JSON array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d"></a>key&#160;</td><td class="fielddoc"><p>the parser read a key of a value in an object </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804"></a>value&#160;</td><td class="fielddoc"><p>the parser finished reading a JSON value </p>
+</td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08694">8694</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1a2bd258b7e99f86b7e6a3c41373ba55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2bd258b7e99f86b7e6a3c41373ba55">&#9670;&nbsp;</a></span>parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnlohmann_1_1detail_1_1parser.html">nlohmann::detail::parser</a>&lt; BasicJsonType &gt;::<a class="el" href="classnlohmann_1_1detail_1_1parser.html">parser</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacenlohmann_1_1detail.html#ae132f8cd5bb24c5e9b40ad0eafedf1c2">detail::input_adapter_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>adapter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classnlohmann_1_1detail_1_1parser.html#ad250ad4f2b4af4a497e727c963162ff1">parser_callback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em> = <code><a class="el" href="backward_8hpp.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>allow_exceptions_</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a parser reading from an input adapter </p>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08714">8714</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a20997b42262856935b60fc91bf05bf3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20997b42262856935b60fc91bf05bf3f">&#9670;&nbsp;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classnlohmann_1_1detail_1_1parser.html">nlohmann::detail::parser</a>&lt; BasicJsonType &gt;::accept </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>public accept interface </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strict</td><td>whether to expect the last token to be EOF </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>whether the input is a proper JSON text </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08794">8794</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_cgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_cgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_cgraph" id="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_cgraph">
+<area shape="rect" title="public accept interface" alt="" coords="5,84,187,125"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1parser.html#a14e34931965064b26e118eb72cbd5e25" title=" " alt="" coords="235,84,416,125"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d" title="create a parse error exception" alt="" coords="685,5,861,47"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#abf5143501435f9f79898c1ff238c2622" title="return position of last read token" alt="" coords="464,51,637,92"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#a4aef7e72e539be04e139c34872421f2a" title=" " alt="" coords="464,116,637,157"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d" title=" " alt="" coords="467,182,635,209"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="909,45,1113,87"/>
+<area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="1161,53,1313,79"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1type__error.html#aecc083aea4b698c33d042670ba50c10f" title=" " alt="" coords="689,84,858,125"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a40f7bb070a60e8ba14fffb9c117fcbd8" title=" " alt="" coords="688,175,859,216"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_icgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_icgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_icgraph" id="classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f_icgraph">
+<area shape="rect" title="public accept interface" alt="" coords="216,5,397,47"/>
+<area shape="rect" href="classnlohmann_1_1basic__json.html#a2292a18355f7095fbfdbc98ba79d345b" title=" " alt="" coords="5,5,168,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14338d8f3174601c0b2b7ef28752ab17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14338d8f3174601c0b2b7ef28752ab17">&#9670;&nbsp;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d">void</a> <a class="el" href="classnlohmann_1_1detail_1_1parser.html">nlohmann::detail::parser</a>&lt; BasicJsonType &gt;::parse </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>public parser interface </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strict</td><td>whether to expect the last token to be EOF </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">result</td><td>parsed JSON value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.101</td><td>in case of an unexpected token </td></tr>
+    <tr><td class="paramname">parse_error.102</td><td>if to_unicode fails or surrogate error </td></tr>
+    <tr><td class="paramname">parse_error.103</td><td>if to_unicode fails </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08733">8733</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_cgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_cgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_cgraph" id="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_cgraph">
+<area shape="rect" title="public parser interface" alt="" coords="5,201,187,243"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d" title="create a parse error exception" alt="" coords="256,5,432,47"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#abf5143501435f9f79898c1ff238c2622" title="return position of last read token" alt="" coords="257,71,431,112"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#a4aef7e72e539be04e139c34872421f2a" title=" " alt="" coords="257,136,431,177"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#ad1b9f3681fadbbb2e0127f5c8a99c662" title=" " alt="" coords="239,201,449,243"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1json__sax__dom__callback__parser.html#a167fd9bf385d3d08bcbbba8a927c0eff" title=" " alt="" coords="245,267,443,323"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#a7d3bf1f361ebb817c694ba45b3814fa6" title=" " alt="" coords="235,348,453,389"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1json__sax__dom__callback__parser.html#aac6e64f0b59c9150cde974e182d5ecab" title=" " alt="" coords="245,414,443,470"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="501,5,705,47"/>
+<area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="753,13,905,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_icgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_icgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_icgraph" id="classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17_icgraph">
+<area shape="rect" title="public parser interface" alt="" coords="387,5,568,47"/>
+<area shape="rect" href="classnlohmann_1_1basic__json.html#a90848e6383900786acbf6510ef009d2d" title="deserialize from a compatible input" alt="" coords="176,5,339,47"/>
+<area shape="rect" href="json_8hpp.html#ae90d59ab420a183cd5fb8588bdc95e06" title="user&#45;defined string literal for JSON values" alt="" coords="5,13,128,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14e34931965064b26e118eb72cbd5e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e34931965064b26e118eb72cbd5e25">&#9670;&nbsp;</a></span>sax_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<div class="memtemplate">
+template&lt;typename SAX &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classnlohmann_1_1detail_1_1parser.html">nlohmann::detail::parser</a>&lt; BasicJsonType &gt;::sax_parse </td>
+          <td>(</td>
+          <td class="paramtype">SAX *&#160;</td>
+          <td class="paramname"><em>sax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="json_8hpp_source.html">json.hpp</a> 第 <a class="el" href="json_8hpp_source.html#l08802">8802</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_cgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_cgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_cgraph" id="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_cgraph">
+<area shape="rect" title=" " alt="" coords="5,84,187,125"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d" title="create a parse error exception" alt="" coords="456,5,632,47"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#abf5143501435f9f79898c1ff238c2622" title="return position of last read token" alt="" coords="235,51,408,92"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1lexer.html#a4aef7e72e539be04e139c34872421f2a" title=" " alt="" coords="235,116,408,157"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a59fca69799f6b9e366710cb9043aa77d" title=" " alt="" coords="237,182,405,209"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="680,45,884,87"/>
+<area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="932,53,1084,79"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1type__error.html#aecc083aea4b698c33d042670ba50c10f" title=" " alt="" coords="459,84,629,125"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#a40f7bb070a60e8ba14fffb9c117fcbd8" title=" " alt="" coords="459,175,629,216"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_icgraph.png" border="0" usemap="#classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_icgraph" alt=""/></div>
+<map name="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_icgraph" id="classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25_icgraph">
+<area shape="rect" title=" " alt="" coords="445,39,627,80"/>
+<area shape="rect" href="classnlohmann_1_1detail_1_1parser.html#a20997b42262856935b60fc91bf05bf3f" title="public accept interface" alt="" coords="216,5,397,47"/>
+<area shape="rect" href="classnlohmann_1_1basic__json.html#ada69b327dbaf7a7a221d3b3ee8d1cb1c" title="generate SAX events" alt="" coords="225,71,388,112"/>
+<area shape="rect" href="classnlohmann_1_1basic__json.html#a2292a18355f7095fbfdbc98ba79d345b" title=" " alt="" coords="5,5,168,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/common/thirdparty/json/<a class="el" href="json_8hpp_source.html">json.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

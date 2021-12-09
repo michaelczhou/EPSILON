@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/generic_stepper.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">generic_stepper.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generic__stepper_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/generic_stepper.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the generic stepper.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   23</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_generic_stepper</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="explicit__generic__rk_8hpp.html">boost/numeric/odeint/stepper/explicit_generic_rk.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta4_8hpp.html">boost/numeric/odeint/stepper/runge_kutta4.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="runge__kutta4__classic_8hpp.html">boost/numeric/odeint/stepper/runge_kutta4_classic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;boost/array.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>fusion = boost::fusion;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="generic__stepper_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a0f59c63000052c9725e1873beda99e85">   42</a></span>&#160;<span class="keyword">typedef</span> boost::array&lt; value_type , 2 &gt; <a class="code" href="generic__stepper_8cpp.html#a0f59c63000052c9725e1873beda99e85">state_type</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a33c643c68978d14e83ab85c9c05b8abc">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="generic__stepper_8cpp.html#a33c643c68978d14e83ab85c9c05b8abc">sys</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> &amp;t )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    dxdt[ 0 ] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[ 0 ] + 2 * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[ 1 ];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    dxdt[ 1 ] = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[ 1 ];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a62758a425bf589b365b7c9373ca86361">   50</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">explicit_generic_rk&lt; 4 , 4 , state_type&gt;</a> <a class="code" href="generic__stepper_8cpp.html#a62758a425bf589b365b7c9373ca86361">rk_generic_type</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a9d7e877e756cee1e0b3e668ae83973b2">   51</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">runge_kutta4&lt; state_type &gt;</a> <a class="code" href="generic__stepper_8cpp.html#a9d7e877e756cee1e0b3e668ae83973b2">rk4_generic_type</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a182287664eb3bbafb89b86f04d6b1261">   53</a></span>&#160;<span class="keyword">const</span> boost::array&lt; double , 1 &gt; <a class="code" href="generic__stepper_8cpp.html#a182287664eb3bbafb89b86f04d6b1261">a1</a> = {{ 0.5 }};</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#ac12d3d358ccdb67b2a97457eeba33371">   54</a></span>&#160;<span class="keyword">const</span> boost::array&lt; double , 2 &gt; <a class="code" href="generic__stepper_8cpp.html#ac12d3d358ccdb67b2a97457eeba33371">a2</a> = {{ 0.0 , 0.5 }};</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a73f20ef47d78d3c5d38949c4912d066b">   55</a></span>&#160;<span class="keyword">const</span> boost::array&lt; double , 3 &gt; <a class="code" href="generic__stepper_8cpp.html#a73f20ef47d78d3c5d38949c4912d066b">a3</a> = {{ 0.0 , 0.0 , 1.0 }};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">   57</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a320b588a08a01ec3d3bebe55d3860390">rk_generic_type::coef_a_type</a> <a class="code" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a> = fusion::make_vector( <a class="code" href="generic__stepper_8cpp.html#a182287664eb3bbafb89b86f04d6b1261">a1</a> , <a class="code" href="generic__stepper_8cpp.html#ac12d3d358ccdb67b2a97457eeba33371">a2</a> , <a class="code" href="generic__stepper_8cpp.html#a73f20ef47d78d3c5d38949c4912d066b">a3</a> );</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#ad8e7608be4266ba539ad21bbba61447b">   58</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a443461e7fdb62d4d48e7baa9d14b62c0">rk_generic_type::coef_b_type</a> <a class="code" href="generic__stepper_8cpp.html#ad8e7608be4266ba539ad21bbba61447b">b</a> = {{ 1.0/6 , 1.0/3 , 1.0/3 , 1.0/6 }};</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">   59</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a9d5991cf71ae02621a5f37ed934abaad">rk_generic_type::coef_c_type</a> <a class="code" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a> = {{ 0.0 , 0.5 , 0.5 , 1.0 }};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#aea68a83f5ebbc7fe63f251d8c01c1bd3">   61</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4__classic.html">runge_kutta4_classic&lt; state_type &gt;</a> <a class="code" href="generic__stepper_8cpp.html#aea68a83f5ebbc7fe63f251d8c01c1bd3">rk4_type</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;BOOST_AUTO_TEST_SUITE( generic_stepper_test )</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="generic__stepper_8cpp.html#a3db7031c48f5912d62033d1180015143">   65</a></span>&#160;<a class="code" href="generic__stepper_8cpp.html#a3db7031c48f5912d62033d1180015143">BOOST_AUTO_TEST_CASE</a>( test_generic_stepper )</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//simultaneously test copying</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">rk_generic_type</a> rk_generic_( <a class="code" href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a> , <a class="code" href="generic__stepper_8cpp.html#ad8e7608be4266ba539ad21bbba61447b">b</a> , <a class="code" href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a> );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">rk_generic_type</a> rk_generic = rk_generic_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">rk4_generic_type</a> rk4_generic_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">rk4_generic_type</a> rk4_generic = rk4_generic_;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//std::cout &lt;&lt; stepper;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">rk4_type</a> rk4_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">rk4_type</a> rk4 = rk4_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad510c2817e28afa815d4926a729fce33">rk_generic_type::state_type</a> <a class="code" href="generic__stepper_8cpp.html#a0f59c63000052c9725e1873beda99e85">state_type</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ac4a774b500034336cec3b5360b66e37c">rk_generic_type::value_type</a> stepper_value_type;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a87e3ebc242c1a19a96d39506330b15c8">rk_generic_type::deriv_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">rk_generic_type::time_type</a> <a class="code" href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> = {{ 0.0 , 1.0 }};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> z = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    rk_generic.do_step( <a class="code" href="structsys.html">sys</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rk4_generic.do_step( <a class="code" href="structsys.html">sys</a> , <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a> , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    rk4.do_step( <a class="code" href="structsys.html">sys</a> , z , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    BOOST_CHECK_NE( 0.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    BOOST_CHECK_NE( 1.0 , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// compare with analytic solution of above system</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    BOOST_CHECK_EQUAL( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] , <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[0] );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    BOOST_CHECK_EQUAL( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] , <a class="code" href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">y</a>[1] );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    BOOST_CHECK_EQUAL( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[0] , z[0] );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    BOOST_CHECK_EQUAL( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>[1] , z[1] );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ageneric__stepper_8cpp_html_a5458029bdff9827b61085c66df47e35f"><div class="ttname"><a href="generic__stepper_8cpp.html#a5458029bdff9827b61085c66df47e35f">c</a></div><div class="ttdeci">const rk_generic_type::coef_c_type c</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00059">generic_stepper.cpp:59</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_ad510c2817e28afa815d4926a729fce33"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ad510c2817e28afa815d4926a729fce33">boost::numeric::odeint::explicit_generic_rk::state_type</a></div><div class="ttdeci">stepper_base_type::state_type state_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00110">explicit_generic_rk.hpp:110</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a73f20ef47d78d3c5d38949c4912d066b"><div class="ttname"><a href="generic__stepper_8cpp.html#a73f20ef47d78d3c5d38949c4912d066b">a3</a></div><div class="ttdeci">const boost::array&lt; double, 3 &gt; a3</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00055">generic_stepper.cpp:55</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_ad8e7608be4266ba539ad21bbba61447b"><div class="ttname"><a href="generic__stepper_8cpp.html#ad8e7608be4266ba539ad21bbba61447b">b</a></div><div class="ttdeci">const rk_generic_type::coef_b_type b</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00058">generic_stepper.cpp:58</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_a443461e7fdb62d4d48e7baa9d14b62c0"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a443461e7fdb62d4d48e7baa9d14b62c0">boost::numeric::odeint::explicit_generic_rk::coef_b_type</a></div><div class="ttdeci">rk_algorithm_type::coef_b_type coef_b_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00127">explicit_generic_rk.hpp:127</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html">boost::numeric::odeint::explicit_generic_rk</a></div><div class="ttdoc">A generic implementation of explicit Runge-Kutta algorithms. This class is as a base class for all ex...</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00052">explicit_generic_rk.hpp:52</a></div></div>
+<div class="ttc" id="aexplicit__generic__rk_8hpp_html"><div class="ttname"><a href="explicit__generic__rk_8hpp.html">explicit_generic_rk.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_ac4a774b500034336cec3b5360b66e37c"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#ac4a774b500034336cec3b5360b66e37c">boost::numeric::odeint::explicit_generic_rk::value_type</a></div><div class="ttdeci">stepper_base_type::value_type value_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00112">explicit_generic_rk.hpp:112</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a0f59c63000052c9725e1873beda99e85"><div class="ttname"><a href="generic__stepper_8cpp.html#a0f59c63000052c9725e1873beda99e85">state_type</a></div><div class="ttdeci">boost::array&lt; value_type, 2 &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00042">generic_stepper.cpp:42</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_a87e3ebc242c1a19a96d39506330b15c8"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a87e3ebc242c1a19a96d39506330b15c8">boost::numeric::odeint::explicit_generic_rk::deriv_type</a></div><div class="ttdeci">stepper_base_type::deriv_type deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00113">explicit_generic_rk.hpp:113</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a6c5a3754c51596b42ddb76f53d902913"><div class="ttname"><a href="generic__stepper_8cpp.html#a6c5a3754c51596b42ddb76f53d902913">a</a></div><div class="ttdeci">const rk_generic_type::coef_a_type a</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00057">generic_stepper.cpp:57</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a9d7e877e756cee1e0b3e668ae83973b2"><div class="ttname"><a href="generic__stepper_8cpp.html#a9d7e877e756cee1e0b3e668ae83973b2">rk4_generic_type</a></div><div class="ttdeci">runge_kutta4&lt; state_type &gt; rk4_generic_type</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00051">generic_stepper.cpp:51</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="generic__stepper_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00041">generic_stepper.cpp:41</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_ac12d3d358ccdb67b2a97457eeba33371"><div class="ttname"><a href="generic__stepper_8cpp.html#ac12d3d358ccdb67b2a97457eeba33371">a2</a></div><div class="ttdeci">const boost::array&lt; double, 2 &gt; a2</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00054">generic_stepper.cpp:54</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a6b476c4b408dace62bb7bb17dade626c"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a6b476c4b408dace62bb7bb17dade626c">deriv_type</a></div><div class="ttdeci">fusion::vector&lt; velocity_type, acceleration_type &gt; deriv_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00049">harmonic_oscillator_units.cpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4.html">boost::numeric::odeint::runge_kutta4</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4_8hpp_source.html#l00110">runge_kutta4.hpp:110</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a33c643c68978d14e83ab85c9c05b8abc"><div class="ttname"><a href="generic__stepper_8cpp.html#a33c643c68978d14e83ab85c9c05b8abc">sys</a></div><div class="ttdeci">void sys(const state_type &amp;x, state_type &amp;dxdt, const value_type &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00044">generic_stepper.cpp:44</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_a9d5991cf71ae02621a5f37ed934abaad"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a9d5991cf71ae02621a5f37ed934abaad">boost::numeric::odeint::explicit_generic_rk::coef_c_type</a></div><div class="ttdeci">rk_algorithm_type::coef_c_type coef_c_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00128">explicit_generic_rk.hpp:128</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_aea68a83f5ebbc7fe63f251d8c01c1bd3"><div class="ttname"><a href="generic__stepper_8cpp.html#aea68a83f5ebbc7fe63f251d8c01c1bd3">rk4_type</a></div><div class="ttdeci">runge_kutta4_classic&lt; state_type &gt; rk4_type</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00061">generic_stepper.cpp:61</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a182287664eb3bbafb89b86f04d6b1261"><div class="ttname"><a href="generic__stepper_8cpp.html#a182287664eb3bbafb89b86f04d6b1261">a1</a></div><div class="ttdeci">const boost::array&lt; double, 1 &gt; a1</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00053">generic_stepper.cpp:53</a></div></div>
+<div class="ttc" id="arunge__kutta4__classic_8hpp_html"><div class="ttname"><a href="runge__kutta4__classic_8hpp.html">runge_kutta4_classic.hpp</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_afe982e77c3c2ca559df9953b8b415626"><div class="ttname"><a href="namespaceproc__geojson.html#afe982e77c3c2ca559df9953b8b415626">proc_geojson.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00060">proc_geojson.py:60</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_af9e2cd5286d132d3c18c0dd5d67a7226"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#af9e2cd5286d132d3c18c0dd5d67a7226">boost::numeric::odeint::explicit_generic_rk::time_type</a></div><div class="ttdeci">stepper_base_type::time_type time_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00115">explicit_generic_rk.hpp:115</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="arunge__kutta4_8hpp_html"><div class="ttname"><a href="runge__kutta4_8hpp.html">runge_kutta4.hpp</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a62758a425bf589b365b7c9373ca86361"><div class="ttname"><a href="generic__stepper_8cpp.html#a62758a425bf589b365b7c9373ca86361">rk_generic_type</a></div><div class="ttdeci">explicit_generic_rk&lt; 4, 4, state_type &gt; rk_generic_type</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00050">generic_stepper.cpp:50</a></div></div>
+<div class="ttc" id="ageneric__stepper_8cpp_html_a3db7031c48f5912d62033d1180015143"><div class="ttname"><a href="generic__stepper_8cpp.html#a3db7031c48f5912d62033d1180015143">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(test_generic_stepper)</div><div class="ttdef"><b>Definition:</b> <a href="generic__stepper_8cpp_source.html#l00065">generic_stepper.cpp:65</a></div></div>
+<div class="ttc" id="aharmonic__oscillator__units_8cpp_html_a22524f0bf8fa0712836f8142b0afa726"><div class="ttname"><a href="harmonic__oscillator__units_8cpp.html#a22524f0bf8fa0712836f8142b0afa726">time_type</a></div><div class="ttdeci">units::quantity&lt; si::time, double &gt; time_type</div><div class="ttdef"><b>Definition:</b> <a href="harmonic__oscillator__units_8cpp_source.html#l00042">harmonic_oscillator_units.cpp:42</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1explicit__generic__rk_html_a320b588a08a01ec3d3bebe55d3860390"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1explicit__generic__rk.html#a320b588a08a01ec3d3bebe55d3860390">boost::numeric::odeint::explicit_generic_rk::coef_a_type</a></div><div class="ttdeci">rk_algorithm_type::coef_a_type coef_a_type</div><div class="ttdef"><b>Definition:</b> <a href="explicit__generic__rk_8hpp_source.html#l00126">explicit_generic_rk.hpp:126</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1runge__kutta4__classic_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1runge__kutta4__classic.html">boost::numeric::odeint::runge_kutta4_classic</a></div><div class="ttdoc">The classical Runge-Kutta stepper of fourth order.</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta4__classic_8hpp_source.html#l00045">runge_kutta4_classic.hpp:45</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

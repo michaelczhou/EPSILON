@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/rt_generic_rk4_lorenz.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">rt_generic_rk4_lorenz.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/array.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="rt__explicit__rk_8hpp_source.html">rt_explicit_rk.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rk__performance__test__case_8hpp_source.html">rk_performance_test_case.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lorenz_8hpp_source.html">lorenz.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rt_generic_rk4_lorenz.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rt__generic__rk4__lorenz_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2rt__generic__rk4__lorenz_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2rt__generic__rk4__lorenz_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2performance_2rt__generic__rk4__lorenz_8cpp">
+<area shape="rect" title=" " alt="" coords="85,5,323,76"/>
+<area shape="rect" title=" " alt="" coords="5,221,128,247"/>
+<area shape="rect" href="rt__explicit__rk_8hpp.html" title=" " alt="" coords="206,131,341,158"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html" title=" " alt="" coords="457,124,615,165"/>
+<area shape="rect" href="lorenz_8hpp.html" title=" " alt="" coords="91,131,181,158"/>
+<area shape="rect" title=" " alt="" coords="194,303,257,329"/>
+<area shape="rect" href="rt__algebra_8hpp.html" title=" " alt="" coords="215,221,331,247"/>
+<area shape="rect" title=" " alt="" coords="356,221,436,247"/>
+<area shape="rect" title=" " alt="" coords="461,213,611,255"/>
+<area shape="rect" title=" " alt="" coords="635,213,786,255"/>
+<area shape="rect" title=" " alt="" coords="811,221,936,247"/>
+</map>
+</div>
+</div>
+<p><a href="rt__generic__rk4__lorenz_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrt__generic__wrapper.html">rt_generic_wrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:affbfdadfb8d96a3cacec8c0ca8fa9329"><td class="memItemLeft" align="right" valign="top">typedef boost::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rt__generic__rk4__lorenz_8cpp.html#affbfdadfb8d96a3cacec8c0ca8fa9329">state_type</a></td></tr>
+<tr class="separator:affbfdadfb8d96a3cacec8c0ca8fa9329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035d661a1e6bac2dd60cec7830abd619"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classrt__explicit__rk.html">rt_explicit_rk</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rt__generic__rk4__lorenz_8cpp.html#a035d661a1e6bac2dd60cec7830abd619">rk_stepper_type</a></td></tr>
+<tr class="separator:a035d661a1e6bac2dd60cec7830abd619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rt__generic__rk4__lorenz_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a85155711bc2a05edff40d182052fdc48"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rt__generic__rk4__lorenz_8cpp.html#a85155711bc2a05edff40d182052fdc48">stage_count</a> = 4</td></tr>
+<tr class="separator:a85155711bc2a05edff40d182052fdc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a035d661a1e6bac2dd60cec7830abd619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035d661a1e6bac2dd60cec7830abd619">&#9670;&nbsp;</a></span>rk_stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classrt__explicit__rk.html">rt_explicit_rk</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="el" href="rt__generic__rk4__lorenz_8cpp.html#a035d661a1e6bac2dd60cec7830abd619">rk_stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html">rt_generic_rk4_lorenz.cpp</a> 第 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="affbfdadfb8d96a3cacec8c0ca8fa9329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbfdadfb8d96a3cacec8c0ca8fa9329">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::array&lt; double , 3 &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html">rt_generic_rk4_lorenz.cpp</a> 第 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html">rt_generic_rk4_lorenz.cpp</a> 第 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html#l00064">64</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rt__generic__rk4__lorenz_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#rt__generic__rk4__lorenz_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="rt__generic__rk4__lorenz_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="rt__generic__rk4__lorenz_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e" title=" " alt="" coords="108,5,151,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a85155711bc2a05edff40d182052fdc48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85155711bc2a05edff40d182052fdc48">&#9670;&nbsp;</a></span>stage_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t stage_count = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html">rt_generic_rk4_lorenz.cpp</a> 第 <a class="el" href="rt__generic__rk4__lorenz_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

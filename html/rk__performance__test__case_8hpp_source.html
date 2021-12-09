@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/performance/rk_performance_test_case.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_9e11988e4698fa92d06fd6184c19f26f.html">performance</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rk_performance_test_case.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rk__performance__test__case_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * rk_performance_test_case.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/accumulators/accumulators.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;boost/accumulators/statistics.hpp&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;boost/timer.hpp&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="rk__performance__test__case_8hpp.html#afaa1188c28b8385279e9fbdc70873fb0">   18</a></span>&#160;<span class="preprocessor">#define tab &quot;\t&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>boost::accumulators;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> accumulator_set&lt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    double , stats&lt; tag::mean , tag::variance &gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="rk__performance__test__case_8hpp.html#a2fcefc17fc468cefe0a59120c7e5d725">   25</a></span>&#160;    &gt; <a class="code" href="rk__performance__test__case_8hpp.html#a2fcefc17fc468cefe0a59120c7e5d725">accumulator_type</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="rk__performance__test__case_8hpp.html#aba95c1037d5096e797dc5fdae5da31ef">   27</a></span>&#160;ostream&amp; <a class="code" href="rk__performance__test__case_8hpp.html#aba95c1037d5096e797dc5fdae5da31ef">operator&lt;&lt;</a>( ostream&amp; <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> , <a class="code" href="rk__performance__test__case_8hpp.html#a2fcefc17fc468cefe0a59120c7e5d725">accumulator_type</a> &amp;acc )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a> &lt;&lt; boost::accumulators::mean( acc ) &lt;&lt; <a class="code" href="rk__performance__test__case_8hpp.html#afaa1188c28b8385279e9fbdc70873fb0">tab</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//    out &lt;&lt; boost::accumulators::variance( acc ) &lt;&lt; tab;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="rk__performance__test__case_8hpp.html#aefed09289f31aaa3b05607580cef3617">   34</a></span>&#160;<span class="keyword">typedef</span> boost::timer <a class="code" href="rk__performance__test__case_8hpp.html#aefed09289f31aaa3b05607580cef3617">timer_type</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">class</span> Stepper &gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e">run</a>( Stepper &amp;stepper , <span class="keyword">const</span> <span class="keywordtype">size_t</span> num_of_steps = 20000000 , <span class="keyword">const</span> <span class="keywordtype">double</span> dt = 1E-10 )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> loops = 20;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="rk__performance__test__case_8hpp.html#a2fcefc17fc468cefe0a59120c7e5d725">accumulator_type</a> acc;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="rk__performance__test__case_8hpp.html#aefed09289f31aaa3b05607580cef3617">timer_type</a> timer;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    srand( 12312354 );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// transient</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//stepper.reset_init_cond( );</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//for( size_t i = 0 ; i &lt; num_of_steps ; ++i )</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//    stepper.do_step( dt );</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>=0 ; <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>&lt;loops+1 ; ++<a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a> )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        stepper.reset_init_cond( );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        timer.restart();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0 ; i &lt; num_of_steps ; ++i )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            stepper.do_step( <a class="code" href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a> );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span>( <a class="code" href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a>&gt;0 )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {   <span class="comment">// take first run as transient</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            acc(timer.elapsed());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            clog.precision(8);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            clog.width(10);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            clog &lt;&lt; acc &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; stepper.state(0) &lt;&lt; endl;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    cout &lt;&lt; acc &lt;&lt; endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ark__performance__test__case_8hpp_html_a2fcefc17fc468cefe0a59120c7e5d725"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#a2fcefc17fc468cefe0a59120c7e5d725">accumulator_type</a></div><div class="ttdeci">accumulator_set&lt; double, stats&lt; tag::mean, tag::variance &gt; &gt; accumulator_type</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00025">rk_performance_test_case.hpp:25</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html_afaa1188c28b8385279e9fbdc70873fb0"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#afaa1188c28b8385279e9fbdc70873fb0">tab</a></div><div class="ttdeci">#define tab</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00018">rk_performance_test_case.hpp:18</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html_aefed09289f31aaa3b05607580cef3617"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#aefed09289f31aaa3b05607580cef3617">timer_type</a></div><div class="ttdeci">boost::timer timer_type</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00034">rk_performance_test_case.hpp:34</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html_a1c00e45dac21970165399c4b6b20891e"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#a1c00e45dac21970165399c4b6b20891e">run</a></div><div class="ttdeci">void run(Stepper &amp;stepper, const size_t num_of_steps=20000000, const double dt=1E-10)</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00038">rk_performance_test_case.hpp:38</a></div></div>
+<div class="ttc" id="ark__performance__test__case_8hpp_html_aba95c1037d5096e797dc5fdae5da31ef"><div class="ttname"><a href="rk__performance__test__case_8hpp.html#aba95c1037d5096e797dc5fdae5da31ef">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;out, accumulator_type &amp;acc)</div><div class="ttdef"><b>Definition:</b> <a href="rk__performance__test__case_8hpp_source.html#l00027">rk_performance_test_case.hpp:27</a></div></div>
+<div class="ttc" id="afusion__algebra_8cpp_html_a2c798c714835b255d7485dc364d9de6a"><div class="ttname"><a href="fusion__algebra_8cpp.html#a2c798c714835b255d7485dc364d9de6a">dt</a></div><div class="ttdeci">const time_type dt</div><div class="ttdef"><b>Definition:</b> <a href="fusion__algebra_8cpp_source.html#l00060">fusion_algebra.cpp:60</a></div></div>
+<div class="ttc" id="aexamples_2bulirsch__stoer_8cpp_html_a6b6d589c8106948670006f3e22b2c378"><div class="ttname"><a href="examples_2bulirsch__stoer_8cpp.html#a6b6d589c8106948670006f3e22b2c378">out</a></div><div class="ttdeci">ofstream out</div><div class="ttdef"><b>Definition:</b> <a href="examples_2bulirsch__stoer_8cpp_source.html#l00047">bulirsch_stoer.cpp:47</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03431">json.hpp:3431</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a714a22eb9e9eaeffb25f5627e03c2d37"><div class="ttname"><a href="chaotic__system_8cpp.html#a714a22eb9e9eaeffb25f5627e03c2d37">n</a></div><div class="ttdeci">const size_t n</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00051">chaotic_system.cpp:51</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

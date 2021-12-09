@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/Solver.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Solver.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_solver_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef ALGORITHM_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define ALGORITHM_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="class_data.html">Data</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_residuals.html">Residuals</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_linear_system.html">LinearSystem</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_status.html">Status</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_ooqp_monitor.html">OoqpMonitor</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_ooqp_start_strategy.html">OoqpStartStrategy</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_problem_formulation.html">ProblemFormulation</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_solver.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_solver.html">Solver</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gade0624fe0d10bc9742bb4e97b687f77a">   29</a></span>&#160;  <a class="code" href="class_ooqp_monitor.html">OoqpMonitor</a> * <a class="code" href="group___qp_solvers.html#gade0624fe0d10bc9742bb4e97b687f77a">itsMonitors</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga0d46f9c3503e13d9788329736788fb46">   30</a></span>&#160;  <a class="code" href="class_status.html">Status</a> *<a class="code" href="group___qp_solvers.html#ga0d46f9c3503e13d9788329736788fb46">status</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga2cc89d61eb98683e955e1229955923e8">   31</a></span>&#160;  <a class="code" href="class_ooqp_start_strategy.html">OoqpStartStrategy</a> * <a class="code" href="group___qp_solvers.html#ga2cc89d61eb98683e955e1229955923e8">startStrategy</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gab8bc07da7ddd225f9933fa50b4f5216f">   34</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#gab8bc07da7ddd225f9933fa50b4f5216f">dnorm</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gadc85d2a24439d73280f7e90f6187d2a2">   37</a></span>&#160;  <span class="keywordtype">double</span>     <a class="code" href="group___qp_solvers.html#gadc85d2a24439d73280f7e90f6187d2a2">mutol</a>, <a class="code" href="group___qp_solvers.html#ga1c8ac6d4211ae2f93897e6eaf9e61bb5">artol</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga4259735606652ac1d4eb9f3631d4e952">   40</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#ga4259735606652ac1d4eb9f3631d4e952">gamma_f</a>, <a class="code" href="group___qp_solvers.html#ga1544f89fc8337c3b3cea51c800c8f360">gamma_a</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gaa6c69fd95d34e375950ababd2ba4fa2d">   44</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#gaa6c69fd95d34e375950ababd2ba4fa2d">phi</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga2dd7aba65f58e9d635198eefcd41805c">   47</a></span>&#160;  <span class="keywordtype">int</span>        <a class="code" href="group___qp_solvers.html#ga2dd7aba65f58e9d635198eefcd41805c">maxit</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gad0e5f245e20c77c0a25619e6ec3932e8">   50</a></span>&#160;  <span class="keywordtype">double</span> *<a class="code" href="group___qp_solvers.html#gad0e5f245e20c77c0a25619e6ec3932e8">mu_history</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gaff49a29f91a2d117292296115da5cc97">   54</a></span>&#160;  <span class="keywordtype">double</span> *<a class="code" href="group___qp_solvers.html#gaff49a29f91a2d117292296115da5cc97">rnorm_history</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gabb83a51f879f0afa287274f637fb161b">   57</a></span>&#160;  <span class="keywordtype">double</span> *<a class="code" href="group___qp_solvers.html#gabb83a51f879f0afa287274f637fb161b">phi_history</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga5e64bf7fef98df9e1a9762a6d6992950">   61</a></span>&#160;  <span class="keywordtype">double</span> *<a class="code" href="group___qp_solvers.html#ga5e64bf7fef98df9e1a9762a6d6992950">phi_min_history</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga8a0aed75acdc899076dfd85c0eb1a8ab">   66</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group___qp_solvers.html#ga8a0aed75acdc899076dfd85c0eb1a8ab">iter</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="group___qp_solvers.html#ga9dfe7ae9ce617e8a6398be34284c907a">Solver</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="group___qp_solvers.html#ga14f7014dd6e46e3990dea30b5ad3c087">~Solver</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#gae092aa9e03bb592211ca46c4b5c50b79">start</a>( <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * formulation, </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              <a class="code" href="class_variables.html">Variables</a> * iterate, <a class="code" href="class_data.html">Data</a> * prob,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;              <a class="code" href="class_residuals.html">Residuals</a> * resid, <a class="code" href="class_variables.html">Variables</a> * step);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga70bfee08d57351830916283b8ba620d8">defaultStart</a>( <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * formulation,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                 <a class="code" href="class_variables.html">Variables</a> * iterate, <a class="code" href="class_data.html">Data</a> * prob,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                 <a class="code" href="class_residuals.html">Residuals</a> * resid, <a class="code" href="class_variables.html">Variables</a> * step);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga2446b052abd724632c533d761e4845ec">stevestart</a> ( <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * formulation,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="class_variables.html">Variables</a> * iterate, <a class="code" href="class_data.html">Data</a> * prob, </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="class_residuals.html">Residuals</a> * resid, <a class="code" href="class_variables.html">Variables</a> * step );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga135c11eb6dd1f60767cb302fe4d5f152">dumbstart</a> ( <a class="code" href="class_problem_formulation.html">ProblemFormulation</a> * formulation,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               <a class="code" href="class_variables.html">Variables</a> * iterate, <a class="code" href="class_data.html">Data</a> * prob, </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               <a class="code" href="class_residuals.html">Residuals</a> * resid, <a class="code" href="class_variables.html">Variables</a> * step );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="group___qp_solvers.html#ga6f4329fde20116d04e58928c2023909d">solve</a>(<a class="code" href="class_data.html">Data</a> *prob, <a class="code" href="class_variables.html">Variables</a> *iterate, <a class="code" href="class_residuals.html">Residuals</a> * resids) = 0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#gae2b7cbb68e7532f325f4143e9943c1bb">finalStepLength</a>( <a class="code" href="class_variables.html">Variables</a> *iterate, <a class="code" href="class_variables.html">Variables</a> *step );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga468342bbb71b31dbfc28ee57606f2ed6">doMonitor</a>( <a class="code" href="class_data.html">Data</a> * data, <a class="code" href="class_variables.html">Variables</a> * vars,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                          <a class="code" href="class_residuals.html">Residuals</a> * resids,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                          <span class="keywordtype">double</span> alpha, <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a>,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                          <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> <a class="code" href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a>,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                          <span class="keywordtype">int</span> stop_code,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                          <span class="keywordtype">int</span> level );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#gab28817aa481d0144107be7b1208a42e7">defaultMonitor</a>( <a class="code" href="class_data.html">Data</a> * data, <a class="code" href="class_variables.html">Variables</a> * vars,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                               <a class="code" href="class_residuals.html">Residuals</a> * resids,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                               <span class="keywordtype">double</span> alpha, <span class="keywordtype">double</span> <a class="code" href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a>,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                               <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> <a class="code" href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a>, </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                               <span class="keywordtype">int</span> stop_code,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                               <span class="keywordtype">int</span> level ) = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="group___qp_solvers.html#gaff2f7c4536361b0b11a16f1235018063">doStatus</a>( <a class="code" href="class_data.html">Data</a> * data, <a class="code" href="class_variables.html">Variables</a> * vars, </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="class_residuals.html">Residuals</a> * resids,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> <a class="code" href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a>, </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">int</span> level );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="group___qp_solvers.html#ga91b63dd8b7a8e7c3aa83b629b0bbf323">defaultStatus</a>( <a class="code" href="class_data.html">Data</a> * data, <a class="code" href="class_variables.html">Variables</a> * vars, </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 <a class="code" href="class_residuals.html">Residuals</a> * resids,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                 <span class="keywordtype">int</span> i, <span class="keywordtype">double</span> <a class="code" href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a>, </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 <span class="keywordtype">int</span> level );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga5ff4ec5e3e02febf3efc79f7b6ecde57">addMonitor</a>( <a class="code" href="class_ooqp_monitor.html">OoqpMonitor</a> * );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga985c833f64382effcc87aea486308dc5">  135</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga985c833f64382effcc87aea486308dc5">useStatus</a>( <a class="code" href="class_status.html">Status</a> * s ) { <a class="code" href="group___qp_solvers.html#ga0d46f9c3503e13d9788329736788fb46">status</a> = s; }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga63291375ec5600ed04ef5f7bea9fbca1">  139</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga63291375ec5600ed04ef5f7bea9fbca1">useStartStrategy</a>( <a class="code" href="class_ooqp_start_strategy.html">OoqpStartStrategy</a> * s ) { <a class="code" href="group___qp_solvers.html#ga2cc89d61eb98683e955e1229955923e8">startStrategy</a> = s; }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga9d71470394f96a89275ac5e527d25244">monitorSelf</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga85cf76c6b385d0294138e59d4a38fc6b">  144</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga85cf76c6b385d0294138e59d4a38fc6b">setMuTol</a>( <span class="keywordtype">double</span> m ) { <a class="code" href="group___qp_solvers.html#gadc85d2a24439d73280f7e90f6187d2a2">mutol</a> = m; }</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga69678033961a078f237aa7bd612dbbb3">  145</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#ga69678033961a078f237aa7bd612dbbb3">getMuTol</a>() { <span class="keywordflow">return</span> <a class="code" href="group___qp_solvers.html#gadc85d2a24439d73280f7e90f6187d2a2">mutol</a>; }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga7ac3c4abbf2034be08d2a1e24cabff25">  147</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group___qp_solvers.html#ga7ac3c4abbf2034be08d2a1e24cabff25">setArTol</a>( <span class="keywordtype">double</span> ar ) { <a class="code" href="group___qp_solvers.html#ga1c8ac6d4211ae2f93897e6eaf9e61bb5">artol</a> = ar; }</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gac5845aeca1180365c12f2ae4d3ff5430">  148</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#gac5845aeca1180365c12f2ae4d3ff5430">getArTol</a>() { <span class="keywordflow">return</span> <a class="code" href="group___qp_solvers.html#ga1c8ac6d4211ae2f93897e6eaf9e61bb5">artol</a>; }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#gae3759f73fd9ebf824ca3ce8534e21b0e">  150</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="group___qp_solvers.html#gae3759f73fd9ebf824ca3ce8534e21b0e">dataNorm</a>() { <span class="keywordflow">return</span> <a class="code" href="group___qp_solvers.html#gab8bc07da7ddd225f9933fa50b4f5216f">dnorm</a>; }</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="group___qp_solvers.html#ga0bd95627c76346d18af69175ca7a52c8">  153</a></span>&#160;  <a class="code" href="class_linear_system.html">LinearSystem</a> * <a class="code" href="group___qp_solvers.html#ga036625e809e70fd4f491c1e81524a8dd">getLinearSystem</a>() { <span class="keywordflow">return</span> <a class="code" href="group___qp_solvers.html#ga0bd95627c76346d18af69175ca7a52c8">sys</a>; };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="class_linear_system.html">LinearSystem</a> *<a class="code" href="group___qp_solvers.html#ga0bd95627c76346d18af69175ca7a52c8">sys</a>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_ooqp_start_strategy_html"><div class="ttname"><a href="class_ooqp_start_strategy.html">OoqpStartStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_start_strategy_8h_source.html#l00014">OoqpStartStrategy.h:14</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gae092aa9e03bb592211ca46c4b5c50b79"><div class="ttname"><a href="group___qp_solvers.html#gae092aa9e03bb592211ca46c4b5c50b79">Solver::start</a></div><div class="ttdeci">virtual void start(ProblemFormulation *formulation, Variables *iterate, Data *prob, Residuals *resid, Variables *step)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gae2b7cbb68e7532f325f4143e9943c1bb"><div class="ttname"><a href="group___qp_solvers.html#gae2b7cbb68e7532f325f4143e9943c1bb">Solver::finalStepLength</a></div><div class="ttdeci">virtual double finalStepLength(Variables *iterate, Variables *step)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gabb83a51f879f0afa287274f637fb161b"><div class="ttname"><a href="group___qp_solvers.html#gabb83a51f879f0afa287274f637fb161b">Solver::phi_history</a></div><div class="ttdeci">double * phi_history</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00057">Solver.h:57</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga5e64bf7fef98df9e1a9762a6d6992950"><div class="ttname"><a href="group___qp_solvers.html#ga5e64bf7fef98df9e1a9762a6d6992950">Solver::phi_min_history</a></div><div class="ttdeci">double * phi_min_history</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00061">Solver.h:61</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga14f7014dd6e46e3990dea30b5ad3c087"><div class="ttname"><a href="group___qp_solvers.html#ga14f7014dd6e46e3990dea30b5ad3c087">Solver::~Solver</a></div><div class="ttdeci">virtual ~Solver()</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga468342bbb71b31dbfc28ee57606f2ed6"><div class="ttname"><a href="group___qp_solvers.html#ga468342bbb71b31dbfc28ee57606f2ed6">Solver::doMonitor</a></div><div class="ttdeci">virtual void doMonitor(Data *data, Variables *vars, Residuals *resids, double alpha, double sigma, int i, double mu, int stop_code, int level)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga9d71470394f96a89275ac5e527d25244"><div class="ttname"><a href="group___qp_solvers.html#ga9d71470394f96a89275ac5e527d25244">Solver::monitorSelf</a></div><div class="ttdeci">void monitorSelf()</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga8a0aed75acdc899076dfd85c0eb1a8ab"><div class="ttname"><a href="group___qp_solvers.html#ga8a0aed75acdc899076dfd85c0eb1a8ab">Solver::iter</a></div><div class="ttdeci">int iter</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00066">Solver.h:66</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga135c11eb6dd1f60767cb302fe4d5f152"><div class="ttname"><a href="group___qp_solvers.html#ga135c11eb6dd1f60767cb302fe4d5f152">Solver::dumbstart</a></div><div class="ttdeci">virtual void dumbstart(ProblemFormulation *formulation, Variables *iterate, Data *prob, Residuals *resid, Variables *step)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga036625e809e70fd4f491c1e81524a8dd"><div class="ttname"><a href="group___qp_solvers.html#ga036625e809e70fd4f491c1e81524a8dd">Solver::getLinearSystem</a></div><div class="ttdeci">LinearSystem * getLinearSystem()</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00153">Solver.h:153</a></div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga2446b052abd724632c533d761e4845ec"><div class="ttname"><a href="group___qp_solvers.html#ga2446b052abd724632c533d761e4845ec">Solver::stevestart</a></div><div class="ttdeci">virtual void stevestart(ProblemFormulation *formulation, Variables *iterate, Data *prob, Residuals *resid, Variables *step)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga4259735606652ac1d4eb9f3631d4e952"><div class="ttname"><a href="group___qp_solvers.html#ga4259735606652ac1d4eb9f3631d4e952">Solver::gamma_f</a></div><div class="ttdeci">double gamma_f</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00040">Solver.h:40</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gae3759f73fd9ebf824ca3ce8534e21b0e"><div class="ttname"><a href="group___qp_solvers.html#gae3759f73fd9ebf824ca3ce8534e21b0e">Solver::dataNorm</a></div><div class="ttdeci">double dataNorm()</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00150">Solver.h:150</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga69678033961a078f237aa7bd612dbbb3"><div class="ttname"><a href="group___qp_solvers.html#ga69678033961a078f237aa7bd612dbbb3">Solver::getMuTol</a></div><div class="ttdeci">double getMuTol()</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00145">Solver.h:145</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gadc85d2a24439d73280f7e90f6187d2a2"><div class="ttname"><a href="group___qp_solvers.html#gadc85d2a24439d73280f7e90f6187d2a2">Solver::mutol</a></div><div class="ttdeci">double mutol</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00037">Solver.h:37</a></div></div>
+<div class="ttc" id="aclass_ooqp_monitor_html"><div class="ttname"><a href="class_ooqp_monitor.html">OoqpMonitor</a></div><div class="ttdef"><b>Definition:</b> <a href="_ooqp_monitor_8h_source.html#l00017">OoqpMonitor.h:17</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga7ac3c4abbf2034be08d2a1e24cabff25"><div class="ttname"><a href="group___qp_solvers.html#ga7ac3c4abbf2034be08d2a1e24cabff25">Solver::setArTol</a></div><div class="ttdeci">void setArTol(double ar)</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00147">Solver.h:147</a></div></div>
+<div class="ttc" id="aclass_problem_formulation_html"><div class="ttname"><a href="class_problem_formulation.html">ProblemFormulation</a></div><div class="ttdef"><b>Definition:</b> <a href="_problem_formulation_8h_source.html#l00049">ProblemFormulation.h:49</a></div></div>
+<div class="ttc" id="aclass_status_html"><div class="ttname"><a href="class_status.html">Status</a></div><div class="ttdef"><b>Definition:</b> <a href="_status_8h_source.html#l00029">Status.h:29</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gade0624fe0d10bc9742bb4e97b687f77a"><div class="ttname"><a href="group___qp_solvers.html#gade0624fe0d10bc9742bb4e97b687f77a">Solver::itsMonitors</a></div><div class="ttdeci">OoqpMonitor * itsMonitors</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00029">Solver.h:29</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga2dd7aba65f58e9d635198eefcd41805c"><div class="ttname"><a href="group___qp_solvers.html#ga2dd7aba65f58e9d635198eefcd41805c">Solver::maxit</a></div><div class="ttdeci">int maxit</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00047">Solver.h:47</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gab28817aa481d0144107be7b1208a42e7"><div class="ttname"><a href="group___qp_solvers.html#gab28817aa481d0144107be7b1208a42e7">Solver::defaultMonitor</a></div><div class="ttdeci">virtual void defaultMonitor(Data *data, Variables *vars, Residuals *resids, double alpha, double sigma, int i, double mu, int stop_code, int level)=0</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga91b63dd8b7a8e7c3aa83b629b0bbf323"><div class="ttname"><a href="group___qp_solvers.html#ga91b63dd8b7a8e7c3aa83b629b0bbf323">Solver::defaultStatus</a></div><div class="ttdeci">virtual int defaultStatus(Data *data, Variables *vars, Residuals *resids, int i, double mu, int level)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gac5845aeca1180365c12f2ae4d3ff5430"><div class="ttname"><a href="group___qp_solvers.html#gac5845aeca1180365c12f2ae4d3ff5430">Solver::getArTol</a></div><div class="ttdeci">double getArTol()</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00148">Solver.h:148</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga2cc89d61eb98683e955e1229955923e8"><div class="ttname"><a href="group___qp_solvers.html#ga2cc89d61eb98683e955e1229955923e8">Solver::startStrategy</a></div><div class="ttdeci">OoqpStartStrategy * startStrategy</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00031">Solver.h:31</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga85cf76c6b385d0294138e59d4a38fc6b"><div class="ttname"><a href="group___qp_solvers.html#ga85cf76c6b385d0294138e59d4a38fc6b">Solver::setMuTol</a></div><div class="ttdeci">void setMuTol(double m)</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00144">Solver.h:144</a></div></div>
+<div class="ttc" id="aclass_solver_html"><div class="ttname"><a href="class_solver.html">Solver</a></div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00026">Solver.h:26</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gad0e5f245e20c77c0a25619e6ec3932e8"><div class="ttname"><a href="group___qp_solvers.html#gad0e5f245e20c77c0a25619e6ec3932e8">Solver::mu_history</a></div><div class="ttdeci">double * mu_history</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00050">Solver.h:50</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga0d46f9c3503e13d9788329736788fb46"><div class="ttname"><a href="group___qp_solvers.html#ga0d46f9c3503e13d9788329736788fb46">Solver::status</a></div><div class="ttdeci">Status * status</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00030">Solver.h:30</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga6f4329fde20116d04e58928c2023909d"><div class="ttname"><a href="group___qp_solvers.html#ga6f4329fde20116d04e58928c2023909d">Solver::solve</a></div><div class="ttdeci">virtual int solve(Data *prob, Variables *iterate, Residuals *resids)=0</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gab8bc07da7ddd225f9933fa50b4f5216f"><div class="ttname"><a href="group___qp_solvers.html#gab8bc07da7ddd225f9933fa50b4f5216f">Solver::dnorm</a></div><div class="ttdeci">double dnorm</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00034">Solver.h:34</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga5ff4ec5e3e02febf3efc79f7b6ecde57"><div class="ttname"><a href="group___qp_solvers.html#ga5ff4ec5e3e02febf3efc79f7b6ecde57">Solver::addMonitor</a></div><div class="ttdeci">void addMonitor(OoqpMonitor *)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga1c8ac6d4211ae2f93897e6eaf9e61bb5"><div class="ttname"><a href="group___qp_solvers.html#ga1c8ac6d4211ae2f93897e6eaf9e61bb5">Solver::artol</a></div><div class="ttdeci">double artol</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00037">Solver.h:37</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gaff2f7c4536361b0b11a16f1235018063"><div class="ttname"><a href="group___qp_solvers.html#gaff2f7c4536361b0b11a16f1235018063">Solver::doStatus</a></div><div class="ttdeci">virtual int doStatus(Data *data, Variables *vars, Residuals *resids, int i, double mu, int level)</div></div>
+<div class="ttc" id="aclass_linear_system_html"><div class="ttname"><a href="class_linear_system.html">LinearSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_system_8h_source.html#l00017">LinearSystem.h:17</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga985c833f64382effcc87aea486308dc5"><div class="ttname"><a href="group___qp_solvers.html#ga985c833f64382effcc87aea486308dc5">Solver::useStatus</a></div><div class="ttdeci">void useStatus(Status *s)</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00135">Solver.h:135</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga63291375ec5600ed04ef5f7bea9fbca1"><div class="ttname"><a href="group___qp_solvers.html#ga63291375ec5600ed04ef5f7bea9fbca1">Solver::useStartStrategy</a></div><div class="ttdeci">void useStartStrategy(OoqpStartStrategy *s)</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00139">Solver.h:139</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga9dfe7ae9ce617e8a6398be34284c907a"><div class="ttname"><a href="group___qp_solvers.html#ga9dfe7ae9ce617e8a6398be34284c907a">Solver::Solver</a></div><div class="ttdeci">Solver()</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga1544f89fc8337c3b3cea51c800c8f360"><div class="ttname"><a href="group___qp_solvers.html#ga1544f89fc8337c3b3cea51c800c8f360">Solver::gamma_a</a></div><div class="ttdeci">double gamma_a</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00040">Solver.h:40</a></div></div>
+<div class="ttc" id="achaotic__system_8cpp_html_a08d4c0acfdbc81d9f33f389cfe7839ea"><div class="ttname"><a href="chaotic__system_8cpp.html#a08d4c0acfdbc81d9f33f389cfe7839ea">sigma</a></div><div class="ttdeci">const double sigma</div><div class="ttdef"><b>Definition:</b> <a href="chaotic__system_8cpp_source.html#l00028">chaotic_system.cpp:28</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gaa6c69fd95d34e375950ababd2ba4fa2d"><div class="ttname"><a href="group___qp_solvers.html#gaa6c69fd95d34e375950ababd2ba4fa2d">Solver::phi</a></div><div class="ttdeci">double phi</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00044">Solver.h:44</a></div></div>
+<div class="ttc" id="avan__der__pol__stiff_8cpp_html_a413e66b677dd5359952f8b5e6ec4dc5f"><div class="ttname"><a href="van__der__pol__stiff_8cpp.html#a413e66b677dd5359952f8b5e6ec4dc5f">mu</a></div><div class="ttdeci">const double mu</div><div class="ttdef"><b>Definition:</b> <a href="van__der__pol__stiff_8cpp_source.html#l00026">van_der_pol_stiff.cpp:26</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga0bd95627c76346d18af69175ca7a52c8"><div class="ttname"><a href="group___qp_solvers.html#ga0bd95627c76346d18af69175ca7a52c8">Solver::sys</a></div><div class="ttdeci">LinearSystem * sys</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00153">Solver.h:153</a></div></div>
+<div class="ttc" id="agroup___qp_solvers_html_ga70bfee08d57351830916283b8ba620d8"><div class="ttname"><a href="group___qp_solvers.html#ga70bfee08d57351830916283b8ba620d8">Solver::defaultStart</a></div><div class="ttdeci">virtual void defaultStart(ProblemFormulation *formulation, Variables *iterate, Data *prob, Residuals *resid, Variables *step)</div></div>
+<div class="ttc" id="agroup___qp_solvers_html_gaff49a29f91a2d117292296115da5cc97"><div class="ttname"><a href="group___qp_solvers.html#gaff49a29f91a2d117292296115da5cc97">Solver::rnorm_history</a></div><div class="ttdeci">double * rnorm_history</div><div class="ttdef"><b>Definition:</b> <a href="_solver_8h_source.html#l00054">Solver.h:54</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

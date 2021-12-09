@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/common/thirdparty/ooqp/include/ooqp/HuberLinsys.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_96905e4e8221386a66b3608ee8aaef34.html">common</a></li><li class="navelem"><a class="el" href="dir_4242996d11137a5c12927a922a74444f.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_bcd94d7cb57014acde105bfb0b954b3d.html">ooqp</a></li><li class="navelem"><a class="el" href="dir_2475d7231806f94ea47dc62de38ece47.html">include</a></li><li class="navelem"><a class="el" href="dir_90876a9558696f7975f3253846bf43b6.html">ooqp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">HuberLinsys.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_huber_linsys_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* OOQP                                                               *</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Authors: E. Michael Gertz, Stephen J. Wright                       *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * (C) 2001 University of Chicago. See Copyright Notification in OOQP */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef HuberLINSYS_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define HuberLINSYS_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_linear_system_8h.html">LinearSystem.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="class_data.html">Data</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_variables.html">Variables</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_residuals.html">Residuals</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dense_sym_matrix_handle_8h.html">DenseSymMatrixHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_simple_vector_handle_8h.html">SimpleVectorHandle.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_huber_linsys.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_huber_linsys.html">HuberLinsys</a> : <span class="keyword">public</span> <a class="code" href="class_linear_system.html">LinearSystem</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="class_smart_pointer.html">DenseSymMatrixHandle</a> L;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="class_double_linear_solver.html">DoubleLinearSolver</a> * solver;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="class_smart_pointer.html">SimpleVectorHandle</a> mDinv;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="class_smart_pointer.html">SimpleVectorHandle</a> mDinvColX, mColOfL;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="class_huber_linsys.html#a403d76cef86fc2a30b16ac4531f35a90">HuberLinsys</a>( <a class="code" href="class_data.html">Data</a> * prob );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="class_huber_linsys.html#a963e9e24092be17f72d6ade3193d389b">~HuberLinsys</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_huber_linsys.html#acba9e3e0c7108b6d55c5d406624ed947">factor</a>(<a class="code" href="class_data.html">Data</a> *prob, <a class="code" href="class_variables.html">Variables</a> *vars);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_huber_linsys.html#a9e4ffc93d129827b3b59fbe365210c42">solve</a>(<a class="code" href="class_data.html">Data</a> *prob, <a class="code" href="class_variables.html">Variables</a> *vars, <a class="code" href="class_residuals.html">Residuals</a> *<a class="code" href="examples_2bulirsch__stoer_8cpp.html#a7ca9784830fb0b2b15c4c50371382d93">rhs</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;             <a class="code" href="class_variables.html">Variables</a> *step);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_huber_linsys_html_a963e9e24092be17f72d6ade3193d389b"><div class="ttname"><a href="class_huber_linsys.html#a963e9e24092be17f72d6ade3193d389b">HuberLinsys::~HuberLinsys</a></div><div class="ttdeci">~HuberLinsys()</div></div>
+<div class="ttc" id="aclass_huber_linsys_html_a9e4ffc93d129827b3b59fbe365210c42"><div class="ttname"><a href="class_huber_linsys.html#a9e4ffc93d129827b3b59fbe365210c42">HuberLinsys::solve</a></div><div class="ttdeci">virtual void solve(Data *prob, Variables *vars, Residuals *rhs, Variables *step)</div></div>
+<div class="ttc" id="a_dense_sym_matrix_handle_8h_html"><div class="ttname"><a href="_dense_sym_matrix_handle_8h.html">DenseSymMatrixHandle.h</a></div></div>
+<div class="ttc" id="a_linear_system_8h_html"><div class="ttname"><a href="_linear_system_8h.html">LinearSystem.h</a></div></div>
+<div class="ttc" id="aclass_variables_html"><div class="ttname"><a href="class_variables.html">Variables</a></div><div class="ttdef"><b>Definition:</b> <a href="_variables_8h_source.html#l00023">Variables.h:23</a></div></div>
+<div class="ttc" id="aclass_huber_linsys_html_a403d76cef86fc2a30b16ac4531f35a90"><div class="ttname"><a href="class_huber_linsys.html#a403d76cef86fc2a30b16ac4531f35a90">HuberLinsys::HuberLinsys</a></div><div class="ttdeci">HuberLinsys(Data *prob)</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00016">Data.h:16</a></div></div>
+<div class="ttc" id="aclass_smart_pointer_html"><div class="ttname"><a href="class_smart_pointer.html">SmartPointer&lt; DenseSymMatrix &gt;</a></div></div>
+<div class="ttc" id="aclass_residuals_html"><div class="ttname"><a href="class_residuals.html">Residuals</a></div><div class="ttdef"><b>Definition:</b> <a href="_residuals_8h_source.html#l00022">Residuals.h:22</a></div></div>
+<div class="ttc" id="aclass_huber_linsys_html"><div class="ttname"><a href="class_huber_linsys.html">HuberLinsys</a></div><div class="ttdef"><b>Definition:</b> <a href="_huber_linsys_8h_source.html#l00025">HuberLinsys.h:25</a></div></div>
+<div class="ttc" id="a_simple_vector_handle_8h_html"><div class="ttname"><a href="_simple_vector_handle_8h.html">SimpleVectorHandle.h</a></div></div>
+<div class="ttc" id="aclass_huber_linsys_html_acba9e3e0c7108b6d55c5d406624ed947"><div class="ttname"><a href="class_huber_linsys.html#acba9e3e0c7108b6d55c5d406624ed947">HuberLinsys::factor</a></div><div class="ttdeci">virtual void factor(Data *prob, Variables *vars)</div></div>
+<div class="ttc" id="aclass_linear_system_html"><div class="ttname"><a href="class_linear_system.html">LinearSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="_linear_system_8h_source.html#l00017">LinearSystem.h:17</a></div></div>
+<div class="ttc" id="aclass_double_linear_solver_html"><div class="ttname"><a href="class_double_linear_solver.html">DoubleLinearSolver</a></div><div class="ttdef"><b>Definition:</b> <a href="_double_linear_solver_8h_source.html#l00020">DoubleLinearSolver.h:20</a></div></div>
+<div class="ttc" id="aexamples_2bulirsch__stoer_8cpp_html_a7ca9784830fb0b2b15c4c50371382d93"><div class="ttname"><a href="examples_2bulirsch__stoer_8cpp.html#a7ca9784830fb0b2b15c4c50371382d93">rhs</a></div><div class="ttdeci">void rhs(const state_type &amp;x, state_type &amp;dxdt, const double t)</div><div class="ttdef"><b>Definition:</b> <a href="examples_2bulirsch__stoer_8cpp_source.html#l00036">bulirsch_stoer.cpp:36</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

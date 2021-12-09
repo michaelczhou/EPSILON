@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: nanoflann::KDTreeBaseClass&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacenanoflann.html">nanoflann</a></li><li class="navelem"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">KDTreeBaseClass</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="classnanoflann_1_1_k_d_tree_base_class-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">nanoflann::KDTreeBaseClass&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt; 模板类 参考<div class="ingroups"><a class="el" href="group__nanoflann__grp.html">nanoflann C++ library for ANN</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a>&gt;</code></p>
+<div class="dynheader">
+nanoflann::KDTreeBaseClass&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classnanoflann_1_1_k_d_tree_base_class__coll__graph.png" border="0" usemap="#nanoflann_1_1_k_d_tree_base_class_3_01_derived_00_01_distance_00_01_dataset_adaptor_00_01_d_i_m_00_01_index_type_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="nanoflann_1_1_k_d_tree_base_class_3_01_derived_00_01_distance_00_01_dataset_adaptor_00_01_d_i_m_00_01_index_type_01_4_coll__map" id="nanoflann_1_1_k_d_tree_base_class_3_01_derived_00_01_distance_00_01_dataset_adaptor_00_01_d_i_m_00_01_index_type_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="389,139,656,195"/>
+<area shape="rect" href="structnanoflann_1_1array__or__vector__selector.html" title=" " alt="" coords="58,5,219,61"/>
+<area shape="rect" href="structnanoflann_1_1_k_d_tree_base_class_1_1_node.html" title=" " alt="" coords="5,139,272,195"/>
+<area shape="rect" href="classnanoflann_1_1_pooled_allocator.html" title=" " alt="" coords="40,219,237,245"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_interval.html">Interval</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_node.html">Node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a2a2c768a06d03abd3c3bf4a457430b45"><td class="memItemLeft" align="right" valign="top">typedef Distance::ElementType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a></td></tr>
+<tr class="separator:a2a2c768a06d03abd3c3bf4a457430b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68b972de35426f043f303ce0f1c439d"><td class="memItemLeft" align="right" valign="top">typedef Distance::DistanceType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a></td></tr>
+<tr class="separator:af68b972de35426f043f303ce0f1c439d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd15a21d803ab1fd21f9a9b5c527902"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a></td></tr>
+<tr class="separator:a2dd15a21d803ab1fd21f9a9b5c527902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc3e857a22727e884bb301cd945c934"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structnanoflann_1_1array__or__vector__selector.html">array_or_vector_selector</a>&lt; DIM, <a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_interval.html">Interval</a> &gt;::container_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a></td></tr>
+<tr class="separator:a1bc3e857a22727e884bb301cd945c934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8836ffa8380f05d544337ccffd8b9593"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structnanoflann_1_1array__or__vector__selector.html">array_or_vector_selector</a>&lt; DIM, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> &gt;::container_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8836ffa8380f05d544337ccffd8b9593">distance_vector_t</a></td></tr>
+<tr class="separator:a8836ffa8380f05d544337ccffd8b9593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8a76f366cbbeb7feb8c0d2ecc91c4dcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8a76f366cbbeb7feb8c0d2ecc91c4dcd">freeIndex</a> (Derived &amp;obj)</td></tr>
+<tr class="separator:a8a76f366cbbeb7feb8c0d2ecc91c4dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe312259c5a677185b020b09bc9b1133"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#afe312259c5a677185b020b09bc9b1133">size</a> (const Derived &amp;obj) const</td></tr>
+<tr class="separator:afe312259c5a677185b020b09bc9b1133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50bddff91373294bc04e5e830c93b49"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ae50bddff91373294bc04e5e830c93b49">veclen</a> (const Derived &amp;obj)</td></tr>
+<tr class="separator:ae50bddff91373294bc04e5e830c93b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fae1cfb521bda6e0971712d68ca35f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1fae1cfb521bda6e0971712d68ca35f6">dataset_get</a> (const Derived &amp;obj, size_t idx, int component) const</td></tr>
+<tr class="memdesc:a1fae1cfb521bda6e0971712d68ca35f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper accessor to the dataset points:  <a href="classnanoflann_1_1_k_d_tree_base_class.html#a1fae1cfb521bda6e0971712d68ca35f6">更多...</a><br /></td></tr>
+<tr class="separator:a1fae1cfb521bda6e0971712d68ca35f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3109375fb5ac4cbeb01ee90ff3e0a082"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a3109375fb5ac4cbeb01ee90ff3e0a082">usedMemory</a> (Derived &amp;obj)</td></tr>
+<tr class="separator:a3109375fb5ac4cbeb01ee90ff3e0a082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef319ed0a5d2779e2206a8ba1183ec02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#aef319ed0a5d2779e2206a8ba1183ec02">computeMinMax</a> (const Derived &amp;obj, IndexType *ind, IndexType count, int element, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> &amp;min_elem, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> &amp;max_elem)</td></tr>
+<tr class="separator:aef319ed0a5d2779e2206a8ba1183ec02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28ff705467d61f1a77b91ce7878a361"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af28ff705467d61f1a77b91ce7878a361">divideTree</a> (Derived &amp;obj, const IndexType left, const IndexType right, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a> &amp;bbox)</td></tr>
+<tr class="separator:af28ff705467d61f1a77b91ce7878a361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a6b6a01fd5e32be83c1b37b3e5f1d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ae3a6b6a01fd5e32be83c1b37b3e5f1d8">middleSplit_</a> (Derived &amp;obj, IndexType *ind, IndexType count, IndexType &amp;index, int &amp;cutfeat, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> &amp;cutval, const <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a> &amp;bbox)</td></tr>
+<tr class="separator:ae3a6b6a01fd5e32be83c1b37b3e5f1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e6e2d2b3269a9e078b4e861a9e5681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ad9e6e2d2b3269a9e078b4e861a9e5681">planeSplit</a> (Derived &amp;obj, IndexType *ind, const IndexType count, int cutfeat, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> &amp;cutval, IndexType &amp;lim1, IndexType &amp;lim2)</td></tr>
+<tr class="separator:ad9e6e2d2b3269a9e078b4e861a9e5681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f4a4f4d36571a943ef0098ff89cdf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a04f4a4f4d36571a943ef0098ff89cdf7">computeInitialDistances</a> (const Derived &amp;obj, const <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> *vec, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8836ffa8380f05d544337ccffd8b9593">distance_vector_t</a> &amp;dists) const</td></tr>
+<tr class="separator:a04f4a4f4d36571a943ef0098ff89cdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb891191852d9cdd9fbed032d78d5b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#abeb891191852d9cdd9fbed032d78d5b9">save_tree</a> (Derived &amp;obj, FILE *stream, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a> tree)</td></tr>
+<tr class="separator:abeb891191852d9cdd9fbed032d78d5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfddccec4470a5db1bd075947ed09ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#abdfddccec4470a5db1bd075947ed09ec">load_tree</a> (Derived &amp;obj, FILE *stream, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a> &amp;tree)</td></tr>
+<tr class="separator:abdfddccec4470a5db1bd075947ed09ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af804cdf2475d8b4d63610c060cb43402"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af804cdf2475d8b4d63610c060cb43402">saveIndex_</a> (Derived &amp;obj, FILE *stream)</td></tr>
+<tr class="separator:af804cdf2475d8b4d63610c060cb43402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105f752dfed5d19eb1240d15836d1664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a105f752dfed5d19eb1240d15836d1664">loadIndex_</a> (Derived &amp;obj, FILE *stream)</td></tr>
+<tr class="separator:a105f752dfed5d19eb1240d15836d1664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ae30c15d493556b42895e40f365cbc40c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; IndexType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ae30c15d493556b42895e40f365cbc40c">vind</a></td></tr>
+<tr class="separator:ae30c15d493556b42895e40f365cbc40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48eb801f23eee904d6425885a8c53e25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a48eb801f23eee904d6425885a8c53e25">root_node</a></td></tr>
+<tr class="separator:a48eb801f23eee904d6425885a8c53e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bddcc11eb673a55aeddc6db7d98e0f8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8bddcc11eb673a55aeddc6db7d98e0f8">m_leaf_max_size</a></td></tr>
+<tr class="separator:a8bddcc11eb673a55aeddc6db7d98e0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bf4c8bb983de8bd1ab57d2d766e0b94"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a7bf4c8bb983de8bd1ab57d2d766e0b94">m_size</a></td></tr>
+<tr class="memdesc:a7bf4c8bb983de8bd1ab57d2d766e0b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of current points in the dataset  <a href="classnanoflann_1_1_k_d_tree_base_class.html#a7bf4c8bb983de8bd1ab57d2d766e0b94">更多...</a><br /></td></tr>
+<tr class="separator:a7bf4c8bb983de8bd1ab57d2d766e0b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68a95d420ed5698e4c34e2aeabf348e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ad68a95d420ed5698e4c34e2aeabf348e">m_size_at_index_build</a></td></tr>
+<tr class="separator:ad68a95d420ed5698e4c34e2aeabf348e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac012462fd44105a7067a866f17d3a3c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#ac012462fd44105a7067a866f17d3a3c4">dim</a></td></tr>
+<tr class="memdesc:ac012462fd44105a7067a866f17d3a3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensionality of each data point  <a href="classnanoflann_1_1_k_d_tree_base_class.html#ac012462fd44105a7067a866f17d3a3c4">更多...</a><br /></td></tr>
+<tr class="separator:ac012462fd44105a7067a866f17d3a3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da5a7eb2c023164cf74851371fce25f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a3da5a7eb2c023164cf74851371fce25f">root_bbox</a></td></tr>
+<tr class="separator:a3da5a7eb2c023164cf74851371fce25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ee9a23c13560de86beffd8bd0f840c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnanoflann_1_1_pooled_allocator.html">PooledAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a96ee9a23c13560de86beffd8bd0f840c">pool</a></td></tr>
+<tr class="separator:a96ee9a23c13560de86beffd8bd0f840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class Derived, typename Distance, class DatasetAdaptor, int DIM = -1, typename IndexType = size_t&gt;<br />
+class nanoflann::KDTreeBaseClass&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;</h3>
+
+<p>kd-tree base-class</p>
+<p>Contains the member functions common to the classes <a class="el" href="classnanoflann_1_1_k_d_tree_single_index_adaptor.html">KDTreeSingleIndexAdaptor</a> and <a class="el" href="classnanoflann_1_1_k_d_tree_single_index_dynamic_adaptor__.html">KDTreeSingleIndexDynamicAdaptor_</a>.</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>The name of the class which inherits this class. </td></tr>
+    <tr><td class="paramname">DatasetAdaptor</td><td>The user-provided adaptor (see comments above). </td></tr>
+    <tr><td class="paramname">Distance</td><td>The distance metric to use, these are all classes derived from <a class="el" href="structnanoflann_1_1_metric.html">nanoflann::Metric</a> </td></tr>
+    <tr><td class="paramname">DIM</td><td>Dimensionality of data points (e.g. 3 for 3D points) </td></tr>
+    <tr><td class="paramname">IndexType</td><td>Will be typically size_t or int </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00739">739</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a1bc3e857a22727e884bb301cd945c934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc3e857a22727e884bb301cd945c934">&#9670;&nbsp;</a></span>BoundingBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structnanoflann_1_1array__or__vector__selector.html">array_or_vector_selector</a>&lt;DIM, <a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_interval.html">Interval</a>&gt;::container_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::<a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define "BoundingBox" as a fixed-size or variable-size container depending on "DIM" </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00792">792</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8836ffa8380f05d544337ccffd8b9593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8836ffa8380f05d544337ccffd8b9593">&#9670;&nbsp;</a></span>distance_vector_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structnanoflann_1_1array__or__vector__selector.html">array_or_vector_selector</a>&lt;DIM, <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a>&gt;::container_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::<a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8836ffa8380f05d544337ccffd8b9593">distance_vector_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define "distance_vector_t" as a fixed-size or variable-size container depending on "DIM" </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00797">797</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af68b972de35426f043f303ce0f1c439d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af68b972de35426f043f303ce0f1c439d">&#9670;&nbsp;</a></span>DistanceType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Distance::DistanceType <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::<a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00751">751</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a2c768a06d03abd3c3bf4a457430b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2c768a06d03abd3c3bf4a457430b45">&#9670;&nbsp;</a></span>ElementType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Distance::ElementType <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::<a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00750">750</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2dd15a21d803ab1fd21f9a9b5c527902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd15a21d803ab1fd21f9a9b5c527902">&#9670;&nbsp;</a></span>NodePtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structnanoflann_1_1_k_d_tree_base_class_1_1_node.html">Node</a>* <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::<a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00769">769</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a04f4a4f4d36571a943ef0098ff89cdf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f4a4f4d36571a943ef0098ff89cdf7">&#9670;&nbsp;</a></span>computeInitialDistances()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::computeInitialDistances </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> *&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a8836ffa8380f05d544337ccffd8b9593">distance_vector_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>dists</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l01005">1005</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aef319ed0a5d2779e2206a8ba1183ec02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef319ed0a5d2779e2206a8ba1183ec02">&#9670;&nbsp;</a></span>computeMinMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::computeMinMax </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType *&#160;</td>
+          <td class="paramname"><em>ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> &amp;&#160;</td>
+          <td class="paramname"><em>min_elem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> &amp;&#160;</td>
+          <td class="paramname"><em>max_elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00836">836</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1fae1cfb521bda6e0971712d68ca35f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fae1cfb521bda6e0971712d68ca35f6">&#9670;&nbsp;</a></span>dataset_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2a2c768a06d03abd3c3bf4a457430b45">ElementType</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::dataset_get </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>component</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper accessor to the dataset points: </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00821">821</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af28ff705467d61f1a77b91ce7878a361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28ff705467d61f1a77b91ce7878a361">&#9670;&nbsp;</a></span>divideTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::divideTree </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IndexType&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IndexType&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>bbox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a tree node that subdivides the list of vecs from vind[first] to vind[last]. The routine is called recursively on each sublist.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>index of the first vector </td></tr>
+    <tr><td class="paramname">right</td><td>index of the last vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00857">857</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8a76f366cbbeb7feb8c0d2ecc91c4dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a76f366cbbeb7feb8c0d2ecc91c4dcd">&#9670;&nbsp;</a></span>freeIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::freeIndex </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frees the previously-built index. Automatically called within buildIndex(). </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00744">744</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abdfddccec4470a5db1bd075947ed09ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfddccec4470a5db1bd075947ed09ec">&#9670;&nbsp;</a></span>load_tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::load_tree </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l01034">1034</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a105f752dfed5d19eb1240d15836d1664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105f752dfed5d19eb1240d15836d1664">&#9670;&nbsp;</a></span>loadIndex_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::loadIndex_ </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Loads a previous index from a binary file. IMPORTANT NOTE: The set of data points is NOT stored in the file, so the index object must be constructed associated to the same source of data points used while building the index. See the example: examples/saveload_example.cpp </p><dl class="section see"><dt>参见</dt><dd>loadIndex <br  />
+ </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l01064">1064</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae3a6b6a01fd5e32be83c1b37b3e5f1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a6b6a01fd5e32be83c1b37b3e5f1d8">&#9670;&nbsp;</a></span>middleSplit_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::middleSplit_ </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType *&#160;</td>
+          <td class="paramname"><em>ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>cutfeat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> &amp;&#160;</td>
+          <td class="paramname"><em>cutval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>bbox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00909">909</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad9e6e2d2b3269a9e078b4e861a9e5681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9e6e2d2b3269a9e078b4e861a9e5681">&#9670;&nbsp;</a></span>planeSplit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::planeSplit </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType *&#160;</td>
+          <td class="paramname"><em>ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IndexType&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cutfeat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#af68b972de35426f043f303ce0f1c439d">DistanceType</a> &amp;&#160;</td>
+          <td class="paramname"><em>cutval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType &amp;&#160;</td>
+          <td class="paramname"><em>lim1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndexType &amp;&#160;</td>
+          <td class="paramname"><em>lim2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Subdivide the list of points by a plane perpendicular on axe corresponding to the 'cutfeat' dimension at 'cutval' position.</p>
+<p>On return: dataset[ind[0..lim1-1]][cutfeat]&lt;cutval dataset[ind[lim1..lim2-1]][cutfeat]==cutval dataset[ind[lim2..count]][cutfeat]&gt;cutval </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00967">967</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abeb891191852d9cdd9fbed032d78d5b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb891191852d9cdd9fbed032d78d5b9">&#9670;&nbsp;</a></span>save_tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::save_tree </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a>&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l01024">1024</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af804cdf2475d8b4d63610c060cb43402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af804cdf2475d8b4d63610c060cb43402">&#9670;&nbsp;</a></span>saveIndex_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::saveIndex_ </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Stores the index in a binary file. IMPORTANT NOTE: The set of data points is NOT stored in the file, so when loading the index object it must be constructed associated to the same source of data points used while building it. See the example: examples/saveload_example.cpp </p><dl class="section see"><dt>参见</dt><dd>loadIndex <br  />
+ </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l01050">1050</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afe312259c5a677185b020b09bc9b1133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe312259c5a677185b020b09bc9b1133">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::size </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns number of points in dataset <br  />
+ </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00813">813</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3109375fb5ac4cbeb01ee90ff3e0a082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3109375fb5ac4cbeb01ee90ff3e0a082">&#9670;&nbsp;</a></span>usedMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::usedMemory </td>
+          <td>(</td>
+          <td class="paramtype">Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Computes the inde memory usage Returns: memory used by the index </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00830">830</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae50bddff91373294bc04e5e830c93b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50bddff91373294bc04e5e830c93b49">&#9670;&nbsp;</a></span>veclen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::veclen </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the length of each point in the dataset </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00816">816</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac012462fd44105a7067a866f17d3a3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac012462fd44105a7067a866f17d3a3c4">&#9670;&nbsp;</a></span>dim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::dim</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dimensionality of each data point </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00787">787</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8bddcc11eb673a55aeddc6db7d98e0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bddcc11eb673a55aeddc6db7d98e0f8">&#9670;&nbsp;</a></span>m_leaf_max_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::m_leaf_max_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00782">782</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7bf4c8bb983de8bd1ab57d2d766e0b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf4c8bb983de8bd1ab57d2d766e0b94">&#9670;&nbsp;</a></span>m_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::m_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of current points in the dataset </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00784">784</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad68a95d420ed5698e4c34e2aeabf348e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad68a95d420ed5698e4c34e2aeabf348e">&#9670;&nbsp;</a></span>m_size_at_index_build</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::m_size_at_index_build</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of points in the dataset when the index was built </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00785">785</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a96ee9a23c13560de86beffd8bd0f840c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ee9a23c13560de86beffd8bd0f840c">&#9670;&nbsp;</a></span>pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_pooled_allocator.html">PooledAllocator</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::pool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pooled memory allocator.</p>
+<p>Using a pooled memory allocator is more efficient than allocating memory directly when there is a large number small of memory allocations. </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00810">810</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3da5a7eb2c023164cf74851371fce25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da5a7eb2c023164cf74851371fce25f">&#9670;&nbsp;</a></span>root_bbox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a1bc3e857a22727e884bb301cd945c934">BoundingBox</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::root_bbox</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The KD-tree used to find neighbours </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00801">801</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a48eb801f23eee904d6425885a8c53e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48eb801f23eee904d6425885a8c53e25">&#9670;&nbsp;</a></span>root_node</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html#a2dd15a21d803ab1fd21f9a9b5c527902">NodePtr</a> <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::root_node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00780">780</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae30c15d493556b42895e40f365cbc40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30c15d493556b42895e40f365cbc40c">&#9670;&nbsp;</a></span>vind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , typename Distance , class DatasetAdaptor , int DIM = -1, typename IndexType  = size_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;IndexType&gt; <a class="el" href="classnanoflann_1_1_k_d_tree_base_class.html">nanoflann::KDTreeBaseClass</a>&lt; Derived, Distance, DatasetAdaptor, DIM, IndexType &gt;::vind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Array of indices to vectors in the dataset. </p>
+
+<p class="definition">在文件 <a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a> 第 <a class="el" href="nanoflann_8hpp_source.html#l00778">778</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>core/semantic_map_manager/thirdparty/nanoflann/include/<a class="el" href="nanoflann_8hpp_source.html">nanoflann.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

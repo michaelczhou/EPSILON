@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: EPSILON</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">EPSILON </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md65"></a>
+About</h1>
+<p>This is the project page of the paper "**EPSILON: An Efficient Planning System for Automated Vehicles in Highly Interactive Environments**". In this repo, we provide a simple and lightweight multi-agent simulator based on ROS and a demo implementation of the proposed EPSILON planning system.</p>
+<p>If you use EPSILON for your academic research, please consider citing the follow</p>
+<ul>
+<li>Ding, Wenchao, et al. "EPSILON: An Efficient Planning System for Automated Vehicles in Highly Interactive Environments." IEEE Transactions on Robotics (2021).</li>
+</ul>
+<p><em><b>Paper:</b></em> <a href="https://ieeexplore.ieee.org/document/9526613/">IEEE Xplore</a>, <a href="https://arxiv.org/abs/2108.07993">arXiv</a></p>
+<p><em><b>Demo video:</b></em> <a href="https://youtu.be/3i0cIQrZs-4">YouTube</a></p>
+<p>BibTex </p><div class="fragment"><div class="line">@article{ding2021epsilon,</div>
+<div class="line">  title={EPSILON: An Efficient Planning System for Automated Vehicles in Highly Interactive Environments},</div>
+<div class="line">  author={Ding, Wenchao and Zhang, Lu and Chen, Jing and Shen, Shaojie},</div>
+<div class="line">  journal={IEEE Transactions on Robotics},</div>
+<div class="line">  year={2021},</div>
+<div class="line">  publisher={IEEE}</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>The following papers are also related:</p><ul>
+<li>Ding, Wenchao, et al. "Safe trajectory generation for complex urban environments using spatio-temporal semantic corridor." IEEE Robotics and Automation Letters 4.3 (2019): 2997-3004. <a href="https://arxiv.org/abs/1906.09788">(arXiv link)</a></li>
+<li>Zhang, Lu, et al. "Efficient uncertainty-aware decision-making for automated driving using guided branching." 2020 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2020. <a href="https://arxiv.org/abs/2003.02746">(arXiv link)</a></li>
+</ul>
+<p>If you have any question, please feel free to contact us via <code>lzhangbz@connect.ust.hk (Lu Zhang)</code> and <code>wdingae@connect.ust.hk (Wenchao Ding)</code>.</p>
+<h1><a class="anchor" id="autotoc_md66"></a>
+Prerequisites</h1>
+<p>This project has been tested on Ubuntu 16.04 (ROS Kinetic) and 18.04 (ROS Melodic). For ROS installation, please refer to the official <a href="http://wiki.ros.org/ROS/Installation">website</a>.</p>
+<h2><a class="anchor" id="autotoc_md67"></a>
+Denpendencies</h2>
+<ul>
+<li>Install required packages <div class="fragment"><div class="line">sudo apt-get install libgoogle-glog-dev libdw-dev libopenblas-dev gfortran</div>
+</div><!-- fragment --></li>
+</ul>
+<div class="fragment"><div class="line">pip install empy pygame</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md68"></a>
+Install OOQP</h3>
+<p>We use <a href="http://pages.cs.wisc.edu/~swright/ooqp/">OOQP</a> for solving quadratic programming problems. Please refer to <a href="https://github.com/emgertz/OOQP">link_1</a> and <a href="http://pages.cs.wisc.edu/~swright/ooqp/">link_2</a> for the installation instruction.</p>
+<h3><a class="anchor" id="autotoc_md69"></a>
+Install Protobuf</h3>
+<p>We use <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a> for parameter configuration. For the installation guide, please refer to this <a href="https://github.com/protocolbuffers/protobuf/blob/master/src/README.md">link</a>.</p>
+<h1><a class="anchor" id="autotoc_md70"></a>
+Build on ROS</h1>
+<p>We recommend the users create an empty workspace. Clone the repo and build: </p><div class="fragment"><div class="line">cd ${YOUR_WORKSPACE_PATH}/src</div>
+<div class="line">git clone https://github.com/HKUST-Aerial-Robotics/EPSILON.git</div>
+<div class="line">cd ..</div>
+<div class="line">catkin_make</div>
+<div class="line">source ~/${YOUR_WORKSPACE_PATH}/devel/setup.bash</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md71"></a>
+Just have a try!</h1>
+<ol type="1">
+<li>Open a new terminal window and start roscore: <div class="fragment"><div class="line">roscore</div>
+</div><!-- fragment --></li>
+<li>Launch RViz with <code>.rviz</code> file: <div class="fragment"><div class="line">roscd phy_simulator/rviz/</div>
+<div class="line">rviz -d phy_simulator_planning.rviz</div>
+</div><!-- fragment --></li>
+<li>Launch the planner's node and AI nodes: <div class="fragment"><div class="line">roslaunch planning_integrated test_ssc_with_eudm_ros.launch</div>
+<div class="line">roslaunch ai_agent_planner onlane_ai_agent.launch</div>
+</div><!-- fragment --></li>
+<li>Launch the simulator: <div class="fragment"><div class="line">roslaunch phy_simulator phy_simulator_planning.launch</div>
+</div><!-- fragment --></li>
+</ol>
+<p>Note that the simulator should be launched last.</p>
+<p><img src="misc/demo_1.png" alt="" width="600" class="inline"/> </p>
+<ol type="1">
+<li>We provide a simple interface for controlling the behavior of the agents: <div class="fragment"><div class="line">roscd aux_tools/src/</div>
+<div class="line">python terminal_server.py</div>
+</div><!-- fragment --></li>
+</ol>
+<p><img src="misc/demo_2.png" alt="" width="600" class="inline"/> </p>
+<p>You can select the target agent by clicking on the colored dots and change its behavior using <code>W-A-S-D</code> buttons.</p>
+<h1><a class="anchor" id="autotoc_md72"></a>
+Acknowledgements</h1>
+<p>We would like to express sincere thanks to the authors of the following tools and packages:</p><ul>
+<li>Lock-free queue: <a href="https://github.com/cameron314/concurrentqueue">moodycamel</a></li>
+<li>Json parser: <a href="https://github.com/nlohmann/json">JSON for modern C++</a></li>
+<li>KD-Tree library: <a href="https://github.com/jlblancoc/nanoflann">nanoflann</a></li>
+<li>2D ray-casting: <a href="https://gist.github.com/zloedi/9551625">roguelike_FOV</a></li>
+<li>Quadratic programming: <a href="http://pages.cs.wisc.edu/~swright/ooqp/">OOQP</a></li>
+<li>Cubic spline fitting: <a href="https://github.com/ttk592/spline">tk_spline</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md73"></a>
+Licence</h1>
+<p>The source code is released under <a href="https://opensource.org/licenses/MIT">MIT</a> license.</p>
+<h1><a class="anchor" id="autotoc_md74"></a>
+Disclaimer</h1>
+<p>This is research code, it is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of merchantability or fitness for a particular purpose. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

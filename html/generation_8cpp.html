@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/generation.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">generation.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;boost/static_assert.hpp&gt;</code><br />
+<code>#include &lt;boost/type_traits/is_same.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/numeric/odeint/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="generation_8hpp_source.html">boost/numeric/odeint/stepper/generation.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+generation.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2generation_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2generation_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2generation_8cpp">
+<area shape="rect" title=" " alt="" coords="3295,5,3475,76"/>
+<area shape="rect" title=" " alt="" coords="1447,830,1510,857"/>
+<area shape="rect" title=" " alt="" coords="4416,131,4592,158"/>
+<area shape="rect" title=" " alt="" coords="4616,131,4789,158"/>
+<area shape="rect" title=" " alt="" coords="2428,823,2575,864"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="1156,733,1316,775"/>
+<area shape="rect" href="generation_8hpp.html" title=" " alt="" coords="2173,124,2350,165"/>
+<area shape="rect" title=" " alt="" coords="1905,830,2036,857"/>
+<area shape="rect" href="make__controlled_8hpp.html" title=" " alt="" coords="1763,421,1952,477"/>
+<area shape="rect" href="make__dense__output_8hpp.html" title=" " alt="" coords="2519,421,2708,477"/>
+<area shape="rect" href="generation__controlled__runge__kutta_8hpp.html" title=" " alt="" coords="2038,317,2261,373"/>
+<area shape="rect" href="generation__dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="2531,317,2762,373"/>
+<area shape="rect" href="generation__runge__kutta__cash__karp54__classic_8hpp.html" title=" " alt="" coords="1739,317,2013,373"/>
+<area shape="rect" href="generation__runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="2837,213,3061,269"/>
+<area shape="rect" href="generation__runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1442,317,1665,373"/>
+<area shape="rect" href="generation__runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="2285,317,2507,373"/>
+<area shape="rect" href="generation__rosenbrock4_8hpp.html" title=" " alt="" coords="585,213,807,269"/>
+<area shape="rect" href="controlled__runge__kutta_8hpp.html" title=" " alt="" coords="2505,525,2693,581"/>
+<area shape="rect" title=" " alt="" coords="2838,644,2901,671"/>
+<area shape="rect" title=" " alt="" coords="2315,733,2463,775"/>
+<area shape="rect" href="bind_8hpp.html" title=" " alt="" coords="789,637,949,678"/>
+<area shape="rect" href="unwrap__reference_8hpp.html" title=" " alt="" coords="1697,637,1893,678"/>
+<area shape="rect" href="copy_8hpp.html" title=" " alt="" coords="2019,637,2179,678"/>
+<area shape="rect" href="state__wrapper_8hpp.html" title=" " alt="" coords="2539,637,2711,678"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="2127,733,2291,775"/>
+<area shape="rect" href="resizer_8hpp.html" title=" " alt="" coords="2203,637,2363,678"/>
+<area shape="rect" href="range__algebra_8hpp.html" title=" " alt="" coords="3077,637,3277,678"/>
+<area shape="rect" href="default__operations_8hpp.html" title=" " alt="" coords="3453,637,3683,678"/>
+<area shape="rect" href="controlled__step__result_8hpp.html" title=" " alt="" coords="1443,629,1621,685"/>
+<area shape="rect" href="stepper__categories_8hpp.html" title=" " alt="" coords="1025,637,1255,678"/>
+<area shape="rect" title=" " alt="" coords="3608,741,3731,767"/>
+<area shape="rect" href="dense__output__runge__kutta_8hpp.html" title=" " alt="" coords="1361,525,1527,581"/>
+<area shape="rect" title=" " alt="" coords="425,644,485,671"/>
+<area shape="rect" title=" " alt="" coords="1331,644,1418,671"/>
+<area shape="rect" href="runge__kutta__cash__karp54__classic_8hpp.html" title=" " alt="" coords="2027,421,2218,477"/>
+<area shape="rect" href="explicit__error__stepper__base_8hpp.html" title=" " alt="" coords="2195,525,2378,581"/>
+<area shape="rect" href="runge__kutta__cash__karp54_8hpp.html" title=" " alt="" coords="3377,317,3537,373"/>
+<area shape="rect" title=" " alt="" coords="3787,533,3954,574"/>
+<area shape="rect" title=" " alt="" coords="3978,533,4190,574"/>
+<area shape="rect" href="explicit__error__generic__rk_8hpp.html" title=" " alt="" coords="2952,421,3117,477"/>
+<area shape="rect" href="runge__kutta__dopri5_8hpp.html" title=" " alt="" coords="1579,421,1739,477"/>
+<area shape="rect" href="explicit__error__stepper__fsal__base_8hpp.html" title=" " alt="" coords="1552,525,1765,581"/>
+<area shape="rect" href="same__instance_8hpp.html" title=" " alt="" coords="1891,533,2069,574"/>
+<area shape="rect" href="runge__kutta__fehlberg78_8hpp.html" title=" " alt="" coords="3383,421,3543,477"/>
+<area shape="rect" href="explicit__generic__rk_8hpp.html" title=" " alt="" coords="3275,525,3458,581"/>
+<area shape="rect" href="rosenbrock4_8hpp.html" title=" " alt="" coords="561,533,748,574"/>
+<area shape="rect" href="rosenbrock4__controller_8hpp.html" title=" " alt="" coords="692,421,852,477"/>
+<area shape="rect" href="rosenbrock4__dense__output_8hpp.html" title=" " alt="" coords="295,317,455,373"/>
+<area shape="rect" title=" " alt="" coords="245,637,400,678"/>
+<area shape="rect" title=" " alt="" coords="509,637,664,678"/>
+</map>
+</div>
+</div>
+<p><a href="generation_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_generation</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ac81efbc71a13babc87c8b2fb5546dd4c"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#ac81efbc71a13babc87c8b2fb5546dd4c">state_type</a></td></tr>
+<tr class="separator:ac81efbc71a13babc87c8b2fb5546dd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484f30ad3fc22227098510cbbc89133e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">runge_kutta_cash_karp54</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a484f30ad3fc22227098510cbbc89133e">rk54_type</a></td></tr>
+<tr class="separator:a484f30ad3fc22227098510cbbc89133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94100efd324e9631e711fa2e94087b69"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">runge_kutta_cash_karp54_classic</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a94100efd324e9631e711fa2e94087b69">rk54_classic_type</a></td></tr>
+<tr class="separator:a94100efd324e9631e711fa2e94087b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb57cba65e5a6f32e4ba03ed5d24fa9f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">dopri5_type</a></td></tr>
+<tr class="separator:afb57cba65e5a6f32e4ba03ed5d24fa9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619380985ac533c76c6478bb7e09aa5d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78.html">runge_kutta_fehlberg78</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a619380985ac533c76c6478bb7e09aa5d">fehlberg78_type</a></td></tr>
+<tr class="separator:a619380985ac533c76c6478bb7e09aa5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7205e00733a7318d0c14e529cea7325b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">rosenbrock4</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">rosenbrock4_type</a></td></tr>
+<tr class="separator:a7205e00733a7318d0c14e529cea7325b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2f844b0944c6a820d9f52b3ad779014f"><td class="memTemplParams" colspan="2">template&lt;class Stepper1 , class Stepper2 &gt; </td></tr>
+<tr class="memitem:a2f844b0944c6a820d9f52b3ad779014f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f">check_stepper_type</a> (const Stepper1 &amp;s1, const Stepper2 &amp;s2)</td></tr>
+<tr class="separator:a2f844b0944c6a820d9f52b3ad779014f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e4cf7bacddd00c38c42e6ba9eae5cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf">BOOST_AUTO_TEST_CASE</a> (test_generation_dopri5)</td></tr>
+<tr class="separator:ad1e4cf7bacddd00c38c42e6ba9eae5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512ff4f5d00a8e1d568c110068d706fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a512ff4f5d00a8e1d568c110068d706fd">BOOST_AUTO_TEST_CASE</a> (test_generation_cash_karp54)</td></tr>
+<tr class="separator:a512ff4f5d00a8e1d568c110068d706fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01c2c980d83fb32be83c5d93284394de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a01c2c980d83fb32be83c5d93284394de">BOOST_AUTO_TEST_CASE</a> (test_generation_cash_karp54_classic)</td></tr>
+<tr class="separator:a01c2c980d83fb32be83c5d93284394de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c7f378a8135639e1dcabdef8c27696"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a97c7f378a8135639e1dcabdef8c27696">BOOST_AUTO_TEST_CASE</a> (test_generation_fehlberg78)</td></tr>
+<tr class="separator:a97c7f378a8135639e1dcabdef8c27696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e4c696032e7341f109b2fbe996582a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generation_8cpp.html#a60e4c696032e7341f109b2fbe996582a">BOOST_AUTO_TEST_CASE</a> (test_generation_rosenbrock4)</td></tr>
+<tr class="separator:a60e4c696032e7341f109b2fbe996582a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_generation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="afb57cba65e5a6f32e4ba03ed5d24fa9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb57cba65e5a6f32e4ba03ed5d24fa9f">&#9670;&nbsp;</a></span>dopri5_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__dopri5.html">runge_kutta_dopri5</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="el" href="generation_8cpp.html#afb57cba65e5a6f32e4ba03ed5d24fa9f">dopri5_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a619380985ac533c76c6478bb7e09aa5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619380985ac533c76c6478bb7e09aa5d">&#9670;&nbsp;</a></span>fehlberg78_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__fehlberg78.html">runge_kutta_fehlberg78</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="el" href="generation_8cpp.html#a619380985ac533c76c6478bb7e09aa5d">fehlberg78_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a94100efd324e9631e711fa2e94087b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94100efd324e9631e711fa2e94087b69">&#9670;&nbsp;</a></span>rk54_classic_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54__classic.html">runge_kutta_cash_karp54_classic</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="el" href="generation_8cpp.html#a94100efd324e9631e711fa2e94087b69">rk54_classic_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a484f30ad3fc22227098510cbbc89133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484f30ad3fc22227098510cbbc89133e">&#9670;&nbsp;</a></span>rk54_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1runge__kutta__cash__karp54.html">runge_kutta_cash_karp54</a>&lt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &gt; <a class="el" href="generation_8cpp.html#a484f30ad3fc22227098510cbbc89133e">rk54_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7205e00733a7318d0c14e529cea7325b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7205e00733a7318d0c14e529cea7325b">&#9670;&nbsp;</a></span>rosenbrock4_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1numeric_1_1odeint_1_1rosenbrock4.html">rosenbrock4</a>&lt; double &gt; <a class="el" href="generation_8cpp.html#a7205e00733a7318d0c14e529cea7325b">rosenbrock4_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac81efbc71a13babc87c8b2fb5546dd4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81efbc71a13babc87c8b2fb5546dd4c">&#9670;&nbsp;</a></span>state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; double &gt; <a class="el" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a512ff4f5d00a8e1d568c110068d706fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512ff4f5d00a8e1d568c110068d706fd">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_generation_cash_karp54&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00057">57</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_a512ff4f5d00a8e1d568c110068d706fd_cgraph.png" border="0" usemap="#generation_8cpp_a512ff4f5d00a8e1d568c110068d706fd_cgraph" alt=""/></div>
+<map name="generation_8cpp_a512ff4f5d00a8e1d568c110068d706fd_cgraph" id="generation_8cpp_a512ff4f5d00a8e1d568c110068d706fd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,196,61"/>
+<area shape="rect" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f" title=" " alt="" coords="252,5,404,32"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1" title=" " alt="" coords="244,57,412,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01c2c980d83fb32be83c5d93284394de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c2c980d83fb32be83c5d93284394de">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_generation_cash_karp54_classic&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00063">63</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_a01c2c980d83fb32be83c5d93284394de_cgraph.png" border="0" usemap="#generation_8cpp_a01c2c980d83fb32be83c5d93284394de_cgraph" alt=""/></div>
+<map name="generation_8cpp_a01c2c980d83fb32be83c5d93284394de_cgraph" id="generation_8cpp_a01c2c980d83fb32be83c5d93284394de_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,196,61"/>
+<area shape="rect" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f" title=" " alt="" coords="252,5,404,32"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1" title=" " alt="" coords="244,57,412,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad1e4cf7bacddd00c38c42e6ba9eae5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e4cf7bacddd00c38c42e6ba9eae5cf">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_generation_dopri5&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00048">48</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_ad1e4cf7bacddd00c38c42e6ba9eae5cf_cgraph.png" border="0" usemap="#generation_8cpp_ad1e4cf7bacddd00c38c42e6ba9eae5cf_cgraph" alt=""/></div>
+<map name="generation_8cpp_ad1e4cf7bacddd00c38c42e6ba9eae5cf_cgraph" id="generation_8cpp_ad1e4cf7bacddd00c38c42e6ba9eae5cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,196,91"/>
+<area shape="rect" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f" title=" " alt="" coords="252,5,404,32"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1" title=" " alt="" coords="244,57,412,98"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede" title=" " alt="" coords="244,122,412,163"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97c7f378a8135639e1dcabdef8c27696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c7f378a8135639e1dcabdef8c27696">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_generation_fehlberg78&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00070">70</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_a97c7f378a8135639e1dcabdef8c27696_cgraph.png" border="0" usemap="#generation_8cpp_a97c7f378a8135639e1dcabdef8c27696_cgraph" alt=""/></div>
+<map name="generation_8cpp_a97c7f378a8135639e1dcabdef8c27696_cgraph" id="generation_8cpp_a97c7f378a8135639e1dcabdef8c27696_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,196,61"/>
+<area shape="rect" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f" title=" " alt="" coords="252,5,404,32"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1" title=" " alt="" coords="244,57,412,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a60e4c696032e7341f109b2fbe996582a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60e4c696032e7341f109b2fbe996582a">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_generation_rosenbrock4&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00077">77</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_a60e4c696032e7341f109b2fbe996582a_cgraph.png" border="0" usemap="#generation_8cpp_a60e4c696032e7341f109b2fbe996582a_cgraph" alt=""/></div>
+<map name="generation_8cpp_a60e4c696032e7341f109b2fbe996582a_cgraph" id="generation_8cpp_a60e4c696032e7341f109b2fbe996582a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,196,91"/>
+<area shape="rect" href="generation_8cpp.html#a2f844b0944c6a820d9f52b3ad779014f" title=" " alt="" coords="252,5,404,32"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#adae55091b4f3878ef956b7adea641dd1" title=" " alt="" coords="244,57,412,98"/>
+<area shape="rect" href="namespaceboost_1_1numeric_1_1odeint.html#a648d58d4ae3311b67b5ad87d2c1b5ede" title=" " alt="" coords="244,122,412,163"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2f844b0944c6a820d9f52b3ad779014f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f844b0944c6a820d9f52b3ad779014f">&#9670;&nbsp;</a></span>check_stepper_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Stepper1 , class Stepper2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_stepper_type </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper1 &amp;&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Stepper2 &amp;&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="generation_8cpp_source.html">generation.cpp</a> 第 <a class="el" href="generation_8cpp_source.html#l00032">32</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="generation_8cpp_a2f844b0944c6a820d9f52b3ad779014f_icgraph.png" border="0" usemap="#generation_8cpp_a2f844b0944c6a820d9f52b3ad779014f_icgraph" alt=""/></div>
+<map name="generation_8cpp_a2f844b0944c6a820d9f52b3ad779014f_icgraph" id="generation_8cpp_a2f844b0944c6a820d9f52b3ad779014f_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,396,32"/>
+<area shape="rect" href="generation_8cpp.html#ad1e4cf7bacddd00c38c42e6ba9eae5cf" title=" " alt="" coords="5,5,196,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

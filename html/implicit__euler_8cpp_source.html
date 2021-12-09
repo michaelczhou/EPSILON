@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/implicit_euler.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">implicit_euler.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="implicit__euler_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> [auto_generated]</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> libs/numeric/odeint/test/implicit_euler.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> [begin_description]</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> This file tests the implicit Euler stepper.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> [end_description]</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> Copyright 2009-2012 Karsten Ahnert</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> Copyright 2009-2012 Mario Mulansky</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> (See accompanying file LICENSE_1_0.txt or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// disable checked iterator warning for msvc</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="implicit__euler_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">   24</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE odeint_implicit_euler</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="implicit__euler_8hpp.html">boost/numeric/odeint/stepper/implicit_euler.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//#include &lt;boost/numeric/odeint/util/ublas_resize.hpp&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/vector.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;boost/numeric/ublas/matrix.hpp&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span>boost::unit_test;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="implicit__euler_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="implicit__euler_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="implicit__euler_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">   41</a></span>&#160;<span class="keyword">typedef</span> boost::numeric::ublas::vector&lt; value_type &gt; <a class="code" href="implicit__euler_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="implicit__euler_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">   42</a></span>&#160;<span class="keyword">typedef</span> boost::numeric::ublas::matrix&lt; value_type &gt; <a class="code" href="implicit__euler_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* use functors, because functions don&#39;t work with msvc 10, I guess this is a bug */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">struct </span><a class="code" href="structsys.html">sys</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structsys.html#abd3475b041b69266ed093bee40232252">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structsys.html#abd3475b041b69266ed093bee40232252">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;dxdt , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        dxdt( 0 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 0 ) + 2 * <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        dxdt( 1 ) = <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 1 );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structjacobi.html">   54</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structjacobi.html">jacobi</a> </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structjacobi.html#ab781b8a53f4914cdc190c897e416975e">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structjacobi.html#ab781b8a53f4914cdc190c897e416975e">operator()</a>( <span class="keyword">const</span> <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> &amp;<a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , <a class="code" href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a> &amp;<a class="code" href="structjacobi.html">jacobi</a> , <span class="keyword">const</span> <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> t )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 0 ) = 1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 0 , 1 ) = 2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 0 ) = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="structjacobi.html">jacobi</a>( 1 , 1 ) = 1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;BOOST_AUTO_TEST_SUITE( implicit_euler_test )</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="implicit__euler_8cpp.html#a81cdb57df2a213adb896e6a894da95fe">   67</a></span>&#160;<a class="code" href="implicit__euler_8cpp.html#a81cdb57df2a213adb896e6a894da95fe">BOOST_AUTO_TEST_CASE</a>( test_euler )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">implicit_euler&lt; value_type &gt;</a> stepper;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a> <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>( 2 );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) = 0.0; <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) = 1.0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a> <a class="code" href="runge__kutta__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> = 1E-12;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">/* make_pair doesn&#39;t work with function pointers on msvc 10 */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    stepper.<a class="code" href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#abbc0a5a692b9214b3cf40f491053ca57">do_step</a>( std::make_pair( <a class="code" href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a>() , <a class="code" href="structjacobi.html">jacobi</a>() ) , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a> , 0.0 , 0.1 );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// compare with analytic solution of above system</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    BOOST_CHECK_MESSAGE( <a class="code" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) - 20.0/81.0 ) &lt; <a class="code" href="runge__kutta__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) - 20.0/81.0 );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    BOOST_CHECK_MESSAGE( <a class="code" href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a>( <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(1) - 10.0/9.0 ) &lt; <a class="code" href="runge__kutta__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a> , <a class="code" href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">x</a>(0) - 10.0/9.0 );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aimplicit__euler_8cpp_html_a81cdb57df2a213adb896e6a894da95fe"><div class="ttname"><a href="implicit__euler_8cpp.html#a81cdb57df2a213adb896e6a894da95fe">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(test_euler)</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00067">implicit_euler.cpp:67</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler_html_abbc0a5a692b9214b3cf40f491053ca57"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html#abbc0a5a692b9214b3cf40f491053ca57">boost::numeric::odeint::implicit_euler::do_step</a></div><div class="ttdeci">void do_step(System system, state_type &amp;x, time_type t, time_type dt)</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8hpp_source.html#l00073">implicit_euler.hpp:73</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1numeric_1_1odeint_html"><div class="ttname"><a href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></div><div class="ttdef"><b>Definition:</b> <a href="array__algebra_8hpp_source.html#l00025">array_algebra.hpp:25</a></div></div>
+<div class="ttc" id="astepper__details_8cpp_html_a34c08a7a7d7e6c10905fc8d5629495be"><div class="ttname"><a href="stepper__details_8cpp.html#a34c08a7a7d7e6c10905fc8d5629495be">sys</a></div><div class="ttdeci">void sys(const state_type &amp;, state_type &amp;, const double)</div><div class="ttdef"><b>Definition:</b> <a href="stepper__details_8cpp_source.html#l00028">stepper_details.cpp:28</a></div></div>
+<div class="ttc" id="aimplicit__euler_8cpp_html_aba0996e183cdbebc61c5cbdcccf9da15"><div class="ttname"><a href="implicit__euler_8cpp.html#aba0996e183cdbebc61c5cbdcccf9da15">value_type</a></div><div class="ttdeci">double value_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00040">implicit_euler.cpp:40</a></div></div>
+<div class="ttc" id="anamespaceproc__geojson_html_aeed080fd8b6bd7666d7ea0d66648bd1d"><div class="ttname"><a href="namespaceproc__geojson.html#aeed080fd8b6bd7666d7ea0d66648bd1d">proc_geojson.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="proc__geojson_8py_source.html#l00059">proc_geojson.py:59</a></div></div>
+<div class="ttc" id="aimplicit__euler_8cpp_html_a75cfffa67fb3d002a7a89ba1a3f6121a"><div class="ttname"><a href="implicit__euler_8cpp.html#a75cfffa67fb3d002a7a89ba1a3f6121a">state_type</a></div><div class="ttdeci">boost::numeric::ublas::vector&lt; value_type &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00041">implicit_euler.cpp:41</a></div></div>
+<div class="ttc" id="aimplicit__euler_8cpp_html_a9018fe527287332f6438b7cf4bc832b2"><div class="ttname"><a href="implicit__euler_8cpp.html#a9018fe527287332f6438b7cf4bc832b2">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; value_type &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00042">implicit_euler.cpp:42</a></div></div>
+<div class="ttc" id="alorenz__gmpxx_8cpp_html_af474c019521f29015b191baae27c239b"><div class="ttname"><a href="lorenz__gmpxx_8cpp.html#af474c019521f29015b191baae27c239b">value_type</a></div><div class="ttdeci">mpf_class value_type</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__gmpxx_8cpp_source.html#l00027">lorenz_gmpxx.cpp:27</a></div></div>
+<div class="ttc" id="alorenz__point_8cpp_html_a3c77d469ec49a839969cf1be22e389f1"><div class="ttname"><a href="lorenz__point_8cpp.html#a3c77d469ec49a839969cf1be22e389f1">abs</a></div><div class="ttdeci">point3D abs(const point3D &amp;p)</div><div class="ttdef"><b>Definition:</b> <a href="lorenz__point_8cpp_source.html#l00064">lorenz_point.cpp:64</a></div></div>
+<div class="ttc" id="astiff__system_8cpp_html_abd6c5fdc1f08c03c2027eafe32658e38"><div class="ttname"><a href="stiff__system_8cpp.html#abd6c5fdc1f08c03c2027eafe32658e38">matrix_type</a></div><div class="ttdeci">boost::numeric::ublas::matrix&lt; double &gt; matrix_type</div><div class="ttdef"><b>Definition:</b> <a href="stiff__system_8cpp_source.html#l00031">stiff_system.cpp:31</a></div></div>
+<div class="ttc" id="astructjacobi_html_ab781b8a53f4914cdc190c897e416975e"><div class="ttname"><a href="structjacobi.html#ab781b8a53f4914cdc190c897e416975e">jacobi::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, matrix_type &amp;jacobi, const value_type t) const</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00056">implicit_euler.cpp:56</a></div></div>
+<div class="ttc" id="anamespacestd_html_a5a5fd36a4f3066cb68f5e4081bd19ef4"><div class="ttname"><a href="namespacestd.html#a5a5fd36a4f3066cb68f5e4081bd19ef4">std::abs</a></div><div class="ttdeci">__float128 abs(__float128 x)</div><div class="ttdef"><b>Definition:</b> <a href="black__hole_8cpp_source.html#l00036">black_hole.cpp:36</a></div></div>
+<div class="ttc" id="aimplicit__euler_8hpp_html"><div class="ttname"><a href="implicit__euler_8hpp.html">implicit_euler.hpp</a></div></div>
+<div class="ttc" id="arunge__kutta__concepts_8cpp_html_a3d8c24629d725b9ef8c238cf27c9b158"><div class="ttname"><a href="runge__kutta__concepts_8cpp.html#a3d8c24629d725b9ef8c238cf27c9b158">eps</a></div><div class="ttdeci">const double eps</div><div class="ttdef"><b>Definition:</b> <a href="runge__kutta__concepts_8cpp_source.html#l00069">runge_kutta_concepts.cpp:69</a></div></div>
+<div class="ttc" id="astructsys_html"><div class="ttname"><a href="structsys.html">sys</a></div><div class="ttdef"><b>Definition:</b> <a href="euler__stepper_8cpp_source.html#l00069">euler_stepper.cpp:69</a></div></div>
+<div class="ttc" id="aclassboost_1_1numeric_1_1odeint_1_1implicit__euler_html"><div class="ttname"><a href="classboost_1_1numeric_1_1odeint_1_1implicit__euler.html">boost::numeric::odeint::implicit_euler</a></div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8hpp_source.html#l00048">implicit_euler.hpp:48</a></div></div>
+<div class="ttc" id="aspreading_8cpp_html_a7263b6b0b16edd81d94f5b848354a903"><div class="ttname"><a href="spreading_8cpp.html#a7263b6b0b16edd81d94f5b848354a903">state_type</a></div><div class="ttdeci">vector&lt; vector&lt; double &gt; &gt; state_type</div><div class="ttdef"><b>Definition:</b> <a href="spreading_8cpp_source.html#l00062">spreading.cpp:62</a></div></div>
+<div class="ttc" id="astructjacobi_html"><div class="ttname"><a href="structjacobi.html">jacobi</a></div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00054">implicit_euler.cpp:54</a></div></div>
+<div class="ttc" id="astructsys_html_abd3475b041b69266ed093bee40232252"><div class="ttname"><a href="structsys.html#abd3475b041b69266ed093bee40232252">sys::operator()</a></div><div class="ttdeci">void operator()(const state_type &amp;x, state_type &amp;dxdt, const value_type t) const</div><div class="ttdef"><b>Definition:</b> <a href="implicit__euler_8cpp_source.html#l00047">implicit_euler.cpp:47</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

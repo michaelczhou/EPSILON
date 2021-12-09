@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: core/vehicle_model/thirdparty/odeint-v2/libs/numeric/odeint/test/is_resizeable.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_03eb9c19698f5accd94c845c870a096b.html">vehicle_model</a></li><li class="navelem"><a class="el" href="dir_b64236acd993fb9b9b34ee6cbeded0d4.html">thirdparty</a></li><li class="navelem"><a class="el" href="dir_a9354fa924de13b0588a9be3cb775ef5.html">odeint-v2</a></li><li class="navelem"><a class="el" href="dir_9843a6722681130edddd673e7290e23c.html">libs</a></li><li class="navelem"><a class="el" href="dir_37f91861b9b9aeba87b93159a5a34a9d.html">numeric</a></li><li class="navelem"><a class="el" href="dir_e5f6e38c46d238bfb78fca7d05bb4a40.html">odeint</a></li><li class="navelem"><a class="el" href="dir_4459c5153964db14307d5fa3f1b5a6ac.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">is_resizeable.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__resizeable_8hpp_source.html">boost/numeric/odeint/util/is_resizeable.hpp</a>&gt;</code><br />
+<code>#include &lt;boost/fusion/include/vector.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/length.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/time.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/velocity.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/acceleration.hpp&gt;</code><br />
+<code>#include &lt;boost/units/systems/si/io.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+is_resizeable.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="is__resizeable_8cpp__incl.png" border="0" usemap="#core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2is__resizeable_8cpp" alt=""/></div>
+<map name="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2is__resizeable_8cpp" id="core_2vehicle__model_2thirdparty_2odeint-v2_2libs_2numeric_2odeint_2test_2is__resizeable_8cpp">
+<area shape="rect" title=" " alt="" coords="861,5,1041,76"/>
+<area shape="rect" title=" " alt="" coords="193,131,323,158"/>
+<area shape="rect" title=" " alt="" coords="5,221,68,247"/>
+<area shape="rect" title=" " alt="" coords="399,131,461,158"/>
+<area shape="rect" title=" " alt="" coords="486,131,662,158"/>
+<area shape="rect" href="is__resizeable_8hpp.html" title=" " alt="" coords="687,124,851,165"/>
+<area shape="rect" title=" " alt="" coords="875,124,1028,165"/>
+<area shape="rect" title=" " alt="" coords="1052,124,1205,165"/>
+<area shape="rect" title=" " alt="" coords="1229,124,1383,165"/>
+<area shape="rect" title=" " alt="" coords="1407,124,1560,165"/>
+<area shape="rect" title=" " alt="" coords="1584,124,1737,165"/>
+<area shape="rect" title=" " alt="" coords="1761,124,1915,165"/>
+<area shape="rect" title=" " alt="" coords="93,213,279,255"/>
+<area shape="rect" title=" " alt="" coords="303,213,490,255"/>
+<area shape="rect" title=" " alt="" coords="515,213,668,255"/>
+<area shape="rect" title=" " alt="" coords="692,213,845,255"/>
+<area shape="rect" title=" " alt="" coords="869,221,1028,247"/>
+<area shape="rect" title=" " alt="" coords="1052,221,1195,247"/>
+<area shape="rect" title=" " alt="" coords="1219,221,1422,247"/>
+<area shape="rect" title=" " alt="" coords="1447,221,1573,247"/>
+<area shape="rect" title=" " alt="" coords="1598,213,1745,255"/>
+</map>
+</div>
+</div>
+<p><a href="is__resizeable_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;odeint_is_resizeable</td></tr>
+<tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a8f1db5ac17a27f7655aee38d2c9baaed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#a8f1db5ac17a27f7655aee38d2c9baaed">BOOST_AUTO_TEST_CASE</a> (test_vector)</td></tr>
+<tr class="separator:a8f1db5ac17a27f7655aee38d2c9baaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21c72d73f412a575b811a40ce7d108a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#ad21c72d73f412a575b811a40ce7d108a">BOOST_AUTO_TEST_CASE</a> (test_double)</td></tr>
+<tr class="separator:ad21c72d73f412a575b811a40ce7d108a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45894a8ef0d1fe30b38d09d1efc9f34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#ac45894a8ef0d1fe30b38d09d1efc9f34">BOOST_AUTO_TEST_CASE</a> (test_fusion_vector_of_vector)</td></tr>
+<tr class="separator:ac45894a8ef0d1fe30b38d09d1efc9f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af905cf975f846b004c0453c833b8ec7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#af905cf975f846b004c0453c833b8ec7b">BOOST_AUTO_TEST_CASE</a> (test_fusion_vector_of_double)</td></tr>
+<tr class="separator:af905cf975f846b004c0453c833b8ec7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d91a55939c1d44e8f96a467fce59b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#ab7d91a55939c1d44e8f96a467fce59b3">BOOST_AUTO_TEST_CASE</a> (test_fusion_vector_mixed1)</td></tr>
+<tr class="separator:ab7d91a55939c1d44e8f96a467fce59b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06488757820c17e53bcb532fcf9177b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#aa06488757820c17e53bcb532fcf9177b">BOOST_AUTO_TEST_CASE</a> (test_fusion_vector_mixed2)</td></tr>
+<tr class="separator:aa06488757820c17e53bcb532fcf9177b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46bbf7f7c97a50a0c453fe40308ea9e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="is__resizeable_8cpp.html#a46bbf7f7c97a50a0c453fe40308ea9e3">BOOST_AUTO_TEST_CASE</a> (test_fusion_quantity_sequence)</td></tr>
+<tr class="separator:a46bbf7f7c97a50a0c453fe40308ea9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a6b2a3852db8bb19ab6909bac01859985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;odeint_is_resizeable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ad21c72d73f412a575b811a40ce7d108a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad21c72d73f412a575b811a40ce7d108a">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_double&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a46bbf7f7c97a50a0c453fe40308ea9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bbf7f7c97a50a0c453fe40308ea9e3">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_fusion_quantity_sequence&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab7d91a55939c1d44e8f96a467fce59b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d91a55939c1d44e8f96a467fce59b3">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_fusion_vector_mixed1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00064">64</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa06488757820c17e53bcb532fcf9177b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06488757820c17e53bcb532fcf9177b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_fusion_vector_mixed2&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af905cf975f846b004c0453c833b8ec7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af905cf975f846b004c0453c833b8ec7b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_fusion_vector_of_double&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac45894a8ef0d1fe30b38d09d1efc9f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45894a8ef0d1fe30b38d09d1efc9f34">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_fusion_vector_of_vector&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8f1db5ac17a27f7655aee38d2c9baaed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1db5ac17a27f7655aee38d2c9baaed">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">test_vector&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="is__resizeable_8cpp_source.html">is_resizeable.cpp</a> 第 <a class="el" href="is__resizeable_8cpp_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
